@@ -15,6 +15,10 @@ from oslo_policy import policy
 
 from keystone.common.policies import base
 
+DEPRECATED_REASON = (
+    "The OAUTH1 consumer API is now aware of system scope and default roles."
+)
+
 deprecated_get_consumer = policy.DeprecatedRule(
     name=base.IDENTITY % 'get_consumer',
     check_str=base.RULE_ADMIN_REQUIRED
@@ -36,9 +40,6 @@ deprecated_delete_consumer = policy.DeprecatedRule(
     check_str=base.RULE_ADMIN_REQUIRED
 )
 
-DEPRECATED_REASON = (
-    "The OAUTH1 consumer API is now aware of system scope and default roles."
-)
 
 consumer_policies = [
     policy.DocumentedRuleDefault(
@@ -48,9 +49,7 @@ consumer_policies = [
         description='Show OAUTH1 consumer details.',
         operations=[{'path': '/v3/OS-OAUTH1/consumers/{consumer_id}',
                      'method': 'GET'}],
-        deprecated_rule=deprecated_get_consumer,
-        deprecated_reason=DEPRECATED_REASON,
-        deprecated_since=versionutils.deprecated.TRAIN),
+        deprecated_rule=deprecated_get_consumer),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_consumers',
         check_str=base.SYSTEM_READER,
@@ -58,9 +57,7 @@ consumer_policies = [
         description='List OAUTH1 consumers.',
         operations=[{'path': '/v3/OS-OAUTH1/consumers',
                      'method': 'GET'}],
-        deprecated_rule=deprecated_list_consumers,
-        deprecated_reason=DEPRECATED_REASON,
-        deprecated_since=versionutils.deprecated.TRAIN),
+        deprecated_rule=deprecated_list_consumers),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_consumer',
         check_str=base.SYSTEM_ADMIN,
@@ -68,9 +65,7 @@ consumer_policies = [
         description='Create OAUTH1 consumer.',
         operations=[{'path': '/v3/OS-OAUTH1/consumers',
                      'method': 'POST'}],
-        deprecated_rule=deprecated_create_consumer,
-        deprecated_reason=DEPRECATED_REASON,
-        deprecated_since=versionutils.deprecated.TRAIN),
+        deprecated_rule=deprecated_create_consumer),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_consumer',
         check_str=base.SYSTEM_ADMIN,
@@ -78,9 +73,7 @@ consumer_policies = [
         description='Update OAUTH1 consumer.',
         operations=[{'path': '/v3/OS-OAUTH1/consumers/{consumer_id}',
                      'method': 'PATCH'}],
-        deprecated_rule=deprecated_update_consumer,
-        deprecated_reason=DEPRECATED_REASON,
-        deprecated_since=versionutils.deprecated.TRAIN),
+        deprecated_rule=deprecated_update_consumer),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_consumer',
         check_str=base.SYSTEM_ADMIN,
@@ -88,9 +81,7 @@ consumer_policies = [
         description='Delete OAUTH1 consumer.',
         operations=[{'path': '/v3/OS-OAUTH1/consumers/{consumer_id}',
                      'method': 'DELETE'}],
-        deprecated_rule=deprecated_delete_consumer,
-        deprecated_reason=DEPRECATED_REASON,
-        deprecated_since=versionutils.deprecated.TRAIN),
+        deprecated_rule=deprecated_delete_consumer),
 ]
 
 
