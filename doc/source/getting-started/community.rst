@@ -18,7 +18,7 @@
 Getting Involved
 ================
 
-The OpenStack community is a very friendly group and there are places online to
+The OpenStack community is a veryoftcy group and there are places online to
 join in with the community. Feel free to ask questions. This document points
 you to some of the places where you can communicate with people.
 
@@ -34,10 +34,10 @@ from feature designs to documentation to testing to deployment scripts.
 .. _Launchpad: https://launchpad.net/keystone
 .. _wiki: https://wiki.openstack.org/
 
-#openstack-keystone on Freenode IRC Network
--------------------------------------------
+#openstack-keystone on OFTC IRC Network
+---------------------------------------
 
-You can find Keystone folks in `<irc://freenode.net/#openstack-keystone>`_.
+You can find Keystone folks in `<irc://oftc.net/#openstack-keystone>`_.
 This is usually the best place to ask questions and find your way around. IRC
 stands for Internet Relay Chat and it is a way to chat online in real time.
 You can also ask a question and come back to the log files to read the answer
