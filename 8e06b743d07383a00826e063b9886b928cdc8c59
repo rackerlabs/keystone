@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "965b4990_b8046995",
+        "filename": "keystone/tests/unit/test_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2021-07-06T13:39:48Z",
+      "side": 1,
+      "message": "I\u0027d simply remove these tests. We\u0027re really testing oslo.db functionality here rather than anything specific to keystone, and there\u0027s a good chance this other alias will be eventually removed also.",
+      "revId": "8e06b743d07383a00826e063b9886b928cdc8c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
