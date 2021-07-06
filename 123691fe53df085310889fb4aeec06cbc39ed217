@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22349b02_9e60ea4d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 9708
+      },
+      "writtenOn": "2021-07-06T15:26:05Z",
+      "side": 1,
+      "message": "I learned something today :D",
+      "revId": "123691fe53df085310889fb4aeec06cbc39ed217",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
