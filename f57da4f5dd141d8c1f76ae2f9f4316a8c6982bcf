@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2e229b_183edf19",
+        "filename": "doc/source/getting-started/community.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2021-07-15T23:35:24Z",
+      "side": 1,
+      "message": "??",
+      "range": {
+        "startLine": 21,
+        "startChar": 29,
+        "endLine": 21,
+        "endChar": 38
+      },
+      "revId": "f57da4f5dd141d8c1f76ae2f9f4316a8c6982bcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
