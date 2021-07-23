@@ -332,6 +332,26 @@ class Auth(controller.V3Controller):
             token_id, window_seconds=window_seconds)
         if not include_catalog and 'catalog' in token_data['token']:
             del token_data['token']['catalog']
+        # NOTE(pas-ha) if token was created with ?nocatalog
+        # it will be memoized as such and, until cache is invalidated,
+        # on token validation it will still always be returned w/o catalog
+        # even when not asked to do so, which breaks other services
+        # that require a catalog to be present in the context after
+        # processing by keystonemiddleware.
+        # Here we ensure that if catalog is requested during validation
+        # it is present in returned token.
+        elif include_catalog and 'catalog' not in token_data['token']:
+            # only ensure catalog for scoped tokens
+            if any(scope in token_data["token"] for scope in
+                   ("project", "domain", "system")):
+                user_id = token_data['token']['user']['id']
+                if (CONF.trust.enabled and
+                        'OS-TRUST:trust' in token_data['token']):
+                    user_id = token_data['token']['OS-TRUST:trust'][
+                        'trustor_user']['id']
+                catalog = PROVIDERS.catalog_api.get_v3_catalog(
+                    user_id, token_data['token'].get('project', {}).get('id'))
+                token_data['token']['catalog'] = catalog
         return render_token_data_response(token_id, token_data)
 
     @controller.protected()
