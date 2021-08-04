@@ -18,6 +18,7 @@
 # exist.
 
 import flask
+import hashlib
 from oslo_log import log
 
 from keystone.auth import core
@@ -220,6 +221,9 @@ def authenticate_for_token(auth=None):
 
         expires_at = auth_context.get('expires_at')
         token_audit_id = auth_context.get('audit_id')
+
+        #totally useless md5 call that should fail on a fips enabled system
+        foo = hashlib.md5()
 
         token = PROVIDERS.token_provider_api.issue_token(
             auth_context['user_id'], method_names, expires_at=expires_at,
