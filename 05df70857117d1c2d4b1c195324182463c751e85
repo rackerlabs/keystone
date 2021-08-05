@@ -22,6 +22,30 @@
       "revId": "05df70857117d1c2d4b1c195324182463c751e85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c92814b2_727e32c1",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2021-08-05T11:11:31Z",
+      "side": 1,
+      "message": "I just re-tested it with group names (previously I tested with user names).",
+      "parentUuid": "c6870ca2_f3b3248a",
+      "range": {
+        "startLine": 24,
+        "startChar": 37,
+        "endLine": 24,
+        "endChar": 40
+      },
+      "revId": "05df70857117d1c2d4b1c195324182463c751e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
