@@ -46,6 +46,120 @@
       "revId": "05df70857117d1c2d4b1c195324182463c751e85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0fcd45a3_ceb16986",
+        "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-08-05T20:56:46Z",
+      "side": 1,
+      "message": "This module should include tests like that that we can use to invoke the actual hashing through:\n\n  PROVIDERS.id_mapping_api.create_id_mapping(...)\n\nWe might be able to add a test here that:\n\n  def test_hashes_greater_than_64_characters_work(self):\n      # build an entity dictionary with a long group name\n      # call create_id_mapping\n      # fetch the mapping\n      # check that the public_id is greater than 64 but less than 255",
+      "revId": "05df70857117d1c2d4b1c195324182463c751e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "117636c2_a666f9b6",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3509,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-08-05T20:56:46Z",
+      "side": 1,
+      "message": "string with length 64*?",
+      "range": {
+        "startLine": 3509,
+        "startChar": 32,
+        "endLine": 3509,
+        "endChar": 38
+      },
+      "revId": "05df70857117d1c2d4b1c195324182463c751e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17a58116_3266d94d",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3518,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-08-05T20:56:46Z",
+      "side": 1,
+      "message": "string of length 255? after*?",
+      "range": {
+        "startLine": 3518,
+        "startChar": 40,
+        "endLine": 3518,
+        "endChar": 46
+      },
+      "revId": "05df70857117d1c2d4b1c195324182463c751e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3fe1e9ea_85e907de",
+        "filename": "releasenotes/notes/bug-1929066-6e741c9182620a37.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-08-05T20:56:46Z",
+      "side": 1,
+      "message": "I think we can add the bug ID here for readers who want more information on the actual error.\n\nhttps://bugs.launchpad.net/keystone/+bug/1929066\nhttps://docs.openstack.org/keystone/latest/contributor/release-notes.html#release-notes-for-bugs",
+      "revId": "05df70857117d1c2d4b1c195324182463c751e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "93d97a00_2260ec00",
+        "filename": "releasenotes/notes/bug-1929066-6e741c9182620a37.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-08-05T20:56:46Z",
+      "side": 1,
+      "message": "nit: Increase the length of the `local_id` column in the `id_mapping` table to accommodate LDAP group names that result in hashes greater than 64 characters?",
+      "revId": "05df70857117d1c2d4b1c195324182463c751e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d5fdadc8_31ef0841",
+        "filename": "releasenotes/notes/bug-1929066-6e741c9182620a37.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-08-05T20:56:46Z",
+      "side": 1,
+      "message": "IIUC, this patch only fixes the problem up to hashes that are 255 characters long (just less likely than what we\u0027re hitting today, but theoretically the bug still exists).\n\nWe might consider adding something to the keystone documentation that clarifies this for users.\n\nThere is some documentation about public IDs and what they are in the administrator guide [0].\n\n[0] https://docs.openstack.org/keystone/latest/admin/configuration.html#domain-specific-configuration",
+      "revId": "05df70857117d1c2d4b1c195324182463c751e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
     }
   ]
 }
