@@ -12,11 +12,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import base64
 import copy
 import datetime
 import fixtures
 import itertools
 import operator
+import os
 import re
 from unittest import mock
 import uuid
@@ -5473,7 +5475,7 @@ class ApplicationCredentialAuth(test_v3.RestfulTestCase):
         self.auth_plugin_config_override(
             methods=['application_credential', 'password', 'token'])
 
-    def _make_app_cred(self, expires=None, access_rules=None):
+    def _make_app_cred(self, expires=None, access_rules=None, secret=None):
         roles = [{'id': self.role_id}]
         data = {
             'id': uuid.uuid4().hex,
@@ -5488,7 +5490,18 @@ class ApplicationCredentialAuth(test_v3.RestfulTestCase):
             data['expires_at'] = expires
         if access_rules:
             data['access_rules'] = access_rules
+        if secret:
+            data['secret'] = secret
         return data
+
+    def _generate_secret(self, length=None):
+        if not length:
+            length = 64
+        secret = os.urandom(length)
+        secret = base64.urlsafe_b64encode(secret)
+        secret = secret.rstrip(b'=')
+        secret = secret.decode('utf-8')
+        return secret
 
     def _validate_token(self, token, headers=None,
                         expected_status=http.client.OK):
@@ -5736,3 +5749,29 @@ class ApplicationCredentialAuth(test_v3.RestfulTestCase):
                                     expected_status=http.client.CREATED)
         token = resp.headers.get('X-Subject-Token')
         self._validate_token(token, expected_status=http.client.NOT_FOUND)
+
+    def test_application_credential_truncated_hash_with_long_secret(self):
+        # Create a secret that generates a hash longer than what keystone can
+        # store in its database (limited to 255 characters).
+        secret = self._generate_secret(length=80)
+        app_cred = self._make_app_cred(secret=secret)
+
+        # FIXME(lbragstad): This should potentially fail if the resulting hash
+        # from the secret is longer than what keystone can store in it's
+        # database.
+        app_cred_ref = self.app_cred_api.create_application_credential(
+            app_cred)
+
+        # FIXME(lbragstad): Grab all but the last character of the secret and
+        # authenticate for a token. This should be handled differently since
+        # this is giving the user a false sense of security. They don't need
+        # the entire secret for keystone to validate the application
+        # credentials.
+        truncated_secret = secret[:-1]
+        auth_data = self.build_authentication_request(
+            app_cred_id=app_cred_ref['id'], secret=truncated_secret)
+        resp = self.v3_create_token(auth_data,
+                                    expected_status=http.client.CREATED)
+
+        token = resp.headers.get('X-Subject-Token')
+        self._validate_token(token, expected_status=http.client.OK)
