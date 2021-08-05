@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c6870ca2_f3b3248a",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-08-05T02:18:16Z",
+      "side": 1,
+      "message": "One thing I would like to test before we merge this or in a subsequent change is if this works with LDAP group names longer than 64 characters.\n\nI *think* it will since the id_mapping is used for both user and group mappings. So updating the length to 255 should work.\n\nInitially, I was thinking this would need to update the group ID attribute of the group table, but I don\u0027t think that is necessary here since we\u0027re not mirroring groups from LDAP in the keystone group table.",
+      "range": {
+        "startLine": 24,
+        "startChar": 37,
+        "endLine": 24,
+        "endChar": 40
+      },
+      "revId": "05df70857117d1c2d4b1c195324182463c751e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
