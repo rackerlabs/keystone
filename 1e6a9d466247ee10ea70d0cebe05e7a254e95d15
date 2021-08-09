@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "43b8006a_b0bec61d",
+        "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-08-09T16:01:38Z",
+      "side": 1,
+      "message": "nit: greater*",
+      "range": {
+        "startLine": 172,
+        "startChar": 36,
+        "endLine": 172,
+        "endChar": 42
+      },
+      "revId": "1e6a9d466247ee10ea70d0cebe05e7a254e95d15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
