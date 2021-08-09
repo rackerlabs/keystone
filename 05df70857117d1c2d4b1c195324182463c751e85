@@ -66,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "13f9e971_d8b4c8aa",
+        "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2021-08-09T09:30:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0fcd45a3_ceb16986",
+      "revId": "05df70857117d1c2d4b1c195324182463c751e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "117636c2_a666f9b6",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 6
@@ -86,6 +104,30 @@
       "revId": "05df70857117d1c2d4b1c195324182463c751e85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "552c485b_f388af15",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3509,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2021-08-09T09:30:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "117636c2_a666f9b6",
+      "range": {
+        "startLine": 3509,
+        "startChar": 32,
+        "endLine": 3509,
+        "endChar": 38
+      },
+      "revId": "05df70857117d1c2d4b1c195324182463c751e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     },
     {
       "key": {
@@ -112,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "2376618c_3019ee42",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3518,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2021-08-09T09:30:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17a58116_3266d94d",
+      "range": {
+        "startLine": 3518,
+        "startChar": 40,
+        "endLine": 3518,
+        "endChar": 46
+      },
+      "revId": "05df70857117d1c2d4b1c195324182463c751e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fe1e9ea_85e907de",
         "filename": "releasenotes/notes/bug-1929066-6e741c9182620a37.yaml",
         "patchSetId": 6
@@ -126,6 +192,24 @@
       "revId": "05df70857117d1c2d4b1c195324182463c751e85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f86ae70b_a8fa6b53",
+        "filename": "releasenotes/notes/bug-1929066-6e741c9182620a37.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2021-08-09T09:30:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fe1e9ea_85e907de",
+      "revId": "05df70857117d1c2d4b1c195324182463c751e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     },
     {
       "key": {
@@ -146,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "9ff31e53_9e9ea774",
+        "filename": "releasenotes/notes/bug-1929066-6e741c9182620a37.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2021-08-09T09:30:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "93d97a00_2260ec00",
+      "revId": "05df70857117d1c2d4b1c195324182463c751e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d5fdadc8_31ef0841",
         "filename": "releasenotes/notes/bug-1929066-6e741c9182620a37.yaml",
         "patchSetId": 6
@@ -160,6 +262,24 @@
       "revId": "05df70857117d1c2d4b1c195324182463c751e85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a1bb37f_c3824884",
+        "filename": "releasenotes/notes/bug-1929066-6e741c9182620a37.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2021-08-09T09:30:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5fdadc8_31ef0841",
+      "revId": "05df70857117d1c2d4b1c195324182463c751e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
