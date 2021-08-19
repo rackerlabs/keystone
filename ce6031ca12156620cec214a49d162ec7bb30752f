@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1252e3c3_67bc864b",
+        "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-08-19T17:11:34Z",
+      "side": 1,
+      "message": "Thanks for adding this - I was able to verify this exposes the bug without the fix locally.",
+      "revId": "ce6031ca12156620cec214a49d162ec7bb30752f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
