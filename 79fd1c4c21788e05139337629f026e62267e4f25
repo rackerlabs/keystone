@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b0099d1_abd1c136",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-08-20T19:04:58Z",
+      "side": 1,
+      "message": "This is changing from what it originally was in line 203 and I think the same applies for the policies below.",
+      "range": {
+        "startLine": 99,
+        "startChar": 45,
+        "endLine": 99,
+        "endChar": 50
+      },
+      "revId": "79fd1c4c21788e05139337629f026e62267e4f25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf028191_fe017910",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-08-20T19:04:58Z",
+      "side": 1,
+      "message": "This was deprecated in Train according to line 147.",
+      "range": {
+        "startLine": 56,
+        "startChar": 45,
+        "endLine": 56,
+        "endChar": 50
+      },
+      "revId": "79fd1c4c21788e05139337629f026e62267e4f25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2c1b23e6_64bf2c09",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-08-20T19:04:58Z",
+      "side": 1,
+      "message": "I think this should be Train.",
+      "range": {
+        "startLine": 42,
+        "startChar": 45,
+        "endLine": 42,
+        "endChar": 50
+      },
+      "revId": "79fd1c4c21788e05139337629f026e62267e4f25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
