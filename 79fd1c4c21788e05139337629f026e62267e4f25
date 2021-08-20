@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b0a260ea_655fd895",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2021-08-20T19:08:20Z",
+      "side": 1,
+      "message": "yeah, i misread it that all policy are deprecated from Stein and did not realize few are in Train. will update",
+      "parentUuid": "6b0099d1_abd1c136",
+      "range": {
+        "startLine": 99,
+        "startChar": 45,
+        "endLine": 99,
+        "endChar": 50
+      },
+      "revId": "79fd1c4c21788e05139337629f026e62267e4f25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bf028191_fe017910",
         "filename": "keystone/common/policies/role.py",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2021-08-20T19:04:58Z",
       "side": 1,
       "message": "This was deprecated in Train according to line 147.",
+      "range": {
+        "startLine": 56,
+        "startChar": 45,
+        "endLine": 56,
+        "endChar": 50
+      },
+      "revId": "79fd1c4c21788e05139337629f026e62267e4f25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "85b32379_72c18db7",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2021-08-20T19:08:20Z",
+      "side": 1,
+      "message": "yeah. done",
+      "parentUuid": "bf028191_fe017910",
       "range": {
         "startLine": 56,
         "startChar": 45,
@@ -68,6 +116,30 @@
       "revId": "79fd1c4c21788e05139337629f026e62267e4f25",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "acb8f741_84f5cc03",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2021-08-20T19:08:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2c1b23e6_64bf2c09",
+      "range": {
+        "startLine": 42,
+        "startChar": 45,
+        "endLine": 42,
+        "endChar": 50
+      },
+      "revId": "79fd1c4c21788e05139337629f026e62267e4f25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
