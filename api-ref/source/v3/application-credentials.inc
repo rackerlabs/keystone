@@ -121,7 +121,7 @@ Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - auth: request_auth_body_required
+   - auth: auth
    - identity: identity
    - methods: auth_methods_application_credential
    - application_credential: request_application_credential_body_required
