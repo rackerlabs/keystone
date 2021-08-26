@@ -28,7 +28,7 @@ deprecated_update_idp = policy.DeprecatedRule(
     check_str=base.RULE_ADMIN_REQUIRED
 )
 deprecated_create_idp = policy.DeprecatedRule(
-    name=base.IDENTITY % 'create_identity_providers',
+    name=base.IDENTITY % 'create_identity_provider',
     check_str=base.RULE_ADMIN_REQUIRED
 )
 deprecated_delete_idp = policy.DeprecatedRule(
