@@ -23,8 +23,8 @@ deprecated_ec2_list_credentials = policy.DeprecatedRule(
     name=base.IDENTITY % 'ec2_list_credentials',
     check_str=base.RULE_ADMIN_OR_OWNER
 )
-deprecated_ec2_create_credentials = policy.DeprecatedRule(
-    name=base.IDENTITY % 'ec2_create_credentials',
+deprecated_ec2_create_credential = policy.DeprecatedRule(
+    name=base.IDENTITY % 'ec2_create_credential',
     check_str=base.RULE_ADMIN_OR_OWNER
 )
 deprecated_ec2_delete_credentials = policy.DeprecatedRule(
