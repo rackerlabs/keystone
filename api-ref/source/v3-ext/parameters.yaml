@@ -49,15 +49,15 @@ name:
   in: path
   required: true
   type: string
-request_token_id:
-  description: |
-    The UUID of request_token
-  in: path
-  required: true
-  type: string
 policy_id_path:
   description: |
     The policy ID.
+  in: path
+  required: true
+  type: string
+request_token_id:
+  description: |
+    The UUID of request_token
   in: path
   required: true
   type: string
