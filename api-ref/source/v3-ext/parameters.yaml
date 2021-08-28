@@ -25,15 +25,15 @@ domain_id:
   in: path
   required: true
   type: string
-request_token_id:
-  description: |
-    The UUID of request_token
-  in: path
-  required: true
-  type: string
 endpoint_group_id_path:
   description: |
     The UUID of the endpoint group.
+  in: path
+  required: true
+  type: string
+request_token_id:
+  description: |
+    The UUID of request_token
   in: path
   required: true
   type: string
