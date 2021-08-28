@@ -61,6 +61,12 @@ project_id_path:
   in: path
   required: true
   type: string
+request_token_id:
+  description: |
+    The UUID of request_token
+  in: path
+  required: true
+  type: string
 region_id_path:
   description: |
     The region ID.
@@ -88,12 +94,6 @@ trust_id_path:
 user_id_path:
   description: |
     The UUID of the user.
-  in: path
-  required: true
-  type: string
-request_token_id:
-  description: |
-    The UUID of request_token
   in: path
   required: true
   type: string
