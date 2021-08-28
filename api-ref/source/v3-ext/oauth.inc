@@ -373,6 +373,10 @@ Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-OAUTH
 Request
 -------
 
+.. rest_parameters:: parameters.yaml
+
+    - request_token_id: request_token_id
+
 Example
 ~~~~~~~
 
