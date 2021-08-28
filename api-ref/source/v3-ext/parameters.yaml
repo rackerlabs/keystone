@@ -55,12 +55,6 @@ policy_id_path:
   in: path
   required: true
   type: string
-request_token_id:
-  description: |
-    The UUID of request_token
-  in: path
-  required: true
-  type: string
 project_id_path:
   description: |
     The UUID of the project.
@@ -70,6 +64,12 @@ project_id_path:
 region_id_path:
   description: |
     The region ID.
+  in: path
+  required: true
+  type: string
+request_token_id:
+  description: |
+    The UUID of request_token
   in: path
   required: true
   type: string
