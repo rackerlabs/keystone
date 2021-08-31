@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6674b7e2_656c6f73",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-08-31T21:23:36Z",
+      "side": 1,
+      "message": "This is changing the default policy file name. Isn\u0027t the commit message referring to another option?",
+      "revId": "e849b3496bb974a453dd51f6bd3fe6af4733468d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
