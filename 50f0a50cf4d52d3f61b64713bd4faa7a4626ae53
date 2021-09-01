@@ -16,6 +16,24 @@
       "revId": "50f0a50cf4d52d3f61b64713bd4faa7a4626ae53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5bb857f4_2626c41b",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2021-09-01T00:06:25Z",
+      "side": 0,
+      "message": "Yes. I believe this is wrongly indented but I\u0027ve reverted the change to avoid dirty git blame.",
+      "parentUuid": "a787001a_b12f4307",
+      "revId": "50f0a50cf4d52d3f61b64713bd4faa7a4626ae53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
     }
   ]
 }
