@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b18abead_ff0cccf3",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 28326
+      },
+      "writtenOn": "2021-09-08T14:32:48Z",
+      "side": 1,
+      "message": "why not apply this filter to session.query() directly.",
+      "range": {
+        "startLine": 180,
+        "startChar": 12,
+        "endLine": 182,
+        "endChar": 62
+      },
+      "revId": "23477a13ab29e952a77184c5cf989ecfa175a3ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
