@@ -22,6 +22,30 @@
       "revId": "23477a13ab29e952a77184c5cf989ecfa175a3ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b2e8e4ea_66c896c7",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2021-09-16T13:10:40Z",
+      "side": 1,
+      "message": "By doing so, i\u0027ll modify the behavior of this function.\n\nFor example: Checking trusts of a user A will not show any of his/her redelegated trusts if I add a filter_by with a None value for redelegated_trust_id.\n\nThe idea was to keep the behavior as it is for other calls and improve the search for this specific one.",
+      "parentUuid": "b18abead_ff0cccf3",
+      "range": {
+        "startLine": 180,
+        "startChar": 12,
+        "endLine": 182,
+        "endChar": 62
+      },
+      "revId": "23477a13ab29e952a77184c5cf989ecfa175a3ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
     }
   ]
 }
