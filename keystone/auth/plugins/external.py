@@ -92,6 +92,6 @@ class KerberosDomain(Domain):
     """Allows `kerberos` as a method."""
 
     def _authenticate(self):
-        if flask.request.environ.get('AUTH_TYPE') != 'Negotiate':
-            raise exception.Unauthorized(_("auth_type is not Negotiate"))
+        if flask.request.environ.get('AUTH_TYPE') != 'Negotiate' and flask.request.environ.get('AUTH_TYPE') != 'Basic':
+            raise exception.Unauthorized(_("auth_type is not Negotiate or not Basic"))
         return super(KerberosDomain, self)._authenticate()
