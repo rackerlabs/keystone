@@ -131,7 +131,8 @@ class Identity(base.IdentityDriverBase):
     def create_user(self, user_id, user):
         with sql.session_for_write() as session:
             user_ref = model.User.from_dict(user)
-            if self._change_password_required(user_ref):
+            if (user_ref.password_ref and
+                    self._change_password_required(user_ref)):
                 user_ref.password_ref.expires_at = datetime.datetime.utcnow()
             user_ref.created_at = datetime.datetime.utcnow()
             session.add(user_ref)
