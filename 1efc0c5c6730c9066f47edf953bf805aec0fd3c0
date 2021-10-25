@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "1efc0c5c6730c9066f47edf953bf805aec0fd3c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "51512d80_df6e1318",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2021-10-25T13:36:25Z",
+      "side": 1,
+      "message": "You have an error in the PEP8 check for Python27.  A pain, but we need to carry 2.7 for a while.  Rechecking will not solve it.",
+      "revId": "1efc0c5c6730c9066f47edf953bf805aec0fd3c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
