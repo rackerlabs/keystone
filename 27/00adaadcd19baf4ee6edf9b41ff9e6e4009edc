@@ -1,0 +1,13 @@
+Code-Review+1: Douglas Mendizábal <dmendiza@redhat.com>
+Code-Review+1: Adam Young <adam@younglogic.com>
+Code-Review+2: Lance Bragstad <lbragstad@redhat.com>
+Code-Review+1: wushiming <wushiming@yovole.com>
+Code-Review+1: Gage Hugo <gagehugo@gmail.com>
+Code-Review+1: Kristi Nikolla <knikolla@bu.edu>
+Workflow+1: Lance Bragstad <lbragstad@redhat.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 26 Oct 2021 19:18:21 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/806381
+Project: openstack/keystone
+Branch: refs/heads/stable/wallaby
