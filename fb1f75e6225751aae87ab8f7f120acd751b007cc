@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0eb7ff4f_a01e20f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2021-11-19T23:32:59Z",
+      "side": 1,
+      "message": "fix for doc job - https://review.opendev.org/c/openstack/keystone/+/818652",
+      "revId": "fb1f75e6225751aae87ab8f7f120acd751b007cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
