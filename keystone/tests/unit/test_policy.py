@@ -151,7 +151,7 @@ class PolicyScopeTypesEnforcementTestCase(unit.TestCase):
     def test_warning_message_is_logged_if_enforce_scope_is_false(self):
         self.config_fixture.config(group='oslo_policy', enforce_scope=False)
         expected_msg = (
-            'Policy foo failed scope check. The token used to make the '
+            'Policy "foo": "" failed scope check. The token used to make the '
             'request was project scoped but the policy requires [\'system\'] '
             'scope. This behavior may change in the future where using the '
             'intended scope is required'
