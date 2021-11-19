@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e346fbdc_0b0ef1f6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2021-11-19T21:26:40Z",
+      "side": 1,
+      "message": "humm, this work on oslo.policy 3.10 but not on older version. to have oslo.polocy 3.10 in constraint wait for this test to fix.\n\nI think we need to make warning text assert in the way that both version work and we can proceed next.",
+      "revId": "a0436a58aa3af4fb36affc6d4e0bdecdd7cc011d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
