@@ -1,6 +1,24 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "af313126_e9c54224",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-11-22T21:18:17Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "08ccfa98e86ff788070cb129bf7a35ca774cb811",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
       "key": {
         "uuid": "3fa7e38b_462ec4fa",
         "filename": "keystone/credential/providers/fernet/core.py",
@@ -20,8 +38,7 @@
         "endChar": 44
       },
       "revId": "08ccfa98e86ff788070cb129bf7a35ca774cb811",
-      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
-      "unresolved": false
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
