@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7357e649_f26202a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-11-22T20:43:18Z",
+      "side": 1,
+      "message": "Looks good, but a unit test and release note [0] are needed.\n\n[0] https://docs.openstack.org/keystone/latest/contributor/release-notes.html",
+      "revId": "43cebb9b81471bf6234c1b2c281dffb8726d175a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8b808d5_d08650eb",
+        "filename": "keystone/api/s3tokens.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-11-22T20:43:18Z",
+      "side": 1,
+      "message": "I think we could add a unit test in https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_contrib_s3_core.py",
+      "revId": "43cebb9b81471bf6234c1b2c281dffb8726d175a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
