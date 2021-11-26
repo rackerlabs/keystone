@@ -1401,9 +1401,19 @@ class BaseLdap(object):
                 pass
             else:
                 try:
-                    obj[k] = v[0]
+                    value = v[0]
                 except IndexError:
-                    obj[k] = None
+                    value = None
+
+                # NOTE(xek): Some LDAP servers return bytes data type
+                # We convert it to string here, so that it is consistent with
+                # the other (SQL) backends.
+                # Bytes data type caused issues in the past, because it could
+                # be cached and then passed into str() method to be used as
+                # LDAP filters, which results in an unexpected b'...' prefix.
+                if isinstance(value, bytes):
+                    value = value.decode('utf-8', 'backslashreplace')
+                obj[k] = value
 
         return obj
 
