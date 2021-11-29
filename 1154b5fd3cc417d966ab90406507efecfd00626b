@@ -22,6 +22,30 @@
       },
       "revId": "1154b5fd3cc417d966ab90406507efecfd00626b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad797d1a_fa009fe6",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2021-11-29T15:39:47Z",
+      "side": 1,
+      "message": "it does but additional to check_str also.\n\nPrevious: it added only policy name(that is why expected_msg  @ L154 passing) - foo \nNow: it adds policy name and check-str in warning so in this test case it will be - \"foo\": \"\"\n\nso expected message will be like:\n\n        expected_msg \u003d (\n            \u0027Policy \"foo\": \"\" failed scope check. The token used to make the \u0027\n            \u0027request was project scoped but the policy requires [\\\u0027system\\\u0027] \u0027\n            \u0027scope. This behavior may change in the future where using the \u0027\n            \u0027intended scope is required\u0027\n        )\n\nyou can see the failure here https://bacfa3e13b0e097fa4b5-bb16683249f908fc1002d6892692fd50.ssl.cf5.rackcdn.com/815820/1/check/cross-keystone-py38/f340237/testr_results.html\n\nI can add assert_called_with and modify the expected message or another assert to check policy name in message, what ever you prefer ?",
+      "parentUuid": "5b9c40fe_7f0e7826",
+      "range": {
+        "startLine": 163,
+        "startChar": 17,
+        "endLine": 163,
+        "endChar": 25
+      },
+      "revId": "1154b5fd3cc417d966ab90406507efecfd00626b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
