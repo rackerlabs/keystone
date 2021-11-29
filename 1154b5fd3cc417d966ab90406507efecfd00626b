@@ -70,6 +70,30 @@
       },
       "revId": "1154b5fd3cc417d966ab90406507efecfd00626b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9827fb44_a5cb76c2",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2021-11-29T15:58:23Z",
+      "side": 1,
+      "message": "ohk, now i remember. so new expected_msg I mentioned in my comment work on oslo.policy 3.10 but does not work on \u003c3.10 and existing expected_msg otherway around that i why I did assertIn.  What we can do, once https://review.opendev.org/c/openstack/requirements/+/815820 is merged than we can bump the oslo.policy version in keystone requirements.txt and update this explicit msg.\n\nOR leave it like done in this patch so that it works on oslo.policy 3.10 and \u003c3.10",
+      "parentUuid": "96edc4c1_09647800",
+      "range": {
+        "startLine": 163,
+        "startChar": 17,
+        "endLine": 163,
+        "endChar": 25
+      },
+      "revId": "1154b5fd3cc417d966ab90406507efecfd00626b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
