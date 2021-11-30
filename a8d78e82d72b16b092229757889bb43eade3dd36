@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62db6618_78c61f03",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1413,
+      "author": {
+        "id": 25613
+      },
+      "writtenOn": "2021-11-30T00:46:08Z",
+      "side": 1,
+      "message": "AFAIK, python-ldap causes bytes data type in return value. Please refer to https://www.python-ldap.org/en/python-ldap-3.3.0/bytes_mode.html",
+      "range": {
+        "startLine": 1408,
+        "startChar": 15,
+        "endLine": 1413,
+        "endChar": 77
+      },
+      "revId": "a8d78e82d72b16b092229757889bb43eade3dd36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
