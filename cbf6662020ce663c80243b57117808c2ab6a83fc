@@ -67,6 +67,23 @@
       "message": "not sure why it is failing on requirement checks even oslo policy is constrained to 3.10 https://github.com/openstack/requirements/blob/master/upper-constraints.txt#L496",
       "revId": "cbf6662020ce663c80243b57117808c2ab6a83fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad9f0390_adc1c092",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2021-12-03T18:37:51Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "cbf6662020ce663c80243b57117808c2ab6a83fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
