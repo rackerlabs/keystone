@@ -37,6 +37,23 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "6ebced0f_2166d6c7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2021-12-06T14:53:11Z",
+      "side": 1,
+      "message": "Would it be possible to add a test to prevent a regression for this?",
+      "revId": "08ccfa98e86ff788070cb129bf7a35ca774cb811",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "3fa7e38b_462ec4fa",
         "filename": "keystone/credential/providers/fernet/core.py",
         "patchSetId": 1
