@@ -1,0 +1,13 @@
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Code-Review+1: wu.chunyang <wuchunyang@yovole.com>
+Code-Review+1: Douglas Mendizábal <dmendiza@redhat.com>
+Code-Review+2: Lance Bragstad <lbragstad@redhat.com>
+Code-Review+1: Grzegorz Grasza <xek@redhat.com>
+Code-Review+1: David Wilde <dwilde@redhat.com>
+Workflow+1: Lance Bragstad <lbragstad@redhat.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 07 Dec 2021 00:23:53 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/787932
+Project: openstack/keystone
+Branch: refs/heads/master
