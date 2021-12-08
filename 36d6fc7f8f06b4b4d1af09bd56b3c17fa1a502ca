@@ -16,6 +16,23 @@
       "message": "For anyone baffled by how the original tokens were generated for these tests, they can be reproduced with this code https://paste.opendev.org/show/811260/\n\nWhatever was hashed to return the string starting \"f2215\" remains unclear though.",
       "revId": "36d6fc7f8f06b4b4d1af09bd56b3c17fa1a502ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d25e887_72e8f1fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2021-12-08T16:20:05Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "36d6fc7f8f06b4b4d1af09bd56b3c17fa1a502ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
