@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58ba96b6_15e07c0f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2021-12-08T16:34:36Z",
+      "side": 1,
+      "message": "@Adam, it would be good to get some more context as to why this change is needed.  It\u0027s not clear what the benefit of rendering XHTML is?",
+      "revId": "d9b8ca0524f518e165c24377330d870cd2fdffaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
