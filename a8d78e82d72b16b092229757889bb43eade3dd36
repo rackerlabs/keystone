@@ -22,6 +22,29 @@
       },
       "revId": "a8d78e82d72b16b092229757889bb43eade3dd36",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4920f810_307cf391",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1415,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2021-12-08T16:11:31Z",
+      "side": 1,
+      "message": "This decode may fail and raise an Error.  I think we may need to wrap this in try/except.",
+      "range": {
+        "startLine": 1415,
+        "startChar": 34,
+        "endLine": 1415,
+        "endChar": 40
+      },
+      "revId": "a8d78e82d72b16b092229757889bb43eade3dd36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
