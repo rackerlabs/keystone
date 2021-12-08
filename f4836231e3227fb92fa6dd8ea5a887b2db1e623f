@@ -52,6 +52,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bcd40c4f_dcb4b166",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2021-12-08T23:33:24Z",
+      "side": 1,
+      "message": "Makes sense. I\u0027ve updated the deprecated reason and release note to address that point.",
+      "parentUuid": "4c4ec66c_7a7fa97a",
+      "revId": "f4836231e3227fb92fa6dd8ea5a887b2db1e623f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "79216290_afa43a76",
@@ -65,6 +83,24 @@
       "writtenOn": "2021-12-08T16:27:59Z",
       "side": 1,
       "message": "I think we can use Yoga here",
+      "revId": "f4836231e3227fb92fa6dd8ea5a887b2db1e623f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8bd1a1e_61d9a67c",
+        "filename": "keystone/conf/memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2021-12-08T23:33:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79216290_afa43a76",
       "revId": "f4836231e3227fb92fa6dd8ea5a887b2db1e623f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
