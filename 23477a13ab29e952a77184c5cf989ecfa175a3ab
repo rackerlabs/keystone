@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d211d51c_69e1140a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2021-12-08T16:47:42Z",
+      "side": 1,
+      "message": "Assuming that we have test coverage to ensure that the redelegations are deleted correctly with this change it LGTM.",
+      "revId": "23477a13ab29e952a77184c5cf989ecfa175a3ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b18abead_ff0cccf3",
