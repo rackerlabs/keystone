@@ -69,6 +69,23 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "11d884de_bc8f39a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2021-12-08T16:54:29Z",
+      "side": 1,
+      "message": "Looks good to me. Chain deletion seems to be tested here https://github.com/openstack/keystone/blob/b20e5c5aa777dca0576698c1c8e002a7f71cf1e4/keystone/tests/unit/test_v3_auth.py#L4788",
+      "revId": "23477a13ab29e952a77184c5cf989ecfa175a3ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b18abead_ff0cccf3",
