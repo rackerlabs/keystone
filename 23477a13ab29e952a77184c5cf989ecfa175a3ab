@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "b18abead_ff0cccf3",
         "filename": "keystone/trust/backends/sql.py",
@@ -20,10 +21,10 @@
         "endChar": 62
       },
       "revId": "23477a13ab29e952a77184c5cf989ecfa175a3ab",
-      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
-      "unresolved": true
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "b2e8e4ea_66c896c7",
         "filename": "keystone/trust/backends/sql.py",
@@ -44,8 +45,31 @@
         "endChar": 62
       },
       "revId": "23477a13ab29e952a77184c5cf989ecfa175a3ab",
-      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
-      "unresolved": true
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13e1d54e_2d3d5b35",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-12-08T16:42:01Z",
+      "side": 1,
+      "message": "Make sense - but it would be nice to have a test to ensure the query is updated accordingly.",
+      "parentUuid": "b2e8e4ea_66c896c7",
+      "range": {
+        "startLine": 180,
+        "startChar": 12,
+        "endLine": 182,
+        "endChar": 62
+      },
+      "revId": "23477a13ab29e952a77184c5cf989ecfa175a3ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
