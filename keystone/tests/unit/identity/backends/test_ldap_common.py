@@ -12,6 +12,7 @@
 # under the License.
 
 import os
+import re
 import tempfile
 from unittest import mock
 import uuid
@@ -244,6 +245,20 @@ class MultiURLTests(unit.TestCase):
         base_ldap = common_ldap.BaseLdap(CONF)
         ldap_connection = base_ldap.get_connection()
         self.assertEqual(urls, ldap_connection.conn.conn_pool.uri)
+
+    @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'simple_bind_s')
+    def test_multiple_urls_with_comma_randomized(self, mock_ldap_bind):
+        urls = 'ldap://localhost,ldap://backup.localhost'
+        self.config_fixture.config(group='ldap', url=urls,
+                                   randomize_urls=True)
+        base_ldap = common_ldap.BaseLdap(CONF)
+        ldap_connection = base_ldap.get_connection()
+
+        def url_set(url):
+            return set(re.split(r'[\s,]+', url))
+
+        self.assertEqual(url_set(urls),
+                         url_set(ldap_connection.conn.conn_pool.uri))
 
 
 class LDAPConnectionTimeoutTest(unit.TestCase):
