@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3478e7e9_a2bd397e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-12-08T16:27:59Z",
+      "side": 1,
+      "message": "Looks good, I just think we need to update the release name.",
+      "revId": "f4836231e3227fb92fa6dd8ea5a887b2db1e623f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79216290_afa43a76",
+        "filename": "keystone/conf/memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-12-08T16:27:59Z",
+      "side": 1,
+      "message": "I think we can use Yoga here",
+      "revId": "f4836231e3227fb92fa6dd8ea5a887b2db1e623f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
