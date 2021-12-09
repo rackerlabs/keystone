@@ -16,6 +16,24 @@
       "message": "@Adam, it would be good to get some more context as to why this change is needed.  It\u0027s not clear what the benefit of rendering XHTML is?",
       "revId": "d9b8ca0524f518e165c24377330d870cd2fdffaf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "76a17121_e299df66",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2021-12-09T00:47:42Z",
+      "side": 1,
+      "message": "When you view a URL with the web browser, and you only render it in JSON, you do not get the links.  With XHTM, we can identify the portions of the Keystone API that violate the principal of discoverability.  With XHTML, a user will be able to interact with a Keystone server in the absence of a third party App or Horizon.  This is a rewrite of a PoC I did a long time ago to show the point.\n\nOne of the rationales for moving to Flask was that we could then take advantage of Flasks supports for additional rendering formats beyond JSON",
+      "parentUuid": "58ba96b6_15e07c0f",
+      "revId": "d9b8ca0524f518e165c24377330d870cd2fdffaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
