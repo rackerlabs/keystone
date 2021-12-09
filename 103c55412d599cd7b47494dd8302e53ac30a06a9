@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d03f19ef_075da2c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2021-12-09T01:18:06Z",
+      "side": 1,
+      "message": "Updated deprecated_reason again to use the consistent explanation.",
+      "revId": "103c55412d599cd7b47494dd8302e53ac30a06a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
