@@ -56,6 +56,23 @@
       },
       "revId": "103c55412d599cd7b47494dd8302e53ac30a06a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b654eb2_71501f49",
+        "filename": "keystone/conf/memcache.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2021-12-10T15:18:25Z",
+      "side": 1,
+      "message": "nit: the prefix was added to the other options but you missed this one. can be fixed in a followup.",
+      "revId": "103c55412d599cd7b47494dd8302e53ac30a06a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
