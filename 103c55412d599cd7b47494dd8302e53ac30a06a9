@@ -16,6 +16,46 @@
       "message": "Updated deprecated_reason again to use the consistent explanation.",
       "revId": "103c55412d599cd7b47494dd8302e53ac30a06a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fab2859_eda5ff23",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2021-12-10T15:16:34Z",
+      "side": 1,
+      "message": "One nit, but otherwise LGTM",
+      "revId": "103c55412d599cd7b47494dd8302e53ac30a06a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "327aa305_77f845c4",
+        "filename": "keystone/conf/memcache.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2021-12-10T15:16:34Z",
+      "side": 1,
+      "message": "Nit: missed the memcache_ on this parameter",
+      "range": {
+        "startLine": 81,
+        "startChar": 23,
+        "endLine": 81,
+        "endChar": 50
+      },
+      "revId": "103c55412d599cd7b47494dd8302e53ac30a06a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
