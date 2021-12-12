@@ -97,6 +97,24 @@
       },
       "revId": "103c55412d599cd7b47494dd8302e53ac30a06a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "63ed6140_178b7c07",
+        "filename": "keystone/conf/memcache.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2021-12-12T13:56:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b654eb2_71501f49",
+      "revId": "103c55412d599cd7b47494dd8302e53ac30a06a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
