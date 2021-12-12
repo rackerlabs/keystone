@@ -78,8 +78,8 @@ pool_connection_get_timeout = cfg.IntOpt(
     deprecated_for_removal=True,
     deprecated_reason='This option has no effect. '
                       'Configure ``keystone.conf [cache] '
-                      'pool_connection_get_timeout`` option to set the '
-                      'connection_get_timeout of memcached instead. ',
+                      'memcache_pool_connection_get_timeout`` option to set '
+                      'the connection_get_timeout of memcached instead. ',
     deprecated_since='Y',
     help=utils.fmt("""
 Number of seconds that an operation will wait to get a memcache client
