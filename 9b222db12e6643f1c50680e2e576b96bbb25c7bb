@@ -16,6 +16,23 @@
       "message": "LGTM",
       "revId": "9b222db12e6643f1c50680e2e576b96bbb25c7bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f79af1b2_92157a29",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2021-12-15T21:50:07Z",
+      "side": 1,
+      "message": "LGTM, should have a releasenote however since this is technically adding a user-facing change/feature.",
+      "revId": "9b222db12e6643f1c50680e2e576b96bbb25c7bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
