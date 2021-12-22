@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f81afdf2_1b4dbe5a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2021-12-22T18:31:39Z",
+      "side": 1,
+      "message": "Looks like a decent idea, but please provide a link to a discussion supporting the statement that this is more secure.",
+      "revId": "029a006b9c20bf597b0e31a4b1ed6a9e2f94c338",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
