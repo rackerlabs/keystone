@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ff4193d_d96a2ef3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2021-12-23T15:37:36Z",
+      "side": 1,
+      "message": "Please add this link to the commit message instead, as it is the real summary.\n\nhttps://www.python.org/dev/peps/pep-0506/\n\nThanks for catching and implementing.\n\nAre there any other places in OpenStack code where os.urandom is used?",
+      "revId": "de69880650fd0c5bc8246d59f3041a966dc2af6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
