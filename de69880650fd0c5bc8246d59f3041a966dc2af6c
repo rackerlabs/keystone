@@ -16,6 +16,24 @@
       "message": "Please add this link to the commit message instead, as it is the real summary.\n\nhttps://www.python.org/dev/peps/pep-0506/\n\nThanks for catching and implementing.\n\nAre there any other places in OpenStack code where os.urandom is used?",
       "revId": "de69880650fd0c5bc8246d59f3041a966dc2af6c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5523a78_eff3803d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16198
+      },
+      "writtenOn": "2021-12-24T07:30:38Z",
+      "side": 1,
+      "message": "At least in nova there are 2-3 places. But in general I believe it is good change",
+      "parentUuid": "3ff4193d_d96a2ef3",
+      "revId": "de69880650fd0c5bc8246d59f3041a966dc2af6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
