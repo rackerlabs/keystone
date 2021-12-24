@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6cde0d91_64f89dd0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16198
+      },
+      "writtenOn": "2021-12-24T10:53:20Z",
+      "side": 1,
+      "message": "Thank you for quick fix about change id.\n\nI propose you perform at least the following additional changes into commit message:\n\n- 1-st raw should be reduced to not more than 50 characters. It should contain summary of fix.\n- After fist raw please create one empty raw\n- Next raws should been limited by 72 characters length\n\nPlease have a look to documentation about commit messages for more info for future commits:\nhttps://wiki.openstack.org/wiki/GitCommitMessages\n\nThanks a lot",
+      "revId": "f771f14cd60931348af43192804092488180fffb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
