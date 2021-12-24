@@ -34,6 +34,23 @@
       "parentUuid": "3ff4193d_d96a2ef3",
       "revId": "de69880650fd0c5bc8246d59f3041a966dc2af6c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d930e57_c77e2794",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16198
+      },
+      "writtenOn": "2021-12-24T08:56:26Z",
+      "side": 1,
+      "message": "There are several change ids in commit message. Should be only one.\nCould you please remove Change-Id: If0877968ba257fa913b03d512633f2d62e5d22de\nfrom the commit message\n",
+      "revId": "de69880650fd0c5bc8246d59f3041a966dc2af6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
