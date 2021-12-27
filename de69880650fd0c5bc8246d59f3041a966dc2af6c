@@ -51,6 +51,42 @@
       "message": "There are several change ids in commit message. Should be only one.\nCould you please remove Change-Id: If0877968ba257fa913b03d512633f2d62e5d22de\nfrom the commit message\n",
       "revId": "de69880650fd0c5bc8246d59f3041a966dc2af6c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c06a96de_24e772bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34392
+      },
+      "writtenOn": "2021-12-27T15:40:48Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "4d930e57_c77e2794",
+      "revId": "de69880650fd0c5bc8246d59f3041a966dc2af6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a479911_ece83936",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34392
+      },
+      "writtenOn": "2021-12-27T15:40:48Z",
+      "side": 1,
+      "message": "OK,I will add this link to the commit message instead. I only focus on keystone at present,That\u0027s all I found in keystone",
+      "parentUuid": "3ff4193d_d96a2ef3",
+      "revId": "de69880650fd0c5bc8246d59f3041a966dc2af6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
