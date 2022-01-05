@@ -284,7 +284,7 @@ class LocalUser(sql.ModelBase, sql.ModelDictMixin):
                                  cascade='all,delete-orphan',
                                  lazy='joined',
                                  backref='local_user',
-                                 order_by='[Password.created_at_int,Password.id')
+                                 order_by='[Password.created_at_int,Password.id]')
     failed_auth_count = sql.Column(sql.Integer, nullable=True)
     failed_auth_at = sql.Column(sql.DateTime, nullable=True)
     __table_args__ = (
