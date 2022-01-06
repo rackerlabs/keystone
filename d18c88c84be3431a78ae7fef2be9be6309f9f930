@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f21a148e_0f953e21",
+        "filename": "keystone/common/sql/expand_repo/versions/001_expand_initial_null_migration.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 776,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2022-01-06T11:07:17Z",
+      "side": 1,
+      "message": "Should this go into 001 of the data_migration repo?",
+      "revId": "d18c88c84be3431a78ae7fef2be9be6309f9f930",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
