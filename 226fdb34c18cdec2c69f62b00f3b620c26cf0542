@@ -16,6 +16,23 @@
       "message": "recheck - I think we have some things to fix here, but getting a fresh test run.",
       "revId": "226fdb34c18cdec2c69f62b00f3b620c26cf0542",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a37099e1_fd2173d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2022-01-06T14:36:08Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "226fdb34c18cdec2c69f62b00f3b620c26cf0542",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
