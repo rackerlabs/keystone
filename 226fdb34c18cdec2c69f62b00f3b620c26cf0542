@@ -33,6 +33,23 @@
       "message": "recheck",
       "revId": "226fdb34c18cdec2c69f62b00f3b620c26cf0542",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d67405b0_eb36cb22",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2022-01-07T16:30:48Z",
+      "side": 1,
+      "message": "recheck - openstack-tox-py35 timeout",
+      "revId": "226fdb34c18cdec2c69f62b00f3b620c26cf0542",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
