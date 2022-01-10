@@ -258,7 +258,9 @@ class SqlUpgradeGetInitVersionTests(unit.TestCase):
         # first invocation of repo. Cannot match the full path because it is
         # based on where the test is run.
         param = repo.call_args_list[0][0][0]
-        self.assertTrue(param.endswith('/sql/' + EXPAND_REPO))
+        self.assertTrue(
+            param.endswith('/sql/legacy_migrations/' + EXPAND_REPO),
+        )
 
     @mock.patch.object(repository, 'Repository')
     def test_get_init_version_with_path_initial_version_0(self, repo):
