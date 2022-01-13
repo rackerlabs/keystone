@@ -21,7 +21,6 @@ from migrate import exceptions
 from migrate.versioning import api as versioning_api
 from oslo_db import exception as db_exception
 from oslo_db.sqlalchemy import migration
-import sqlalchemy
 
 from keystone.common import sql
 from keystone import exception
@@ -70,58 +69,6 @@ class Repository(object):
         with sql.session_for_read() as session:
             return migration.db_version(
                 session.get_bind(), self.repo_path, self.min_version)
-
-
-#  Different RDBMSs use different schemes for naming the Foreign Key
-#  Constraints.  SQLAlchemy does not yet attempt to determine the name
-#  for the constraint, and instead attempts to deduce it from the column.
-#  This fails on MySQL.
-def get_constraints_names(table, column_name):
-    fkeys = [fk.name for fk in table.constraints
-             if (isinstance(fk, sqlalchemy.ForeignKeyConstraint) and
-                 column_name in fk.columns)]
-    return fkeys
-
-
-#  remove_constraints and add_constraints both accept a list of dictionaries
-#  that contain:
-#  {'table': a sqlalchemy table. The constraint is added to dropped from
-#           this table.
-#  'fk_column': the name of a column on the above table,  The constraint
-#               is added to or dropped from this column
-#  'ref_column':a sqlalchemy column object.  This is the reference column
-#               for the constraint.
-def remove_constraints(constraints):
-    for constraint_def in constraints:
-        constraint_names = get_constraints_names(constraint_def['table'],
-                                                 constraint_def['fk_column'])
-        for constraint_name in constraint_names:
-            migrate.ForeignKeyConstraint(
-                columns=[getattr(constraint_def['table'].c,
-                                 constraint_def['fk_column'])],
-                refcolumns=[constraint_def['ref_column']],
-                name=constraint_name).drop()
-
-
-def add_constraints(constraints):
-    for constraint_def in constraints:
-
-        if constraint_def['table'].kwargs.get('mysql_engine') == 'MyISAM':
-            # Don't try to create constraint when using MyISAM because it's
-            # not supported.
-            continue
-
-        ref_col = constraint_def['ref_column']
-        ref_engine = ref_col.table.kwargs.get('mysql_engine')
-        if ref_engine == 'MyISAM':
-            # Don't try to create constraint when using MyISAM because it's
-            # not supported.
-            continue
-
-        migrate.ForeignKeyConstraint(
-            columns=[getattr(constraint_def['table'].c,
-                             constraint_def['fk_column'])],
-            refcolumns=[constraint_def['ref_column']]).create()
 
 
 def find_repo(repo_name):
@@ -198,7 +145,6 @@ def offline_sync_database_to_version(version=None):
     version. Downgrading is not supported. If version is specified, then only
     the main database migration is carried out - and the expand, migration and
     contract phases will NOT be run.
-
     """
     global USE_TRIGGERS
 
@@ -270,7 +216,6 @@ def expand_schema():
 
     This is run manually by the keystone-manage command before the first
     keystone node is migrated to the latest release.
-
     """
     validate_upgrade_order(EXPAND_REPO)
     _sync_repo(repo_name=EXPAND_REPO)
@@ -281,7 +226,6 @@ def migrate_data():
 
     This is run manually by the keystone-manage command once the keystone
     schema has been expanded for the new release.
-
     """
     validate_upgrade_order(DATA_MIGRATION_REPO)
     _sync_repo(repo_name=DATA_MIGRATION_REPO)
@@ -293,7 +237,6 @@ def contract_schema():
     This is run manually by the keystone-manage command once the keystone
     nodes have been upgraded to the latest release and will remove any old
     tables/columns that are no longer required.
-
     """
     validate_upgrade_order(CONTRACT_REPO)
     _sync_repo(repo_name=CONTRACT_REPO)
