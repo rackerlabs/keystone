@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "203d6ccd_d738c426",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2022-01-14T19:20:09Z",
+      "side": 1,
+      "message": "This produces an identical database to the sqlalchemy-migrate workflow. I\u0027ll attempt to add the logic to do the switchover in the next week or two.",
+      "revId": "a392045abe999b5032e12239a7675ed3d18a5004",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
