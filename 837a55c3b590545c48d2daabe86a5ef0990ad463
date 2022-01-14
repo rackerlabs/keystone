@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a65e57fe_a8dc9e47",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2022-01-14T19:18:01Z",
+      "side": 1,
+      "message": "note to reviewers: I\u0027ve run this tool on all changes from here on up and spotted no changes except for some cosmetic index reshuffling (mysqldump isn\u0027t stable). Feel free to validate this.",
+      "revId": "837a55c3b590545c48d2daabe86a5ef0990ad463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
