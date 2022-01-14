@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2089eb8_3dc483d3",
+        "filename": "keystone/common/sql/migrate_repo/versions/109_newton.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 742,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2022-01-14T19:23:42Z",
+      "side": 0,
+      "message": "Everything above here was copied to the initial \u0027expand_repo\u0027 migration, while the lines below went to the initial \u0027data_migration_repo\u0027 migration. You can verify this using diff.",
+      "revId": "7695d81a412ca340fa9773156000f04c0aaa592e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
