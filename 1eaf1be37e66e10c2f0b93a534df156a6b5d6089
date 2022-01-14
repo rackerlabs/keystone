@@ -16,6 +16,29 @@
       "message": "recheck",
       "revId": "1eaf1be37e66e10c2f0b93a534df156a6b5d6089",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fa516ad_1b0cb84b",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2022-01-14T18:29:32Z",
+      "side": 1,
+      "message": "This description is not consistent with the default value.",
+      "range": {
+        "startLine": 34,
+        "startChar": 47,
+        "endLine": 34,
+        "endChar": 51
+      },
+      "revId": "1eaf1be37e66e10c2f0b93a534df156a6b5d6089",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
