@@ -45,6 +45,30 @@
       },
       "revId": "a8d78e82d72b16b092229757889bb43eade3dd36",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c90dfcf3_e10a8b0c",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1415,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2022-01-18T08:56:09Z",
+      "side": 1,
+      "message": "I did a \u0027backslashreplace\u0027, since I think this will cause less issues and also enable the user to figure things out more easily if it will manifest itself an an issue.",
+      "parentUuid": "4920f810_307cf391",
+      "range": {
+        "startLine": 1415,
+        "startChar": 34,
+        "endLine": 1415,
+        "endChar": 40
+      },
+      "revId": "a8d78e82d72b16b092229757889bb43eade3dd36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
