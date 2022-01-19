@@ -24,8 +24,8 @@ import configparser
 import fixtures
 import freezegun
 import http.client
+from migrate import exceptions as migrate_exceptions
 import oslo_config.fixture
-from oslo_db.sqlalchemy import migration
 from oslo_log import log
 from oslo_serialization import jsonutils
 from oslo_upgradecheck import upgradecheck
@@ -807,7 +807,7 @@ class CliDBSyncTestCase(unit.BaseTestCase):
 
     @mock.patch('keystone.cmd.cli.upgrades.get_db_version')
     def test_db_sync_check_when_database_is_empty(self, mocked_get_db_version):
-        e = migration.exception.DBMigrationError("Invalid version")
+        e = migrate_exceptions.DatabaseNotControlledError("Invalid version")
         mocked_get_db_version.side_effect = e
         checker = cli.DbSync()
 
