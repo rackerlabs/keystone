@@ -43,6 +43,7 @@ import glob
 import os
 
 import fixtures
+from migrate.versioning import api as migrate_api
 from migrate.versioning import script
 from oslo_db import exception as db_exception
 from oslo_db.sqlalchemy import enginefacade
@@ -227,6 +228,50 @@ INITIAL_TABLE_STRUCTURE = {
         'user_id', 'group_id', 'idp_id', 'last_verified',
     ],
 }
+
+
+class Repository:
+
+    def __init__(self, engine, repo_name):
+        self.repo_name = repo_name
+
+        self.repo_path = upgrades._get_migrate_repo_path(self.repo_name)
+        self.min_version = upgrades.INITIAL_VERSION
+        self.schema_ = migrate_api.ControlledSchema.create(
+            engine, self.repo_path, self.min_version,
+        )
+        self.max_version = self.schema_.repository.version().version
+
+    def upgrade(self, version=None, current_schema=None):
+        version = version or self.max_version
+        err = ''
+        upgrade = True
+        version = migrate_api._migrate_version(
+            self.schema_, version, upgrade, err,
+        )
+        upgrades.validate_upgrade_order(
+            self.repo_name, target_repo_version=version,
+        )
+        if not current_schema:
+            current_schema = self.schema_
+        changeset = current_schema.changeset(version)
+        for ver, change in changeset:
+            self.schema_.runchange(ver, change, changeset.step)
+
+        if self.schema_.version != version:
+            raise Exception(
+                'Actual version (%s) of %s does not equal expected '
+                'version (%s)' % (
+                    self.schema_.version, self.repo_name, version,
+                ),
+            )
+
+    @property
+    def version(self):
+        with sql.session_for_read() as session:
+            return upgrades._migrate_db_version(
+                session.get_bind(), self.repo_path, self.min_version,
+            )
 
 
 class MigrateBase(
