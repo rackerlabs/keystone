@@ -16,6 +16,24 @@
       "message": "Is this ready to move from PoC to actual implementation?",
       "revId": "db7758a1456f7a3d4034aa0d1c11c19aed29e52f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33564d49_1121b183",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2022-01-21T17:03:52Z",
+      "side": 1,
+      "message": "Ok to move it as it is well tested locally, I think it will need release note and proper commit message, so if anyone is interested can own this or I can push it next week.\n\nThank you!",
+      "parentUuid": "fe9e62a9_3398d512",
+      "revId": "db7758a1456f7a3d4034aa0d1c11c19aed29e52f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
