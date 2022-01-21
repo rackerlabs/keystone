@@ -16,20 +16,28 @@ from alembic import context
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
+from keystone.common.sql import core
+from keystone.common.sql.migrations import autogen
+
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
 
-# Interpret the config file for Python logging unless we're told not to.
-# This line sets up loggers basically.
+# interpret the config file for Python logging unless we're told not to;
+# this line sets up loggers basically.
 if config.attributes.get('configure_logger', True):
     fileConfig(config.config_file_name)
 
-# add your model's MetaData object here
-# for 'autogenerate' support
-# from myapp import mymodel
-# target_metadata = mymodel.Base.metadata
-target_metadata = None
+# keystone model MetaData object
+target_metadata = core.ModelBase.metadata
+
+
+def include_name(name, type_, parent_names):
+    """Determine which tables or columns to skip.
+
+    This is used where we have migrations that are out-of-sync with the models.
+    """
+    return True
 
 
 def run_migrations_offline():
@@ -45,6 +53,8 @@ def run_migrations_offline():
     context.configure(
         url=url,
         target_metadata=target_metadata,
+        render_as_batch=True,
+        include_name=include_name,
         literal_binds=True,
         dialect_opts={"paramstyle": "named"},
     )
@@ -58,6 +68,12 @@ def run_migrations_online():
 
     In this scenario we need to create an Engine and associate a connection
     with the context.
+
+    This is modified from the default based on the below, since we want to
+    share an engine when unit testing so in-memory database testing actually
+    works.
+
+    https://alembic.sqlalchemy.org/en/latest/cookbook.html#connection-sharing
     """
     connectable = config.attributes.get('connection', None)
 
@@ -77,6 +93,8 @@ def run_migrations_online():
             connection=connection,
             target_metadata=target_metadata,
             render_as_batch=True,
+            include_name=include_name,
+            process_revision_directives=autogen.process_revision_directives,
         )
 
         with context.begin_transaction():
