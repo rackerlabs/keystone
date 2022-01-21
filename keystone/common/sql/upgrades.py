@@ -25,6 +25,7 @@ from migrate.versioning import api as migrate_api
 from migrate.versioning import repository as migrate_repository
 from oslo_db import exception as db_exception
 from oslo_log import log as logging
+from oslo_utils import fileutils
 
 from keystone.common import sql
 import keystone.conf
@@ -42,6 +43,10 @@ CONTRACT_BRANCH = 'contract'
 RELEASES = (
     'yoga',
 )
+MILESTONES = (
+    'yoga',
+)
+CURRENT_RELEASE = RELEASES[-1]
 MIGRATION_BRANCHES = (EXPAND_BRANCH, CONTRACT_BRANCH)
 VERSIONS_PATH = os.path.join(
     os.path.dirname(sql.__file__),
@@ -96,6 +101,10 @@ def _find_alembic_conf():
     config.set_main_option('version_locations', ' '.join(version_paths))
 
     return config
+
+
+def get_alembic_config():
+    return _find_alembic_conf()
 
 
 def _get_current_heads(engine, config):
