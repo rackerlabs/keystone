@@ -42,6 +42,7 @@ CONTRACT_BRANCH = 'contract'
 RELEASES = (
     'yoga',
 )
+CURRENT_RELEASE = RELEASES[-1]
 MIGRATION_BRANCHES = (EXPAND_BRANCH, CONTRACT_BRANCH)
 VERSIONS_PATH = os.path.join(
     os.path.dirname(sql.__file__),
@@ -96,6 +97,10 @@ def _find_alembic_conf():
     config.set_main_option('version_locations', ' '.join(version_paths))
 
     return config
+
+
+def get_alembic_config():
+    return _find_alembic_conf()
 
 
 def _get_current_heads(engine, config):
@@ -177,6 +182,11 @@ def _init_alembic_on_legacy_database(engine, config):
     with engine.begin() as connection:
         config.attributes['connection'] = connection
         alembic_api.stamp(config, ALEMBIC_INIT_VERSION)
+
+
+def _check_bootstrap_new_branch(branch, autogen_kwargs):
+    # version_path = os.path.join(VERSIONS_PATH, CURRENT_RELEASE, branch)
+    pass
 
 
 def _upgrade_alembic(engine, config, branch):
