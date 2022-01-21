@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "78a5e05f_39f6933f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2022-01-21T16:21:17Z",
+      "side": 1,
+      "message": "A documentation change that describes the behavior and how to fix this, possibly with a load balancer, rather than with keystone doing the load balancing would be very welcome. If this gets merged, the behavior would still be suboptimal if one server is doing because 1/n of the requests will time out.",
+      "revId": "537949124ded3ed97ceabd6b01107a2f897dd2ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "17263c95_e959bbed",
@@ -20,6 +37,23 @@
         "endLine": 35,
         "endChar": 13
       },
+      "revId": "537949124ded3ed97ceabd6b01107a2f897dd2ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "41e228c4_28218513",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2022-01-21T16:21:17Z",
+      "side": 1,
+      "message": "This isn\u0027t really testing that the list is split the correct way, or that the list is randomized. Since it is the say regular expression doing the splitting both in the code and in the test.",
       "revId": "537949124ded3ed97ceabd6b01107a2f897dd2ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
