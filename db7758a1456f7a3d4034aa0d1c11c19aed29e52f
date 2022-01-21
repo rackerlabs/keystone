@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe9e62a9_3398d512",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2022-01-21T16:55:38Z",
+      "side": 1,
+      "message": "Is this ready to move from PoC to actual implementation?",
+      "revId": "db7758a1456f7a3d4034aa0d1c11c19aed29e52f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
