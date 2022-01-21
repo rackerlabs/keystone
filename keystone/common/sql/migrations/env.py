@@ -16,6 +16,8 @@ from alembic import context
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
+from keystone.common.sql import core
+
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
@@ -29,7 +31,15 @@ if config.attributes.get('configure_logger', True):
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = None
+target_metadata = core.ModelBase.metadata
+
+
+def include_name(name, type_, parent_names):
+    """Determine which tables or columns to skip.
+
+    This is used where we have migrations that are out-of-sync with the models.
+    """
+    return True
 
 
 def run_migrations_offline():
@@ -45,6 +55,8 @@ def run_migrations_offline():
     context.configure(
         url=url,
         target_metadata=target_metadata,
+        render_as_batch=True,
+        include_name=include_name,
         literal_binds=True,
         dialect_opts={"paramstyle": "named"},
     )
@@ -58,16 +70,32 @@ def run_migrations_online():
 
     In this scenario we need to create an Engine and associate a connection
     with the context.
+
+    This is modified from the default based on the below, since we want to
+    share an engine when unit testing so in-memory database testing actually
+    works.
+
+    https://alembic.sqlalchemy.org/en/latest/cookbook.html#connection-sharing
     """
-    connectable = engine_from_config(
-        config.get_section(config.config_ini_section),
-        prefix="sqlalchemy.",
-        poolclass=pool.NullPool,
-    )
+    connectable = config.attributes.get('connection', None)
+
+    if connectable is None:
+        # only create Engine if we don't have a Connection from the outside
+        connectable = engine_from_config(
+            config.get_section(config.config_ini_section),
+            prefix="sqlalchemy.",
+            poolclass=pool.NullPool,
+        )
+
+    # when connectable is already a Connection object, calling connect() gives
+    # us a *branched connection*.
 
     with connectable.connect() as connection:
         context.configure(
-            connection=connection, target_metadata=target_metadata
+            connection=connection,
+            target_metadata=target_metadata,
+            render_as_batch=True,
+            include_name=include_name,
         )
 
         with context.begin_transaction():
