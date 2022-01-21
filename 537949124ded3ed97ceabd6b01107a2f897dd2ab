@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17263c95_e959bbed",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2022-01-21T16:15:52Z",
+      "side": 1,
+      "message": "nit: compatability",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 13
+      },
+      "revId": "537949124ded3ed97ceabd6b01107a2f897dd2ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
