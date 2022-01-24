@@ -34,6 +34,24 @@
       "parentUuid": "fe9e62a9_3398d512",
       "revId": "db7758a1456f7a3d4034aa0d1c11c19aed29e52f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a273ab03_df2a667c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2022-01-24T14:20:48Z",
+      "side": 1,
+      "message": "Also the associated spec is not merged yet, Once the spec approved I will move the code/open it for review.\n\n\nhttps://review.opendev.org/c/openstack/keystone-specs/+/818603",
+      "parentUuid": "33564d49_1121b183",
+      "revId": "db7758a1456f7a3d4034aa0d1c11c19aed29e52f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
