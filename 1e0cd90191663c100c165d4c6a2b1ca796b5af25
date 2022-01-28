@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "94152dc0_3ee1c9c2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2022-01-28T16:41:22Z",
+      "side": 1,
+      "message": "Looks good to me, I\u0027m in favor of raising the error.",
+      "revId": "1e0cd90191663c100c165d4c6a2b1ca796b5af25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "397f3915_996b5eb3",
