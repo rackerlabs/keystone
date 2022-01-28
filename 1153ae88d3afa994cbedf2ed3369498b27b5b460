@@ -22,6 +22,30 @@
       },
       "revId": "1153ae88d3afa994cbedf2ed3369498b27b5b460",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d0d0b7a_2a369234",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2022-01-28T21:42:14Z",
+      "side": 1,
+      "message": "I noticed this parameter is not a parameter in tempest but the one in keystone-tempest-plugin. I was looking at tempest only so thought this is wrong but that was wrong observation.",
+      "parentUuid": "c9b62d80_7032888d",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 60
+      },
+      "revId": "1153ae88d3afa994cbedf2ed3369498b27b5b460",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
