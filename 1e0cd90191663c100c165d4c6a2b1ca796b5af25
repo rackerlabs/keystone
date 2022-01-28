@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "397f3915_996b5eb3",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1420,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2022-01-28T16:41:13Z",
+      "side": 1,
+      "message": "This deviates from the original behavior but it\u0027s important to point out that there\u0027s some issue here that was silently failing before. Some operators may need to fix their data.",
+      "range": {
+        "startLine": 1420,
+        "startChar": 24,
+        "endLine": 1420,
+        "endChar": 29
+      },
+      "revId": "1e0cd90191663c100c165d4c6a2b1ca796b5af25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
