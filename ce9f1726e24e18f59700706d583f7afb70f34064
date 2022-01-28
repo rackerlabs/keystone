@@ -16,6 +16,23 @@
       "message": "It was released as part of Ussuri.",
       "revId": "ce9f1726e24e18f59700706d583f7afb70f34064",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd44879b_79e72d07",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2022-01-28T16:44:07Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "ce9f1726e24e18f59700706d583f7afb70f34064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
