@@ -16,6 +16,24 @@
       "message": "After this change, those tests would only apply to legacy migrations. In effect, as I understand it, we\u0027ll stop supporting online rolling upgrades, so a release note is necessary.",
       "revId": "aebd037f501ca3aa9e927f304382c231dacb2938",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af153b3c_0b6548ae",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2022-02-04T17:12:18Z",
+      "side": 1,
+      "message": "\u003e After this change, those tests would only apply to legacy migrations.\n\nFor now, but only in the short term.\n\n\u003e In effect, as I understand it, we\u0027ll stop supporting online rolling upgrades, so a release note is necessary.\n\nNope, we\u0027re not going to do anything silly like that 😄 This is just prepping for the introduction of alembic but we haven\u0027t added anything yet. In the alembic\u0027ful future, we\u0027re still going to split our migrations, albeit into branches instead of repos (we\u0027re also going to only have two branches - expand and contract - since this is what neutron does and it\u0027s perfectly okay for them). These tests just need to be updated/duplicated+reworked to test the new alembic-based migration flow. That has to happen when we integrate alembic fully. The end result should be quite similar: after all, in an alembic-based world, instead of checking if e.g. we\u0027re using destructive operations in the expand *repo*, we\u0027ll simply check if we\u0027re using these operations in the expand *branch*.\n\nHopefully this clears up any confusion.",
+      "parentUuid": "17f9e493_11331dff",
+      "revId": "aebd037f501ca3aa9e927f304382c231dacb2938",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
