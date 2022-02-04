@@ -54,6 +54,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "e2ee5c31_64329fec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2022-02-04T15:45:16Z",
+      "side": 1,
+      "message": "I changed the definition of the method to make all of the initialization values manatory. This should take care of any possible regressions.",
+      "parentUuid": "6ebced0f_2166d6c7",
+      "revId": "08ccfa98e86ff788070cb129bf7a35ca774cb811",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "3fa7e38b_462ec4fa",
         "filename": "keystone/credential/providers/fernet/core.py",
         "patchSetId": 1
@@ -65,6 +83,30 @@
       "writtenOn": "2019-12-06T04:18:38Z",
       "side": 1,
       "message": "Since credentials, tokens, and receipts all have configuration groups, we could add some level of validation into the FernetUtils constructor that requires all arguments at creation time.",
+      "range": {
+        "startLine": 99,
+        "startChar": 33,
+        "endLine": 99,
+        "endChar": 44
+      },
+      "revId": "08ccfa98e86ff788070cb129bf7a35ca774cb811",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10297984_45525901",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2022-02-04T15:45:16Z",
+      "side": 1,
+      "message": "I checked all other instantiations of FernetUtils and they all provide all of the arguments, so I\u0027m making the change.",
+      "parentUuid": "3fa7e38b_462ec4fa",
       "range": {
         "startLine": 99,
         "startChar": 33,
