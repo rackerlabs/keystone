@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17f9e493_11331dff",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2022-02-04T17:02:37Z",
+      "side": 1,
+      "message": "After this change, those tests would only apply to legacy migrations. In effect, as I understand it, we\u0027ll stop supporting online rolling upgrades, so a release note is necessary.",
+      "revId": "aebd037f501ca3aa9e927f304382c231dacb2938",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
