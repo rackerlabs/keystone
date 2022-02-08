@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b9c28e2_117a50af",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2022-02-08T16:34:01Z",
+      "side": 1,
+      "message": "I actually forgot to create an \u0027__init__.py\u0027 file in the \u0027keystone/tests/unit/common/sql\u0027 directory. Tests run though and are removed in the last patch of the series. I can post a follow-up if necessary to add this (to avoid rebasing everything)",
+      "revId": "0b906c65294ac9f0723ab9f598f7f9f4c660d667",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
