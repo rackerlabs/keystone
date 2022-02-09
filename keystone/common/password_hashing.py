@@ -57,8 +57,39 @@ def _get_hasher_from_ident(hashed):
 
 
 def verify_length_and_trunc_password(password):
-    """Verify and truncate the provided password to the max_password_length."""
-    max_length = CONF.identity.max_password_length
+    """Verify and truncate the provided password to the max_password_length.
+
+    We also need to check that the configured password hashing algorithm does
+    not silently truncate the password.  For example, passlib.hash.bcrypt does
+    this:
+    https://passlib.readthedocs.io/en/stable/lib/passlib.hash.bcrypt.html#security-issues
+
+    """
+    conf_max_length = CONF.identity.max_password_length
+    conf_hasher = CONF.identity.password_hash_algorithm
+    if conf_hasher == 'bcrypt':
+        # Setting this to 54 to ensure that all bytes are fully mixed per the
+        # passlib.hash.bcrypt security issue.
+        #  https://passlib.readthedocs.io/en/stable/lib/passlib.hash.bcrypt.html#security-issues
+        algorithm_max_length = 54
+    elif conf_hasher == 'sha512_crypt':
+        # Per the security issues for sha512_crypt (the same as sha256_crypt)
+        # the maximum password size is set to 4k by default.
+        # https://passlib.readthedocs.io/en/stable/lib/passlib.hash.sha256_crypt.html
+        algorithm_max_length = 4096
+    else:
+        algorithm_max_length = None
+
+    if algorithm_max_length is not None:
+        if algorithm_max_length < conf_max_length:
+            msg = "Truncating password to algorithm specific maximum length %d characters."
+            LOG.warning(msg, algorithm_max_length)
+            max_length = algorithm_max_length
+        else:
+            max_length = conf_max_length
+    else:
+        max_length = conf_max_length
+
     try:
         if len(password) > max_length:
             if CONF.strict_password_check:
