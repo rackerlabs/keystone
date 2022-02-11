@@ -34,6 +34,57 @@
       "parentUuid": "50f07c08_d98d72bd",
       "revId": "7df6b705f91ed1b524b3fa61ac1475b5f114e0d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "551992ad_5aedc258",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2022-02-11T17:42:13Z",
+      "side": 1,
+      "message": "there\u0027s a lot here and I\u0027m not really familiar with what we\u0027re doing here (like what\u0027s a \"Banned operation\"?)  I guess this is mostly deriving from neutrons methodology?",
+      "revId": "7df6b705f91ed1b524b3fa61ac1475b5f114e0d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2aaa3d54_f05678dc",
+        "filename": "keystone/common/sql/migrations/env.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2022-02-11T17:42:13Z",
+      "side": 1,
+      "message": "how come render as batch?  this changes things a lot",
+      "revId": "7df6b705f91ed1b524b3fa61ac1475b5f114e0d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9c14954_77fdc74e",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2022-02-11T17:42:13Z",
+      "side": 1,
+      "message": "this is from somewhere else right?  i forget the background on this",
+      "revId": "7df6b705f91ed1b524b3fa61ac1475b5f114e0d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
