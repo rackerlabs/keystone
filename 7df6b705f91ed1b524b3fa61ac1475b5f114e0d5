@@ -16,6 +16,24 @@
       "message": "-W because there are randomly failing tests here that don\u0027t fail if run individually...\n\n@Mike If you have any time next week, could you take a look at this. I\u0027m seeing randomly failing tests because the database is in a different state to what I expect it to be. It seems something is deleting my database. It\u0027s weird though, because I\u0027m using the oslo.db fixtures which should be monkey patching my global enginefacade instance with a local replacement. Tough to debug because I can\u0027t reproduce locally without running all the tests (which is slow)",
       "revId": "7df6b705f91ed1b524b3fa61ac1475b5f114e0d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "639b2799_86a2501a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2022-02-11T17:37:51Z",
+      "side": 1,
+      "message": "OK....do you get failures if you run all migration tests for MySQL ?   like the whole TestKeystoneExpandSchemaMigrationsMySQL suite",
+      "parentUuid": "50f07c08_d98d72bd",
+      "revId": "7df6b705f91ed1b524b3fa61ac1475b5f114e0d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
