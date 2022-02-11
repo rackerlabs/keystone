@@ -16,6 +16,29 @@
       "message": "Looks good but needs a release note. ",
       "revId": "f13ef5db3f2456e227cd0be32679c78725a61495",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24f82f04_5506325b",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2022-02-11T16:45:07Z",
+      "side": 1,
+      "message": "I need to check whether this will work on an upgrade.  That is to say, whether the implied role will be updated from member -\u003e manager when this is run on an existing deployment.",
+      "range": {
+        "startLine": 184,
+        "startChar": 54,
+        "endLine": 184,
+        "endChar": 74
+      },
+      "revId": "f13ef5db3f2456e227cd0be32679c78725a61495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
