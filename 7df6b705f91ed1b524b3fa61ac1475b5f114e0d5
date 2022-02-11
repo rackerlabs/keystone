@@ -89,6 +89,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbeea52f_15703c05",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2022-02-11T18:40:18Z",
+      "side": 1,
+      "message": "Blacklisting the \u0027keystone.tests.unit.common.sql.test_upgrades\u0027 (which is mostly new tests) doesn\u0027t help, unfortunately. Still seeing 6 failures locally\n\n  $ tox -e py38 -- --exclude-regex keystone.tests.unit.common.sql.test_upgrades\n\nneither does blacklisting \u0027test_sql_banned_operations\u0027:\n\n  $ tox -e py38 -- --exclude-regex keystone.tests.unit.test_sql_banned_operations",
+      "parentUuid": "b097bde9_45f970a9",
+      "revId": "7df6b705f91ed1b524b3fa61ac1475b5f114e0d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2aaa3d54_f05678dc",
