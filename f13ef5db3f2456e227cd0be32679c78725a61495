@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13ade8f8_3ffff412",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2022-02-11T16:44:40Z",
+      "side": 1,
+      "message": "Looks good but needs a release note. ",
+      "revId": "f13ef5db3f2456e227cd0be32679c78725a61495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
