@@ -53,6 +53,42 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b097bde9_45f970a9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2022-02-11T17:58:21Z",
+      "side": 1,
+      "message": "Nope. The tests I\u0027m seeing failing are from the test modules modified here, \u0027keystone/tests/unit/test_sql_upgrade.py\u0027, \u0027keystone/tests/unit/test_sql_banned_operations.py\u0027, and \u0027keystone/tests/unit/common/sql/test_upgrades.py\u0027\n\nIf I run all tests with MySQL in the name (e.g. \u0027tox -e py38 -- MySQL\u0027, which resolves to \u0027stestr run MySQL\u0027 and finds tests using test discovery) then all 64 tests run (62 pass, 2 skip).",
+      "parentUuid": "639b2799_86a2501a",
+      "revId": "7df6b705f91ed1b524b3fa61ac1475b5f114e0d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a756f24_1c782628",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2022-02-11T17:58:21Z",
+      "side": 1,
+      "message": "Mostly from neutron, yeah. The banned operation is a hangover from keystone though. You could drop that entirely (it wasn\u0027t in the previous revision but things were still failing).",
+      "parentUuid": "551992ad_5aedc258",
+      "revId": "7df6b705f91ed1b524b3fa61ac1475b5f114e0d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2aaa3d54_f05678dc",
@@ -72,6 +108,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ce8ab7b9_ffb373ed",
+        "filename": "keystone/common/sql/migrations/env.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2022-02-11T17:58:21Z",
+      "side": 1,
+      "message": "I needed this in nova to allow the auto-generated migrations to work with SQLite, which is used for most of the tests. afaict, it should have no effect for MySQL or PostgreSQL (i.e. production) backends, right?",
+      "parentUuid": "2aaa3d54_f05678dc",
+      "revId": "7df6b705f91ed1b524b3fa61ac1475b5f114e0d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e9c14954_77fdc74e",
         "filename": "keystone/common/sql/upgrades.py",
         "patchSetId": 5
@@ -83,6 +137,24 @@
       "writtenOn": "2022-02-11T17:42:13Z",
       "side": 1,
       "message": "this is from somewhere else right?  i forget the background on this",
+      "revId": "7df6b705f91ed1b524b3fa61ac1475b5f114e0d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c13b086_4a79950b",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2022-02-11T17:58:21Z",
+      "side": 1,
+      "message": "Yup, nova [1]. I know neutron does this slightly differently, though I can\u0027t recall off the top of my head how.\n\n[1] https://github.com/openstack/nova/blob/232f8275ec00767d1f100cacae4823e6f77e04ef/nova/db/migration.py#L131-L139",
+      "parentUuid": "e9c14954_77fdc74e",
       "revId": "7df6b705f91ed1b524b3fa61ac1475b5f114e0d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
