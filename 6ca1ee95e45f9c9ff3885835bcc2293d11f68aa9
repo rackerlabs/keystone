@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47d213bb_74b44e5f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2022-02-15T15:51:56Z",
+      "side": 1,
+      "message": "If we go this route, we need to update the configuration description here[0] too. This also needs a releasenote since it will impact users.\n\n[0] https://github.com/openstack/keystone/blob/master/keystone/conf/identity.py#L96-L103",
+      "revId": "6ca1ee95e45f9c9ff3885835bcc2293d11f68aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
