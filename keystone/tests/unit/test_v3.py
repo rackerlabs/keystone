@@ -12,13 +12,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from abc import ABC
 import datetime
-import uuid
-
 import http.client
 import oslo_context.context
 from oslo_serialization import jsonutils
 from testtools import matchers
+import uuid
 import webtest
 
 from keystone.common import authorization
@@ -1236,6 +1236,13 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         if remote_domain:
             environment['REMOTE_DOMAIN'] = remote_domain
         return environment
+
+
+class OAuth2RestfulTestCase(RestfulTestCase, ABC):
+    def assertValidErrorResponse(self, response):
+        resp = response.result
+        self.assertIsNotNone(resp.get('error'))
+        self.assertIsNotNone(resp.get('error_description'))
 
 
 class VersionTestCase(RestfulTestCase):
