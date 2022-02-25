@@ -67,6 +67,23 @@
       "message": "This change looks good, but it needs a release not as it is a change to the default values (yes, even though the existing default is broken and would never affect anything 😅)",
       "revId": "927aa80005b157323a9bcce4702ae39d1fb8d236",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06ee9f44_28842b0c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2022-02-25T16:54:29Z",
+      "side": 1,
+      "message": "imo this needs a release note",
+      "revId": "927aa80005b157323a9bcce4702ae39d1fb8d236",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
