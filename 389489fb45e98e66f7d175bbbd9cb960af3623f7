@@ -1,0 +1,203 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f542e22c_618755c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-02T12:09:58Z",
+      "side": 1,
+      "message": "Thank you for the patch.\n\nPlease kindly find my comments.",
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55c3e6bc_e2f5fa00",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-02T12:09:58Z",
+      "side": 1,
+      "message": "Maybe you can omit ``None`` from the second arg.",
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37cc6396_f74bf99c",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1241,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-02T12:09:58Z",
+      "side": 1,
+      "message": "Maybe I missed something but what is the purpose to use ABC though there\u0027s no abstract method?",
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b35abac_5f840d56",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-02T12:09:58Z",
+      "side": 1,
+      "message": "Maybe I missed something but what is the purpose to use ABC though there\u0027s no abstract method?",
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1354b82_411d9dd4",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-02T12:09:58Z",
+      "side": 1,
+      "message": "Why don\u0027t you use ``LOG``?",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 72
+      },
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "624d6b99_bd75f701",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-02T12:09:58Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88dbc33b_cfa7aa39",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-02T12:09:58Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "126abd1c_c3312437",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-02T12:09:58Z",
+      "side": 1,
+      "message": "These args shouldn\u0027t have a default value. If these values are omitted in a test case, other developers can\u0027t imagine what the test will check. \n\nIMO, ideally it\u0027s better to write assert* methods at l.116-117 in each test case. This style makes a test code shorter but not easy to follow for the other developers who read this code in the future. it\u0027s just a minor comment, so, we can leave them. What do you think?",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 53
+      },
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33c324aa_40210af3",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-02T12:09:58Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58b7b890_91073d33",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-02T12:09:58Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f063f43a_627dca8c",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-02T12:09:58Z",
+      "side": 1,
+      "message": "Maybe I missed something but what is the purpose to use ABC though there\u0027s no abstract method?",
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
