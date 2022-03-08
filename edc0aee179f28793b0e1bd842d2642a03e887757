@@ -1,0 +1,197 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a23139c_420c9727",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "Thank you for re-work.\n\nI confirmed all of my previous comments were solved.\nPlease kindly find some additional comments.",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a58368b0_6ace3455",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "nits.\n\nI wonder wether we should define these methods explicitly or not.\nWhen I removed these methods from AccessTokenResource and run UTs, ks_flask.ResourceBase returned 405.",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 34
+      },
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c33d376_9f39f034",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "The kind of error may have to be changed. Please see the comment at keystone/tests/unit/test_v3_oauth2.py l.270.",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e7a3f83_c1cc940d",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "Why don\u0027t you use ``client.METHOD_NOT_ALLOWED``?",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2865aa86_2ddc6254",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "Could you confirm the contents and structure of the response? please see [1][2].\n\nAt least the following points should be confirmed.\n- values of these three attributes: \u0027access_token\u0027, \u0027expires_in\u0027 and \u0027token_type\u0027 match expected values.\n- these values can be obtained from an appropriate place of a response.\n\nPlease note that if it\u0027s meaningless, for example you mocked whole response and it\u0027s obvious that the response contains the correct body, the above checks are not necessary.\n\n[1] https://specs.openstack.org/openstack/keystone-specs/specs/keystone/yoga/oauth2-client-credentials-ext.html#access-token-api\n[2] https://datatracker.ietf.org/doc/html/rfc6749#section-5.1",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b0de12b_f25b99da",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "In this case, we also need to confirm that response headers include \"WWW-Authenticate\" [1].\n\n\u003e If the client attempted to authenticate via the \"Authorization\" request header field, the authorization server MUST respond with an HTTP 401 (Unauthorized) status code and include the \"WWW-Authenticate\" response header field matching the authentication scheme used by the client.\n\nhttps://datatracker.ietf.org/doc/html/rfc6749#section-5.2",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e23fd540_9b4c519d",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85c3e95c_961945b0",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56c16477_2fb713d5",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "According to the definition of ``invalid_request`` [1], it should be:\n\n```\ndata \u003d {}\n```\n\nI think an \u0027grant_type\u0027 with empty string corresponds to the ``unsupported_grant_type`` [1].\n\n``invalid_request`` is used for the request missing a required parameter, includes an unsupported parameter value (other than grant type) [1].\n\n[1] https://datatracker.ietf.org/doc/html/rfc6749#section-5.2",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71f50842_03e9d632",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "Isn\u0027t it ``unsupported_grant_type``?? c.f., [1]\n\n\u003e unsupported_grant_type\n\u003e      The authorization grant type is not supported by the authorization server.\n\n``invalid_request`` is used for the request missing a required parameter, includes an unsupported parameter value (other than grant type) [1].\n\nPlease fix the corresponding codes, if the above is true.\n\n[1] https://datatracker.ietf.org/doc/html/rfc6749#section-5.2",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1f6cffe_31ab9a3b",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "Why don\u0027t you add a test case for ``delete`` method?",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

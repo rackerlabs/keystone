@@ -71,6 +71,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9c748b3_ff325527",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0ddb8b54_9d8a5231",
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "37cc6396_f74bf99c",
@@ -106,6 +124,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "89565627_8c4f97af",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1241,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c507dbb7_e4fd4f05",
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6b35abac_5f840d56",
@@ -137,6 +173,24 @@
       "side": 1,
       "message": "In the pycharm tool, if ABC is not used, will show the warning message \"Class OAuth2Tests must implement all abstract methods\",so ABC was added.\nNow has removed the class \u0027ABC\u0027.",
       "parentUuid": "6b35abac_5f840d56",
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48f86127_b4ace6a3",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "955be65c_10f7bc63",
       "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
@@ -188,6 +242,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "40e61bc6_b704fd70",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4bcc2833_1cf4f4f1",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 72
+      },
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "624d6b99_bd75f701",
@@ -223,6 +301,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3e94af7_8514b4b1",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "06805c71_fd788da5",
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "88dbc33b_cfa7aa39",
@@ -254,6 +350,24 @@
       "side": 1,
       "message": "Has fixed.",
       "parentUuid": "88dbc33b_cfa7aa39",
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "033f7f7a_0d25fe56",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1280efe0_7e88820b",
       "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
@@ -305,6 +419,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "38c0dd95_1e0f190b",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "Good! Thank you!",
+      "parentUuid": "14854460_7d306c3a",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 53
+      },
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "33c324aa_40210af3",
@@ -336,6 +474,24 @@
       "side": 1,
       "message": "Has fixed.",
       "parentUuid": "33c324aa_40210af3",
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7c94d04_ebd43982",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "665765ee_1e2c23f1",
       "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
@@ -375,6 +531,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8acf3ac3_7c3ebc23",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "439064b0_a0ae150e",
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f063f43a_627dca8c",
@@ -406,6 +580,24 @@
       "side": 1,
       "message": "In the pycharm tool, if ABC is not used, will show the warning message \"Class AccessTokenTests must implement all abstract methods\",so ABC was added.\nNow has removed the class \u0027ABC\u0027.",
       "parentUuid": "f063f43a_627dca8c",
+      "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b6eb4c6_78df20ac",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-08T07:26:21Z",
+      "side": 1,
+      "message": "I got it. The reason behind that error message is, as you may know, ``_get_token_id`` is an abstractmethod in RestfulTestCase. I agree with your decision that it\u0027s not necessary to implement ``_get_token_id`` as the other test classes also don\u0027t implement it. BTW, If you want to suppress the warnings, I believe the correct way is to implement ``_get_token_id`` method in your test class :)",
+      "parentUuid": "059b69aa_5d45ea9d",
       "revId": "389489fb45e98e66f7d175bbbd9cb960af3623f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
