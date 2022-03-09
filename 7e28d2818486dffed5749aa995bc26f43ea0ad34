@@ -33,6 +33,23 @@
       "message": "Thank you for re-work.\n\nI confirmed all issues have been resolved.",
       "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5afa13c_aa120ae8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-09T10:52:15Z",
+      "side": 1,
+      "message": "please check the CI failure",
+      "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
