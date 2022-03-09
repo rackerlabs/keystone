@@ -65,6 +65,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4840c90_73b940df",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-09T10:50:16Z",
+      "side": 1,
+      "message": "I understand. thanks.",
+      "parentUuid": "36e100a0_7b53730e",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 34
+      },
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6c33d376_9f39f034",
@@ -96,6 +120,24 @@
       "side": 1,
       "message": "Has fixed.",
       "parentUuid": "6c33d376_9f39f034",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aefe56f1_3d5c7831",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-09T10:50:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5588c531_b86f9aa8",
       "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
@@ -135,6 +177,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e510e34a_46c7aa81",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-09T10:50:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3b02eead_bc2973ca",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2865aa86_2ddc6254",
@@ -166,6 +226,24 @@
       "side": 1,
       "message": "Test code has been added to check whether the response contains these three attributes. Because no way to properly mock token_id was found, access_token value was not checked.",
       "parentUuid": "2865aa86_2ddc6254",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e300269c_73a007a8",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-09T10:50:16Z",
+      "side": 1,
+      "message": "\u003e access_token value was not checked\nI got it.",
+      "parentUuid": "9bf8d528_2c34b787",
       "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
@@ -205,6 +283,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "edfbce73_a0830bf2",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-09T10:50:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "54a20ee0_1529119d",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e23fd540_9b4c519d",
@@ -236,6 +332,24 @@
       "side": 1,
       "message": "Has add the test code to confirm that response headers .",
       "parentUuid": "e23fd540_9b4c519d",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "def428e7_b25bb0f2",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-09T10:50:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3e874d00_769658b6",
       "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
@@ -275,6 +389,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "52120603_a11c23fd",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-09T10:50:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9c373061_a74c6b5b",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "56c16477_2fb713d5",
@@ -306,6 +438,24 @@
       "side": 1,
       "message": "Has modified the test cases. when use data\u003d{}, return \"invalid_request\", when use data \u003d {\u0027grant_type\u0027: \u0027\u0027} return \u0027unsupported_grant_type\u0027.",
       "parentUuid": "56c16477_2fb713d5",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0fca83d0_c9d34b5f",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-09T10:50:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "55a4d3c6_4bb3b796",
       "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
@@ -345,6 +495,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fdacb7da_9608f55b",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-09T10:50:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "40b0b2e5_44784369",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f1f6cffe_31ab9a3b",
@@ -376,6 +544,24 @@
       "side": 1,
       "message": "Has added the \u0027delete\u0027 method in get OAuth2.0 Access Token API, and added the test case for \u0027delete\u0027 method.",
       "parentUuid": "f1f6cffe_31ab9a3b",
+      "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a397b638_d7ee6f7a",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-03-09T10:50:16Z",
+      "side": 1,
+      "message": "Good. thanks.",
+      "parentUuid": "e5f9b39a_9521fb89",
       "revId": "edc0aee179f28793b0e1bd842d2642a03e887757",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
