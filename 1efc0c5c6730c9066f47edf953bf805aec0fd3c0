@@ -103,6 +103,23 @@
       "message": "Build succeeded.\n\nCan you review my patch please.\n\nThank you in advance.",
       "revId": "1efc0c5c6730c9066f47edf953bf805aec0fd3c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ea83ffe_bccd6e73",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2022-03-11T16:34:29Z",
+      "side": 1,
+      "message": "Would it be possible to add unit and/or functional tests to this?  A release note would be helpful as well.",
+      "revId": "1efc0c5c6730c9066f47edf953bf805aec0fd3c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
