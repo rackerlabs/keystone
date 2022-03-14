@@ -137,6 +137,23 @@
       "message": "There can be many more authentication schemes:\nhttps://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#authentication_schemes",
       "revId": "1efc0c5c6730c9066f47edf953bf805aec0fd3c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f4ea3e2_feb43e78",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2022-03-14T19:40:28Z",
+      "side": 1,
+      "message": "Not the right approach.  As much as I would like Keystone to support BASIC_AUTH instead of the password in the body of the token request, doing it for Kerberos is not the right approach for Kerberos based clients, and sets a bad precedent.  I do not know if the SPNEGO protocol has been modified to allow for Kerberos proxying via HTTP(S) but it is at this level that things should be targetted, not at poking holes in an otherwise secure protocol...the BASIC_AUTH fallback for Kerberos set a bad example.\n\nIs there a mechanism in the python web libraries for dealing with proxied Kerberos?  If so, that is what we should use.",
+      "revId": "1efc0c5c6730c9066f47edf953bf805aec0fd3c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
