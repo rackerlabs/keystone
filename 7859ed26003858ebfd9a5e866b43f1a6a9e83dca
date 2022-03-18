@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbf32dcb_f7fb80e3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-03-18T15:16:14Z",
+      "side": 1,
+      "message": "We could probably add some tests in the utils test class [0]. Otherwise, this looks good.\n\n[0] https://github.com/openstack/keystone/blob/10057702ac361213e74472ec1d0d4e4c4a041f09/keystone/tests/unit/common/test_utils.py#L38",
+      "revId": "7859ed26003858ebfd9a5e866b43f1a6a9e83dca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49bd2f6a_81222c3d",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-03-18T15:16:14Z",
+      "side": 1,
+      "message": "We could add a log.info or log.warning here that tells the user that the value they set for max_password_length is being ignored in favor of the algorithm\u0027s defaults.",
+      "revId": "7859ed26003858ebfd9a5e866b43f1a6a9e83dca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05b3dfa5_8c695dd9",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-03-18T15:16:14Z",
+      "side": 1,
+      "message": "The algorithm maximum password length with take precedence over what a user provides via configuration. Maybe we can add that here?",
+      "revId": "7859ed26003858ebfd9a5e866b43f1a6a9e83dca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
