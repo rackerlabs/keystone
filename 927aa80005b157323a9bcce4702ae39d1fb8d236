@@ -101,6 +101,23 @@
       "message": "it also needs to be fixed in the docs here: doc/source/event_notifications.rst",
       "revId": "927aa80005b157323a9bcce4702ae39d1fb8d236",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a1e543e_c16429c0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2022-03-18T12:57:05Z",
+      "side": 1,
+      "message": "We discussed this during last weeks reviewathon. I\u0027m of the opinion that this is changing default behavior, and therefore the correct approach would be to remove the nonexistent event from the list of opt out events, rather than correct the spelling and change the default behavior.",
+      "revId": "927aa80005b157323a9bcce4702ae39d1fb8d236",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
