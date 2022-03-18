@@ -1,0 +1,10 @@
+Code-Review+1: David Wilde <dwilde@redhat.com>
+Code-Review+2: Lance Bragstad <lbragstad@redhat.com>
+Code-Review+2: Kristi Nikolla <knikolla@bu.edu>
+Workflow+1: Lance Bragstad <lbragstad@redhat.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 18 Mar 2022 17:28:05 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/833627
+Project: openstack/keystone
+Branch: refs/heads/master
