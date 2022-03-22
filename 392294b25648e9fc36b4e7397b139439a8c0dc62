@@ -16,6 +16,23 @@
       "message": "recheck - zuul race bug",
       "revId": "392294b25648e9fc36b4e7397b139439a8c0dc62",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b9e0acc_0da28748",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2022-03-22T19:43:02Z",
+      "side": 1,
+      "message": "Generated trivial patch, looks good, needs to be merged as soon as possible, so approving it now.",
+      "revId": "392294b25648e9fc36b4e7397b139439a8c0dc62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
