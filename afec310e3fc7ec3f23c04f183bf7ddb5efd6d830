@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bfa08cd_2d6fe384",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2022-03-25T15:27:45Z",
+      "side": 1,
+      "message": "There are better ways of generating an OTP but that is beside the point.  This correctly updates the example for python3.",
+      "revId": "afec310e3fc7ec3f23c04f183bf7ddb5efd6d830",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
