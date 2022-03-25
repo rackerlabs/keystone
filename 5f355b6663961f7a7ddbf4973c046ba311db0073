@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2ce581f_c477c1e0",
+        "filename": "api-ref/source/v3-ext/oauth.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2022-03-25T15:46:02Z",
+      "side": 1,
+      "message": "request_token_id is part of the path.  I\u0027m not sure it belongs in the parameters.",
+      "range": {
+        "startLine": 378,
+        "startChar": 24,
+        "endLine": 378,
+        "endChar": 40
+      },
+      "revId": "5f355b6663961f7a7ddbf4973c046ba311db0073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
