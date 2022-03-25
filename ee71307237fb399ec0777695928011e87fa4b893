@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b4369ab_9b1197a5",
+        "filename": "api-ref/source/v3/application-credentials.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2022-03-25T15:40:15Z",
+      "side": 1,
+      "message": "We probably want a better description than this?",
+      "range": {
+        "startLine": 124,
+        "startChar": 11,
+        "endLine": 124,
+        "endChar": 15
+      },
+      "revId": "ee71307237fb399ec0777695928011e87fa4b893",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
