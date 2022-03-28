@@ -18,6 +18,23 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "725ad7dd_bc4896eb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5314
+      },
+      "writtenOn": "2022-03-28T16:02:10Z",
+      "side": 1,
+      "message": "How are we handling the situation where a \u0027manager\u0027 role already exists in the deployment?  The spec says we\u0027re supposed to handle it gracefully and give the existing role precedence, but I don\u0027t see any way to do that (give existing role precedence) and also have the new role named \u0027manager\u0027.  I think we have to refrain from doing anything if a \u0027manager\u0027 role already exists, and let the operator migrate the local \u0027manager\u0027 role (and its occurrence in all policy files) to something else.  The other thing an operator could do is just never upgrade and always use their local policy files.  I don\u0027t really have any helpful suggestions other than that we need to be ready to handle this case.",
+      "revId": "f13ef5db3f2456e227cd0be32679c78725a61495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "24f82f04_5506325b",
