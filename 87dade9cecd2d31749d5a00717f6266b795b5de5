@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d2d4f6a_628032e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30534
+      },
+      "writtenOn": "2022-04-04T11:18:42Z",
+      "side": 1,
+      "message": "Hello. I would appreciate if your could take a look on this patch set and let me know you comments.\nThanks in advance. \nRegards,\nMarcin",
+      "revId": "87dade9cecd2d31749d5a00717f6266b795b5de5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
