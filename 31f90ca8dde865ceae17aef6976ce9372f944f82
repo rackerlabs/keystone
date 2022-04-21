@@ -1,0 +1,193 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa6e843e_8762ce57",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-04-21T09:26:07Z",
+      "side": 1,
+      "message": "Thank you for submitting the patch.\n\nPlease fix the points I commented on.",
+      "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "412278d5_51b448d5",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-04-21T09:26:07Z",
+      "side": 1,
+      "message": "nits.\nPlease simplify a little bit.\n\n```\nOAuth2.0 Client Credentials Grant based on `RFC6749`_ is implemented as an extension of keystone.\n```",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 42
+      },
+      "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23855975_c5cf036d",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-04-21T09:26:07Z",
+      "side": 1,
+      "message": "nits. \nPlease add a link.\n\n```\n`application credentials`_\n```\n\nPlease don\u0027t forget to add the reference.\n\n```\n.. _application credentials: https://docs.openstack.org/api-ref/identity/v3/index.html#application-credentials\n```",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 23
+      },
+      "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0a388dc_6c072137",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-04-21T09:26:07Z",
+      "side": 1,
+      "message": "This might be a good place to refer the API reference.\n\n```\nSee the `Identity API reference`_ for more information on generating OAuth2.0 access token.\n```",
+      "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d71a7091_a3c0bb7d",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-04-21T09:26:07Z",
+      "side": 1,
+      "message": "nits\n\n```\nKeystone\n```",
+      "range": {
+        "startLine": 18,
+        "startChar": 7,
+        "endLine": 18,
+        "endChar": 15
+      },
+      "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "634b7449_a727983f",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-04-21T09:26:07Z",
+      "side": 1,
+      "message": "``keystone.host`` is the domain name used by the keystone identity server.",
+      "range": {
+        "startLine": 19,
+        "startChar": 61,
+        "endLine": 20,
+        "endChar": 53
+      },
+      "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b72af4c2_9ab9e3f1",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-04-21T09:26:07Z",
+      "side": 1,
+      "message": "According to the above comment, please change this\n\n```\n`Identity API reference`\n```",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 17
+      },
+      "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12641b7c_cb087c78",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-04-21T09:26:07Z",
+      "side": 1,
+      "message": "nits.\n\n```\nEnable Keystone HTTPS Service\n```",
+      "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08d72a2c_780fad0e",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-04-21T09:26:07Z",
+      "side": 1,
+      "message": "Could you change this sentence as follows?\n\nI think an ideal way is to enable only HTTPS (without HTTP). Guiding users to enable both HTTP and HTTPS in an official document sounds a bit unreasonable. It\u0027s better to elaborate on the background of this description and to show the way to enable only HTTPS like the following.\nAlso, it\u0027s better to mention this guide assumes the use of a self-signed certificate.\n\n```\nNote that you might have to enable both HTTP and HTTPS as some other OpenStack services or third-party applications don\u0027t use OAuth2.0 and need HTTP for the authentication with the Keystone identity server. Assuming such a situation, the following part describes steps to enable both HTTP and HTTPS with a self-signed certificate. If your environment doesn\u0027t need HTTP, skip the steps {PLEASE FILL OUT}. Also, if you use PKI certificate (i.e., not self-signed certificate), skip the steps {PLEASE FILL OUT}.\n```",
+      "range": {
+        "startLine": 28,
+        "startChar": 15,
+        "endLine": 31,
+        "endChar": 6
+      },
+      "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
