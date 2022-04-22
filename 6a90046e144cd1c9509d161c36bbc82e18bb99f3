@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "65fa0904_00a135b4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-04-22T15:33:52Z",
+      "side": 1,
+      "message": "Just one suggestion on making sure we have a release note for the credential migration support.",
+      "revId": "6a90046e144cd1c9509d161c36bbc82e18bb99f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

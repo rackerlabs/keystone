@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8ba0fa0_efcbaae9",
+        "filename": "doc/source/admin/credential-encryption.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-04-22T15:33:52Z",
+      "side": 0,
+      "message": "Support for migrating credentials from pre-Newton deployments has been around for a while, although I don\u0027t think we ever set a date on if/when we\u0027d stop supporting this case.\n\nI think we should probably add this into a release note somewhere that says if you need to upgrade from a super old release, you need to make sure you handle the credential migration prior to upgrading to *this* release.",
+      "revId": "7df6b705f91ed1b524b3fa61ac1475b5f114e0d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
