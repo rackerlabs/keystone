@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47982bf3_6c261bb2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-04-22T15:38:07Z",
+      "side": 1,
+      "message": "Just a few minor comments to keep the wording consistent with other parts of the document. Otherwise, great addition. Thanks for adding it!",
+      "revId": "4ed3d5c2aeccab6617427a67a5395626ee06d2ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a2e8dee_b3ab4143",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-04-22T15:38:07Z",
+      "side": 1,
+      "message": "nit: OpenStack*",
+      "range": {
+        "startLine": 184,
+        "startChar": 62,
+        "endLine": 184,
+        "endChar": 71
+      },
+      "revId": "4ed3d5c2aeccab6617427a67a5395626ee06d2ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b45b18df_6396244f",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-04-22T15:38:07Z",
+      "side": 1,
+      "message": "nit: configuration",
+      "range": {
+        "startLine": 186,
+        "startChar": 32,
+        "endLine": 186,
+        "endChar": 38
+      },
+      "revId": "4ed3d5c2aeccab6617427a67a5395626ee06d2ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "662f8fbd_65b9a20e",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-04-22T15:38:07Z",
+      "side": 1,
+      "message": "nit: its*",
+      "range": {
+        "startLine": 186,
+        "startChar": 27,
+        "endLine": 186,
+        "endChar": 31
+      },
+      "revId": "4ed3d5c2aeccab6617427a67a5395626ee06d2ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8113b00_b9282e44",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-04-22T15:38:07Z",
+      "side": 1,
+      "message": "nit: OpenStack client",
+      "range": {
+        "startLine": 194,
+        "startChar": 67,
+        "endLine": 194,
+        "endChar": 70
+      },
+      "revId": "4ed3d5c2aeccab6617427a67a5395626ee06d2ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0757d196_380fb063",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-04-22T15:38:07Z",
+      "side": 1,
+      "message": "This is deployment/implementation specific (some deployments might accomplish this using containers).\n\nWe could leave this out and just tell them to restart the service.",
+      "range": {
+        "startLine": 214,
+        "startChar": 79,
+        "endLine": 214,
+        "endChar": 86
+      },
+      "revId": "4ed3d5c2aeccab6617427a67a5395626ee06d2ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "592bf4e8_81bd5d65",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-04-22T15:38:07Z",
+      "side": 1,
+      "message": "nit: configuration",
+      "range": {
+        "startLine": 214,
+        "startChar": 18,
+        "endLine": 214,
+        "endChar": 24
+      },
+      "revId": "4ed3d5c2aeccab6617427a67a5395626ee06d2ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
