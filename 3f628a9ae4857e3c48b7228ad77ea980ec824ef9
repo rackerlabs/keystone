@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "3f628a9ae4857e3c48b7228ad77ea980ec824ef9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c548173f_12c107c3",
+        "filename": "keystone/server/flask/application.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-04-22T15:40:47Z",
+      "side": 1,
+      "message": "Nice - looks good, but can we add a test to make sure we always log exceptions that aren\u0027t of type exception.UnexpectedError?",
+      "revId": "3f628a9ae4857e3c48b7228ad77ea980ec824ef9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
