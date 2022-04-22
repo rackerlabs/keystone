@@ -16,6 +16,29 @@
       "message": "LGTM",
       "revId": "ffd07845c930ca3c4d2f3db589609b5999b85b91",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "313135c0_b4aa00bf",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-04-22T15:27:20Z",
+      "side": 1,
+      "message": "This isn\u0027t a configuration option, just a parameter to the private method. Emitting this in an exception is going to probably be misleading to the user since they\u0027d need to read the code to understand how this works.",
+      "range": {
+        "startLine": 608,
+        "startChar": 60,
+        "endLine": 608,
+        "endChar": 71
+      },
+      "revId": "ffd07845c930ca3c4d2f3db589609b5999b85b91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
