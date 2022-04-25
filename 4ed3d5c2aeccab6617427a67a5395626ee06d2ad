@@ -41,6 +41,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6ad9c0a_962a6b86",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 30534
+      },
+      "writtenOn": "2022-04-25T08:16:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2e8dee_b3ab4143",
+      "range": {
+        "startLine": 184,
+        "startChar": 62,
+        "endLine": 184,
+        "endChar": 71
+      },
+      "revId": "4ed3d5c2aeccab6617427a67a5395626ee06d2ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b45b18df_6396244f",
@@ -87,6 +111,54 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "84f1c44d_86c16129",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 30534
+      },
+      "writtenOn": "2022-04-25T08:16:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "662f8fbd_65b9a20e",
+      "range": {
+        "startLine": 186,
+        "startChar": 27,
+        "endLine": 186,
+        "endChar": 31
+      },
+      "revId": "4ed3d5c2aeccab6617427a67a5395626ee06d2ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd0805c6_d25df25a",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 30534
+      },
+      "writtenOn": "2022-04-25T08:16:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b45b18df_6396244f",
+      "range": {
+        "startLine": 186,
+        "startChar": 32,
+        "endLine": 186,
+        "endChar": 38
+      },
+      "revId": "4ed3d5c2aeccab6617427a67a5395626ee06d2ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f8113b00_b9282e44",
@@ -100,6 +172,30 @@
       "writtenOn": "2022-04-22T15:38:07Z",
       "side": 1,
       "message": "nit: OpenStack client",
+      "range": {
+        "startLine": 194,
+        "startChar": 67,
+        "endLine": 194,
+        "endChar": 70
+      },
+      "revId": "4ed3d5c2aeccab6617427a67a5395626ee06d2ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "daff6374_52f2dd3a",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 30534
+      },
+      "writtenOn": "2022-04-25T08:16:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f8113b00_b9282e44",
       "range": {
         "startLine": 194,
         "startChar": 67,
@@ -146,6 +242,54 @@
       "writtenOn": "2022-04-22T15:38:07Z",
       "side": 1,
       "message": "nit: configuration",
+      "range": {
+        "startLine": 214,
+        "startChar": 18,
+        "endLine": 214,
+        "endChar": 24
+      },
+      "revId": "4ed3d5c2aeccab6617427a67a5395626ee06d2ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cc3034b_eb55b6cd",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 30534
+      },
+      "writtenOn": "2022-04-25T08:16:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0757d196_380fb063",
+      "range": {
+        "startLine": 214,
+        "startChar": 79,
+        "endLine": 214,
+        "endChar": 86
+      },
+      "revId": "4ed3d5c2aeccab6617427a67a5395626ee06d2ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf2fcbf8_ec10b98f",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 30534
+      },
+      "writtenOn": "2022-04-25T08:16:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "592bf4e8_81bd5d65",
       "range": {
         "startLine": 214,
         "startChar": 18,
