@@ -33,6 +33,24 @@
       "message": "Nice addition, we actually deployed a change like this yesterday in our cloud.",
       "revId": "3856cbf10d4d19b9d7797d600ef096b0c04aaedb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6f351c2_5bb78ba7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30534
+      },
+      "writtenOn": "2022-04-26T08:34:18Z",
+      "side": 1,
+      "message": "Thank you!",
+      "parentUuid": "419aed3e_edb39767",
+      "revId": "3856cbf10d4d19b9d7797d600ef096b0c04aaedb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
