@@ -67,6 +67,29 @@
       "message": "recheck",
       "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bf68cf7_00ab1bf0",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2022-04-28T13:09:24Z",
+      "side": 1,
+      "message": "When would you run into this? All the parameters provided to keystone are correct, yet the user would be receiving a \"Bad Request\".",
+      "range": {
+        "startLine": 375,
+        "startChar": 7,
+        "endLine": 379,
+        "endChar": 41
+      },
+      "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
