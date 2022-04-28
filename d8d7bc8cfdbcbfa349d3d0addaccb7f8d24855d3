@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c25212d_356c7039",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33786
+      },
+      "writtenOn": "2022-04-28T02:53:35Z",
+      "side": 1,
+      "message": "Hi, the URL in note is no longer accessible. Whether we need to modify it even if we need keep it in an older version?",
+      "revId": "d8d7bc8cfdbcbfa349d3d0addaccb7f8d24855d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
