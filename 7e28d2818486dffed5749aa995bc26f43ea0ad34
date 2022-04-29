@@ -69,6 +69,74 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5099f710_93c3a356",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2022-04-29T12:59:16Z",
+      "side": 1,
+      "message": "Code looks pretty good.  A few questions:\n\nTHe use of the basic Auth type seems to imply that users won\u0027t be able to initialize the workflow using Federated credentials.  Is this the case, or just an aspect of the OAUTH2.0 spec?  If so, why is the Keystone Auth type returned on a 401?\n\nIs it possible to move all of the exception code into keystone.exceptions?  It will keep all of the internationalizable strings in a single file, easier for translator review.  Not a huge problem if not.\n\n",
+      "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7935927_1b193246",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2022-04-29T12:59:16Z",
+      "side": 1,
+      "message": "These should use keystone.expection subclasses and not be explicit strings here.",
+      "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d2b5528_5a9177a9",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2022-04-29T12:59:16Z",
+      "side": 1,
+      "message": "Does this mean that none of the Federated APIs will work for authentication when working with OAUTH2.0?",
+      "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed4d511d_2b6ccaa8",
+        "filename": "keystone/oauth2/handlers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2022-04-29T12:59:16Z",
+      "side": 1,
+      "message": "I thought you were requiring basic Auth?",
+      "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7bf68cf7_00ab1bf0",
