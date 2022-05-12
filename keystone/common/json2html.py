@@ -120,7 +120,7 @@ class Json2Html:
         """
         if type(json_input) in text_types:
             if self.escape:
-                if (json_input.startswith("https:")):
+                if (json_input.startswith("http")):
                    return "<a href=\"" + json_input+ "\">" + json_input + "</a>"
                 else:
                    return text(json_input)
