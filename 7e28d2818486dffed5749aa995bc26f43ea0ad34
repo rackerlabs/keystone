@@ -122,6 +122,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "11fb83f4_b31dd55d",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 33920
+      },
+      "writtenOn": "2022-05-18T01:14:27Z",
+      "side": 1,
+      "message": "The OAuth 2.0 API is intended to support basic authentication only.",
+      "parentUuid": "2d2b5528_5a9177a9",
+      "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ed4d511d_2b6ccaa8",
         "filename": "keystone/oauth2/handlers.py",
         "patchSetId": 9
@@ -139,6 +157,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5d88dad8_5ccf8b89",
+        "filename": "keystone/oauth2/handlers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 33920
+      },
+      "writtenOn": "2022-05-18T01:14:27Z",
+      "side": 1,
+      "message": "Yes. Basic authentication is required.\nSince the authentication information in basic is keystone\u0027s application, the authentication url here will match the url of the existing keystone.",
+      "parentUuid": "ed4d511d_2b6ccaa8",
+      "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7bf68cf7_00ab1bf0",
         "filename": "keystone/tests/unit/test_v3_oauth2.py",
         "patchSetId": 9
@@ -150,6 +186,30 @@
       "writtenOn": "2022-04-28T13:09:24Z",
       "side": 1,
       "message": "When would you run into this? All the parameters provided to keystone are correct, yet the user would be receiving a \"Bad Request\".",
+      "range": {
+        "startLine": 375,
+        "startChar": 7,
+        "endLine": 379,
+        "endChar": 41
+      },
+      "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a87542a6_51f95ddf",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 33920
+      },
+      "writtenOn": "2022-05-18T01:14:27Z",
+      "side": 1,
+      "message": "This error does not occur if the source code of an existing API called with the OAuth 2.0 API is correct.\nThis is the source for unit testing, and is intended to test whether OAuth2.0 API can catch and handle errors in the called existing API.\nDuring unit testing, we randomly selected one to simulate an error in an existing API.",
+      "parentUuid": "7bf68cf7_00ab1bf0",
       "range": {
         "startLine": 375,
         "startChar": 7,
