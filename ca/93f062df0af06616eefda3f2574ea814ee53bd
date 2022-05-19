@@ -1,0 +1,8 @@
+Code-Review+2: Douglas Mendizábal <dmendiza@redhat.com>
+Workflow+1: Douglas Mendizábal <dmendiza@redhat.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 19 May 2022 19:17:22 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/827961
+Project: openstack/keystone
+Branch: refs/heads/stable/xena
