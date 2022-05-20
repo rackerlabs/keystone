@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc9be5d9_a42c9dcb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11805
+      },
+      "writtenOn": "2022-05-20T14:24:46Z",
+      "side": 1,
+      "message": "charm-recheck\n\nFor some reason I don\u0027t have the option to +2 wf+1. Possibly because canonical CI didn\u0027t run?",
+      "revId": "fc62bbc06a32b5846e81e405c3c08a3df2006259",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
