@@ -140,6 +140,40 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f5f286f9_fe52d3d5",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2022-05-27T14:56:34Z",
+      "side": 1,
+      "message": "Since it\u0027s an undefined error, I wouldn\u0027t include it in the response, since it might leak information.",
+      "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7eabd605_85d9ce0e",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2022-05-27T14:56:34Z",
+      "side": 1,
+      "message": "LOG.exception should be used, to log full traceback, so that it\u0027s easier to debug or report a bug.",
+      "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ed4d511d_2b6ccaa8",
         "filename": "keystone/oauth2/handlers.py",
         "patchSetId": 9
