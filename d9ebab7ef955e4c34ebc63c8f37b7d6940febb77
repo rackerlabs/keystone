@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f9212d8_ba6136e5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-05-27T15:44:26Z",
+      "side": 1,
+      "message": "Can you provide a bug report that describes how this is actually broken?",
+      "revId": "d9ebab7ef955e4c34ebc63c8f37b7d6940febb77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "82818f2d_a4f396c6",
@@ -32,6 +49,23 @@
       "side": 1,
       "message": "\u003e Can you give some info about the scenario that caused the error to appear?",
       "parentUuid": "82818f2d_a4f396c6",
+      "revId": "d9ebab7ef955e4c34ebc63c8f37b7d6940febb77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4e37719_9c3b3c11",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-05-27T15:44:26Z",
+      "side": 1,
+      "message": "This needs a unit test along with justification for how this fixes the issue.",
       "revId": "d9ebab7ef955e4c34ebc63c8f37b7d6940febb77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
