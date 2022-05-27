@@ -16,6 +16,23 @@
       "message": "On my latest fedora env, I can run python3 executable and I get Python 3.10. It\u0027s a new Fedora 35 install.",
       "revId": "3326025313d4547a735435ac1832778cd276512d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85aa4787_ee663ba5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2022-05-27T15:39:04Z",
+      "side": 1,
+      "message": "This breaks the older jobs that use ubuntu-focal. It might be better to wait for 3.10 to get PEP8 support and leave the interpreter as is.",
+      "revId": "3326025313d4547a735435ac1832778cd276512d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
