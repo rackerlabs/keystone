@@ -50,6 +50,23 @@
       "message": "recheck grenade job failed to install dependencies",
       "revId": "d4062b2c14715a9d98b631c7b54e865b29b83783",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0e8e2a1_0e4af7b8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-05-27T15:09:33Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "d4062b2c14715a9d98b631c7b54e865b29b83783",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
