@@ -67,6 +67,23 @@
       "message": "recheck",
       "revId": "d4062b2c14715a9d98b631c7b54e865b29b83783",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "582f83e3_894de02a",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1414,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2022-05-27T15:12:33Z",
+      "side": 1,
+      "message": "We have a utility method for this above (utf8_decode). Can we reuse that here?",
+      "revId": "d4062b2c14715a9d98b631c7b54e865b29b83783",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
