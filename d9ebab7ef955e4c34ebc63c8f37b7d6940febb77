@@ -16,6 +16,24 @@
       "message": "Can you give some info about the scenario that caused the error to appear?",
       "revId": "d9ebab7ef955e4c34ebc63c8f37b7d6940febb77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2dbfd775_a9741ece",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2022-05-27T15:43:33Z",
+      "side": 1,
+      "message": "\u003e Can you give some info about the scenario that caused the error to appear?",
+      "parentUuid": "82818f2d_a4f396c6",
+      "revId": "d9ebab7ef955e4c34ebc63c8f37b7d6940febb77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
