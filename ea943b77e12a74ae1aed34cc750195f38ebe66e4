@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31215b7e_4cdc3753",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 28332
+      },
+      "writtenOn": "2022-05-31T16:00:46Z",
+      "side": 1,
+      "message": "oops, I will drop this code comment in next spin",
+      "revId": "ea943b77e12a74ae1aed34cc750195f38ebe66e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
