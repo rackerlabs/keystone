@@ -839,6 +839,33 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         ]
         self.assertEqual(expected_projects, values['projects'])
 
+    def test_mapping_projects_json(self):
+        mapping = mapping_fixtures.MAPPING_PROJECTS_JSON
+        assertion = mapping_fixtures.EMPLOYEE_JSON_ASSERTION
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
+        values = rp.process(assertion)
+
+        self.assertValidMappedUserObject(values)
+        expected_user = mapping_fixtures.EMPLOYEE_JSON_ASSERTION['UserName']
+        self.assertEqual(expected_user, values['user']['name'])
+
+        expected_projects = [
+            {
+                "name": "Production",
+                "roles": [{"name": "observer"}]
+            },
+            {
+                "name": "Staging",
+                "roles": [{"name": "member"}]
+            },
+            {
+                "name": "Common",
+                "domain": {"id": "default"},
+                "roles": [{"name": "member"}]
+            }
+        ]
+        self.assertEqual(expected_projects, values['projects'])
+
     def test_rule_engine_for_groups_and_domain(self):
         """Should return user's groups and group domain.
 

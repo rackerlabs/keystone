@@ -16,6 +16,7 @@ import ast
 import re
 
 import flask
+import json
 import jsonschema
 from oslo_config import cfg
 from oslo_log import log
@@ -54,6 +55,28 @@ ROLE_PROPERTIES = {
     }
 }
 
+DOMAIN_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "id": {"type": "string"},
+        "name": {"type": "string"}
+    },
+    "additionalProperties": False
+}
+
+PROJECTS_SCHEMA = {
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": ["name", "roles"],
+        "additionalProperties": False,
+        "properties": {
+            "name": {"type": "string"},
+            "roles": ROLE_PROPERTIES,
+            "domain": DOMAIN_SCHEMA
+        }
+    }
+}
 
 MAPPING_SCHEMA = {
     "type": "object",
@@ -90,17 +113,9 @@ MAPPING_SCHEMA = {
                                     },
                                     "additionalProperties": False
                                 },
-                                "projects": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "required": ["name", "roles"],
-                                        "additionalProperties": False,
-                                        "properties": {
-                                            "name": {"type": "string"},
-                                            "roles": ROLE_PROPERTIES
-                                        }
-                                    }
+                                "projects": PROJECTS_SCHEMA,
+                                "projects_json": {
+                                    "type": "string"
                                 },
                                 "group": {
                                     "type": "object",
@@ -212,14 +227,7 @@ MAPPING_SCHEMA = {
                 }
             }
         },
-        "domain": {
-            "type": "object",
-            "properties": {
-                "id": {"type": "string"},
-                "name": {"type": "string"}
-            },
-            "additionalProperties": False
-        },
+        "domain": DOMAIN_SCHEMA,
         "group_by_id": {
             "type": "object",
             "properties": {
@@ -655,6 +663,22 @@ class RuleProcessor(object):
             if user_type is None:
                 user['type'] = UserType.EPHEMERAL
 
+        def extract_projects_json(projects_json):
+            """extract and validate projects json."""
+            try:
+                proj = jsonutils.loads(projects_json)
+            except json.decoder.JSONDecodeError as e:
+                msg = _("Error decoding 'projects_json':  %s ") % e
+                raise exception.ValidationError(msg)
+
+            validator = jsonschema.Draft4Validator(PROJECTS_SCHEMA)
+            errors = validator.iter_errors(proj)
+            msg = '\n'.join([err.message for err in errors])
+            if msg:
+                LOG.error("Error validating 'projects_json': [%s].", msg)
+                raise exception.ValidationError(msg)
+            return proj
+
         # initialize the group_ids as a set to eliminate duplicates
         user = {}
         group_ids = set()
@@ -705,7 +729,11 @@ class RuleProcessor(object):
                 except (ValueError, SyntaxError):
                     group_ids.update([identity_value['group_ids']])
             if 'projects' in identity_value:
-                projects = identity_value['projects']
+                projects.extend(identity_value['projects'])
+
+            if 'projects_json' in identity_value:
+                projects.extend(extract_projects_json(
+                    identity_value['projects_json']))
 
         normalize_user(user)
 
