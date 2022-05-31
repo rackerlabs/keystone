@@ -3631,6 +3631,42 @@ class ShadowMappingTests(test_v3.RestfulTestCase, FederatedSetupMixin):
                 self.expected_results[project_name], roles[0]['name']
             )
 
+    def test_shadow_mapping_create_projects_json_role_assignments(self):
+        expected_results = {
+            'Production': {'role': 'observer',
+                           'domain': self.idp['domain_id']},
+            'Staging': {'role': 'member',
+                        'domain': self.idp['domain_id']},
+            'Common': {'role': 'member',
+                       'domain': 'Default'}
+        }
+        PROVIDERS.federation_api.update_mapping(
+            self.mapping['id'],
+            mapping_fixtures.MAPPING_PROJECTS_JSON
+        )
+        response = self._issue_unscoped_token(
+            assertion='EMPLOYEE_JSON_ASSERTION')
+        self.assertValidMappedUser(
+            render_token.render_token_response_from_model(response)['token'])
+        unscoped_token = response.id
+        response = self.get('/auth/projects', token=unscoped_token)
+        projects = response.json_body['projects']
+        for project in projects:
+            scope = self._scope_request(
+                unscoped_token, 'project', project['id']
+            )
+            response = self.v3_create_token(scope)
+            token = response.json_body['token']
+            project_name = token['project']['name']
+            roles = token['roles']
+            project_domain = token['project']['domain']['name']
+            self.assertEqual(
+                expected_results[project_name]['role'], roles[0]['name']
+            )
+            self.assertEqual(
+                expected_results[project_name]['domain'], project_domain
+            )
+
     def test_shadow_mapping_does_not_create_roles(self):
         # If a role required by the mapping does not exist, then we should fail
         # the mapping since shadow mapping currently does not support creating
