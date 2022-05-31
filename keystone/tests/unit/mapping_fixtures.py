@@ -1577,6 +1577,37 @@ EMPLOYEE_ASSERTION = {
     'orgPersonType': 'Employee;BuildingX'
 }
 
+EMPLOYEE_JSON_ASSERTION = {
+    'UserName': 'tbo',
+    'Projects': '''[
+        {
+          "name": "Production",
+          "roles": [
+            {
+              "name": "observer"
+            }
+          ]
+        },
+        {
+          "name": "Staging",
+          "roles": [
+            {
+              "name": "member"
+            }
+          ]
+        },
+        {
+          "name": "Common",
+          "domain": {"id": "default"},
+          "roles": [
+            {
+              "name": "member"
+            }
+          ]
+        }
+     ]'''
+}
+
 EMPLOYEE_PARTTIME_ASSERTION = {
     'Email': 'tim@example.com',
     'UserName': 'tbo',
@@ -1811,6 +1842,31 @@ MAPPING_PROJECTS = {
                     "any_one_of": [
                         "Employee"
                     ]
+                }
+            ]
+        }
+    ]
+}
+
+MAPPING_PROJECTS_JSON = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "user": {
+                        "name": "{0}"
+                    }
+                },
+                {
+                    "projects_json": "{1}"
+                }
+            ],
+            "remote": [
+                {
+                    "type": "UserName"
+                },
+                {
+                    "type": "Projects",
                 }
             ]
         }
