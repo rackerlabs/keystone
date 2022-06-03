@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1280f4d_fc68b211",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2022-06-03T15:11:21Z",
+      "side": 1,
+      "message": "Hello Alexandre,\n\nIt looks like the work in this patch is related to [1].  If that is the case can you re-propose [1] for this cycle?  We need to get that merged before we\u0027re able to get this in.  Also, this patch will need documentation as well as a release note.\n\nThanks,\n/Dave\n\n[1]: https://review.opendev.org/c/openstack/keystone-specs/+/748748/8/specs/keystone/wallaby/federated-identity-mapping-support-project-json-definition.rst ",
+      "revId": "695aa21605203157775411cea4e77eca52fdf5f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
