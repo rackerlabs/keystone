@@ -16,6 +16,23 @@
       "message": "Hello Alexandre,\n\nIt looks like the work in this patch is related to [1].  If that is the case can you re-propose [1] for this cycle?  We need to get that merged before we\u0027re able to get this in.  Also, this patch will need documentation as well as a release note.\n\nThanks,\n/Dave\n\n[1]: https://review.opendev.org/c/openstack/keystone-specs/+/748748/8/specs/keystone/wallaby/federated-identity-mapping-support-project-json-definition.rst ",
       "revId": "695aa21605203157775411cea4e77eca52fdf5f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d333363e_91216cf1",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2022-06-03T15:12:41Z",
+      "side": 1,
+      "message": "What\u0027s the purpose of this change?\n\nI see that you moved the functions outside, but I don\u0027t see them being used in any other place.",
+      "revId": "695aa21605203157775411cea4e77eca52fdf5f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
