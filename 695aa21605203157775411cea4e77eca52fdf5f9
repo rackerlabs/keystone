@@ -33,6 +33,24 @@
       "message": "What\u0027s the purpose of this change?\n\nI see that you moved the functions outside, but I don\u0027t see them being used in any other place.",
       "revId": "695aa21605203157775411cea4e77eca52fdf5f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b72538d8_fd3ff425",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 28595
+      },
+      "writtenOn": "2022-06-06T08:20:26Z",
+      "side": 1,
+      "message": "It is just to avoid tox issue. The function where this code was located will be too complex if we had more line of code in it, so we choose to move inner function outside to not hit that issue.",
+      "parentUuid": "d333363e_91216cf1",
+      "revId": "695aa21605203157775411cea4e77eca52fdf5f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
