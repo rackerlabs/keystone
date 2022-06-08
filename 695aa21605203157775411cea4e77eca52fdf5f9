@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "508e91ef_d6769de4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28332
+      },
+      "writtenOn": "2022-06-08T12:16:44Z",
+      "side": 1,
+      "message": "Thanks David for reviewing this, adding docs and release notes makes sense.\nI will review the specs and repropose something soon.",
+      "parentUuid": "c1280f4d_fc68b211",
+      "revId": "695aa21605203157775411cea4e77eca52fdf5f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d333363e_91216cf1",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 3
@@ -49,6 +67,24 @@
       "side": 1,
       "message": "It is just to avoid tox issue. The function where this code was located will be too complex if we had more line of code in it, so we choose to move inner function outside to not hit that issue.",
       "parentUuid": "d333363e_91216cf1",
+      "revId": "695aa21605203157775411cea4e77eca52fdf5f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47d4cd38_11cb8b13",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 28332
+      },
+      "writtenOn": "2022-06-08T12:16:44Z",
+      "side": 1,
+      "message": "Yes, I just added 5 lines in create_projects_from_mapping involving function \"too complex\" pep8 issue on handle_unscopped_token, so I decide to move both inner.\nValidate_shadow_mapping remain unchanged.",
+      "parentUuid": "b72538d8_fd3ff425",
       "revId": "695aa21605203157775411cea4e77eca52fdf5f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
