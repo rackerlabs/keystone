@@ -210,6 +210,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "73058987_dd62c7b4",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 33920
+      },
+      "writtenOn": "2022-06-14T09:44:09Z",
+      "side": 1,
+      "message": "Fix to include string instead of str (error). (Patchset 13)",
+      "parentUuid": "f5f286f9_fe52d3d5",
+      "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7eabd605_85d9ce0e",
         "filename": "keystone/api/os_oauth2.py",
         "patchSetId": 9
@@ -221,6 +239,24 @@
       "writtenOn": "2022-05-27T14:56:34Z",
       "side": 1,
       "message": "LOG.exception should be used, to log full traceback, so that it\u0027s easier to debug or report a bug.",
+      "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6641617_24b6d5ce",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 33920
+      },
+      "writtenOn": "2022-06-14T09:44:09Z",
+      "side": 1,
+      "message": "Fix to use LOG.exception instead of LOG.warn. (Patchset 13)",
+      "parentUuid": "7eabd605_85d9ce0e",
       "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
