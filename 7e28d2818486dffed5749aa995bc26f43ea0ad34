@@ -103,6 +103,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e614cc57_fca6d2c6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-06-14T00:43:41Z",
+      "side": 1,
+      "message": "Sorry for my late reply.\nIt\u0027s not WIP as the spec going to be changing is not related to this patch.\nThe spec corresponding to this patch is https://review.opendev.org/c/openstack/keystone-specs/+/813152 that was originally proposed to Yoga release.",
+      "parentUuid": "1efefcd3_c9793ea5",
+      "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f7935927_1b193246",
