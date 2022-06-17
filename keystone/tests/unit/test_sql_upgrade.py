@@ -232,12 +232,12 @@ INITIAL_TABLE_STRUCTURE = {
 class Repository:
 
     def __init__(self, engine, repo_name):
+        self.engine = engine
         self.repo_name = repo_name
-
         self.repo_path = upgrades._get_migrate_repo_path(self.repo_name)
         self.min_version = upgrades.INITIAL_VERSION
         self.schema_ = migrate_api.ControlledSchema.create(
-            engine, self.repo_path, self.min_version,
+            self.engine, self.repo_path, self.min_version,
         )
         self.max_version = self.schema_.repository.version().version
 
@@ -249,7 +249,7 @@ class Repository:
             self.schema_, version, upgrade, err,
         )
         upgrades._validate_upgrade_order(
-            self.repo_name, target_repo_version=version,
+            self.engine, self.repo_name, target_repo_version=version,
         )
         if not current_schema:
             current_schema = self.schema_
@@ -285,7 +285,6 @@ class MigrateBase(
         self.useFixture(ksfixtures.WarningsFixture())
 
         self.engine = enginefacade.writer.get_engine()
-        self.sessionmaker = enginefacade.writer.get_sessionmaker()
 
         # NOTE(dstanek): Clear out sqlalchemy-migrate's script cache to allow
         # us to have multiple repos (expand, migrate, contract) where the
@@ -294,15 +293,9 @@ class MigrateBase(
 
         # NOTE(dstanek): SQLAlchemy's migrate makes some assumptions in the
         # SQLite driver about the lack of foreign key enforcement.
-        database.initialize_sql_session(self.engine.url,
-                                        enforce_sqlite_fks=False)
-
-        # Override keystone's context manager to be oslo.db's global context
-        # manager.
-        sql.core._TESTING_USE_GLOBAL_CONTEXT_MANAGER = True
-        self.addCleanup(setattr,
-                        sql.core, '_TESTING_USE_GLOBAL_CONTEXT_MANAGER', False)
-        self.addCleanup(sql.cleanup)
+        database.initialize_sql_session(
+            self.engine.url, enforce_sqlite_fks=False,
+        )
 
         self.repos = {
             upgrades.EXPAND_BRANCH: Repository(
@@ -530,9 +523,9 @@ class MigrationValidation(MigrateBase, unit.TestCase):
         self.migrate(upgrades.INITIAL_VERSION + 1)
         self.contract(upgrades.INITIAL_VERSION + 1)
         for version in (
-            upgrades.get_db_version('expand'),
-            upgrades.get_db_version('data_migration'),
-            upgrades.get_db_version('contract'),
+            upgrades.get_db_version(self.engine, 'expand'),
+            upgrades.get_db_version(self.engine, 'data_migration'),
+            upgrades.get_db_version(self.engine, 'contract'),
         ):
             self.assertEqual(upgrades.INITIAL_VERSION + 1, version)
 
@@ -565,7 +558,7 @@ class FullMigration(MigrateBase, unit.TestCase):
         # If the expand repository doesn't exist yet, then we need to make sure
         # we advertise that `--expand` must be run first.
         log_info = self.useFixture(fixtures.FakeLogger(level=log.INFO))
-        status = checker.check_db_sync_status()
+        status = checker.check_db_sync_status(self.engine)
         self.assertIn("keystone-manage db_sync --expand", log_info.output)
         self.assertEqual(status, 2)
 
@@ -573,7 +566,7 @@ class FullMigration(MigrateBase, unit.TestCase):
         # that needs to run
         self.expand(upgrades.INITIAL_VERSION + 1)
         log_info = self.useFixture(fixtures.FakeLogger(level=log.INFO))
-        status = checker.check_db_sync_status()
+        status = checker.check_db_sync_status(self.engine)
         self.assertIn("keystone-manage db_sync --expand", log_info.output)
         self.assertEqual(status, 2)
 
@@ -581,7 +574,7 @@ class FullMigration(MigrateBase, unit.TestCase):
         # migrate
         self.expand(latest_version)
         log_info = self.useFixture(fixtures.FakeLogger(level=log.INFO))
-        status = checker.check_db_sync_status()
+        status = checker.check_db_sync_status(self.engine)
         self.assertIn("keystone-manage db_sync --migrate", log_info.output)
         self.assertEqual(status, 3)
 
@@ -589,7 +582,7 @@ class FullMigration(MigrateBase, unit.TestCase):
         # contract
         self.migrate(latest_version)
         log_info = self.useFixture(fixtures.FakeLogger(level=log.INFO))
-        status = checker.check_db_sync_status()
+        status = checker.check_db_sync_status(self.engine)
         self.assertIn("keystone-manage db_sync --contract", log_info.output)
         self.assertEqual(status, 4)
 
@@ -597,7 +590,7 @@ class FullMigration(MigrateBase, unit.TestCase):
         # the same version
         self.contract(latest_version)
         log_info = self.useFixture(fixtures.FakeLogger(level=log.INFO))
-        status = checker.check_db_sync_status()
+        status = checker.check_db_sync_status(self.engine)
         self.assertIn("All db_sync commands are upgraded", log_info.output)
         self.assertEqual(status, 0)
 

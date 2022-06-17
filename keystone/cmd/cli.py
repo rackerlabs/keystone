@@ -274,10 +274,10 @@ class DbSync(BaseApp):
         return parser
 
     @classmethod
-    def check_db_sync_status(cls):
+    def check_db_sync_status(cls, engine):
         status = 0
         try:
-            expand_version = upgrades.get_db_version(branch='expand')
+            expand_version = upgrades.get_db_version(engine, branch='expand')
         except db_exception.DBMigrationError:
             LOG.info(
                 'Your database is not currently under version '
@@ -288,12 +288,15 @@ class DbSync(BaseApp):
 
         try:
             migrate_version = upgrades.get_db_version(
-                branch='data_migration')
+                engine, branch='data_migration',
+            )
         except db_exception.DBMigrationError:
             migrate_version = 0
 
         try:
-            contract_version = upgrades.get_db_version(branch='contract')
+            contract_version = upgrades.get_db_version(
+                engine, branch='contract',
+            )
         except db_exception.DBMigrationError:
             contract_version = 0
 
@@ -342,17 +345,20 @@ class DbSync(BaseApp):
 
     @staticmethod
     def main():
+        with sql.session_for_read() as session:
+            engine = session.get_bind()
+
         if CONF.command.check:
-            sys.exit(DbSync.check_db_sync_status())
+            sys.exit(DbSync.check_db_sync_status(engine))
         elif CONF.command.expand:
-            upgrades.expand_schema()
+            upgrades.expand_schema(engine)
         elif CONF.command.migrate:
-            upgrades.migrate_data()
+            upgrades.migrate_data(engine)
         elif CONF.command.contract:
-            upgrades.contract_schema()
+            upgrades.contract_schema(engine)
         else:
             upgrades.offline_sync_database_to_version(
-                CONF.command.version)
+                engine, CONF.command.version)
 
 
 class DbVersion(BaseApp):

@@ -20,9 +20,11 @@ from keystone.tests.unit.identity.backends import test_base as id_test_base
 from keystone.tests.unit.ksfixtures import database
 
 
-class TestIdentityDriver(db_fixtures.OpportunisticDBTestMixin,
-                         test_base.BaseTestCase,
-                         id_test_base.IdentityDriverTests):
+class TestIdentityDriver(
+    db_fixtures.OpportunisticDBTestMixin,
+    test_base.BaseTestCase,
+    id_test_base.IdentityDriverTests,
+):
 
     expected_is_domain_aware = True
     expected_default_assignment_driver = 'sql'
@@ -30,21 +32,25 @@ class TestIdentityDriver(db_fixtures.OpportunisticDBTestMixin,
     expected_generates_uuids = True
 
     def setUp(self):
-        super(TestIdentityDriver, self).setUp()
-        self.engine = enginefacade.writer.get_engine()
-        self.sessionmaker = enginefacade.writer.get_sessionmaker()
+        super().setUp()
+
+        # NOTE(stephenfin): this injects a new factory for each test and cleans
+        # it up at then end of the test case. This way we can let each test
+        # configure the factory so we can avoid having a global flag guarding
+        # against factory re-configuration
+        new_engine = enginefacade.transaction_context()
+        new_engine.configure(sqlite_fk=True)
+        self.useFixture(
+            db_fixtures.ReplaceEngineFacadeFixture(
+                sql.context_manager, new_engine,
+            )
+        )
 
         # Set keystone's connection URL to be the test engine's url. Close
         # sqlite FK to avoid conflicting with sql upgrade test.
-        database.initialize_sql_session(self.engine.url,
-                                        enforce_sqlite_fks=False)
+        database.initialize_sql_session(enforce_sqlite_fks=False)
 
-        # Override keystone's context manager to be oslo.db's global context
-        # manager.
-        sql.core._TESTING_USE_GLOBAL_CONTEXT_MANAGER = True
-        self.addCleanup(setattr,
-                        sql.core, '_TESTING_USE_GLOBAL_CONTEXT_MANAGER', False)
-        self.addCleanup(sql.cleanup)
+        self.engine = new_engine.writer.get_engine()
 
         database._load_sqlalchemy_models()
         sql.ModelBase.metadata.create_all(bind=self.engine)

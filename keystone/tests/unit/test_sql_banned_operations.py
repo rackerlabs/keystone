@@ -224,27 +224,27 @@ class TestKeystoneExpandSchemaMigrations(KeystoneMigrationsCheckers):
 
 
 class TestKeystoneExpandSchemaMigrationsMySQL(
-        db_fixtures.OpportunisticDBTestMixin,
-        test_base.BaseTestCase,
-        TestKeystoneExpandSchemaMigrations):
+    db_fixtures.OpportunisticDBTestMixin,
+    test_base.BaseTestCase,
+    TestKeystoneExpandSchemaMigrations,
+):
     FIXTURE = db_fixtures.MySQLOpportunisticFixture
 
     def setUp(self):
         super(TestKeystoneExpandSchemaMigrationsMySQL, self).setUp()
         self.engine = enginefacade.writer.get_engine()
-        self.sessionmaker = enginefacade.writer.get_sessionmaker()
 
 
 class TestKeystoneExpandSchemaMigrationsPostgreSQL(
-        db_fixtures.OpportunisticDBTestMixin,
-        test_base.BaseTestCase,
-        TestKeystoneExpandSchemaMigrations):
+    db_fixtures.OpportunisticDBTestMixin,
+    test_base.BaseTestCase,
+    TestKeystoneExpandSchemaMigrations,
+):
     FIXTURE = db_fixtures.PostgresqlOpportunisticFixture
 
     def setUp(self):
         super(TestKeystoneExpandSchemaMigrationsPostgreSQL, self).setUp()
         self.engine = enginefacade.writer.get_engine()
-        self.sessionmaker = enginefacade.writer.get_sessionmaker()
 
 
 class TestKeystoneDataMigrations(

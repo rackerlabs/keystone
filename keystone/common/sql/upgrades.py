@@ -142,28 +142,25 @@ def _migrate_db_sync(engine, abs_path, version=None, init_version=0):
         return migrate_api.downgrade(engine, repository, version)
 
 
-def get_db_version(branch=EXPAND_BRANCH):
+def get_db_version(engine, branch=EXPAND_BRANCH):
     abs_path = _get_migrate_repo_path(branch)
-    with sql.session_for_read() as session:
-        return _migrate_db_version(
-            session.get_bind(),
-            abs_path,
-            INITIAL_VERSION,
-        )
+    return _migrate_db_version(
+        engine,
+        abs_path,
+        INITIAL_VERSION,
+    )
 
 
-def _db_sync(branch):
+def _db_sync(engine, branch):
     abs_path = _get_migrate_repo_path(branch)
-    with sql.session_for_write() as session:
-        engine = session.get_bind()
-        _migrate_db_sync(
-            engine=engine,
-            abs_path=abs_path,
-            init_version=INITIAL_VERSION,
-        )
+    _migrate_db_sync(
+        engine=engine,
+        abs_path=abs_path,
+        init_version=INITIAL_VERSION,
+    )
 
 
-def _validate_upgrade_order(branch, target_repo_version=None):
+def _validate_upgrade_order(engine, branch, target_repo_version=None):
     """Validate the state of the migration repositories.
 
     This is run before allowing the db_sync command to execute. Ensure the
@@ -195,7 +192,7 @@ def _validate_upgrade_order(branch, target_repo_version=None):
         target_repo_version = int(repo.latest)
 
     # get current version of the command that runs before the current command.
-    dependency_repo_version = get_db_version(branch=db_sync_order[branch])
+    dependency_repo_version = get_db_version(engine, branch=db_sync_order[branch])
 
     if dependency_repo_version < target_repo_version:
         raise db_exception.DBMigrationError(
@@ -206,38 +203,38 @@ def _validate_upgrade_order(branch, target_repo_version=None):
                 branch, db_sync_order[branch]))
 
 
-def expand_schema():
+def expand_schema(engine):
     """Expand the database schema ahead of data migration.
 
     This is run manually by the keystone-manage command before the first
     keystone node is migrated to the latest release.
     """
-    _validate_upgrade_order(EXPAND_BRANCH)
-    _db_sync(branch=EXPAND_BRANCH)
+    _validate_upgrade_order(engine, EXPAND_BRANCH)
+    _db_sync(engine, branch=EXPAND_BRANCH)
 
 
-def migrate_data():
+def migrate_data(engine):
     """Migrate data to match the new schema.
 
     This is run manually by the keystone-manage command once the keystone
     schema has been expanded for the new release.
     """
-    _validate_upgrade_order(DATA_MIGRATION_BRANCH)
-    _db_sync(branch=DATA_MIGRATION_BRANCH)
+    _validate_upgrade_order(engine, DATA_MIGRATION_BRANCH)
+    _db_sync(engine, branch=DATA_MIGRATION_BRANCH)
 
 
-def contract_schema():
+def contract_schema(engine):
     """Contract the database.
 
     This is run manually by the keystone-manage command once the keystone
     nodes have been upgraded to the latest release and will remove any old
     tables/columns that are no longer required.
     """
-    _validate_upgrade_order(CONTRACT_BRANCH)
-    _db_sync(branch=CONTRACT_BRANCH)
+    _validate_upgrade_order(engine, CONTRACT_BRANCH)
+    _db_sync(engine, branch=CONTRACT_BRANCH)
 
 
-def offline_sync_database_to_version(version=None):
+def offline_sync_database_to_version(engine, version=None):
     """Perform and off-line sync of the database.
 
     Migrate the database up to the latest version, doing the equivalent of
@@ -252,6 +249,6 @@ def offline_sync_database_to_version(version=None):
     if version:
         raise Exception('Specifying a version is no longer supported')
 
-    expand_schema()
-    migrate_data()
-    contract_schema()
+    expand_schema(engine)
+    migrate_data(engine)
+    contract_schema(engine)

@@ -256,30 +256,7 @@ class ModelDictMixin(models.ModelBase):
         return {name: getattr(self, name) for name in names}
 
 
-_main_context_manager = None
-
-
-def _get_main_context_manager():
-    global _main_context_manager
-
-    if not _main_context_manager:
-        _main_context_manager = enginefacade.transaction_context()
-
-    return _main_context_manager
-
-
-# Now this function is only used for testing FK with sqlite.
-def enable_sqlite_foreign_key():
-    global _main_context_manager
-    if not _main_context_manager:
-        _main_context_manager = enginefacade.transaction_context()
-        _main_context_manager.configure(sqlite_fk=True)
-
-
-def cleanup():
-    global _main_context_manager
-
-    _main_context_manager = None
+context_manager = enginefacade.transaction_context()
 
 
 _CONTEXT = None
@@ -295,25 +272,13 @@ def _get_context():
     return _CONTEXT
 
 
-# Unit tests set this to True so that oslo.db's global engine is used.
-# This allows oslo_db.test_base.DbTestCase to override the transaction manager
-# with its test transaction manager.
-_TESTING_USE_GLOBAL_CONTEXT_MANAGER = False
-
-
 def session_for_read():
-    if _TESTING_USE_GLOBAL_CONTEXT_MANAGER:
-        reader = enginefacade.reader
-    else:
-        reader = _get_main_context_manager().reader
+    reader = context_manager.reader
     return _wrap_session(reader.using(_get_context()))
 
 
 def session_for_write():
-    if _TESTING_USE_GLOBAL_CONTEXT_MANAGER:
-        writer = enginefacade.writer
-    else:
-        writer = _get_main_context_manager().writer
+    writer = context_manager.writer
     return _wrap_session(writer.using(_get_context()))
 
 

@@ -17,6 +17,7 @@ import os
 import fixtures
 from oslo_db import options as db_options
 from oslo_db.sqlalchemy import enginefacade
+from oslo_db.sqlalchemy import test_fixtures as db_fixtures
 
 from keystone.common import sql
 import keystone.conf
@@ -103,18 +104,26 @@ def _load_sqlalchemy_models():
 class Database(fixtures.Fixture):
     """A fixture for setting up and tearing down a database."""
 
-    def __init__(self):
-        super(Database, self).__init__()
+    def setUp(self):
+        super().setUp()
+
+        # NOTE(stephenfin): this injects a new factory for each test and cleans
+        # it up at then end of the test case. This way we can let each test
+        # configure the factory so we can avoid having a global flag guarding
+        # against factory re-configuration
+        new_engine = enginefacade.transaction_context()
+        new_engine.configure(sqlite_fk=True)
+        self.useFixture(
+            db_fixtures.ReplaceEngineFacadeFixture(
+                sql.context_manager, new_engine,
+            )
+        )
+
         initialize_sql_session()
         _load_sqlalchemy_models()
-        sql.enable_sqlite_foreign_key()
-
-    def setUp(self):
-        super(Database, self).setUp()
 
         with sql.session_for_write() as session:
             self.engine = session.get_bind()
-        self.addCleanup(sql.cleanup)
         sql.ModelBase.metadata.create_all(bind=self.engine)
         self.addCleanup(sql.ModelBase.metadata.drop_all, bind=self.engine)
 
