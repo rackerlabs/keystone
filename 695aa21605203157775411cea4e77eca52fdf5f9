@@ -53,6 +53,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc27bac3_e29c9f8a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2022-06-24T13:43:33Z",
+      "side": 1,
+      "message": "When I say Jul 21, you should read July of 2021",
+      "parentUuid": "db5e2e53_f57c9ae0",
+      "revId": "695aa21605203157775411cea4e77eca52fdf5f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d333363e_91216cf1",
