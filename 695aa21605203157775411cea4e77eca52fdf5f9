@@ -36,6 +36,23 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db5e2e53_f57c9ae0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2022-06-24T13:42:58Z",
+      "side": 1,
+      "message": "We have a patch that is open since Jul 21 that implements the spec mentioned here: https://review.opendev.org/c/openstack/keystone/+/742235",
+      "revId": "695aa21605203157775411cea4e77eca52fdf5f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d333363e_91216cf1",
