@@ -144,6 +144,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0a4df7ae_592dc8be",
+        "filename": "keystone/common/sql/migrations/env.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2022-06-28T09:43:02Z",
+      "side": 1,
+      "message": "As this is marked as unresolved, Mike and/or Stephen, can you confirm that this parameter is ignored in MySQL and PostrgreSQL connections? The documentation points out this was implemented for SQLite, but it doesn\u0027t say you can\u0027t use it with other drivers... I would have to test it out to know the real behavior.",
+      "parentUuid": "ce8ab7b9_ffb373ed",
+      "revId": "7df6b705f91ed1b524b3fa61ac1475b5f114e0d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e9c14954_77fdc74e",
         "filename": "keystone/common/sql/upgrades.py",
         "patchSetId": 5
