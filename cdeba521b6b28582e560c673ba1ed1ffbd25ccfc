@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aaacde00_fb0fa29d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2022-07-01T15:57:46Z",
+      "side": 1,
+      "message": "    def get(self, project_id, user_id, role_id):\n        \"\"\"Check grant for project, user, role.\n\n        GET/HEAD /v3/projects/{project_id/users/{user_id}/roles/{role_id}\n        \"\"\"\n        ENFORCER.enforce_call(\n            action\u003d\u0027identity:check_grant\u0027,\n            build_target\u003dfunctools.partial(\n                self._build_enforcement_target_attr, role_id\u003drole_id,\n                project_id\u003dproject_id, user_id\u003duser_id)\n        )\n        inherited \u003d self._check_if_inherited()\n        PROVIDERS.assignment_api.get_grant(\n            role_id\u003drole_id, user_id\u003duser_id, project_id\u003dproject_id,\n            inherited_to_projects\u003dinherited)\n        return None, http.client.NO_CONTENT",
+      "revId": "cdeba521b6b28582e560c673ba1ed1ffbd25ccfc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
