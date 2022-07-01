@@ -16,6 +16,24 @@
       "message": "This should merge before the sql: Integrate alembic patch \nhttps://review.opendev.org/c/openstack/keystone/+/825844",
       "revId": "bfc37ddabb4afb8fe50a2376595fdebfac6e91be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3940567e_f414fd5d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2022-07-01T15:18:28Z",
+      "side": 1,
+      "message": "Actually, the keystone/common/sql/*/versions/ directories are already empty",
+      "parentUuid": "4269a0c2_b4170409",
+      "revId": "bfc37ddabb4afb8fe50a2376595fdebfac6e91be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
