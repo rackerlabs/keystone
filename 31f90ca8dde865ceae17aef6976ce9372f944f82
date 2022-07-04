@@ -65,6 +65,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8d7d761_eef2c08a",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-07-04T09:30:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a8526dc_e4258734",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 42
+      },
+      "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "23855975_c5cf036d",
@@ -112,6 +136,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2f20a71_510c4107",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-07-04T09:30:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7eed2ff1_6aa806d1",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 23
+      },
+      "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a0a388dc_6c072137",
@@ -143,6 +191,24 @@
       "side": 1,
       "message": "I fixed it according to the comment.\n(Patchset 2)",
       "parentUuid": "a0a388dc_6c072137",
+      "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d927058d_029f8e90",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-07-04T09:30:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49b4b8f8_1c60a2cf",
       "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
@@ -184,6 +250,30 @@
       "side": 1,
       "message": "I fixed it according to the comment. (including other similar parts)\n(Patchset 2)",
       "parentUuid": "d71a7091_a3c0bb7d",
+      "range": {
+        "startLine": 18,
+        "startChar": 7,
+        "endLine": 18,
+        "endChar": 15
+      },
+      "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9c6e975_f03e7182",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-07-04T09:30:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e63d0008_12132a3f",
       "range": {
         "startLine": 18,
         "startChar": 7,
@@ -241,6 +331,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1bdf2232_5f8f615b",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-07-04T09:30:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ad1da28f_67003f03",
+      "range": {
+        "startLine": 19,
+        "startChar": 61,
+        "endLine": 20,
+        "endChar": 53
+      },
+      "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b72af4c2_9ab9e3f1",
@@ -288,6 +402,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2760c81f_b2f153ef",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-07-04T09:30:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f8800fe_d451c43b",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 17
+      },
+      "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "12641b7c_cb087c78",
@@ -319,6 +457,24 @@
       "side": 1,
       "message": "I fixed it according to the comment.\n(Patchset 2)",
       "parentUuid": "12641b7c_cb087c78",
+      "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3dcc55a9_8b65276c",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-07-04T09:30:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b896749e_eee3318c",
       "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
@@ -360,6 +516,30 @@
       "side": 1,
       "message": "This procedure only describes how keystone supports http and https at the same time when using a self-signed certificate.\nIf it is necessary to describe the procedure for cases in which HTTP is not required or in which self-signed certificate is not used, we believe that it is necessary to describe additionally, rather than omitting any step.\n(To disable HTTP, you must remove the http related configuration of keystone from apache and also modify the endpoint related information in DB.)\nIn each case, I would like to omit the description of \"skip the steps ...\", but is there any problem?",
       "parentUuid": "08d72a2c_780fad0e",
+      "range": {
+        "startLine": 28,
+        "startChar": 15,
+        "endLine": 31,
+        "endChar": 6
+      },
+      "revId": "31f90ca8dde865ceae17aef6976ce9372f944f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f2f0781_22d99ae6",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-07-04T09:30:25Z",
+      "side": 1,
+      "message": "\u003e If it is necessary to describe the procedure for cases in which HTTP is not required or in which self-signed certificate is not used, we believe that it is necessary to describe additionally, rather than omitting any step.\n\u003e In each case, I would like to omit the description of \"skip the steps ...\", but is there any problem?\n\nThanks. I understand. I think there\u0027s no problem. Just noting that this document doesn\u0027t assume the situation where PKI is used and only HTTPS is configured is enough.",
+      "parentUuid": "bbd1a41d_0822395f",
       "range": {
         "startLine": 28,
         "startChar": 15,
