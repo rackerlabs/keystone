@@ -178,6 +178,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d412de81_c1229480",
+        "filename": "keystone/common/sql/migrations/env.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2022-07-18T09:53:42Z",
+      "side": 1,
+      "message": "That makes sense, thanks for the detailed analysis!",
+      "parentUuid": "7aad8e23_2a871cbf",
+      "revId": "7df6b705f91ed1b524b3fa61ac1475b5f114e0d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e9c14954_77fdc74e",
