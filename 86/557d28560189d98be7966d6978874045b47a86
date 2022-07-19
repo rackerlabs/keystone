@@ -1,0 +1,9 @@
+Code-Review+2: Douglas Mendizábal <dmendiza@redhat.com>
+Code-Review+1: Grzegorz Grasza <xek@redhat.com>
+Workflow+1: Douglas Mendizábal <dmendiza@redhat.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 19 Jul 2022 17:15:08 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/842887
+Project: openstack/keystone
+Branch: refs/heads/stable/yoga
