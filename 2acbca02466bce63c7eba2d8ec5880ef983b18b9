@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d44446f1_b349cbb2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2022-07-20T19:10:24Z",
+      "side": 1,
+      "message": "The FIPS gate keystone-dsvm-py3-functional-fips is failing for this patch.  Is that expected? ",
+      "revId": "2acbca02466bce63c7eba2d8ec5880ef983b18b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
