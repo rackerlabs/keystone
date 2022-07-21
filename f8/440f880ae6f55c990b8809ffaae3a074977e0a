@@ -1,0 +1,10 @@
+Workflow+1: Douglas Mendizábal <dmendiza@redhat.com>
+Code-Review+2: Douglas Mendizábal <dmendiza@redhat.com>
+Code-Review+1: Takashi Kajinami <tkajinam@redhat.com>
+Code-Review+1: Grzegorz Grasza <xek@redhat.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 21 Jul 2022 15:23:40 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/752063
+Project: openstack/keystone
+Branch: refs/heads/stable/ussuri
