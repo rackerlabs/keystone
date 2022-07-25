@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dad19e80_ce7b4f1b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2022-07-25T15:17:38Z",
+      "side": 1,
+      "message": "Looks like this patch has already landed in the master branch: https://opendev.org/openstack/keystone/commit/950dd5e5032afd73527c82c6ce63ee2ad94dc252\n\nHowever, we should backport that change to stable/yoga (currently using CentOS 8: https://opendev.org/openstack/keystone/src/branch/stable/yoga/.zuul.yaml#L38 ) as well as stable/xena (currently using CentOS 8: https://opendev.org/openstack/keystone/src/branch/stable/xena/.zuul.yaml#L38 ) before we can merge this change to stable/wallaby.",
+      "revId": "6c543a870a84800261c69d6bd5d4dae6371ac7f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
