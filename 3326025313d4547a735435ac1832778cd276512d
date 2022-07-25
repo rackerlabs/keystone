@@ -33,6 +33,23 @@
       "message": "This breaks the older jobs that use ubuntu-focal. It might be better to wait for 3.10 to get PEP8 support and leave the interpreter as is.",
       "revId": "3326025313d4547a735435ac1832778cd276512d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab63bc21_e257d29a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2022-07-25T15:08:16Z",
+      "side": 1,
+      "message": "Per the TC, the supported runtimes for Zed are 3.8 and 3.9. https://governance.openstack.org/tc/reference/runtimes/zed.html#python-runtimes-for-zed\n\nI\u0027m not sure it\u0027s a good idea to default everything to 3.9 though.",
+      "revId": "3326025313d4547a735435ac1832778cd276512d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
