@@ -41,6 +41,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "be500c44_1571d019",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2022-07-26T03:08:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63e89dc2_110f4a29",
+      "range": {
+        "startLine": 88,
+        "startChar": 9,
+        "endLine": 88,
+        "endChar": 31
+      },
+      "revId": "5b7cf350f6a9e02f4ea165aa1f02358d6983b2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b0c456d1_d4fb4b4d",
@@ -54,6 +78,30 @@
       "writtenOn": "2022-07-25T14:49:55Z",
       "side": 1,
       "message": "Please update this entry as well.",
+      "range": {
+        "startLine": 126,
+        "startChar": 9,
+        "endLine": 126,
+        "endChar": 31
+      },
+      "revId": "5b7cf350f6a9e02f4ea165aa1f02358d6983b2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a742a48_c86df861",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2022-07-26T03:08:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b0c456d1_d4fb4b4d",
       "range": {
         "startLine": 126,
         "startChar": 9,

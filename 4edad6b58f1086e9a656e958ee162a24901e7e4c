@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "81660bb8_c367c236",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2022-07-26T03:08:12Z",
+      "side": 1,
+      "message": "The comments given earlier were addressed and now all of UPPER_* were replaced.",
+      "revId": "4edad6b58f1086e9a656e958ee162a24901e7e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
