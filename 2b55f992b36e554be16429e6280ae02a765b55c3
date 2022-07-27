@@ -16,6 +16,24 @@
       "message": "I would like to see some testing of this, but since it is a feature used only by developers maybe they are not needed.",
       "revId": "2b55f992b36e554be16429e6280ae02a765b55c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab22f31c_c4b492be",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2022-07-27T10:01:37Z",
+      "side": 1,
+      "message": "Yeah, pretty much. We\u0027d also effectively be testing core SQLAlchemy functionality",
+      "parentUuid": "f984c0ae_e365cc21",
+      "revId": "2b55f992b36e554be16429e6280ae02a765b55c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
