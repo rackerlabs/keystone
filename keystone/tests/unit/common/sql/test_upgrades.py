@@ -147,47 +147,6 @@ class KeystoneModelsMigrationsSync(test_migrations.ModelsMigrationsSync):
                     ):
                         continue  # skip
             else:
-                if element[0] == 'add_constraint':
-                    if (
-                        element[1].table.name,
-                        [x.name for x in element[1].columns],
-                    ) in (
-                        ('project_tag', ['project_id', 'name']),
-                        (
-                            'trust',
-                            [
-                                'trustor_user_id',
-                                'trustee_user_id',
-                                'project_id',
-                                'impersonation',
-                                'expires_at',
-                            ],
-                        ),
-                    ):
-                        continue  # skip
-
-                # FIXME(stephenfin): These have a different name on PostgreSQL.
-                # Resolve by renaming the constraint on the models.
-                if element[0] == 'remove_constraint':
-                    if (
-                        element[1].table.name,
-                        [x.name for x in element[1].columns],
-                    ) in (
-                        ('access_rule', ['external_id']),
-                        (
-                            'trust',
-                            [
-                                'trustor_user_id',
-                                'trustee_user_id',
-                                'project_id',
-                                'impersonation',
-                                'expires_at',
-                                'expires_at_int',
-                            ],
-                        ),
-                    ):
-                        continue  # skip
-
                 # FIXME(stephenfin): These indexes are present in the
                 # migrations but not on the equivalent models. Resolve by
                 # updating the models.
