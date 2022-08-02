@@ -50,31 +50,6 @@ def include_object(object, name, type_, reflected, compare_to):
     )
 
     BORKED_UNIQUE_CONSTRAINTS = (
-        # removed constraints
-        ('project_tag', ['project_id', 'name']),
-        (
-            'trust',
-            [
-                'trustor_user_id',
-                'trustee_user_id',
-                'project_id',
-                'impersonation',
-                'expires_at',
-            ],
-        ),
-        # added constraints
-        ('access_rule', ['external_id']),
-        (
-            'trust',
-            [
-                'trustor_user_id',
-                'trustee_user_id',
-                'project_id',
-                'impersonation',
-                'expires_at',
-                'expires_at_int',
-            ],
-        ),
     )
 
     BORKED_FK_CONSTRAINTS = (
