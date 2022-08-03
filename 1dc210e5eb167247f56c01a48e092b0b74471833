@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b22ffafa_a9f1fd45",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28691
+      },
+      "writtenOn": "2022-08-03T11:05:05Z",
+      "side": 1,
+      "message": "Hi, this bug i aslo reported in here https://bugs.launchpad.net/keystone/+bug/1878438 and has some commit change. But, we can\u0027t do that. Let see more in my reported, please.",
+      "revId": "1dc210e5eb167247f56c01a48e092b0b74471833",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
