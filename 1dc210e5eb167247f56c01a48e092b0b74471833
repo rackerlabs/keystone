@@ -16,6 +16,24 @@
       "message": "Hi, this bug i aslo reported in here https://bugs.launchpad.net/keystone/+bug/1878438 and has some commit change. But, we can\u0027t do that. Let see more in my reported, please.",
       "revId": "1dc210e5eb167247f56c01a48e092b0b74471833",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1bad92a_0f0a9b9e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2022-08-05T10:18:11Z",
+      "side": 1,
+      "message": "Should we just disallow then this path and raise meaningful error as well as documenting that?",
+      "parentUuid": "b22ffafa_a9f1fd45",
+      "revId": "1dc210e5eb167247f56c01a48e092b0b74471833",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
