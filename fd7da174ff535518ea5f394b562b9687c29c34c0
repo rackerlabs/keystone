@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "682d61f4_af0299e8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2022-08-05T11:49:08Z",
+      "side": 1,
+      "message": "I\u0027m waiting on [1] to merge so the requirements job will pass here. Using compatible releases [2] makes sense for a linter, IMO, since we want an upper cap without preventing use of bug fix releases.\n\n[1] https://review.opendev.org/c/openstack/requirements/+/852260\n[2] https://review.opendev.org/c/openstack/requirements/+/852260",
+      "revId": "fd7da174ff535518ea5f394b562b9687c29c34c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
