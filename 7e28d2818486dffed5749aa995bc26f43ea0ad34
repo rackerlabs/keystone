@@ -226,6 +226,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb1e8025_9adc67b0",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2022-08-09T14:52:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "73058987_dd62c7b4",
+      "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7eabd605_85d9ce0e",
@@ -257,6 +275,24 @@
       "side": 1,
       "message": "Fix to use LOG.exception instead of LOG.warn. (Patchset 13)",
       "parentUuid": "7eabd605_85d9ce0e",
+      "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3f44394_f1671098",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2022-08-09T14:52:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b6641617_24b6d5ce",
       "revId": "7e28d2818486dffed5749aa995bc26f43ea0ad34",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },

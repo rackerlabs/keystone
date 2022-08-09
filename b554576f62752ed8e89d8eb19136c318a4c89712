@@ -16,6 +16,23 @@
       "message": "Thanks! Looks good to me. Will test locally before upgrading to +2. ",
       "revId": "b554576f62752ed8e89d8eb19136c318a4c89712",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67548c8a_42fc7b35",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2022-08-09T14:52:58Z",
+      "side": 1,
+      "message": "LGTM!",
+      "revId": "b554576f62752ed8e89d8eb19136c318a4c89712",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
