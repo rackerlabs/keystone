@@ -54,8 +54,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Keystone Release Notes'
-copyright = u'2015, Keystone Developers'
+project = 'Keystone Release Notes'
+copyright = '2015, Keystone Developers'
 
 # Release  notes are version independent
 
