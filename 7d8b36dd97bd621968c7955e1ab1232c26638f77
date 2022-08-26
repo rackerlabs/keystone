@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a59dd288_36be3f63",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2022-08-26T15:34:52Z",
+      "side": 1,
+      "message": "These migrations were already squashed in I96cab42cfcfd3e86b53f25abf4cf4043af3b5667 and lower-constraints is no longer a thing.",
+      "revId": "7d8b36dd97bd621968c7955e1ab1232c26638f77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
