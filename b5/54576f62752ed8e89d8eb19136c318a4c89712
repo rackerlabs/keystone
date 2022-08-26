@@ -1,0 +1,12 @@
+Code-Review+1: David Wilde <dwilde@redhat.com>
+Code-Review+2: Kristi Nikolla <knikolla@bu.edu>
+Code-Review+1: Grzegorz Grasza <xek@redhat.com>
+Code-Review+1: Hiromu Asahina <hiromu.asahina.az@hco.ntt.co.jp>
+Code-Review+2: Douglas Mendizábal <dmendiza@redhat.com>
+Workflow+1: Douglas Mendizábal <dmendiza@redhat.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 26 Aug 2022 17:09:42 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/830739
+Project: openstack/keystone
+Branch: refs/heads/master
