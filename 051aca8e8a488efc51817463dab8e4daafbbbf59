@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea49e2aa_30f6727f",
+        "filename": "keystone/api/ec2tokens.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2022-08-30T13:02:13Z",
+      "side": 0,
+      "message": "Yes, the intention was here to split credentials[\u0027host\u0027], in my opinion, too.",
+      "range": {
+        "startLine": 45,
+        "startChar": 34,
+        "endLine": 45,
+        "endChar": 45
+      },
+      "revId": "051aca8e8a488efc51817463dab8e4daafbbbf59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

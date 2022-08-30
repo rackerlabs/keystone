@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f0fe247_9facbe05",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2022-08-30T13:02:13Z",
+      "side": 1,
+      "message": "Seems to be a proper fix for a trivial issue.",
+      "revId": "6c35b366e3c8c6d7f47471b93f5315582301c5ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e15fee1_4a181a11",
+        "filename": "keystone/api/ec2tokens.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2022-08-30T13:02:13Z",
+      "side": 1,
+      "message": "this works as intended for every case, even for ipv6 hostname + port.",
+      "revId": "6c35b366e3c8c6d7f47471b93f5315582301c5ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
