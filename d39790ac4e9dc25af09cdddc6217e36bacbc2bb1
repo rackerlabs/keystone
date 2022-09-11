@@ -16,6 +16,23 @@
       "message": "Clean cherry pick from master, where the patch has merged. Looks valid to backport.",
       "revId": "d39790ac4e9dc25af09cdddc6217e36bacbc2bb1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b938ade4_ddd34798",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32238
+      },
+      "writtenOn": "2022-09-11T01:13:55Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "d39790ac4e9dc25af09cdddc6217e36bacbc2bb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
