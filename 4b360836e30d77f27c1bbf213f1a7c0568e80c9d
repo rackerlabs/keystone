@@ -65,6 +65,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "48de7dc7_c5116bf8",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-09-13T03:22:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d973762_c5e526c8",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 68
+      },
+      "revId": "4b360836e30d77f27c1bbf213f1a7c0568e80c9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c1719a88_37f6bff0",
@@ -112,6 +136,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb483fa7_847f2455",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-09-13T03:22:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8911aaee_12ef918a",
+      "range": {
+        "startLine": 32,
+        "startChar": 68,
+        "endLine": 33,
+        "endChar": 19
+      },
+      "revId": "4b360836e30d77f27c1bbf213f1a7c0568e80c9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bea9f700_c059eb09",
@@ -149,6 +197,30 @@
       "side": 1,
       "message": "I fixed it according to the comment.\n(Patchset 3)",
       "parentUuid": "bea9f700_c059eb09",
+      "range": {
+        "startLine": 34,
+        "startChar": 37,
+        "endLine": 34,
+        "endChar": 38
+      },
+      "revId": "4b360836e30d77f27c1bbf213f1a7c0568e80c9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af4ad653_5f204475",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2022-09-13T03:22:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5d69d211_d2c4d7f8",
       "range": {
         "startLine": 34,
         "startChar": 37,
