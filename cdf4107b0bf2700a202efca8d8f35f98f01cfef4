@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ea0ff2c_6be0afaf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2022-09-14T12:49:55Z",
+      "side": 1,
+      "message": "Generated patch + looks OK, fast-approving.",
+      "revId": "cdf4107b0bf2700a202efca8d8f35f98f01cfef4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
