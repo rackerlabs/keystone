@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3f2b3ba_eafc423a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2022-09-16T12:53:49Z",
+      "side": 1,
+      "message": "recheck job template is updated, we can get new set of job running now.",
+      "revId": "572818e3e0b91fa5d45de17a9b2bdb88c784ef51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
