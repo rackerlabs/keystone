@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c146d4d3_a8b5b13b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2022-09-16T19:54:08Z",
+      "side": 1,
+      "message": "This patch is not a clean cherry pick (see my inline comment about details). Though there is no conflict when backporting this patch, in general it is a good practice to add a \"Note\" in the commit message to make it easier to review the patch to stable reviewers, like:\n\nNote: the patch needed a change due to compatibility reason as stable/train still supports python2.",
+      "revId": "8d883f011c586f0e79c56f0f70f9455997d70012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8fd0684_7a52543c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2022-09-16T19:54:08Z",
+      "side": 1,
+      "message": "The backport looks OK (i\u0027ve added some minor comments), giving +1 only until the stable/ussuri version merges.",
+      "revId": "8d883f011c586f0e79c56f0f70f9455997d70012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "feaa39bf_6c132179",
+        "filename": "keystone/api/ec2tokens.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2022-09-16T19:54:08Z",
+      "side": 1,
+      "message": "Note: this has changed compared to the original patch / the patch on stable/ussuri, which was:\n\nimport urllib.parse\n\nsix is needed because stable/train still supports py27.",
+      "revId": "8d883f011c586f0e79c56f0f70f9455997d70012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
