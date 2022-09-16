@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "123083a7_79502794",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2022-09-16T19:40:24Z",
+      "side": 1,
+      "message": "Clean cherry pick from stable/wallaby, where the patch has merged. LGTM.",
+      "revId": "fe837d87c949f6a2347cf79d81b66214f0a449b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
