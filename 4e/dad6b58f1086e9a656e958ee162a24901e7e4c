@@ -1,0 +1,11 @@
+Code-Review+1: Takashi Kajinami <tkajinam@redhat.com>
+Code-Review+2: Douglas Mendizábal <dmendiza@redhat.com>
+Code-Review+1: Grzegorz Grasza <xek@redhat.com>
+Code-Review+1: panhongyin <panhongyin@yovole.com>
+Workflow+1: Douglas Mendizábal <dmendiza@redhat.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 16 Sep 2022 17:21:02 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/850326
+Project: openstack/keystone
+Branch: refs/heads/master
