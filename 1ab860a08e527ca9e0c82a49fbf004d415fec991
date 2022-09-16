@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e864d395_3e120eaa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2022-09-16T19:42:29Z",
+      "side": 1,
+      "message": "Clean cherry pick from stable/victoria. Giving only +1 until that patch merges.",
+      "revId": "1ab860a08e527ca9e0c82a49fbf004d415fec991",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
