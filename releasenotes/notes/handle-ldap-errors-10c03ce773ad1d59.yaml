@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    fixes https://bugs.launchpad.net/keystone/+bug/1953627
+    by checking for ldap.SERVER_DOWN and ldap.SERVER_TIMEOUT
+    exceptions.
