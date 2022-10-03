@@ -50,7 +50,7 @@ class Manager(manager.Manager):
 
     _DOMAIN = 'domain'
     _PROJECT = 'project'
-    _PROJECT_TAG = 'project tag'
+    _PROJECT_TAG = 'project.tag'
 
     def __init__(self):
         resource_driver = CONF.resource.driver
@@ -219,10 +219,13 @@ class Manager(manager.Manager):
                 type='project',
                 details=self._generate_project_name_conflict_msg(project))
 
-        if project.get('is_domain'):
-            notifications.Audit.created(self._DOMAIN, project_id, initiator)
-        else:
-            notifications.Audit.created(self._PROJECT, project_id, initiator)
+        notifications.Audit.created(self._PROJECT, project_id, initiator)
+        if ('tags' in project.keys()) and project['tags']:
+            # emitting project tag.created notifications
+            tag_list = [t.strip() for t in project['tags']]
+            for tag in tag_list:
+                notifications.Audit.created(self._PROJECT_TAG,
+                                            tag, initiator)
         if MEMOIZE.should_cache(ret):
             self.get_project.set(ret, self, project_id)
             self.get_project_by_name.set(ret, self, ret['name'],
@@ -392,24 +395,45 @@ class Manager(manager.Manager):
                 assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
         finally:
             # attempt to send audit event even if the cache invalidation raises
-            notifications.Audit.updated(self._PROJECT, project_id, initiator)
-            if original_project['is_domain']:
-                notifications.Audit.updated(self._DOMAIN, project_id,
-                                            initiator)
-                # If the domain is being disabled, issue the disable
-                # notification as well
-                if original_project_enabled and not project_enabled:
-                    # NOTE(lbragstad): When a domain is disabled, we have to
-                    # invalidate the entire token cache. With persistent
-                    # tokens, we did something similar where all tokens for a
-                    # specific domain were deleted when that domain was
-                    # disabled. This effectively offers the same behavior for
-                    # non-persistent tokens by removing them from the cache and
-                    # requiring the authorization context to be rebuilt the
-                    # next time they're validated.
-                    token_provider.TOKENS_REGION.invalidate()
-                    notifications.Audit.disabled(self._DOMAIN, project_id,
-                                                 public=False)
+            notifications.Audit.updated(self._PROJECT, project_id,
+                                        initiator)
+            # emit notifications for created or deleted project tags
+            tag_list = []
+            original_tag_list = []
+            if ('tags' in project.keys()) and project['tags']:
+                tag_list = [t.strip() for t in project['tags']]
+            if ('tags' in original_project.keys()) and \
+                    original_project['tags']:
+                original_tag_list = [t.strip() for t in
+                                        original_project['tags']]
+            if len(original_tag_list) > 0:
+                # iterating through original tags looking for deleted tags
+                for original_tag in original_tag_list:
+                    if original_tag not in tag_list:
+                        notifications.Audit.deleted(self._PROJECT_TAG,
+                                                    original_tag,
+                                                    initiator)
+            if len(tag_list) > 0:
+                # iterating through new tags looking for  created tags
+                for tag in tag_list:
+                    if tag not in original_tag_list:
+                        notifications.Audit.created(self._PROJECT_TAG,
+                                                    tag,
+                                                    initiator)
+            # If the domain is being disabled, issue the disable
+            # notification as well
+            if original_project_enabled and not project_enabled:
+                # NOTE(lbragstad): When a domain is disabled, we have to
+                # invalidate the entire token cache. With persistent
+                # tokens, we did something similar where all tokens for a
+                # specific domain were deleted when that domain was
+                # disabled. This effectively offers the same behavior for
+                # non-persistent tokens by removing them from the cache and
+                # requiring the authorization context to be rebuilt the
+                # next time they're validated.
+                token_provider.TOKENS_REGION.invalidate()
+                notifications.Audit.disabled(self._DOMAIN, project_id,
+                                                public=False)
 
         return ret
 
@@ -988,6 +1012,9 @@ class Manager(manager.Manager):
         tag_list = [t.strip() for t in tags]
         project = {'tags': tag_list}
         self.update_project(project_id, project)
+        for tag in tag_list:
+            notifications.Audit.updated(self._PROJECT_TAG, tag,
+                                        initiator)
         return tag_list
 
     def delete_project_tag(self, project_id, tag):
