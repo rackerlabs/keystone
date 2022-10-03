@@ -223,6 +223,9 @@ class Manager(manager.Manager):
             notifications.Audit.created(self._DOMAIN, project_id, initiator)
         else:
             notifications.Audit.created(self._PROJECT, project_id, initiator)
+            if ('tags' in project.keys()) and project['tags']:
+                notifications.Audit.created(self._PROJECT_TAG, project['tags'],
+                                            initiator)
         if MEMOIZE.should_cache(ret):
             self.get_project.set(ret, self, project_id)
             self.get_project_by_name.set(ret, self, ret['name'],
@@ -988,6 +991,8 @@ class Manager(manager.Manager):
         tag_list = [t.strip() for t in tags]
         project = {'tags': tag_list}
         self.update_project(project_id, project)
+        notifications.Audit.updated(
+            self._PROJECT_TAG, project_id, initiator)
         return tag_list
 
     def delete_project_tag(self, project_id, tag):
