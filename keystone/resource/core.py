@@ -1064,6 +1064,7 @@ class DomainConfigManager(manager.Manager):
             'group_member_attribute', 'group_desc_attribute',
             'group_attribute_ignore', 'group_additional_attribute_mapping',
             'tls_cacertfile', 'tls_cacertdir', 'use_tls', 'tls_req_cert',
+            'connection_timeout',
             'use_pool', 'pool_size', 'pool_retry_max', 'pool_retry_delay',
             'pool_connection_timeout', 'pool_connection_lifetime',
             'use_auth_pool', 'auth_pool_size', 'auth_pool_connection_lifetime'
