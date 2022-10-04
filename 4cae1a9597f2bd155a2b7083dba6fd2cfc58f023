@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "7780e827_47cf19f5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2022-10-04T15:44:45Z",
+      "side": 1,
+      "message": "More specifically, this handles the issue of LDAP connection errors when using pooled connections and one connection is a bit flakey. Instead of keystone repeatedly hitting the down connection, we remove it from the pool and stop throwing random errors and causing user frustration.\n\nMore context here: https://review.opendev.org/c/openstack/keystone/+/560724",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 50
+      },
+      "revId": "4cae1a9597f2bd155a2b7083dba6fd2cfc58f023",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "c2e81296_ca22dff5",
@@ -14,6 +37,46 @@
       "writtenOn": "2022-10-04T14:31:04Z",
       "side": 1,
       "message": "The commit message has been corrected.",
+      "revId": "4cae1a9597f2bd155a2b7083dba6fd2cfc58f023",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7d70f50_69603c0e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2022-10-04T15:44:45Z",
+      "side": 1,
+      "message": "This has been brought up before: https://review.opendev.org/c/openstack/keystone/+/560724\n\nOne concern was figuring out how to test this. I\u0027m not sure if there is pooled LDAP connection testing, and if there is, testing for intermittent failure is tricky. One idea was putting this fix in ldappool, but that brought another list of issues around testing/validation.\n\nI\u0027ll let others chime in here if they have thoughts.",
+      "revId": "4cae1a9597f2bd155a2b7083dba6fd2cfc58f023",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4a61788_585b171b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1067,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2022-10-04T15:44:45Z",
+      "side": 1,
+      "message": "Not sure if this is referenced anywhere in the change?",
+      "range": {
+        "startLine": 1067,
+        "startChar": 12,
+        "endLine": 1067,
+        "endChar": 33
+      },
       "revId": "4cae1a9597f2bd155a2b7083dba6fd2cfc58f023",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
