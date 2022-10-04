@@ -16,6 +16,23 @@
       "message": "Commit message has been corrected",
       "revId": "ad268e1281535f12c6e99cfb0f43fccab2f0acbc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d42b0d1a_b7158997",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2022-10-04T15:35:18Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "ad268e1281535f12c6e99cfb0f43fccab2f0acbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
