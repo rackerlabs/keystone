@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b09b1227_1d533cfa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2022-10-04T13:44:36Z",
+      "side": 1,
+      "message": "Not sure what is \"ported\" here about this.\n\nSee https://review.opendev.org/c/openstack/keystone/+/849724 for a more generic description of what this change does, feel free to use that as well.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 21
+      },
+      "revId": "e44a7e9b24e9922deb566902e3826a7eb3fdc64e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
