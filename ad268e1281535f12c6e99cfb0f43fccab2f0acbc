@@ -33,6 +33,23 @@
       "message": "lgtm",
       "revId": "ad268e1281535f12c6e99cfb0f43fccab2f0acbc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c39c7af_aabbd6c4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 9542
+      },
+      "writtenOn": "2022-10-04T16:04:18Z",
+      "side": 1,
+      "message": "I\u0027d probably always send the \u0027tags\u0027 field, as empty list if it is empty.",
+      "revId": "ad268e1281535f12c6e99cfb0f43fccab2f0acbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
