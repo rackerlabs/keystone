@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75e39008_1d432e93",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2022-10-05T11:35:17Z",
+      "side": 1,
+      "message": "recheck\nbased on quick search (see [1]) the failure of test_identity_list_credentials from keystone-protection-functional is not related to this patch\n\n[1]: https://opensearch.logs.openstack.org/_dashboards/app/discover/?security_tenant\u003dglobal#/?_g\u003d(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:\u00272022-09-14T11:03:15.172Z\u0027,to:now))\u0026_a\u003d(columns:!(build_name,build_status),filters:!(),index:\u002794869730-aea8-11ec-9e6a-83741af3fdcd\u0027,interval:auto,query:(language:kuery,query:\u0027message:%22Could%20not%20find%20credential%22\u0027),sort:!())",
+      "revId": "8632e0fc212cfeb05e8a2a1535bcc06eec65f8df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
