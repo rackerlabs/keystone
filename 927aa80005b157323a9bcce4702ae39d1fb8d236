@@ -118,6 +118,24 @@
       "message": "We discussed this during last weeks reviewathon. I\u0027m of the opinion that this is changing default behavior, and therefore the correct approach would be to remove the nonexistent event from the list of opt out events, rather than correct the spelling and change the default behavior.",
       "revId": "927aa80005b157323a9bcce4702ae39d1fb8d236",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35be55f7_a7218d31",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2022-10-05T06:47:54Z",
+      "side": 1,
+      "message": "Hi, we also run into this low-hanging issue :-) My understanding is that the users/deployers anyway change this default at last when they realize that they have more events than expected.\nMy idea is that this is a default behavior so correcting it help users. Of course I can live with your option also as worst case.",
+      "parentUuid": "9a1e543e_c16429c0",
+      "revId": "927aa80005b157323a9bcce4702ae39d1fb8d236",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
