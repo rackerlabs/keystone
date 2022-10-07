@@ -19,6 +19,8 @@ import datetime
 import functools
 import hashlib
 import json
+from OpenSSL import crypto
+import random
 import secrets
 
 import ldap
@@ -431,6 +433,38 @@ def new_totp_credential(user_id, project_id=None, blob=None):
                                     blob=blob,
                                     type='totp')
     return credential
+
+
+def create_certificate(subject, ca=None, ca_key=None):
+    pkey = crypto.PKey()
+    pkey.generate_key(crypto.TYPE_RSA, 2048)
+
+    x509 = crypto.X509()
+    x509.set_version(2)
+    x509.set_serial_number(random.randint(5000000, 10000000))
+    subj = x509.get_subject()
+    for k, v in subject.items():
+        setattr(subj, k, v)
+    x509.gmtime_adj_notBefore(0)
+    x509.gmtime_adj_notAfter(365 * 24 * 60 * 60)
+    if ca:
+        issuer_subj = ca.get_subject()
+    else:
+        issuer_subj = subj
+    x509.set_issuer(issuer_subj)
+    x509.set_pubkey(pkey)
+    if not ca_key:
+        ca_key = pkey
+    x509.sign(ca_key, 'sha256')
+
+    return x509, pkey
+
+
+def create_pem_certificate(subject, ca=None, ca_key=None):
+    cert, key = create_certificate(subject, ca=ca, ca_key=ca_key)
+    content = crypto.dump_certificate(
+        crypto.FILETYPE_PEM, cert).decode('ascii')
+    return content
 
 
 def new_application_credential_ref(roles=None,
