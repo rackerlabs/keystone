@@ -79,6 +79,9 @@ class TokenModel(object):
         self.application_credential_id = None
         self.__application_credential = None
 
+        self.oauth2_credential_id = None
+        self.oauth2_thumbprint = None
+
     def __repr__(self):
         """Return string representation of TokenModel."""
         desc = ('<%(type)s (audit_id=%(audit_id)s, '
@@ -440,6 +443,9 @@ class TokenModel(object):
 
         return roles
 
+    def _get_oauth2_credential_roles(self):
+        return self._get_project_roles()
+
     @property
     def roles(self):
         if self.system_scoped:
@@ -454,6 +460,8 @@ class TokenModel(object):
             roles = self._get_domain_roles()
         elif self.application_credential_id and self.project_id:
             roles = self._get_application_credential_roles()
+        elif self.oauth2_credential_id and self.project_id:
+            roles = self._get_oauth2_credential_roles()
         elif self.project_scoped:
             roles = self._get_project_roles()
         else:
