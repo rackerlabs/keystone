@@ -58,6 +58,23 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3b4682f_6c842dad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2022-10-07T14:55:08Z",
+      "side": 1,
+      "message": "It looks like this patch might solve the issue mentioned in https://bugs.launchpad.net/keystone/+bug/1953627\nCan you confirm?",
+      "revId": "4cae1a9597f2bd155a2b7083dba6fd2cfc58f023",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f4a61788_585b171b",
