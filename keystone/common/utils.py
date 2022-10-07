@@ -15,7 +15,7 @@
 #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #    License for the specific language governing permissions and limitations
 #    under the License.
-
+import base64
 import collections.abc
 import contextlib
 import grp
@@ -25,6 +25,7 @@ import os
 import pwd
 import uuid
 
+from OpenSSL import crypto
 from oslo_log import log
 from oslo_serialization import jsonutils
 from oslo_utils import reflection
@@ -456,6 +457,59 @@ def check_endpoint_url(url):
         url.replace('$(', '%(') % substitutions
     except (KeyError, TypeError, ValueError):
         raise exception.URLValidationError(url=url)
+
+
+def get_certificate_subject_dn(cert_pem):
+    """Get subject DN from the PEM certificate content.
+
+    :param str cert_pem: the PEM certificate content
+    :rtype: JSON data for subject DN
+    :raises keystone.exception.ValidationError: if the PEM certificate content
+        is invalid
+    """
+    try:
+        cert = crypto.load_certificate(crypto.FILETYPE_PEM, cert_pem)
+        subject = cert.get_subject()
+        dn_dict = {}
+        for item in subject.get_components():
+            dn_dict[item[0].decode("utf-8")] = item[1].decode("utf-8")
+        return dn_dict
+    except Exception as error:
+        LOG.exception(error)
+        message = _('The certificate content is not PEM format.')
+        raise exception.ValidationError(message=message)
+
+
+def get_certificate_issuer_dn(cert_pem):
+    """Get issuer DN from the PEM certificate content.
+
+    :param str cert_pem: the PEM certificate content
+    :rtype: JSON data for issuer DN
+    :raises keystone.exception.ValidationError: if the PEM certificate content
+        is invalid
+    """
+    try:
+        cert = crypto.load_certificate(crypto.FILETYPE_PEM, cert_pem)
+        issuer = cert.get_issuer()
+        dn_dict = {}
+        for item in issuer.get_components():
+            dn_dict[item[0].decode("utf-8")] = item[1].decode("utf-8")
+        return dn_dict
+    except Exception as error:
+        LOG.exception(error)
+        message = _('The certificate content is not PEM format.')
+        raise exception.ValidationError(message=message)
+
+
+def get_certificate_thumbprint(cert_pem):
+    """Get certificate thumbprint from the PEM certificate content.
+
+    :param str cert_pem: the PEM certificate content
+    :rtype: certificate thumbprint
+    """
+    thumb_sha256 = hashlib.sha256(cert_pem.encode('ascii')).digest()
+    thumbprint = base64.urlsafe_b64encode(thumb_sha256).decode('ascii')
+    return thumbprint
 
 
 def create_directory(directory, keystone_user_id=None, keystone_group_id=None):
