@@ -52,6 +52,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "67d31f54_317a69b6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2022-10-07T15:02:35Z",
+      "side": 1,
+      "message": "Agreed\n\nhttps://docs.openstack.org/reno/latest/user/usage.html for how to use reno",
+      "parentUuid": "85449644_b44e3434",
+      "revId": "ad268e1281535f12c6e99cfb0f43fccab2f0acbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2c39c7af_aabbd6c4",
