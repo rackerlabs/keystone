@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "236c5cd5_711917c5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 34520
+      },
+      "writtenOn": "2022-10-07T16:26:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7780e827_47cf19f5",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 50
+      },
+      "revId": "4cae1a9597f2bd155a2b7083dba6fd2cfc58f023",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "c2e81296_ca22dff5",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 3
@@ -106,6 +130,30 @@
       "writtenOn": "2022-10-04T15:44:45Z",
       "side": 1,
       "message": "Not sure if this is referenced anywhere in the change?",
+      "range": {
+        "startLine": 1067,
+        "startChar": 12,
+        "endLine": 1067,
+        "endChar": 33
+      },
+      "revId": "4cae1a9597f2bd155a2b7083dba6fd2cfc58f023",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9105d0c8_76d2a2e5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1067,
+      "author": {
+        "id": 34520
+      },
+      "writtenOn": "2022-10-07T16:26:21Z",
+      "side": 1,
+      "message": "Gage, you are right, thank you. We use ldap.pool_connection_timeout instead. Fixed in the new version.",
+      "parentUuid": "f4a61788_585b171b",
       "range": {
         "startLine": 1067,
         "startChar": 12,
