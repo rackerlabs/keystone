@@ -26,6 +26,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8dc61170_7d484f70",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 9542
+      },
+      "writtenOn": "2022-10-17T15:33:59Z",
+      "side": 1,
+      "message": "a lot of code duplication under this if..else\n\ncan we make it something like this?\n\n  if is_project:\n      entity \u003d self._PROJECT\n      entity_tag \u003d self._PROJECT_TAG\n  else:\n      entity \u003d self._DOMAIN\n      entity_tag \u003d self._DOMAIN_TAG\n  # here parse tags, populate deleted and created sets\n  notification.Audit.updated(entity, ...)\n  for tag in created:\n      notification.Audit.created(entity_tag, ...)\n  for tag in deleted:\n      notification.Audit.deleted(entity_tag, ...)",
+      "revId": "cea2ce2b2c05de66fa41889c8104928041ba73a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bfc9f854_34fe72c3",
         "filename": "keystone/resource/core.py",
         "patchSetId": 14
