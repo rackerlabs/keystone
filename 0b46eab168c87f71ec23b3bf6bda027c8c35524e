@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc0ae702_703a8d11",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2022-10-17T09:03:30Z",
+      "side": 1,
+      "message": "recheck\nIssue with keystone_tempest_plugin.tests.rbac.v3.test_credential.SystemMemberTests\t.test_identity_list_credentials \u0026 keystone_tempest_plugin.tests.rbac.v3.test_credential.ProjectMemberTests.test_identity_list_credentials seems unrelated to the patch by the logs",
+      "revId": "0b46eab168c87f71ec23b3bf6bda027c8c35524e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
