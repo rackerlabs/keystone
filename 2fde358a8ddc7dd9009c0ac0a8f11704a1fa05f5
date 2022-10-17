@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3667df9c_a1a0f9dc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9542
+      },
+      "writtenOn": "2022-10-17T14:48:57Z",
+      "side": 1,
+      "message": "somehow this is odd..\n\nam I correct that one will receive separate notifications \u0027tag created\u0027 but the notification itself won\u0027t contain for which project?\n\nbetter to add tags handling into the notification-from-project serializer IMO",
+      "revId": "2fde358a8ddc7dd9009c0ac0a8f11704a1fa05f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
