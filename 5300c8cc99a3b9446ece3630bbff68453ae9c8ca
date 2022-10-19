@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76c80d6c_f95bc96e",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2022-10-19T15:29:59Z",
+      "side": 1,
+      "message": "I don\u0027t think a warning is appropriate here, that will just blow up logs. From an operator perspective, this is a normal situation happening IMO and should at most log a debug message, if even that.",
+      "revId": "5300c8cc99a3b9446ece3630bbff68453ae9c8ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
