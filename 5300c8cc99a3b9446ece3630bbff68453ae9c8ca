@@ -16,6 +16,24 @@
       "message": "I don\u0027t think a warning is appropriate here, that will just blow up logs. From an operator perspective, this is a normal situation happening IMO and should at most log a debug message, if even that.",
       "revId": "5300c8cc99a3b9446ece3630bbff68453ae9c8ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "039eea81_fee98d9f",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2022-10-19T15:51:58Z",
+      "side": 1,
+      "message": "Thank you, I was wondering about that when I wrote it. I think I\u0027ll make it a debug level as it could be a nice breadcrumb in troubleshooting.",
+      "parentUuid": "76c80d6c_f95bc96e",
+      "revId": "5300c8cc99a3b9446ece3630bbff68453ae9c8ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
