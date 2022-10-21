@@ -24,6 +24,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9bf3c3b_a42db3c8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2022-10-21T15:09:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "692b0701_ccc8ab46",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 3
+      },
+      "revId": "476794ad61402163bf6066f597f5f9333e9b8a4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d4b02404_00294659",
@@ -37,6 +61,24 @@
       "writtenOn": "2022-10-20T05:30:27Z",
       "side": 1,
       "message": "I don\u0027t think you need to keep the history of the patch in the commit message, that can be seen in gerrit if needed. So you can just s/warning/debug/ here and drop the update line below.",
+      "revId": "476794ad61402163bf6066f597f5f9333e9b8a4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb40e231_485c957d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2022-10-21T15:09:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4b02404_00294659",
       "revId": "476794ad61402163bf6066f597f5f9333e9b8a4f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
@@ -58,6 +100,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1cd3256_7291d8a4",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2022-10-21T15:09:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f07ef59_86a2d04c",
+      "revId": "476794ad61402163bf6066f597f5f9333e9b8a4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9e5ab87a_c51188eb",
@@ -71,6 +131,24 @@
       "writtenOn": "2022-10-20T05:30:27Z",
       "side": 1,
       "message": "\"Otherwise the token will use the configured defaul lifetime.\"?\n\nAlso add a link to the CVE? At least the LP bug should be mentioned and linked to.",
+      "revId": "476794ad61402163bf6066f597f5f9333e9b8a4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04c592c5_93133a7f",
+        "filename": "releasenotes/notes/token_expiration_to_match_application_credential-56d058355a9f240d.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2022-10-21T15:09:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9e5ab87a_c51188eb",
       "revId": "476794ad61402163bf6066f597f5f9333e9b8a4f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
