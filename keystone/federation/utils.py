@@ -325,6 +325,9 @@ def get_remote_id_parameter(idp, protocol):
 
 def validate_idp(idp, protocol, assertion):
     """The IdP providing the assertion should be registered for the mapping."""
+    LOG.debug('ADEXXXX')
+    LOG.debug('ADEXXXX IDP: ', idp)
+    LOG.debug('ADEXXXX ASSERTION: ', assertion)
     remote_id_parameter = get_remote_id_parameter(idp, protocol)
     if not remote_id_parameter or not idp['remote_ids']:
         LOG.debug('Impossible to identify the IdP %s ', idp['id'])
