@@ -134,6 +134,7 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         admin_role = PROVIDERS.role_api.get_role(bootstrap.role_id)
         reader_role = PROVIDERS.role_api.get_role(bootstrap.reader_role_id)
         member_role = PROVIDERS.role_api.get_role(bootstrap.member_role_id)
+        # service_role = PROVIDERS.role_api.get_role(bootstrap.service_role_id)
         role_list = (
             PROVIDERS.assignment_api.get_roles_for_user_and_project(
                 user['id'],
@@ -142,6 +143,7 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         self.assertIn(admin_role['id'], role_list)
         self.assertIn(reader_role['id'], role_list)
         self.assertIn(member_role['id'], role_list)
+        # self.assertIn(service_role['id'], role_list)
         system_roles = (
             PROVIDERS.assignment_api.list_system_grants_for_user(
                 user['id']
