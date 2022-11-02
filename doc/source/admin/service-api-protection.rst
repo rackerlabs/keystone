@@ -25,6 +25,12 @@ Default roles and behaviors across scopes allow operators to delegate more
 functionality to their team, auditors, customers, and users without maintaining
 custom policies.
 
+In addition to ``admin``, ``member``, and ``reader`` role, from Antelope
+release keystone will provide ``Service`` role by default as well. Operators
+can use this role for service to service API calls instead of using ``Admin``
+role for the same. The service role will be separate from ``admin``,
+``member``, ``reader`` and will not implicate any  of these roles.
+
 .. _`token guide`: https://docs.openstack.org/keystone/latest/admin/tokens-overview.html#authorization-scopes
 
 -----------------
@@ -131,6 +137,27 @@ services are addressing this individually at their own pace).
 
    As of the Train release, keystone applies the following personas
    consistently across its API.
+
+Service
+=======
+
+We reserve the ``service`` role for Service-to-service communication. It is
+important to note that we need to keep all the service-to-service APIs
+default to ``service`` role only. For example, a policy that requires
+``service`` can be expressed as:
+
+.. code-block:: yaml
+
+    "identity:create_foo": "role:service"
+
+There might be exception service-to-service APIs which project think are
+useful to be used by admin or non-admin user then they can take the
+exceptional decision to default them to user role and ``service`` role.  For
+example, a policy that requires ``service`` and ``admin`` can be expressed as:
+
+.. code-block:: yaml
+
+    "identity:create_foo": "role:service" or "role:admin"
 
 ---------------
 System Personas
