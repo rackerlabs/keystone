@@ -37,6 +37,23 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "95b1a66b_a6c8274c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2022-11-03T10:56:00Z",
+      "side": 1,
+      "message": "Ussuri backport has merged, so this is good to go as well, upgrading to +2+W. (what I commented on this patch is still valid)",
+      "revId": "8d883f011c586f0e79c56f0f70f9455997d70012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "feaa39bf_6c132179",
         "filename": "keystone/api/ec2tokens.py",
         "patchSetId": 2
