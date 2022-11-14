@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58185aac_a1438555",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34520
+      },
+      "writtenOn": "2022-11-14T22:23:12Z",
+      "side": 1,
+      "message": "Gage, _DOMAIN_TAG related comments were implemented. Thank you",
+      "revId": "721af6c362125cf83aaa9f35eb7814d7d0aa6176",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
