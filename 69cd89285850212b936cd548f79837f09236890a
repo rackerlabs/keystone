@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01086ce6_1cc9dbe1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9914
+      },
+      "writtenOn": "2022-11-15T16:28:37Z",
+      "side": 1,
+      "message": "Kristi - please take a look at the patch.  I included a bunch of your work here.  I\u0027ll be following up with a patch to keystone-tempest-plugin to so oidc testing, and then a patch to add a gate to tie it all together.\n\nHave not quite gotten it working yet, but enough to start sharing progress.",
+      "revId": "69cd89285850212b936cd548f79837f09236890a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
