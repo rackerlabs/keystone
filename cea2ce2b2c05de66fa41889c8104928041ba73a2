@@ -71,6 +71,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3ad1837_4764c38e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 34520
+      },
+      "writtenOn": "2022-11-16T23:43:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "92316a8c_ec42718e",
+      "range": {
+        "startLine": 226,
+        "startChar": 16,
+        "endLine": 226,
+        "endChar": 61
+      },
+      "revId": "cea2ce2b2c05de66fa41889c8104928041ba73a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0b0b472f_5e3a1618",
@@ -223,6 +247,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab96e796_20d26866",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 34520
+      },
+      "writtenOn": "2022-11-16T23:43:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfc9f854_34fe72c3",
+      "range": {
+        "startLine": 420,
+        "startChar": 1,
+        "endLine": 433,
+        "endChar": 66
+      },
+      "revId": "cea2ce2b2c05de66fa41889c8104928041ba73a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "358781a7_5ef683af",
@@ -236,6 +284,24 @@
       "writtenOn": "2022-10-17T15:22:12Z",
       "side": 1,
       "message": "is there really such a thing? isn\u0027t it simply the same as above? \u0027create\u0027 for tags that were not there and \u0027delete\u0027 for tags that are no longer there?",
+      "revId": "cea2ce2b2c05de66fa41889c8104928041ba73a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e2f07ac_75437e25",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1053,
+      "author": {
+        "id": 34520
+      },
+      "writtenOn": "2022-11-16T23:43:55Z",
+      "side": 1,
+      "message": "Technically  - the idea of the code is the same - to send a CAFD notification about each updated tag. The difference is the API endpoint used for this. Most of the project tags operations are performed via \"openstack project set\" command where we can add or remove tags.\nI have added CADF notifications emitting for actions in tags for future needs.",
+      "parentUuid": "358781a7_5ef683af",
       "revId": "cea2ce2b2c05de66fa41889c8104928041ba73a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
