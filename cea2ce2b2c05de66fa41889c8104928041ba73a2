@@ -135,6 +135,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "21ca2247_ed61817f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 34520
+      },
+      "writtenOn": "2022-11-16T23:15:38Z",
+      "side": 1,
+      "message": "Based on the previous comment by Gage Hugo I have removed this code duplication.",
+      "parentUuid": "8dc61170_7d484f70",
+      "revId": "cea2ce2b2c05de66fa41889c8104928041ba73a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fbd7eb1d_877d7133",
