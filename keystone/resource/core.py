@@ -50,7 +50,7 @@ class Manager(manager.Manager):
 
     _DOMAIN = 'domain'
     _PROJECT = 'project'
-    _PROJECT_TAG = 'project tag'
+    _PROJECT_TAG = 'project.tag'
 
     def __init__(self):
         resource_driver = CONF.resource.driver
@@ -219,10 +219,18 @@ class Manager(manager.Manager):
                 type='project',
                 details=self._generate_project_name_conflict_msg(project))
 
+        # emitting project or domain created notifications
         if project.get('is_domain'):
             notifications.Audit.created(self._DOMAIN, project_id, initiator)
         else:
             notifications.Audit.created(self._PROJECT, project_id, initiator)
+
+        # emitting project tag.created notifications
+        tags = set(project.get('tags', []) or [])
+        tags_list = [t.strip() for t in tags]
+        for tag in tags_list:
+            notifications.Audit.created(self._PROJECT_TAG, tag, initiator)
+
         if MEMOIZE.should_cache(ret):
             self.get_project.set(ret, self, project_id)
             self.get_project_by_name.set(ret, self, ret['name'],
@@ -392,8 +400,7 @@ class Manager(manager.Manager):
                 assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
         finally:
             # attempt to send audit event even if the cache invalidation raises
-            notifications.Audit.updated(self._PROJECT, project_id, initiator)
-            if original_project['is_domain']:
+            if project.get('is_domain'):
                 notifications.Audit.updated(self._DOMAIN, project_id,
                                             initiator)
                 # If the domain is being disabled, issue the disable
@@ -409,7 +416,21 @@ class Manager(manager.Manager):
                     # next time they're validated.
                     token_provider.TOKENS_REGION.invalidate()
                     notifications.Audit.disabled(self._DOMAIN, project_id,
-                                                 public=False)
+                                                public=False)
+            else:
+                notifications.Audit.updated(self._PROJECT, project_id,
+                                            initiator)
+            # emit notifications for created or deleted project tags
+            tags = set(project.get('tags', []) or [])
+            original_tags = set(original_project.get('tags', []) or [])
+            new_tags = tags - original_tags
+            new_tags_list = [t.strip() for t in new_tags]
+            for tag in new_tags_list:
+                notifications.Audit.created(self._PROJECT_TAG, tag, initiator)
+            deleted_tags = original_tags - tags
+            deleted_tags_list = [t.strip() for t in deleted_tags]
+            for tag in deleted_tags_list:
+                notifications.Audit.deleted(self._PROJECT_TAG, tag, initiator)
 
         return ret
 
@@ -940,9 +961,6 @@ class Manager(manager.Manager):
         tag_name = tag.strip()
         project['tags'].append(tag_name)
         self.update_project(project_id, {'tags': project['tags']})
-
-        notifications.Audit.created(
-            self._PROJECT_TAG, tag_name, initiator)
         return tag_name
 
     def get_project_tag(self, project_id, tag_name):
@@ -1011,7 +1029,6 @@ class Manager(manager.Manager):
         except ValueError:
             raise exception.ProjectTagNotFound(project_tag=tag)
         self.update_project(project_id, project)
-        notifications.Audit.deleted(self._PROJECT_TAG, tag)
 
     def check_project_depth(self, max_depth=None):
         """Check project depth whether greater than input or not."""
