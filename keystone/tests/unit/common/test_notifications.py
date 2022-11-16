@@ -639,6 +639,29 @@ class NotificationsForEntities(BaseNotificationTest):
         self._assert_last_audit(project_ref['id'], UPDATED_OPERATION,
                                 'project', cadftaxonomy.SECURITY_PROJECT)
 
+    def test_update_project_add_tags(self):
+        project_ref = unit.new_project_ref(domain_id=self.domain_id)
+        PROVIDERS.resource_api.create_project(project_ref['id'], project_ref)
+        tag_list = ['tag1']
+        project_tags = {'tags': tag_list}
+        PROVIDERS.resource_api.update_project(project_ref['id'], project_tags)
+        self._assert_notify_sent(
+            project_ref['id'], CREATED_OPERATION, 'project tag', public=True)
+        self._assert_last_audit(project_ref['id'], CREATED_OPERATION,
+                                'project tag', cadftaxonomy.SECURITY_PROJECT)
+
+    def test_update_project_remove_tags(self):
+        tag_list = ['tag1']
+        project_ref = unit.new_project_ref(domain_id=self.domain_id, tags=tag_list)
+        PROVIDERS.resource_api.create_project(project_ref['id'], project_ref)
+        tag_list = []
+        project_tags = {'tags': tag_list}
+        PROVIDERS.resource_api.update_project(project_ref['id'], project_tags)
+        self._assert_notify_sent(
+            project_ref['id'], DELETED_OPERATION, 'project tag', public=True)
+        self._assert_last_audit(project_ref['id'], DELETED_OPERATION,
+                                'project tag', cadftaxonomy.SECURITY_PROJECT)
+
     def test_disable_project(self):
         project_ref = unit.new_project_ref(domain_id=self.domain_id)
         PROVIDERS.resource_api.create_project(project_ref['id'], project_ref)
