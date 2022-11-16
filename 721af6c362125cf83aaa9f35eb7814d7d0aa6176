@@ -16,6 +16,42 @@
       "message": "Gage, _DOMAIN_TAG related comments were implemented. Thank you",
       "revId": "721af6c362125cf83aaa9f35eb7814d7d0aa6176",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4971b83c_1aa245cf",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 34520
+      },
+      "writtenOn": "2022-11-16T23:11:01Z",
+      "side": 1,
+      "message": "\u003e pep8: E127 continuation line over-indented for visual indent\n\nPlease fix.",
+      "parentUuid": "1de7287a_604c5f60",
+      "revId": "721af6c362125cf83aaa9f35eb7814d7d0aa6176",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed76cdc1_6da2f5a0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 34520
+      },
+      "writtenOn": "2022-11-16T23:11:01Z",
+      "side": 1,
+      "message": "\u003e pep8: E127 continuation line over-indented for visual indent\n\nPlease fix.",
+      "parentUuid": "f3ee20cd_96fd752f",
+      "revId": "721af6c362125cf83aaa9f35eb7814d7d0aa6176",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
