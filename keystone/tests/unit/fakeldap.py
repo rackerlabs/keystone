@@ -298,6 +298,9 @@ class FakeLdap(common.LDAPHandler):
             raise ldap.SERVER_DOWN
         whos = ['cn=Admin', CONF.ldap.user]
         if (who in whos and cred in ['password', CONF.ldap.password]):
+            self.connected = True
+            self.who = who
+            self.cred = cred
             return
 
         attrs = self.db.get(self.key(who))
@@ -318,6 +321,9 @@ class FakeLdap(common.LDAPHandler):
 
     def unbind_s(self):
         """Provide for compatibility but this method is ignored."""
+        self.connected = False
+        self.who = None
+        self.cred = None
         if server_fail:
             raise ldap.SERVER_DOWN
 
@@ -536,7 +542,7 @@ class FakeLdap(common.LDAPHandler):
             raise exception.NotImplemented()
 
         # only passing a single server control is supported by this fake ldap
-        if len(serverctrls) > 1:
+        if serverctrls and len(serverctrls) > 1:
             raise exception.NotImplemented()
 
         # search_ext is async and returns an identifier used for
@@ -591,6 +597,7 @@ class FakeLdapPool(FakeLdap):
     def __init__(self, uri, retry_max=None, retry_delay=None, conn=None):
         super(FakeLdapPool, self).__init__(conn=conn)
         self.url = uri
+        self._uri = uri
         self.connected = None
         self.conn = self
         self._connection_time = 5  # any number greater than 0
