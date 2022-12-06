@@ -16,6 +16,23 @@
       "message": "for the record, we\u0027ve tested this and it\u0027s working in production (beyond the unit tests that also have the fix).",
       "revId": "c70d0c33a5977ca7208fbadd876a646cd37ffb31",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d8969b4_8bf0f8b7",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2022-12-06T06:56:43Z",
+      "side": 1,
+      "message": "Looks like it makes sense to define it as @staticmethod?",
+      "revId": "c70d0c33a5977ca7208fbadd876a646cd37ffb31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
