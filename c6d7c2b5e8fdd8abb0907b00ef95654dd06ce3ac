@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f06aed11_e98cc208",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2022-12-07T21:18:36Z",
+      "side": 1,
+      "message": "Thank you for proposing this fix.\n\nTo help me understand (and document) the behavior better, can you please write a release note describing the change in behavior? In particular, once a connection to one of the servers of the pool has failed, and the server has been removed from the pool, does keystone need to be restarted for that server to be retried? What error is thrown when all servers are down and all have been removed from the pool?",
+      "revId": "c6d7c2b5e8fdd8abb0907b00ef95654dd06ce3ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
