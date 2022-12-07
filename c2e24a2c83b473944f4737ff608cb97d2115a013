@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7ee95d1d_fde2fa0b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 26
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34520
+      },
+      "writtenOn": "2022-12-07T21:34:54Z",
+      "side": 1,
+      "message": "Hello Kristi,\n\nPlease review my answer on the first comment.\n\nThanks",
+      "revId": "c2e24a2c83b473944f4737ff608cb97d2115a013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3f9572e3_e9861149",
         "filename": "keystone/resource/core.py",
         "patchSetId": 26
@@ -14,6 +31,24 @@
       "writtenOn": "2022-12-07T21:10:21Z",
       "side": 1,
       "message": "What was the need for changing this? If someone is monitoring for the previous name they will be missing the notifications now.",
+      "revId": "c2e24a2c83b473944f4737ff608cb97d2115a013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3db05d4a_33a31430",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 34520
+      },
+      "writtenOn": "2022-12-07T21:34:54Z",
+      "side": 1,
+      "message": "_PROJECT_TAG notification has never been sent before. Adding this action is actually the main goal of this patchset. \n\nTags operations notification emission was a part of a separate tags management API endpoints that are not used by either openstack cli or horizon UI. This is why in this PS I am removing those lines in methods create_project_tag(), update_progect_tags() and delete_progect_tag(). These methods are calling self.update_project(project_id, {\u0027tags\u0027: project[\u0027tags\u0027]}) anyway to perform the action anyway. And update_project() is now sending the notifications about changes in the tags collection(if any).\n\nAdding a dot into the name makes \"event_type\" and \"action\" look consistent - the dot is used there as a separator already: \n\n{\"message_id\": \"4db247d8-9b5b-4ad8-aa64-92a21b74aecb\", \"publisher_id\": \"identity.keystone-api-bd7b488d9-f5k6l\", \"event_type\": \"identity.project.tag.created\", \"priority\": \"INFO\", \"payload\": {\"typeURI\": \"http://schemas.dmtf.org/cloud/audit/1.0/event\", \"eventType\": \"activity\", \"id\": \"52765b59-d733-51b1-952e-686f1ec57ac8\", \"eventTime\": \"2022-11-28T23:33:08.271545+0000\", \"action\": \"created.project.tag\", \"outcome\": \"success\", \"observer\": {\"id\": \"21fef8303aab4749b35045b00f817529\", \"typeURI\": \"service/security\"}, \"initiator\": {\"id\": \"db64fadaa2374afbabeab9ca3613a661\", \"typeURI\": \"service/security/account/user\", \"host\": {\"address\": \"1.2.3.4\", \"agent\": \"python-keystoneclient\"}, \"user_id\": \"db64fadaa2374afbabeab9ca3613a661\", \"project_id\": \"da7ff281d5ef49a1a8c2540fda9dd6f8\", \"request_id\": \"req-1994fae8-809d-4e53-aeb7-5916d6f8969c\", \"username\": \"admin\"}, \"target\": {\"id\": \"TAG5\", \"typeURI\": \"unknown\"}, \"resource_info\": \"TAG5\"}, \"timestamp\": \"2022-11-28 23:33:08.271899\"}\n\nThanks",
+      "parentUuid": "3f9572e3_e9861149",
       "revId": "c2e24a2c83b473944f4737ff608cb97d2115a013",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
