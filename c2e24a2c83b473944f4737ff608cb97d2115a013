@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f9572e3_e9861149",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2022-12-07T21:10:21Z",
+      "side": 1,
+      "message": "What was the need for changing this? If someone is monitoring for the previous name they will be missing the notifications now.",
+      "revId": "c2e24a2c83b473944f4737ff608cb97d2115a013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11216805_262e7820",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2022-12-07T21:10:21Z",
+      "side": 1,
+      "message": "A domain is still technically a project, and placing this in the conditional removes a notification that was previously sent. This change also seems unrelated.",
+      "revId": "c2e24a2c83b473944f4737ff608cb97d2115a013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
