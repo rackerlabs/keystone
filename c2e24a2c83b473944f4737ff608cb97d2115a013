@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "68880464_27b908ab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 26
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34520
+      },
+      "writtenOn": "2022-12-07T21:45:52Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7ee95d1d_fde2fa0b",
+      "revId": "c2e24a2c83b473944f4737ff608cb97d2115a013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3f9572e3_e9861149",
@@ -66,6 +84,24 @@
       "writtenOn": "2022-12-07T21:10:21Z",
       "side": 1,
       "message": "A domain is still technically a project, and placing this in the conditional removes a notification that was previously sent. This change also seems unrelated.",
+      "revId": "c2e24a2c83b473944f4737ff608cb97d2115a013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e91d5b35_c1add9b5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 34520
+      },
+      "writtenOn": "2022-12-07T21:45:52Z",
+      "side": 1,
+      "message": "Kristi,\n\nyou are right. A domain is a project. This is why I am sending common notifications for tags created/deleted. This code is not under \"if project.get(\u0027is_domain\u0027):\" condition.",
+      "parentUuid": "11216805_262e7820",
       "revId": "c2e24a2c83b473944f4737ff608cb97d2115a013",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
