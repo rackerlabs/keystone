@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6902060_51068b7e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2022-12-09T14:43:32Z",
+      "side": 1,
+      "message": "Thanks for proposing this and writing really good documentation. I\u0027ll test this out before approving, but I like the direction.",
+      "revId": "a9a6c68d8c61c4c56c2472c52cd719e937cc136b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
