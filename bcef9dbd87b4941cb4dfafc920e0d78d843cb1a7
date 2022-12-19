@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f5d9072_0c7dc8bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2022-12-19T19:37:31Z",
+      "side": 1,
+      "message": "recheck - keystone-protection-functional",
+      "revId": "bcef9dbd87b4941cb4dfafc920e0d78d843cb1a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
