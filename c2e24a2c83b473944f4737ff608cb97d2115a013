@@ -71,6 +71,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3bca7ca3_dc2cfc1a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 34520
+      },
+      "writtenOn": "2022-12-20T16:35:12Z",
+      "side": 1,
+      "message": "Done. I have changed _PROJECT_TAG value back to \u0027project tag\u0027.",
+      "parentUuid": "3db05d4a_33a31430",
+      "revId": "c2e24a2c83b473944f4737ff608cb97d2115a013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "11216805_262e7820",
