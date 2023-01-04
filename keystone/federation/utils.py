@@ -433,6 +433,9 @@ def transform_to_group_ids(group_names, mapping_id,
         except exception.GroupNotFound:
             LOG.debug('Group %s has no entry in the backend',
                       group['name'])
+        except exception.DomainNotFound:
+            LOG.debug('Domain %s for group %s cannot be found',
+                      group['domain'], group['name'])
 
 
 def get_assertion_params_from_env():
