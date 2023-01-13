@@ -16,6 +16,23 @@
       "message": "recheck Seems like a transitional failure.",
       "revId": "420f4ff46da106b67912cecdff939f5dc0b079d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f563d642_87ef89dd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2023-01-13T15:22:51Z",
+      "side": 1,
+      "message": "Self-merging to unblock gate after discussion with Dave.",
+      "revId": "420f4ff46da106b67912cecdff939f5dc0b079d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
