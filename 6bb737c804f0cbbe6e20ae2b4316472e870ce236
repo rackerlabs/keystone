@@ -1,0 +1,193 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a486838_d2b453e9",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-01-13T15:55:02Z",
+      "side": 1,
+      "message": "Seems these vars are not used in this class. Could you tell me the reason for returning them?",
+      "range": {
+        "startLine": 660,
+        "startChar": 15,
+        "endLine": 660,
+        "endChar": 52
+      },
+      "revId": "6bb737c804f0cbbe6e20ae2b4316472e870ce236",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9d1c84e_195718f4",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-01-13T15:55:02Z",
+      "side": 1,
+      "message": "LOG.debug(f\u0027response: {resp}\u0027)",
+      "range": {
+        "startLine": 757,
+        "startChar": 8,
+        "endLine": 757,
+        "endChar": 23
+      },
+      "revId": "6bb737c804f0cbbe6e20ae2b4316472e870ce236",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93d00388_7c861ca2",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 772,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-01-13T15:55:02Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 772,
+        "startChar": 8,
+        "endLine": 772,
+        "endChar": 23
+      },
+      "revId": "6bb737c804f0cbbe6e20ae2b4316472e870ce236",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "526b4453_795d1fd4",
+        "filename": "keystone/tests/unit/test_v3_oauth2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-01-13T15:55:02Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 820,
+        "startChar": 8,
+        "endLine": 820,
+        "endChar": 23
+      },
+      "revId": "6bb737c804f0cbbe6e20ae2b4316472e870ce236",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df0fbf9e_6446ad35",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-01-13T15:55:02Z",
+      "side": 1,
+      "message": "why don\u0027t you add an assertion for `credential_id` and `thumbprint`?",
+      "revId": "6bb737c804f0cbbe6e20ae2b4316472e870ce236",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5548504f_a0e60f26",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-01-13T15:55:02Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "6bb737c804f0cbbe6e20ae2b4316472e870ce236",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6edf7859_9eb6ce9c",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-01-13T15:55:02Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "6bb737c804f0cbbe6e20ae2b4316472e870ce236",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "701831a1_629d1658",
+        "filename": "keystone/token/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-01-13T15:55:02Z",
+      "side": 1,
+      "message": "isn\u0027t it identical with ``user_id``?\nIf it is, we don\u0027t need this.",
+      "range": {
+        "startLine": 141,
+        "startChar": 21,
+        "endLine": 141,
+        "endChar": 34
+      },
+      "revId": "6bb737c804f0cbbe6e20ae2b4316472e870ce236",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5644cf67_2004a422",
+        "filename": "keystone/token/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-01-13T15:55:02Z",
+      "side": 1,
+      "message": "nits, \n```\nclient certificate\n```",
+      "range": {
+        "startLine": 245,
+        "startChar": 45,
+        "endLine": 245,
+        "endChar": 56
+      },
+      "revId": "6bb737c804f0cbbe6e20ae2b4316472e870ce236",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
