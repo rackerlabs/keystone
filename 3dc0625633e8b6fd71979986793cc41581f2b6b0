@@ -16,6 +16,23 @@
       "message": "recheck multiattach volume related failure",
       "revId": "3dc0625633e8b6fd71979986793cc41581f2b6b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "655c953c_92da126b",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2023-01-13T15:55:22Z",
+      "side": 1,
+      "message": "Can you please explain the change here? I\u0027m not entirely understanding this part.",
+      "revId": "3dc0625633e8b6fd71979986793cc41581f2b6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
