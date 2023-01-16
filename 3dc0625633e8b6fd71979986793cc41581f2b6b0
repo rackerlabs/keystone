@@ -18,6 +18,23 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "771dff60_80b3e98f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2023-01-16T05:40:09Z",
+      "side": 1,
+      "message": "Thank you for review!",
+      "revId": "3dc0625633e8b6fd71979986793cc41581f2b6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "655c953c_92da126b",
@@ -31,6 +48,24 @@
       "writtenOn": "2023-01-13T15:55:22Z",
       "side": 1,
       "message": "Can you please explain the change here? I\u0027m not entirely understanding this part.",
+      "revId": "3dc0625633e8b6fd71979986793cc41581f2b6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91329e7b_9e329820",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2023-01-16T05:40:09Z",
+      "side": 1,
+      "message": "Need to understand bootstrap execution for this;\nIf you specify any project name for bootstrap command then there is no need to create service role for that project, it requires only admin, member and reader roles. \n\nAs this method is commonly used in many tests I have opted this way rather than duplicating the entire code to check for service role is created or not.",
+      "parentUuid": "655c953c_92da126b",
       "revId": "3dc0625633e8b6fd71979986793cc41581f2b6b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
