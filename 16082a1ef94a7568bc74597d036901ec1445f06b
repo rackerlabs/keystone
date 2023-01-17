@@ -16,6 +16,23 @@
       "message": "Please kindly find comments below.",
       "revId": "16082a1ef94a7568bc74597d036901ec1445f06b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6350dc8e_38c35d29",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33920
+      },
+      "writtenOn": "2023-01-17T09:56:10Z",
+      "side": 1,
+      "message": "I replied to one comment, so please check it.\nThank you.",
+      "revId": "16082a1ef94a7568bc74597d036901ec1445f06b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
