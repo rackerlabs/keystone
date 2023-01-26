@@ -33,6 +33,57 @@
       "message": "I replied to one comment, so please check it.\nThank you.",
       "revId": "16082a1ef94a7568bc74597d036901ec1445f06b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bfd1a46f_4d597224",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2023-01-26T18:37:11Z",
+      "side": 1,
+      "message": "So this can only work with either credentials, or mtls, but not both at the same time? Is there a particular reason?",
+      "revId": "16082a1ef94a7568bc74597d036901ec1445f06b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb512af0_25290379",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2023-01-26T18:37:11Z",
+      "side": 1,
+      "message": "What happens if a user doesn\u0027t have a default_project_id? It seems that instead of getting a project scoped token you return a domain scoped token. I don\u0027t like that the type of token changes based on a user attribute, instead of the request being different. If we really want this to only work for 1 project for each user, the lack of default_project_id should cause this to fail.",
+      "revId": "16082a1ef94a7568bc74597d036901ec1445f06b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27bd41db_faf3453f",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2023-01-26T18:37:11Z",
+      "side": 1,
+      "message": "As Hiromu mentioned in a different comment, I don\u0027t think passing credential_id is required or desired here. You can distinguish whether this is a oauth2_credential token from the presence of thumbprint.",
+      "revId": "16082a1ef94a7568bc74597d036901ec1445f06b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

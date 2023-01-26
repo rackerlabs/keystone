@@ -241,6 +241,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "48f6d400_3e4f29da",
+        "filename": "keystone/token/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2023-01-26T18:37:11Z",
+      "side": 1,
+      "message": "I don\u0027t think it makes sense to have users specify a different credential_id as it has nothing to do with the certificate that they\u0027re using to authenticate. Please remove the attribute.",
+      "parentUuid": "186c457c_b5588145",
+      "range": {
+        "startLine": 141,
+        "startChar": 21,
+        "endLine": 141,
+        "endChar": 34
+      },
+      "revId": "6bb737c804f0cbbe6e20ae2b4316472e870ce236",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5644cf67_2004a422",
         "filename": "keystone/token/token_formatters.py",
         "patchSetId": 3
