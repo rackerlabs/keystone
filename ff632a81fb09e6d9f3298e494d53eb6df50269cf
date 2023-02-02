@@ -16,6 +16,23 @@
       "message": "LGTM",
       "revId": "ff632a81fb09e6d9f3298e494d53eb6df50269cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15106c0f_9b9deb37",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34980
+      },
+      "writtenOn": "2023-02-02T08:03:02Z",
+      "side": 1,
+      "message": "Hello Kristi, can you review this merge proposal for another +2? Thanks in advance!",
+      "revId": "ff632a81fb09e6d9f3298e494d53eb6df50269cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
