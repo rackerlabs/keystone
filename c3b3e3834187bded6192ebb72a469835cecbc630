@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b2a7314_78196acb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-02-08T02:38:26Z",
+      "side": 1,
+      "message": "Thank you for the review.\nPlease kindly check the latest PS again.",
+      "revId": "c3b3e3834187bded6192ebb72a469835cecbc630",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

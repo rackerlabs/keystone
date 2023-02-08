@@ -54,6 +54,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a045e468_1d6a93ef",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-02-08T02:38:26Z",
+      "side": 1,
+      "message": "In the previous meeting, you mentioned that the authentication methods can be handled by auth_method [1]. However, I think auth_method lists the available authentication methods when users perform authentication with `/identity/v3/auth/tokens` with `methods` field in requests. Adding something like `oauth2_cert` to auth_method may fall into error as OAuth2.0 doesn\u0027t work as a plugin for `/identity/v3/auth/tokens` [2]. For that reason, I just changed oauth2_authn_method to ListOpt which is specific for the OAuth2.0. Is this in line with your thoughts? I didn\u0027t make test cases yet. If you agree with the above, I\u0027ll add test cases.\n\n[1] https://github.com/openstack/keystone/blob/420f4ff46da106b67912cecdff939f5dc0b079d0/keystone/conf/auth.py#L19-L28\n[2] https://github.com/openstack/keystone/blob/master/keystone/auth/core.py#L40-L65",
+      "parentUuid": "bfd1a46f_4d597224",
+      "revId": "16082a1ef94a7568bc74597d036901ec1445f06b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bb512af0_25290379",
         "filename": "keystone/api/os_oauth2.py",
         "patchSetId": 6
@@ -71,6 +89,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e869372b_86712314",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-02-08T02:38:26Z",
+      "side": 1,
+      "message": "Changed codes to fall when `default_project_id` is empty.",
+      "parentUuid": "bb512af0_25290379",
+      "revId": "16082a1ef94a7568bc74597d036901ec1445f06b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "27bd41db_faf3453f",
         "filename": "keystone/api/os_oauth2.py",
         "patchSetId": 6
@@ -82,6 +118,24 @@
       "writtenOn": "2023-01-26T18:37:11Z",
       "side": 1,
       "message": "As Hiromu mentioned in a different comment, I don\u0027t think passing credential_id is required or desired here. You can distinguish whether this is a oauth2_credential token from the presence of thumbprint.",
+      "revId": "16082a1ef94a7568bc74597d036901ec1445f06b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2e5209d_840e3090",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-02-08T02:38:26Z",
+      "side": 1,
+      "message": "Removed credential_id among all places. In this place, `domain_id` is also removed as domain-scoped token is now out-of-scope.",
+      "parentUuid": "27bd41db_faf3453f",
       "revId": "16082a1ef94a7568bc74597d036901ec1445f06b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
