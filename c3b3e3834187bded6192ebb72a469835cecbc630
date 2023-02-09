@@ -20,6 +20,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "eca4e451_2560b5d0",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 34634
+      },
+      "writtenOn": "2023-02-09T03:42:18Z",
+      "side": 1,
+      "message": "It needs to be modified to:\nif not client_cert and client_auth and client_auth.type \u003d\u003d \u0027basic\u0027:\n\nCause:\n\nApplication credential ID and user ID are not the same. \nclient_certificate and authorization (basic secret) exist at the same time,\nclient_id will be replaced with the application credential ID, causing authentication to fail.",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 55
+      },
+      "revId": "c3b3e3834187bded6192ebb72a469835cecbc630",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1d6e31d0_0687e08a",
         "filename": "keystone/common/render_token.py",
         "patchSetId": 7
