@@ -16,6 +16,24 @@
       "message": "Thank you for submitting patches.\n\nCould you add the following line to commit messages?\n\n```\nImplements: blueprint support-oauth2-mtls\n```\n\nPlease do the same thing for the other patches:\nhttps://review.opendev.org/q/topic:bp%252Fsupport-oauth2-mtls",
       "revId": "58374f2a62b4693362b8c79b523e5ca4b057184b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7df3421_a73a4f49",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34634
+      },
+      "writtenOn": "2023-02-09T01:40:18Z",
+      "side": 1,
+      "message": "Has added.",
+      "parentUuid": "c3ab41aa_51f5c136",
+      "revId": "58374f2a62b4693362b8c79b523e5ca4b057184b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

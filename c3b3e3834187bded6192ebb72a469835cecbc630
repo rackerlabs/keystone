@@ -16,6 +16,23 @@
       "message": "Thank you for the review.\nPlease kindly check the latest PS again.",
       "revId": "c3b3e3834187bded6192ebb72a469835cecbc630",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d6e31d0_0687e08a",
+        "filename": "keystone/common/render_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 34634
+      },
+      "writtenOn": "2023-02-09T01:40:18Z",
+      "side": 1,
+      "message": "After this place is removed oauth2_credential_id, the token no longer contains oauth2_credential_id fields. So keystoneauth and keystonemiddleware code needs to be modified simultaneously.",
+      "revId": "c3b3e3834187bded6192ebb72a469835cecbc630",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
