@@ -50,6 +50,23 @@
       "message": "recheck",
       "revId": "726fc578c2cf8b479b49aa9f08e9d57418c83f28",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99a20ed0_c5ee53bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-02-10T16:52:49Z",
+      "side": 1,
+      "message": "Looks fine to me, we\u0027re way past py36 where f-strings appeared.",
+      "revId": "726fc578c2cf8b479b49aa9f08e9d57418c83f28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
