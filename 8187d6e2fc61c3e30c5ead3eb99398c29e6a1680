@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c88b0b5_4d1e1c52",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2023-02-10T02:18:36Z",
+      "side": 1,
+      "message": "I do not recall the reason why we need to remove this. please add reason if that is causing any issues or it is deprecated and not recommended to use.\n\nAlso, instead of these random contributions, if you would like to help community we define the upstream opportunity where community need help\n-  https://governance.openstack.org/tc/reference/upstream-investment-opportunities/",
+      "revId": "8187d6e2fc61c3e30c5ead3eb99398c29e6a1680",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
