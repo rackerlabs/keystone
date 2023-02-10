@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "572da5a3_04002dd4",
+        "filename": "keystone/api/os_oauth2.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-02-10T12:32:57Z",
+      "side": 1,
+      "message": "Thank you.\nFixed in PS8",
+      "parentUuid": "eca4e451_2560b5d0",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 55
+      },
+      "revId": "c3b3e3834187bded6192ebb72a469835cecbc630",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1d6e31d0_0687e08a",
         "filename": "keystone/common/render_token.py",
         "patchSetId": 7
@@ -54,6 +78,24 @@
       "writtenOn": "2023-02-09T01:40:18Z",
       "side": 1,
       "message": "After this place is removed oauth2_credential_id, the token no longer contains oauth2_credential_id fields. So keystoneauth and keystonemiddleware code needs to be modified simultaneously.",
+      "revId": "c3b3e3834187bded6192ebb72a469835cecbc630",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b6e3ab3_7939cc2d",
+        "filename": "keystone/common/render_token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-02-10T12:32:57Z",
+      "side": 1,
+      "message": "I updated https://review.opendev.org/c/openstack/keystonemiddleware/+/860615 and https://review.opendev.org/c/openstack/keystoneauth/+/860614/",
+      "parentUuid": "1d6e31d0_0687e08a",
       "revId": "c3b3e3834187bded6192ebb72a469835cecbc630",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
