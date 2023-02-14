@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22bbf639_37a46c00",
+        "filename": "keystone/conf/oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 34634
+      },
+      "writtenOn": "2023-02-14T01:15:32Z",
+      "side": 1,
+      "message": "The space in front of \u0027 client_secret_basic\u0027 needs to be removed.",
+      "revId": "cc744dd055bfaf756da94025806d8e4300d09de8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
