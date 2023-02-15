@@ -35,6 +35,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ed8416c_451adb9c",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2023-02-15T05:14:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49bd2f6a_81222c3d",
+      "revId": "7859ed26003858ebfd9a5e866b43f1a6a9e83dca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "05b3dfa5_8c695dd9",
@@ -48,6 +66,24 @@
       "writtenOn": "2022-03-18T15:16:14Z",
       "side": 1,
       "message": "The algorithm maximum password length with take precedence over what a user provides via configuration. Maybe we can add that here?",
+      "revId": "7859ed26003858ebfd9a5e866b43f1a6a9e83dca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f49aff55_eefd2ad1",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2023-02-15T05:14:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "05b3dfa5_8c695dd9",
       "revId": "7859ed26003858ebfd9a5e866b43f1a6a9e83dca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
