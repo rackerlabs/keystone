@@ -16,6 +16,24 @@
       "message": "The space in front of \u0027 client_secret_basic\u0027 needs to be removed.",
       "revId": "cc744dd055bfaf756da94025806d8e4300d09de8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11ed9bc3_edf2ec64",
+        "filename": "keystone/conf/oauth2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-02-15T09:24:35Z",
+      "side": 1,
+      "message": "Fixed in PS9",
+      "parentUuid": "22bbf639_37a46c00",
+      "revId": "cc744dd055bfaf756da94025806d8e4300d09de8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
