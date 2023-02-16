@@ -16,6 +16,29 @@
       "message": "Fixed linting",
       "revId": "580d2a32a22ad493cd1006591a3c0e632ade8376",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "216765fa_5c3a76ae",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2023-02-16T20:05:19Z",
+      "side": 1,
+      "message": "Why is this necessary?  \"sha521_crypt\" is not a valid choice for this configuration option: \n\nhttps://opendev.org/openstack/keystone/src/commit/420f4ff46da106b67912cecdff939f5dc0b079d0/keystone/conf/identity.py#L113",
+      "range": {
+        "startLine": 75,
+        "startChar": 4,
+        "endLine": 79,
+        "endChar": 35
+      },
+      "revId": "580d2a32a22ad493cd1006591a3c0e632ade8376",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
