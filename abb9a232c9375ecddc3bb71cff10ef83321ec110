@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1478e69_c64fe96b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-02-17T05:21:51Z",
+      "side": 1,
+      "message": "Added UT for authn methods choice.\nMerged AccessTokenTests into OAuth2Tests as I couldn\u0027t find reason to separate them. For instance, OAuth2CertificateTests is completely isolated from OAuth2Tests.",
+      "revId": "abb9a232c9375ecddc3bb71cff10ef83321ec110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
