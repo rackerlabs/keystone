@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27913932_716fc079",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2023-02-20T16:40:25Z",
+      "side": 1,
+      "message": "Looking better but the function is a bit verbose.",
+      "revId": "bc7ff6c5633f3aaa67a74a66cca2cc38255ad9ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93460468_0ac56b23",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2023-02-20T16:40:25Z",
+      "side": 1,
+      "message": "we can avoid the duplication here by just setting\n\n    max_length \u003d conf_max_length\n\nbefore the `if` statement.  Or if we want to simplify this even further we can get rid of the `conf_max_length` temp variable and just set\n\n    max_length \u003d CONF.identity.max_password_length\n    \nat the top of the function and then do the checks for algorithm.",
+      "range": {
+        "startLine": 83,
+        "startChar": 8,
+        "endLine": 86,
+        "endChar": 36
+      },
+      "revId": "bc7ff6c5633f3aaa67a74a66cca2cc38255ad9ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
