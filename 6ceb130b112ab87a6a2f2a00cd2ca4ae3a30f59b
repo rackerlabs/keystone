@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6e74450_406fe23d",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2023-02-21T21:37:19Z",
+      "side": 1,
+      "message": "I still think having the same exact assignment copy+pasted in two lines is ugly.  IMO this all can be re-written using a single if statement:\n\n    # When using bcrypt, we limit the password length to 54 to ensure all\n    # bytes are fully mixed.  See:\n    # https://passlib.readthedocs.io/en/stable/lib/passlib.hash.bcrypt.html#security-issues\n    BCRYPT_MAX_LENGTH \u003d 54\n    if (CONF.identity.password_hash_algorithm \u003d\u003d \u0027bcrypt\u0027 and \n        CONF.identity.max_password_length \u003e BCRYPT_MAX_LENGTH):\n        LOG.warning(\"Truncating password to bcrypt maximum length of 54 characters\")\n        max_length \u003d BCRYPT_MAX_LENGTH\n    else:\n        max_legnth \u003d CONF.identity.max_password_length\n        \nIt\u0027s still the same logic, but it doesn\u0027t rely on None-testing a temp variable, or funky nested ifs that need the same assignment in the inner and outer tests.",
+      "range": {
+        "startLine": 81,
+        "startChar": 8,
+        "endLine": 84,
+        "endChar": 54
+      },
+      "revId": "6ceb130b112ab87a6a2f2a00cd2ca4ae3a30f59b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
