@@ -22,6 +22,30 @@
       },
       "revId": "6ceb130b112ab87a6a2f2a00cd2ca4ae3a30f59b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b709c7b_00d8cd77",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2023-02-22T12:59:15Z",
+      "side": 1,
+      "message": "I see what you\u0027re saying but that code will be harder to maintain if we need to add another algorithm that has a maximum length. Right now we only have bcrypt but that wasn\u0027t always the case.\n\nThat being said I\u0027m willing to change it since it is cleaner for the single case.",
+      "parentUuid": "f6e74450_406fe23d",
+      "range": {
+        "startLine": 81,
+        "startChar": 8,
+        "endLine": 84,
+        "endChar": 54
+      },
+      "revId": "6ceb130b112ab87a6a2f2a00cd2ca4ae3a30f59b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
