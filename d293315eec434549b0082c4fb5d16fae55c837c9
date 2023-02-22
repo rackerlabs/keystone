@@ -101,6 +101,23 @@
       "message": "check experimental",
       "revId": "d293315eec434549b0082c4fb5d16fae55c837c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69ca40a5_54a709de",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2023-02-22T18:30:53Z",
+      "side": 1,
+      "message": "recheck - depends-on patch was updated.",
+      "revId": "d293315eec434549b0082c4fb5d16fae55c837c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
