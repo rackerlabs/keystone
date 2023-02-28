@@ -16,6 +16,46 @@
       "message": "Added UT for authn methods choice.\nMerged AccessTokenTests into OAuth2Tests as I couldn\u0027t find reason to separate them. For instance, OAuth2CertificateTests is completely isolated from OAuth2Tests.",
       "revId": "abb9a232c9375ecddc3bb71cff10ef83321ec110",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc653b73_cf1128ce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2023-02-28T20:48:30Z",
+      "side": 1,
+      "message": "We should only use cryptography.io for any and all cryptography work.  I\u0027ll try to work on a patch to show how to use cryptography.io to do the cert management you\u0027re doing with pyOpenSSL.",
+      "revId": "abb9a232c9375ecddc3bb71cff10ef83321ec110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "506df93a_68821172",
+        "filename": "requirements.txt",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2023-02-28T20:48:30Z",
+      "side": 1,
+      "message": "I prefer not to add a new cryptography dependency to Keystone.  We should implement the features you\u0027re using from pyOpenSSL using cryptography.io instead.",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 9
+      },
+      "revId": "abb9a232c9375ecddc3bb71cff10ef83321ec110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
