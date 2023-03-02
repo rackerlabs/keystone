@@ -16,6 +16,24 @@
       "message": "The CI failure does not seem relevant with the changes:\n```\n...\n\n2023-02-24 07:31:08.605034 | controller | + ./stack.sh:main:227                      :   [[ ! opensuse-15.2 \u003d~ (xenial|artful|bionic|stretch|jessie|f29|opensuse-15.0|opensuse-15.1|opensuse-tumbleweed|rhel7) ]]\n2023-02-24 07:31:08.609940 | controller | + ./stack.sh:main:228                      :   echo \u0027WARNING: this script has not been tested on opensuse-15.2\u0027\n2023-02-24 07:31:08.610058 | controller | WARNING: this script has not been tested on opensuse-15.2\n2023-02-24 07:31:08.612542 | controller | + ./stack.sh:main:229                      :   [[ \u0027\u0027 !\u003d \\y\\e\\s ]]\n2023-02-24 07:31:08.615154 | controller | + ./stack.sh:main:230                      :   die 230 \u0027If you wish to run this script anyway run with FORCE\u003dyes\u0027\n[ERROR] ./stack.sh:230 If you wish to run this script anyway run with FORCE\u003dyes\n...\n```",
       "revId": "8a383cbff91b2cc39b15e50ef0361b6875d4b847",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2301f85_c71295b7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34980
+      },
+      "writtenOn": "2023-03-02T08:41:16Z",
+      "side": 1,
+      "message": "My bad, it *is* related to the changes, I was looking at the wrong CI job:\n\n2023-02-24 07:21:19.933993 | ubuntu-bionic | Captured traceback:\n2023-02-24 07:21:19.934007 | ubuntu-bionic | ~~~~~~~~~~~~~~~~~~~\n2023-02-24 07:21:19.934019 | ubuntu-bionic |     Traceback (most recent call last):\n2023-02-24 07:21:19.934032 | ubuntu-bionic |       File \"/home/zuul/src/opendev.org/openstack/keystone/.tox/py27/lib/python2.7/site-packages/mock/mock.py\", line 1330, in patched\n2023-02-24 07:21:19.934045 | ubuntu-bionic |         return func(*args, **keywargs)\n2023-02-24 07:21:19.934058 | ubuntu-bionic |       File \"keystone/tests/unit/test_backend_ldap_pool.py\", line 302, in test_result3_ensure_pool_connection_released\n2023-02-24 07:21:19.934070 | ubuntu-bionic |         [\u0027mail\u0027, \u0027userPassword\u0027]\n2023-02-24 07:21:19.934083 | ubuntu-bionic |       File \"keystone/identity/backends/ldap/common.py\", line 1029, in search_ext\n2023-02-24 07:21:19.934096 | ubuntu-bionic |         timeout, sizelimit)\n2023-02-24 07:21:19.934108 | ubuntu-bionic |       File \"keystone/identity/backends/ldap/common.py\", line 853, in search_ext\n2023-02-24 07:21:19.934120 | ubuntu-bionic |         return AsynchronousMessage(msgid, conn, conn_ctxt)\n2023-02-24 07:21:19.934133 | ubuntu-bionic |       File \"keystone/identity/backends/ldap/common.py\", line 671, in __init__\n2023-02-24 07:21:19.934145 | ubuntu-bionic |         self.clean \u003d weakref.finalize(\n2023-02-24 07:21:19.934156 | ubuntu-bionic |     AttributeError: \u0027module\u0027 object has no attribute \u0027finalize\u0027",
+      "parentUuid": "75b6a7dd_6dc00d3c",
+      "revId": "8a383cbff91b2cc39b15e50ef0361b6875d4b847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
