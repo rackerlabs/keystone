@@ -16,6 +16,23 @@
       "message": "Thanks for proposing this and writing really good documentation. I\u0027ll test this out before approving, but I like the direction.",
       "revId": "a9a6c68d8c61c4c56c2472c52cd719e937cc136b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbc34ef7_262bcd25",
+        "filename": "doc/source/admin/oauth2-mtls-usage-guide.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-03-02T11:11:58Z",
+      "side": 1,
+      "message": "Need to refer appropriate documents that define the naming rules for subject DNs. For example, how could users know `CommonName` is converted to `CN`?",
+      "revId": "a9a6c68d8c61c4c56c2472c52cd719e937cc136b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
