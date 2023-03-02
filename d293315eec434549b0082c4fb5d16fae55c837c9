@@ -152,6 +152,23 @@
       "message": "LGTM, but we have to merge the Depends-On patch before Zuul will merge this one.",
       "revId": "d293315eec434549b0082c4fb5d16fae55c837c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "933a640d_a5945bec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9914
+      },
+      "writtenOn": "2023-03-02T09:36:42Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "d293315eec434549b0082c4fb5d16fae55c837c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
