@@ -18,7 +18,11 @@ import os.path
 import re
 import sys
 import uuid
-import weakref
+
+if sys.version_info < (3, 4):
+    from backports import weakref
+else:
+    import weakref
 
 import ldap.controls
 import ldap.filter
