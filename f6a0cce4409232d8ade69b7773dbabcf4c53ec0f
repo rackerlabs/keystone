@@ -16,6 +16,23 @@
       "message": "Thank you for your comments.\nI removed dependency on OpenSSL.",
       "revId": "f6a0cce4409232d8ade69b7773dbabcf4c53ec0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0fdcc9e_0d6ab54e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-03-03T12:58:09Z",
+      "side": 1,
+      "message": "recheck, unrelated error [ERROR] /opt/stack/devstack/functions-common:2378 Neutron did not start",
+      "revId": "f6a0cce4409232d8ade69b7773dbabcf4c53ec0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
