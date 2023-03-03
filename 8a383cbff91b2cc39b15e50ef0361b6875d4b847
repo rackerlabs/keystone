@@ -51,6 +51,24 @@
       "message": "I think the test revealed a problem lurking in the existing code. The AsynchronousMessage changes were backported to the stable/train. The AsynchronousMessage uses \"weakref.finalize()\", but it is missing in python 2.7, therefore \"openstack-tox-py27\" job fails.",
       "revId": "8a383cbff91b2cc39b15e50ef0361b6875d4b847",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfa72742_7b98c124",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34980
+      },
+      "writtenOn": "2023-03-03T10:47:04Z",
+      "side": 1,
+      "message": "Submitted a fix to correct the issue: https://review.opendev.org/c/openstack/keystone/+/876256",
+      "parentUuid": "40367a43_5d02b811",
+      "revId": "8a383cbff91b2cc39b15e50ef0361b6875d4b847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
