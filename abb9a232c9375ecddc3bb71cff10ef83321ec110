@@ -56,6 +56,30 @@
       },
       "revId": "abb9a232c9375ecddc3bb71cff10ef83321ec110",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a7c2584_041612a7",
+        "filename": "requirements.txt",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-03-03T02:18:15Z",
+      "side": 1,
+      "message": "Fixed in PS11",
+      "parentUuid": "506df93a_68821172",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 9
+      },
+      "revId": "abb9a232c9375ecddc3bb71cff10ef83321ec110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

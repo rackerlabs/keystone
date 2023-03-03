@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f28e151f_e7d3b1ec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-03-03T02:18:15Z",
+      "side": 1,
+      "message": "Thank you for your comments.\nI removed dependency on OpenSSL.",
+      "revId": "f6a0cce4409232d8ade69b7773dbabcf4c53ec0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
