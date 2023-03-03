@@ -33,6 +33,23 @@
       "message": "recheck, unrelated error [ERROR] /opt/stack/devstack/functions-common:2378 Neutron did not start",
       "revId": "f6a0cce4409232d8ade69b7773dbabcf4c53ec0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff89d898_4e9bcc4a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2023-03-03T15:06:50Z",
+      "side": 1,
+      "message": "Much better, thank you! LGTM",
+      "revId": "f6a0cce4409232d8ade69b7773dbabcf4c53ec0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
