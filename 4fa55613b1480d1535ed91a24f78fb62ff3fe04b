@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db6c5f6f_e4f389e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34980
+      },
+      "writtenOn": "2023-03-13T08:11:38Z",
+      "side": 1,
+      "message": "Required in order to unblock https://review.opendev.org/c/openstack/keystone/+/876256",
+      "revId": "4fa55613b1480d1535ed91a24f78fb62ff3fe04b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
