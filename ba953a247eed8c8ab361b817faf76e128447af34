@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "866b2215_5ca1214f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2023-03-13T13:51:34Z",
+      "side": 1,
+      "message": "recheck - new reno version 4.0.0 was released that fixes reno generator issue",
+      "revId": "ba953a247eed8c8ab361b817faf76e128447af34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
