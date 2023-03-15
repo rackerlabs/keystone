@@ -16,6 +16,24 @@
       "message": "This is failing because batch mode seems to be having an effect on the MySQL backend and is resulting a \"create new table, rename tables, drop old table\" pattern, which should be only needed for SQLite (which doesn\u0027t support the ALTER statement). This doesn\u0027t align with my understanding on batch mode, which I thought would only affect the SQLite backend. I need to investigate this.",
       "revId": "2a3c7cc7411568001c50786f7a18facd92cea9ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02f7895e_06b00538",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2023-03-15T12:08:08Z",
+      "side": 1,
+      "message": "Turned out this wasn\u0027t true. I was just (incorrectly) blocking batch mode operations 🙈",
+      "parentUuid": "a07165d9_dbd744ec",
+      "revId": "2a3c7cc7411568001c50786f7a18facd92cea9ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
