@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42402855_5e22fd35",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2023-03-15T12:23:06Z",
+      "side": 1,
+      "message": "The \u0027TestModelsSyncPostgreSQL.test_models_sync\u0027 test in \u0027keystone.tests.unit.common.sql.test_upgrades\u0027 is failing with the following message.\n\n    AssertionError: Models and migration scripts aren\u0027t in sync:                                                                                                                                                                                                                                                                                                                                                                            \n    [ ( \u0027add_constraint\u0027,                                                                                                                                                                                                                                                                                                                                                                                                                       \n        UniqueConstraint(Column(\u0027project_id\u0027, NullType(), table\u003d\u003cproject_tag\u003e), Column(\u0027name\u0027, NullType(), table\u003d\u003cproject_tag\u003e)))]\n\nI don\u0027t know why though. The \u0027TestModelsSyncMySQL\u0027 and \u0027TestModelsSyncSQLite\u0027 equivalents are working fine, as you\u0027d expect given the fact that the unique constraint exists in both the model [1] and the initial migration [2]. Maybe it\u0027s the use of unicode? idk\n\n[1] https://github.com/openstack/keystone/blob/c08d97672d/keystone/resource/backends/sql_model.py#L121\n[2] https://github.com/openstack/keystone/blob/c08d97672d/keystone/common/sql/migrations/versions/27e647c0fad4_initial_version.py#L345",
+      "revId": "709d54c9d3fcc97e4cc590d2edb52babbb29d759",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
