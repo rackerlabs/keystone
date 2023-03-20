@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8269822a_ad69949a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-03-20T23:11:31Z",
+      "side": 1,
+      "message": "recheck\n\nkeystone_tempest_plugin.tests.rbac.v3.test_user.SystemMemberTests.test_identity_get_user\n  File \"/opt/stack/tempest/tempest/lib/services/identity/v3/users_client.py\", line 104, in delete_user\n    resp, body \u003d self.delete(\"users/%s\" % user_id)\n\u0027Could not find user: b22d79a9689345eea826754b1d4367a7.\u0027\n",
+      "revId": "1544c7fc0aca9638c7cd31742e778d9327d2a62c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
