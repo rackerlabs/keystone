@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "826a9eac_d037472a",
+        "filename": "devstack/lib/oidc.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 9914
+      },
+      "writtenOn": "2023-03-21T15:15:00Z",
+      "side": 1,
+      "message": "This should contain what we plan to use in the devstack test - which as I understand it, is to have the tempest test create the test user.\n\nSo, I don\u0027t see why we would need to specify any of these here.",
+      "range": {
+        "startLine": 147,
+        "startChar": 3,
+        "endLine": 150,
+        "endChar": 65
+      },
+      "revId": "e0f8313e20f3b7981236e0eaeaf7b0996b86920f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
