@@ -142,6 +142,12 @@ function configure_tests_settings {
 
     # Protocol settings
     iniset $TEMPEST_CONFIG fed_scenario protocol_id $PROTOCOL_ID
+
+    # User creation settings
+    iniset $TEMPEST_CONFIG fed_scenario create_test_user False
+    iniset $TEMPEST_CONFIG fed_scenario test_user_email test_user@example.com
+    iniset $TEMPEST_CONFIG fed_scenario test_user_name test_user
+    iniset $TEMPEST_CONFIG fed_scenario test_user_password secret
 }
 
 function uninstall_federation {
