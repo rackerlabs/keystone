@@ -35,6 +35,195 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "76486c77_86e303b6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5314
+      },
+      "writtenOn": "2023-03-21T16:04:29Z",
+      "side": 1,
+      "message": "Some rewording suggestions noted inline.  -1 instead of a suggestion because the text needs to be updated to refer to the Bobcat release now.  (Unless this patch is deemed backportable to Antelope, which I personally think would be a good idea.)",
+      "revId": "3dc0625633e8b6fd71979986793cc41581f2b6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74c15316_1dff41fe",
+        "filename": "doc/source/admin/service-api-protection.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5314
+      },
+      "writtenOn": "2023-03-21T16:04:29Z",
+      "side": 1,
+      "message": "Is this change backportable (would be nice ...)?  Otherwise, this needs to change to \u00272023.2 (Bobcat)\u0027",
+      "range": {
+        "startLine": 28,
+        "startChar": 64,
+        "endLine": 28,
+        "endChar": 72
+      },
+      "revId": "3dc0625633e8b6fd71979986793cc41581f2b6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ca63587_f60ac152",
+        "filename": "doc/source/admin/service-api-protection.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5314
+      },
+      "writtenOn": "2023-03-21T16:04:29Z",
+      "side": 1,
+      "message": "I think this should be lower case (same with Admin in line 30)",
+      "revId": "3dc0625633e8b6fd71979986793cc41581f2b6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6cdcfd8f_e011f467",
+        "filename": "doc/source/admin/service-api-protection.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5314
+      },
+      "writtenOn": "2023-03-21T16:04:29Z",
+      "side": 1,
+      "message": "I suggest changing to:\n\n  The default roles provided by keystone via ``keystone-manage bootstrap`` (except for the ``service`` role) are related through role implications.",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 34
+      },
+      "revId": "3dc0625633e8b6fd71979986793cc41581f2b6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bbb7b86d_c2d8846f",
+        "filename": "doc/source/admin/service-api-protection.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 5314
+      },
+      "writtenOn": "2023-03-21T16:04:29Z",
+      "side": 1,
+      "message": "I suggest replacing with:\n\n  The aim of a ``service`` role is to allow a service to communicate with another service and possibly be granted elevated privileges by the service receiving the request.  Before the introduction of the ``service`` role, a service had to be granted the ``admin`` role in order to have elevated privileges, which gave a service powers way beyond what was necessary.  With the ``service`` role in place, we can now allow all service-to-service APIs to default to the ``service`` role only.",
+      "range": {
+        "startLine": 144,
+        "startChar": 70,
+        "endLine": 146,
+        "endChar": 33
+      },
+      "revId": "3dc0625633e8b6fd71979986793cc41581f2b6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1604c8ac_14fe8587",
+        "filename": "doc/source/admin/service-api-protection.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 5314
+      },
+      "writtenOn": "2023-03-21T16:04:29Z",
+      "side": 1,
+      "message": "Not sure where this should go in this section, but we should add:\n\n  .. note::\n     Unlike the other default roles, the ``service`` role is *not* a member\n     of a role hierarchy.  It is a standalone role.",
+      "revId": "3dc0625633e8b6fd71979986793cc41581f2b6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1480d5a6_39202611",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 5314
+      },
+      "writtenOn": "2023-03-21T16:04:29Z",
+      "side": 1,
+      "message": "2023.2 (Bobcat)",
+      "range": {
+        "startLine": 340,
+        "startChar": 33,
+        "endLine": 340,
+        "endChar": 41
+      },
+      "revId": "3dc0625633e8b6fd71979986793cc41581f2b6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a6ab145a_bbd152af",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 5314
+      },
+      "writtenOn": "2023-03-21T16:04:29Z",
+      "side": 1,
+      "message": "How about:\n\n  If a ``service`` role is already present in the deployment, then a new one\n  is not created.  This way any local scripts relying on the role ID will not\n  be broken.\n  .. note::\n  If you already have a ``service`` role in your deployment, you should\n  review its usage to make sure it is used only for service-to-service\n  communication.",
+      "range": {
+        "startLine": 341,
+        "startChar": 67,
+        "endLine": 343,
+        "endChar": 77
+      },
+      "revId": "3dc0625633e8b6fd71979986793cc41581f2b6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0debd507_bce56df7",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 5314
+      },
+      "writtenOn": "2023-03-21T16:04:29Z",
+      "side": 1,
+      "message": "this should be in double-backticks (``) (the second one on this line is fine).\n\nYou should also be using double-backticks on line 341.",
+      "range": {
+        "startLine": 344,
+        "startChar": 5,
+        "endLine": 344,
+        "endChar": 12
+      },
+      "revId": "3dc0625633e8b6fd71979986793cc41581f2b6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "655c953c_92da126b",
@@ -66,6 +255,29 @@
       "side": 1,
       "message": "Need to understand bootstrap execution for this;\nIf you specify any project name for bootstrap command then there is no need to create service role for that project, it requires only admin, member and reader roles. \n\nAs this method is commonly used in many tests I have opted this way rather than duplicating the entire code to check for service role is created or not.",
       "parentUuid": "655c953c_92da126b",
+      "revId": "3dc0625633e8b6fd71979986793cc41581f2b6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32304e83_271e0519",
+        "filename": "releasenotes/notes/bug-1951632-11272e49e2fa439d.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5314
+      },
+      "writtenOn": "2023-03-21T16:04:29Z",
+      "side": 1,
+      "message": "These need to be enclosed in double-backticks (``), otherwise they will be rendered as italics instead of in monospace font.  Same in the \u0027upgrade\u0027 section.",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 69
+      },
       "revId": "3dc0625633e8b6fd71979986793cc41581f2b6b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
