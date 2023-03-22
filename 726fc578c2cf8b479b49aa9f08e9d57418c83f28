@@ -67,6 +67,23 @@
       "message": "Looks fine to me, we\u0027re way past py36 where f-strings appeared.",
       "revId": "726fc578c2cf8b479b49aa9f08e9d57418c83f28",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "149220c5_2165e593",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-03-22T04:46:50Z",
+      "side": 1,
+      "message": "recheck\n\nlogs expired, and pep8 doesn\u0027t run on my laptop for keystone",
+      "revId": "726fc578c2cf8b479b49aa9f08e9d57418c83f28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
