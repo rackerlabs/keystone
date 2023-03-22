@@ -50,6 +50,23 @@
       "message": "Hello keystone-core team! This patch needs another +2 to land, could any of you review it for an additional+2? Thanks! ",
       "revId": "ff632a81fb09e6d9f3298e494d53eb6df50269cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "120e2f14_aab6f38b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-03-22T04:03:07Z",
+      "side": 1,
+      "message": "Guys please see this:\nhttps://review.opendev.org/c/openstack/keystone/+/878187",
+      "revId": "ff632a81fb09e6d9f3298e494d53eb6df50269cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ],
   "submitRequirementResults": []
