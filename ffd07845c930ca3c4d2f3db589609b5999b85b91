@@ -39,6 +39,30 @@
       },
       "revId": "ffd07845c930ca3c4d2f3db589609b5999b85b91",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c237b08_bcc24923",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-03-22T04:12:07Z",
+      "side": 1,
+      "message": "Done\n\nYes it\u0027s been a year but I\u0027m considering this Lance\u0027s last will and it will be done.",
+      "parentUuid": "313135c0_b4aa00bf",
+      "range": {
+        "startLine": 608,
+        "startChar": 60,
+        "endLine": 608,
+        "endChar": 71
+      },
+      "revId": "ffd07845c930ca3c4d2f3db589609b5999b85b91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
