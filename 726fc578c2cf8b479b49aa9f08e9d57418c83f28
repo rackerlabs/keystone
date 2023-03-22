@@ -84,6 +84,23 @@
       "message": "recheck\n\nlogs expired, and pep8 doesn\u0027t run on my laptop for keystone",
       "revId": "726fc578c2cf8b479b49aa9f08e9d57418c83f28",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33346c8b_385c0473",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-03-22T06:24:54Z",
+      "side": 1,
+      "message": "Okay, it\u0027s a solid failure of pep8. I\u0027m afraid we cannot test anything on Ussuri anymore. It blows up like this:\n\n   File \"/home/zuul/src/opendev.org/openstack/keystone/.tox/pep8/lib/python3.6/site-packages/pyflakes/checker.py\", line 627, in getNodeHandler\n     self._nodeHandlers[node_class] \u003d handler \u003d getattr(self, nodeType)\n  AttributeError: \u0027FlakesChecker\u0027 object has no attribute \u0027JOINEDSTR\u0027\n\nNo idea how to prevent this.",
+      "revId": "726fc578c2cf8b479b49aa9f08e9d57418c83f28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
