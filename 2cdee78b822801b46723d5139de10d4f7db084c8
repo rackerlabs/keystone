@@ -16,6 +16,46 @@
       "message": "Revision LGTM!",
       "revId": "2cdee78b822801b46723d5139de10d4f7db084c8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdfcbf93_990205c6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5314
+      },
+      "writtenOn": "2023-03-28T17:47:13Z",
+      "side": 1,
+      "message": "Just noticed that there\u0027s a block of text that needs to be moved to make sense.  Otherwise, the revisions LGTM.",
+      "revId": "2cdee78b822801b46723d5139de10d4f7db084c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27a3efef_52c992c5",
+        "filename": "doc/source/admin/service-api-protection.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 5314
+      },
+      "writtenOn": "2023-03-28T17:47:13Z",
+      "side": 1,
+      "message": "I just noticed that this Note section needs to be located immediately before the section starting at line 172.",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 141,
+        "endChar": 0
+      },
+      "revId": "2cdee78b822801b46723d5139de10d4f7db084c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
