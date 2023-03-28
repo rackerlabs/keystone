@@ -56,6 +56,30 @@
       },
       "revId": "2cdee78b822801b46723d5139de10d4f7db084c8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dab4fcbf_5a88bc67",
+        "filename": "doc/source/admin/service-api-protection.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2023-03-28T17:53:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27a3efef_52c992c5",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 141,
+        "endChar": 0
+      },
+      "revId": "2cdee78b822801b46723d5139de10d4f7db084c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
