@@ -33,6 +33,23 @@
       "message": "It\u0027s failing one functional test:\n\nkeystone_tempest_plugin.tests.rbac.v3.test_credential.SystemMemberTests.test_identity_list_credentials\n\n    Traceback (most recent call last):\n\n      File \"/opt/stack/tempest/.tox/tempest/lib/python3.8/site-packages/keystone_tempest_plugin/tests/rbac/v3/test_credential.py\", line 220, in test_identity_list_credentials\n    resp \u003d self.do_request(\u0027list_credentials\u0027)[\u0027credentials\u0027]\n\n      File \"/opt/stack/tempest/.tox/tempest/lib/python3.8/site-packages/keystone_tempest_plugin/tests/rbac/v3/base.py\", line 39, in do_request\n    response \u003d getattr(client, method)(**payload)\n\n      File \"/opt/stack/tempest/tempest/lib/services/identity/v3/credentials_client.py\", line 78, in list_credentials\n    resp, body \u003d self.get(url)\n\n      File \"/opt/stack/tempest/tempest/lib/common/rest_client.py\", line 314, in get\n    return self.request(\u0027GET\u0027, url, extra_headers, headers)\n\n      File \"/opt/stack/tempest/tempest/lib/common/rest_client.py\", line 720, in request\n    self._error_checker(resp, resp_body)\n\n      File \"/opt/stack/tempest/tempest/lib/common/rest_client.py\", line 826, in _error_checker\n    raise exceptions.NotFound(resp_body, resp\u003dresp)\n\n    tempest.lib.exceptions.NotFound: Object not found\nDetails: {\u0027code\u0027: 404, \u0027message\u0027: \u0027Could not find credential: 78e17648fc5a4b01a6eb84ad2e568f0f.\u0027, \u0027title\u0027: \u0027Not Found\u0027}",
       "revId": "bcef9dbd87b4941cb4dfafc920e0d78d843cb1a7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1635510_6174c6d9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2023-03-29T16:53:01Z",
+      "side": 1,
+      "message": "recheck - refresh test results",
+      "revId": "bcef9dbd87b4941cb4dfafc920e0d78d843cb1a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
