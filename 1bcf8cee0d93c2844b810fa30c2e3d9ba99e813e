@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1bd6f8a4_9279b66b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-04-04T00:05:53Z",
+      "side": 1,
+      "message": "Is there a document explaining how any of this is supposed to work? I read through Alembic tutorial. But I cannot seem to link its material and this code.",
+      "revId": "1bcf8cee0d93c2844b810fa30c2e3d9ba99e813e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
