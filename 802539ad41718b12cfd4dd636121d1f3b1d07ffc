@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "885412c3_59706246",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-04-04T23:19:45Z",
+      "side": 0,
+      "message": "I\u0027m just curious: how does this work?\n\nThe docs for SQLAlchemy presume that the only MetaData that exists is sqlalchemy.schema.MetaData. Okay, maybe its __init__.py has \"import schema\" somewhere or something. But the first document of MetaData.__init__() is not bind\u003d, it\u0027s schema\u003d. Some other methods take bind\u003d. Is this just an omission in docs, and sqlalchemy.MetaData() is distinct, and takes bind\u003d as its first argument?",
+      "revId": "802539ad41718b12cfd4dd636121d1f3b1d07ffc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
