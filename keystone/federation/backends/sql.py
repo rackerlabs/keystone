@@ -17,11 +17,13 @@ from oslo_serialization import jsonutils
 from sqlalchemy import orm
 
 from keystone.common import sql
+import keystone.conf
 from keystone import exception
 from keystone.federation.backends import base
 from keystone.i18n import _
 
 
+CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -156,7 +158,11 @@ class ServiceProviderModel(sql.ModelBase, sql.ModelDictMixin):
     description = sql.Column(sql.Text(), nullable=True)
     auth_url = sql.Column(sql.String(256), nullable=False)
     sp_url = sql.Column(sql.String(256), nullable=False)
-    relay_state_prefix = sql.Column(sql.String(256), nullable=False)
+    relay_state_prefix = sql.Column(
+        sql.String(256),
+        nullable=False,
+        server_default=CONF.saml.relay_state_prefix,
+    )
 
     @classmethod
     def from_dict(cls, dictionary):
