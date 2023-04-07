@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "262fdbb9_8816d8cf",
+        "filename": "api-ref/source/v3-ext/oauth2.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-04-07T23:19:13Z",
+      "side": 1,
+      "message": "Is it just me, or do these steps correspond to normal use of App. Credentials without OAuth2? Where is the difference?",
+      "revId": "3fec3b863e144573dc4d9c17b541cf606d271561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dcc5ba22_fbdd5e24",
         "filename": "doc/source/admin/oauth2-usage-guide.rst",
         "patchSetId": 3
