@@ -938,6 +938,7 @@ class Manager(manager.Manager):
 
         return assignments
 
+    @MEMOIZE_COMPUTED_ASSIGNMENTS
     def list_role_assignments(self, role_id=None, user_id=None, group_id=None,
                               system=None, domain_id=None, project_id=None,
                               include_subtree=False, inherited=None,
