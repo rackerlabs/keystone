@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "18d47856_89805b82",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33920
+      },
+      "writtenOn": "2023-04-17T08:09:24Z",
+      "side": 1,
+      "message": "Thank you for comment. I replied to your comment.",
+      "revId": "3fec3b863e144573dc4d9c17b541cf606d271561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "262fdbb9_8816d8cf",
@@ -20,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "095b8a01_b49cf877",
+        "filename": "api-ref/source/v3-ext/oauth2.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 33920
+      },
+      "writtenOn": "2023-04-17T08:09:24Z",
+      "side": 1,
+      "message": "The processing logic for obtaining and validating OAuth2.0 Access Tokens is consistent with the Application credential.\nThe difference is that when providing an OAuth 2.0 Access Token API, keystonemiddleware authentication, the request header must specify the Authorization field containing OAuth2.0 Access Token information.",
+      "parentUuid": "262fdbb9_8816d8cf",
+      "revId": "3fec3b863e144573dc4d9c17b541cf606d271561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dcc5ba22_fbdd5e24",
         "filename": "doc/source/admin/oauth2-usage-guide.rst",
         "patchSetId": 3
@@ -31,6 +66,30 @@
       "writtenOn": "2022-08-05T15:49:18Z",
       "side": 1,
       "message": "I would recommend HTTPS in both cases. I\u0027m not aware of any issues connecting to HTTPS endpoints using openstack clients. But it\u0027s just a nit.",
+      "range": {
+        "startLine": 35,
+        "startChar": 18,
+        "endLine": 38,
+        "endChar": 10
+      },
+      "revId": "3fec3b863e144573dc4d9c17b541cf606d271561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5dc3c6d_e058b70a",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 33920
+      },
+      "writtenOn": "2023-04-17T08:09:24Z",
+      "side": 1,
+      "message": "HTTPS is recommended, but in actual deployment, users may only use HTTPS on the Internet and HTTP on the intranet.\n\nExamples are as follows:\nopenstack endpoint list\n+----------------------------------+-----------+--------------+-------------------+---------+-----------+---------------------------------+\n| ID                               | Region    | Service Name | Service Type      | Enabled | Interface | URL                             |\n+----------------------------------+-----------+--------------+-------------------+---------+-----------+---------------------------------+\n| 4b4c7134f2bc4e409321ebfb1b20e629 | RegionOne | keystone     | identity          | True    | admin     | http://192.168.2.100/identity   |\n| 98b2512aa41b4112bb6563976554a2fd | RegionOne | keystone     | identity          | True    | public    | https://192.168.2.100/identity  |\n| ccec323760944f6c9d0bbe136f8e5ec4 | RegionOne | keystone     | identity          | True    | internal  | http://192.168.2.100/identity   |\n+----------------------------------+-----------+--------------+-------------------+---------+-----------+---------------------------------+",
+      "parentUuid": "dcc5ba22_fbdd5e24",
       "range": {
         "startLine": 35,
         "startChar": 18,
