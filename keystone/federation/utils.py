@@ -562,22 +562,15 @@ class RuleProcessor(object):
         LOG.debug('mapped_properties: %s', mapped_properties)
         return mapped_properties
 
-    def _ast_literal_eval(self, value):
-        # This is a workaround for the fact that ast.literal_eval handles the
-        # case of either a string or a list of strings, but not a potential
-        # list of ints.
-
+    @staticmethod
+    def _ast_literal_eval(value):
         try:
             values = ast.literal_eval(value)
-            # NOTE(mnaser): It's possible that the group_names_list is a
-            #               numerical value which would successfully parse
-            #               and not raise an exception, so we forcefully
-            #               raise is here.
+            # The literal_eval returns a singleton if there was only one value.
             if not isinstance(values, list):
-                raise ValueError
+                values = [value]
         except (ValueError, SyntaxError):
             values = [value]
-
         return values
 
     def _normalize_groups(self, identity_value):
