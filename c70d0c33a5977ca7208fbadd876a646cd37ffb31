@@ -18,6 +18,23 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "13d9855f_c26b7dfe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-04-21T14:15:17Z",
+      "side": 1,
+      "message": "Code is okay, tests looks good.",
+      "revId": "c70d0c33a5977ca7208fbadd876a646cd37ffb31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2d8969b4_8bf0f8b7",
@@ -31,6 +48,24 @@
       "writtenOn": "2022-12-06T06:56:43Z",
       "side": 1,
       "message": "Looks like it makes sense to define it as @staticmethod?",
+      "revId": "c70d0c33a5977ca7208fbadd876a646cd37ffb31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a32dbd7c_ce98b8fd",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-04-21T14:15:17Z",
+      "side": 1,
+      "message": "I agree about @staticmethod being appropriate, but its lack would not stop me from approving.",
+      "parentUuid": "2d8969b4_8bf0f8b7",
       "revId": "c70d0c33a5977ca7208fbadd876a646cd37ffb31",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
