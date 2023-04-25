@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09cdd21d_ee46ca26",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-04-25T23:36:16Z",
+      "side": 1,
+      "message": "I\u0027m not entirely onboard with the ultra-long lines of the sample output in the document (in admin/auth2-usage-guide.rst). Is there nothing to be done? What\u0027s the existing consensus?\n\n[zaitcev@lebethron keystone-work]$ find doc -type f | xargs wc -L | sort -n -r | head\n  1501 total\n  1501 doc/source/admin/figures/keystone-federation.svg\n   816 doc/source/admin/oauth2-usage-guide.rst\n   491 doc/source/admin/figures/keystone-federation.png\n   200 doc/source/admin/federation/introduction.rst\n   199 doc/source/contributor/how-can-i-help.rst\n   187 doc/source/admin/configure_tokenless_x509.rst\n   185 doc/source/_static/horizon-login-idp.png\n   170 doc/source/admin/federation/configure_federation.rst",
+      "revId": "b438bf1efe587fb57f2e92ee11779625f2f3da39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
