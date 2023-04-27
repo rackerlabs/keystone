@@ -16,6 +16,23 @@
       "message": "recheck - new reno version 4.0.0 was released that fixes reno generator issue",
       "revId": "ba953a247eed8c8ab361b817faf76e128447af34",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc560253_82450663",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2023-04-27T11:36:06Z",
+      "side": 1,
+      "message": "Hi, this is a generated patch, that should have been merged 2 months ago, as soon as possible. Please merge it, otherwise there won\u0027t exist a release notes page for the project. Nevertheless, the generated patch looks correct.",
+      "revId": "ba953a247eed8c8ab361b817faf76e128447af34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
