@@ -1,0 +1,10 @@
+Code-Review+2: Kristi Nikolla <knikolla@bu.edu>
+Workflow+1: Kristi Nikolla <knikolla@bu.edu>
+Code-Review+1: Elod Illes <elod.illes@est.tech>
+Code-Review+1: David Wilde <dwilde@redhat.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 04 May 2023 23:03:38 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/876723
+Project: openstack/keystone
+Branch: refs/heads/master
