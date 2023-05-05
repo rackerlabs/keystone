@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "322c86e2_80d5f805",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-05-05T14:34:56Z",
+      "side": 1,
+      "message": "Looks like a straightforward backport. Not using any features under suspicion of being obsolete.",
+      "revId": "192b4c4bb91419d5191ecbf7dfce8a42d647e6d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
