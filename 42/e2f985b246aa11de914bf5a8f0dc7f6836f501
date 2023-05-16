@@ -1,0 +1,13 @@
+Code-Review+2: Kristi Nikolla <knikolla@bu.edu>
+Code-Review+2: Grzegorz Grasza <xek@redhat.com>
+Code-Review+1: wdd <wangzihao@yovole.com>
+Workflow+1: Kristi Nikolla <knikolla@bu.edu>
+Code-Review+1: Mustafa Kemal Gilor <mustafa.gilor@canonical.com>
+Code-Review+1: David Wilde <dwilde@redhat.com>
+Code-Review+1: panhongyin <panhongyin@yovole.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 16 May 2023 18:07:44 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/878187
+Project: openstack/keystone
+Branch: refs/heads/master
