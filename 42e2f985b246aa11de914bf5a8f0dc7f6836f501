@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8cadea5_a5f862c2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-05-16T15:11:37Z",
+      "side": 1,
+      "message": "recheck\n\n2 TIMED_OUT failures",
+      "revId": "42e2f985b246aa11de914bf5a8f0dc7f6836f501",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
