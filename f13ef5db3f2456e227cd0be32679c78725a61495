@@ -35,6 +35,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "87b0a081_e9d746a7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2023-05-23T17:25:22Z",
+      "side": 1,
+      "message": "Brian,\n\nAFAIK, if you see line #177 (https://review.opendev.org/c/openstack/keystone/+/822601/2/keystone/cmd/bootstrap.py#177) in this patch, it ensures the manager role exists or not, if it exists then it will use the same role and creates implied role. If that is also existed then it will skip the same with Info log \"Implied role where %s implies %s exists, skipping creation.\" (see line #179)\n\nI think it is handle effectively here, there might be some corner cases but as per our spec I think we are good here.",
+      "parentUuid": "725ad7dd_bc4896eb",
+      "revId": "f13ef5db3f2456e227cd0be32679c78725a61495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "24f82f04_5506325b",
