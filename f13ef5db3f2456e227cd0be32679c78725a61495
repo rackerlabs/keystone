@@ -53,6 +53,41 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9345e6ae_0cd1eb2e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5314
+      },
+      "writtenOn": "2023-05-24T13:53:07Z",
+      "side": 1,
+      "message": "Abhishek answered my question, this LGTM.",
+      "revId": "f13ef5db3f2456e227cd0be32679c78725a61495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c95ee461_d3f0c87f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5314
+      },
+      "writtenOn": "2023-05-24T13:53:07Z",
+      "side": 1,
+      "message": "Thanks for pointing that out!  You\u0027re right that we\u0027re giving the current role precedence in that we\u0027re re-using it; I think I was reading too much into the spec.  I\u0027m still a bit worried about what happens if the existing role has been used in a manner unlike what we\u0027re using it for, but I guess that\u0027s a different issue that can be dealt with in the \u0027upgrade\u0027 section of the release notes.",
+      "parentUuid": "87b0a081_e9d746a7",
+      "revId": "f13ef5db3f2456e227cd0be32679c78725a61495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "24f82f04_5506325b",
