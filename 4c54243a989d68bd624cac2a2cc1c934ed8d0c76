@@ -16,6 +16,24 @@
       "message": "I did not create an Alembic revision for this yet, as apparently support for autogenerating is not yet wired at https://opendev.org/openstack/keystone/src/commit/a7ba534f3d61d04e835fb3c578d9eee43de87d78/keystone/common/sql/migrations/env.py#L32.\n\nAnd while after adding:\n\n\u003e target_metadata \u003d AccessRuleModel.metadata\n\nand the required imports autogenerate worked, it created a huge change dropping everthing.",
       "revId": "4c54243a989d68bd624cac2a2cc1c934ed8d0c76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6457197d_fa981bf0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2023-06-07T13:51:00Z",
+      "side": 1,
+      "message": "Can you try with [1] applied first?\n\n[1] https://review.opendev.org/c/openstack/keystone/+/826147",
+      "parentUuid": "a7e91ece_77e3d924",
+      "revId": "4c54243a989d68bd624cac2a2cc1c934ed8d0c76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
