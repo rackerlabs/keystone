@@ -33,6 +33,24 @@
       "message": "i would have written this like 6 years ago so...do we actually reach this assertion?   if it\u0027s being reached and there is a better answer to return, then by all means change it.",
       "revId": "1bcf8cee0d93c2844b810fa30c2e3d9ba99e813e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6a16055_d7887881",
+        "filename": "keystone/common/sql/migrations/autogen.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2023-06-13T17:25:00Z",
+      "side": 1,
+      "message": "We do. I\u0027ve hit it in either Cinder and Nova and had to manually generate the migration. If you don\u0027t see any clear reason for us to this though then I\u0027ll change it, sure (in a follow-up so the initial code looks similar to the other projects)",
+      "parentUuid": "3107adb1_a64e89da",
+      "revId": "1bcf8cee0d93c2844b810fa30c2e3d9ba99e813e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
