@@ -16,6 +16,91 @@
       "message": "I\u0027m not entirely onboard with the ultra-long lines of the sample output in the document (in admin/auth2-usage-guide.rst). Is there nothing to be done? What\u0027s the existing consensus?\n\n[zaitcev@lebethron keystone-work]$ find doc -type f | xargs wc -L | sort -n -r | head\n  1501 total\n  1501 doc/source/admin/figures/keystone-federation.svg\n   816 doc/source/admin/oauth2-usage-guide.rst\n   491 doc/source/admin/figures/keystone-federation.png\n   200 doc/source/admin/federation/introduction.rst\n   199 doc/source/contributor/how-can-i-help.rst\n   187 doc/source/admin/configure_tokenless_x509.rst\n   185 doc/source/_static/horizon-login-idp.png\n   170 doc/source/admin/federation/configure_federation.rst",
       "revId": "b438bf1efe587fb57f2e92ee11779625f2f3da39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6002ecac_12fa3567",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2023-06-14T18:02:26Z",
+      "side": 1,
+      "message": "I do strongly believe my recommendations would make this guide more readable and understandable, but I would like to see this merged as soon as possible and I\u0027m willing to accept my changes being implemented in a follow-up patch.",
+      "revId": "b438bf1efe587fb57f2e92ee11779625f2f3da39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa552dd2_b87298b6",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2023-06-14T18:02:26Z",
+      "side": 1,
+      "message": "Keystonemiddleware by itself does not support the Client Credentials grant, what it supports is receiving the token in the \"Authorization\" header.",
+      "revId": "b438bf1efe587fb57f2e92ee11779625f2f3da39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9aad2042_484aac50",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2023-06-14T18:02:26Z",
+      "side": 1,
+      "message": "While I agree that configuring Keystone to use HTTPS can be considered a security requirement in production systems, a guide on how to do that is beyond the scope of this document. It would be better as its own page in the Keystone documentation, if we don\u0027t already have one.",
+      "revId": "b438bf1efe587fb57f2e92ee11779625f2f3da39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0c53853_83a9c108",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2023-06-14T18:02:26Z",
+      "side": 1,
+      "message": "Instead of talking to the API directly, why is this section of the guide not written using the openstackclient? I think it would make it more readable and undestandable by end users so please write it using that.",
+      "revId": "b438bf1efe587fb57f2e92ee11779625f2f3da39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfa8a676_505773de",
+        "filename": "doc/source/admin/oauth2-usage-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2023-06-14T18:02:26Z",
+      "side": 1,
+      "message": "Thank you for the amount of detail in the usage guide. I think it would simplify the guide removing this step as it relates to differences between HTTP and HTTPS which I think are beyond the scope of this document. Please remove this step 1.",
+      "revId": "b438bf1efe587fb57f2e92ee11779625f2f3da39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
