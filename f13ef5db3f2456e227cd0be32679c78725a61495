@@ -109,6 +109,30 @@
       },
       "revId": "f13ef5db3f2456e227cd0be32679c78725a61495",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ed3714a_824a2a2f",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2023-06-15T17:05:35Z",
+      "side": 1,
+      "message": "I did not get the comment. you mean member will have manager power in implied roles? \n\nWe want manager to implied of member permission not vice versa right?",
+      "parentUuid": "24f82f04_5506325b",
+      "range": {
+        "startLine": 184,
+        "startChar": 54,
+        "endLine": 184,
+        "endChar": 74
+      },
+      "revId": "f13ef5db3f2456e227cd0be32679c78725a61495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
