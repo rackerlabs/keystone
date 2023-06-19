@@ -69,7 +69,7 @@ class _SystemUserImpliedRoleTests(object):
                       headers=self.headers)
             # There should be three role inferences: two from the defaults and
             # one from the test setup
-            self.assertEqual(3, len(r.json['role_inferences']))
+            self.assertEqual(4, len(r.json['role_inferences']))
 
 
 class _SystemReaderAndMemberImpliedRoleTests(object):

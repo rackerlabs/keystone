@@ -35,8 +35,8 @@ class _SystemUserRoleTests(object):
             r = c.get('/v3/roles', headers=self.headers)
             # With bootstrap setup and the role we just created, there should
             # be five roles present in the deployment. Bootstrap creates
-            # ``service``, ``admin``, ``member``, and ``reader``.
-            self.assertEqual(5, len(r.json['roles']))
+            # ``admin``, ``manager``, ``member``, ``reader``, and ``service``.
+            self.assertEqual(6, len(r.json['roles']))
 
     def test_user_can_get_a_role(self):
         role = PROVIDERS.role_api.create_role(
