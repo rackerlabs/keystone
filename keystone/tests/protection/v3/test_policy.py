@@ -53,13 +53,14 @@ class _SystemReaderAndMemberPoliciesTests:
 
     def test_user_cannot_create_policy(self):
         create = {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-            'enabled': True,
-            # Store serialized JSON data as the blob to mimic real world usage.
-            'blob': json.dumps({'data': uuid.uuid4().hex}),
-            'type': uuid.uuid4().hex,
+            'policy': {
+                'id': uuid.uuid4().hex,
+                'name': uuid.uuid4().hex,
+                'description': uuid.uuid4().hex,
+                'enabled': True,
+                'blob': json.dumps({'data': uuid.uuid4().hex}),
+                'type': uuid.uuid4().hex,
+            }
         }
         with self.test_client() as c:
             c.post(
@@ -96,6 +97,12 @@ class _SystemReaderAndMemberPoliciesTests:
 
 
 class _DomainAndProjectUserPolicyTests:
+    expected_status_for_list = http.client.FORBIDDEN
+    expected_status_for_get = http.client.FORBIDDEN
+    expected_status_for_create = http.client.FORBIDDEN
+    expected_status_for_update = http.client.FORBIDDEN
+    expected_status_for_delete = http.client.FORBIDDEN
+
     def test_user_cannot_list_policies(self):
         policy = unit.new_policy_ref()
         policy = PROVIDERS.policy_api.create_policy(policy['id'], policy)
@@ -104,7 +111,7 @@ class _DomainAndProjectUserPolicyTests:
             c.get(
                 '/v3/policies',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_list,
             )
 
     def test_user_cannot_get_policy(self):
@@ -115,25 +122,26 @@ class _DomainAndProjectUserPolicyTests:
             c.get(
                 '/v3/policies/{}'.format(policy['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
     def test_user_cannot_create_policy(self):
         create = {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-            'enabled': True,
-            # Store serialized JSON data as the blob to mimic real world usage.
-            'blob': json.dumps({'data': uuid.uuid4().hex}),
-            'type': uuid.uuid4().hex,
+            'policy': {
+                'id': uuid.uuid4().hex,
+                'name': uuid.uuid4().hex,
+                'description': uuid.uuid4().hex,
+                'enabled': True,
+                'blob': json.dumps({'data': uuid.uuid4().hex}),
+                'type': uuid.uuid4().hex,
+            }
         }
         with self.test_client() as c:
             c.post(
                 '/v3/policies',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_update_policy(self):
@@ -147,7 +155,7 @@ class _DomainAndProjectUserPolicyTests:
                 '/v3/policies/{}'.format(policy['id']),
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_delete_policy(self):
@@ -158,7 +166,7 @@ class _DomainAndProjectUserPolicyTests:
             c.delete(
                 '/v3/policies/{}'.format(policy['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
 
@@ -338,6 +346,12 @@ class ProjectUserTests(
     common_auth.AuthTestMixin,
     _DomainAndProjectUserPolicyTests,
 ):
+    expected_status_for_list = http.client.OK
+    expected_status_for_get = http.client.OK
+    expected_status_for_create = http.client.CREATED
+    expected_status_for_update = http.client.OK
+    expected_status_for_delete = http.client.NO_CONTENT
+
     def setUp(self):
         super().setUp()
         self.loadapp()

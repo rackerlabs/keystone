@@ -102,6 +102,12 @@ class _SystemReaderAndMemberDomainRoleTests:
 class _DomainAndProjectUserDomainRoleTests:
     """Common functionality for all domain and project users."""
 
+    expected_status_for_list = http.client.FORBIDDEN
+    expected_status_for_get = http.client.FORBIDDEN
+    expected_status_for_create = http.client.FORBIDDEN
+    expected_status_for_update = http.client.FORBIDDEN
+    expected_status_for_delete = http.client.FORBIDDEN
+
     def test_user_cannot_list_domain_roles(self):
         PROVIDERS.role_api.create_role(
             uuid.uuid4().hex,
@@ -112,7 +118,7 @@ class _DomainAndProjectUserDomainRoleTests:
             c.get(
                 '/v3/roles',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_list,
             )
 
     def test_user_cannot_get_a_domain_role(self):
@@ -125,7 +131,7 @@ class _DomainAndProjectUserDomainRoleTests:
             c.get(
                 '/v3/roles/{}'.format(role['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
     def test_user_cannot_create_domain_roles(self):
@@ -140,7 +146,7 @@ class _DomainAndProjectUserDomainRoleTests:
                 '/v3/roles',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_update_domain_roles(self):
@@ -156,7 +162,7 @@ class _DomainAndProjectUserDomainRoleTests:
                 '/v3/roles/{}'.format(role['id']),
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_delete_domain_roles(self):
@@ -169,7 +175,7 @@ class _DomainAndProjectUserDomainRoleTests:
             c.delete(
                 '/v3/roles/{}'.format(role['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
 
@@ -308,6 +314,8 @@ class DomainUserTests(
     common_auth.AuthTestMixin,
     _DomainAndProjectUserDomainRoleTests,
 ):
+    expected_status_for_list = http.client.OK
+
     def setUp(self):
         super().setUp()
         self.loadapp()
@@ -345,6 +353,12 @@ class ProjectUserTests(
     common_auth.AuthTestMixin,
     _DomainAndProjectUserDomainRoleTests,
 ):
+    expected_status_for_create = http.client.CREATED
+    expected_status_for_delete = http.client.NO_CONTENT
+    expected_status_for_get = http.client.OK
+    expected_status_for_list = http.client.OK
+    expected_status_for_update = http.client.OK
+
     def setUp(self):
         super().setUp()
         self.loadapp()

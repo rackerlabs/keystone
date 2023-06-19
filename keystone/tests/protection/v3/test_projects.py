@@ -91,6 +91,12 @@ class _SystemUserTests:
 class _SystemMemberAndReaderProjectTests:
     """Common default functionality for system members and system readers."""
 
+    expected_status_for_create = http.client.FORBIDDEN
+    expected_status_for_update = http.client.FORBIDDEN
+    expected_status_for_update_nonexistent = http.client.FORBIDDEN
+    expected_status_for_delete = http.client.FORBIDDEN
+    expected_status_for_delete_nonexistent = http.client.FORBIDDEN
+
     def test_user_cannot_create_projects(self):
         create = {
             'project': unit.new_project_ref(
@@ -103,7 +109,7 @@ class _SystemMemberAndReaderProjectTests:
                 '/v3/projects',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_update_projects(self):
@@ -119,7 +125,7 @@ class _SystemMemberAndReaderProjectTests:
                 '/v3/projects/{}'.format(project['id']),
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_update_non_existent_project_forbidden(self):
@@ -130,7 +136,7 @@ class _SystemMemberAndReaderProjectTests:
                 f'/v3/projects/{uuid.uuid4().hex}',
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update_nonexistent,
             )
 
     def test_user_cannot_delete_projects(self):
@@ -143,7 +149,7 @@ class _SystemMemberAndReaderProjectTests:
             c.delete(
                 '/v3/projects/{}'.format(project['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
     def test_user_cannot_delete_non_existent_project_forbidden(self):
@@ -151,12 +157,15 @@ class _SystemMemberAndReaderProjectTests:
             c.delete(
                 f'/v3/projects/{uuid.uuid4().hex}',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete_nonexistent,
             )
 
 
 class _DomainUsersTests:
     """Common default functionality for all domain users."""
+
+    expected_status_for_get_project_other_domain = http.client.FORBIDDEN
+    expected_status_for_list_projects_user_other_domain = http.client.FORBIDDEN
 
     def test_user_can_list_projects_within_domain(self):
         project = PROVIDERS.resource_api.create_project(
@@ -199,7 +208,7 @@ class _DomainUsersTests:
             c.get(
                 '/v3/projects/{}'.format(project['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get_project_other_domain,
             )
 
     def test_user_can_list_projects_for_user_in_domain(self):
@@ -247,12 +256,18 @@ class _DomainUsersTests:
             c.get(
                 '/v3/users/{}/projects'.format(user['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_list_projects_user_other_domain,
             )
 
 
 class _DomainMemberAndReaderProjectTests:
     """Common default functionality for domain member and domain readers."""
+
+    expected_status_for_create = http.client.FORBIDDEN
+    expected_status_for_update = http.client.FORBIDDEN
+    expected_status_for_update_nonexistent = http.client.FORBIDDEN
+    expected_status_for_delete = http.client.FORBIDDEN
+    expected_status_for_delete_nonexistent = http.client.FORBIDDEN
 
     def test_user_cannot_create_projects_within_domain(self):
         create = {'project': unit.new_project_ref(domain_id=self.domain_id)}
@@ -262,7 +277,7 @@ class _DomainMemberAndReaderProjectTests:
                 '/v3/projects',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_create_projects_in_other_domains(self):
@@ -277,7 +292,7 @@ class _DomainMemberAndReaderProjectTests:
                 '/v3/projects',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_update_projects_within_domain(self):
@@ -292,7 +307,7 @@ class _DomainMemberAndReaderProjectTests:
                 '/v3/projects/{}'.format(project['id']),
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_update_projects_in_other_domain(self):
@@ -308,7 +323,7 @@ class _DomainMemberAndReaderProjectTests:
                 '/v3/projects/{}'.format(project['id']),
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_update_non_existent_project_forbidden(self):
@@ -319,7 +334,7 @@ class _DomainMemberAndReaderProjectTests:
                 f'/v3/projects/{uuid.uuid4().hex}',
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update_nonexistent,
             )
 
     def test_user_cannot_delete_projects_within_domain(self):
@@ -331,7 +346,7 @@ class _DomainMemberAndReaderProjectTests:
             c.delete(
                 '/v3/projects/{}'.format(project['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
     def test_user_cannot_delete_projects_in_other_domain(self):
@@ -344,7 +359,7 @@ class _DomainMemberAndReaderProjectTests:
             c.delete(
                 '/v3/projects/{}'.format(project['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
     def test_user_cannot_delete_non_existent_projects_forbidden(self):
@@ -352,7 +367,7 @@ class _DomainMemberAndReaderProjectTests:
             c.delete(
                 f'/v3/projects/{uuid.uuid4().hex}',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete_nonexistent,
             )
 
 
@@ -615,7 +630,17 @@ class DomainAdminTests(
     base_classes.TestCaseWithBootstrap,
     common_auth.AuthTestMixin,
     _DomainUsersTests,
+    _DomainMemberAndReaderProjectTests,
 ):
+
+    expected_status_for_get_project_other_domain = http.client.OK
+    expected_status_for_list_projects_user_other_domain = http.client.OK
+    expected_status_for_create = http.client.CREATED
+    expected_status_for_update = http.client.OK
+    expected_status_for_update_nonexistent = http.client.NOT_FOUND
+    expected_status_for_delete = http.client.NO_CONTENT
+    expected_status_for_delete_nonexistent = http.client.NOT_FOUND
+
     def setUp(self):
         super().setUp()
         self.loadapp()
@@ -657,138 +682,36 @@ class DomainAdminTests(
             self.headers = {'X-Auth-Token': self.token_id}
 
     def _override_policy(self):
-        # TODO(lbragstad): Remove this once the deprecated policies in
-        # keystone.common.policies.project have been removed. This is only
-        # here to make sure we test the new policies instead of the deprecated
-        # ones. Oslo.policy will OR deprecated policies with new policies to
-        # maintain compatibility and give operators a chance to update
-        # permissions or update policies without breaking users. This will
-        # cause these specific tests to fail since we're trying to correct this
-        # broken behavior with better scope checking.
         with open(self.policy_file_name, 'w') as f:
             overridden_policies = {
                 'identity:get_project': (
-                    pp.SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER
+                    pp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER
                 ),
                 'identity:list_user_projects': (
-                    pp.SYSTEM_READER_OR_DOMAIN_READER_OR_OWNER
+                    pp.ADMIN_SYSTEM_READER_OR_DOMAIN_READER_OR_OWNER
                 ),
-                'identity:list_projects': (pp.SYSTEM_READER_OR_DOMAIN_READER),
-                'identity:create_project': pp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
-                'identity:update_project': pp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
-                'identity:delete_project': pp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
+                'identity:list_projects': (
+                    pp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER
+                ),
+                'identity:create_project': pp.ADMIN_OR_DOMAIN_MANAGER,
+                'identity:update_project': pp.ADMIN_OR_DOMAIN_MANAGER,
+                'identity:delete_project': pp.ADMIN_OR_DOMAIN_MANAGER,
             }
             f.write(jsonutils.dumps(overridden_policies))
 
-    def test_user_can_create_projects_within_domain(self):
-        create = {'project': unit.new_project_ref(domain_id=self.domain_id)}
-
-        with self.test_client() as c:
-            c.post('/v3/projects', json=create, headers=self.headers)
-
-    def test_user_cannot_create_projects_in_other_domains(self):
-        create = {
-            'project': unit.new_project_ref(
-                domain_id=CONF.identity.default_domain_id
-            )
-        }
-
-        with self.test_client() as c:
-            c.post(
-                '/v3/projects',
-                json=create,
-                headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
-
-    def test_user_can_update_projects_within_domain(self):
-        project = PROVIDERS.resource_api.create_project(
-            uuid.uuid4().hex, unit.new_project_ref(domain_id=self.domain_id)
-        )
-
-        update = {'project': {'description': uuid.uuid4().hex}}
-
-        with self.test_client() as c:
-            c.patch(
-                '/v3/projects/{}'.format(project['id']),
-                json=update,
-                headers=self.headers,
-            )
-
-    def test_user_cannot_update_projects_in_other_domain(self):
-        project = PROVIDERS.resource_api.create_project(
-            uuid.uuid4().hex,
-            unit.new_project_ref(domain_id=CONF.identity.default_domain_id),
-        )
-
-        update = {'project': {'description': uuid.uuid4().hex}}
-
-        with self.test_client() as c:
-            c.patch(
-                '/v3/projects/{}'.format(project['id']),
-                json=update,
-                headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
-
-    def test_user_cannot_update_non_existent_project_forbidden(self):
-        # Because domain users operate outside of system scope, we can't
-        # confidently return a Not Found here because they aren't system users.
-        # The best we can do is return a Forbidden because we need the
-        # project's domain in order to resolve the policy check, and the
-        # project doesn't exist. This errors on the side of opacity and returns
-        # a 403 instead of a 404.
-        update = {'project': {'description': uuid.uuid4().hex}}
-
-        with self.test_client() as c:
-            c.patch(
-                f'/v3/projects/{uuid.uuid4().hex}',
-                json=update,
-                headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
-
-    def test_user_can_delete_projects_within_domain(self):
-        project = PROVIDERS.resource_api.create_project(
-            uuid.uuid4().hex, unit.new_project_ref(domain_id=self.domain_id)
-        )
-
-        with self.test_client() as c:
-            c.delete(
-                '/v3/projects/{}'.format(project['id']), headers=self.headers
-            )
-
-    def test_user_cannot_delete_projects_in_other_domain(self):
-        project = PROVIDERS.resource_api.create_project(
-            uuid.uuid4().hex,
-            unit.new_project_ref(domain_id=CONF.identity.default_domain_id),
-        )
-
-        with self.test_client() as c:
-            c.delete(
-                '/v3/projects/{}'.format(project['id']),
-                headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
-
-    def test_user_cannot_delete_non_existent_projects_forbidden(self):
-        # Because domain users operate outside of system scope, we can't
-        # confidently return a Not Found here because they aren't system users.
-        # The best we can do is return a Forbidden because we need the
-        # project's domain in order to resolve the policy check, and the
-        # project doesn't exist. This errors on the side of opacity and returns
-        # a 403 instead of a 404.
-        with self.test_client() as c:
-            c.delete(
-                f'/v3/projects/{uuid.uuid4().hex}',
-                headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
-
 
 class ProjectUserTests(
-    base_classes.TestCaseWithBootstrap, common_auth.AuthTestMixin
+    base_classes.TestCaseWithBootstrap,
+    common_auth.AuthTestMixin,
+    _SystemUserTests,
+    _SystemMemberAndReaderProjectTests,
 ):
+
+    expected_status_for_create = http.client.CREATED
+    expected_status_for_update = http.client.OK
+    expected_status_for_update_nonexistent = http.client.NOT_FOUND
+    expected_status_for_delete = http.client.NO_CONTENT
+    expected_status_for_delete_nonexistent = http.client.NOT_FOUND
     def setUp(self):
         super().setUp()
         self.loadapp()
@@ -825,37 +748,29 @@ class ProjectUserTests(
             self.headers = {'X-Auth-Token': self.token_id}
 
     def _override_policy(self):
-        # TODO(lbragstad): Remove this once the deprecated policies in
-        # keystone.common.policies.project have been removed. This is only
-        # here to make sure we test the new policies instead of the deprecated
-        # ones. Oslo.policy will OR deprecated policies with new policies to
-        # maintain compatibility and give operators a chance to update
-        # permissions or update policies without breaking users. This will
-        # cause these specific tests to fail since we're trying to correct this
-        # broken behavior with better scope checking.
         with open(self.policy_file_name, 'w') as f:
             overridden_policies = {
                 'identity:get_project': (
-                    pp.SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER
+                    pp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER
                 ),
                 'identity:list_user_projects': (
-                    pp.SYSTEM_READER_OR_DOMAIN_READER_OR_OWNER
+                    pp.ADMIN_SYSTEM_READER_OR_DOMAIN_READER_OR_OWNER
                 ),
-                'identity:list_projects': (pp.SYSTEM_READER_OR_DOMAIN_READER),
-                'identity:create_project': pp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
-                'identity:update_project': pp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
-                'identity:delete_project': pp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
+                'identity:list_projects': (
+                    pp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER
+                ),
+                'identity:create_project': pp.ADMIN_OR_DOMAIN_MANAGER,
+                'identity:update_project': pp.ADMIN_OR_DOMAIN_MANAGER,
+                'identity:delete_project': pp.ADMIN_OR_DOMAIN_MANAGER,
             }
             f.write(jsonutils.dumps(overridden_policies))
 
     def test_user_cannot_list_projects(self):
-        # This test is assuming the user calling the API has a role assignment
-        # on the project created by ``keystone-manage bootstrap``.
         with self.test_client() as c:
             c.get(
                 '/v3/projects',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.OK,
             )
 
     def test_user_cannot_list_projects_for_others(self):
@@ -880,7 +795,7 @@ class ProjectUserTests(
             c.get(
                 '/v3/users/{}/projects'.format(user['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.OK,
             )
 
     def test_user_can_list_their_projects(self):
@@ -908,68 +823,5 @@ class ProjectUserTests(
             c.get(
                 '/v3/projects/{}'.format(project['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
-
-    def test_user_cannot_create_projects(self):
-        create = {
-            'project': unit.new_project_ref(
-                domain_id=CONF.identity.default_domain_id
-            )
-        }
-
-        with self.test_client() as c:
-            c.post(
-                '/v3/projects',
-                json=create,
-                headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
-
-    def test_user_cannot_update_projects(self):
-        project = PROVIDERS.resource_api.create_project(
-            uuid.uuid4().hex,
-            unit.new_project_ref(domain_id=CONF.identity.default_domain_id),
-        )
-
-        update = {'project': {'description': uuid.uuid4().hex}}
-
-        with self.test_client() as c:
-            c.patch(
-                '/v3/projects/{}'.format(project['id']),
-                json=update,
-                headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
-
-    def test_user_cannot_update_non_existent_project_forbidden(self):
-        update = {'project': {'description': uuid.uuid4().hex}}
-
-        with self.test_client() as c:
-            c.patch(
-                f'/v3/projects/{uuid.uuid4().hex}',
-                json=update,
-                headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
-
-    def test_user_cannot_delete_projects(self):
-        project = PROVIDERS.resource_api.create_project(
-            uuid.uuid4().hex,
-            unit.new_project_ref(domain_id=CONF.identity.default_domain_id),
-        )
-
-        with self.test_client() as c:
-            c.delete(
-                '/v3/projects/{}'.format(project['id']),
-                headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
-
-    def test_user_cannot_delete_non_existent_project_forbidden(self):
-        with self.test_client() as c:
-            c.delete(
-                f'/v3/projects/{uuid.uuid4().hex}',
-                headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.OK,
             )

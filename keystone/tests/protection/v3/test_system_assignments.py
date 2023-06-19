@@ -171,6 +171,11 @@ class _SystemMemberAndReaderSystemAssignmentTests:
 
 
 class _DomainAndProjectUserSystemAssignmentTests:
+    expected_status_for_group_list = http.client.FORBIDDEN
+    expected_status_for_group_check = http.client.FORBIDDEN
+    expected_status_for_group_grant = http.client.FORBIDDEN
+    expected_status_for_group_revoke = http.client.FORBIDDEN
+
     def test_user_cannot_list_system_role_assignments(self):
         user = PROVIDERS.identity_api.create_user(
             unit.new_user_ref(CONF.identity.default_domain_id)
@@ -247,11 +252,16 @@ class _DomainAndProjectUserSystemAssignmentTests:
         )
 
         with self.test_client() as c:
-            c.get(
+            r = c.get(
                 '/v3/system/groups/{}/roles'.format(group['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_group_list,
             )
+            if self.expected_status_for_group_list == http.client.OK:
+                self.assertEqual(1, len(r.json['roles']))
+                self.assertEqual(
+                    self.bootstrapper.member_role_id, r.json['roles'][0]['id']
+                )
 
     def test_user_cannot_check_group_system_role_assignments(self):
         group = PROVIDERS.identity_api.create_group(
@@ -268,7 +278,7 @@ class _DomainAndProjectUserSystemAssignmentTests:
                     group['id'], self.bootstrapper.member_role_id
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_group_check,
             )
 
     def test_user_cannot_grant_group_system_assignments(self):
@@ -282,7 +292,7 @@ class _DomainAndProjectUserSystemAssignmentTests:
                     group['id'], self.bootstrapper.member_role_id
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_group_grant,
             )
 
     def test_user_cannot_revoke_group_system_assignments(self):
@@ -300,7 +310,7 @@ class _DomainAndProjectUserSystemAssignmentTests:
                     group['id'], self.bootstrapper.member_role_id
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_group_revoke,
             )
 
 
@@ -602,6 +612,11 @@ class ProjectAdminTests(
     common_auth.AuthTestMixin,
     _DomainAndProjectUserSystemAssignmentTests,
 ):
+    expected_status_for_group_list = http.client.OK
+    expected_status_for_group_check = http.client.NO_CONTENT
+    expected_status_for_group_grant = http.client.NO_CONTENT
+    expected_status_for_group_revoke = http.client.NO_CONTENT
+
     def setUp(self):
         super().setUp()
         self.loadapp()
