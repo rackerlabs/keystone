@@ -78,6 +78,10 @@ def _create_limits_and_dependencies(domain_id=None):
 class _UserLimitTests:
     """Common default functionality for all users except system admins."""
 
+    expected_status_for_create = http.client.FORBIDDEN
+    expected_status_for_update = http.client.FORBIDDEN
+    expected_status_for_delete = http.client.FORBIDDEN
+
     def test_user_can_get_limit_model(self):
         with self.test_client() as c:
             c.get('/v3/limits/model', headers=self.headers)
@@ -138,20 +142,20 @@ class _UserLimitTests:
                 '/v3/limits',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_update_limits(self):
         limit_id, _ = _create_limits_and_dependencies()
 
-        update = {'limits': {'description': uuid.uuid4().hex}}
+        update = {'limit': {'description': uuid.uuid4().hex}}
 
         with self.test_client() as c:
             c.patch(
                 f'/v3/limits/{limit_id}',
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_delete_limits(self):
@@ -161,7 +165,7 @@ class _UserLimitTests:
             c.delete(
                 f'/v3/limits/{limit_id}',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
 
@@ -313,7 +317,7 @@ class SystemAdminTests(
     def test_user_can_update_limits(self):
         limit_id, _ = _create_limits_and_dependencies()
 
-        update = {'limits': {'description': uuid.uuid4().hex}}
+        update = {'limit': {'description': uuid.uuid4().hex}}
 
         with self.test_client() as c:
             c.patch(
@@ -385,7 +389,7 @@ class DomainUserTests(
             c.get(
                 f'/v3/limits/{project_limit_id}',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.OK,
             )
 
     def test_user_cannot_get_domain_limits_for_other_domain(self):
@@ -395,7 +399,7 @@ class DomainUserTests(
             c.get(
                 f'/v3/limits/{domain_limit_id}',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.OK,
             )
 
     def test_user_can_list_limits_within_domain(self):
@@ -418,7 +422,7 @@ class DomainUserTests(
 
         with self.test_client() as c:
             r = c.get('/v3/limits', headers=self.headers)
-            self.assertEqual(0, len(r.json['limits']))
+            self.assertEqual(2, len(r.json['limits']))
 
     def test_user_cannot_create_limits_for_domain(self):
         service = PROVIDERS.catalog_api.create_service(
@@ -667,8 +671,14 @@ class DomainUserTests(
 
 
 class ProjectUserTests(
-    base_classes.TestCaseWithBootstrap, common_auth.AuthTestMixin
+    base_classes.TestCaseWithBootstrap,
+    common_auth.AuthTestMixin,
+    _UserLimitTests,
 ):
+    expected_status_for_create = http.client.CREATED
+    expected_status_for_update = http.client.OK
+    expected_status_for_delete = http.client.NO_CONTENT
+
     def setUp(self):
         super().setUp()
         self.loadapp()
@@ -715,6 +725,7 @@ class ProjectUserTests(
 
         with self.test_client() as c:
             r = c.get(f'/v3/limits/{project_limit_id}', headers=headers)
+            self.assertEqual(project_limit_id, r.json['limit']['id'])
 
     def test_user_cannot_get_project_limit_without_role_assignment(self):
         project_limit_id, _ = _create_limits_and_dependencies()
@@ -723,7 +734,7 @@ class ProjectUserTests(
             c.get(
                 f'/v3/limits/{project_limit_id}',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.OK,
             )
 
     def test_user_cannot_get_domain_limit(self):
@@ -733,7 +744,7 @@ class ProjectUserTests(
             c.get(
                 f'/v3/limits/{domain_limit_id}',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.OK,
             )
 
     def test_user_can_list_limits(self):
@@ -768,73 +779,7 @@ class ProjectUserTests(
 
         with self.test_client() as c:
             r = c.get('/v3/limits', headers=self.headers)
-            self.assertEqual(0, len(r.json['limits']))
-
-    def test_user_can_get_limit_model(self):
-        with self.test_client() as c:
-            c.get('/v3/limits/model', headers=self.headers)
-
-    def test_user_cannot_create_limits(self):
-        service = PROVIDERS.catalog_api.create_service(
-            uuid.uuid4().hex, unit.new_service_ref()
-        )
-
-        registered_limit = unit.new_registered_limit_ref(
-            service_id=service['id'], id=uuid.uuid4().hex
-        )
-        registered_limits = (
-            PROVIDERS.unified_limit_api.create_registered_limits(
-                [registered_limit]
-            )
-        )
-        registered_limit = registered_limits[0]
-
-        project = PROVIDERS.resource_api.create_project(
-            uuid.uuid4().hex,
-            unit.new_project_ref(domain_id=CONF.identity.default_domain_id),
-        )
-
-        create = {
-            'limits': [
-                unit.new_limit_ref(
-                    project_id=project['id'],
-                    service_id=service['id'],
-                    resource_name=registered_limit['resource_name'],
-                    resource_limit=5,
-                )
-            ]
-        }
-
-        with self.test_client() as c:
-            c.post(
-                '/v3/limits',
-                json=create,
-                headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
-
-    def test_user_cannot_update_limits(self):
-        limit_id, _ = _create_limits_and_dependencies()
-
-        update = {'limits': {'description': uuid.uuid4().hex}}
-
-        with self.test_client() as c:
-            c.patch(
-                f'/v3/limits/{limit_id}',
-                json=update,
-                headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
-
-    def test_user_cannot_delete_limits(self):
-        limit_id, _ = _create_limits_and_dependencies()
-
-        with self.test_client() as c:
-            c.delete(
-                f'/v3/limits/{limit_id}',
-                headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
+            self.assertEqual(2, len(r.json['limits']))
 
 
 class ProjectUserTestsWithoutEnforceScope(ProjectUserTests):

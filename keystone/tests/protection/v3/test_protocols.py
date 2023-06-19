@@ -132,6 +132,12 @@ class _SystemReaderAndMemberProtocolTests:
 
 
 class _DomainAndProjectUserProtocolTests:
+    expected_status_for_create = http.client.FORBIDDEN
+    expected_status_for_update = http.client.FORBIDDEN
+    expected_status_for_delete = http.client.FORBIDDEN
+    expected_status_for_list = http.client.FORBIDDEN
+    expected_status_for_get = http.client.FORBIDDEN
+
     def test_user_cannot_create_protocols(self):
         identity_provider = unit.new_identity_provider_ref()
         identity_provider = PROVIDERS.federation_api.create_idp(
@@ -155,7 +161,7 @@ class _DomainAndProjectUserProtocolTests:
                 path,
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_update_protocols(self):
@@ -176,7 +182,7 @@ class _DomainAndProjectUserProtocolTests:
                 path,
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_delete_protocol(self):
@@ -191,7 +197,7 @@ class _DomainAndProjectUserProtocolTests:
             c.delete(
                 path,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
     def test_user_cannot_list_protocols(self):
@@ -204,7 +210,7 @@ class _DomainAndProjectUserProtocolTests:
             c.get(
                 path,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_list,
             )
 
     def test_user_cannot_get_a_protocol(self):
@@ -219,7 +225,7 @@ class _DomainAndProjectUserProtocolTests:
             c.get(
                 path,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
 
@@ -419,6 +425,12 @@ class ProjectUserTests(
     _CommonUtilities,
     _DomainAndProjectUserProtocolTests,
 ):
+    expected_status_for_create = http.client.CREATED
+    expected_status_for_update = http.client.OK
+    expected_status_for_delete = http.client.NO_CONTENT
+    expected_status_for_list = http.client.OK
+    expected_status_for_get = http.client.OK
+
     def setUp(self):
         super().setUp()
         self.loadapp()

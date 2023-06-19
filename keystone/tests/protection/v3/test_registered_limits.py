@@ -27,6 +27,10 @@ PROVIDERS = provider_api.ProviderAPIs
 class _UserRegisteredLimitTests:
     """Common default functionality for all users except system admins."""
 
+    expected_status_for_create = http.client.FORBIDDEN
+    expected_status_for_update = http.client.FORBIDDEN
+    expected_status_for_delete = http.client.FORBIDDEN
+
     def test_user_can_get_a_registered_limit(self):
         service = PROVIDERS.catalog_api.create_service(
             uuid.uuid4().hex, unit.new_service_ref()
@@ -80,7 +84,7 @@ class _UserRegisteredLimitTests:
                 '/v3/registered_limits',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_update_registered_limits(self):
@@ -103,7 +107,7 @@ class _UserRegisteredLimitTests:
                 f'/v3/registered_limits/{limit_id}',
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_delete_registered_limits(self):
@@ -123,7 +127,7 @@ class _UserRegisteredLimitTests:
             c.delete(
                 f'/v3/registered_limits/{limit_id}',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
 
@@ -350,6 +354,10 @@ class ProjectUserTests(
     common_auth.AuthTestMixin,
     _UserRegisteredLimitTests,
 ):
+    expected_status_for_create = http.client.CREATED
+    expected_status_for_update = http.client.OK
+    expected_status_for_delete = http.client.NO_CONTENT
+
     def setUp(self):
         super().setUp()
         self.loadapp()

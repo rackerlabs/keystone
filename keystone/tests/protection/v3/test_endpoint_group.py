@@ -164,7 +164,6 @@ class _SystemReaderAndMemberUserEndpointGroupsTests:
     def test_user_cannot_create_endpoint_groups(self):
         create = {
             'endpoint_group': {
-                'id': uuid.uuid4().hex,
                 'description': uuid.uuid4().hex,
                 'filters': {'interface': 'public'},
                 'name': uuid.uuid4().hex,
@@ -258,6 +257,14 @@ class _SystemReaderAndMemberUserEndpointGroupsTests:
 
 
 class _DomainAndProjectUserEndpointGroupTests:
+    expected_status_for_list = http.client.FORBIDDEN
+    expected_status_for_get = http.client.FORBIDDEN
+    expected_status_for_create = http.client.FORBIDDEN
+    expected_status_for_update = http.client.FORBIDDEN
+    expected_status_for_delete = http.client.FORBIDDEN
+    expected_status_for_add_to_project = http.client.FORBIDDEN
+    expected_status_for_remove_from_project = http.client.FORBIDDEN
+
     def test_user_cannot_list_endpoint_groups(self):
         endpoint_group = unit.new_endpoint_group_ref(
             filters={'interface': 'public'}
@@ -270,7 +277,7 @@ class _DomainAndProjectUserEndpointGroupTests:
             c.get(
                 '/v3/OS-EP-FILTER/endpoint_groups',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_list,
             )
 
     def test_user_cannot_get_an_endpoint_group(self):
@@ -286,7 +293,7 @@ class _DomainAndProjectUserEndpointGroupTests:
                     endpoint_group['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
     def test_user_cannot_list_projects_associated_with_endpoint_groups(self):
@@ -309,7 +316,7 @@ class _DomainAndProjectUserEndpointGroupTests:
                     endpoint_group['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
     def test_user_cannot_list_endpoints_associated_with_endpoint_groups(self):
@@ -332,7 +339,7 @@ class _DomainAndProjectUserEndpointGroupTests:
                     endpoint_group['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
     def test_user_cannot_get_endpoints_associated_with_endpoint_groups(self):
@@ -355,7 +362,7 @@ class _DomainAndProjectUserEndpointGroupTests:
                     endpoint_group['id'], project['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
     def test_user_cannot_list_endpoint_groups_with_their_projects(self):
@@ -378,13 +385,12 @@ class _DomainAndProjectUserEndpointGroupTests:
                     project['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
     def test_user_cannot_create_endpoint_groups(self):
         create = {
             'endpoint_group': {
-                'id': uuid.uuid4().hex,
                 'description': uuid.uuid4().hex,
                 'filters': {'interface': 'public'},
                 'name': uuid.uuid4().hex,
@@ -396,7 +402,7 @@ class _DomainAndProjectUserEndpointGroupTests:
                 '/v3/OS-EP-FILTER/endpoint_groups',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_update_endpoint_groups(self):
@@ -416,7 +422,7 @@ class _DomainAndProjectUserEndpointGroupTests:
                 ),
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_delete_endpoint_groups(self):
@@ -433,7 +439,7 @@ class _DomainAndProjectUserEndpointGroupTests:
                     endpoint_group['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
     def test_user_cannot_add_endpoint_group_to_project(self):
@@ -453,7 +459,7 @@ class _DomainAndProjectUserEndpointGroupTests:
                     endpoint_group['id'], project['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_add_to_project,
             )
 
     def test_cannot_remove_endpoint_group_from_project(self):
@@ -473,7 +479,7 @@ class _DomainAndProjectUserEndpointGroupTests:
                     endpoint_group['id'], project['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_remove_from_project,
             )
 
 
@@ -575,7 +581,6 @@ class SystemAdminTests(
     def test_user_can_create_endpoint_group(self):
         create = {
             'endpoint_group': {
-                'id': uuid.uuid4().hex,
                 'description': uuid.uuid4().hex,
                 'filters': {'interface': 'public'},
                 'name': uuid.uuid4().hex,
@@ -587,6 +592,7 @@ class SystemAdminTests(
                 '/v3/OS-EP-FILTER/endpoint_groups',
                 json=create,
                 headers=self.headers,
+                expected_status_code=http.client.CREATED,
             )
 
     def test_user_can_update_endpoint_group(self):
@@ -708,6 +714,14 @@ class ProjectUserTests(
     common_auth.AuthTestMixin,
     _DomainAndProjectUserEndpointGroupTests,
 ):
+    expected_status_for_list = http.client.OK
+    expected_status_for_get = http.client.OK
+    expected_status_for_create = http.client.CREATED
+    expected_status_for_update = http.client.OK
+    expected_status_for_delete = http.client.NO_CONTENT
+    expected_status_for_add_to_project = http.client.NO_CONTENT
+    expected_status_for_remove_from_project = http.client.NOT_FOUND
+
     def setUp(self):
         super().setUp()
         self.loadapp()

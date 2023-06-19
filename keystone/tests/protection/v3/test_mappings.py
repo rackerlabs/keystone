@@ -116,6 +116,12 @@ class _SystemReaderAndMemberUserMappingTests:
 
 
 class _DomainAndProjectUserMappingTests:
+    expected_status_for_create = http.client.FORBIDDEN
+    expected_status_for_list = http.client.FORBIDDEN
+    expected_status_for_get = http.client.FORBIDDEN
+    expected_status_for_update = http.client.FORBIDDEN
+    expected_status_for_delete = http.client.FORBIDDEN
+
     def test_user_cannot_create_mappings(self):
         create = {
             'mapping': {
@@ -135,7 +141,7 @@ class _DomainAndProjectUserMappingTests:
                 f'/v3/OS-FEDERATION/mappings/{mapping_id}',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_list_mappings(self):
@@ -148,7 +154,7 @@ class _DomainAndProjectUserMappingTests:
             c.get(
                 '/v3/OS-FEDERATION/mappings',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_list,
             )
 
     def test_user_cannot_get_a_mapping(self):
@@ -161,7 +167,7 @@ class _DomainAndProjectUserMappingTests:
             c.get(
                 '/v3/OS-FEDERATION/mappings/{}'.format(mapping['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
     def test_user_cannot_update_mappings(self):
@@ -186,7 +192,7 @@ class _DomainAndProjectUserMappingTests:
                 '/v3/OS-FEDERATION/mappings/{}'.format(mapping['id']),
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_delete_mappings(self):
@@ -199,7 +205,7 @@ class _DomainAndProjectUserMappingTests:
             c.delete(
                 '/v3/OS-FEDERATION/mappings/{}'.format(mapping['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
 
@@ -459,6 +465,12 @@ class ProjectUserTests(
     common_auth.AuthTestMixin,
     _DomainAndProjectUserMappingTests,
 ):
+    expected_status_for_create = http.client.CREATED
+    expected_status_for_list = http.client.OK
+    expected_status_for_get = http.client.OK
+    expected_status_for_update = http.client.OK
+    expected_status_for_delete = http.client.NO_CONTENT
+
     def setUp(self):
         super().setUp()
         self.loadapp()
