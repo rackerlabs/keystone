@@ -112,6 +112,12 @@ class _SystemReaderAndMemberUserServiceProviderTests:
 class _DomainAndProjectUserServiceProviderTests:
     """Common functionality for all domain and project users."""
 
+    expected_status_for_create: int = http.client.FORBIDDEN
+    expected_status_for_list: int = http.client.FORBIDDEN
+    expected_status_for_get: int = http.client.FORBIDDEN
+    expected_status_for_update: int = http.client.FORBIDDEN
+    expected_status_for_delete: int = http.client.FORBIDDEN
+
     def test_user_cannot_create_service_providers(self):
         service_provider = PROVIDERS.federation_api.create_sp(
             uuid.uuid4().hex, unit.new_service_provider_ref()
@@ -125,7 +131,7 @@ class _DomainAndProjectUserServiceProviderTests:
                 f'/v3/OS-FEDERATION/service_providers/{uuid.uuid4().hex}',
                 headers=self.headers,
                 json=create,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_update_service_providers(self):
@@ -142,7 +148,7 @@ class _DomainAndProjectUserServiceProviderTests:
                 ),
                 headers=self.headers,
                 json=update,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_list_service_providers(self):
@@ -154,7 +160,7 @@ class _DomainAndProjectUserServiceProviderTests:
             c.get(
                 '/v3/OS-FEDERATION/service_providers',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_list,
             )
 
     def test_user_cannot_get_a_service_provider(self):
@@ -168,7 +174,7 @@ class _DomainAndProjectUserServiceProviderTests:
                     service_provider['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
     def test_user_cannot_delete_service_providers(self):
@@ -182,7 +188,7 @@ class _DomainAndProjectUserServiceProviderTests:
                     service_provider['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
 
@@ -369,6 +375,12 @@ class ProjectUserTests(
     common_auth.AuthTestMixin,
     _DomainAndProjectUserServiceProviderTests,
 ):
+    expected_status_for_create = http.client.CREATED
+    expected_status_for_list = http.client.OK
+    expected_status_for_get = http.client.OK
+    expected_status_for_update = http.client.OK
+    expected_status_for_delete = http.client.NO_CONTENT
+
     def setUp(self):
         super().setUp()
         self.loadapp()

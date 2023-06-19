@@ -1170,7 +1170,9 @@ class _ProjectUserTests:
 
         with self.test_client() as c:
             c.get(
-                f'/v3/role_assignments?scope.project.id={project1}',
+                '/v3/role_assignments?scope.project.id={}'.format(
+                    project1['id']
+                ),
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )

@@ -564,7 +564,7 @@ class ProjectMemberTests(
 class ProjectAdminTests(
     base_classes.TestCaseWithBootstrap,
     common_auth.AuthTestMixin,
-    _ProjectUserDomainTests,
+    _SystemUserDomainTests,
 ):
     def setUp(self):
         super().setUp()
@@ -624,7 +624,10 @@ class ProjectAdminTests(
         with open(self.policy_file_name, 'w') as f:
             overridden_policies = {
                 'identity:get_domain': (
-                    dp.SYSTEM_USER_OR_DOMAIN_USER_OR_PROJECT_USER
-                )
+                    dp.ADMIN_OR_SYSTEM_USER_OR_DOMAIN_USER_OR_PROJECT_USER
+                ),
+                'identity:list_domains': (
+                    dp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER
+                ),
             }
             f.write(jsonutils.dumps(overridden_policies))

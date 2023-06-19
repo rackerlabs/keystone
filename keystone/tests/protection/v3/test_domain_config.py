@@ -259,6 +259,10 @@ class _SystemUserDomainConfigTests:
 
 
 class _SystemReaderMemberDomainAndProjectUserDomainConfigTests:
+    expected_status_for_create: int = http.client.FORBIDDEN
+    expected_status_for_update: int = http.client.FORBIDDEN
+    expected_status_for_delete: int = http.client.FORBIDDEN
+
     def test_user_cannot_create_domain_config(self):
         domain = PROVIDERS.resource_api.create_domain(
             uuid.uuid4().hex, unit.new_domain_ref()
@@ -268,7 +272,7 @@ class _SystemReaderMemberDomainAndProjectUserDomainConfigTests:
                 '/v3/domains/{}/config'.format(domain['id']),
                 json={'config': unit.new_domain_config_ref()},
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_update_domain_config(self):
@@ -287,7 +291,7 @@ class _SystemReaderMemberDomainAndProjectUserDomainConfigTests:
                 '/v3/domains/{}/config'.format(domain['id']),
                 json={'config': new_config},
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_update_domain_group_config(self):
@@ -305,7 +309,7 @@ class _SystemReaderMemberDomainAndProjectUserDomainConfigTests:
                 '/v3/domains/{}/config/ldap'.format(domain['id']),
                 json={'config': new_config},
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_update_domain_config_option(self):
@@ -321,7 +325,7 @@ class _SystemReaderMemberDomainAndProjectUserDomainConfigTests:
                 '/v3/domains/{}/config/ldap/url'.format(domain['id']),
                 json={'config': new_config},
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_delete_domain_config(self):
@@ -335,7 +339,7 @@ class _SystemReaderMemberDomainAndProjectUserDomainConfigTests:
             c.delete(
                 '/v3/domains/{}/config'.format(domain['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
     def test_user_cannot_delete_domain_group_config(self):
@@ -349,7 +353,7 @@ class _SystemReaderMemberDomainAndProjectUserDomainConfigTests:
             c.delete(
                 '/v3/domains/{}/config/ldap'.format(domain['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
     def test_user_cannot_delete_domain_config_option(self):
@@ -363,11 +367,14 @@ class _SystemReaderMemberDomainAndProjectUserDomainConfigTests:
             c.delete(
                 '/v3/domains/{}/config/ldap/url'.format(domain['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
 
 class _DomainAndProjectUserDomainConfigTests:
+    expected_status_for_get: int = http.client.FORBIDDEN
+    expected_status_for_get_nonexistent: int = http.client.FORBIDDEN
+
     def test_user_cannot_get_domain_config(self):
         domain = PROVIDERS.resource_api.create_domain(
             uuid.uuid4().hex, unit.new_domain_ref()
@@ -379,7 +386,7 @@ class _DomainAndProjectUserDomainConfigTests:
             c.get(
                 '/v3/domains/{}/config'.format(domain['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
     def test_user_cannot_get_domain_group_config(self):
@@ -393,7 +400,7 @@ class _DomainAndProjectUserDomainConfigTests:
             c.get(
                 '/v3/domains/{}/config/ldap'.format(domain['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
     def test_user_cannot_get_non_existant_config(self):
@@ -404,7 +411,7 @@ class _DomainAndProjectUserDomainConfigTests:
             c.get(
                 '/v3/domains/{}/config'.format(domain['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get_nonexistent,
             )
 
     def test_user_cannot_get_domain_config_option(self):
@@ -418,7 +425,7 @@ class _DomainAndProjectUserDomainConfigTests:
             c.get(
                 '/v3/domains/{}/config/ldap/url'.format(domain['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
     def test_user_cannot_get_domain_config_default(self):
@@ -426,7 +433,7 @@ class _DomainAndProjectUserDomainConfigTests:
             c.get(
                 '/v3/domains/config/default',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
     def test_user_cannot_get_domain_group_config_default(self):
@@ -434,7 +441,7 @@ class _DomainAndProjectUserDomainConfigTests:
             c.get(
                 '/v3/domains/config/ldap/default',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
     def test_user_cannot_get_domain_config_option_default(self):
@@ -442,7 +449,7 @@ class _DomainAndProjectUserDomainConfigTests:
             c.get(
                 '/v3/domains/config/ldap/url/default',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
 
@@ -717,6 +724,12 @@ class ProjectUserTests(
     _DomainAndProjectUserDomainConfigTests,
     _SystemReaderMemberDomainAndProjectUserDomainConfigTests,
 ):
+    expected_status_for_create = http.client.CREATED
+    expected_status_for_update = http.client.OK
+    expected_status_for_delete = http.client.NO_CONTENT
+    expected_status_for_get = http.client.OK
+    expected_status_for_get_nonexistent = http.client.NOT_FOUND
+
     def setUp(self):
         super().setUp()
         self.loadapp()

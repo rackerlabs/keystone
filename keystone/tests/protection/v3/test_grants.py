@@ -2181,7 +2181,7 @@ class DomainMemberTests(
 class DomainAdminTests(
     base_classes.TestCaseWithBootstrap,
     common_auth.AuthTestMixin,
-    _DomainUserTests,
+    _SystemUserGrantTests,
 ):
     def setUp(self):
         super().setUp()
@@ -2222,20 +2222,12 @@ class DomainAdminTests(
             self.headers = {'X-Auth-Token': self.token_id}
 
     def _override_policy(self):
-        # TODO(lbragstad): Remove this once the deprecated policies in
-        # keystone.common.policies.grant have been removed. This is only
-        # here to make sure we test the new policies instead of the deprecated
-        # ones. Oslo.policy will OR deprecated policies with new policies to
-        # maintain compatibility and give operators a chance to update
-        # permissions or update policies without breaking users. This will
-        # cause these specific tests to fail since we're trying to correct this
-        # broken behavior with better scope checking.
         with open(self.policy_file_name, 'w') as f:
             overridden_policies = {
-                'identity:list_grants': gp.SYSTEM_READER_OR_DOMAIN_READER_LIST,
-                'identity:check_grant': gp.SYSTEM_READER_OR_DOMAIN_READER,
-                'identity:create_grant': gp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
-                'identity:revoke_grant': gp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
+                'identity:list_grants': gp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_LIST,
+                'identity:check_grant': gp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+                'identity:create_grant': gp.ADMIN_OR_DOMAIN_ADMIN_OR_DOMAIN_MANAGER,
+                'identity:revoke_grant': gp.ADMIN_OR_DOMAIN_ADMIN_OR_DOMAIN_MANAGER,
             }
             f.write(jsonutils.dumps(overridden_policies))
 
@@ -2374,5 +2366,5 @@ class DomainAdminTests(
                     domain['id'], group['id'], self.bootstrapper.reader_role_id
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.NO_CONTENT,
             )

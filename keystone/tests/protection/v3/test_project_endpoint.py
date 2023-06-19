@@ -111,6 +111,11 @@ class _SystemUserProjectEndpointTests:
 
 
 class _SystemReaderAndMemberProjectEndpointTests:
+    expected_status_for_add_endpoint_to_project: int = http.client.FORBIDDEN
+    expected_status_for_remove_endpoint_from_project: int = (
+        http.client.FORBIDDEN
+    )
+
     def test_user_cannot_add_endpoint_to_project(self):
         project = PROVIDERS.resource_api.create_project(
             uuid.uuid4().hex,
@@ -130,7 +135,7 @@ class _SystemReaderAndMemberProjectEndpointTests:
                     project['id'], endpoint['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_add_endpoint_to_project,
             )
 
     def test_user_cannot_remove_endpoint_from_project(self):
@@ -152,11 +157,15 @@ class _SystemReaderAndMemberProjectEndpointTests:
                     project['id'], endpoint['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_remove_endpoint_from_project,
             )
 
 
 class _DomainAndProjectUserProjectEndpointTests:
+    expected_status_for_list_projects_for_endpoint: int = http.client.FORBIDDEN
+    expected_status_for_check_endpoint_in_project: int = http.client.FORBIDDEN
+    expected_status_for_list_endpoints_for_project: int = http.client.FORBIDDEN
+
     def test_user_cannot_list_projects_for_endpoint(self):
         project = PROVIDERS.resource_api.create_project(
             uuid.uuid4().hex,
@@ -180,7 +189,7 @@ class _DomainAndProjectUserProjectEndpointTests:
                     endpoint['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_list_projects_for_endpoint,
             )
 
     def test_user_cannot_check_endpoint_in_project(self):
@@ -206,7 +215,7 @@ class _DomainAndProjectUserProjectEndpointTests:
                     project['id'], endpoint['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_check_endpoint_in_project,
             )
 
     def test_user_cannot_list_endpoints_for_project(self):
@@ -230,7 +239,7 @@ class _DomainAndProjectUserProjectEndpointTests:
             c.get(
                 '/v3/OS-EP-FILTER/projects/{}/endpoints'.format(project['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_list_endpoints_for_project,
             )
 
 
@@ -421,6 +430,12 @@ class ProjectUserTests(
     _DomainAndProjectUserProjectEndpointTests,
     _SystemReaderAndMemberProjectEndpointTests,
 ):
+    expected_status_for_add_endpoint_to_project = http.client.NO_CONTENT
+    expected_status_for_remove_endpoint_from_project = http.client.NOT_FOUND
+    expected_status_for_list_projects_for_endpoint = http.client.OK
+    expected_status_for_check_endpoint_in_project = http.client.NO_CONTENT
+    expected_status_for_list_endpoints_for_project = http.client.OK
+
     def setUp(self):
         super().setUp()
         self.loadapp()

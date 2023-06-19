@@ -78,6 +78,12 @@ class _SystemUserTests:
 class _SystemMemberAndReaderUserTests:
     """Common functionality for system readers and system members."""
 
+    expected_status_for_create: int = http.client.FORBIDDEN
+    expected_status_for_update: int = http.client.FORBIDDEN
+    expected_status_for_update_nonexistent: int = http.client.FORBIDDEN
+    expected_status_for_delete: int = http.client.FORBIDDEN
+    expected_status_for_delete_nonexistent: int = http.client.FORBIDDEN
+
     def test_user_cannot_create_users(self):
         create = {
             'user': {
@@ -91,7 +97,7 @@ class _SystemMemberAndReaderUserTests:
                 '/v3/users',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_update_users(self):
@@ -106,7 +112,7 @@ class _SystemMemberAndReaderUserTests:
                 '/v3/users/{}'.format(user['id']),
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_update_non_existent_user_forbidden(self):
@@ -120,7 +126,7 @@ class _SystemMemberAndReaderUserTests:
                 '/v3/users/{}'.format(user['id']),
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update_nonexistent,
             )
 
     def test_user_cannot_delete_users(self):
@@ -132,7 +138,7 @@ class _SystemMemberAndReaderUserTests:
             c.delete(
                 '/v3/users/{}'.format(user['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
     def test_user_cannot_delete_non_existent_user_forbidden(self):
@@ -140,7 +146,7 @@ class _SystemMemberAndReaderUserTests:
             c.delete(
                 f'/v3/users/{uuid.uuid4().hex}',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete_nonexistent,
             )
 
 
@@ -156,6 +162,8 @@ class _DomainUserTests:
             r = c.get('/v3/users/{}'.format(user['id']), headers=self.headers)
             self.assertEqual(user['id'], r.json['user']['id'])
 
+    expected_status_for_get_other_domain: int = http.client.FORBIDDEN
+
     def test_user_cannot_get_user_in_other_domain(self):
         domain = PROVIDERS.resource_api.create_domain(
             uuid.uuid4().hex, unit.new_domain_ref()
@@ -169,7 +177,7 @@ class _DomainUserTests:
             c.get(
                 '/v3/users/{}'.format(user['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get_other_domain,
             )
 
     def test_user_can_list_users_within_domain(self):
@@ -206,6 +214,12 @@ class _DomainUserTests:
 class _DomainMemberAndReaderUserTests:
     """Functionality for all domain members and domain readers."""
 
+    expected_status_for_create: int = http.client.FORBIDDEN
+    expected_status_for_update: int = http.client.FORBIDDEN
+    expected_status_for_update_nonexistent: int = http.client.FORBIDDEN
+    expected_status_for_delete: int = http.client.FORBIDDEN
+    expected_status_for_delete_nonexistent: int = http.client.FORBIDDEN
+
     def test_user_cannot_create_users_within_domain(self):
         create = {
             'user': {'domain_id': self.domain_id, 'name': uuid.uuid4().hex}
@@ -216,7 +230,7 @@ class _DomainMemberAndReaderUserTests:
                 '/v3/users',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_create_users_in_other_domain(self):
@@ -233,7 +247,7 @@ class _DomainMemberAndReaderUserTests:
                 '/v3/users',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_update_users_within_domain(self):
@@ -247,7 +261,7 @@ class _DomainMemberAndReaderUserTests:
                 '/v3/users/{}'.format(user['id']),
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_update_users_in_other_domain(self):
@@ -264,7 +278,7 @@ class _DomainMemberAndReaderUserTests:
                 '/v3/users/{}'.format(user['id']),
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_update_non_existent_user_forbidden(self):
@@ -278,7 +292,7 @@ class _DomainMemberAndReaderUserTests:
                 '/v3/users/{}'.format(user['id']),
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update_nonexistent,
             )
 
     def test_user_cannot_delete_users_within_domain(self):
@@ -290,7 +304,7 @@ class _DomainMemberAndReaderUserTests:
             c.delete(
                 '/v3/users/{}'.format(user['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
     def test_user_cannot_delete_users_in_other_domain(self):
@@ -305,7 +319,7 @@ class _DomainMemberAndReaderUserTests:
             c.delete(
                 '/v3/users/{}'.format(user['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
     def test_user_cannot_delete_non_existent_user_forbidden(self):
@@ -313,7 +327,7 @@ class _DomainMemberAndReaderUserTests:
             c.delete(
                 f'/v3/users/{uuid.uuid4().hex}',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete_nonexistent,
             )
 
 
@@ -715,7 +729,15 @@ class DomainAdminTests(
     common_auth.AuthTestMixin,
     _CommonUserTests,
     _DomainUserTests,
+    _DomainMemberAndReaderUserTests,
 ):
+    expected_status_for_get_other_domain = http.client.OK
+    expected_status_for_create = http.client.CREATED
+    expected_status_for_update = http.client.OK
+    expected_status_for_update_nonexistent = http.client.OK
+    expected_status_for_delete = http.client.NO_CONTENT
+    expected_status_for_delete_nonexistent = http.client.NOT_FOUND
+
     def setUp(self):
         super().setUp()
         self.loadapp()
@@ -757,37 +779,21 @@ class DomainAdminTests(
             self.headers = {'X-Auth-Token': self.token_id}
 
     def _override_policy(self):
-        # TODO(lbragstad): Remove this once the deprecated policies in
-        # keystone.common.policies.users have been removed. This is only
-        # here to make sure we test the new policies instead of the deprecated
-        # ones. Oslo.policy will apply a logical OR to deprecated policies with
-        # new policies to maintain compatibility and give operators a chance to
-        # update permissions or update policies without breaking users. This
-        # will cause these specific tests to fail since we're trying to correct
-        # this broken behavior with better scope checking.
         with open(self.policy_file_name, 'w') as f:
             overridden_policies = {
-                'identity:get_user': up.SYSTEM_READER_OR_DOMAIN_READER_OR_USER,
-                'identity:list_users': up.SYSTEM_READER_OR_DOMAIN_READER,
-                'identity:create_user': up.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
-                'identity:update_user': up.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
-                'identity:delete_user': up.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
+                'identity:get_user': (
+                    up.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_USER
+                ),
+                'identity:list_users': (
+                    up.ADMIN_SYSTEM_READER_OR_DOMAIN_READER
+                ),
+                'identity:create_user': up.ADMIN_OR_DOMAIN_MANAGER,
+                'identity:update_user': up.ADMIN_OR_DOMAIN_MANAGER,
+                'identity:delete_user': up.ADMIN_OR_DOMAIN_MANAGER,
             }
             f.write(jsonutils.dumps(overridden_policies))
 
-    def test_user_can_create_users_within_domain(self):
-        create = {
-            'user': {'domain_id': self.domain_id, 'name': uuid.uuid4().hex}
-        }
-
-        with self.test_client() as c:
-            c.post('/v3/users', json=create, headers=self.headers)
-
     def test_user_cannot_create_users_within_domain_hyphened_domain_id(self):
-        # Finally, show that we can create a new user without any surprises.
-        # But if we specify a 'domain-id' instead of a 'domain_id', we get a
-        # Forbidden response because we fail a policy check before
-        # normalization occurs.
         domain = PROVIDERS.resource_api.create_domain(
             uuid.uuid4().hex, unit.new_domain_ref()
         )
@@ -801,37 +807,7 @@ class DomainAdminTests(
                 '/v3/users',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
-
-    def test_user_cannot_create_users_in_other_domain(self):
-        domain = PROVIDERS.resource_api.create_domain(
-            uuid.uuid4().hex, unit.new_domain_ref()
-        )
-
-        create = {
-            'user': {'domain_id': domain['id'], 'name': uuid.uuid4().hex}
-        }
-
-        with self.test_client() as c:
-            c.post(
-                '/v3/users',
-                json=create,
-                headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
-
-    def test_user_can_update_users_within_domain(self):
-        user = PROVIDERS.identity_api.create_user(
-            unit.new_user_ref(domain_id=self.domain_id)
-        )
-
-        update = {'user': {'email': uuid.uuid4().hex}}
-        with self.test_client() as c:
-            c.patch(
-                '/v3/users/{}'.format(user['id']),
-                json=update,
-                headers=self.headers,
+                expected_status_code=http.client.CREATED,
             )
 
     def test_user_can_update_users_within_domain_hyphened_domain_id(self):
@@ -856,62 +832,14 @@ class DomainAdminTests(
             self.assertEqual(domain['id'], r.json['user']['domain-id'])
             self.assertEqual(self.domain_id, r.json['user']['domain_id'])
 
-    def test_user_cannot_update_users_in_other_domain(self):
-        domain = PROVIDERS.resource_api.create_domain(
-            uuid.uuid4().hex, unit.new_domain_ref()
-        )
-        user = PROVIDERS.identity_api.create_user(
-            unit.new_user_ref(domain_id=domain['id'])
-        )
-
-        update = {'user': {'email': uuid.uuid4().hex}}
-        with self.test_client() as c:
-            c.patch(
-                '/v3/users/{}'.format(user['id']),
-                json=update,
-                headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
-
-    def test_user_cannot_update_non_existent_user_forbidden(self):
+    def test_user_cannot_update_non_existent_user_not_found(self):
         update = {'user': {'email': uuid.uuid4().hex}}
         with self.test_client() as c:
             c.patch(
                 f'/v3/users/{uuid.uuid4().hex}',
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
-
-    def test_user_can_delete_users_within_domain(self):
-        user = PROVIDERS.identity_api.create_user(
-            unit.new_user_ref(domain_id=self.domain_id)
-        )
-
-        with self.test_client() as c:
-            c.delete('/v3/users/{}'.format(user['id']), headers=self.headers)
-
-    def test_user_cannot_delete_users_in_other_domain(self):
-        domain = PROVIDERS.resource_api.create_domain(
-            uuid.uuid4().hex, unit.new_domain_ref()
-        )
-        user = PROVIDERS.identity_api.create_user(
-            unit.new_user_ref(domain_id=domain['id'])
-        )
-
-        with self.test_client() as c:
-            c.delete(
-                '/v3/users/{}'.format(user['id']),
-                headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
-            )
-
-    def test_user_cannot_delete_non_existent_user_forbidden(self):
-        with self.test_client() as c:
-            c.delete(
-                f'/v3/users/{uuid.uuid4().hex}',
-                headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.NOT_FOUND,
             )
 
 
@@ -1005,8 +933,15 @@ class ProjectAdminTests(
     base_classes.TestCaseWithBootstrap,
     common_auth.AuthTestMixin,
     _CommonUserTests,
-    _ProjectUserTests,
+    _SystemUserTests,
+    _SystemMemberAndReaderUserTests,
 ):
+    expected_status_for_create = http.client.CREATED
+    expected_status_for_update = http.client.OK
+    expected_status_for_update_nonexistent = http.client.OK
+    expected_status_for_delete = http.client.NO_CONTENT
+    expected_status_for_delete_nonexistent = http.client.NOT_FOUND
+
     def setUp(self):
         super().setUp()
         self.loadapp()
@@ -1042,20 +977,26 @@ class ProjectAdminTests(
             self.headers = {'X-Auth-Token': self.token_id}
 
     def _override_policy(self):
-        # TODO(lbragstad): Remove this once the deprecated policies in
-        # keystone.common.policies.users have been removed. This is only
-        # here to make sure we test the new policies instead of the deprecated
-        # ones. Oslo.policy will OR deprecated policies with new policies to
-        # maintain compatibility and give operators a chance to update
-        # permissions or update policies without breaking users. This will
-        # cause these specific tests to fail since we're trying to correct this
-        # broken behavior with better scope checking.
         with open(self.policy_file_name, 'w') as f:
             overridden_policies = {
-                'identity:get_user': up.SYSTEM_READER_OR_DOMAIN_READER_OR_USER,
-                'identity:list_users': up.SYSTEM_READER_OR_DOMAIN_READER,
-                'identity:create_user': up.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
-                'identity:update_user': up.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
-                'identity:delete_user': up.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
+                'identity:get_user': (
+                    up.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_USER
+                ),
+                'identity:list_users': (
+                    up.ADMIN_SYSTEM_READER_OR_DOMAIN_READER
+                ),
+                'identity:create_user': up.ADMIN_OR_DOMAIN_MANAGER,
+                'identity:update_user': up.ADMIN_OR_DOMAIN_MANAGER,
+                'identity:delete_user': up.ADMIN_OR_DOMAIN_MANAGER,
             }
             f.write(jsonutils.dumps(overridden_policies))
+
+    def test_user_cannot_update_non_existent_user_not_found(self):
+        update = {'user': {'email': uuid.uuid4().hex}}
+        with self.test_client() as c:
+            c.patch(
+                f'/v3/users/{uuid.uuid4().hex}',
+                json=update,
+                headers=self.headers,
+                expected_status_code=http.client.NOT_FOUND,
+            )

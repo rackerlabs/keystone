@@ -106,16 +106,16 @@ class _TestAppCredBase(base_classes.TestCaseWithBootstrap):
         with open(self.policy_file_name, 'w') as f:
             overridden_policies = {
                 'identity:get_application_credential': (
-                    base_policy.RULE_SYSTEM_READER_OR_OWNER
+                    base_policy.ADMIN_OR_SYSTEM_READER_OR_OWNER
                 ),
                 'identity:list_application_credentials': (
-                    base_policy.RULE_SYSTEM_READER_OR_OWNER
+                    base_policy.ADMIN_OR_SYSTEM_READER_OR_OWNER
                 ),
                 'identity:create_application_credential': (
                     base_policy.RULE_OWNER
                 ),
                 'identity:delete_application_credential': (
-                    base_policy.RULE_SYSTEM_ADMIN_OR_OWNER
+                    base_policy.RULE_ADMIN_OR_OWNER
                 ),
             }
             f.write(jsonutils.dumps(overridden_policies))
@@ -631,7 +631,7 @@ class DomainMemberTests(
 
 
 class ProjectAdminTests(
-    _TestAppCredBase, common_auth.AuthTestMixin, _DomainAndProjectUserTests
+    _TestAppCredBase, common_auth.AuthTestMixin, _SystemUserAndOwnerTests
 ):
     def setUp(self):
         super().setUp()
@@ -652,8 +652,6 @@ class ProjectAdminTests(
             domain_id=CONF.identity.default_domain_id
         )
         self.user_id = PROVIDERS.identity_api.create_user(project_admin)['id']
-        # even project admin of project where the app credential
-        # is intended for cannot perform app credential operations
         PROVIDERS.assignment_api.create_grant(
             self.bootstrapper.admin_role_id,
             user_id=self.user_id,
@@ -671,6 +669,9 @@ class ProjectAdminTests(
             r = c.post('/v3/auth/tokens', json=auth)
             self.token_id = r.headers['X-Subject-Token']
             self.headers = {'X-Auth-Token': self.token_id}
+
+    def test_project_admin_can_delete_application_credential_for_user(self):
+        self._test_delete_application_credential()
 
 
 class ProjectReaderTests(

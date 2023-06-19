@@ -130,6 +130,12 @@ class _SystemUserGroupTests:
 class _SystemAndDomainMemberAndReaderGroupTests:
     """Common default functionality for system readers and system members."""
 
+    expected_status_for_create = http.client.FORBIDDEN
+    expected_status_for_update = http.client.FORBIDDEN
+    expected_status_for_delete = http.client.FORBIDDEN
+    expected_status_for_add_user_to_group = http.client.FORBIDDEN
+    expected_status_for_remove_user_from_group = http.client.FORBIDDEN
+
     def test_user_cannot_create_group(self):
         domain = PROVIDERS.resource_api.create_domain(
             uuid.uuid4().hex, unit.new_domain_ref()
@@ -144,7 +150,7 @@ class _SystemAndDomainMemberAndReaderGroupTests:
                 '/v3/groups',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_update_group(self):
@@ -162,7 +168,7 @@ class _SystemAndDomainMemberAndReaderGroupTests:
                 '/v3/groups/{}'.format(group['id']),
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_delete_group(self):
@@ -177,7 +183,7 @@ class _SystemAndDomainMemberAndReaderGroupTests:
             c.delete(
                 '/v3/groups/{}'.format(group['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
     def test_user_cannot_add_users_to_group(self):
@@ -195,7 +201,7 @@ class _SystemAndDomainMemberAndReaderGroupTests:
             c.put(
                 '/v3/groups/{}/users/{}'.format(group['id'], user['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_add_user_to_group,
             )
 
     def test_user_cannot_remove_users_from_group(self):
@@ -215,7 +221,7 @@ class _SystemAndDomainMemberAndReaderGroupTests:
             c.delete(
                 '/v3/groups/{}/users/{}'.format(group['id'], user['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_remove_user_from_group,
             )
 
 
@@ -390,6 +396,24 @@ class SystemAdminTests(
 
 
 class _DomainUserGroupTests:
+    expected_status_for_get_group_in_other_domain: int = http.client.FORBIDDEN
+    expected_status_for_get_group_nonexistent: int = http.client.FORBIDDEN
+    expected_status_for_list_groups_for_user_in_other_domain: int = (
+        http.client.FORBIDDEN
+    )
+    expected_status_for_list_groups_for_user_nonexistent: int = (
+        http.client.FORBIDDEN
+    )
+    expected_status_for_list_users_in_group_other_domain: int = (
+        http.client.FORBIDDEN
+    )
+    expected_status_for_list_users_in_group_nonexistent: int = (
+        http.client.FORBIDDEN
+    )
+    expected_status_for_check_user_in_group_other_domain: int = (
+        http.client.FORBIDDEN
+    )
+
     def test_user_can_list_groups_in_domain(self):
         # second domain
         domain = PROVIDERS.resource_api.create_domain(
@@ -446,7 +470,7 @@ class _DomainUserGroupTests:
             c.get(
                 '/v3/groups/{}'.format(group['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get_group_in_other_domain,
             )
 
     def test_user_cannot_get_non_existent_group_forbidden(self):
@@ -454,7 +478,7 @@ class _DomainUserGroupTests:
             c.get(
                 f'/v3/groups/{uuid.uuid4().hex}',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get_group_nonexistent,
             )
 
     def test_user_can_list_groups_in_domain_for_user_in_domain(self):
@@ -487,7 +511,7 @@ class _DomainUserGroupTests:
             c.get(
                 '/v3/users/{}/groups'.format(user['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_list_groups_for_user_in_other_domain,
             )
 
     def test_user_cannot_list_groups_for_non_existent_user_forbidden(self):
@@ -495,7 +519,7 @@ class _DomainUserGroupTests:
             c.get(
                 f'/v3/users/{uuid.uuid4().hex}/groups',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_list_groups_for_user_nonexistent,
             )
 
     def test_user_cannot_list_groups_in_other_domain_user_in_own_domain(self):
@@ -578,7 +602,7 @@ class _DomainUserGroupTests:
             c.get(
                 '/v3/groups/{}/users'.format(group['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_list_users_in_group_other_domain,
             )
 
     def test_user_cannot_list_users_in_non_existent_group_forbidden(self):
@@ -586,7 +610,7 @@ class _DomainUserGroupTests:
             c.get(
                 f'/v3/groups/{uuid.uuid4().hex}/users',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_list_users_in_group_nonexistent,
             )
 
     def test_user_can_check_user_in_own_domain_group_in_own_domain(self):
@@ -630,14 +654,14 @@ class _DomainUserGroupTests:
                     group=group['id'], user=user['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_check_user_in_group_other_domain,
             )
             c.get(
                 '/v3/groups/{group}/users/{user}'.format(
                     group=group['id'], user=user['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_check_user_in_group_other_domain,
             )
 
 
@@ -686,21 +710,13 @@ class DomainReaderTests(
             self.headers = {'X-Auth-Token': self.token_id}
 
     def _override_policy(self):
-        # TODO(cmurphy): Remove this once the deprecated policies in
-        # keystone.common.policies.group have been removed. This is only
-        # here to make sure we test the new policies instead of the deprecated
-        # ones. Oslo.policy will OR deprecated policies with new policies to
-        # maintain compatibility and give operators a chance to update
-        # permissions or update policies without breaking users. This will
-        # cause these specific tests to fail since we're trying to correct this
-        # broken behavior with better scope checking.
         with open(self.policy_file_name, 'w') as f:
             overridden_policies = {
-                'identity:get_group': gp.SYSTEM_READER_OR_DOMAIN_READER,
-                'identity:list_groups': gp.SYSTEM_READER_OR_DOMAIN_READER,
-                'identity:list_groups_for_user': gp.SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_USER_OR_OWNER,
-                'identity:list_users_in_group': gp.SYSTEM_READER_OR_DOMAIN_READER,
-                'identity:check_user_in_group': gp.SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_GROUP_USER,
+                'identity:get_group': gp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+                'identity:list_groups': gp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+                'identity:list_groups_for_user': gp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_OR_OWNER,
+                'identity:list_users_in_group': gp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+                'identity:check_user_in_group': gp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_GROUP,
             }
             f.write(jsonutils.dumps(overridden_policies))
 
@@ -750,21 +766,13 @@ class DomainMemberTests(
             self.headers = {'X-Auth-Token': self.token_id}
 
     def _override_policy(self):
-        # TODO(cmurphy): Remove this once the deprecated policies in
-        # keystone.common.policies.group have been removed. This is only
-        # here to make sure we test the new policies instead of the deprecated
-        # ones. Oslo.policy will OR deprecated policies with new policies to
-        # maintain compatibility and give operators a chance to update
-        # permissions or update policies without breaking users. This will
-        # cause these specific tests to fail since we're trying to correct this
-        # broken behavior with better scope checking.
         with open(self.policy_file_name, 'w') as f:
             overridden_policies = {
-                'identity:get_group': gp.SYSTEM_READER_OR_DOMAIN_READER,
-                'identity:list_groups': gp.SYSTEM_READER_OR_DOMAIN_READER,
-                'identity:list_groups_for_user': gp.SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_USER_OR_OWNER,
-                'identity:list_users_in_group': gp.SYSTEM_READER_OR_DOMAIN_READER,
-                'identity:check_user_in_group': gp.SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_GROUP_USER,
+                'identity:get_group': gp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+                'identity:list_groups': gp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+                'identity:list_groups_for_user': gp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_OR_OWNER,
+                'identity:list_users_in_group': gp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+                'identity:check_user_in_group': gp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_GROUP,
             }
             f.write(jsonutils.dumps(overridden_policies))
 
@@ -774,6 +782,18 @@ class DomainAdminTests(
     common_auth.AuthTestMixin,
     _DomainUserGroupTests,
 ):
+    expected_status_for_get_group_in_other_domain = http.client.OK
+    expected_status_for_get_group_nonexistent = http.client.NOT_FOUND
+    expected_status_for_list_groups_for_user_in_other_domain = http.client.OK
+    expected_status_for_list_groups_for_user_nonexistent = (
+        http.client.NOT_FOUND
+    )
+    expected_status_for_list_users_in_group_other_domain = http.client.OK
+    expected_status_for_list_users_in_group_nonexistent = http.client.NOT_FOUND
+    expected_status_for_check_user_in_group_other_domain = (
+        http.client.NO_CONTENT
+    )
+
     def setUp(self):
         super().setUp()
         self.loadapp()
@@ -813,26 +833,18 @@ class DomainAdminTests(
             self.headers = {'X-Auth-Token': self.token_id}
 
     def _override_policy(self):
-        # TODO(cmurphy): Remove this once the deprecated policies in
-        # keystone.common.policies.group have been removed. This is only
-        # here to make sure we test the new policies instead of the deprecated
-        # ones. Oslo.policy will OR deprecated policies with new policies to
-        # maintain compatibility and give operators a chance to update
-        # permissions or update policies without breaking users. This will
-        # cause these specific tests to fail since we're trying to correct this
-        # broken behavior with better scope checking.
         with open(self.policy_file_name, 'w') as f:
             overridden_policies = {
-                'identity:get_group': gp.SYSTEM_READER_OR_DOMAIN_READER,
-                'identity:list_groups': gp.SYSTEM_READER_OR_DOMAIN_READER,
-                'identity:list_groups_for_user': gp.SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_USER_OR_OWNER,
-                'identity:create_group': gp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
-                'identity:update_group': gp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
-                'identity:delete_group': gp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
-                'identity:list_users_in_group': gp.SYSTEM_READER_OR_DOMAIN_READER,
-                'identity:remove_user_from_group': gp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN_FOR_TARGET_GROUP_USER,
-                'identity:check_user_in_group': gp.SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_GROUP_USER,
-                'identity:add_user_to_group': gp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN_FOR_TARGET_GROUP_USER,
+                'identity:get_group': gp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+                'identity:list_groups': gp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+                'identity:list_groups_for_user': gp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_OR_OWNER,
+                'identity:create_group': gp.ADMIN_OR_DOMAIN_MANAGER_FOR_GROUPS,
+                'identity:update_group': gp.ADMIN_OR_DOMAIN_MANAGER_FOR_GROUPS,
+                'identity:delete_group': gp.ADMIN_OR_DOMAIN_MANAGER_FOR_GROUPS,
+                'identity:list_users_in_group': gp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+                'identity:remove_user_from_group': gp.ADMIN_OR_DOMAIN_MANAGER_FOR_GROUP_ASSIGNMENTS,
+                'identity:check_user_in_group': gp.ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_GROUP,
+                'identity:add_user_to_group': gp.ADMIN_OR_DOMAIN_MANAGER_FOR_GROUP_ASSIGNMENTS,
             }
             f.write(jsonutils.dumps(overridden_policies))
 
@@ -858,7 +870,7 @@ class DomainAdminTests(
                 '/v3/groups',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.CREATED,
             )
 
     def test_user_can_update_group_in_own_domain(self):
@@ -888,7 +900,7 @@ class DomainAdminTests(
                 '/v3/groups/{}'.format(group['id']),
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.OK,
             )
 
     def test_user_can_delete_group_in_own_domain(self):
@@ -909,7 +921,7 @@ class DomainAdminTests(
             c.delete(
                 '/v3/groups/{}'.format(group['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.NO_CONTENT,
             )
 
     def test_user_can_remove_user_in_own_domain_from_group_in_own_domain(self):
@@ -945,7 +957,7 @@ class DomainAdminTests(
                     group=group['id'], user=user['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.NO_CONTENT,
             )
 
     def test_user_cannot_remove_user_own_domain_from_group_other_domain(self):
@@ -965,7 +977,7 @@ class DomainAdminTests(
                     group=group['id'], user=user['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.NO_CONTENT,
             )
 
     def test_user_cannot_remove_non_existent_user_from_group_forbidden(self):
@@ -978,7 +990,7 @@ class DomainAdminTests(
                     group=group['id'], user=uuid.uuid4().hex
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.NOT_FOUND,
             )
 
     def test_user_cannot_remove_user_from_non_existent_group_forbidden(self):
@@ -991,7 +1003,7 @@ class DomainAdminTests(
                     group=uuid.uuid4().hex, user=user['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.NOT_FOUND,
             )
 
     def test_user_can_add_user_in_own_domain_to_group_in_own_domain(self):
@@ -1025,7 +1037,7 @@ class DomainAdminTests(
                     group=group['id'], user=user['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.NO_CONTENT,
             )
 
     def test_user_cannot_add_user_own_domain_to_group_other_domain(self):
@@ -1044,7 +1056,7 @@ class DomainAdminTests(
                     group=group['id'], user=user['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.NO_CONTENT,
             )
 
     def test_user_cannot_add_non_existent_user_to_group_forbidden(self):
@@ -1057,7 +1069,7 @@ class DomainAdminTests(
                     group=group['id'], user=uuid.uuid4().hex
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.NOT_FOUND,
             )
 
     def test_user_cannot_add_user_from_non_existent_group_forbidden(self):
@@ -1070,7 +1082,7 @@ class DomainAdminTests(
                     group=uuid.uuid4().hex, user=user['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=http.client.NOT_FOUND,
             )
 
 

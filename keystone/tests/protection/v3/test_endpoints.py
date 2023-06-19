@@ -117,6 +117,12 @@ class _SystemReaderAndMemberUserEndpointTests:
 
 
 class _DomainAndProjectUserEndpointTests:
+    expected_status_for_create: int = http.client.FORBIDDEN
+    expected_status_for_list: int = http.client.FORBIDDEN
+    expected_status_for_get: int = http.client.FORBIDDEN
+    expected_status_for_update: int = http.client.FORBIDDEN
+    expected_status_for_delete: int = http.client.FORBIDDEN
+
     def test_user_cannot_create_endpoints(self):
         create = {
             'endpoint': {
@@ -131,7 +137,7 @@ class _DomainAndProjectUserEndpointTests:
                 '/v3/endpoints',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_list_endpoints(self):
@@ -150,7 +156,7 @@ class _DomainAndProjectUserEndpointTests:
             c.get(
                 '/v3/endpoints',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_list,
             )
 
     def test_user_cannot_get_an_endpoint(self):
@@ -166,7 +172,7 @@ class _DomainAndProjectUserEndpointTests:
             c.get(
                 '/v3/endpoints/{}'.format(endpoint['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
     def test_user_cannot_update_endpoints(self):
@@ -185,7 +191,7 @@ class _DomainAndProjectUserEndpointTests:
                 '/v3/endpoints/{}'.format(endpoint['id']),
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_delete_endpoints(self):
@@ -201,7 +207,7 @@ class _DomainAndProjectUserEndpointTests:
             c.delete(
                 '/v3/endpoints/{}'.format(endpoint['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
 
@@ -390,6 +396,12 @@ class ProjectUserTests(
     common_auth.AuthTestMixin,
     _DomainAndProjectUserEndpointTests,
 ):
+    expected_status_for_create = http.client.BAD_REQUEST
+    expected_status_for_list = http.client.OK
+    expected_status_for_get = http.client.OK
+    expected_status_for_update = http.client.OK
+    expected_status_for_delete = http.client.NO_CONTENT
+
     def setUp(self):
         super().setUp()
         self.loadapp()

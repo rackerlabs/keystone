@@ -249,6 +249,18 @@ class _SystemReaderAndMemberPoliciesAssociationTests:
 
 
 class _DomainAndProjectUserPolicyAssociationsTests:
+    expected_status_for_check_endpoint: int = http.client.FORBIDDEN
+    expected_status_for_check_service: int = http.client.FORBIDDEN
+    expected_status_for_check_region_and_service: int = http.client.FORBIDDEN
+    expected_status_for_get_policy_for_endpoint: int = http.client.FORBIDDEN
+    expected_status_for_list_endpoints_for_policy: int = http.client.FORBIDDEN
+    expected_status_for_create_endpoint: int = http.client.FORBIDDEN
+    expected_status_for_delete_endpoint: int = http.client.FORBIDDEN
+    expected_status_for_create_service: int = http.client.FORBIDDEN
+    expected_status_for_delete_service: int = http.client.FORBIDDEN
+    expected_status_for_create_region_and_service: int = http.client.FORBIDDEN
+    expected_status_for_delete_region_and_service: int = http.client.FORBIDDEN
+
     def test_user_cannot_check_policy_association_for_endpoint(self):
         policy = unit.new_policy_ref()
         policy = PROVIDERS.policy_api.create_policy(policy['id'], policy)
@@ -271,7 +283,7 @@ class _DomainAndProjectUserPolicyAssociationsTests:
                     policy['id'], endpoint['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_check_endpoint,
             )
 
     def test_user_cannot_check_policy_association_for_service(self):
@@ -292,7 +304,7 @@ class _DomainAndProjectUserPolicyAssociationsTests:
                     policy['id'], service['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_check_service,
             )
 
     def test_user_cannot_check_policy_association_for_region_and_service(self):
@@ -315,7 +327,7 @@ class _DomainAndProjectUserPolicyAssociationsTests:
                     policy['id'], service['id'], region['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_check_region_and_service,
             )
 
     def test_user_cannot_get_policy_for_endpoint(self):
@@ -337,7 +349,7 @@ class _DomainAndProjectUserPolicyAssociationsTests:
                     endpoint['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get_policy_for_endpoint,
             )
 
     def test_user_cannot_list_endpoints_for_policy(self):
@@ -359,7 +371,7 @@ class _DomainAndProjectUserPolicyAssociationsTests:
                     policy['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_list_endpoints_for_policy,
             )
 
     def test_user_cannot_create_policy_association_for_endpoint(self):
@@ -379,7 +391,7 @@ class _DomainAndProjectUserPolicyAssociationsTests:
                     policy['id'], endpoint['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create_endpoint,
             )
 
     def test_user_cannot_delete_policy_association_for_endpoint(self):
@@ -399,7 +411,7 @@ class _DomainAndProjectUserPolicyAssociationsTests:
                     policy['id'], endpoint['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete_endpoint,
             )
 
     def test_user_cannot_create_policy_association_for_service(self):
@@ -414,7 +426,7 @@ class _DomainAndProjectUserPolicyAssociationsTests:
                     policy['id'], service['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create_service,
             )
 
     def test_user_cannot_delete_policy_association_for_service(self):
@@ -430,7 +442,7 @@ class _DomainAndProjectUserPolicyAssociationsTests:
                     policy['id'], service['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete_service,
             )
 
     def test_user_cannot_create_policy_assoc_for_region_and_service(self):
@@ -447,7 +459,7 @@ class _DomainAndProjectUserPolicyAssociationsTests:
                     policy['id'], service['id'], region['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create_region_and_service,
             )
 
     def test_user_cannot_delete_policy_assoc_for_region_and_service(self):
@@ -464,7 +476,7 @@ class _DomainAndProjectUserPolicyAssociationsTests:
                     policy['id'], service['id'], region['id']
                 ),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete_region_and_service,
             )
 
 
@@ -711,6 +723,18 @@ class ProjectUserTests(
     common_auth.AuthTestMixin,
     _DomainAndProjectUserPolicyAssociationsTests,
 ):
+    expected_status_for_check_endpoint = http.client.NO_CONTENT
+    expected_status_for_check_service = http.client.NO_CONTENT
+    expected_status_for_check_region_and_service = http.client.NO_CONTENT
+    expected_status_for_get_policy_for_endpoint = http.client.OK
+    expected_status_for_list_endpoints_for_policy = http.client.OK
+    expected_status_for_create_endpoint = http.client.NO_CONTENT
+    expected_status_for_delete_endpoint = http.client.NO_CONTENT
+    expected_status_for_create_service = http.client.NO_CONTENT
+    expected_status_for_delete_service = http.client.NO_CONTENT
+    expected_status_for_create_region_and_service = http.client.NO_CONTENT
+    expected_status_for_delete_region_and_service = http.client.NO_CONTENT
+
     def setUp(self):
         super().setUp()
         self.loadapp()

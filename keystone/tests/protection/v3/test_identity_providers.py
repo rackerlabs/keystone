@@ -99,6 +99,12 @@ class _SystemReaderAndMemberIdentityProviderTests:
 class _DomainAndProjectUserIdentityProviderTests:
     """Common functionality for all domain and project users."""
 
+    expected_status_for_create: int = http.client.FORBIDDEN
+    expected_status_for_list: int = http.client.FORBIDDEN
+    expected_status_for_get: int = http.client.FORBIDDEN
+    expected_status_for_update: int = http.client.FORBIDDEN
+    expected_status_for_delete: int = http.client.FORBIDDEN
+
     def test_user_cannot_create_identity_providers(self):
         create = {'identity_provider': {'remote_ids': [uuid.uuid4().hex]}}
 
@@ -107,7 +113,7 @@ class _DomainAndProjectUserIdentityProviderTests:
                 f'/v3/OS-FEDERATION/identity_providers/{uuid.uuid4().hex}',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_update_identity_providers(self):
@@ -122,7 +128,7 @@ class _DomainAndProjectUserIdentityProviderTests:
                 '/v3/OS-FEDERATION/identity_providers/{}'.format(idp['id']),
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_list_identity_providers(self):
@@ -134,7 +140,7 @@ class _DomainAndProjectUserIdentityProviderTests:
             c.get(
                 '/v3/OS-FEDERATION/identity_providers',
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_list,
             )
 
     def test_user_cannot_get_an_identity_provider(self):
@@ -146,7 +152,7 @@ class _DomainAndProjectUserIdentityProviderTests:
             c.get(
                 '/v3/OS-FEDERATION/identity_providers/{}'.format(idp['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_get,
             )
 
     def test_user_cannot_delete_identity_providers(self):
@@ -158,7 +164,7 @@ class _DomainAndProjectUserIdentityProviderTests:
             c.delete(
                 '/v3/OS-FEDERATION/identity_providers/{}'.format(idp['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
 
@@ -336,6 +342,12 @@ class ProjectUserTests(
     common_auth.AuthTestMixin,
     _DomainAndProjectUserIdentityProviderTests,
 ):
+    expected_status_for_create = http.client.CREATED
+    expected_status_for_list = http.client.OK
+    expected_status_for_get = http.client.OK
+    expected_status_for_update = http.client.OK
+    expected_status_for_delete = http.client.NO_CONTENT
+
     def setUp(self):
         super().setUp()
         self.loadapp()

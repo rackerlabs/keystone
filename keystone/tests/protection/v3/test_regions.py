@@ -85,6 +85,10 @@ class _SystemReaderAndMemberUserRegionTests:
 class _DomainAndProjectUserRegionTests:
     """Common default functionality for all domain and project users."""
 
+    expected_status_for_create: int = http.client.FORBIDDEN
+    expected_status_for_update: int = http.client.FORBIDDEN
+    expected_status_for_delete: int = http.client.FORBIDDEN
+
     def test_user_cannot_create_regions(self):
         create = {'region': {'description': uuid.uuid4().hex}}
 
@@ -93,7 +97,7 @@ class _DomainAndProjectUserRegionTests:
                 '/v3/regions',
                 json=create,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_create,
             )
 
     def test_user_cannot_update_regions(self):
@@ -105,7 +109,7 @@ class _DomainAndProjectUserRegionTests:
                 '/v3/regions/{}'.format(region['id']),
                 json=update,
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_update,
             )
 
     def test_user_cannot_delete_regions(self):
@@ -115,7 +119,7 @@ class _DomainAndProjectUserRegionTests:
             c.delete(
                 '/v3/regions/{}'.format(region['id']),
                 headers=self.headers,
-                expected_status_code=http.client.FORBIDDEN,
+                expected_status_code=self.expected_status_for_delete,
             )
 
 
@@ -284,6 +288,10 @@ class ProjectUserTests(
     _UserRegionTests,
     _DomainAndProjectUserRegionTests,
 ):
+    expected_status_for_create = http.client.CREATED
+    expected_status_for_update = http.client.OK
+    expected_status_for_delete = http.client.NO_CONTENT
+
     def setUp(self):
         super().setUp()
         self.loadapp()
