@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32266fa3_4b71d305",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2023-06-20T01:14:17Z",
+      "side": 1,
+      "message": "all protection test run successfully https://storage.gra.cloud.ovh.net/v1/AUTH_dcaab5e32b234d56b626f72581e3644c/zuul_opendev_logs_9bf/886434/1/check/keystone-tox-protection/9bf520f/testr_results.html",
+      "revId": "d8f2961d128f2c5523111e9d304a74bca7a6e602",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
