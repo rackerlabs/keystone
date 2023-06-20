@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09fdf448_56ef7ab5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32553
+      },
+      "writtenOn": "2023-06-20T08:32:31Z",
+      "side": 1,
+      "message": "this might fix: https://bugs.launchpad.net/keystone/+bug/1953627\nI would want to resurrect this, if it\u0027s okay for the keystone project.",
+      "revId": "2035958d241ff4d13f38585c295c0936374ce1d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
