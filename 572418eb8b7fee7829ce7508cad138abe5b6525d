@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54d22616_e4b1a987",
+        "filename": "releasenotes/notes/handle-ldap-errors-10c03ce773ad1d59.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2023-06-20T09:47:43Z",
+      "side": 1,
+      "message": "Part of Kristi\u0027s question is still open: What happens once connections have been removed from the pool, how will keystone recover once the server is reachable again? Answering that question seems crucial in order to decide whether this is actually a complete fix or only a partial one.",
+      "revId": "572418eb8b7fee7829ce7508cad138abe5b6525d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
