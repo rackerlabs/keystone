@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8839df4f_213acb54",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2023-06-22T21:49:44Z",
+      "side": 1,
+      "message": "Oh, good find on the late binding issue.",
+      "revId": "5e9f32469e1ebf467e2713d733490b9ba623cd04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
