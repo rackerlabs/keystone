@@ -3,6 +3,40 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6075bbdc_7f5e18c5",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 866,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-06-23T14:15:52Z",
+      "side": 1,
+      "message": "I don\u0027t understand why this is okay not to handle other exceptions - if neither of the if statements evaluates to true, then what?",
+      "revId": "572418eb8b7fee7829ce7508cad138abe5b6525d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e900be7_5bcca444",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 903,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-06-23T14:15:52Z",
+      "side": 1,
+      "message": "This is an empty statement, isn\u0027t it? The \"finally:\" clause does not prevent exceptions from bubbling up.",
+      "revId": "572418eb8b7fee7829ce7508cad138abe5b6525d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "54d22616_e4b1a987",
         "filename": "releasenotes/notes/handle-ldap-errors-10c03ce773ad1d59.yaml",
         "patchSetId": 11
