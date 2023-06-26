@@ -52,6 +52,24 @@
       "parentUuid": "6457197d_fa981bf0",
       "revId": "4c54243a989d68bd624cac2a2cc1c934ed8d0c76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8ed0ee9_4577382e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16137
+      },
+      "writtenOn": "2023-06-26T12:45:12Z",
+      "side": 1,
+      "message": "So with above autogen the migration that Stephen linked would be solved automatically but otherwise shouldn\u0027t this patch contain a migration that removes the index?",
+      "parentUuid": "17d179a7_479f5b45",
+      "revId": "4c54243a989d68bd624cac2a2cc1c934ed8d0c76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
