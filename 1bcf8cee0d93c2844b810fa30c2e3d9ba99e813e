@@ -54,6 +54,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d63ca8c6_6fc22a77",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32755
+      },
+      "writtenOn": "2023-06-27T11:54:33Z",
+      "side": 1,
+      "message": "Please see me comment / attempt to use this https://review.opendev.org/c/openstack/keystone/+/885463/comments/a7e91ece_77e3d924.\n\nCould you kindly tell me if I should be able to apply this patch on master and then run \n\n  tox --notest -r -e py38\n  source .tox/py38/bin/activate\n  alembic -c keystone/common/sql/alembic.ini upgrade heads\n  alembic -c keystone/common/sql/alembic.ini revision --autogenerate\n\nwith no new revision being created?\nOr am I holding this wrong?",
+      "revId": "1bcf8cee0d93c2844b810fa30c2e3d9ba99e813e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3107adb1_a64e89da",
         "filename": "keystone/common/sql/migrations/autogen.py",
         "patchSetId": 12
