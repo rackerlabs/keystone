@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e79df24c_55ad72ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2023-06-27T09:59:37Z",
+      "side": 1,
+      "message": "This is failing the docs job because Sphinx is trying to evaluate a CONF value despite oslo.config not having been initialized. I need to disable this somehow.",
+      "revId": "20908ff4f5ff8f7fc92f911d2b9b24202fb6b7b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
