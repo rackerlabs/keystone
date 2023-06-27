@@ -1,0 +1,11 @@
+Code-Review+2: David Wilde <dwilde@redhat.com>
+Code-Review+1: Tobias Urdin <tobias.urdin@binero.com>
+Verified+2: Zuul
+Code-Review+1: panhongyin <panhongyin@yovole.com>
+Code-Review+2: Kristi Nikolla <knikolla@bu.edu>
+Workflow+1: David Wilde <dwilde@redhat.com>
+Submitted-by: Zuul
+Submitted-at: Tue, 27 Jun 2023 15:41:55 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/875762
+Project: openstack/keystone
+Branch: refs/heads/master
