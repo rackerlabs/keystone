@@ -1,0 +1,10 @@
+Verified+2: Zuul
+Workflow+1: David Wilde <dwilde@redhat.com>
+Code-Review+2: Douglas Mendizábal <dmendiza@redhat.com>
+Code-Review+2: David Wilde <dwilde@redhat.com>
+Code-Review+1: panhongyin <panhongyin@yovole.com>
+Submitted-by: Zuul
+Submitted-at: Tue, 27 Jun 2023 14:49:23 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/879142
+Project: openstack/keystone
+Branch: refs/heads/master
