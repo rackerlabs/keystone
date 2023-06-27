@@ -16,6 +16,23 @@
       "message": "This is an exact duplicate of changes I made to other projects like nova [1] in case that helps reviewers.\n\n[1] https://review.opendev.org/c/openstack/nova/+/880663/",
       "revId": "f477307bd8e71f0d9c37e67e79738fa36359dfbc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a891bf6_3d25f2ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2023-06-27T15:40:51Z",
+      "side": 1,
+      "message": "recheck unrelated failure",
+      "revId": "f477307bd8e71f0d9c37e67e79738fa36359dfbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
