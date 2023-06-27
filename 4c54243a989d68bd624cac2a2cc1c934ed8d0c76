@@ -70,6 +70,24 @@
       "parentUuid": "17d179a7_479f5b45",
       "revId": "4c54243a989d68bd624cac2a2cc1c934ed8d0c76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "000f6f03_6aa382a9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2023-06-27T12:35:18Z",
+      "side": 1,
+      "message": "Sorry, I missed this. I replied on my patch but tl;dr: you need to use\n\n```\npython -m keystone.common.sql.migrations.manage revision --autogenerate\n```\n\ninstead",
+      "parentUuid": "b8ed0ee9_4577382e",
+      "revId": "4c54243a989d68bd624cac2a2cc1c934ed8d0c76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
