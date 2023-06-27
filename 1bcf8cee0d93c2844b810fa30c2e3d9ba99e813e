@@ -71,6 +71,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d1222f17_84ace489",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2023-06-27T12:22:09Z",
+      "side": 1,
+      "message": "Because `keystone` is using multiple branches, we need to provide our own tool. That\u0027s what the `manage.py` file is for. Instead, you want to do:\n\n```\nsource .tox/py38/bin/activate\npython -m keystone.common.sql.migrations.manage upgrade heads\npython -m keystone.common.sql.migrations.manage revision --autogenerate\n```\n\nHowever, I notice that this change isn\u0027t getting picked up, while if I e.g. add a new column it is. That\u0027s because I\u0027m explicitly ignoring this column [1] because there is a mismatch between the models and migrations. I have patches later in the series to address these issues so that we stop skipping those columns and I think one of those changes [2] might actually do what you\u0027re attempting to do?\n\n[1] https://review.opendev.org/c/openstack/keystone/+/826147/12/keystone/common/sql/migrations/env.py#66\n[2] https://review.opendev.org/c/openstack/keystone/+/879678/",
+      "parentUuid": "d63ca8c6_6fc22a77",
+      "revId": "1bcf8cee0d93c2844b810fa30c2e3d9ba99e813e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3107adb1_a64e89da",
         "filename": "keystone/common/sql/migrations/autogen.py",
         "patchSetId": 12
