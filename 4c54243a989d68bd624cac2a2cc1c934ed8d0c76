@@ -105,6 +105,42 @@
       "message": "Wait, you don\u0027t want to merge this. It\u0027s not complete. See my prior comments.",
       "revId": "4c54243a989d68bd624cac2a2cc1c934ed8d0c76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32197041_7de3407b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32755
+      },
+      "writtenOn": "2023-06-28T04:58:12Z",
+      "side": 1,
+      "message": "Do you mind updating https://docs.openstack.org/keystone/latest/contributor/database-migrations.html then with the instructions on how to create revisions and all? I bluntly point at another project, check out https://docs.openstack.org/nova/latest/reference/database-migrations.html which has commands and code examples an all ;-)",
+      "parentUuid": "000f6f03_6aa382a9",
+      "revId": "4c54243a989d68bd624cac2a2cc1c934ed8d0c76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59b73007_a773a1e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32755
+      },
+      "writtenOn": "2023-06-28T04:58:12Z",
+      "side": 1,
+      "message": "\u003e Wait, you don\u0027t want to merge this. It\u0027s not complete. See my prior comments.\n\nGood catch. I was just about to write this when I saw the Workflow+1.\nDo you mind just creating the migration and adding it to this change to have this complete and ready to merge?",
+      "parentUuid": "56eee72c_b71c20dd",
+      "revId": "4c54243a989d68bd624cac2a2cc1c934ed8d0c76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
