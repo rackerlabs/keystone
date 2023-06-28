@@ -16,6 +16,24 @@
       "message": "Maybe you could add the commands to properly set up the environment first?\nLike Nova does it with \"tox -e venv\" at https://docs.openstack.org/nova/latest/reference/database-migrations.html",
       "revId": "046675f51b7806fa0a59e35647ed3ba6496ffc9c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1c47677_68ca353e",
+        "filename": "doc/source/contributor/database-migrations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2023-06-28T10:14:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b19fcc8_b61b6e47",
+      "revId": "046675f51b7806fa0a59e35647ed3ba6496ffc9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
