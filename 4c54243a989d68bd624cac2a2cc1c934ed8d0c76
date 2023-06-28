@@ -141,6 +141,24 @@
       "parentUuid": "56eee72c_b71c20dd",
       "revId": "4c54243a989d68bd624cac2a2cc1c934ed8d0c76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "584ad435_113388aa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32755
+      },
+      "writtenOn": "2023-06-28T07:42:23Z",
+      "side": 1,
+      "message": "I now saw https://review.opendev.org/c/openstack/keystone/+/887035 which apparently does just that.",
+      "parentUuid": "32197041_7de3407b",
+      "revId": "4c54243a989d68bd624cac2a2cc1c934ed8d0c76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
