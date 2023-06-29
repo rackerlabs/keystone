@@ -105,6 +105,23 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "968f3816_39e80d2f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2023-06-29T13:41:22Z",
+      "side": 1,
+      "message": "This looks ok, it also isn\u0027t on a critical path of running the service, so we should merge this early and fix things as we generate new migrations.",
+      "revId": "1bcf8cee0d93c2844b810fa30c2e3d9ba99e813e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3107adb1_a64e89da",
