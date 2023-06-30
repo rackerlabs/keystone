@@ -53,6 +53,23 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c542005e_f09226a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32553
+      },
+      "writtenOn": "2023-06-30T14:50:39Z",
+      "side": 1,
+      "message": "I\u0027ll try to - as agreed during the weekly meeting - address this in:\n\nhttps://opendev.org/openstack/ldappool/src/branch/master/ldappool/__init__.py\n\nas connection (error) handling in the ldappool library itself makes more sense than in keystone itself.",
+      "revId": "d2a9e97a362751e2351c4c857140748e3e10c8ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5aa94107_c5e72239",
