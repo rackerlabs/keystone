@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81cf739f_95778ad4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32553
+      },
+      "writtenOn": "2023-06-30T13:23:36Z",
+      "side": 1,
+      "message": "now got an assertion error in tox py310:\n\nCaptured traceback:\n~~~~~~~~~~~~~~~~~~~\n    Traceback (most recent call last):\n\n      File \"/usr/lib/python3.10/unittest/mock.py\", line 1369, in patched\n    return func(*newargs, **newkeywargs)\n\n      File \"/home/zuul/src/opendev.org/openstack/keystone/keystone/tests/unit/test_backend_ldap_pool.py\", line 268, in test_search_ext_ensure_pool_connection_released\n    self.assertFalse(conn.active)\n\n      File \"/usr/lib/python3.10/unittest/case.py\", line 681, in assertFalse\n    raise self.failureException(msg)\n\n    AssertionError: True is not false\n\nwill try to fix this.",
+      "revId": "d2a9e97a362751e2351c4c857140748e3e10c8ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
