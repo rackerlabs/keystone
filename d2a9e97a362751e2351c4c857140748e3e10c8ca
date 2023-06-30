@@ -51,6 +51,23 @@
       "message": "so, my first finding:\n\naccording to[0] this uses the async function search_ext() of python-ldap\nbut the docs[1] for python-ldap state:\n\n\u003e The synchronous form with timeout, search_st() or search_ext_s(), will block for at most timeout seconds (or indefinitely if timeout is negative). A ldap.TIMEOUT exception is raised if no result is received within the specified time.\n\nso the docs at least say nothing about a ldap.TIMEOUT for the async variante.",
       "revId": "d2a9e97a362751e2351c4c857140748e3e10c8ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5aa94107_c5e72239",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 857,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-06-30T14:20:33Z",
+      "side": 1,
+      "message": "Why is this not \"except ldap.SERVER_DOWN\"?",
+      "revId": "d2a9e97a362751e2351c4c857140748e3e10c8ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
