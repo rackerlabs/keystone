@@ -53,6 +53,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "010de089_6c3e12d7",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 866,
+      "author": {
+        "id": 32553
+      },
+      "writtenOn": "2023-06-30T08:24:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b209f48c_bfcaacaf",
+      "revId": "572418eb8b7fee7829ce7508cad138abe5b6525d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6e900be7_5bcca444",
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "so should I just delete this?",
       "parentUuid": "6e900be7_5bcca444",
+      "revId": "572418eb8b7fee7829ce7508cad138abe5b6525d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23e63bdc_31d42d90",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 903,
+      "author": {
+        "id": 32553
+      },
+      "writtenOn": "2023-06-30T08:24:45Z",
+      "side": 1,
+      "message": "I just verified this, in python, unhandled exceptions are bubbled up and can be handled there, no need to catch every exception manually.",
+      "parentUuid": "09098803_e97476bd",
       "revId": "572418eb8b7fee7829ce7508cad138abe5b6525d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
