@@ -122,6 +122,23 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "28fd5be1_179ef8b8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2023-07-01T19:57:54Z",
+      "side": 1,
+      "message": "2023-06-30 20:02:06.160 | {0} tempest.api.network.test_networks.BulkNetworkOpsIpV6Test.test_bulk_create_delete_subnet [71.197819s] ... FAILED\n2023-06-30 20:02:06.160 | \n2023-06-30 20:02:06.160 | Captured traceback:\n2023-06-30 20:02:06.160 | ~~~~~~~~~~~~~~~~~~~\n2023-06-30 20:02:06.160 |     Traceback (most recent call last):\n2023-06-30 20:02:06.160 | \n2023-06-30 20:02:06.160 |       File \"/opt/stack/old/tempest/.tox/tempest/lib/python3.10/site-packages/urllib3/connectionpool.py\", line 449, in _make_request\n2023-06-30 20:02:06.160 |     six.raise_from(e, None)\n2023-06-30 20:02:06.160 | \n2023-06-30 20:02:06.160 |       File \"\u003cstring\u003e\", line 3, in raise_from\n2023-06-30 20:02:06.160 | \n2023-06-30 20:02:06.160 |       File \"/opt/stack/old/tempest/.tox/tempest/lib/python3.10/site-packages/urllib3/connectionpool.py\", line 444, in _make_request\n2023-06-30 20:02:06.160 |     httplib_response \u003d conn.getresponse()\n2023-06-30 20:02:06.160 | \n2023-06-30 20:02:06.160 |       File \"/usr/lib/python3.10/http/client.py\", line 1374, in getresponse\n2023-06-30 20:02:06.160 |     response.begin()\n2023-06-30 20:02:06.160 | \n2023-06-30 20:02:06.160 |       File \"/usr/lib/python3.10/http/client.py\", line 318, in begin\n2023-06-30 20:02:06.160 |     version, status, reason \u003d self._read_status()\n2023-06-30 20:02:06.160 | \n2023-06-30 20:02:06.160 |       File \"/usr/lib/python3.10/http/client.py\", line 279, in _read_status\n2023-06-30 20:02:06.160 |     line \u003d str(self.fp.readline(_MAXLINE + 1), \"iso-8859-1\")\n2023-06-30 20:02:06.160 | \n2023-06-30 20:02:06.160 |       File \"/usr/lib/python3.10/socket.py\", line 705, in readinto\n2023-06-30 20:02:06.160 |     return self._sock.recv_into(b)\n2023-06-30 20:02:06.160 | \n2023-06-30 20:02:06.160 |     TimeoutError: timed out",
+      "revId": "1bcf8cee0d93c2844b810fa30c2e3d9ba99e813e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3107adb1_a64e89da",
