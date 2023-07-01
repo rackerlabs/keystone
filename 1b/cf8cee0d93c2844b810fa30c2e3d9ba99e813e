@@ -1,0 +1,10 @@
+Workflow+1: Kristi Nikolla <knikolla@bu.edu>
+Verified+2: Zuul
+Code-Review+2: Kristi Nikolla <knikolla@bu.edu>
+Code-Review+1: Pete Zaitcev <zaitcev@kotori.zaitcev.us>
+Code-Review+2: Grzegorz Grasza <xek@redhat.com>
+Submitted-by: Zuul
+Submitted-at: Sat, 01 Jul 2023 22:36:42 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/826147
+Project: openstack/keystone
+Branch: refs/heads/master
