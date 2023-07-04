@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "adbb8952_79330117",
+        "filename": "doc/source/admin/integrate-with-ldap.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 32553
+      },
+      "writtenOn": "2023-07-04T14:10:45Z",
+      "side": 1,
+      "message": "nit: why mention something that is not there?",
+      "range": {
+        "startLine": 24,
+        "startChar": 65,
+        "endLine": 25,
+        "endChar": 35
+      },
+      "revId": "dabaef7c331fbd0f5f66b9d98b0d03bb140e2a1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
