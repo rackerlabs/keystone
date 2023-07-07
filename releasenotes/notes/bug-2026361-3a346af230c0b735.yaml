@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    [`bug 2026361 <https://bugs.launchpad.net/keystone/+bug/2026361>`_]
+    When requesting a Keystone token, a user may make a mistake and use the 
+    api V2 body on an api v3 endpoint. This will result with the a Traceback
+    in the logs and and the passwordCredentials in the logs.

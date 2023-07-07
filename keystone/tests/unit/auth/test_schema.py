@@ -51,6 +51,15 @@ class TestValidateIssueTokenAuth(unit.BaseTestCase):
         }
         schema.validate_issue_token_auth(post_data)
 
+    def test_v2_body(self):
+        post_data = {
+            "passwordCredentials": {
+                "username": "admin",
+                "password": "password"
+            }
+        }
+        self._expect_failure(post_data)
+
     def test_password_not_object_ex(self):
         # if password is present, it must be an object.
         p = {

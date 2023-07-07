@@ -85,5 +85,5 @@ class SchemaValidator(object):
                            "%(message)s") % {'path': path,
                                              'message': str(ex)}
             else:
-                detail = str(ex)
+                detail = ex.message
             raise exception.SchemaValidationError(detail=detail)

@@ -83,6 +83,8 @@ def _handle_keystone_exception(error):
         LOG.warning(
             "Authorization failed. %(exception)s from %(remote_addr)s",
             {'exception': error, 'remote_addr': flask.request.remote_addr})
+    elif isinstance(error, exception.SchemaValidationError):
+        LOG.warning(str(error))
     else:
         LOG.exception(str(error))
 
