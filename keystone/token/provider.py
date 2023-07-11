@@ -129,12 +129,13 @@ class Manager(manager.Manager):
         if CONF.token.cache_on_issue or CONF.token.caching:
             TOKENS_REGION.invalidate()
 
-    def check_revocation_v3(self, token):
-        token_values = self.revoke_api.model.build_token_values(token)
+    @MEMOIZE_TOKENS
+    def check_revocation_v3(self, token_values):
         PROVIDERS.revoke_api.check_token(token_values)
 
     def check_revocation(self, token):
-        return self.check_revocation_v3(token)
+        token_values = self.revoke_api.model.build_token_values(token)
+        return self.check_revocation_v3(token_values)
 
     def validate_token(self, token_id, window_seconds=0,
                        access_rules_support=None):
