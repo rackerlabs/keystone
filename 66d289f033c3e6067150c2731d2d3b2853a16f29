@@ -16,6 +16,23 @@
       "message": "recheck parent patch has merged",
       "revId": "66d289f033c3e6067150c2731d2d3b2853a16f29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ca260dc_58e84f01",
+        "filename": "doc/source/contributor/database-migrations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 32755
+      },
+      "writtenOn": "2023-07-12T10:05:37Z",
+      "side": 1,
+      "message": "You likely meant --contract here ?",
+      "revId": "66d289f033c3e6067150c2731d2d3b2853a16f29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ],
   "submitRequirementResults": [
