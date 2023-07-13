@@ -33,6 +33,24 @@
       "message": "You likely meant --contract here ?",
       "revId": "66d289f033c3e6067150c2731d2d3b2853a16f29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc56aa7a_b40582d7",
+        "filename": "doc/source/contributor/database-migrations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2023-07-13T09:04:22Z",
+      "side": 1,
+      "message": "Oops, done in https://review.opendev.org/c/openstack/keystone/+/888443",
+      "parentUuid": "9ca260dc_58e84f01",
+      "revId": "66d289f033c3e6067150c2731d2d3b2853a16f29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ],
   "submitRequirementResults": [
