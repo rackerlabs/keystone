@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "e154bfaa1838e20b48218547402b7225a7c662e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "461224ab_a0454361",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2023-07-28T14:34:31Z",
+      "side": 1,
+      "message": "I think we should check the insecure_debug config option and still print out the whole exception if it\u0027s enabled.",
+      "revId": "e154bfaa1838e20b48218547402b7225a7c662e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
