@@ -22,6 +22,30 @@
       },
       "revId": "dabaef7c331fbd0f5f66b9d98b0d03bb140e2a1e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2bd5e562_571dd012",
+        "filename": "doc/source/admin/integrate-with-ldap.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 14826
+      },
+      "writtenOn": "2023-08-02T09:32:01Z",
+      "side": 1,
+      "message": "This section was useful for my understanding of keystone internals - it\u0027s useful to know what this backend does and does not do.",
+      "parentUuid": "adbb8952_79330117",
+      "range": {
+        "startLine": 24,
+        "startChar": 65,
+        "endLine": 25,
+        "endChar": 35
+      },
+      "revId": "dabaef7c331fbd0f5f66b9d98b0d03bb140e2a1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
