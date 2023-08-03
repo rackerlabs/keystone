@@ -33,6 +33,23 @@
       "message": "Revisions LGTM!",
       "revId": "d0eacc4729065c8e28b64e425cd89bf01b80517f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6a15cb9_a0462aeb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2023-08-03T17:23:02Z",
+      "side": 1,
+      "message": "recheck ssh timeout while resizing volumebacked server",
+      "revId": "d0eacc4729065c8e28b64e425cd89bf01b80517f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
