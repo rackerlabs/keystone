@@ -67,6 +67,23 @@
       "message": "recheck \n\ngrenade job failing with volume not going to is-use state, This is not related or any known failure. should be some slow node/test.\n\ndie 68 \u0027Timed out waiting for volume cinder_grenade_vol3 status to be in-use\u0027",
       "revId": "d0eacc4729065c8e28b64e425cd89bf01b80517f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00ee8cf1_31b92d28",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2023-08-04T05:38:16Z",
+      "side": 1,
+      "message": "recheck\n\ngrenade job failing with volume not going to is-use state, This is not related or any known failure. should be some slow node/test.\n\ndie 68 \u0027Timed out waiting for volume cinder_grenade_vol3 status to be in-use\u0027\n\ntempest-full-py3 job multiple tests are failing with Identity related error while setting credentials\n\ntempest.lib.exceptions.IdentityError: Got identity error\nDetails: Unexpected status code 500",
+      "revId": "d0eacc4729065c8e28b64e425cd89bf01b80517f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
