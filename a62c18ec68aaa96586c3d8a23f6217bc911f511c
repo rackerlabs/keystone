@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "750b727b_3a339251",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2023-08-04T14:26:53Z",
+      "side": 1,
+      "message": "recheck - transient tempest issue",
+      "revId": "a62c18ec68aaa96586c3d8a23f6217bc911f511c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
