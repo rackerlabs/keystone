@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d71690b4_e9599994",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2023-08-04T08:03:20Z",
+      "side": 1,
+      "message": "Due to patch I4aae75f513568126230becf27b2e07d6682d35a1 is only present since stable/2023.1.",
+      "revId": "1b3536a7a4d72e7f7b95cc1874a450accad3ec8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f680b00_85849d32",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2023-08-04T08:03:20Z",
+      "side": 1,
+      "message": "This patch looks to be valid to backport.\nFurthermore:\n* merged in stable/2023.1 when it was master\n* conflict is listed and resolved correctly\nLGTM",
+      "revId": "1b3536a7a4d72e7f7b95cc1874a450accad3ec8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
