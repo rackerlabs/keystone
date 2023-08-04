@@ -84,6 +84,114 @@
       "message": "recheck\n\ngrenade job failing with volume not going to is-use state, This is not related or any known failure. should be some slow node/test.\n\ndie 68 \u0027Timed out waiting for volume cinder_grenade_vol3 status to be in-use\u0027\n\ntempest-full-py3 job multiple tests are failing with Identity related error while setting credentials\n\ntempest.lib.exceptions.IdentityError: Got identity error\nDetails: Unexpected status code 500",
       "revId": "d0eacc4729065c8e28b64e425cd89bf01b80517f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4b505ca_6101e27e",
+        "filename": "doc/source/admin/service-api-protection.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2023-08-04T09:49:11Z",
+      "side": 1,
+      "message": "Either the \"and\" here means \"or\" or the example below doesn\u0027t match.",
+      "range": {
+        "startLine": 157,
+        "startChar": 44,
+        "endLine": 157,
+        "endChar": 47
+      },
+      "revId": "d0eacc4729065c8e28b64e425cd89bf01b80517f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e283e5c6_22cbfd90",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2023-08-04T09:49:11Z",
+      "side": 1,
+      "message": "IMO this note should also be present in the upgrade reno section.",
+      "revId": "d0eacc4729065c8e28b64e425cd89bf01b80517f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42be2c25_28d1fa61",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2023-08-04T09:49:11Z",
+      "side": 1,
+      "message": "should this also include the service role?",
+      "revId": "d0eacc4729065c8e28b64e425cd89bf01b80517f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d602bb9_b5311d1b",
+        "filename": "releasenotes/notes/bug-1951632-11272e49e2fa439d.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2023-08-04T09:49:11Z",
+      "side": 1,
+      "message": "Formatting the whole note as fixed-width command (enclosed in ``) seems wrong.",
+      "revId": "d0eacc4729065c8e28b64e425cd89bf01b80517f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "550c211e_90986210",
+        "filename": "releasenotes/notes/bug-1951632-11272e49e2fa439d.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2023-08-04T09:49:11Z",
+      "side": 1,
+      "message": "this needs to be \"upgrade\", an \"upgrades\" section does not exist",
+      "revId": "d0eacc4729065c8e28b64e425cd89bf01b80517f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1aa9389_9310fd5f",
+        "filename": "releasenotes/notes/bug-1951632-11272e49e2fa439d.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2023-08-04T09:49:11Z",
+      "side": 1,
+      "message": "Same note about formatting.\n\nShould also contain the note about checking for usage of existing service role.",
+      "revId": "d0eacc4729065c8e28b64e425cd89bf01b80517f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ],
   "submitRequirementResults": [
