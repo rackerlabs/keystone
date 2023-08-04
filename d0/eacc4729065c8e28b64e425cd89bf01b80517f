@@ -1,0 +1,13 @@
+Code-Review+2: Grzegorz Grasza <xek@redhat.com>
+Verified+2: Zuul
+Code-Review+1: Brian Rosmaita <rosmaita.fossdev@gmail.com>
+Code-Review+2: David Wilde <dwilde@redhat.com>
+Workflow+1: Kristi Nikolla <knikolla@bu.edu>
+Code-Review+1: Ghanshyam <gmann@ghanshyammann.com>
+Code-Review+1: panhongyin <panhongyin@yovole.com>
+Code-Review+2: Kristi Nikolla <knikolla@bu.edu>
+Submitted-by: Zuul
+Submitted-at: Fri, 04 Aug 2023 08:07:44 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/863420
+Project: openstack/keystone
+Branch: refs/heads/master
