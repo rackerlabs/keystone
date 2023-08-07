@@ -33,6 +33,23 @@
       "message": "This patch looks to be valid to backport.\nFurthermore:\n* merged in stable/2023.1 when it was master\n* conflict is listed and resolved correctly\nLGTM",
       "revId": "1b3536a7a4d72e7f7b95cc1874a450accad3ec8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "25d511c2_cf3d6a9c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2023-08-07T08:58:21Z",
+      "side": 1,
+      "message": "recheck\nkeystone-protection-functional test_identity_list_role_assignments failure is unrelated",
+      "revId": "1b3536a7a4d72e7f7b95cc1874a450accad3ec8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
