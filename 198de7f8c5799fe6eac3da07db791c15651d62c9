@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f77cb83_a7a28243",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2023-08-07T15:07:21Z",
+      "side": 1,
+      "message": "nit: can be removed as this is not valid anymore -\u003e the cherry pick from stable/zed to stable/yoga is clean.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 9
+      },
+      "revId": "198de7f8c5799fe6eac3da07db791c15651d62c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "26d244c2_924a965d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2023-08-07T15:07:21Z",
+      "side": 1,
+      "message": "Clean cherry pick from stable/zed, where the patch has merged. LGTM. (one minor nit for the commit message)",
+      "revId": "198de7f8c5799fe6eac3da07db791c15651d62c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
