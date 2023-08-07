@@ -1,0 +1,9 @@
+Verified+2: Zuul
+Workflow+1: David Wilde <dwilde@redhat.com>
+Code-Review+2: Elod Illes <elod.illes@est.tech>
+Code-Review+2: David Wilde <dwilde@redhat.com>
+Submitted-by: Zuul
+Submitted-at: Mon, 07 Aug 2023 13:27:47 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/890417
+Project: openstack/keystone
+Branch: refs/heads/stable/zed
