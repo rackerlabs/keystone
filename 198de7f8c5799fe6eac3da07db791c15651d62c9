@@ -74,6 +74,24 @@
       "parentUuid": "5a243392_b3d931a8",
       "revId": "198de7f8c5799fe6eac3da07db791c15651d62c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe984bff_67ab7e4b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2023-08-10T10:55:38Z",
+      "side": 1,
+      "message": "Hmm, thanks Dmitriy for the pointer. The patch was backported and merged to Zed, so probably a revert should be proposed there, right?",
+      "parentUuid": "5a243392_b3d931a8",
+      "revId": "198de7f8c5799fe6eac3da07db791c15651d62c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
