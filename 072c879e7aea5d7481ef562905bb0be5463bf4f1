@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96554d7c_6c1e0f4e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2023-08-10T11:06:33Z",
+      "side": 1,
+      "message": "Just for to have reference of them here also:\nRelated-Bug: #1901891\nPerhaps related/origianal patch: https://review.opendev.org/c/openstack/keystone/+/828595",
+      "revId": "072c879e7aea5d7481ef562905bb0be5463bf4f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
