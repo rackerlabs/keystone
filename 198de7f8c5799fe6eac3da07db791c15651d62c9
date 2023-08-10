@@ -39,6 +39,23 @@
       "message": "Clean cherry pick from stable/zed, where the patch has merged. LGTM. (one minor nit for the commit message)",
       "revId": "198de7f8c5799fe6eac3da07db791c15651d62c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a243392_b3d931a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2023-08-10T10:02:24Z",
+      "side": 1,
+      "message": "This patch causes previously working password to be invalid, since password length is handled incorrectly here.\n\nPlease, see https://review.opendev.org/c/openstack/keystone/+/890936 and https://bugs.launchpad.net/openstack-ansible/+bug/2028809",
+      "revId": "198de7f8c5799fe6eac3da07db791c15651d62c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
