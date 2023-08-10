@@ -16,6 +16,23 @@
       "message": "This should be backported to 2023.1",
       "revId": "90581ecd62ef4e15fd375839c0a4a41ffd966e18",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0819bc35_7c6366d9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2023-08-10T10:01:28Z",
+      "side": 1,
+      "message": "Sorry, even to Zed as https://review.opendev.org/c/openstack/keystone/+/890417 has been backported there.",
+      "revId": "90581ecd62ef4e15fd375839c0a4a41ffd966e18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
