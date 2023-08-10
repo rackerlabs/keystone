@@ -92,6 +92,24 @@
       "parentUuid": "5a243392_b3d931a8",
       "revId": "198de7f8c5799fe6eac3da07db791c15651d62c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c558acd3_a0b3fa30",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2023-08-10T11:31:13Z",
+      "side": 1,
+      "message": "Either that or fix should be backported as well back to Zed.",
+      "parentUuid": "fe984bff_67ab7e4b",
+      "revId": "198de7f8c5799fe6eac3da07db791c15651d62c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
