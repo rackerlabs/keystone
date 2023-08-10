@@ -56,6 +56,24 @@
       "message": "This patch causes previously working password to be invalid, since password length is handled incorrectly here.\n\nPlease, see https://review.opendev.org/c/openstack/keystone/+/890936 and https://bugs.launchpad.net/openstack-ansible/+bug/2028809",
       "revId": "198de7f8c5799fe6eac3da07db791c15651d62c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b09a4baf_f6a2b67e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2023-08-10T10:53:00Z",
+      "side": 1,
+      "message": "Thanks, so have to revisit (revert) zed patch also (https://review.opendev.org/q/I8d0bb2438b23227b5a66b94af6f8e198084fcd8d )? Or backport also https://review.opendev.org/c/openstack/keystone/+/890936 ?",
+      "parentUuid": "5a243392_b3d931a8",
+      "revId": "198de7f8c5799fe6eac3da07db791c15651d62c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
