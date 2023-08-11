@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cdc1a1d0_eb3e2da8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2023-08-11T06:32:48Z",
+      "side": 1,
+      "message": "recheck test_identity_list_credentials test failed on keystone-protection-functional job",
+      "revId": "9b0b414e3eb915c89c9786abeb1307ba734f5901",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
