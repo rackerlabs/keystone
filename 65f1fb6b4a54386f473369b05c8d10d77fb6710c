@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "39b504fa_ce7fe66e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2023-08-15T16:13:08Z",
+      "side": 1,
+      "message": "I was cherry-picking from master - not from 2023.1, as this was also a clean cherry-pick.\n\nNot sure what you\u0027ve meant about missing line. You\u0027ve commented on it?",
+      "parentUuid": "afb4257f_71411168",
+      "revId": "65f1fb6b4a54386f473369b05c8d10d77fb6710c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "5786e126_bd649ada",
