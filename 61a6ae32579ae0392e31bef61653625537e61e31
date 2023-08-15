@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23c12a05_0d74c234",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2023-08-15T17:43:58Z",
+      "side": 1,
+      "message": "I didn\u0027t added any test here, as not really sure how to test that specific usecase.\nAs it should be upgrade job, and we need to ensure that services did some action (like server create) prior to upgrade and then same action fail after the keystone upgrade.\n\nAnd I\u0027m not sure on how to achieve that with devstack..",
+      "revId": "61a6ae32579ae0392e31bef61653625537e61e31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
