@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "afb4257f_71411168",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2023-08-15T15:14:10Z",
+      "side": 1,
+      "message": "nit: missing \u0027cherry picked from...\u0027 line. should be cherry picked from stable/2023.1",
+      "revId": "65f1fb6b4a54386f473369b05c8d10d77fb6710c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "5786e126_bd649ada",
@@ -14,6 +31,23 @@
       "writtenOn": "2023-08-14T08:44:09Z",
       "side": 1,
       "message": "Thanks",
+      "revId": "65f1fb6b4a54386f473369b05c8d10d77fb6710c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "687d48da_aa40c5a9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2023-08-15T15:14:10Z",
+      "side": 1,
+      "message": "clean cherry pick. since the patch, that is causing the new bug, was cherry picked \u0026 merged to stable/zed, too, this makes sense.\n(not yet merged in stable/2023.1, though)",
       "revId": "65f1fb6b4a54386f473369b05c8d10d77fb6710c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
