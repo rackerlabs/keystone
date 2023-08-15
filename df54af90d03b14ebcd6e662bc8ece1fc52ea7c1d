@@ -16,6 +16,23 @@
       "message": "Thanks",
       "revId": "df54af90d03b14ebcd6e662bc8ece1fc52ea7c1d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62ec9d52_bc734d71",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2023-08-15T15:11:08Z",
+      "side": 1,
+      "message": "Thanks for the backport Dmitriy, makes sense to me to cherry pick this to older branches.\nFurthermore: clean cherry pick from master branch, where the patch has merged. LGTM.",
+      "revId": "df54af90d03b14ebcd6e662bc8ece1fc52ea7c1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
