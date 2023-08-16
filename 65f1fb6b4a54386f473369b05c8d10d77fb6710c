@@ -36,6 +36,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "5dc7f776_9faeaa07",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2023-08-16T15:29:40Z",
+      "side": 1,
+      "message": "In general in OpenStack, as described in the stable policy [1], patches should be backported branch by branch. To make the reviewing of backports easier it is recommended, to use \u0027git cherry-pick -x \u003cpatch_from_n+1_branch\u003e\u0027 command, so that this would look like:\n\n    [..]\n    Change-Id: Iea95a3c2df041a0046647b3d3dadead1a6d054d1\n    (cherry picked from commit 6730c761d18aa547998f2add833c13f45f257fe7)\n    (cherry picked from commit df54af90d03b14ebcd6e662bc8ece1fc52ea7c1d)\n\n(note, that gerrit can be also used, but the ui only puts the proper cherry-picked-from lines IFF the patch on N+1 branch has already merged)\n\n[1] https://docs.openstack.org/project-team-guide/stable-branches.html#processes",
+      "parentUuid": "39b504fa_ce7fe66e",
+      "revId": "65f1fb6b4a54386f473369b05c8d10d77fb6710c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "5786e126_bd649ada",
