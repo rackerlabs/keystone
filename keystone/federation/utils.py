@@ -425,11 +425,20 @@ def transform_to_group_ids(group_names, mapping_id,
                      domain.get('name')).get('id'))
         return domain_id
 
+    group_ids_array = []
     for group in group_names:
         try:
-            group_dict = identity_api.get_group_by_name(
-                group['name'], resolve_domain(group['domain']))
-            yield group_dict['id']
+           try:
+                val_group = ast.literal_eval(group['name'])
+                for group_name in val_group:
+                    group_dict = identity_api.get_group_by_name(
+                        group_name,resolve_domain(group['domain']))
+                    group_ids_array.append(group_dict['id'])
+                yield from group_ids_array
+            except ValueError:
+                group_dict = identity_api.get_group_by_name(
+                    group['name'], resolve_domain(group['domain']))
+                yield group_dict['id']
         except exception.GroupNotFound:
             LOG.debug('Group %s has no entry in the backend',
                       group['name'])
