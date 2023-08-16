@@ -54,6 +54,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "73ed0b87_17a582f5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2023-08-16T15:58:23Z",
+      "side": 1,
+      "message": "What I read in the process - `To do so, you may try to use the “Cherry Pick To” button in the Gerrit UI for the original patch in master`; `The backport must match the master commit` - so all tells, that you need to ensure that backport is a clean cherry-pick from the master, rather then from the previous cherry-pick.\nAlso, frankly speaking, I see no difference in that as long as cherry-picks are clean from master both to N-1 and N-2. Difference would be if cherry-pick to N-1 is not clean, then backport to N-2 indeed worth to be done from N-1, as it might be a clean one.\n\nBackport examples tell only, that N-1 branch backport should be merged before N-2. but it doesn\u0027t say that N-2 should be made from N-1 rather then master, IMO.\n\nIt could be that I just don\u0027t see what you\u0027re referring to in the doc (I did that twice today already - apparently I\u0027m getting blind)...",
+      "parentUuid": "5dc7f776_9faeaa07",
+      "revId": "65f1fb6b4a54386f473369b05c8d10d77fb6710c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "5786e126_bd649ada",
