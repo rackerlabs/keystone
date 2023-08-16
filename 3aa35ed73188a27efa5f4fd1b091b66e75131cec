@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "03a06fcc_c80a7791",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-08-16T17:15:12Z",
+      "side": 1,
+      "message": "Thank you for the patch.\n\nI wondered why ``oauth2_thumbprint`` is missing instead of being ``None``. In [1], where the token obj is generated from the token_Id, the token obj has an ``oauth2_thumbprint`` attr. Thus, it should be ``None``.\n\nThe root cause of this bug is the caching [2][3]. The tokens are cached by oslo in the form of the old token model.\n\nWhen I turn off the caching as follows, the error doesn\u0027t happen.\n\n```\n/etc/keystone/keystone.conf:\n\n[cache]\nmemcache_servers \u003d localhost:11211\nbackend \u003d dogpile.cache.memcached\nenabled \u003d False\n# enabled \u003d True\n```\n\nIMO, this patch can be merged as it\u0027s more user-friendly compared to forcing users to reset their cache.\n\n[1] https://opendev.org/openstack/keystone/src/branch/master/keystone/token/provider.py#L172\n[2] https://opendev.org/openstack/keystone/src/branch/master/keystone/token/provider.py#L153\n[3] https://docs.openstack.org/oslo.cache/train/reference/api/oslo_cache.html",
+      "revId": "3aa35ed73188a27efa5f4fd1b091b66e75131cec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd7ab3bc_2575ce94",
+        "filename": "keystone/common/render_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2023-08-16T17:15:12Z",
+      "side": 1,
+      "message": "I suggest adding NOTE to describe this is for backward compatibility if this patch is going to be merged.",
+      "revId": "3aa35ed73188a27efa5f4fd1b091b66e75131cec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
