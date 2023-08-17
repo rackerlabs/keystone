@@ -33,6 +33,24 @@
       "message": "I suggest adding NOTE to describe this is for backward compatibility if this patch is going to be merged.",
       "revId": "3aa35ed73188a27efa5f4fd1b091b66e75131cec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc0b6e02_5ab85452",
+        "filename": "keystone/common/render_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2023-08-17T08:24:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cd7ab3bc_2575ce94",
+      "revId": "3aa35ed73188a27efa5f4fd1b091b66e75131cec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
