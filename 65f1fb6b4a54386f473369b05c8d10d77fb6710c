@@ -72,6 +72,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7c9190c_774e9d74",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2023-08-17T09:00:24Z",
+      "side": 1,
+      "message": "no, you are not blind, thanks for reading it so thoroughly! :)\nWithout over-explaining it: for reviewers it is good to see that the backports were cherry picked branch by branch, seeing all the previous cherry picks (random example [1]). You are right, in this case, as there is no difference in the patch against zed compared to master version, it is not a big deal. Also, I\u0027m aware that not all project requires to strictly do the cherry picks branch by branch, hence it is just a nit. Sorry for wasting your time.\n\n[1] https://review.opendev.org/c/openstack/nova/+/882920/1//COMMIT_MSG",
+      "parentUuid": "73ed0b87_17a582f5",
+      "revId": "65f1fb6b4a54386f473369b05c8d10d77fb6710c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "5786e126_bd649ada",
@@ -102,6 +120,23 @@
       "writtenOn": "2023-08-15T15:14:10Z",
       "side": 1,
       "message": "clean cherry pick. since the patch, that is causing the new bug, was cherry picked \u0026 merged to stable/zed, too, this makes sense.\n(not yet merged in stable/2023.1, though)",
+      "revId": "65f1fb6b4a54386f473369b05c8d10d77fb6710c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd83d4e2_02efeac9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2023-08-17T09:00:24Z",
+      "side": 1,
+      "message": "Thanks for the backport Dmitriy, LGTM! (Clean cherry pick, already backported \u0026 merged to stable/2023.1, considering these I\u0027m approving the patch here as well)",
       "revId": "65f1fb6b4a54386f473369b05c8d10d77fb6710c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
