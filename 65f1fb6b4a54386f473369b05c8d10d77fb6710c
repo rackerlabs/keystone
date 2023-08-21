@@ -139,6 +139,23 @@
       "message": "Thanks for the backport Dmitriy, LGTM! (Clean cherry pick, already backported \u0026 merged to stable/2023.1, considering these I\u0027m approving the patch here as well)",
       "revId": "65f1fb6b4a54386f473369b05c8d10d77fb6710c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d67bbe4e_75598319",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2023-08-21T14:08:23Z",
+      "side": 1,
+      "message": "recheck tempest failed on unrelated test: tempest.api.network.test_dhcp_ipv6.NetworksTestDHCPv6.test_dhcpv6_64_subnets",
+      "revId": "65f1fb6b4a54386f473369b05c8d10d77fb6710c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
