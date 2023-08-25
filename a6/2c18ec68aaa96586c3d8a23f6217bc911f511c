@@ -1,0 +1,10 @@
+Verified+2: Zuul
+Code-Review+2: David Wilde <dwilde@redhat.com>
+Code-Review+2: Grzegorz Grasza <xek@redhat.com>
+Code-Review+1: Amy Marrich <amy@demarco.com>
+Workflow+1: Grzegorz Grasza <xek@redhat.com>
+Submitted-by: Zuul
+Submitted-at: Fri, 25 Aug 2023 16:28:38 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/890482
+Project: openstack/keystone
+Branch: refs/heads/stable/zed
