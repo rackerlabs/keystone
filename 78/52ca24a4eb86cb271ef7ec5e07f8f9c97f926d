@@ -1,0 +1,10 @@
+Code-Review+2: Grzegorz Grasza <xek@redhat.com>
+Workflow+1: Grzegorz Grasza <xek@redhat.com>
+Code-Review+2: David Wilde <dwilde@redhat.com>
+Verified+2: Zuul
+Code-Review+1: Dmitriy Rabotyagov <noonedeadpunk@gmail.com>
+Submitted-by: Zuul
+Submitted-at: Fri, 25 Aug 2023 16:28:41 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/890661
+Project: openstack/keystone
+Branch: refs/heads/stable/yoga
