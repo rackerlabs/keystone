@@ -88,6 +88,23 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3df2ab49_0fcebae5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2023-08-28T19:53:35Z",
+      "side": 1,
+      "message": "Finally had some time to test this out.  In my devstack env, `keystone-manage bootstrap` is not setting up the role implications correctly during an upgrade.\n\nI expect the entries in implied_role after an upgrade with this patch to be:\n\nadmin -\u003e manager\nmanager -\u003e member\nmember -\u003e reader\n\nWhich are all there, but there is an extra entry where admin -\u003e member, which is left over from the previous version.  I think we should clean that up as it may cause issues.",
+      "revId": "f13ef5db3f2456e227cd0be32679c78725a61495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "24f82f04_5506325b",
