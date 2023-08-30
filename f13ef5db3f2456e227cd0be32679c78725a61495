@@ -150,6 +150,30 @@
       },
       "revId": "f13ef5db3f2456e227cd0be32679c78725a61495",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c03393da_e832eba9",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2023-08-30T20:06:05Z",
+      "side": 1,
+      "message": "Fixed the data inconsistency during an upgrade in the latest patch.",
+      "parentUuid": "9ed3714a_824a2a2f",
+      "range": {
+        "startLine": 184,
+        "startChar": 54,
+        "endLine": 184,
+        "endChar": 74
+      },
+      "revId": "f13ef5db3f2456e227cd0be32679c78725a61495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
