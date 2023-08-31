@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c7e593c_bd7e760a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2023-08-31T18:48:06Z",
+      "side": 1,
+      "message": "thanks. this is already done in https://github.com/openstack/keystone/commit/38d9a1ebcaea22b607293af777bc5293c164b45d",
+      "revId": "d40f22da8f947c50ae8ff7a25aa3c98a86e0e384",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
