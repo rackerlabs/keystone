@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e234f746_fdac369a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2023-08-31T17:17:34Z",
+      "side": 1,
+      "message": "1 comment/question inline",
+      "revId": "bbbbd10e482a67b53187a93daa58f8bee770852f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2f3e1d2_3cb202a0",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2023-08-31T17:17:34Z",
+      "side": 1,
+      "message": "I am little confused on this. so if old deployment does not have manager role then:\n\n1. does running this new bootstrap on old deployment with no manager role fail the implied role of admin-\u003emanager? because no manager role.\n\n2. old deployment with no manager role we need to keep admin-\u003emember implied role right? but it seems L197 deleting that\n\nOR we do not expect people to run the latest bootstrap on old deployment.  if so then I got your point and  we are good here,",
+      "range": {
+        "startLine": 193,
+        "startChar": 0,
+        "endLine": 200,
+        "endChar": 16
+      },
+      "revId": "bbbbd10e482a67b53187a93daa58f8bee770852f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
