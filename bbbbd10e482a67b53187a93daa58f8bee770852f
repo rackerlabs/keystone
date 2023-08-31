@@ -18,6 +18,23 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8bb39569_e53bebbc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2023-08-31T18:11:02Z",
+      "side": 1,
+      "message": "thanks Douglas for changes and clarification. lgtm",
+      "revId": "bbbbd10e482a67b53187a93daa58f8bee770852f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c2f3e1d2_3cb202a0",
@@ -55,6 +72,30 @@
       "side": 1,
       "message": "A1: No, executing `keystone-manage bootstrap` with this patch creates the \"manager\" role first before adding the admin-\u003emanager implied role.\n\nA2: We delete the direct implied role, but we\u0027ll still have the transitive implied role there.  In other words, before this patch, `keystone-manage bootstrap` creates the following implied roles:\n\n    admin  -\u003e member\n    member -\u003e reader\n\nHere, admin also implies reader even though there is no direct mapping from admin -\u003e reader.  This is because implied roles cascade down.\n\nWith this patch on a new install we get:\n\n    admin   -\u003e manager\n    manager -\u003e member\n    member  -\u003e reader\n    \nJust like admin implied reader before, admin still implies reader now, and it also implies member because the implications cascade down.  The issue is that running bootstrap with the previous patchset on an old deployment still kept the previous entries in the database, so, on an upgrade we would end up with:\n\n    admin   -\u003e manager\n    admin   -\u003e member\n    manager -\u003e member\n    member  -\u003e reader\n\nIn this case, admin implies member twice.  Once directly, and again through the manager role.  So we delete the admin-\u003emember implied role, because it was put there before this patch.  I hope that makes it clearer.",
       "parentUuid": "c2f3e1d2_3cb202a0",
+      "range": {
+        "startLine": 193,
+        "startChar": 0,
+        "endLine": 200,
+        "endChar": 16
+      },
+      "revId": "bbbbd10e482a67b53187a93daa58f8bee770852f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "415e57d5_bd669b0e",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2023-08-31T18:11:02Z",
+      "side": 1,
+      "message": "I see, thanks for detail explanation. basically we do create the manager role always with this bootstrap so anyone running new bootstrap on old get manager role. its just we need to cleanup admin-\u003emember implied role if exist. Got it.",
+      "parentUuid": "0f54b448_b0da8b72",
       "range": {
         "startLine": 193,
         "startChar": 0,
