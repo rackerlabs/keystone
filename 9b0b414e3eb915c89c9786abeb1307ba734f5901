@@ -16,6 +16,23 @@
       "message": "recheck test_identity_list_credentials test failed on keystone-protection-functional job",
       "revId": "9b0b414e3eb915c89c9786abeb1307ba734f5901",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fa75996_5ce45472",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2023-09-01T14:04:38Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "9b0b414e3eb915c89c9786abeb1307ba734f5901",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
