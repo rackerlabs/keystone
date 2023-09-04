@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b82c503_25957a82",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2023-09-04T11:11:06Z",
+      "side": 1,
+      "message": "Clean cherry pick \u0026 merged in stable/xena. LGTM.",
+      "revId": "11e1258ccda688fd6f1414ac664c50df56ca2989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
