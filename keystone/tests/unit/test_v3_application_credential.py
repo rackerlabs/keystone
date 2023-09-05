@@ -118,6 +118,30 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
                    expected_status_code=http.client.BAD_REQUEST,
                    headers={'X-Auth-Token': token})
 
+    def test_create_application_credential_implied_role(self):
+        with self.test_client() as c:
+            roles = [{'id': self.role_id}]
+            app_cred_body = self._app_cred_body(roles=roles)
+            token = self.get_scoped_token()
+            app_cred = c.post(
+                '/v3/users/%s/application_credentials' % self.user_id,
+                json=app_cred_body,
+                expected_status_code=http.client.CREATED,
+                headers={'X-Auth-Token': token})
+            implied_role = unit.new_role_ref(name='implied_role')
+            PROVIDERS.role_api.create_role(implied_role['id'], implied_role)
+            PROVIDERS.role_api.create_implied_role(self.role_id,
+                                                   implied_role['id'])
+            auth_data = self.build_authentication_request(
+                app_cred_id=app_cred.json['application_credential']['id'],
+                secret=app_cred.json['application_credential']['secret'])
+            token_data = self.v3_create_token(
+                auth_data, expected_status=http.client.CREATED)
+            self.assertIn(
+                implied_role['id'],
+                [x['id'] for x in token_data.json['token']['roles']]
+            )
+
     def test_create_application_credential_with_expiration(self):
         with self.test_client() as c:
             roles = [{'id': self.role_id}]
