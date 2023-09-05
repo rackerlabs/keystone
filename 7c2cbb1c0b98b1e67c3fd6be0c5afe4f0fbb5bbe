@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4db4702_13f0fd86",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31542
+      },
+      "writtenOn": "2023-09-05T14:15:24Z",
+      "side": 1,
+      "message": "Intended to demonstrate the issue rather than be merged as-is. See the linked issue for more details.",
+      "revId": "7c2cbb1c0b98b1e67c3fd6be0c5afe4f0fbb5bbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
