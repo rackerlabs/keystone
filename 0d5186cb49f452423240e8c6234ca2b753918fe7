@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "346be06f_228fe5e3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2023-09-07T08:58:00Z",
+      "side": 1,
+      "message": "Clean cherry pick from stable/wallaby, where the patch has merged. LGTM.",
+      "revId": "0d5186cb49f452423240e8c6234ca2b753918fe7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
