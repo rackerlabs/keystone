@@ -49,8 +49,8 @@ A mapping looks as follows:
                "local": [
                    {
                        <user>
-                       [<group>]
-                       [<project>]
+                       [<groups>]
+                       [<projects>]
                    }
                ],
                "remote": [
@@ -73,7 +73,7 @@ A mapping looks as follows:
   perspective.
 
   * `<user>`: the local user that will be mapped to the federated user.
-  * `<group>`: (optional) the local groups the federated user will be placed in.
+  * `<groups>`: (optional) the local groups the federated user will be placed in.
   * `<projects>`: (optional) the local projects mapped to the federated user.
 
 * `remote`: a JSON object containing information on what remote attributes will be mapped.
@@ -284,6 +284,8 @@ empty condition
 
 Groups can have multiple values. Each value must be separated by a `;`
 Example: OIDC_GROUPS=developers;testers
+To map multivalue groups like this the `"groups"` key needs to be used in the local
+part instead of `"group"`.
 
 
 other conditions
@@ -393,6 +395,10 @@ Regular expressions can be used in any condition for more flexible matches:
         ]
     }
 
+-------------
+Group Mapping
+-------------
+
 When mapping into groups, either ids or names can be provided in the local section:
 
 .. code-block:: json
@@ -422,6 +428,8 @@ When mapping into groups, either ids or names can be provided in the local secti
        ]
    }
 
+This allows specifying the domain where the group is defined.
+
 .. code-block:: json
 
    {
@@ -436,6 +444,29 @@ When mapping into groups, either ids or names can be provided in the local secti
            }
        ]
    }
+
+.. code-block:: json
+
+   {
+       "local": [
+           {
+               "groups": [
+                   "foo",
+                   "bar"
+               ],
+               "domain": {
+                   "id": "0cd5e9"
+               }
+           }
+       ]
+   }
+
+This is an alternative to `"group"`, which allows multivalued claims to be mapped.
+The domain where the groups are defined can be specified as key in the same dictionary.
+
+-------------
+User Mapping
+-------------
 
 Users can be mapped to local users that already exist in keystone's identity
 backend by setting the ``type`` attribute of the user to ``local`` and providing
