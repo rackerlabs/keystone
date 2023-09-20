@@ -49,8 +49,9 @@ A mapping looks as follows:
                "local": [
                    {
                        <user>
-                       [<group>]
-                       [<project>]
+                       [<groups>]
+                       [<domain>]
+                       [<projects>]
                    }
                ],
                "remote": [
@@ -73,7 +74,9 @@ A mapping looks as follows:
   perspective.
 
   * `<user>`: the local user that will be mapped to the federated user.
-  * `<group>`: (optional) the local groups the federated user will be placed in.
+  * `<groups>`: (optional) the local groups the federated user will be placed in.
+    Supported keywords: `"group"`, `"groups"`, `"group_ids"`.
+  * `<domain>`: (optional) the domain context for `"groups"`.
   * `<projects>`: (optional) the local projects mapped to the federated user.
 
 * `remote`: a JSON object containing information on what remote attributes will be mapped.
@@ -260,7 +263,7 @@ empty condition
                        "type": "Email"
                    },
                    {
-                       "type": "OIDC_GROUPS"
+                       "type": "OIDC_GROUP"
                    }
                ]
            }
@@ -274,16 +277,13 @@ empty condition
         - Mapping to user with the name matching the value in remote attribute FirstName
         - Mapping to user with the name matching the value in remote attribute LastName
         - Mapping to user with the email matching value in remote attribute Email
-        - Mapping to a group(s) with the name matching the value(s) in remote attribute OIDC_GROUPS
+        - Mapping to a group with the name matching the value(s) in remote attribute OIDC_GROUP
 
 .. NOTE::
 
     If the user id and name are not specified in the mapping, the server tries to
     directly map ``REMOTE_USER`` environment variable. If this variable is also
     unavailable the server returns an HTTP 401 Unauthorized error.
-
-Groups can have multiple values. Each value must be separated by a `;`
-Example: OIDC_GROUPS=developers;testers
 
 
 other conditions
@@ -371,6 +371,10 @@ the groups in their ``HTTP_OIDC_GROUPIDS`` remote attribute:
         ]
     }
 
+.. NOTE::
+    Please note that the values in HTTP_OIDC_GROUPIDS must be separated by a `;` and that
+    the `"groups"` key needs to be used in the local part instead of `"group"`.
+
 A blacklist can map the user into all groups except those matched:
 
 .. code-block:: json
@@ -392,6 +396,10 @@ Regular expressions can be used in any condition for more flexible matches:
             ".*Team$"
         ]
     }
+
+-------------
+Group Mapping
+-------------
 
 When mapping into groups, either ids or names can be provided in the local section:
 
@@ -422,6 +430,8 @@ When mapping into groups, either ids or names can be provided in the local secti
        ]
    }
 
+This allows specifying the domain where the group is defined.
+
 .. code-block:: json
 
    {
@@ -436,6 +446,79 @@ When mapping into groups, either ids or names can be provided in the local secti
            }
        ]
    }
+
+.. code-block:: json
+
+   {
+       "local": [
+           {
+               "groups": [
+                   "foo",
+                   "bar"
+               ],
+               "domain": {
+                   "id": "0cd5e9"
+               }
+           }
+       ]
+   }
+
+This is an alternative to `"group"`, which allows multivalued claims to be mapped.
+The domain where the groups are defined needs to be specified as key in the same dictionary.
+
+.. NOTE::
+    To map multiple groups from a claim, each group in the claim must be separated by a `;`
+    Example: OIDC_GROUPS=developers;testers
+
+To map multivalue groups like this the `"groups"` key needs to be used in the local
+part instead of `"group"`. Example:
+
+.. code-block:: json
+
+   {
+       "rules": [
+           {
+               "local": [
+                   {
+                       "user": {
+                           "name": "{0} {1}",
+                           "email": "{2}"
+                       },
+                       "group": {
+                           "name": "default-group",
+                           "domain": {
+                               "id": "0cd5e9"
+                           }
+                       }
+                   },
+                   {
+                       "groups": "{3}",
+                       "domain": {
+                           "name": "somedomain"
+                       }
+                   }
+               ],
+               "remote": [
+                   {
+                       "type": "FirstName"
+                   },
+                   {
+                       "type": "LastName"
+                   },
+                   {
+                       "type": "Email"
+                   },
+                   {
+                       "type": "OIDC_GROUPS"
+                   }
+               ]
+           }
+       ]
+   }
+
+-------------
+User Mapping
+-------------
 
 Users can be mapped to local users that already exist in keystone's identity
 backend by setting the ``type`` attribute of the user to ``local`` and providing
