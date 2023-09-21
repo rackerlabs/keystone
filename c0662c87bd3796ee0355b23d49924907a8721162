@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6903d32_5a2624e1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2023-09-21T15:40:46Z",
+      "side": 1,
+      "message": "Generated patch \u0026 LGTM. Fast-approving as these patches need to be merged as soon as possible.",
+      "revId": "c0662c87bd3796ee0355b23d49924907a8721162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
