@@ -354,7 +354,7 @@ class Password(sql.ModelBase, sql.ModelDictMixin):
 class FederatedUser(sql.ModelBase, sql.ModelDictMixin):
     __tablename__ = 'federated_user'
     attributes = ['id', 'user_id', 'idp_id', 'protocol_id', 'unique_id',
-                  'display_name']
+                  'display_name', 'domain_id']
     id = sql.Column(sql.Integer, primary_key=True)
     user_id = sql.Column(
         sql.String(64),
@@ -369,6 +369,7 @@ class FederatedUser(sql.ModelBase, sql.ModelDictMixin):
     protocol_id = sql.Column(sql.String(64), nullable=False)
     unique_id = sql.Column(sql.String(255), nullable=False)
     display_name = sql.Column(sql.String(255), nullable=True)
+    domain_id = sql.Column(sql.String(255), nullable=True)
     __table_args__ = (
         sql.UniqueConstraint('idp_id', 'protocol_id', 'unique_id'),
         sqlalchemy.ForeignKeyConstraint(['protocol_id', 'idp_id'],

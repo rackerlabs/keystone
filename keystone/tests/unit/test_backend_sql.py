@@ -277,6 +277,7 @@ class SqlModels(SqlTests):
                 ('protocol_id', sql.String, 64),
                 ('unique_id', sql.String, 255),
                 ('display_name', sql.String, 255))
+                ('domain_id', sql.String, 255))
         self.assertExpectedSchema('federated_user', cols)
 
     def test_nonlocal_user_model(self):
