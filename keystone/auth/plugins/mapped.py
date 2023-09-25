@@ -141,15 +141,36 @@ def handle_unscoped_token(auth_payload, resource_api, federation_api,
                         identity_provider=idp_id
                     )
 
+    def configure_project_domain(shadow_project, idp_domain_id,
+                                 resource_api, user):
+        """Configure federated projects domain.
+
+        We set the domain to be the default (idp_domain_id) if the project
+        from the attribute mapping comes without a domain.
+        """
+        LOG.debug('Processing domain for project: %s', shadow_project)
+        domain = shadow_project.get('domain', {"id": user.get('domain_id')})
+
+        LOG.debug('Processing domain for project: domain = %s', domain)
+        if 'id' not in domain:
+            db_domain = resource_api.get_domain_by_name(domain['name'])
+            domain = {"id": db_domain.get('id')}
+
+        shadow_project['domain'] = domain
+        LOG.debug('Project [%s] domain ID was solved to [%s]',
+                  shadow_project['name'], shadow_project['domain']['id'])
+
     def create_projects_from_mapping(shadow_projects, idp_domain_id,
                                      existing_roles, user, assignment_api,
                                      resource_api):
         for shadow_project in shadow_projects:
+            configure_project_domain(
+                shadow_project, idp_domain_id, resource_api, user)
             try:
                 # Check and see if the project already exists and if it
                 # does not, try to create it.
                 project = resource_api.get_project_by_name(
-                    shadow_project['name'], idp_domain_id
+                    shadow_project['name'], shadow_project['domain']['id']
                 )
             except exception.ProjectNotFound:
                 LOG.info(
@@ -235,11 +256,15 @@ def handle_unscoped_token(auth_payload, resource_api, federation_api,
                 get_user_unique_id_and_display_name(mapped_properties)
             )
             email = mapped_properties['user'].get('email')
+            domain = mapped_properties['user'].get('domain', {})
+            domain_name = domain.get('name') if domain else None
+            LOG.debug('Before user creation: domain -> %s, domain_name -> %s', domain, domain_name)
             user = identity_api.shadow_federated_user(
                 identity_provider,
                 protocol, unique_id,
                 display_name,
                 email,
+                domain_name=domain_name,
                 group_ids=mapped_properties['group_ids'])
 
             if 'projects' in mapped_properties:
