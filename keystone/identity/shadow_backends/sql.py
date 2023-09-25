@@ -16,6 +16,7 @@ import sqlalchemy
 
 from oslo_config import cfg
 from oslo_db import api as oslo_db_api
+from oslo_log import log
 
 from keystone.common import provider_api
 from keystone.common import sql
@@ -27,6 +28,7 @@ from keystone.identity.shadow_backends import base
 
 CONF = cfg.CONF
 PROVIDERS = provider_api.ProviderAPIs
+LOG = log.getLogger(__name__)
 
 
 class ShadowUsers(base.ShadowUsersDriverBase):
@@ -228,6 +230,7 @@ class ShadowUsers(base.ShadowUsersDriverBase):
                 query = session.query(model.FederatedUser)
                 query = query.filter_by(user_id=user_id)
                 user = query.first()
+                LOG.debug('Query: %s, user: %s', query, user)
                 if not user:
                     # Note(knikolla): This shouldn't really ever happen, since
                     # this requires the user to already be logged in.
