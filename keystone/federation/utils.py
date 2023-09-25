@@ -716,6 +716,10 @@ class RuleProcessor(object):
                 projects = identity_value['projects']
 
         normalize_user(user)
+        if not user.get('domain') and identity_value.get('domain'):
+            LOG.debug("Configuring the domain [%s] for user [%s].",
+                      identity_value.get('domain'), user)
+            user['domain'] = identity_value.get('domain')
 
         return {'user': user,
                 'group_ids': list(group_ids),
