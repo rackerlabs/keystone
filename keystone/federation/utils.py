@@ -716,7 +716,6 @@ class RuleProcessor(object):
                 projects = identity_value['projects']
 
         normalize_user(user)
-
         return {'user': user,
                 'group_ids': list(group_ids),
                 'group_names': group_names,
