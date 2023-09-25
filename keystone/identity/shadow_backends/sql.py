@@ -172,6 +172,7 @@ class ShadowUsers(base.ShadowUsersDriverBase):
             query = query.filter(model.FederatedUser.display_name !=
                                  display_name)
             query.update({'display_name': display_name})
+            LOG.debug('update_fed_user_disp_name: %s', unique_id)
             return
 
     @sql.handle_conflicts(conflict_type='nonlocal_user')
@@ -201,7 +202,6 @@ class ShadowUsers(base.ShadowUsersDriverBase):
             q = session.query(model.UserGroupMembership)
             q = q.filter_by(user_id=user_id)
             q.delete(False)
-
             session.delete(ref)
 
     def get_user(self, user_id):

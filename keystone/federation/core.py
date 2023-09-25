@@ -186,7 +186,7 @@ class Manager(manager.Manager):
                 PROVIDERS.identity_api, shadow_user['idp_id'],
                 shadow_user['protocol_id'], shadow_user['unique_id'],
                 shadow_user['display_name'],
-                shadow_user.get('extra', {}).get('email'))
+                shadow_user.get('extra', {}).get('email'), None)
 
     def update_protocol(self, idp_id, protocol_id, protocol):
         self._validate_mapping_exists(protocol['mapping_id'])
