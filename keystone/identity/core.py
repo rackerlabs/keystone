@@ -1484,8 +1484,9 @@ class Manager(manager.Manager):
 
     @MEMOIZE
     def _shadow_federated_user(self, idp_id, protocol_id, unique_id,
-                               display_name, email=None):
+                               display_name, email=None, domain_name=None):
         user_dict = {}
+        domain_id = PROVIDERS.resource_api.get_domain_by_name(domain_name)["id"] if domain_name else idp['domain_id']
         try:
             PROVIDERS.shadow_users_api.update_federated_user_display_name(
                 idp_id, protocol_id, unique_id, display_name)
@@ -1505,14 +1506,14 @@ class Manager(manager.Manager):
             }
             user_dict = (
                 PROVIDERS.shadow_users_api.create_federated_user(
-                    idp['domain_id'], federated_dict, email=email
+                    domain_id, federated_dict, email=email
                 )
             )
         PROVIDERS.shadow_users_api.set_last_active_at(user_dict['id'])
         return user_dict
 
     def shadow_federated_user(self, idp_id, protocol_id, unique_id,
-                              display_name, email=None, group_ids=None):
+                              display_name, email=None, group_ids=None, domain_name=None):
         """Map a federated user to a user.
 
         :param idp_id: identity provider id
@@ -1525,7 +1526,7 @@ class Manager(manager.Manager):
         :returns: dictionary of the mapped User entity
         """
         user_dict = self._shadow_federated_user(
-            idp_id, protocol_id, unique_id, display_name, email)
+            idp_id, protocol_id, unique_id, display_name, email, domain_name)
         # Note(knikolla): The shadowing operation can be cached,
         # however we need to update the expiring group memberships.
         if group_ids:
