@@ -1216,10 +1216,11 @@ class Manager(manager.Manager):
         self.get_user_by_name.invalidate(self, user_old['name'],
                                          user_old['domain_id'])
         for fed_user in fed_users:
+            LOG.debug('fed user in cache invalidate: %s', fed_user)
             self._shadow_federated_user.invalidate(
                 self, fed_user['idp_id'], fed_user['protocol_id'],
                 fed_user['unique_id'], fed_user['display_name'],
-                user_old.get('extra', {}).get('email'))
+                user_old.get('extra', {}).get('email'), fed_user['domain_id'])
 
         PROVIDERS.credential_api.delete_credentials_for_user(user_id)
         PROVIDERS.id_mapping_api.delete_id_mapping(user_id)
@@ -1484,19 +1485,27 @@ class Manager(manager.Manager):
 
     @MEMOIZE
     def _shadow_federated_user(self, idp_id, protocol_id, unique_id,
-                               display_name, email=None):
+                               display_name, email=None, domain_name=None):
         user_dict = {}
+        res_api = PROVIDERS.resource_api
+        fed_api = PROVIDERS.federation_api
+        if domain_name:
+            domain_id = res_api.get_domain_by_name(domain_name)['id']
+        else:
+            domain_id = fed_api.get_idp(idp_id)['domain_id']
+
         try:
             PROVIDERS.shadow_users_api.update_federated_user_display_name(
                 idp_id, protocol_id, unique_id, display_name)
+            LOG.debug('Update_federated_user_display_name: %s, %s, %s', protocol_id, display_name, unique_id)
             user_dict = PROVIDERS.shadow_users_api.get_federated_user(
                 idp_id, protocol_id, unique_id)
+            LOG.debug('UserNotFound: %s', user_dict)
             if email:
                 user_ref = {"email": email}
                 self.update_user(user_dict['id'], user_ref)
                 user_dict.update({"email": email})
         except exception.UserNotFound:
-            idp = PROVIDERS.federation_api.get_idp(idp_id)
             federated_dict = {
                 'idp_id': idp_id,
                 'protocol_id': protocol_id,
@@ -1505,14 +1514,16 @@ class Manager(manager.Manager):
             }
             user_dict = (
                 PROVIDERS.shadow_users_api.create_federated_user(
-                    idp['domain_id'], federated_dict, email=email
+                    domain_id, federated_dict, email=email
                 )
             )
+            LOG.debug('New user: %s', user_dict)
         PROVIDERS.shadow_users_api.set_last_active_at(user_dict['id'])
         return user_dict
 
     def shadow_federated_user(self, idp_id, protocol_id, unique_id,
-                              display_name, email=None, group_ids=None):
+                              display_name, email=None, group_ids=None,
+                              domain_name=None):
         """Map a federated user to a user.
 
         :param idp_id: identity provider id
@@ -1525,13 +1536,14 @@ class Manager(manager.Manager):
         :returns: dictionary of the mapped User entity
         """
         user_dict = self._shadow_federated_user(
-            idp_id, protocol_id, unique_id, display_name, email)
+            idp_id, protocol_id, unique_id, display_name, email=email, domain_name=domain_name)
         # Note(knikolla): The shadowing operation can be cached,
         # however we need to update the expiring group memberships.
+        LOG.debug('User_dict: %s, group_ids: %s', user_dict, group_ids)
         if group_ids:
             for group_id in group_ids:
                 PROVIDERS.shadow_users_api.add_user_to_group_expires(
-                    user_dict['id'], group_id)
+                    str(user_dict['id']), group_id)
         return user_dict
 
 
