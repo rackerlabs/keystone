@@ -130,6 +130,7 @@ class ShadowUsers(base.ShadowUsersDriverBase):
         # `to_dict` call.
         with sql.session_for_read():
             user_ref = self._get_federated_user(idp_id, protocol_id, unique_id)
+            LOG.debug('GET_FEDERATED_USER: %s', user_ref.to_dict())
             return identity_base.filter_user(user_ref.to_dict())
 
     def _get_federated_user(self, idp_id, protocol_id, unique_id):
@@ -201,6 +202,7 @@ class ShadowUsers(base.ShadowUsersDriverBase):
             q = session.query(model.UserGroupMembership)
             q = q.filter_by(user_id=user_id)
             q.delete(False)
+            LOG.debug('REF: %s', ref)
 
             session.delete(ref)
 
