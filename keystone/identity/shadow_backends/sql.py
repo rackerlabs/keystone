@@ -16,6 +16,7 @@ import sqlalchemy
 
 from oslo_config import cfg
 from oslo_db import api as oslo_db_api
+from oslo_log import log
 
 from keystone.common import provider_api
 from keystone.common import sql
@@ -27,6 +28,7 @@ from keystone.identity.shadow_backends import base
 
 CONF = cfg.CONF
 PROVIDERS = provider_api.ProviderAPIs
+LOG = log.getLogger(__name__)
 
 
 class ShadowUsers(base.ShadowUsersDriverBase):
@@ -52,6 +54,7 @@ class ShadowUsers(base.ShadowUsersDriverBase):
             user_ref.created_at = datetime.datetime.utcnow()
             user_ref.federated_users.append(federated_ref)
             session.add(user_ref)
+            LOG.debug('User: %s, user_ref: %s, local_entity: %s', user, user_ref, local_entity)
             return identity_base.filter_user(user_ref.to_dict())
 
     @sql.handle_conflicts(conflict_type='federated_user')
@@ -151,6 +154,7 @@ class ShadowUsers(base.ShadowUsersDriverBase):
             try:
                 user_ref = query.one()
             except sql.NotFound:
+                LOG.debug('User not found in _get_federated_user, unique_id -> %s', unique_id)
                 raise exception.UserNotFound(user_id=unique_id)
             return user_ref
 
@@ -172,6 +176,7 @@ class ShadowUsers(base.ShadowUsersDriverBase):
             query = query.filter(model.FederatedUser.display_name !=
                                  display_name)
             query.update({'display_name': display_name})
+            LOG.debug('update_fed_user_disp_name: %s', unique_id)
             return
 
     @sql.handle_conflicts(conflict_type='nonlocal_user')
@@ -201,7 +206,7 @@ class ShadowUsers(base.ShadowUsersDriverBase):
             q = session.query(model.UserGroupMembership)
             q = q.filter_by(user_id=user_id)
             q.delete(False)
-
+            LOG.debug('Deleted user: %s', user_id)
             session.delete(ref)
 
     def get_user(self, user_id):
@@ -228,6 +233,7 @@ class ShadowUsers(base.ShadowUsersDriverBase):
                 query = session.query(model.FederatedUser)
                 query = query.filter_by(user_id=user_id)
                 user = query.first()
+                LOG.debug('Query: %s, user: %s, user_id: %s', query, user, user_id)
                 if not user:
                     # Note(knikolla): This shouldn't really ever happen, since
                     # this requires the user to already be logged in.
