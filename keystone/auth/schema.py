@@ -72,6 +72,14 @@ token_issue = {
                     'properties': {
                         'name': {'type': 'string', },
                         'id': {'type': 'string', },
+                        'parent': {
+                            'type': 'object',
+                            'properties': {
+                                'id': {'type': 'string', },
+                                'name': {'type': 'string', },
+                            },
+                        },
+                        'description': {'type': 'string', },
                         'domain': {
                             'type': 'object',
                             'properties': {
