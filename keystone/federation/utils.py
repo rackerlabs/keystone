@@ -98,6 +98,14 @@ MAPPING_SCHEMA = {
                                         "additionalProperties": False,
                                         "properties": {
                                             "name": {"type": "string"},
+                                            "parent": {
+                                                "type": "object",
+                                                "oneOf": [
+                                                    {"$ref": "#/definitions/project_by_id"},
+                                                    {"$ref": "#/definitions/project_by_name"}
+                                                ]
+                                            },
+                                            "description": {"type": "string"},
                                             "roles": ROLE_PROPERTIES
                                         }
                                     }
@@ -236,6 +244,22 @@ MAPPING_SCHEMA = {
             },
             "additionalProperties": False,
             "required": ["name", "domain"]
+        },
+        "project_by_id": {
+            "type": "object",
+            "properties": {
+                "id": {"type": "string"}
+            },
+            "additionalProperties": False,
+            "required": ["id"]
+        },
+        "project_by_name": {
+            "type": "object",
+            "properties": {
+                "name": {"type": "string"},
+            },
+            "additionalProperties": False,
+            "required": ["name"]
         }
     }
 }
@@ -705,7 +729,7 @@ class RuleProcessor(object):
                 except (ValueError, SyntaxError):
                     group_ids.update([identity_value['group_ids']])
             if 'projects' in identity_value:
-                projects = identity_value['projects']
+                projects = projects + identity_value['projects']
 
         normalize_user(user)
 

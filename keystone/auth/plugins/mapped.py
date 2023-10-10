@@ -144,6 +144,17 @@ def handle_unscoped_token(auth_payload, resource_api, federation_api,
     def create_projects_from_mapping(shadow_projects, idp_domain_id,
                                      existing_roles, user, assignment_api,
                                      resource_api):
+        user_id = user['id']
+        if user_id:
+            try:
+                user_projects = assignment_api.list_projects_for_user(
+                    user_id
+                )
+            except exception.UserNotFound:
+                # For federated users this may occur
+                pass
+        project_ids_to_remove = set([i['id'] for i in user_projects])
+
         for shadow_project in shadow_projects:
             try:
                 # Check and see if the project already exists and if it
@@ -163,18 +174,70 @@ def handle_unscoped_token(auth_payload, resource_api, federation_api,
                     'name': shadow_project['name'],
                     'domain_id': idp_domain_id
                 }
+                if 'parent' in shadow_project:
+                    try:
+                        LOG.info(
+                            'Project with parent specified is going to be created'
+                        )
+                        if 'name' in shadow_project['parent']:
+                            parent_project = resource_api.get_project_by_name(
+                                shadow_project['parent']['name'], idp_domain_id
+                            )
+                            parent_project_id = parent_project['id']
+                        elif 'id' in shadow_project['parent']:
+                            parent_project_id = shadow_project['parent']['id']
+                    except exeption.ProjectNotFound:
+                        LOG.error(
+                            'The parent project in mapping does not match '
+                            'any project in the provided domain.'
+                        )
+                    project_ref['parent_id'] = parent_project_id
+                if 'description' in shadow_project:
+                    project_ref['description'] = shadow_project['description']
                 project = resource_api.create_project(
                     project_ref['id'],
                     project_ref
                 )
+            else:
+                # Exception did not occur, project already exists
+                # and needs to be removed from set
+                project_ids_to_remove -= {project['id']}
 
             shadow_roles = shadow_project['roles']
+            current_roles=assignment_api.list_role_assignments(
+                         user_id=user['id'],
+                         project_id=project['id'],
+                         include_names=True
+                        )
+            roles_to_remove = set(i['role_name'] for i in current_roles) - \
+                              set(i['name'] for i in shadow_roles)
+            for role_to_remove in roles_to_remove:
+                assignment_api.delete_grant(
+                   existing_roles[role_to_remove]['id'],
+                   user_id=user['id'],
+                   project_id=project['id']
+                )
             for shadow_role in shadow_roles:
                 assignment_api.create_grant(
                     existing_roles[shadow_role['name']]['id'],
                     user_id=user['id'],
                     project_id=project['id']
                 )
+
+        for to_remove in list(project_ids_to_remove):
+            LOG.info('Deleting all roles from proj: %s',to_remove )
+            roles = assignment_api.list_role_assignments(
+                           user_id=user['id'],
+                           project_id=to_remove,
+                           include_names=True
+                           )
+            for role in roles:
+                LOG.info('Role to delete: %s',role['role_name'])
+                assignment_api.delete_grant(
+                    existing_roles[role['role_name']]['id'],
+                    user_id=user['id'],
+                    project_id=to_remove
+                    )
 
     def is_ephemeral_user(mapped_properties):
         return mapped_properties['user']['type'] == utils.UserType.EPHEMERAL
