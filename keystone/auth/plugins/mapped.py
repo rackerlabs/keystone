@@ -108,95 +108,6 @@ def handle_scoped_token(token, federation_api, identity_api):
 
 def handle_unscoped_token(auth_payload, resource_api, federation_api,
                           identity_api, assignment_api, role_api):
-
-    def validate_shadow_mapping(shadow_projects, existing_roles, idp_domain_id,
-                                idp_id):
-        # Validate that the roles in the shadow mapping actually exist. If
-        # they don't we should bail early before creating anything.
-        for shadow_project in shadow_projects:
-            for shadow_role in shadow_project['roles']:
-                # The role in the project mapping must exist in order for it to
-                # be useful.
-                if shadow_role['name'] not in existing_roles:
-                    LOG.error(
-                        'Role %s was specified in the mapping but does '
-                        'not exist. All roles specified in a mapping must '
-                        'exist before assignment.',
-                        shadow_role['name']
-                    )
-                    # NOTE(lbragstad): The RoleNotFound exception usually
-                    # expects a role_id as the parameter, but in this case we
-                    # only have a name so we'll pass that instead.
-                    raise exception.RoleNotFound(shadow_role['name'])
-                role = existing_roles[shadow_role['name']]
-                if (role['domain_id'] is not None and
-                        role['domain_id'] != idp_domain_id):
-                    LOG.error(
-                        'Role %(role)s is a domain-specific role and '
-                        'cannot be assigned within %(domain)s.',
-                        {'role': shadow_role['name'], 'domain': idp_domain_id}
-                    )
-                    raise exception.DomainSpecificRoleNotWithinIdPDomain(
-                        role_name=shadow_role['name'],
-                        identity_provider=idp_id
-                    )
-
-    def create_projects_from_mapping(shadow_projects, idp_domain_id,
-                                     existing_roles, user, assignment_api,
-                                     resource_api):
-        for shadow_project in shadow_projects:
-            try:
-                # Check and see if the project already exists and if it
-                # does not, try to create it.
-                project = resource_api.get_project_by_name(
-                    shadow_project['name'], idp_domain_id
-                )
-            except exception.ProjectNotFound:
-                LOG.info(
-                    'Project %(project_name)s does not exist. It will be '
-                    'automatically provisioning for user %(user_id)s.',
-                    {'project_name': shadow_project['name'],
-                     'user_id': user['id']}
-                )
-                project_ref = {
-                    'id': uuid.uuid4().hex,
-                    'name': shadow_project['name'],
-                    'domain_id': idp_domain_id
-                }
-                project = resource_api.create_project(
-                    project_ref['id'],
-                    project_ref
-                )
-
-            shadow_roles = shadow_project['roles']
-            for shadow_role in shadow_roles:
-                assignment_api.create_grant(
-                    existing_roles[shadow_role['name']]['id'],
-                    user_id=user['id'],
-                    project_id=project['id']
-                )
-
-    def is_ephemeral_user(mapped_properties):
-        return mapped_properties['user']['type'] == utils.UserType.EPHEMERAL
-
-    def build_ephemeral_user_context(user, mapped_properties,
-                                     identity_provider, protocol):
-        resp = {}
-        resp['user_id'] = user['id']
-        resp['group_ids'] = mapped_properties['group_ids']
-        resp[federation_constants.IDENTITY_PROVIDER] = identity_provider
-        resp[federation_constants.PROTOCOL] = protocol
-
-        return resp
-
-    def build_local_user_context(mapped_properties):
-        resp = {}
-        user_info = auth_plugins.UserAuthInfo.create(mapped_properties,
-                                                     METHOD_NAME)
-        resp['user_id'] = user_info.user_id
-
-        return resp
-
     assertion = extract_assertion_data()
     try:
         identity_provider = auth_payload['identity_provider']
@@ -327,6 +238,10 @@ def apply_mapping_filter(identity_provider, protocol, assertion,
     return mapped_properties, mapping_id
 
 
+def is_ephemeral_user(mapped_properties):
+    return mapped_properties['user']['type'] == utils.UserType.EPHEMERAL
+
+
 def get_user_unique_id_and_display_name(mapped_properties):
     """Setup federated username.
 
@@ -373,3 +288,156 @@ def get_user_unique_id_and_display_name(mapped_properties):
         user['name'] = user_name
     user['id'] = parse.quote(user_id)
     return (user['id'], user['name'])
+
+
+def validate_shadow_mapping(shadow_projects, existing_roles, idp_domain_id,
+                            idp_id):
+    # Validate that the roles in the shadow mapping actually exist. If
+    # they don't we should bail early before creating anything.
+    for shadow_project in shadow_projects:
+        for shadow_role in shadow_project['roles']:
+            # The role in the project mapping must exist in order for it to
+            # be useful.
+            if shadow_role['name'] not in existing_roles:
+                LOG.error(
+                    'Role %s was specified in the mapping but does '
+                    'not exist. All roles specified in a mapping must '
+                    'exist before assignment.',
+                    shadow_role['name']
+                )
+                # NOTE(lbragstad): The RoleNotFound exception usually
+                # expects a role_id as the parameter, but in this case we
+                # only have a name so we'll pass that instead.
+                raise exception.RoleNotFound(shadow_role['name'])
+            role = existing_roles[shadow_role['name']]
+            if (role['domain_id'] is not None and
+                    role['domain_id'] != idp_domain_id):
+                LOG.error(
+                    'Role %(role)s is a domain-specific role and '
+                    'cannot be assigned within %(domain)s.',
+                    {'role': shadow_role['name'], 'domain': idp_domain_id}
+                )
+                raise exception.DomainSpecificRoleNotWithinIdPDomain(
+                    role_name=shadow_role['name'],
+                    identity_provider=idp_id
+                )
+
+
+def create_projects_from_mapping(shadow_projects, idp_domain_id,
+                                 existing_roles, user, assignment_api,
+                                 resource_api):
+    user_id = user['id']
+    if user_id:
+        try:
+            user_projects = assignment_api.list_projects_for_user(
+                user_id
+            )
+        except exception.UserNotFound:
+            # For federated users this may occur
+            pass
+    project_ids_to_remove = set([i['id'] for i in user_projects])
+
+    for shadow_project in shadow_projects:
+        try:
+            # Check and see if the project already exists and if it
+            # does not, try to create it.
+            project = resource_api.get_project_by_name(
+                shadow_project['name'], idp_domain_id
+            )
+        except exception.ProjectNotFound:
+            LOG.info(
+                'Project %(project_name)s does not exist. It will be '
+                'automatically provisioning for user %(user_id)s.',
+                {'project_name': shadow_project['name'],
+                 'user_id': user['id']}
+            )
+            project_ref = {
+                'id': uuid.uuid4().hex,
+                'name': shadow_project['name'],
+                'domain_id': idp_domain_id
+            }
+            if 'parent' in shadow_project:
+                try:
+                    LOG.info(
+                        'Project with a parent specified '
+                        'is going to be created.'
+                    )
+                    if 'name' in shadow_project['parent']:
+                        parent_project = resource_api.get_project_by_name(
+                            shadow_project['parent']['name'], idp_domain_id
+                        )
+                        parent_project_id = parent_project['id']
+                    elif 'id' in shadow_project['parent']:
+                        parent_project_id = shadow_project['parent']['id']
+                except exception.ProjectNotFound:
+                    LOG.error(
+                        'The parent project in mapping does not match '
+                        'any project in the provided domain.'
+                    )
+                project_ref['parent_id'] = parent_project_id
+            if 'description' in shadow_project:
+                project_ref['description'] = shadow_project['description']
+            project = resource_api.create_project(
+                project_ref['id'],
+                project_ref
+            )
+        else:
+            # Exception did not occur, project already exists
+            # and needs to be removed from set
+            project_ids_to_remove -= {project['id']}
+
+        shadow_roles = shadow_project['roles']
+        current_roles = assignment_api.list_role_assignments(
+            user_id=user['id'],
+            project_id=project['id'],
+            include_names=True
+        )
+        roles_to_remove = (set(i['role_name'] for i in current_roles) -
+                           set(i['name'] for i in shadow_roles))
+        for role_to_remove in roles_to_remove:
+            assignment_api.delete_grant(
+                existing_roles[role_to_remove]['id'],
+                user_id=user['id'],
+                project_id=project['id']
+            )
+        for shadow_role in shadow_roles:
+            assignment_api.create_grant(
+                existing_roles[shadow_role['name']]['id'],
+                user_id=user['id'],
+                project_id=project['id']
+            )
+
+    for to_remove in list(project_ids_to_remove):
+        LOG.info('Deleting all roles from proj: %s', to_remove)
+        roles = assignment_api.list_role_assignments(
+            user_id=user['id'],
+            project_id=to_remove,
+            include_names=True
+        )
+        for role in roles:
+            LOG.info('Role to delete: %s', role['role_name'])
+            assignment_api.delete_grant(
+                existing_roles[role['role_name']]['id'],
+                user_id=user['id'],
+                project_id=to_remove
+            )
+
+
+def build_ephemeral_user_context(user, mapped_properties,
+                                 identity_provider, protocol):
+    resp = {}
+    resp['user_id'] = user['id']
+    resp['group_ids'] = mapped_properties['group_ids']
+    resp[federation_constants.IDENTITY_PROVIDER] = identity_provider
+    resp[federation_constants.PROTOCOL] = protocol
+
+    return resp
+
+
+def build_local_user_context(mapped_properties):
+    resp = {}
+    user_info = auth_plugins.UserAuthInfo.create(mapped_properties,
+                                                 METHOD_NAME)
+    resp['user_id'] = user_info.user_id
+
+    return resp
