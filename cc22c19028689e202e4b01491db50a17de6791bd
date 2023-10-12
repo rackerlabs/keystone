@@ -16,6 +16,24 @@
       "message": "This comment still confuses me, singelton is used in another context and I had trouble to understand what it meant until I re-evaluated what the old comment said and what the original change was.\n\nMaybe change this to something like:\n\nWe expect a list here, however literal_eval will successfully parse and return a single value, so we raise a ValueError in that case.",
       "revId": "cc22c19028689e202e4b01491db50a17de6791bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68fff8e5_7a27013e",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-10-12T14:18:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "92e01955_4a8e7e8d",
+      "revId": "cc22c19028689e202e4b01491db50a17de6791bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
