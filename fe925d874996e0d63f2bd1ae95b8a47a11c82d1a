@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad910f87_54d4d0aa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31542
+      },
+      "writtenOn": "2023-10-16T11:00:48Z",
+      "side": 1,
+      "message": "Added another revision. The previous one could result in a roles list which included duplicates. This caused an integrity check failure if application credentials are used to create new application credentials, as it tries to insert duplicate roles into the database.",
+      "revId": "fe925d874996e0d63f2bd1ae95b8a47a11c82d1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
