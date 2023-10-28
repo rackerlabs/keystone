@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1546ec75_90264ea4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2023-10-28T06:09:20Z",
+      "side": 1,
+      "message": "@clark when i started adding logging to pbr it was not executing when i ran\npip install -e --verbose /opt/stack/keystone.\n\ni did notice some pbr messages but none form LocalinstallScripts.run\nhttps://github.com/openstack/pbr/blob/master/pbr/packaging.py#L474\n\nhttps://github.com/pypa/pip/issues/8368 deprecated calling setup.py install when building a wheel failed for source distributions without pyproject.toml\n\nthis fallback was deprecated in pip 20.2\nhttps://pip.pypa.io/en/stable/news/#v20-2\nand removed in 23.1\nhttps://pip.pypa.io/en/stable/news/#v23-1\n\nthat explains why clamping to pip\u003d\u003d21.1.3 worked in devstack\n\nthe correct fix is just to add the minimal pyproject.toml to force pbr to actully be used as the build systems so we coud basically copy this change to every repo.\n\nthat will future proof use to addtional changes like this.",
+      "revId": "ea3de49e8303faa96939487475aa9ff2c02de1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
