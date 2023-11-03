@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "237c937d_ab647a4c",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 27665
+      },
+      "writtenOn": "2023-11-03T09:52:32Z",
+      "side": 1,
+      "message": "Note that for the RBAC `target` I decided to mimic the nested structure that list_groups uses [1] adopted to domains. In contrast, list_projects does it differently [2] (flat structure). This only influences the way that the policy rule check has to be implemented. In this case it is \"...:%(target.domain.id)s\" as implemented in the default rule in \"keystone/common/policies/domain.py\" of this patchset.\n\n[1] https://opendev.org/openstack/keystone/src/commit/7ee35794e94ea3d5519ccbb0ba72260c67c66ca8/keystone/api/groups.py#L80\n[2] https://opendev.org/openstack/keystone/src/commit/7ee35794e94ea3d5519ccbb0ba72260c67c66ca8/keystone/api/projects.py#L119",
+      "revId": "dc2b0d6bf7b454ecc80b8366acbe111dc6f50621",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
