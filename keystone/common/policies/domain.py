@@ -54,6 +54,10 @@ SYSTEM_USER_OR_DOMAIN_USER_OR_PROJECT_USER = (
     'token.domain.id:%(target.domain.id)s or '
     'token.project.domain.id:%(target.domain.id)s'
 )
+SYSTEM_READER_OR_DOMAIN_READER = (
+    '(role:reader and system_scope:all) or '
+    '(role:reader and domain_id:%(target.domain.id)s)'
+)
 
 
 domain_policies = [
@@ -69,8 +73,8 @@ domain_policies = [
         deprecated_rule=deprecated_get_domain),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_domains',
-        check_str=base.SYSTEM_READER,
-        scope_types=['system'],
+        check_str=SYSTEM_READER_OR_DOMAIN_READER,
+        scope_types=['system', 'domain'],
         description='List domains.',
         operations=[{'path': '/v3/domains',
                      'method': 'GET'}],
