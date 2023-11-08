@@ -16,7 +16,6 @@ mysql-client [platform:dpkg]
 mysql-server [platform:dpkg]
 postgresql-client [platform:dpkg]
 postgresql-server-dev-all [platform:dpkg]
-python-all-dev [platform:dpkg]
 python3-all-dev [platform:dpkg]
 
 cyrus-sasl-devel [platform:rpm]
