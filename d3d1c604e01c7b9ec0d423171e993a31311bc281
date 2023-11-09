@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0034713_34d610e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27665
+      },
+      "writtenOn": "2023-11-09T16:56:26Z",
+      "side": 1,
+      "message": "I made the Keystone protection tests in Zuul non-voting as per recommendation on IRC [1].\n\nThe fix for keystone-tempest-tests is here: https://review.opendev.org/c/openstack/keystone-tempest-plugin/+/900545\n\nAfter that, a follow-up patchset will need to make them voting again.\n\n[1] https://meetings.opendev.org/irclogs/%23openstack-keystone/%23openstack-keystone.2023-11-08.log.html#t2023-11-08T15:44:46",
+      "revId": "d3d1c604e01c7b9ec0d423171e993a31311bc281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
