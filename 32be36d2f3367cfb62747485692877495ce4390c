@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34359d3c_5af0e4d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2023-11-15T12:14:03Z",
+      "side": 1,
+      "message": "setting -1 until we add supprot for wsgi_script in editable mode whne pyproject.toml is used.",
+      "revId": "32be36d2f3367cfb62747485692877495ce4390c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
