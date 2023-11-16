@@ -16,6 +16,23 @@
       "message": "Added another revision. The previous one could result in a roles list which included duplicates. This caused an integrity check failure if application credentials are used to create new application credentials, as it tries to insert duplicate roles into the database.",
       "revId": "fe925d874996e0d63f2bd1ae95b8a47a11c82d1a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "674cb12c_b7465b9a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 782
+      },
+      "writtenOn": "2023-11-16T15:07:24Z",
+      "side": 1,
+      "message": "FWIW, to me, this feels like a sensible thing to do and then backport.\n\nThis means operators can make _member_ imply member, when needed, and when you use just \"member\" you get the \"reader\" role as expected.\n\nQuite how we square this with API microversions is a tricker question... but this does feel like a valid bug fix given the current mess upgrades are hitting.\n\nI am curious what other people are thinking about this approach?",
+      "revId": "fe925d874996e0d63f2bd1ae95b8a47a11c82d1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
