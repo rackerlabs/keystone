@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c7209ec_34bf89fe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 25
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2023-11-17T14:54:10Z",
+      "side": 1,
+      "message": "There is a real issue with cache invalidation in the added code.\n\nOtherwise I would be happy if we can get it in.\nI am a bit missing here doc changes or any reference to the spec/blueprint/decision/etc",
+      "revId": "b65f8527e6286515858ec2a1615a7789f37a1fcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a859efb_6006df1e",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 1219,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2023-11-17T14:54:10Z",
+      "side": 1,
+      "message": "Here is cache invalidation of the shadow user happening. And since a new method parameter added cache is being invalidated for the wrong entry (with missing new parameter). So basically from the protocol pov the shadow_federated_user function is invoked with:\nORG_IDP:saml2:tim%40example.com:tbo:None:None\nand the cache is invalidated with:\nORG_IDP:saml2:tim%40example.com:tbo:None\n\nAdding \",None\" to the invalidate invocation helps fixing the test, but is it the right way if domain is coming as parameter? I guess you need to find exactly the parameter the shadow was invoked with initially.\n\nThe same is happening in federation/core.py so don\u0027t forget to fix it there as well",
+      "revId": "b65f8527e6286515858ec2a1615a7789f37a1fcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c74f158_4a226354",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 1487,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2023-11-17T14:54:10Z",
+      "side": 1,
+      "message": "This is the beginning of the failure reason (new parameter added)",
+      "revId": "b65f8527e6286515858ec2a1615a7789f37a1fcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
