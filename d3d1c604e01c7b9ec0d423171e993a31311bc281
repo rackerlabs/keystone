@@ -33,6 +33,23 @@
       "message": "recheck - updated gates",
       "revId": "d3d1c604e01c7b9ec0d423171e993a31311bc281",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a320968c_f730bd1a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2023-11-26T03:10:48Z",
+      "side": 1,
+      "message": "This looks like a change to the API behavior and breaking of the API stability for the users, who do not enforce scope.",
+      "revId": "d3d1c604e01c7b9ec0d423171e993a31311bc281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
