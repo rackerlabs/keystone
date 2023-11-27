@@ -33,6 +33,23 @@
       "message": "Looks good to me",
       "revId": "1544c7fc0aca9638c7cd31742e778d9327d2a62c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10eca8ad_39d8b3ed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8064
+      },
+      "writtenOn": "2023-11-27T00:35:38Z",
+      "side": 1,
+      "message": "Can this be backported, as it is a security issue?",
+      "revId": "1544c7fc0aca9638c7cd31742e778d9327d2a62c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ],
   "submitRequirementResults": [
