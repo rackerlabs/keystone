@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f9076f03_223b387f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 1219,
+      "author": {
+        "id": 36300
+      },
+      "writtenOn": "2023-11-28T14:18:47Z",
+      "side": 1,
+      "message": "After looking around I\u0027ve been thinking to store the ´domain_id´ value into the shadow users. This made me modify the federated user table in the database. That will create the necesity for a migration script ? Should I continue with this approach ?",
+      "parentUuid": "5a859efb_6006df1e",
+      "revId": "b65f8527e6286515858ec2a1615a7789f37a1fcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6c74f158_4a226354",
         "filename": "keystone/identity/core.py",
         "patchSetId": 25
