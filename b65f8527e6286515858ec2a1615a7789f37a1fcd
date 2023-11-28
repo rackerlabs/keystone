@@ -68,6 +68,24 @@
       "message": "This is the beginning of the failure reason (new parameter added)",
       "revId": "b65f8527e6286515858ec2a1615a7789f37a1fcd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73648764_cb8b6470",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 1487,
+      "author": {
+        "id": 36300
+      },
+      "writtenOn": "2023-11-28T14:19:11Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "6c74f158_4a226354",
+      "revId": "b65f8527e6286515858ec2a1615a7789f37a1fcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
