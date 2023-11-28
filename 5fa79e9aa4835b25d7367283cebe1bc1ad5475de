@@ -33,6 +33,23 @@
       "message": "Ugh. seems something triggered unit test failure...",
       "revId": "5fa79e9aa4835b25d7367283cebe1bc1ad5475de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62c8eaab_9f833717",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2023-11-28T18:59:30Z",
+      "side": 1,
+      "message": "recheck I can\u0027t reproduce the failure in my local env. Is it consistent ?",
+      "revId": "5fa79e9aa4835b25d7367283cebe1bc1ad5475de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
