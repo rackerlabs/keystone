@@ -938,6 +938,7 @@ class Manager(manager.Manager):
 
         return assignments
 
+    @MEMOIZE_COMPUTED_ASSIGNMENTS
     def list_role_assignments(self, role_id=None, user_id=None, group_id=None,
                               system=None, domain_id=None, project_id=None,
                               include_subtree=False, inherited=None,
@@ -1163,6 +1164,7 @@ class Manager(manager.Manager):
         target_id = self._SYSTEM_SCOPE_TOKEN
         inherited = False
         self.driver.delete_system_grant(role_id, user_id, target_id, inherited)
+        COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     def check_system_grant_for_group(self, group_id, role_id):
         """Check if a group has a specific role on the system.
@@ -1237,6 +1239,7 @@ class Manager(manager.Manager):
         self.driver.delete_system_grant(
             role_id, group_id, target_id, inherited
         )
+        COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     def list_all_system_grants(self):
         """Return a list of all system grants."""
