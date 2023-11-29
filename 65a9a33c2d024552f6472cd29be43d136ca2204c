@@ -16,6 +16,23 @@
       "message": "Please create unit tests for the change",
       "revId": "65a9a33c2d024552f6472cd29be43d136ca2204c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13cfb9bd_57d2e76b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2023-11-29T09:36:54Z",
+      "side": 1,
+      "message": "+1 if unit tests are implemented, this is something that as an operator is expected.",
+      "revId": "65a9a33c2d024552f6472cd29be43d136ca2204c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
