@@ -16,6 +16,24 @@
       "message": "recheck",
       "revId": "82d04d6171f8614631b11393a1c6aa8eaa21aa15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b530890d_2dcdf5e8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32553
+      },
+      "writtenOn": "2023-12-01T08:41:22Z",
+      "side": 1,
+      "message": "Hi Grzegorz!\n\nI fear the currently used approach in this review won\u0027t work as-is.\n\nI wanted to address this in lib ldappool directly, where it makes more sense from an architectural point of view, but other work got in the way.\n\nthis was also discussed with the keystone team - see previous comments here.\n\nI would be glad if anybody would take over this effort to finally fix this issue from people more familiar with keystone or the ldappool library, as I\u0027m not sure I\u0027ll spend much time on this in the near future.\n\nSome of the error handling seems to be also handled better upstream in the underlying python library python-ldap, see this long open PR for more information:\n\nhttps://github.com/python-ldap/python-ldap/pull/267\n\nhüpe that helps",
+      "parentUuid": "91af94de_0f5c696b",
+      "revId": "82d04d6171f8614631b11393a1c6aa8eaa21aa15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
