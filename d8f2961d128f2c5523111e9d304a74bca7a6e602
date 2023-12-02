@@ -16,6 +16,23 @@
       "message": "all protection test run successfully https://storage.gra.cloud.ovh.net/v1/AUTH_dcaab5e32b234d56b626f72581e3644c/zuul_opendev_logs_9bf/886434/1/check/keystone-tox-protection/9bf520f/testr_results.html",
       "revId": "d8f2961d128f2c5523111e9d304a74bca7a6e602",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d57cef9d_60d08558",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2023-12-02T16:08:29Z",
+      "side": 1,
+      "message": "recheck CI has been fixed.",
+      "revId": "d8f2961d128f2c5523111e9d304a74bca7a6e602",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
