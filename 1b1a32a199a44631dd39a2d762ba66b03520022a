@@ -136,6 +136,23 @@
       "message": "recheck",
       "revId": "1b1a32a199a44631dd39a2d762ba66b03520022a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73188892_daf370da",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2023-12-04T09:56:22Z",
+      "side": 1,
+      "message": "recheck py311 retry limit",
+      "revId": "1b1a32a199a44631dd39a2d762ba66b03520022a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
