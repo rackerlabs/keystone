@@ -66,6 +66,18 @@ SYSTEM_ADMIN_OR_DOMAIN_ADMIN = (
     '(' + DOMAIN_MATCHES_ROLE + ')'
 )
 
+ADMIN_OR_DOMAIN_READER = (
+    '(' + base.RULE_ADMIN_REQUIRED + ') or '
+    '(' + GRANTS_DOMAIN_READER + ') and '
+    '(' + DOMAIN_MATCHES_ROLE + ')'
+)
+
+ADMIN_OR_DOMAIN_ADMIN = (
+    '(' + base.RULE_ADMIN_REQUIRED + ') or '
+    '(' + GRANTS_DOMAIN_ADMIN + ') and '
+    '(' + DOMAIN_MATCHES_ROLE + ')'
+)
+
 DEPRECATED_REASON = (
     "The assignment API is now aware of system scope and default roles."
 )
@@ -183,8 +195,8 @@ list_grants_operations = (
 grant_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'check_grant',
-        check_str=SYSTEM_READER_OR_DOMAIN_READER,
-        scope_types=['system', 'domain'],
+        check_str=ADMIN_OR_DOMAIN_READER,
+        scope_types=['system', 'domain', 'project'],
         description=('Check a role grant between a target and an actor. A '
                      'target can be either a domain or a project. An actor '
                      'can be either a user or a group. These terms also apply '
@@ -195,8 +207,8 @@ grant_policies = [
         deprecated_rule=deprecated_check_grant),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_grants',
-        check_str=SYSTEM_READER_OR_DOMAIN_READER_LIST,
-        scope_types=['system', 'domain'],
+        check_str=ADMIN_OR_DOMAIN_READER,
+        scope_types=['system', 'domain', 'project'],
         description=('List roles granted to an actor on a target. A target '
                      'can be either a domain or a project. An actor can be '
                      'either a user or a group. For the OS-INHERIT APIs, it '
@@ -207,8 +219,8 @@ grant_policies = [
         deprecated_rule=deprecated_list_grants),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_grant',
-        check_str=SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
-        scope_types=['system', 'domain'],
+        check_str=ADMIN_OR_DOMAIN_ADMIN,
+        scope_types=['system', 'domain', 'project'],
         description=('Create a role grant between a target and an actor. A '
                      'target can be either a domain or a project. An actor '
                      'can be either a user or a group. These terms also apply '
@@ -219,7 +231,7 @@ grant_policies = [
         deprecated_rule=deprecated_create_grant),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'revoke_grant',
-        check_str=SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
+        check_str=ADMIN_OR_DOMAIN_ADMIN,
         scope_types=['system', 'domain'],
         description=('Revoke a role grant between a target and an actor. A '
                      'target can be either a domain or a project. An actor '
@@ -233,8 +245,8 @@ grant_policies = [
         deprecated_rule=deprecated_revoke_grant),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_system_grants_for_user',
-        check_str=base.SYSTEM_READER,
-        scope_types=['system'],
+        check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='List all grants a specific user has on the system.',
         operations=[
             {
@@ -246,8 +258,8 @@ grant_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'check_system_grant_for_user',
-        check_str=base.SYSTEM_READER,
-        scope_types=['system'],
+        check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Check if a user has a role on the system.',
         operations=[
             {
@@ -259,8 +271,8 @@ grant_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_system_grant_for_user',
-        check_str=base.SYSTEM_ADMIN,
-        scope_types=['system'],
+        check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Grant a user a role on the system.',
         operations=[
             {
@@ -272,8 +284,8 @@ grant_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'revoke_system_grant_for_user',
-        check_str=base.SYSTEM_ADMIN,
-        scope_types=['system'],
+        check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Remove a role from a user on the system.',
         operations=[
             {
@@ -285,8 +297,8 @@ grant_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_system_grants_for_group',
-        check_str=base.SYSTEM_READER,
-        scope_types=['system'],
+        check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='List all grants a specific group has on the system.',
         operations=[
             {
@@ -298,8 +310,8 @@ grant_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'check_system_grant_for_group',
-        check_str=base.SYSTEM_READER,
-        scope_types=['system'],
+        check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Check if a group has a role on the system.',
         operations=[
             {
@@ -311,8 +323,8 @@ grant_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_system_grant_for_group',
-        check_str=base.SYSTEM_ADMIN,
-        scope_types=['system'],
+        check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Grant a group a role on the system.',
         operations=[
             {
@@ -324,8 +336,8 @@ grant_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'revoke_system_grant_for_group',
-        check_str=base.SYSTEM_ADMIN,
-        scope_types=['system'],
+        check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Remove a role from a group on the system.',
         operations=[
             {
