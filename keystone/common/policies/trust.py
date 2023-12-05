@@ -72,8 +72,8 @@ trust_policies = [
                      'method': 'POST'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_trusts',
-        check_str=base.SYSTEM_READER,
-        scope_types=['system'],
+        check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='List trusts.',
         operations=[{'path': '/v3/OS-TRUST/trusts',
                      'method': 'GET'},
@@ -82,7 +82,7 @@ trust_policies = [
         deprecated_rule=deprecated_list_trusts),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_trusts_for_trustor',
-        check_str=SYSTEM_READER_OR_TRUSTOR,
+        check_str=(base.RULE_ADMIN_REQUIRED + ' or ' + RULE_TRUSTOR),
         scope_types=['system', 'project'],
         description='List trusts for trustor.',
         operations=[{'path': '/v3/OS-TRUST/trusts?'
@@ -93,7 +93,7 @@ trust_policies = [
                      'method': 'HEAD'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_trusts_for_trustee',
-        check_str=SYSTEM_READER_OR_TRUSTEE,
+        check_str=(base.RULE_ADMIN_REQUIRED + ' or ' + RULE_TRUSTEE),
         scope_types=['system', 'project'],
         description='List trusts for trustee.',
         operations=[{'path': '/v3/OS-TRUST/trusts?'
@@ -104,7 +104,8 @@ trust_policies = [
                      'method': 'HEAD'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_roles_for_trust',
-        check_str=SYSTEM_READER_OR_TRUSTOR_OR_TRUSTEE,
+        check_str=(base.RULE_ADMIN_REQUIRED + ' or ' + RULE_TRUSTOR + ' or ' + 
+                   RULE_TRUSTEE),
         scope_types=['system', 'project'],
         description='List roles delegated by a trust.',
         operations=[{'path': '/v3/OS-TRUST/trusts/{trust_id}/roles',
@@ -114,7 +115,8 @@ trust_policies = [
         deprecated_rule=deprecated_list_roles_for_trust),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_role_for_trust',
-        check_str=SYSTEM_READER_OR_TRUSTOR_OR_TRUSTEE,
+        check_str=(base.RULE_ADMIN_REQUIRED + ' or ' + RULE_TRUSTOR + ' or ' + 
+                   RULE_TRUSTEE),
         scope_types=['system', 'project'],
         description='Check if trust delegates a particular role.',
         operations=[{'path': '/v3/OS-TRUST/trusts/{trust_id}/roles/{role_id}',
@@ -125,6 +127,7 @@ trust_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_trust',
         check_str=SYSTEM_ADMIN_OR_TRUSTOR,
+        check_str=(base.RULE_ADMIN_REQUIRED + ' or ' + RULE_TRUSTOR),
         scope_types=['system', 'project'],
         description='Revoke trust.',
         operations=[{'path': '/v3/OS-TRUST/trusts/{trust_id}',
@@ -132,7 +135,8 @@ trust_policies = [
         deprecated_rule=deprecated_delete_trust),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_trust',
-        check_str=SYSTEM_READER_OR_TRUSTOR_OR_TRUSTEE,
+        check_str=(base.RULE_ADMIN_REQUIRED + ' or ' + RULE_TRUSTOR + ' or ' + 
+                   RULE_TRUSTEE),
         scope_types=['system', 'project'],
         description='Get trust.',
         operations=[{'path': '/v3/OS-TRUST/trusts/{trust_id}',
