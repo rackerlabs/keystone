@@ -13,8 +13,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import itertools
-
 import sqlalchemy
 from sqlalchemy.sql import true
 
@@ -275,9 +273,7 @@ class Catalog(base.CatalogDriverBase):
                   empty dict.
 
         """
-        substitutions = dict(
-            itertools.chain(CONF.items(), CONF.eventlet_server.items()))
-        substitutions.update({'user_id': user_id})
+        substitutions = {'user_id': user_id}
         silent_keyerror_failures = []
         if project_id:
             substitutions.update({
@@ -335,9 +331,7 @@ class Catalog(base.CatalogDriverBase):
         :returns: A list representing the service catalog or an empty list
 
         """
-        d = dict(
-            itertools.chain(CONF.items(), CONF.eventlet_server.items()))
-        d.update({'user_id': user_id})
+        d = {'user_id': user_id}
         silent_keyerror_failures = []
         if project_id:
             d.update({
