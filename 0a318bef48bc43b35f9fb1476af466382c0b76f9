@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59f4a7e9_d54598a5",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2023-12-06T06:55:05Z",
+      "side": 0,
+      "message": "What is the reason to move these functions to the top level? If that really is necessary, please do it in a dedicated commit, so that the changes that you are doing in this commit become more easily visible.",
+      "revId": "0a318bef48bc43b35f9fb1476af466382c0b76f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

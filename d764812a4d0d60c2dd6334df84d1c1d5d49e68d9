@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37a2aaa7_79d7ec5d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2023-12-06T06:55:05Z",
+      "side": 1,
+      "message": "Please use gender neutral terms, like \"they\" in this case. Also wrap long lines in the commit message at at most 72 chars.",
+      "range": {
+        "startLine": 9,
+        "startChar": 64,
+        "endLine": 9,
+        "endChar": 66
+      },
+      "revId": "d764812a4d0d60c2dd6334df84d1c1d5d49e68d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "008c601a_37170658",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2023-12-06T06:55:05Z",
+      "side": 1,
+      "message": "First of all welcome as a new contributor and thank you for your submission.\n\nLet me start with some general remarks: The usual path of a patch is that it should first get merged into the master branch of the repo. Only once that that has happened, backports into stable branches can happen. So you should re-target this patch against master first, unless the issue only affects the stable/yoga branch, but that doesn\u0027t seem to be the case.\n\nIn order to be able to do backports, it will also be necessary to have a bug report attached, so please create one on launchpad.net and link to it in the commit message by adding \"Closes-Bug: NNNNN\".\n\nPlease also note that I\u0027m not a regular keystone reviewer, so I cannot say anything about the actual functional part of your patch, but I hope others can pick that up.",
+      "revId": "d764812a4d0d60c2dd6334df84d1c1d5d49e68d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
