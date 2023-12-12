@@ -16,6 +16,80 @@
       "message": "Hello guys, the code here is updated to address the spec that was merged at: https://review.opendev.org/c/openstack/keystone-specs/+/748042",
       "revId": "4e79f3f8f6ab1f400c06122b45d5325d7470f716",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77669608_95b4498f",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2023-12-12T22:48:08Z",
+      "side": 1,
+      "message": "you could use the `setdefault` function from dict instead of creating this method to set a default value for `schema_version`:\n\n```python\nmapping.setdefault(\u0027schema_version\u0027, utils.DEFAULT_SCHEMA_VERSION)\n```",
+      "revId": "4e79f3f8f6ab1f400c06122b45d5325d7470f716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8249c1a4_1082acc5",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2023-12-12T22:48:08Z",
+      "side": 1,
+      "message": "Any reason to change the function\u0027s name?",
+      "range": {
+        "startLine": 126,
+        "startChar": 4,
+        "endLine": 126,
+        "endChar": 10
+      },
+      "revId": "4e79f3f8f6ab1f400c06122b45d5325d7470f716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31b3fa7a_09138652",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2023-12-12T22:48:08Z",
+      "side": 1,
+      "message": "don\u0027t need this new line",
+      "revId": "4e79f3f8f6ab1f400c06122b45d5325d7470f716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1bf95303_1529631b",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2023-12-12T22:48:08Z",
+      "side": 1,
+      "message": "could remove this change?",
+      "revId": "4e79f3f8f6ab1f400c06122b45d5325d7470f716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

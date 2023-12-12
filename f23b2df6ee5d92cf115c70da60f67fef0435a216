@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a658fdd0_267cff5f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2023-12-12T22:48:08Z",
+      "side": 1,
+      "message": "Hi Rafael, I have only a few suggestions, everything else seems to be good to me.",
+      "revId": "f23b2df6ee5d92cf115c70da60f67fef0435a216",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3df1fe28_62f4e16d",
+        "filename": "keystone/tests/unit/test_config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2023-12-12T22:48:08Z",
+      "side": 1,
+      "message": "you could remove this new line.",
+      "revId": "f23b2df6ee5d92cf115c70da60f67fef0435a216",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
