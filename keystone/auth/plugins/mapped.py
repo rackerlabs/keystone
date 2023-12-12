@@ -106,6 +106,60 @@ def handle_scoped_token(token, federation_api, identity_api):
     return response_data
 
 
+def configure_project_domain(shadow_project, idp_domain_id,
+                             resource_api):
+    """Configure federated projects domain.
+
+    We set the domain to be the default (idp_domain_id) if the project
+    from the attribute mapping comes without a domain.
+    """
+    LOG.debug('Processing domain for project: %s', shadow_project)
+    domain = shadow_project.get('domain', {"id": idp_domain_id})
+    if 'id' not in domain:
+        db_domain = resource_api.get_domain_by_name(domain['name'])
+        domain = {"id": db_domain.get('id')}
+    shadow_project['domain'] = domain
+    LOG.debug('Project [%s] domain ID was solved to [%s]',
+              shadow_project['name'], shadow_project['domain']['id'])
+
+
+def handle_projects_from_mapping(shadow_projects, idp_domain_id,
+                                 existing_roles, user, assignment_api,
+                                 resource_api):
+    for shadow_project in shadow_projects:
+        configure_project_domain(
+            shadow_project, idp_domain_id, resource_api)
+        try:
+            # Check and see if the project already exists and if it
+            # does not, try to create it.
+            project = resource_api.get_project_by_name(
+                shadow_project['name'], shadow_project['domain']['id']
+            )
+        except exception.ProjectNotFound:
+            LOG.info(
+                'Project %(project_name)s does not exist. It will be '
+                'automatically provisioning for user %(user_id)s.',
+                {'project_name': shadow_project['name'],
+                 'user_id': user['id']}
+            )
+            project_ref = {
+                'id': uuid.uuid4().hex,
+                'name': shadow_project['name'],
+                'domain_id': shadow_project['domain']['id']
+            }
+            project = resource_api.create_project(
+                project_ref['id'],
+                project_ref
+            )
+        shadow_roles = shadow_project['roles']
+        for shadow_role in shadow_roles:
+            assignment_api.create_grant(
+                existing_roles[shadow_role['name']]['id'],
+                user_id=user['id'],
+                project_id=project['id']
+            )
+
+
 def handle_unscoped_token(auth_payload, resource_api, federation_api,
                           identity_api, assignment_api, role_api):
 
@@ -140,41 +194,6 @@ def handle_unscoped_token(auth_payload, resource_api, federation_api,
                         role_name=shadow_role['name'],
                         identity_provider=idp_id
                     )
-
-    def create_projects_from_mapping(shadow_projects, idp_domain_id,
-                                     existing_roles, user, assignment_api,
-                                     resource_api):
-        for shadow_project in shadow_projects:
-            try:
-                # Check and see if the project already exists and if it
-                # does not, try to create it.
-                project = resource_api.get_project_by_name(
-                    shadow_project['name'], idp_domain_id
-                )
-            except exception.ProjectNotFound:
-                LOG.info(
-                    'Project %(project_name)s does not exist. It will be '
-                    'automatically provisioning for user %(user_id)s.',
-                    {'project_name': shadow_project['name'],
-                     'user_id': user['id']}
-                )
-                project_ref = {
-                    'id': uuid.uuid4().hex,
-                    'name': shadow_project['name'],
-                    'domain_id': idp_domain_id
-                }
-                project = resource_api.create_project(
-                    project_ref['id'],
-                    project_ref
-                )
-
-            shadow_roles = shadow_project['roles']
-            for shadow_role in shadow_roles:
-                assignment_api.create_grant(
-                    existing_roles[shadow_role['name']]['id'],
-                    user_id=user['id'],
-                    project_id=project['id']
-                )
 
     def is_ephemeral_user(mapped_properties):
         return mapped_properties['user']['type'] == utils.UserType.EPHEMERAL
@@ -260,7 +279,7 @@ def handle_unscoped_token(auth_payload, resource_api, federation_api,
                     idp_domain_id,
                     identity_provider
                 )
-                create_projects_from_mapping(
+                handle_projects_from_mapping(
                     mapped_properties['projects'],
                     idp_domain_id,
                     existing_roles,
