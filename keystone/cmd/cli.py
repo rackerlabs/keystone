@@ -1186,7 +1186,11 @@ class MappingEngineTester(BaseApp):
 
         tester.read_rules(CONF.command.rules)
         tester.normalize_rules()
-        mapping_engine.validate_mapping_structure(tester.rules)
+
+        attribute_mapping = tester.rules.copy()
+        attribute_mapping[
+            'schema_version'] = CONF.command.mapping_schema_version
+        mapping_engine.validate_mapping_structure(attribute_mapping)
 
         tester.read_assertion(CONF.command.input)
         tester.normalize_assertion()
