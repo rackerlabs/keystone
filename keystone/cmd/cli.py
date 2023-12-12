@@ -971,6 +971,7 @@ class DomainConfigUploadFiles(object):
             domain_ref = (
                 self.resource_manager.get_domain_by_name(domain_name))
         except exception.DomainNotFound:
+            #test
             print(_('Invalid domain name: %(domain)s found in config file '
                     'name: %(file)s - ignoring this file.') % {
                         'domain': domain_name,
@@ -1186,7 +1187,21 @@ class MappingEngineTester(BaseApp):
 
         tester.read_rules(CONF.command.rules)
         tester.normalize_rules()
-        mapping_engine.validate_mapping_structure(tester.rules)
+
+        attribute_mapping = tester.rules.copy()
+        if CONF.command.mapping_schema_version:
+            attribute_mapping[
+                'schema_version'] = CONF.command.mapping_schema_version
+
+        if not attribute_mapping.get('schema_version'):
+            default_schema_version = '1.0'
+            LOG.warning('No schema version defined in rules [%s]. Therefore,'
+                        'we will use the default as [%s].', attribute_mapping,
+                        default_schema_version)
+            attribute_mapping[
+                'schema_version'] = default_schema_version
+
+        mapping_engine.validate_mapping_structure(attribute_mapping)
 
         tester.read_assertion(CONF.command.input)
         tester.normalize_assertion()
@@ -1234,6 +1249,11 @@ class MappingEngineTester(BaseApp):
                             default=False, action="store_true",
                             help=("Enable debug messages from the mapping "
                                   "engine."))
+        parser.add_argument('--mapping-schema-version', default=None,
+                            required=False,
+                            help=("The override for the schema version of "
+                                  "the rules that are loaded in the 'rules' "
+                                  "option of the test CLI."))
 
 
 class MappingPopulate(BaseApp):
