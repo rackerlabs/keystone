@@ -280,20 +280,26 @@ class MappingResource(_ResourceBase):
         ENFORCER.enforce_call(action='identity:create_mapping')
         mapping = self.request_body_json.get('mapping', {})
         mapping = self._normalize_dict(mapping)
+
+        mapping.setdefault('schema_version', utils.DEFAULT_SCHEMA_VERSION)
         utils.validate_mapping_structure(mapping)
+
         mapping_ref = PROVIDERS.federation_api.create_mapping(
             mapping_id, mapping)
         return self.wrap_member(mapping_ref), http.client.CREATED
 
     def patch(self, mapping_id):
-        """Update a mapping.
+        """Update an attribute mapping for identity federation.
 
         PATCH /OS-FEDERATION/mappings/{mapping_id}
         """
         ENFORCER.enforce_call(action='identity:update_mapping')
         mapping = self.request_body_json.get('mapping', {})
         mapping = self._normalize_dict(mapping)
+
+        mapping.setdefault('schema_version', utils.DEFAULT_SCHEMA_VERSION)
         utils.validate_mapping_structure(mapping)
+
         mapping_ref = PROVIDERS.federation_api.update_mapping(
             mapping_id, mapping)
         return self.wrap_member(mapping_ref)

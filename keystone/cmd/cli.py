@@ -43,6 +43,10 @@ from keystone.server import backends
 CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
 
+# We need to define the log level to INFO. Otherwise, when using the
+# system, we will not be able to see anything.
+log.set_defaults(default_log_levels="INFO")
+
 
 class BaseApp(object):
 
@@ -163,8 +167,8 @@ class BootStrap(BaseApp):
         self.endpoints = None
 
         if self.password is None:
-            print(_('ERROR: Either --bootstrap-password argument or '
-                    'OS_BOOTSTRAP_PASSWORD must be set.'))
+            LOG.error('ERROR: Either --bootstrap-password argument or '
+                      'OS_BOOTSTRAP_PASSWORD must be set.')
             sys.exit(1)
 
         self.bootstrapper.admin_password = self.password
@@ -348,7 +352,7 @@ class DbVersion(BaseApp):
 
     @staticmethod
     def main():
-        print(upgrades.get_db_version())
+        LOG.info(upgrades.get_db_version())
 
 
 class BasePermissionsSetup(BaseApp):
@@ -947,14 +951,14 @@ class DomainConfigUploadFiles(object):
         """
         if (CONF.command.all is False and
                 CONF.command.domain_name is None):
-            print(_('At least one option must be provided, use either '
-                    '--all or --domain-name'))
+            LOG.info('At least one option must be provided, use either '
+                     '--all or --domain-name')
             return False
 
         if (CONF.command.all is True and
                 CONF.command.domain_name is not None):
-            print(_('The --all option cannot be used with '
-                    'the --domain-name option'))
+            LOG.info('The --all option cannot be used with '
+                     'the --domain-name option')
             return False
 
         return True
@@ -970,33 +974,32 @@ class DomainConfigUploadFiles(object):
         try:
             domain_ref = (
                 self.resource_manager.get_domain_by_name(domain_name))
-        except exception.DomainNotFound:
-            print(_('Invalid domain name: %(domain)s found in config file '
-                    'name: %(file)s - ignoring this file.') % {
-                        'domain': domain_name,
-                        'file': file_name})
+        except exception.DomainNotFound as e:
+            LOG.error('Invalid domain name: %(domain)s found in config file '
+                      'name: %(file)s - ignoring this file.',
+                      {'domain': domain_name, 'file': file_name})
+            LOG.debug("Exception: [%s].", e)
             return False
 
         if self.domain_config_manager.get_config_with_sensitive_info(
                 domain_ref['id']):
-            print(_('Domain: %(domain)s already has a configuration '
-                    'defined - ignoring file: %(file)s.') % {
-                        'domain': domain_name,
-                        'file': file_name})
+            LOG.error('Domain: %(domain)s already has a configuration '
+                      'defined - ignoring file: %(file)s.',
+                      {'domain': domain_name, 'file': file_name})
             return False
 
         sections = {}
         try:
             parser = cfg.ConfigParser(file_name, sections)
             parser.parse()
-        except Exception:
+        except Exception as e:
             # We explicitly don't try and differentiate the error cases, in
             # order to keep the code in this tool more robust as oslo.config
             # changes.
-            print(_('Error parsing configuration file for domain: %(domain)s, '
-                    'file: %(file)s.') % {
-                        'domain': domain_name,
-                        'file': file_name})
+            LOG.error('Error parsing configuration file for domain: %('
+                      'domain)s, file: %(file)s.',
+                      {'domain': domain_name, 'file': file_name})
+            LOG.debug("Exception: [%s].", e)
             return False
 
         try:
@@ -1007,8 +1010,8 @@ class DomainConfigUploadFiles(object):
                                                      sections)
             return True
         except Exception as e:
-            msg = ('Error processing config file for domain: '
-                   '%(domain_name)s, file: %(filename)s, error: %(error)s')
+            msg = ('Error processing config file for domain: %(domain_name)s, '
+                   'file: %(filename)s, error: %(error)s')
             LOG.error(msg,
                       {'domain_name': domain_name,
                        'filename': file_name,
@@ -1028,7 +1031,7 @@ class DomainConfigUploadFiles(object):
         domain_name = CONF.command.domain_name
         conf_dir = CONF.identity.domain_config_dir
         if not os.path.exists(conf_dir):
-            print(_('Unable to locate domain config directory: %s') % conf_dir)
+            LOG.info('Unable to locate domain config directory: %s', conf_dir)
             raise ValueError
 
         if domain_name:
@@ -1063,8 +1066,8 @@ class DomainConfigUploadFiles(object):
         except Exception:
             # It is likely that there is some SQL or other backend error
             # related to set up
-            print(_('Unable to access the keystone database, please check it '
-                    'is configured correctly.'))
+            LOG.error('Unable to access the keystone database, please check '
+                      'it is configured correctly.')
             raise
 
         if not self.valid_options():
@@ -1110,7 +1113,7 @@ class SamlIdentityProviderMetadata(BaseApp):
     @staticmethod
     def main():
         metadata = idp.MetadataGenerator().generate_metadata()
-        print(metadata)
+        LOG.info(metadata)
 
 
 class MappingEngineTester(BaseApp):
@@ -1143,6 +1146,8 @@ class MappingEngineTester(BaseApp):
         except IOError as e:
             raise SystemExit(_("Error while opening file "
                                "%(path)s: %(err)s") % {'path': path, 'err': e})
+
+        LOG.debug("Assertions loaded: [%s].", self.assertion)
 
     def normalize_assertion(self):
         def split(line, line_num):
@@ -1179,6 +1184,9 @@ class MappingEngineTester(BaseApp):
     def main(cls):
         if CONF.command.engine_debug:
             mapping_engine.LOG.logger.setLevel('DEBUG')
+            LOG.logger.setLevel('DEBUG')
+
+            LOG.debug("Debug log level enabled!")
         else:
             mapping_engine.LOG.logger.setLevel('WARN')
 
@@ -1186,26 +1194,43 @@ class MappingEngineTester(BaseApp):
 
         tester.read_rules(CONF.command.rules)
         tester.normalize_rules()
-        mapping_engine.validate_mapping_structure(tester.rules)
+
+        attribute_mapping = tester.rules.copy()
+        if CONF.command.mapping_schema_version:
+            attribute_mapping[
+                'schema_version'] = CONF.command.mapping_schema_version
+
+        if not attribute_mapping.get('schema_version'):
+            default_schema_version = '1.0'
+            LOG.warning('No schema version defined in rules [%s]. Therefore,'
+                        'we will use the default as [%s].', attribute_mapping,
+                        default_schema_version)
+            attribute_mapping[
+                'schema_version'] = default_schema_version
+
+        LOG.info("Validating Attribute mapping rules [%s].", attribute_mapping)
+        mapping_engine.validate_mapping_structure(attribute_mapping)
+        LOG.info("Attribute mapping rules are valid.")
 
         tester.read_assertion(CONF.command.input)
         tester.normalize_assertion()
 
-        if CONF.command.engine_debug:
-            print("Using Rules:\n%s" % (
-                jsonutils.dumps(tester.rules, indent=2)))
-            print("Using Assertion:\n%s" % (
-                jsonutils.dumps(tester.assertion, indent=2)))
+        LOG.debug("Using Rules:\n%s",
+                  jsonutils.dumps(tester.rules, indent=2))
+        LOG.debug("Using Assertion:\n%s",
+                  jsonutils.dumps(tester.assertion, indent=2))
 
         rp = mapping_engine.RuleProcessor(tester.mapping_id,
                                           tester.rules['rules'])
         mapped = rp.process(tester.assertion)
-        print(jsonutils.dumps(mapped, indent=2))
+
+        LOG.info("Result of the attribute mapping processing.")
+        LOG.info(jsonutils.dumps(mapped, indent=2))
 
     @classmethod
     def add_argument_parser(cls, subparsers):
-        parser = super(MappingEngineTester,
-                       cls).add_argument_parser(subparsers)
+        parser = super(MappingEngineTester, cls).add_argument_parser(
+            subparsers)
 
         parser.formatter_class = argparse.RawTextHelpFormatter
         parser.add_argument('--rules', default=None, required=True,
@@ -1234,6 +1259,11 @@ class MappingEngineTester(BaseApp):
                             default=False, action="store_true",
                             help=("Enable debug messages from the mapping "
                                   "engine."))
+        parser.add_argument('--mapping-schema-version', default=None,
+                            required=False,
+                            help=("The override for the schema version of "
+                                  "the rules that are loaded in the 'rules' "
+                                  "option of the test CLI."))
 
 
 class MappingPopulate(BaseApp):
@@ -1273,8 +1303,8 @@ class MappingPopulate(BaseApp):
         try:
             domain_id = cls.resource_api.get_domain_by_name(domain_name)['id']
         except exception.DomainNotFound:
-            print(_('Invalid domain name: %(domain)s') % {
-                'domain': domain_name})
+            LOG.error('Invalid domain name: %(domain)s',
+                      {'domain': domain_name})
             return False
         # We don't actually need to tackle id_mapping_api in order to get
         # entries there, because list_users does this anyway. That's why it

@@ -655,16 +655,17 @@ class CliDomainConfigSingleDomainTestCase(CliDomainConfigAllTestCase):
         # Now try and upload the settings in the configuration file for the
         # default domain
         provider_api.ProviderAPIs._clear_registry_instances()
-        with mock.patch('builtins.print') as mock_print:
+        with mock.patch('keystone.cmd.cli.LOG') as mock_log:
             self.assertRaises(unit.UnexpectedExit, cli.DomainConfigUpload.main)
             file_name = ('keystone.%s.conf' % self.default_domain['name'])
-            error_msg = _(
-                'Domain: %(domain)s already has a configuration defined - '
-                'ignoring file: %(file)s.') % {
-                    'domain': self.default_domain['name'],
-                    'file': os.path.join(CONF.identity.domain_config_dir,
-                                         file_name)}
-            mock_print.assert_has_calls([mock.call(error_msg)])
+            mock_log.error.assert_has_calls([
+                mock.call('Domain: %(domain)s already has a configuration '
+                          'defined - ignoring file: %(file)s.',
+                          {'domain': self.default_domain['name'],
+                           'file': os.path.join(
+                               CONF.identity.domain_config_dir, file_name)}
+                          )
+            ])
 
         res = PROVIDERS.domain_config_api.get_config(
             CONF.identity.default_domain_id)
@@ -680,12 +681,12 @@ class CliDomainConfigNoOptionsTestCase(CliDomainConfigAllTestCase):
 
     def test_config_upload(self):
         provider_api.ProviderAPIs._clear_registry_instances()
-        with mock.patch('builtins.print') as mock_print:
+        with mock.patch('keystone.cmd.cli.LOG') as mock_log:
             self.assertRaises(unit.UnexpectedExit, cli.DomainConfigUpload.main)
-            mock_print.assert_has_calls(
-                [mock.call(
-                    _('At least one option must be provided, use either '
-                      '--all or --domain-name'))])
+            mock_log.info.assert_has_calls([
+                mock.call('At least one option must be provided, use either '
+                          '--all or --domain-name')
+            ])
 
 
 class CliDomainConfigTooManyOptionsTestCase(CliDomainConfigAllTestCase):
@@ -697,9 +698,9 @@ class CliDomainConfigTooManyOptionsTestCase(CliDomainConfigAllTestCase):
 
     def test_config_upload(self):
         provider_api.ProviderAPIs._clear_registry_instances()
-        with mock.patch('builtins.print') as mock_print:
+        with mock.patch('keystone.cmd.cli.LOG') as mock_log:
             self.assertRaises(unit.UnexpectedExit, cli.DomainConfigUpload.main)
-            mock_print.assert_has_calls(
+            mock_log.info.assert_has_calls(
                 [mock.call(_('The --all option cannot be used with '
                              'the --domain-name option'))])
 
@@ -714,16 +715,16 @@ class CliDomainConfigInvalidDomainTestCase(CliDomainConfigAllTestCase):
 
     def test_config_upload(self):
         provider_api.ProviderAPIs._clear_registry_instances()
-        with mock.patch('builtins.print') as mock_print:
+        with mock.patch('keystone.cmd.cli.LOG') as mock_log:
             self.assertRaises(unit.UnexpectedExit, cli.DomainConfigUpload.main)
             file_name = 'keystone.%s.conf' % self.invalid_domain_name
-            error_msg = (_(
-                'Invalid domain name: %(domain)s found in config file name: '
-                '%(file)s - ignoring this file.') % {
-                    'domain': self.invalid_domain_name,
-                    'file': os.path.join(CONF.identity.domain_config_dir,
-                                         file_name)})
-            mock_print.assert_has_calls([mock.call(error_msg)])
+            mock_log.error.assert_has_calls([
+                mock.call('Invalid domain name: %(domain)s found in '
+                          'config file name: %(file)s - ignoring this file.',
+                          {'domain': self.invalid_domain_name,
+                           'file': os.path.join(
+                               CONF.identity.domain_config_dir, file_name)})
+            ])
 
 
 class TestDomainConfigFinder(unit.BaseTestCase):
@@ -1866,6 +1867,7 @@ class TestMappingEngineTester(unit.BaseTestCase):
             self.input = parent.command_input
             self.prefix = parent.command_prefix
             self.engine_debug = parent.command_engine_debug
+            self.mapping_schema_version = parent.mapping_schema_version
 
     def setUp(self):
         # Set up preset cli options and a parser
@@ -1884,6 +1886,8 @@ class TestMappingEngineTester(unit.BaseTestCase):
         parser_test = argparse.ArgumentParser()
         subparsers = parser_test.add_subparsers()
         self.parser = cli.MappingEngineTester.add_argument_parser(subparsers)
+
+        self.mapping_schema_version = '1.0'
 
     def config_files(self):
         config_files = super(TestMappingEngineTester, self).config_files()
@@ -1931,9 +1935,11 @@ class TestMappingEngineTester(unit.BaseTestCase):
         self.command_rules = tmpfilejsonname
         tempfile = self.useFixture(temporaryfile.SecureTempFile())
         tmpfilename = tempfile.file_name
+
+        user_name = 'me'
         with open(tmpfilename, 'w') as f:
             f.write("\n")
-            f.write("UserName:me\n")
+            f.write("UserName:%s\n" % user_name)
             f.write("orgPersonType:NoContractor\n")
             f.write("LastName:Bo\n")
             f.write("FirstName:Jill\n")
@@ -1943,27 +1949,27 @@ class TestMappingEngineTester(unit.BaseTestCase):
         self.useFixture(fixtures.MockPatchObject(
             CONF, 'command', self.FakeConfCommand(self)))
         mapping_engine = cli.MappingEngineTester()
-        with mock.patch('builtins.print') as mock_print:
+        with mock.patch('keystone.cmd.cli.LOG') as mock_log:
             mapping_engine.main()
-            self.assertEqual(mock_print.call_count, 3)
-            call = mock_print.call_args_list[0]
-            args, kwargs = call
-            self.assertTrue(args[0].startswith('Using Rules:'))
-            call = mock_print.call_args_list[1]
-            args, kwargs = call
-            self.assertTrue(args[0].startswith('Using Assertion:'))
-            call = mock_print.call_args_list[2]
-            args, kwargs = call
-            expected = {
-                "group_names": [],
-                "user": {
-                    "type": "ephemeral",
-                    "name": "me"
-                },
-                "projects": [],
-                "group_ids": ["0cd5e9"]
-            }
-            self.assertEqual(jsonutils.loads(args[0]), expected)
+
+            attribute_mapping_rules_expected = copy.deepcopy(updated_mapping)
+            attribute_mapping_rules_expected['schema_version'] = '1.0'
+
+            expected_result_mapping = {
+                'user': {'name': user_name, "type": "ephemeral"},
+                "group_ids": [
+                    attribute_mapping_rules_expected['rules'][0]['local'][0][
+                        'group']['id']],
+                "group_names": [], "projects": []}
+
+            self.assertEqual(mock_log.info.call_count, 4)
+            mock_log.info.assert_has_calls([
+                mock.call("Validating Attribute mapping rules [%s].",
+                          attribute_mapping_rules_expected),
+                mock.call("Attribute mapping rules are valid."),
+                mock.call('Result of the attribute mapping processing.'),
+                mock.call(jsonutils.dumps(expected_result_mapping, indent=2))
+            ])
 
     def test_mapping_engine_tester_with_invalid_data(self):
         tempfilejson = self.useFixture(temporaryfile.SecureTempFile())
