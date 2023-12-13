@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e34bec50_53a19902",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2023-12-13T11:43:41Z",
+      "side": 1,
+      "message": "I meant that you dont need creating the new method, as the setting default for dicts are quite explanatory.",
+      "revId": "bcc5cccd4213b37369d4f0f3cf76570d699e37a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

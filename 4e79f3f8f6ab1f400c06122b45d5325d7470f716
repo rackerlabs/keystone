@@ -100,6 +100,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "aed8d674_e9f8dbe0",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2023-12-13T11:43:41Z",
+      "side": 1,
+      "message": "ah, ok, I thought you did some changes and moved it outside the nested functions definition to be able to test it in unit tests, but you rewritten it",
+      "parentUuid": "a44c9bcc_2a718319",
+      "range": {
+        "startLine": 126,
+        "startChar": 4,
+        "endLine": 126,
+        "endChar": 10
+      },
+      "revId": "4e79f3f8f6ab1f400c06122b45d5325d7470f716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "31b3fa7a_09138652",
