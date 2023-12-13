@@ -35,6 +35,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2d7dfd9_af668430",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2023-12-13T10:45:10Z",
+      "side": 1,
+      "message": "I have sour eyes and a slow brain. Therefore, the traditional IF/else coding style is easier for me \u003d).\n\nI updated the code as you suggested.",
+      "parentUuid": "77669608_95b4498f",
+      "revId": "4e79f3f8f6ab1f400c06122b45d5325d7470f716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8249c1a4_1082acc5",
@@ -48,6 +66,30 @@
       "writtenOn": "2023-12-12T22:48:08Z",
       "side": 1,
       "message": "Any reason to change the function\u0027s name?",
+      "range": {
+        "startLine": 126,
+        "startChar": 4,
+        "endLine": 126,
+        "endChar": 10
+      },
+      "revId": "4e79f3f8f6ab1f400c06122b45d5325d7470f716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a44c9bcc_2a718319",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2023-12-13T10:45:10Z",
+      "side": 1,
+      "message": "Yes. The method now does not create the project. We do much more. We control project assignments, and so on. That is why the \"handle\" prefix felt a little bit better than the \"create\" one.\n\nMoreover, I created the function from scratch, and just then I deleted the old one. That is why the names are also different.",
+      "parentUuid": "8249c1a4_1082acc5",
       "range": {
         "startLine": 126,
         "startChar": 4,
@@ -75,6 +117,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "988eff04_8f461091",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2023-12-13T10:45:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31b3fa7a_09138652",
+      "revId": "4e79f3f8f6ab1f400c06122b45d5325d7470f716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1bf95303_1529631b",
@@ -88,6 +148,24 @@
       "writtenOn": "2023-12-12T22:48:08Z",
       "side": 1,
       "message": "could remove this change?",
+      "revId": "4e79f3f8f6ab1f400c06122b45d5325d7470f716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98dcf989_5770112e",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2023-12-13T10:45:10Z",
+      "side": 1,
+      "message": "I added the new line to give a bit of space for a cluttered code block.",
+      "parentUuid": "1bf95303_1529631b",
       "revId": "4e79f3f8f6ab1f400c06122b45d5325d7470f716",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }

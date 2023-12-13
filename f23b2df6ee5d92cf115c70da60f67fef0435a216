@@ -33,6 +33,24 @@
       "message": "you could remove this new line.",
       "revId": "f23b2df6ee5d92cf115c70da60f67fef0435a216",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31f23558_717fa226",
+        "filename": "keystone/tests/unit/test_config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2023-12-13T10:45:10Z",
+      "side": 1,
+      "message": "I added the new line to give a bit of space for a cluttered code block.",
+      "parentUuid": "3df1fe28_62f4e16d",
+      "revId": "f23b2df6ee5d92cf115c70da60f67fef0435a216",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
