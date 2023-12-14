@@ -50,6 +50,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "b821dc87_ed414cba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2023-12-14T22:27:34Z",
+      "side": 1,
+      "message": "I see, by Tempest i thought tempest in-tree tests but I got it now you mean kesytone-tempest-plugin tests.\n\nAnyways, I am also testing these changes across services if all fine - https://review.opendev.org/q/topic:%22keystone-srbac-test%22",
+      "parentUuid": "6dfe092d_b38b8ee6",
+      "range": {
+        "startLine": 13,
+        "startChar": 45,
+        "endLine": 15,
+        "endChar": 54
+      },
+      "revId": "c51758182cb8a62ecd6b5cd885d92d0708db145f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "9b1d94cc_65080107",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 6
@@ -61,6 +85,23 @@
       "writtenOn": "2023-12-14T19:43:22Z",
       "side": 1,
       "message": "overall lgtm, let me test the changes with other services new RBAC if there is any issue",
+      "revId": "c51758182cb8a62ecd6b5cd885d92d0708db145f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b81cc324_36677042",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2023-12-14T22:27:34Z",
+      "side": 1,
+      "message": "Testing across service in these https://review.opendev.org/q/topic:%22keystone-srbac-test%22",
       "revId": "c51758182cb8a62ecd6b5cd885d92d0708db145f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
