@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "957f84f5_fbfa11aa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2023-12-14T19:43:22Z",
+      "side": 1,
+      "message": "As we are allowing the project scope token to access in same way it was previously I think tempest should pass. Let me test it. At least tempest full job enabling the keystone and other services new RBAC should pass.",
+      "range": {
+        "startLine": 13,
+        "startChar": 45,
+        "endLine": 15,
+        "endChar": 54
+      },
+      "revId": "c51758182cb8a62ecd6b5cd885d92d0708db145f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b1d94cc_65080107",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2023-12-14T19:43:22Z",
+      "side": 1,
+      "message": "overall lgtm, let me test the changes with other services new RBAC if there is any issue",
+      "revId": "c51758182cb8a62ecd6b5cd885d92d0708db145f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
