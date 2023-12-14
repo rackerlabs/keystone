@@ -33,6 +33,24 @@
       "message": "Hello Rafael,\nGlad to see you continue working on the patch. I tested your patch earlier this year and encountered the problem that in the case of federated/ephemeral users they are still assigned to the domain where the IdP is created instead of the domain specified in the mapping. A test case for this could also be useful.\n\nThis would go against the behavior specified in the blueprint, AFAIU. I tried to propose a merge request to solve that, you could check it [here](https://review.opendev.org/c/openstack/keystone/+/896072). I hope that saves you some time.",
       "revId": "313cc43b4d6b66f5844b51816f3bc20e9d48c52e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f4be54a_4e40f66a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2023-12-14T11:25:50Z",
+      "side": 1,
+      "message": "Hello Juan, \nThat is a good point. According to the spec, we would address at the project and group level. However, users (entity) can also be addressed with the same approach. What do you guys think would be better? \n\n- Merge this one as the spec was approved, and introduce the schema version. Afterwards, we create a minor version, let\u0027s say, 2.1, which expands the idea to the users elements as well?\n- Address the domain definition as for projects and groups in this code as well?\n\nI am fine with both methods.",
+      "parentUuid": "81afe355_d0f69765",
+      "revId": "313cc43b4d6b66f5844b51816f3bc20e9d48c52e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
