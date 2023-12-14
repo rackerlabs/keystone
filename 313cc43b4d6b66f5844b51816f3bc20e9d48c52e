@@ -69,6 +69,23 @@
       "parentUuid": "1f4be54a_4e40f66a",
       "revId": "313cc43b4d6b66f5844b51816f3bc20e9d48c52e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23d416eb_0489f9fc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2023-12-14T12:54:49Z",
+      "side": 1,
+      "message": "Artem, \nDo you have any takes on this one? I mean, would you prefer to add the support for the group override at the user level with this patch as well.",
+      "revId": "313cc43b4d6b66f5844b51816f3bc20e9d48c52e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
