@@ -122,6 +122,24 @@
       "parentUuid": "23d416eb_0489f9fc",
       "revId": "313cc43b4d6b66f5844b51816f3bc20e9d48c52e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7fdc3ca_cb816641",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2023-12-14T13:08:14Z",
+      "side": 1,
+      "message": "Ok, I will work on this one then. I will update the patch as soon as possible here.\n\nThank you very much for your support on this matter!",
+      "parentUuid": "71e77c2f_2107d7b8",
+      "revId": "313cc43b4d6b66f5844b51816f3bc20e9d48c52e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
