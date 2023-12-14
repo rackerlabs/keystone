@@ -104,6 +104,24 @@
       "parentUuid": "c499be46_b4b85a8a",
       "revId": "313cc43b4d6b66f5844b51816f3bc20e9d48c52e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71e77c2f_2107d7b8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2023-12-14T13:04:13Z",
+      "side": 1,
+      "message": "yes, otherwise implementation is not doing what user is actually expecting",
+      "parentUuid": "23d416eb_0489f9fc",
+      "revId": "313cc43b4d6b66f5844b51816f3bc20e9d48c52e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
