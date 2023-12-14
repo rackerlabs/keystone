@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3bea2072_11425e9d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 34
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2023-12-14T11:54:36Z",
+      "side": 1,
+      "message": "Thanks Juan, \nIf you wish, I can address this use case together with https://review.opendev.org/c/openstack/keystone/+/739966. \n\nLet me know what you guys prefer.",
+      "revId": "348046ebc0bf76a50ad28bb3986e6a1281505d1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
