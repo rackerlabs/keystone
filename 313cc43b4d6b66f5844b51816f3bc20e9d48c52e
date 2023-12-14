@@ -51,6 +51,24 @@
       "parentUuid": "81afe355_d0f69765",
       "revId": "313cc43b4d6b66f5844b51816f3bc20e9d48c52e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c499be46_b4b85a8a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 36300
+      },
+      "writtenOn": "2023-12-14T12:38:55Z",
+      "side": 1,
+      "message": "I\u0027m completely fine with both, let\u0027s see if someone has a different opinion.",
+      "parentUuid": "1f4be54a_4e40f66a",
+      "revId": "313cc43b4d6b66f5844b51816f3bc20e9d48c52e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
