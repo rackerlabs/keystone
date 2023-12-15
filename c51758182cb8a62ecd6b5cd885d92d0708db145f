@@ -104,6 +104,23 @@
       "message": "Testing across service in these https://review.opendev.org/q/topic:%22keystone-srbac-test%22",
       "revId": "c51758182cb8a62ecd6b5cd885d92d0708db145f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "126b8832_f589bc58",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2023-12-15T00:41:02Z",
+      "side": 1,
+      "message": "it seems existing tempest tests also failing https://storage.gra.cloud.ovh.net/v1/AUTH_dcaab5e32b234d56b626f72581e3644c/zuul_opendev_logs_3d0/903722/1/check/tempest-full-enforce-scope-new-defaults/3d0c7a3/testr_results.html\n\nare new RBAC changed the things instead of just adding system scope access?",
+      "revId": "c51758182cb8a62ecd6b5cd885d92d0708db145f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
