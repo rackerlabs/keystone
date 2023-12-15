@@ -50,6 +50,24 @@
       "message": "recheck trying again to see what exact failure it has",
       "revId": "d8f2961d128f2c5523111e9d304a74bca7a6e602",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20b8cd66_20a5c4ce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2023-12-15T04:04:58Z",
+      "side": 1,
+      "message": "It seems https://review.opendev.org/c/openstack/keystone/+/822601 did not update the appropriate test cases.",
+      "parentUuid": "f97606de_14145e6a",
+      "revId": "d8f2961d128f2c5523111e9d304a74bca7a6e602",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
