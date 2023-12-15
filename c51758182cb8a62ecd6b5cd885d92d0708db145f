@@ -138,6 +138,24 @@
       "message": "just -1 to get more clarity on tests failing in case it get merged before that.",
       "revId": "c51758182cb8a62ecd6b5cd885d92d0708db145f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2883887_0198aa46",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2023-12-15T15:14:27Z",
+      "side": 1,
+      "message": "This patch is just allowing project-admin to do the things that only system-users were allowed to do before.",
+      "parentUuid": "126b8832_f589bc58",
+      "revId": "c51758182cb8a62ecd6b5cd885d92d0708db145f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
