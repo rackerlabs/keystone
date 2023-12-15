@@ -156,6 +156,24 @@
       "parentUuid": "126b8832_f589bc58",
       "revId": "c51758182cb8a62ecd6b5cd885d92d0708db145f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ff6fa0a_7b0cd996",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2023-12-15T18:27:50Z",
+      "side": 1,
+      "message": "yeah, let me debug it more and see if anything breaking. From changes and as you mentioned it only retore the legacy admin access which is what we want and should be ok. I will debug tempest tests failure and update here early next week.",
+      "parentUuid": "f2883887_0198aa46",
+      "revId": "c51758182cb8a62ecd6b5cd885d92d0708db145f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
