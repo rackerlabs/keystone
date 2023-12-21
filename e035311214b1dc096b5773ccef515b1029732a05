@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad7e7be6_173955e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2023-12-21T17:14:21Z",
+      "side": 1,
+      "message": "Come on. It\u0027s a relatively clear fix, surely it\u0027s better to merge it.",
+      "revId": "e035311214b1dc096b5773ccef515b1029732a05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
