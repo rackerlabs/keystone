@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    This patch add the ability to set the project_id by
+    setting a specific tag without modifying the keystone
+    API. Setting the project_id offers the ability to have
+    a consistent UUID over multiple instances of keystone
+    without deploying a global keystone over a WAN or MAN.

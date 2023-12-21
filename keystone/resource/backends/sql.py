@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import uuid
+
 from oslo_log import log
 from sqlalchemy import orm
 from sqlalchemy.sql import expression
@@ -34,6 +36,15 @@ class Resource(base.ResourceDriverBase):
             return new_ref
         else:
             return ref
+
+    def _override_project_id(self, project):
+        if 'tags' in project:
+            for tag in project['tags']:
+                try:
+                    project["id"] = uuid.UUID(tag.split("account_id:")[1]).hex
+                except (ValueError, IndexError):
+                    pass
+        return project
 
     def _is_hidden_ref(self, ref):
         return ref.id == base.NULL_DOMAIN_ID
@@ -230,6 +241,7 @@ class Resource(base.ResourceDriverBase):
     # CRUD
     @sql.handle_conflicts(conflict_type='project')
     def create_project(self, project_id, project):
+        project = self._override_project_id(project)
         new_project = self._encode_domain_id(project)
         with sql.session_for_write() as session:
             project_ref = sql_model.Project.from_dict(new_project)
