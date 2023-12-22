@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3cac34fc_4dc5ce14",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 31357
+      },
+      "writtenOn": "2023-12-22T10:11:08Z",
+      "side": 1,
+      "message": "I agree this is a admin/system wide feature.",
+      "parentUuid": "d8106c75_3bc6a302",
+      "range": {
+        "startLine": 7,
+        "startChar": 27,
+        "endLine": 7,
+        "endChar": 39
+      },
+      "revId": "ae7203f577d6f36badab126329031cdf3f5c85e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bb53f454_96f2c121",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -43,6 +67,47 @@
         "endLine": 10,
         "endChar": 23
       },
+      "revId": "ae7203f577d6f36badab126329031cdf3f5c85e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c927f9c1_bac2b944",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 31357
+      },
+      "writtenOn": "2023-12-22T10:11:08Z",
+      "side": 1,
+      "message": "Maybe project tag would be more appropriate in that case. Let us know what would be the right terminology.",
+      "parentUuid": "bb53f454_96f2c121",
+      "range": {
+        "startLine": 10,
+        "startChar": 19,
+        "endLine": 10,
+        "endChar": 23
+      },
+      "revId": "ae7203f577d6f36badab126329031cdf3f5c85e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87c4141a_4e471dc9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31357
+      },
+      "writtenOn": "2023-12-22T10:11:08Z",
+      "side": 1,
+      "message": "Thank you Takashi for your quick review. A bit of context can help to understand this approach. We use this patch internally at Société Générale since 2018. It\u0027s been around since the primary deployment of openstack (queens release) up to ussuri (our current release). The project_id are based on an internal API application catalog. This API provides the uniqueness of UUID accross all regions and all keystone instances in each regions are independant. All projects are onboarded (seperatly on each region/keystone and in different keystone domains) using the project_id given by the app catalog API. This approach offers a great flexibility in term of operability because we can operate individually on each keystone without disrupting production on the others. Moreover, it\u0027s easier to scale keystone in each regions.",
       "revId": "ae7203f577d6f36badab126329031cdf3f5c85e0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
@@ -83,6 +148,30 @@
       "writtenOn": "2023-12-22T03:03:53Z",
       "side": 1,
       "message": "project_id ?",
+      "range": {
+        "startLine": 44,
+        "startChar": 57,
+        "endLine": 44,
+        "endChar": 67
+      },
+      "revId": "ae7203f577d6f36badab126329031cdf3f5c85e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "945ad0fc_de20ec58",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 31357
+      },
+      "writtenOn": "2023-12-22T10:11:08Z",
+      "side": 1,
+      "message": "Agreed, I will fix it.",
+      "parentUuid": "69014e7a_f6f9571d",
       "range": {
         "startLine": 44,
         "startChar": 57,
