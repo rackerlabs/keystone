@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8106c75_3bc6a302",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2023-12-22T03:03:53Z",
+      "side": 1,
+      "message": "this feature has a system-wide impact but in fact the create project api is allowed for domain admin as well[1]\n\n[1] https://github.com/openstack/keystone/blob/9e4a3157dd326801b9ae0ef2b7934c982259b3dd/keystone/common/policies/project.py#L172\n\nThis feature should be restricted to system admin so that any domain admin can not steal the id used in a different keystone.",
+      "range": {
+        "startLine": 7,
+        "startChar": 27,
+        "endLine": 7,
+        "endChar": 39
+      },
+      "revId": "ae7203f577d6f36badab126329031cdf3f5c85e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb53f454_96f2c121",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2023-12-22T03:03:53Z",
+      "side": 1,
+      "message": "wondering if options is a better field for this.",
+      "range": {
+        "startLine": 10,
+        "startChar": 19,
+        "endLine": 10,
+        "endChar": 23
+      },
+      "revId": "ae7203f577d6f36badab126329031cdf3f5c85e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a40d5af5_21513852",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2023-12-22T03:03:53Z",
+      "side": 1,
+      "message": "If this is not heavily dependent on the feature in db then I think it\u0027s better to implement this in an upper, common place.",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 28
+      },
+      "revId": "ae7203f577d6f36badab126329031cdf3f5c85e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69014e7a_f6f9571d",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2023-12-22T03:03:53Z",
+      "side": 1,
+      "message": "project_id ?",
+      "range": {
+        "startLine": 44,
+        "startChar": 57,
+        "endLine": 44,
+        "endChar": 67
+      },
+      "revId": "ae7203f577d6f36badab126329031cdf3f5c85e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
