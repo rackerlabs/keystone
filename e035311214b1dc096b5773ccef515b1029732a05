@@ -16,6 +16,24 @@
       "message": "Come on. It\u0027s a relatively clear fix, surely it\u0027s better to merge it.",
       "revId": "e035311214b1dc096b5773ccef515b1029732a05",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ec90b87_8fabe19b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10459
+      },
+      "writtenOn": "2023-12-22T09:32:28Z",
+      "side": 1,
+      "message": "Pete, there are no going to be releases for this branch, and also it has been past its useful life anyway. This was just a mechanical process for a decision which has been done some time ago. The branch *is* in fact EOL...",
+      "parentUuid": "ad7e7be6_173955e2",
+      "revId": "e035311214b1dc096b5773ccef515b1029732a05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ],
   "submitRequirementResults": [
