@@ -95,6 +95,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a299afc_289b0f4b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2023-12-22T12:46:30Z",
+      "side": 1,
+      "message": "Keystone provides two interfaces in project creation to inject arbitrary things. The first one is tag and the other is option. Tag is for classification and the option is used to determine the property actually affecting the behavior.\n\nhttps://docs.openstack.org/api-ref/identity/v3/#create-project\n```\nThe resource options for the project. Available resource options are immutable.\n```\n\nBecause this is not for query but to override the behavior about the project creation, I think the options is a more suitable field for this feature. Though we have to decide how we allow update of this field (probably we should reject any update or even hide this after the initial creation)",
+      "parentUuid": "c927f9c1_bac2b944",
+      "range": {
+        "startLine": 10,
+        "startChar": 19,
+        "endLine": 10,
+        "endChar": 23
+      },
+      "revId": "ae7203f577d6f36badab126329031cdf3f5c85e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "87c4141a_4e471dc9",
