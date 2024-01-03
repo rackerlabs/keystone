@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0663d87a_052eb412",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-01-03T13:36:18Z",
+      "side": 1,
+      "message": "let\u0027s better name it \"resolved\" for consistency and clearness",
+      "revId": "fc4b6a6b4f7f579839110176beed3ec1d61254b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29fb2b52_e4fe021e",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1192,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-01-03T13:36:18Z",
+      "side": 1,
+      "message": "that doesn\u0027t seem to work since new variable has not been added to the config",
+      "revId": "fc4b6a6b4f7f579839110176beed3ec1d61254b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d620a410_bcd50858",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1508,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-01-03T13:36:18Z",
+      "side": 1,
+      "message": "I guess actually exactly here we discard resolved user domain info and use instead IDP domain. This is exactly what we want to change with the whole change, isn\u0027t it?",
+      "revId": "fc4b6a6b4f7f579839110176beed3ec1d61254b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad5d8bbb_e1063f8a",
+        "filename": "keystone/tests/unit/test_config.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-01-03T13:36:18Z",
+      "side": 1,
+      "message": "empty change in here. I assume you missed to actually add config changes themselves, sine currently there is no possibility to actually use new schema version (api defaults to 1.0 while OSC does not support param yet and `keystone-manage mapping_engine` is failing (oslo_config.cfg.NoSuchOptError: no such option mapping_schema_version in group [DEFAULT])",
+      "revId": "fc4b6a6b4f7f579839110176beed3ec1d61254b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
