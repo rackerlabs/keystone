@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ce79cb0_2560fa5f",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-03T14:09:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0663d87a_052eb412",
+      "revId": "fc4b6a6b4f7f579839110176beed3ec1d61254b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "29fb2b52_e4fe021e",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-01-03T13:36:18Z",
       "side": 1,
       "message": "that doesn\u0027t seem to work since new variable has not been added to the config",
+      "revId": "fc4b6a6b4f7f579839110176beed3ec1d61254b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dfbaf9b4_6a4fedf1",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1192,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-03T14:09:56Z",
+      "side": 1,
+      "message": "Good catch! Done.",
+      "parentUuid": "29fb2b52_e4fe021e",
       "revId": "fc4b6a6b4f7f579839110176beed3ec1d61254b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
@@ -54,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ff094cf0_5c5fe381",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1508,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-03T14:09:56Z",
+      "side": 1,
+      "message": "I am not sure I follow your question. The user object is already normalized at \"https://review.opendev.org/c/openstack/keystone/+/739966/15/keystone/auth/plugins/mapped.py#347\".  Therefore, if the user does not come with the domain ID, we will use the IdP domain ID.\n\nBefore the user object reaches that part of the code, it is already pre-processed at https://review.opendev.org/c/openstack/keystone/+/739966/15/keystone/federation/utils.py#1008. At this point, we have the opportunity to normalize the user either by the domain ID being defined at the user level, or using the domain defined at the top level of the attribute mapping rule. If none is defined, we then reach the code \"https://review.opendev.org/c/openstack/keystone/+/739966/15/keystone/auth/plugins/mapped.py#347\".\n\nTherefore, we will be able to achieve what you guys want. Is it clear?",
+      "parentUuid": "d620a410_bcd50858",
+      "revId": "fc4b6a6b4f7f579839110176beed3ec1d61254b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ad5d8bbb_e1063f8a",
         "filename": "keystone/tests/unit/test_config.py",
         "patchSetId": 15
@@ -65,6 +119,24 @@
       "writtenOn": "2024-01-03T13:36:18Z",
       "side": 1,
       "message": "empty change in here. I assume you missed to actually add config changes themselves, sine currently there is no possibility to actually use new schema version (api defaults to 1.0 while OSC does not support param yet and `keystone-manage mapping_engine` is failing (oslo_config.cfg.NoSuchOptError: no such option mapping_schema_version in group [DEFAULT])",
+      "revId": "fc4b6a6b4f7f579839110176beed3ec1d61254b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5860b01b_8873e61c",
+        "filename": "keystone/tests/unit/test_config.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-03T14:09:56Z",
+      "side": 1,
+      "message": "I guess this is achieved with the latest patchset I did for \"keystone/cmd/cli.py\", right?\n\nP.S. I never used these Keystone CLI tools.",
+      "parentUuid": "ad5d8bbb_e1063f8a",
       "revId": "fc4b6a6b4f7f579839110176beed3ec1d61254b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
