@@ -71,6 +71,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "929e8dbe_66178a06",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1192,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-01-03T14:26:59Z",
+      "side": 1,
+      "message": "well, not done. keystone-manage complains that config option is not registered at all, thus CONF.command has no attribute mapping_schema_version at all. My suggestion would be to actually add new config value, otherwise as I mentioned above it is currently not possible to start using new functionality at all",
+      "parentUuid": "dfbaf9b4_6a4fedf1",
+      "revId": "fc4b6a6b4f7f579839110176beed3ec1d61254b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d620a410_bcd50858",
@@ -108,6 +126,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bc825988_f38d6ee3",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1508,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-01-03T14:26:59Z",
+      "side": 1,
+      "message": "well, my test showed that even the upper debug message stating creating user in the correct domain the user is still being created in the IDP domain and not in the domain that the debug message above claims. The issue is not in the resolving the domain_id, but apparently here in the actuall call to create user which ignores resolved domain id. I would tip on https://opendev.org/openstack/keystone/src/branch/master/keystone/identity/shadow_backends/sql.py#L44 where the domain_id passed into the create call (which here is set to the IDP domain) is used directly.\nIt is really confusing that the project was created in the correct domain, but the user was created in the IDP domain while every debug message names the domain you would expect",
+      "parentUuid": "ff094cf0_5c5fe381",
+      "revId": "fc4b6a6b4f7f579839110176beed3ec1d61254b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ad5d8bbb_e1063f8a",
         "filename": "keystone/tests/unit/test_config.py",
         "patchSetId": 15
@@ -137,6 +173,24 @@
       "side": 1,
       "message": "I guess this is achieved with the latest patchset I did for \"keystone/cmd/cli.py\", right?\n\nP.S. I never used these Keystone CLI tools.",
       "parentUuid": "ad5d8bbb_e1063f8a",
+      "revId": "fc4b6a6b4f7f579839110176beed3ec1d61254b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1285d2ee_d110ecd8",
+        "filename": "keystone/tests/unit/test_config.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-01-03T14:26:59Z",
+      "side": 1,
+      "message": "me neither, but testing mapping with `keystone-manage mapping_engine --rules rules.json --input some_data` appeared to be helpful to debug misconfiguration without continuous restarting of KS",
+      "parentUuid": "5860b01b_8873e61c",
       "revId": "fc4b6a6b4f7f579839110176beed3ec1d61254b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
