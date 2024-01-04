@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34fbd6c5_5225892c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-01-04T09:30:03Z",
+      "side": 1,
+      "message": "Hey Rafael. I added an explicit test to verify user was created in the domain as set by the assertion and suggested small change in the logic I pointed earlier to make sure it passes. Feel free to redo it.",
+      "revId": "f0235456112a9997938a106d2823efbbda17b8be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
