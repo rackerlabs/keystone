@@ -16,6 +16,24 @@
       "message": "I reverted the changes. Let\u0027s see what happens. Looking at the logs I found the following:\n```\nhttps://zuul.opendev.org/t/openstack/build/d5c05a40463a4b28bf950b9536d58fe2/log/controller/logs/screen-keystone.txt#23803\n```\n\nI am not sure how that could be related to the changes, though.",
       "revId": "f4fcbcf6b326da67e7cfe5da5ba75d8847475542",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "229960fb_b1a6026f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-01-04T16:02:38Z",
+      "side": 1,
+      "message": "https://review.opendev.org/c/openstack/keystone/+/739966/18/keystone/cmd/cli.py#1114 is most likely the reason.\nI suggest you drop all logging changes to the cli file - those are anyway not related while the change is already very big",
+      "parentUuid": "0c62d252_185625e8",
+      "revId": "f4fcbcf6b326da67e7cfe5da5ba75d8847475542",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
