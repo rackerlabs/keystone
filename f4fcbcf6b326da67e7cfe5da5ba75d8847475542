@@ -34,6 +34,24 @@
       "parentUuid": "0c62d252_185625e8",
       "revId": "f4fcbcf6b326da67e7cfe5da5ba75d8847475542",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44ccc94c_22e75634",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-04T16:04:26Z",
+      "side": 1,
+      "message": "I did that. If everything works, I will then revert only the changes you did in the domain usage for the create user method in the SQL backend.",
+      "parentUuid": "229960fb_b1a6026f",
+      "revId": "f4fcbcf6b326da67e7cfe5da5ba75d8847475542",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
