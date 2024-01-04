@@ -54,6 +54,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "f1c1024f_74d5e722",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-04T11:20:35Z",
+      "side": 1,
+      "message": "I see. Done. The code was changed. Can you check it?",
+      "parentUuid": "9857015f_5c08d44b",
+      "revId": "f0235456112a9997938a106d2823efbbda17b8be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "b5ab95ff_dd687f09",
         "filename": "keystone/identity/core.py",
         "patchSetId": 17
@@ -89,6 +107,30 @@
       "side": 1,
       "message": "revert the code here and see the added unittest failing. Issues is not with the userdict preparation, but with the fact that shadowuser creation function ignores domain information in the user object",
       "parentUuid": "b5ab95ff_dd687f09",
+      "range": {
+        "startLine": 1507,
+        "startChar": 1,
+        "endLine": 1510,
+        "endChar": 17
+      },
+      "revId": "f0235456112a9997938a106d2823efbbda17b8be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2b6047d_c07db1ad",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1510,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-04T11:20:35Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "36c9f3ae_ca67c44a",
       "range": {
         "startLine": 1507,
         "startChar": 1,
