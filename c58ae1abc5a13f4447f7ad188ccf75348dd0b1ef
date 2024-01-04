@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2062547a_9c13b14b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-04T18:53:41Z",
+      "side": 1,
+      "message": "Yes, it seems that the problem was the logs I changed in the CLI. I will test it again.",
+      "revId": "c58ae1abc5a13f4447f7ad188ccf75348dd0b1ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
