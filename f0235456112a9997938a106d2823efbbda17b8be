@@ -37,6 +37,23 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "9857015f_5c08d44b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-01-04T11:08:16Z",
+      "side": 1,
+      "message": "new unittest just verifies what real test showed (as well as what Juan was also reporting):\n- create mapping with OIDC-user-domain-name attr used as user domain\n- create new domain in keystone\n- add user-domain-name attribute in keycloak\n- attempt to login with the new keycloak user\n- `openstack user list` shows users was created in the IDP domain and not in the specified domain",
+      "revId": "f0235456112a9997938a106d2823efbbda17b8be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "b5ab95ff_dd687f09",
         "filename": "keystone/identity/core.py",
         "patchSetId": 17
