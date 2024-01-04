@@ -16,6 +16,46 @@
       "message": "Hey Rafael. I added an explicit test to verify user was created in the domain as set by the assertion and suggested small change in the logic I pointed earlier to make sure it passes. Feel free to redo it.",
       "revId": "f0235456112a9997938a106d2823efbbda17b8be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe139a47_28310498",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-04T10:53:50Z",
+      "side": 1,
+      "message": "Thanks for the help, but the core was already prepared for such situation.",
+      "revId": "f0235456112a9997938a106d2823efbbda17b8be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5ab95ff_dd687f09",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1510,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-04T10:53:50Z",
+      "side": 1,
+      "message": "We do not need this. As it is already executed before when we prepare the \"user\" object. You can take a look at https://review.opendev.org/c/openstack/keystone/+/739966/17/keystone/auth/plugins/mapped.py#403. The user object is expected to reach this part of the code already prepared with a domain set either via the mapping processing or when executing the \"validate_and_prepare_federated_user\" method.\n\nTherefore, I will revert this code here.",
+      "range": {
+        "startLine": 1507,
+        "startChar": 1,
+        "endLine": 1510,
+        "endChar": 17
+      },
+      "revId": "f0235456112a9997938a106d2823efbbda17b8be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
