@@ -33,6 +33,24 @@
       "message": "The test that is failing does not seem do be related to the changeset. Do you guys know if there is some sort of structural problem with the tempest tests?",
       "revId": "97f6e92a300e672bb842bc44d55aab745f5dbc06",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0fba838e_20ec8df7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-01-04T15:21:06Z",
+      "side": 1,
+      "message": "I am not sure it is really unrelated, but can\u0027t find the reason so far. Comparing last successful run https://88d7e0c140b2b7046387-cdf523d3b16150ab0b9ddc512a79d512.ssl.cf5.rackcdn.com/739966/17/check/keystone-dsvm-py3-functional-federation-ubuntu-jammy-k2k/b8d0675/controller/logs/shibboleth/shibboleth/shibd_log.txt shidb log is \"ok\", while taking the failed ones (https://abc0c299b8d76e9606ff-88f13fe1d2cd9b64afb4d1818492b226.ssl.cf2.rackcdn.com/739966/18/check/keystone-dsvm-py3-functional-federation-ubuntu-jammy-k2k/d5c05a4/controller/logs/shibboleth/shibboleth/shibd_log.txt) you can see there \"error while loading resource (http://158.69.66.74/identity/v3/OS-FEDERATION/saml2/metadata): XML error(s) during parsing, check log for specifics\". Sadly the xml itself is not visible in the logs\n\nFeels like the metadata is corrupted for some reason and therefore shidb itself fails (no related errors visible in keystone logs).\n\nWhat if just to verify you revert changes to patchlevel 17 and if it passes there is something wrong in the change",
+      "parentUuid": "cce6ba1e_4e5f0821",
+      "revId": "97f6e92a300e672bb842bc44d55aab745f5dbc06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
