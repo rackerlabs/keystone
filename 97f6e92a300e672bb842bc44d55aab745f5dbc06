@@ -68,6 +68,42 @@
       "message": "btw, since I do not really know what keystone-manage itself is used for I can imagine your change in last patchset to replace print with logging may be exactly what currupts the start",
       "revId": "97f6e92a300e672bb842bc44d55aab745f5dbc06",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85e8e10a_b677f96b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-04T15:32:23Z",
+      "side": 1,
+      "message": "I will do so.",
+      "parentUuid": "0fba838e_20ec8df7",
+      "revId": "97f6e92a300e672bb842bc44d55aab745f5dbc06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74839e8b_c73bedf8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-04T15:32:23Z",
+      "side": 1,
+      "message": "Me neither. I just changed to make it consistent. It was using LOG sometimes, and sometime print.",
+      "parentUuid": "1c0cd712_104da3f4",
+      "revId": "97f6e92a300e672bb842bc44d55aab745f5dbc06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
