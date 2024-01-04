@@ -56,6 +56,30 @@
       },
       "revId": "f0235456112a9997938a106d2823efbbda17b8be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36c9f3ae_ca67c44a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1510,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-01-04T10:55:58Z",
+      "side": 1,
+      "message": "revert the code here and see the added unittest failing. Issues is not with the userdict preparation, but with the fact that shadowuser creation function ignores domain information in the user object",
+      "parentUuid": "b5ab95ff_dd687f09",
+      "range": {
+        "startLine": 1507,
+        "startChar": 1,
+        "endLine": 1510,
+        "endChar": 17
+      },
+      "revId": "f0235456112a9997938a106d2823efbbda17b8be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
