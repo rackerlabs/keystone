@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "97f6e92a300e672bb842bc44d55aab745f5dbc06",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cce6ba1e_4e5f0821",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-04T15:15:54Z",
+      "side": 1,
+      "message": "The test that is failing does not seem do be related to the changeset. Do you guys know if there is some sort of structural problem with the tempest tests?",
+      "revId": "97f6e92a300e672bb842bc44d55aab745f5dbc06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
