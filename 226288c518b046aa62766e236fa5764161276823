@@ -16,6 +16,23 @@
       "message": "Everything seems fine now. I just added the new logs I used to troubleshoot the CLI module.",
       "revId": "226288c518b046aa62766e236fa5764161276823",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2a37dcb_1ca8c0e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 36300
+      },
+      "writtenOn": "2024-01-09T18:49:48Z",
+      "side": 1,
+      "message": "I\u0027ve tested the creation of federated users into a designated domain. There is a problem with roles, even if I pre provision the project and the roles. The following error get returned.\n\n```\n2024-01-09 18:28:05.612170 2024-01-09 18:28:05.609 735 ERROR keystone.server.flask.application [None req-248249bc-3408-4b1d-a134-a40b5df8c289 - - - - - -] role: member must be within the same domain as the identity provider: keycloak.: keystone.exception.DomainSpecificRoleNotWithinIdPDomain: role: member must be within the same domain as the identity provider: keycloak.\n\n```",
+      "revId": "226288c518b046aa62766e236fa5764161276823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
