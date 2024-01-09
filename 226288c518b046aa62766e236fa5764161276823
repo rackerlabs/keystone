@@ -33,6 +33,24 @@
       "message": "I\u0027ve tested the creation of federated users into a designated domain. There is a problem with roles, even if I pre provision the project and the roles. The following error get returned.\n\n```\n2024-01-09 18:28:05.612170 2024-01-09 18:28:05.609 735 ERROR keystone.server.flask.application [None req-248249bc-3408-4b1d-a134-a40b5df8c289 - - - - - -] role: member must be within the same domain as the identity provider: keycloak.: keystone.exception.DomainSpecificRoleNotWithinIdPDomain: role: member must be within the same domain as the identity provider: keycloak.\n\n```",
       "revId": "226288c518b046aa62766e236fa5764161276823",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c42fe273_5cf7a839",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-09T19:36:20Z",
+      "side": 1,
+      "message": "The error message has nothing to do with this patch. You can check the code at [1]. This behavior is already there implemented. It is implemented since its initial code was pushed upstream. You will need roles that are not domain specific.\n\n[1] https://github.com/openstack/keystone/blob/adfa92b40d11f94a03af5202da1fc3858bbccbb5/keystone/auth/plugins/mapped.py#L112",
+      "parentUuid": "a2a37dcb_1ca8c0e7",
+      "revId": "226288c518b046aa62766e236fa5764161276823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
