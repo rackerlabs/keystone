@@ -69,6 +69,24 @@
       "parentUuid": "c42fe273_5cf7a839",
       "revId": "226288c518b046aa62766e236fa5764161276823",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a246c9ba_ab4cac48",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-12T16:13:45Z",
+      "side": 1,
+      "message": "I see, can you add into that link [1], the following information?\n- openstack mapping list\n- openstack mapping show \u003cmapping_name\u003e\n- Check if the message \"Configuring the domain\" or \"was configured with a domain\" appear in the logs. They will appear in DEBUG log level.",
+      "parentUuid": "1222e3a8_7bdb10b1",
+      "revId": "226288c518b046aa62766e236fa5764161276823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
