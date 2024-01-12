@@ -51,6 +51,24 @@
       "parentUuid": "a2a37dcb_1ca8c0e7",
       "revId": "226288c518b046aa62766e236fa5764161276823",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1222e3a8_7bdb10b1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 36300
+      },
+      "writtenOn": "2024-01-12T16:01:59Z",
+      "side": 1,
+      "message": "Hello Rafael, thanks for your response. It\u0027s true what you said. \nBut, we repeated the experiment using a non domain specific role (reader) and we were able to login. But, the federated was placed on the IdP domain, instead of the domain specified on the claim.\n\nYou can check more info in [1], there you can find the assertion from the keystone log, and different info from openstack.\n\n[1] https://input.scs.community/opendev-keystone-issue-739966?view",
+      "parentUuid": "c42fe273_5cf7a839",
+      "revId": "226288c518b046aa62766e236fa5764161276823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
