@@ -178,6 +178,42 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "687dc4c6_61f658b5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-15T16:39:26Z",
+      "side": 1,
+      "message": "Well, it is not a speculating test that somebody needs to do. One just needs to read the specs (which is important to understand what is being tested) and check the patch to understand what is implemented that is going to be tested. Anyway, I expect developers to be able to use/consume spec and use CURL to a newly created API that does not have a CLI command yet.\n\nI see no point in continuing to argue; even though I disagree, I will add the change you suggested. However, I think this can bring more problems than help. Probably tomorrow or later on Wednesday I will send the patch.",
+      "parentUuid": "8cafc003_d6086527",
+      "revId": "226288c518b046aa62766e236fa5764161276823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a75b5ce_7629090d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-15T16:39:26Z",
+      "side": 1,
+      "message": "It seems that we found the issue. I will mark this thread as resolved then.",
+      "parentUuid": "08778cfd_0ce5bb70",
+      "revId": "226288c518b046aa62766e236fa5764161276823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4843a75a_1d8ae255",
