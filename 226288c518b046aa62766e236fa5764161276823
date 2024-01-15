@@ -123,6 +123,23 @@
       "parentUuid": "9868dc54_c26c9961",
       "revId": "226288c518b046aa62766e236fa5764161276823",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47102394_ed0ebc3c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-01-15T14:14:37Z",
+      "side": 1,
+      "message": "I suggest to change the \"DEFAULT\" handling in favor of adding config option:\n```\ndiff --git a/keystone/api/os_federation.py b/keystone/api/os_federation.py\nindex b1f7fa37e..6f81c10e0 100644\n--- a/keystone/api/os_federation.py\n+++ b/keystone/api/os_federation.py\n@@ -281,7 +281,7 @@ class MappingResource(_ResourceBase):\n         mapping \u003d self.request_body_json.get(\u0027mapping\u0027, {})\n         mapping \u003d self._normalize_dict(mapping)\n \n-        mapping.setdefault(\u0027schema_version\u0027, utils.DEFAULT_SCHEMA_VERSION)\n+        mapping.setdefault(\u0027schema_version\u0027, CONF.federation.default_mapping_schema_version)\n         utils.validate_mapping_structure(mapping)\n \n         mapping_ref \u003d PROVIDERS.federation_api.create_mapping(\n@@ -297,7 +297,7 @@ class MappingResource(_ResourceBase):\n         mapping \u003d self.request_body_json.get(\u0027mapping\u0027, {})\n         mapping \u003d self._normalize_dict(mapping)\n \n-        mapping.setdefault(\u0027schema_version\u0027, utils.DEFAULT_SCHEMA_VERSION)\n+        mapping.setdefault(\u0027schema_version\u0027, CONF.federation.default_mapping_schema_version)\n         utils.validate_mapping_structure(mapping)\n \n         mapping_ref \u003d PROVIDERS.federation_api.update_mapping(\ndiff --git a/keystone/conf/federation.py b/keystone/conf/federation.py\nindex f99aef9b5..8d202ee7a 100644\n--- a/keystone/conf/federation.py\n+++ b/keystone/conf/federation.py\n@@ -103,6 +103,14 @@ from a mapping. Default is 0, which means disabled.\n \"\"\"))\n \n \n+default_mapping_schema_version \u003d cfg.StrOpt(\n+    \u0027default_mapping_schema_version\u0027,\n+    default\u003d\"1.0\",\n+    help\u003dutils.fmt(\"\"\"\n+Default mapping rules schema version. Default is `1.0`\n+\"\"\"))\n+\n+\n GROUP_NAME \u003d __name__.split(\u0027.\u0027)[-1]\n ALL_OPTS \u003d [\n     driver,\n@@ -113,6 +121,7 @@ ALL_OPTS \u003d [\n     sso_callback_template,\n     caching,\n     default_authorization_ttl,\n+    default_mapping_schema_version,\n ]\n \n \ndiff --git a/keystone/federation/utils.py b/keystone/federation/utils.py\nindex b2ef35610..f89d19d1a 100644\n\n--- a/keystone/federation/utils.py\n+++ b/keystone/federation/utils.py\n@@ -41,8 +41,6 @@ class UserType(object):\n     LOCAL \u003d \u0027local\u0027\n-DEFAULT_SCHEMA_VERSION \u003d \"1.0\"\n-\n ROLE_PROPERTIES \u003d {\n     \"type\": \"array\",\n     \"items\": {\n@@ -291,7 +289,7 @@ class DirectMaps(object):\n \n \n def validate_mapping_structure(ref):\n-    version \u003d ref.get(\u0027schema_version\u0027, DEFAULT_SCHEMA_VERSION)\n+    version \u003d ref.get(\u0027schema_version\u0027, CONF.federation.default_mapping_schema_version)\n \n     v \u003d jsonschema.Draft4Validator(\n         IDP_ATTRIBUTE_MAPPING_SCHEMAS[version][\u0027schema\u0027])\n@@ -1018,15 +1016,15 @@ class RuleProcessorToHonorDomainOption(RuleProcessor):\n \n \n IDP_ATTRIBUTE_MAPPING_SCHEMAS \u003d {\n-    DEFAULT_SCHEMA_VERSION: {\"schema\": IDP_ATTRIBUTE_MAPPING_SCHEMA_1_0,\n-                             \"processor\": RuleProcessor},\n+    \"1.0\": {\"schema\": IDP_ATTRIBUTE_MAPPING_SCHEMA_1_0,\n+            \"processor\": RuleProcessor},\n     \"2.0\": {\"schema\": IDP_ATTRIBUTE_MAPPING_SCHEMA_2_0,\n             \"processor\": RuleProcessorToHonorDomainOption}\n }\n \n \n def create_attribute_mapping_rules_processor(mapping):\n-    version \u003d mapping.get(\u0027schema_version\u0027, DEFAULT_SCHEMA_VERSION)\n+    version \u003d mapping.get(\u0027schema_version\u0027, CONF.federation.default_mapping_schema_version)\n \n     return IDP_ATTRIBUTE_MAPPING_SCHEMAS[version][\u0027processor\u0027](\n         mapping[\u0027id\u0027], mapping[\u0027rules\u0027])\n```\n\nthis allow flexibility for cloud operators to stick to whichever version they want to have (with easy rollback and activation) and let people here easily test it. @Rafael, If you are ok I can push this patch directly (tried to reach you view IRC and email with no luck)",
+      "revId": "226288c518b046aa62766e236fa5764161276823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
