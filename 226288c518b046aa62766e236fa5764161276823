@@ -87,6 +87,24 @@
       "parentUuid": "1222e3a8_7bdb10b1",
       "revId": "226288c518b046aa62766e236fa5764161276823",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9868dc54_c26c9961",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-15T13:44:56Z",
+      "side": 1,
+      "message": "Juan, you did not post an update here, but I see that you updated the link in [1].\n\nregarding your message:\n```\nRegarding the “Configuring the domain” or “was configured with a domain” in the logs, there is no such message on the logs.\n```\n\nThat means you are using the default processor. Also looking at your output, you probably registered the attribute mapping uisng the CLI, but the CLI has not been updated to support these new APIs here. Therefore, you are using the attribute mapping with schema 1.0, which is not the one that introduced the behavior you want.\n\nYou will need to either update the attribute mapping schema version via CURL or register a new one with CURL and using the schema_version 2.0.",
+      "parentUuid": "a246c9ba_ab4cac48",
+      "revId": "226288c518b046aa62766e236fa5764161276823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
