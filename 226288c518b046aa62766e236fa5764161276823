@@ -105,6 +105,24 @@
       "parentUuid": "a246c9ba_ab4cac48",
       "revId": "226288c518b046aa62766e236fa5764161276823",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08778cfd_0ce5bb70",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-15T14:05:24Z",
+      "side": 1,
+      "message": "The CLI depends on this other patch [*], but the problem is that it depends on this one to get merged. Therefore, you need to test configuring the attribute mapping via a CURL call as the CLI is still not prepared for it.\n\n[*] https://review.opendev.org/c/openstack/python-openstackclient/+/749572",
+      "parentUuid": "9868dc54_c26c9961",
+      "revId": "226288c518b046aa62766e236fa5764161276823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
