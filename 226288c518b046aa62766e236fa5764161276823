@@ -158,6 +158,41 @@
       "parentUuid": "47102394_ed0ebc3c",
       "revId": "226288c518b046aa62766e236fa5764161276823",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8cafc003_d6086527",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-01-15T14:54:40Z",
+      "side": 1,
+      "message": "OpenStack is full of things where config parameter influences API behavior dramatically (even just adding new AZ lead to unexpected behavior when provisioning new VM). This is a \"provider\" issue how to communicate this.\n\nWhat you say can be rephrased in the following way: doesn\u0027t matter which way the default is set it can be screwed. Right. But in that case it is less mess to delete DEFAULT as such, because THIS is what is creating confusion. Basically in a programmer and operator eyes a \"default\" is something what he can influence on. Here it is not really the case. It is implemented now like a \"unversioned_schema\" rather then default_schema_version\n\nMy main problem is that with this hardcoded to 1.0 there is no possibility for anybody to test the change reasonably without speculatively testing some other dependent (and unlinked) changes or going curl with not properly documented API (as SDK/CLI maintainer I would rather say: undocumented)\n\nI am not insisting on that, was just thinking it would make testing and operating easier once there is a config option.\n\nbtw, normally we accept OSC changes once related service change is merged, what would mean here a infinite loop since it is not possible to test feature otherwise. Anyway, we can make an exception here. It is just making testing a lot more comlpex.",
+      "parentUuid": "fd44ea69_ed8bb4de",
+      "revId": "226288c518b046aa62766e236fa5764161276823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4843a75a_1d8ae255",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1021,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-01-15T14:54:40Z",
+      "side": 1,
+      "message": "please use \"1.0\" here and not the constant value, since changing the default without touching this place will immediately cause unexpected issues.",
+      "revId": "226288c518b046aa62766e236fa5764161276823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
