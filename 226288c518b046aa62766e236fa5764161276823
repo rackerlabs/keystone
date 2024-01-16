@@ -246,6 +246,24 @@
       "message": "please use \"1.0\" here and not the constant value, since changing the default without touching this place will immediately cause unexpected issues.",
       "revId": "226288c518b046aa62766e236fa5764161276823",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cee891ad_3a7b2607",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1021,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-16T16:18:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4843a75a_1d8ae255",
+      "revId": "226288c518b046aa62766e236fa5764161276823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
