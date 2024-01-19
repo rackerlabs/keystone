@@ -1,0 +1,14 @@
+Code-Review+2: David Wilde <dwilde@redhat.com>
+Workflow+1: David Wilde <dwilde@redhat.com>
+Code-Review+1: Dmitriy Rabotyagov <noonedeadpunk@gmail.com>
+Verified+2: Zuul
+Code-Review+1: Boris Bobrov <b.bobrov@sap.com>
+Code-Review+1: Takashi Kajinami <kajinamit@oss.nttdata.com>
+Code-Review+2: Grzegorz Grasza <xek@redhat.com>
+Submitted-by: Zuul
+Submitted-at: Fri, 19 Jan 2024 16:51:41 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/881255
+Comments-Total: 4
+Comments-Unresolved: 1
+Project: openstack/keystone
+Branch: refs/heads/master
