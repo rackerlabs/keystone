@@ -16,6 +16,40 @@
       "message": "nit - this variable is no longer used",
       "revId": "0e525fd841a6bd3309e0705621e80971f3a3a5b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5170ed64_ff81f3b4",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-01-19T15:41:25Z",
+      "side": 1,
+      "message": "Per xek, delete unused consts",
+      "revId": "0e525fd841a6bd3309e0705621e80971f3a3a5b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c79bcc9a_94f3ac10",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-01-19T15:41:25Z",
+      "side": 1,
+      "message": "Remove this one as well.",
+      "revId": "0e525fd841a6bd3309e0705621e80971f3a3a5b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
