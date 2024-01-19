@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83e4d30f_36d71ebb",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2024-01-19T15:38:09Z",
+      "side": 1,
+      "message": "nit - this variable is no longer used",
+      "revId": "0e525fd841a6bd3309e0705621e80971f3a3a5b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
