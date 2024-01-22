@@ -30,7 +30,7 @@ PROVIDERS = provider_api.ProviderAPIs
 
 def _future_time_string():
     expire_delta = datetime.timedelta(seconds=1000)
-    future_time = timeutils.utcnow() + expire_delta
+    future_time = datetime.datetime.now() + expire_delta
     return utils.isotime(future_time)
 
 
@@ -139,7 +139,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         self.assertEqual([], events)
 
     def test_revoked_at_in_list(self):
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now()
         with freezegun.freeze_time(time) as frozen_datetime:
             revoked_at = timeutils.utcnow()
             # Given or not, `revoked_at` will always be set in the backend.

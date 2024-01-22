@@ -782,7 +782,7 @@ class TrustFlush(BaseApp):
                             help=('The id of the trustee of which the '
                                   'expired or non-expired soft-deleted '
                                   'trusts is to be purged'))
-        parser.add_argument('--date', default=datetime.datetime.utcnow(),
+        parser.add_argument('--date', default=datetime.datetime.now(),
                             help=('The date of which the expired or '
                                   'non-expired soft-deleted trusts older '
                                   'than that will be purged. The format of '

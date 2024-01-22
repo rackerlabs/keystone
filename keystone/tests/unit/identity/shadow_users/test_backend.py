@@ -118,7 +118,7 @@ class ShadowUsersBackendTests(object):
     def test_set_last_active_at(self):
         self.config_fixture.config(group='security_compliance',
                                    disable_user_account_days_inactive=90)
-        now = datetime.datetime.utcnow().date()
+        now = datetime.datetime.now().date()
         password = uuid.uuid4().hex
         user = self._create_user(password)
         with self.make_request():
