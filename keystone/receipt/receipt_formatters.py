@@ -132,7 +132,7 @@ class ReceiptFormatter(object):
         timestamp_int = struct.unpack(">Q", timestamp_bytes)[0]
 
         # and with an integer, it's trivial to produce a datetime object
-        issued_at = datetime.datetime.utcfromtimestamp(timestamp_int)
+        issued_at = datetime.datetime.fromtimestamp(timestamp_int)
 
         return issued_at
 
@@ -247,7 +247,7 @@ class ReceiptPayload(object):
         """
         time_object = timeutils.parse_isotime(time_string)
         return (timeutils.normalize_time(time_object) -
-                datetime.datetime.utcfromtimestamp(0)).total_seconds()
+                datetime.datetime.fromtimestamp(0)).total_seconds()
 
     @classmethod
     def _convert_float_to_time_string(cls, time_float):
@@ -257,7 +257,7 @@ class ReceiptPayload(object):
         :returns: a time formatted strings
 
         """
-        time_object = datetime.datetime.utcfromtimestamp(time_float)
+        time_object = datetime.datetime.fromtimestamp(time_float)
         return ks_utils.isotime(time_object, subsecond=True)
 
     @classmethod

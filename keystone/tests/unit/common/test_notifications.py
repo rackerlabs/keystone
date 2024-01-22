@@ -766,7 +766,7 @@ class CADFNotificationsForPCIDSSEvents(BaseNotificationTest):
     def test_password_expired_sends_notification(self):
         password = uuid.uuid4().hex
         password_creation_time = (
-            datetime.datetime.utcnow() -
+            datetime.datetime.now() -
             datetime.timedelta(
                 days=CONF.security_compliance.password_expires_days + 1)
         )
@@ -883,13 +883,13 @@ class CADFNotificationsForPCIDSSEvents(BaseNotificationTest):
         user_ref = unit.new_user_ref(domain_id=self.domain_id,
                                      password=password,
                                      password_created_at=(
-                                         datetime.datetime.utcnow()))
+                                         datetime.datetime.now()))
         user_ref = PROVIDERS.identity_api.create_user(user_ref)
 
         min_days = CONF.security_compliance.minimum_password_age
         min_age = (user_ref['password_created_at'] +
                    datetime.timedelta(days=min_days))
-        days_left = (min_age - datetime.datetime.utcnow()).days
+        days_left = (min_age - datetime.datetime.now()).days
         reason_type = (exception.PasswordAgeValidationError.message_format %
                        {'min_age_days': min_days, 'days_left': days_left})
         expected_reason = {'reasonCode': '400',

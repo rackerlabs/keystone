@@ -28,7 +28,7 @@ class TestReceiptSerialization(base_classes.TestCaseWithBootstrap):
         self.admin_user_id = self.bootstrapper.admin_user_id
 
         self.receipt_id = uuid.uuid4().hex
-        issued_at = datetime.datetime.utcnow()
+        issued_at = datetime.datetime.now()
         self.issued_at = ks_utils.isotime(at=issued_at, subsecond=True)
 
         # Reach into the cache registry and pull out an instance of the

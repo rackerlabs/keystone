@@ -108,7 +108,7 @@ class ApplicationCredential(base.ApplicationCredentialDriverBase):
 
     def _check_expired(self, app_cred_ref):
         if app_cred_ref.get('expires_at'):
-            return datetime.datetime.utcnow() >= app_cred_ref['expires_at']
+            return datetime.datetime.now() >= app_cred_ref['expires_at']
         return False
 
     def authenticate(self, application_credential_id, secret):

@@ -32,7 +32,7 @@ class ApplicationCredentialTests(object):
         if not name:
             name = uuid.uuid4().hex
         if not expires:
-            expires = datetime.datetime.utcnow() + datetime.timedelta(days=365)
+            expires = datetime.datetime.now() + datetime.timedelta(days=365)
         if not system:
             system = uuid.uuid4().hex
         if not project_id:
@@ -305,7 +305,7 @@ class ApplicationCredentialTests(object):
                           uuid.uuid4().hex)
 
     def test_authenticate_expired(self):
-        yesterday = datetime.datetime.utcnow() - datetime.timedelta(days=1)
+        yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
         app_cred = self._new_app_cred_data(self.user_foo['id'],
                                            project_id=self.project_bar['id'],
                                            expires=yesterday)
