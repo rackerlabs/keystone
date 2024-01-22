@@ -259,7 +259,7 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
                 }
             }
         }
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now()
         with freezegun.freeze_time(time) as frozen_time:
             with app.test_client() as c:
                 auth_response = c.post('/v3/auth/tokens',
@@ -1822,7 +1822,7 @@ class TestTrustFlush(unit.SQLDriverOverrides, unit.BaseTestCase):
         self.command_project_id = None
         self.command_trustor_user_id = None
         self.command_trustee_user_id = None
-        self.command_date = datetime.datetime.utcnow()
+        self.command_date = datetime.datetime.now()
         self.useFixture(fixtures.MockPatchObject(
             CONF, 'command', self.FakeConfCommand(self)))
 

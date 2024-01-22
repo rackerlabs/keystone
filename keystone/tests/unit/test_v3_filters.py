@@ -222,7 +222,7 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         # by a full second after a recovation event has occurred. Otherwise the
         # token will be considered revoked even though it is actually a valid
         # token.
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now()
         with freezegun.freeze_time(time) as frozen_datetime:
 
             self._set_policy({"identity:list_users": []})
@@ -367,7 +367,7 @@ class IdentityPasswordExpiryFilteredTestCase(filtering.FilterTests,
         self.group_id = self.group['id']
         # Creates three users each with password expiration offset
         # by one day, starting with the current time frozen.
-        self.starttime = datetime.datetime.utcnow()
+        self.starttime = datetime.datetime.now(datetime.UTC)
         with freezegun.freeze_time(self.starttime):
             self.config_fixture.config(group='security_compliance',
                                        password_expires_days=1)
