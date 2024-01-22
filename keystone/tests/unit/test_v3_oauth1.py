@@ -14,6 +14,7 @@
 
 import copy
 import datetime
+from datetime import timezone
 import random
 from unittest import mock
 import uuid
@@ -976,7 +977,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
                       resp_data['error']['message'])
 
     def test_expired_authorizing_request_token(self):
-        with freezegun.freeze_time(datetime.datetime.utcnow()) as frozen_time:
+        with freezegun.freeze_time(datetime.datetime.now()) as frozen_time:
             self.config_fixture.config(group='oauth1',
                                        request_token_duration=1)
 
@@ -1004,7 +1005,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
             self.put(url, body=body, expected_status=http.client.UNAUTHORIZED)
 
     def test_expired_creating_keystone_token(self):
-        with freezegun.freeze_time(datetime.datetime.utcnow()) as frozen_time:
+        with freezegun.freeze_time(datetime.datetime.now()) as frozen_time:
             self.config_fixture.config(group='oauth1',
                                        access_token_duration=1)
 

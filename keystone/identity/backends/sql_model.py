@@ -13,6 +13,7 @@
 # under the License.
 
 import datetime
+from datetime import timezone
 
 import sqlalchemy
 from sqlalchemy.ext.hybrid import hybrid_property
@@ -135,12 +136,12 @@ class User(sql.ModelBase, sql.ModelDictMixinWithExtras):
     def password_is_expired(self):
         """Return whether password is expired or not."""
         if self.password_expires_at and not self._password_expiry_exempt():
-            return datetime.datetime.utcnow() >= self.password_expires_at
+            return datetime.datetime.now() >= self.password_expires_at
         return False
 
     @password.setter
     def password(self, value):
-        now = datetime.datetime.utcnow()
+        now = datetime.datetime.now()
         if not self.local_user:
             self.local_user = LocalUser()
         # truncate extra passwords
@@ -208,7 +209,7 @@ class User(sql.ModelBase, sql.ModelDictMixinWithExtras):
             if not last_active and self.created_at:
                 last_active = self.created_at.date()
             if max_days and last_active:
-                now = datetime.datetime.utcnow().date()
+                now = datetime.datetime.now().date()
                 days_inactive = (now - last_active).days
                 if days_inactive >= max_days and not inactivity_exempt:
                     self._enabled = False
@@ -218,7 +219,7 @@ class User(sql.ModelBase, sql.ModelDictMixinWithExtras):
     def enabled(self, value):
         if (value and
                 CONF.security_compliance.disable_user_account_days_inactive):
-            self.last_active_at = datetime.datetime.utcnow().date()
+            self.last_active_at = datetime.datetime.now().date()
         if value and self.local_user:
             self.local_user.failed_auth_count = 0
             self.local_user.failed_auth_at = None
@@ -448,7 +449,7 @@ class ExpiringUserGroupMembership(sql.ModelBase, sql.ModelDictMixin):
 
     @hybrid_property
     def expired(self):
-        return self.expires <= datetime.datetime.utcnow()
+        return self.expires <= datetime.datetime.now()
 
 
 class UserOption(sql.ModelBase):

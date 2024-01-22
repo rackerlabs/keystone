@@ -117,7 +117,7 @@ class TestMFARules(test_v3.RestfulTestCase):
         # issues with revocation events that occur at the same time as the
         # token issuance. This is a bug with the limited resolution that
         # tokens and revocation events have.
-        time = datetime.datetime.utcnow() + datetime.timedelta(seconds=5)
+        time = datetime.datetime.now() + datetime.timedelta(seconds=5)
         with freezegun.freeze_time(time):
             self.v3_create_token(
                 self.build_authentication_request(
@@ -136,7 +136,7 @@ class TestMFARules(test_v3.RestfulTestCase):
         # issues with revocation events that occur at the same time as the
         # token issuance. This is a bug with the limited resolution that
         # tokens and revocation events have.
-        time = datetime.datetime.utcnow() + datetime.timedelta(seconds=5)
+        time = datetime.datetime.now() + datetime.timedelta(seconds=5)
         with freezegun.freeze_time(time):
             auth_req = self.build_authentication_request(
                 user_id=self.user_id,
@@ -154,7 +154,7 @@ class TestMFARules(test_v3.RestfulTestCase):
         # issues with revocation events that occur at the same time as the
         # token issuance. This is a bug with the limited resolution that
         # tokens and revocation events have.
-        time = datetime.datetime.utcnow() + datetime.timedelta(seconds=5)
+        time = datetime.datetime.now() + datetime.timedelta(seconds=5)
         with freezegun.freeze_time(time):
             self.v3_create_token(
                 self.build_authentication_request(
@@ -173,7 +173,7 @@ class TestMFARules(test_v3.RestfulTestCase):
         # issues with revocation events that occur at the same time as the
         # token issuance. This is a bug with the limited resolution that
         # tokens and revocation events have.
-        time = datetime.datetime.utcnow() + datetime.timedelta(seconds=5)
+        time = datetime.datetime.now() + datetime.timedelta(seconds=5)
         with freezegun.freeze_time(time):
             self.v3_create_token(
                 self.build_authentication_request(
@@ -191,7 +191,7 @@ class TestMFARules(test_v3.RestfulTestCase):
         # issues with revocation events that occur at the same time as the
         # token issuance. This is a bug with the limited resolution that
         # tokens and revocation events have.
-        time = datetime.datetime.utcnow() + datetime.timedelta(seconds=5)
+        time = datetime.datetime.now() + datetime.timedelta(seconds=5)
         with freezegun.freeze_time(time):
             self.v3_create_token(
                 self.build_authentication_request(
@@ -206,7 +206,7 @@ class TestMFARules(test_v3.RestfulTestCase):
         rule_list = [['password', 'totp']]
         self._update_user_with_MFA_rules(rule_list=rule_list,
                                          rules_enabled=False)
-        time = datetime.datetime.utcnow() + datetime.timedelta(seconds=5)
+        time = datetime.datetime.now() + datetime.timedelta(seconds=5)
         # NOTE(notmorgan): Step forward in time to ensure we're not causing
         # issues with revocation events that occur at the same time as the
         # token issuance. This is a bug with the limited resolution that
@@ -230,7 +230,7 @@ class TestMFARules(test_v3.RestfulTestCase):
         # issues with revocation events that occur at the same time as the
         # token issuance. This is a bug with the limited resolution that
         # tokens and revocation events have.
-        time = datetime.datetime.utcnow() + datetime.timedelta(seconds=5)
+        time = datetime.datetime.now() + datetime.timedelta(seconds=5)
         with freezegun.freeze_time(time):
             self.v3_create_token(
                 self.build_authentication_request(
@@ -247,7 +247,7 @@ class TestMFARules(test_v3.RestfulTestCase):
         # issues with revocation events that occur at the same time as the
         # token issuance. This is a bug with the limited resolution that
         # tokens and revocation events have.
-        time = datetime.datetime.utcnow() + datetime.timedelta(seconds=5)
+        time = datetime.datetime.now() + datetime.timedelta(seconds=5)
         with freezegun.freeze_time(time):
             auth_data = self.build_authentication_request(
                 user_id=self.user_id,
@@ -269,7 +269,7 @@ class TestMFARules(test_v3.RestfulTestCase):
         # issues with revocation events that occur at the same time as the
         # token issuance. This is a bug with the limited resolution that
         # tokens and revocation events have.
-        time = datetime.datetime.utcnow() + datetime.timedelta(seconds=5)
+        time = datetime.datetime.now() + datetime.timedelta(seconds=5)
         with freezegun.freeze_time(time):
             response = self.admin_request(
                 method='POST',
@@ -302,7 +302,7 @@ class TestMFARules(test_v3.RestfulTestCase):
         # issues with revocation events that occur at the same time as the
         # token issuance. This is a bug with the limited resolution that
         # tokens and revocation events have.
-        time = datetime.datetime.utcnow() + datetime.timedelta(seconds=5)
+        time = datetime.datetime.now() + datetime.timedelta(seconds=5)
         with freezegun.freeze_time(time):
             response = self.admin_request(
                 method='POST',
@@ -336,7 +336,7 @@ class TestMFARules(test_v3.RestfulTestCase):
         # issues with revocation events that occur at the same time as the
         # token issuance. This is a bug with the limited resolution that
         # tokens and revocation events have.
-        time = datetime.datetime.utcnow() + datetime.timedelta(seconds=5)
+        time = datetime.datetime.now() + datetime.timedelta(seconds=5)
         with freezegun.freeze_time(time):
             response = self.admin_request(
                 method='POST',
@@ -379,7 +379,7 @@ class TestMFARules(test_v3.RestfulTestCase):
         # issues with revocation events that occur at the same time as the
         # token issuance. This is a bug with the limited resolution that
         # tokens and revocation events have.
-        time = datetime.datetime.utcnow() + datetime.timedelta(seconds=5)
+        time = datetime.datetime.now() + datetime.timedelta(seconds=5)
         with freezegun.freeze_time(time):
             response = self.admin_request(
                 method='POST',
@@ -412,7 +412,7 @@ class TestMFARules(test_v3.RestfulTestCase):
         # issues with revocation events that occur at the same time as the
         # token issuance. This is a bug with the limited resolution that
         # tokens and revocation events have.
-        time = datetime.datetime.utcnow() + datetime.timedelta(seconds=5)
+        time = datetime.datetime.now() + datetime.timedelta(seconds=5)
         with freezegun.freeze_time(time):
             response = self.admin_request(
                 method='POST',
@@ -436,7 +436,7 @@ class TestMFARules(test_v3.RestfulTestCase):
             set(frozenset(r) for r in rule_list),
             set(frozenset(r) for r in resp_data.get('required_auth_methods')))
 
-        time = datetime.datetime.utcnow() + datetime.timedelta(seconds=5)
+        time = datetime.datetime.now() + datetime.timedelta(seconds=5)
         with freezegun.freeze_time(time):
             response = self.admin_request(
                 method='POST',
@@ -450,7 +450,7 @@ class TestMFARules(test_v3.RestfulTestCase):
                         totp_cred['blob'])[0]))
 
     def test_MFA_consuming_receipt_not_found(self):
-        time = datetime.datetime.utcnow() + datetime.timedelta(seconds=5)
+        time = datetime.datetime.now() + datetime.timedelta(seconds=5)
         with freezegun.freeze_time(time):
             response = self.admin_request(
                 method='POST',
@@ -709,7 +709,7 @@ class TokenAPITests(object):
         # use the context manager of freezegun without sqlite issues.
         self.config_fixture.config(group='token',
                                    expiration=10)
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now()
         with freezegun.freeze_time(time) as frozen_datetime:
             unscoped_token = self._get_unscoped_token()
             frozen_datetime.tick(delta=datetime.timedelta(seconds=15))
@@ -1233,7 +1233,7 @@ class TokenAPITests(object):
         # use the context manager of freezegun without sqlite issues.
         self.config_fixture.config(group='token',
                                    expiration=10)
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now()
         with freezegun.freeze_time(time) as frozen_datetime:
             domain_scoped_token = self._get_domain_scoped_token()
             frozen_datetime.tick(delta=datetime.timedelta(seconds=15))
@@ -1318,7 +1318,7 @@ class TokenAPITests(object):
         # use the context manager of freezegun without sqlite issues.
         self.config_fixture.config(group='token',
                                    expiration=10)
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now()
         with freezegun.freeze_time(time) as frozen_datetime:
             project_scoped_token = self._get_project_scoped_token()
             frozen_datetime.tick(delta=datetime.timedelta(seconds=15))
@@ -1734,7 +1734,7 @@ class TokenAPITests(object):
         # use the context manager of freezegun without sqlite issues.
         self.config_fixture.config(group='token',
                                    expiration=10)
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now()
         with freezegun.freeze_time(time) as frozen_datetime:
             trustee_user, trust = self._create_trust()
             trust_scoped_token = self._get_trust_scoped_token(
@@ -2592,7 +2592,7 @@ class TokenAPITests(object):
         self.config_fixture.config(group='token',
                                    expiration=10,
                                    allow_expired_window=20)
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now()
         with freezegun.freeze_time(time) as frozen_datetime:
             token = self._get_project_scoped_token()
 
@@ -2634,7 +2634,7 @@ class TokenAPITests(object):
         self.config_fixture.config(group='token',
                                    expiration=10,
                                    allow_expired_window=20)
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now()
         with freezegun.freeze_time(time):
             token = self._get_project_scoped_token()
 
@@ -3618,7 +3618,7 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
 
     def test_removing_role_assignment_does_not_affect_other_users(self):
         """Revoking a role from one user should not affect other users."""
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now()
         with freezegun.freeze_time(time) as frozen_datetime:
             # This group grant is not needed for the test
             self.delete(
@@ -4174,7 +4174,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
 
         # Create first trust with extended set of roles
         ref = self.redelegated_trust_ref
-        ref['expires_at'] = datetime.datetime.utcnow().replace(
+        ref['expires_at'] = datetime.datetime.now().replace(
             year=2032).strftime(unit.TIME_FORMAT)
         ref['roles'].append({'id': role['id']})
         r = self.post('/OS-TRUST/trusts',
@@ -4189,7 +4189,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
 
         # Chain second trust with roles subset
         self.chained_trust_ref['expires_at'] = (
-            datetime.datetime.utcnow().replace(year=2028).strftime(
+            datetime.datetime.now().replace(year=2028).strftime(
                 unit.TIME_FORMAT))
         r = self.post('/OS-TRUST/trusts',
                       body={'trust': self.chained_trust_ref},
@@ -4251,7 +4251,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
             expires=dict(minutes=1),
             role_names=[self.role['name']],
             allow_redelegation=True)
-        ref['expires_at'] = datetime.datetime.utcnow().replace(
+        ref['expires_at'] = datetime.datetime.now().replace(
             year=2032).strftime(unit.TIME_FORMAT)
         r = self.post('/OS-TRUST/trusts',
                       body={'trust': ref})
@@ -4266,7 +4266,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
             impersonation=True,
             role_names=[self.role['name']],
             allow_redelegation=True)
-        ref['expires_at'] = datetime.datetime.utcnow().replace(
+        ref['expires_at'] = datetime.datetime.now().replace(
             year=2028).strftime(unit.TIME_FORMAT)
         r = self.post('/OS-TRUST/trusts',
                       body={'trust': ref},
@@ -4302,7 +4302,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
 
     def test_redelegation_terminator(self):
         self.redelegated_trust_ref['expires_at'] = (
-            datetime.datetime.utcnow().replace(year=2032).strftime(
+            datetime.datetime.now().replace(year=2032).strftime(
                 unit.TIME_FORMAT))
         r = self.post('/OS-TRUST/trusts',
                       body={'trust': self.redelegated_trust_ref})
@@ -4311,7 +4311,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
 
         # Build second trust - the terminator
         self.chained_trust_ref['expires_at'] = (
-            datetime.datetime.utcnow().replace(year=2028).strftime(
+            datetime.datetime.now().replace(year=2028).strftime(
                 unit.TIME_FORMAT))
         ref = dict(self.chained_trust_ref,
                    redelegation_count=1,
@@ -5432,7 +5432,7 @@ class TestAuthTOTP(test_v3.RestfulTestCase):
         creds = self._make_credentials('totp')
         secret = creds[-1]['blob']
 
-        past = datetime.datetime.utcnow() - datetime.timedelta(minutes=2)
+        past = datetime.datetime.now() - datetime.timedelta(minutes=2)
         with freezegun.freeze_time(past):
             auth_data = self._make_auth_data_by_id(
                 totp._generate_totp_passcodes(secret)[0])
@@ -5451,7 +5451,7 @@ class TestAuthTOTP(test_v3.RestfulTestCase):
         creds = self._make_credentials('totp')
         secret = creds[-1]['blob']
 
-        past = datetime.datetime.utcnow() - datetime.timedelta(seconds=30)
+        past = datetime.datetime.now() - datetime.timedelta(seconds=30)
         with freezegun.freeze_time(past):
             auth_data = self._make_auth_data_by_id(
                 totp._generate_totp_passcodes(secret)[0])
@@ -5485,7 +5485,7 @@ class TestAuthTOTP(test_v3.RestfulTestCase):
         creds = self._make_credentials('totp')
         secret = creds[-1]['blob']
 
-        past = datetime.datetime.utcnow() - datetime.timedelta(seconds=30)
+        past = datetime.datetime.now() - datetime.timedelta(seconds=30)
         with freezegun.freeze_time(past):
             auth_data = self._make_auth_data_by_id(
                 totp._generate_totp_passcodes(secret)[0])
@@ -5503,7 +5503,7 @@ class TestAuthTOTP(test_v3.RestfulTestCase):
         creds = self._make_credentials('totp')
         secret = creds[-1]['blob']
 
-        past = datetime.datetime.utcnow() - datetime.timedelta(minutes=2)
+        past = datetime.datetime.now() - datetime.timedelta(minutes=2)
         self.useFixture(fixture.TimeFixture(past))
         auth_data = self._make_auth_data_by_id(
             totp._generate_totp_passcodes(secret)[0])
@@ -5740,7 +5740,7 @@ class ApplicationCredentialAuth(test_v3.RestfulTestCase):
                              expected_status=http.client.UNAUTHORIZED)
 
     def test_unexpired_application_credential_succeeds(self):
-        expires_at = datetime.datetime.utcnow() + datetime.timedelta(minutes=1)
+        expires_at = datetime.datetime.now() + datetime.timedelta(minutes=1)
         app_cred = self._make_app_cred(expires=expires_at)
         app_cred_ref = self.app_cred_api.create_application_credential(
             app_cred)
@@ -5749,19 +5749,19 @@ class ApplicationCredentialAuth(test_v3.RestfulTestCase):
         self.v3_create_token(auth_data, expected_status=http.client.CREATED)
 
     def test_expired_application_credential_fails(self):
-        expires_at = datetime.datetime.utcnow() + datetime.timedelta(minutes=1)
+        expires_at = datetime.datetime.now() + datetime.timedelta(minutes=1)
         app_cred = self._make_app_cred(expires=expires_at)
         app_cred_ref = self.app_cred_api.create_application_credential(
             app_cred)
         auth_data = self.build_authentication_request(
             app_cred_id=app_cred_ref['id'], secret=app_cred_ref['secret'])
-        future = datetime.datetime.utcnow() + datetime.timedelta(minutes=2)
+        future = datetime.datetime.now() + datetime.timedelta(minutes=2)
         with freezegun.freeze_time(future):
             self.v3_create_token(auth_data,
                                  expected_status=http.client.UNAUTHORIZED)
 
     def test_application_credential_expiration_limits_token_expiration(self):
-        expires_at = datetime.datetime.utcnow() + datetime.timedelta(minutes=1)
+        expires_at = datetime.datetime.now() + datetime.timedelta(minutes=1)
         app_cred = self._make_app_cred(expires=expires_at)
         app_cred_ref = self.app_cred_api.create_application_credential(
             app_cred)
@@ -5770,7 +5770,7 @@ class ApplicationCredentialAuth(test_v3.RestfulTestCase):
         resp = self.v3_create_token(auth_data,
                                     expected_status=http.client.CREATED)
         token = resp.headers.get('X-Subject-Token')
-        future = datetime.datetime.utcnow() + datetime.timedelta(minutes=2)
+        future = datetime.datetime.now() + datetime.timedelta(minutes=2)
         with freezegun.freeze_time(future):
             self._validate_token(token,
                                  expected_status=http.client.UNAUTHORIZED)

@@ -13,6 +13,7 @@
 # under the License.
 
 import datetime
+from datetime import timezone
 
 from oslo_db import api as oslo_db_api
 import sqlalchemy
@@ -105,7 +106,7 @@ class Identity(base.IdentityDriverBase):
             else:
                 delta = datetime.timedelta(seconds=lockout_duration)
                 last_failure = user_ref.local_user.failed_auth_at
-                if (last_failure + delta) > datetime.datetime.utcnow():
+                if (last_failure + delta) > datetime.datetime.now():
                     return True
                 else:
                     self._reset_failed_auth(user_id)
@@ -117,7 +118,7 @@ class Identity(base.IdentityDriverBase):
             if not user_ref.local_user.failed_auth_count:
                 user_ref.local_user.failed_auth_count = 0
             user_ref.local_user.failed_auth_count += 1
-            user_ref.local_user.failed_auth_at = datetime.datetime.utcnow()
+            user_ref.local_user.failed_auth_at = datetime.datetime.now()
 
     def _reset_failed_auth(self, user_id):
         with sql.session_for_write() as session:
@@ -132,8 +133,8 @@ class Identity(base.IdentityDriverBase):
         with sql.session_for_write() as session:
             user_ref = model.User.from_dict(user)
             if self._change_password_required(user_ref):
-                user_ref.password_ref.expires_at = datetime.datetime.utcnow()
-            user_ref.created_at = datetime.datetime.utcnow()
+                user_ref.password_ref.expires_at = datetime.datetime.now()
+            user_ref.created_at = datetime.datetime.now(datetime.UTC)
             session.add(user_ref)
             # Set resource options passed on creation
             resource_options.resource_options_ref_to_mapper(
@@ -239,7 +240,7 @@ class Identity(base.IdentityDriverBase):
             if 'password' in user:
                 user_ref.password = user['password']
                 if self._change_password_required(user_ref):
-                    expires_now = datetime.datetime.utcnow()
+                    expires_now = datetime.datetime.now()
                     user_ref.password_ref.expires_at = expires_now
 
             user_ref.extra = new_user.extra
@@ -273,8 +274,8 @@ class Identity(base.IdentityDriverBase):
         min_age_days = CONF.security_compliance.minimum_password_age
         min_age = (user_ref.password_created_at +
                    datetime.timedelta(days=min_age_days))
-        if datetime.datetime.utcnow() < min_age:
-            days_left = (min_age - datetime.datetime.utcnow()).days
+        if datetime.datetime.now() < min_age:
+            days_left = (min_age - datetime.datetime.now()).days
             raise exception.PasswordAgeValidationError(
                 min_age_days=min_age_days, days_left=days_left)
 

@@ -12,6 +12,7 @@
 
 
 import datetime
+from datetime import timezone
 from unittest import mock
 import uuid
 
@@ -373,7 +374,7 @@ class RevokeTests(object):
                                                 subsecond=True)
             return token
 
-        now = datetime.datetime.utcnow()
+        now = datetime.datetime.now()
         now_plus_2h = now + datetime.timedelta(hours=2)
         mock_utcnow.return_value = now
 

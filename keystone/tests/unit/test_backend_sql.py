@@ -673,7 +673,7 @@ class SqlIdentity(SqlTests,
         domain = self._get_domain_fixture()
         self.config_fixture.config(group='federation',
                                    default_authorization_ttl=5)
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now()
         tick = datetime.timedelta(minutes=5)
 
         new_group = unit.new_group_ref(domain_id=domain['id'])
@@ -706,7 +706,7 @@ class SqlIdentity(SqlTests,
     def test_add_user_to_group_expiring(self):
         self._build_fed_resource()
         domain = self._get_domain_fixture()
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now()
         tick = datetime.timedelta(minutes=5)
 
         new_group = unit.new_group_ref(domain_id=domain['id'])
@@ -753,7 +753,7 @@ class SqlIdentity(SqlTests,
         domain = self._get_domain_fixture()
         self.config_fixture.config(group='federation',
                                    default_authorization_ttl=5)
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now()
         tick = datetime.timedelta(minutes=5)
 
         new_group = unit.new_group_ref(domain_id=domain['id'])

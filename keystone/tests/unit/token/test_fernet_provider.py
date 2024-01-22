@@ -12,6 +12,7 @@
 
 import base64
 import datetime
+from datetime import timezone
 import hashlib
 import os
 from unittest import mock
@@ -407,7 +408,7 @@ class TestPayloads(unit.TestCase):
         time_obj = timeutils.parse_isotime(original_time_str)
         expected_time_float = (
             (timeutils.normalize_time(time_obj) -
-             datetime.datetime.utcfromtimestamp(0)).total_seconds())
+             datetime.datetime.fromtimestamp(0)).total_seconds())
 
         # NOTE(lbragstad): The token expiration time for Fernet tokens is
         # passed in the payload of the token. This is different from the token
@@ -423,7 +424,7 @@ class TestPayloads(unit.TestCase):
         # Generate expected_time_str using the same time float. Using
         # original_time_str from utils.isotime will occasionally fail due to
         # floating point rounding differences.
-        time_object = datetime.datetime.utcfromtimestamp(actual_time_float)
+        time_object = datetime.datetime.fromtimestamp(actual_time_float, timezone.utc)
         expected_time_str = utils.isotime(time_object, subsecond=True)
 
         actual_time_str = payload_cls._convert_float_to_time_string(
