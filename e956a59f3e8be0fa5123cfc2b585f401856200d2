@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff823072_fc2a4a4f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-01-23T08:35:02Z",
+      "side": 1,
+      "message": "how does deprecation break unit tests ? Don\u0027t these cause just noisy warnings ?\n(this may be trivial but need to be updated to describe the problem properly)",
+      "range": {
+        "startLine": 14,
+        "startChar": 5,
+        "endLine": 14,
+        "endChar": 27
+      },
+      "revId": "e956a59f3e8be0fa5123cfc2b585f401856200d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
