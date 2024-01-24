@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "409958c5_7b5d8fd4",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1485,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2024-01-24T17:39:17Z",
+      "side": 0,
+      "message": "Why is the memoization removed?",
+      "revId": "262d763f79a9b97996ec51dca3399994b97bf4e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
