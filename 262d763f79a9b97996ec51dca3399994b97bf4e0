@@ -16,6 +16,24 @@
       "message": "Why is the memoization removed?",
       "revId": "262d763f79a9b97996ec51dca3399994b97bf4e0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b358c1a_0222295a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1485,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-24T18:24:45Z",
+      "side": 0,
+      "message": "because the @MEMOIZE, uses the parameters signature to generate the key for the map where it stores the cache. As we changed the signature to use a user object, this was causing more problems than helping; even though the attributes we use are the same (inside the user object), sometimes we might have more or less attributes there, and this would lead the method \"_shadow_federated_user\" to not work properly.\n\nThis process is not a very recurrent one; I mean, it is not execute for a user e every minute or so. Therefore, the use of @MEMOIZE does not seem to bring much benefits.",
+      "parentUuid": "409958c5_7b5d8fd4",
+      "revId": "262d763f79a9b97996ec51dca3399994b97bf4e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
