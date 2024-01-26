@@ -16,6 +16,23 @@
       "message": "recheck - tox fail",
       "revId": "df8f8eed1ed4f61e1dbe211299b439b159de563a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f94ba85c_c0dbf943",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28048
+      },
+      "writtenOn": "2024-01-26T17:42:35Z",
+      "side": 1,
+      "message": "We are seeing this in CI:\n\n\u003e 2024-01-26 13:14:07.959 142 ERROR oslo_policy._parser [-] Failed to understand rule (rule:admin_required) or ((role:reader and system_scope:all) or (role:reader and domain_id:%(target.user.domain_id)s) or user_id:%(user_id)s: ValueError: Could not parse rule\n\ne.g: https://fd50651997fbb0337883-282d0b18354725863279cd3ebda4ab44.ssl.cf5.rackcdn.com/905843/8/check/kolla-ansible-rocky9-ironic/baffd82/primary/logs/kolla/all-ERROR.txt\n\nIs there a bug report?",
+      "revId": "df8f8eed1ed4f61e1dbe211299b439b159de563a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
