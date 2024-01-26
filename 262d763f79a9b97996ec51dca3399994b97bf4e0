@@ -34,6 +34,24 @@
       "parentUuid": "409958c5_7b5d8fd4",
       "revId": "262d763f79a9b97996ec51dca3399994b97bf4e0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "590b4e3a_671e18ea",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1485,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-26T10:55:01Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "2b358c1a_0222295a",
+      "revId": "262d763f79a9b97996ec51dca3399994b97bf4e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
