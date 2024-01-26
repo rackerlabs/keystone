@@ -16,6 +16,23 @@
       "message": "There should be unit tests for the change",
       "revId": "6ee7ea0d63fed272beb3806d722c2dd3585e8212",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20d2dda6_3bce68b3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2024-01-26T15:41:50Z",
+      "side": 1,
+      "message": "This looks good, but I agree that this needs unit tests.",
+      "revId": "6ee7ea0d63fed272beb3806d722c2dd3585e8212",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
