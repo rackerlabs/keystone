@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6e9c754_5c168f61",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-29T21:20:08Z",
+      "side": 1,
+      "message": "Even before that patch, you could not do what you are claiming",
+      "revId": "9cdee6127389f7f4a01ec52a2b8c9413bf8e9863",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8172984_dbc41c9a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-29T21:20:08Z",
+      "side": 1,
+      "message": "What about creating a new schema, let\u0027s say 2.1 to enable/disable this kind of feature?\n\nAt the end of the day, that is why we created such feature.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 1
+      },
+      "revId": "9cdee6127389f7f4a01ec52a2b8c9413bf8e9863",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb7e1285_0decc1dc",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-29T21:20:08Z",
+      "side": 1,
+      "message": "You could check if the rule processor is, let\u0027s say 2.1, and then, you check if it is different from the user_domain or IdP_domain, and then you throw the error.",
+      "range": {
+        "startLine": 186,
+        "startChar": 13,
+        "endLine": 192,
+        "endChar": 21
+      },
+      "revId": "9cdee6127389f7f4a01ec52a2b8c9413bf8e9863",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a08f0b50_0493d6fd",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-01-29T21:20:08Z",
+      "side": 1,
+      "message": "why are you doing this processing here? It does not seem to be related to what you want to achieve. This kind of adjustments is done in the rule processor already.",
+      "range": {
+        "startLine": 274,
+        "startChar": 7,
+        "endLine": 275,
+        "endChar": 77
+      },
+      "revId": "9cdee6127389f7f4a01ec52a2b8c9413bf8e9863",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
