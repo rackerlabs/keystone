@@ -103,6 +103,30 @@
       },
       "revId": "9cdee6127389f7f4a01ec52a2b8c9413bf8e9863",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e1c1841_2772653e",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 36300
+      },
+      "writtenOn": "2024-01-30T14:04:44Z",
+      "side": 1,
+      "message": "I\u0027m doing the processing here because we need to know to which domain is the shadow user assigned before calling the `validate_shadow_mapping`. \n\nAfter adding this the domain_id that will be pass to the `validate_shadow_mapping` function will be the specify `domain` for the user in case it\u0027s on the claim or the `idp_domain_id` as it was before. \n\nIf that\u0027s already done on the rule processor, maybe using `mapped_properties[\u0027user\u0027].get(\u0027domain\u0027).get(\u0027id\u0027)` as a value on the `validate_shadow_mapping` can be enough, making all the processing here useless.",
+      "parentUuid": "a08f0b50_0493d6fd",
+      "range": {
+        "startLine": 274,
+        "startChar": 7,
+        "endLine": 275,
+        "endChar": 77
+      },
+      "revId": "9cdee6127389f7f4a01ec52a2b8c9413bf8e9863",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
