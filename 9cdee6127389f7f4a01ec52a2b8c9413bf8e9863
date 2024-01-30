@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "da6f038b_35328da1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 36300
+      },
+      "writtenOn": "2024-01-30T08:57:37Z",
+      "side": 1,
+      "message": "Yes, you could specify domain specific roles as long as they were in the same domain as the IdP.",
+      "parentUuid": "d6e9c754_5c168f61",
+      "revId": "9cdee6127389f7f4a01ec52a2b8c9413bf8e9863",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f8172984_dbc41c9a",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
