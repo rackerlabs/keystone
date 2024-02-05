@@ -121,6 +121,10 @@ class NotificationsTestCase(unit.BaseTestCase):
 
     def setUp(self):
         super(NotificationsTestCase, self).setUp()
+        # NOTE(jamespage): This call ensures that the
+        # oslo_messaging_notifications configuration group is
+        # actually initialised in the CONF object
+        oslo_messaging.get_notification_transport(CONF, url='rabbit://')
         self.config_fixture = self.useFixture(config_fixture.Config(CONF))
         self.config_fixture.config(
             group='oslo_messaging_notifications', transport_url='rabbit://'
