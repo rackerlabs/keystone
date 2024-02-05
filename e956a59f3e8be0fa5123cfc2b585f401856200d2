@@ -22,6 +22,30 @@
       },
       "revId": "e956a59f3e8be0fa5123cfc2b585f401856200d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9287e567_6d7726c6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 935
+      },
+      "writtenOn": "2024-02-05T10:23:23Z",
+      "side": 1,
+      "message": "By default yes they would just cause noise during tests but I think the warnings fixture sets any DeprecationWarning in the keystone codebase to \"error\".\n\nhttps://opendev.org/openstack/keystone/src/branch/master/keystone/tests/unit/ksfixtures/warnings.py#L32\n\nIf I set that to \u0027ignore\u0027 they get logged, but the tests actually pass under py312 (with alot of noise!)",
+      "parentUuid": "ff823072_fc2a4a4f",
+      "range": {
+        "startLine": 14,
+        "startChar": 5,
+        "endLine": 14,
+        "endChar": 27
+      },
+      "revId": "e956a59f3e8be0fa5123cfc2b585f401856200d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

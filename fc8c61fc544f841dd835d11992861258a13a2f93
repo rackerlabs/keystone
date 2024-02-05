@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5625335_bf0af545",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 935
+      },
+      "writtenOn": "2024-02-05T10:23:23Z",
+      "side": 1,
+      "message": "I think moving to using oslo_utils.timeutils is probably preferable here as it will ensure that the returned objects are timezone naive, preserving existing behaviour.",
+      "revId": "fc8c61fc544f841dd835d11992861258a13a2f93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
