@@ -100,6 +100,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e34ccb4f_ed1dcd2d",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-02-05T19:07:01Z",
+      "side": 1,
+      "message": "Never mind, after thinking about this one, and with the adjusts that you did, I think it is fine as is.",
+      "parentUuid": "eb7e1285_0decc1dc",
+      "range": {
+        "startLine": 186,
+        "startChar": 13,
+        "endLine": 192,
+        "endChar": 21
+      },
+      "revId": "9cdee6127389f7f4a01ec52a2b8c9413bf8e9863",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a08f0b50_0493d6fd",
