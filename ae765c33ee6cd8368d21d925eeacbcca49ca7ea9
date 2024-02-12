@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e42d7fe_301a9b26",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-02-12T17:49:13Z",
+      "side": 1,
+      "message": "This needs to be backported to stable branches ...",
+      "revId": "ae765c33ee6cd8368d21d925eeacbcca49ca7ea9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
