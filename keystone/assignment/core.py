@@ -101,6 +101,7 @@ class Manager(manager.Manager):
         :type role_id: string
         """
         assignments = self.list_role_assignments(role_id=role_id)
+        LOG.debug('Assignments: {}'.format(assignments))
         for assignment in assignments:
             if 'user_id' in assignment and 'project_id' in assignment:
                 payload = {
@@ -1339,10 +1340,10 @@ class RoleManager(manager.Manager):
         ro_opt.check_immutable_delete(resource_ref=role,
                                       resource_type='role',
                                       resource_id=role_id)
-        PROVIDERS.assignment_api.delete_role_assignments(role_id)
         PROVIDERS.assignment_api._send_app_cred_notification_for_role_removal(
             role_id
         )
+        PROVIDERS.assignment_api.delete_role_assignments(role_id)
         self.driver.delete_role(role_id)
         notifications.Audit.deleted(self._ROLE, role_id, initiator)
         self.get_role.invalidate(self, role_id)
