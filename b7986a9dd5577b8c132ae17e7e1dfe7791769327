@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3291d3c9_2b7b6309",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2024-02-19T12:42:19Z",
+      "side": 1,
+      "message": "There is another patch to re-enable those jobs: https://review.opendev.org/c/openstack/keystone/+/886434",
+      "revId": "b7986a9dd5577b8c132ae17e7e1dfe7791769327",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
