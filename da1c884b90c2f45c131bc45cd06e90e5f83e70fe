@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "faae4cbc_90cdee62",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2024-02-22T03:46:30Z",
+      "side": 1,
+      "message": "lgtm, federation job is run on jammy now so good to remove it.",
+      "revId": "da1c884b90c2f45c131bc45cd06e90e5f83e70fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
