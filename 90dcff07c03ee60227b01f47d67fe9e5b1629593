@@ -16,6 +16,23 @@
       "message": "I quickly fixed the commit message regarding the references commit containing the Alembic update - sorry David that reset you +2 :-(\n\n\nWill this require some sort of backporting or cleanup? I suppose not, as the issue would only have appeared on the next Alembic autocreate (which I ran for my intended change).",
       "revId": "90dcff07c03ee60227b01f47d67fe9e5b1629593",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "753b0b92_68c98b68",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2024-02-23T08:49:22Z",
+      "side": 1,
+      "message": "this looks ok to me but I\u0027m not deep enough into keystone db code to actually vote on it",
+      "revId": "90dcff07c03ee60227b01f47d67fe9e5b1629593",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
