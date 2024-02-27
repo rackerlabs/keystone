@@ -51,6 +51,23 @@
       "parentUuid": "20d2dda6_3bce68b3",
       "revId": "6ee7ea0d63fed272beb3806d722c2dd3585e8212",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f6c83f1_52993f7a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2024-02-27T15:57:23Z",
+      "side": 1,
+      "message": "There\u0027s an alternative patch here: https://review.opendev.org/c/openstack/keystone/+/910337\n\nSo if you could check on that - it would be nice.",
+      "revId": "6ee7ea0d63fed272beb3806d722c2dd3585e8212",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
