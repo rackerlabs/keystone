@@ -588,10 +588,24 @@ class UserAppCredListCreateResource(ks_flask.ResourceBase):
         roles = []
         for role in app_cred_roles:
             if role.get('id'):
-                roles.append(role)
+                role_obj = role
             else:
-                roles.append(PROVIDERS.role_api.get_unique_role_by_name(
-                    role['name']))
+                role_obj = PROVIDERS.role_api.get_unique_role_by_name(
+                    role['name'])
+            if role_obj['id'] not in [x['id'] for x in roles]:
+                roles.append(role_obj)
+            # When "roles" passed into the application credentials creation
+            # we need to ensure also all implied roles are included similarly
+            # to how it behaves when no roles are passed and current user roles
+            # are being used.
+            # So loop over all roles implied by the current role and add it
+            # explicitly if not already there
+            for implied_role in PROVIDERS.role_api.list_implied_roles(
+                    role_obj['id']):
+                imp_role_obj = PROVIDERS.role_api.get_role(
+                    implied_role['implied_role_id'])
+                if imp_role_obj['id'] not in [x['id'] for x in roles]:
+                    roles.append(imp_role_obj)
         return roles
 
     def _get_roles(self, app_cred_data, token):
