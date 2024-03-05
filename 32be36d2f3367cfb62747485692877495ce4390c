@@ -34,6 +34,24 @@
       "parentUuid": "34359d3c_5af0e4d4",
       "revId": "32be36d2f3367cfb62747485692877495ce4390c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6d346d4_d0a15407",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2024-03-05T15:28:16Z",
+      "side": 1,
+      "message": "we need the wsgi part to proceed next cycle and then this can proceed\n\nwe have abandoned the idea of adding wsgi script generation to pbr for edtibale mode. while it would be possibel to do we do not have time to do it and done want to maintian it going forward.\n\ninstead we are removing the use of the PBR extetion form the existing projects\nfor nova we wanted to hold the wsgi prat till after FF and merge it this week and then we may also merge the pyporject.toml part this week too.\n\nstephen didnt propose wsgi pataches ot all affected repos as we would liek the core teams for each repo to really handel this but the pattern is pretty simple to follow\n\nhttps://review.opendev.org/q/topic:%22remove-wsgi_scripts%22\n\n\nkeystone does not have a toplevel wsgi moduel so you can follwo the cinder example\n\nfirst we need to statical add wsgi files in teh repo \n\n\nhttps://review.opendev.org/c/openstack/cinder/+/902876\n\nnova had to do dance of remvoign our old use of nova/wsgi\n\nhttps://review.opendev.org/c/openstack/nova/+/902686\n\nand then addign a new one\n\nhttps://review.opendev.org/c/openstack/nova/+/902687/4\n\noptionally the last step is to remove the supprot for the pbr extions\n\nhttps://review.opendev.org/c/openstack/nova/+/902688/5\n\nthe apprch we are takign is an additive one.\n\nwe are adding supprot for using wsgi via moduel paths without code generation for the scrit file\n\nwhile still keeping support for generating the script with pbr if you use setup.py directly instead of the pyproject.toml functionality.\n\nwe dont plan to drop the pbr supprot for generating the wsgi script until at least 2025.1 (E)",
+      "parentUuid": "358f39a6_206498a2",
+      "revId": "32be36d2f3367cfb62747485692877495ce4390c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
