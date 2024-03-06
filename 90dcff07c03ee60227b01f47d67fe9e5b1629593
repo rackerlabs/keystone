@@ -33,6 +33,23 @@
       "message": "this looks ok to me but I\u0027m not deep enough into keystone db code to actually vote on it",
       "revId": "90dcff07c03ee60227b01f47d67fe9e5b1629593",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8807f12a_961d9e13",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32755
+      },
+      "writtenOn": "2024-03-06T13:38:48Z",
+      "side": 1,
+      "message": "Could you kindly take a look at this one?\nIt\u0027s a cleanup / fixup that best be merged before more changes come on top :-)",
+      "revId": "90dcff07c03ee60227b01f47d67fe9e5b1629593",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
