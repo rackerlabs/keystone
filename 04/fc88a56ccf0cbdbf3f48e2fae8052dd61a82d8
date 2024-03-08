@@ -1,0 +1,12 @@
+Code-Review+2: Douglas Mendizábal <dmendiza@redhat.com>
+Workflow+1: Grzegorz Grasza <xek@redhat.com>
+Code-Review+1: Rafael Weingartner <rafael@apache.org>
+Code-Review+2: Grzegorz Grasza <xek@redhat.com>
+Verified+2: Zuul
+Code-Review+1: Pedro Henrique Pereira Martins <phpm13@gmail.com>
+Submitted-by: Zuul
+Submitted-at: Fri, 08 Mar 2024 16:43:09 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/907121
+Comments-Total: 14
+Project: openstack/keystone
+Branch: refs/heads/master
