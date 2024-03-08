@@ -1,0 +1,10 @@
+Code-Review+2: Douglas Mendizábal <dmendiza@redhat.com>
+Code-Review+2: Grzegorz Grasza <xek@redhat.com>
+Workflow+1: Douglas Mendizábal <dmendiza@redhat.com>
+Code-Review+1: Boris Bobrov <b.bobrov@sap.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 08 Mar 2024 17:05:42 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/908760
+Project: openstack/keystone
+Branch: refs/heads/master
