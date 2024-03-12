@@ -1,0 +1,8 @@
+Code-Review+2: David Wilde <dwilde@redhat.com>
+Workflow+1: David Wilde <dwilde@redhat.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 12 Mar 2024 16:59:59 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/908850
+Project: openstack/keystone
+Branch: refs/heads/master
