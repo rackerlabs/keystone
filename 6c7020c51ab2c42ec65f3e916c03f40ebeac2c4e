@@ -16,6 +16,24 @@
       "message": "We probably have to backport this.",
       "revId": "6c7020c51ab2c42ec65f3e916c03f40ebeac2c4e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa9aa86e_c95ec84e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-03-13T13:04:23Z",
+      "side": 1,
+      "message": "OK I noticed these eventlet options were removed during 2024.1 cycle then we don\u0027t need backport.",
+      "parentUuid": "8fbb4519_ffef522e",
+      "revId": "6c7020c51ab2c42ec65f3e916c03f40ebeac2c4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ],
   "submitRequirementResults": [
