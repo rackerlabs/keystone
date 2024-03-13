@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b19ad49_4d6f9e89",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2024-03-13T14:08:39Z",
+      "side": 1,
+      "message": "It\u0027s late in the process and usually we discuss such things at the PTG, but this one looks like a special case, since it  wasn\u0027t updated for such a long time. By adding the deprecation we can get more feedback from the wider community. We can always revert the deprecation or wait an additional cycle once we approve this, if there are any issues.",
+      "revId": "307296af5e170ca6b0d44fd5ec85a39bd6b5e572",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
