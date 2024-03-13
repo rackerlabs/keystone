@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "294fabf9_0bef6247",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 35125
+      },
+      "writtenOn": "2024-03-13T12:32:11Z",
+      "side": 1,
+      "message": "Maybe you should use a better variable name? :-)",
+      "range": {
+        "startLine": 232,
+        "startChar": 8,
+        "endLine": 232,
+        "endChar": 13
+      },
+      "revId": "a8366c4827b1455a9daa89d2f49f9cd1b7673685",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1aefb519_3dd081d5",
+        "filename": "keystone/cmd/idutils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 35125
+      },
+      "writtenOn": "2024-03-13T12:32:11Z",
+      "side": 1,
+      "message": "Is this attribute set by the previous instruction?",
+      "range": {
+        "startLine": 57,
+        "startChar": 43,
+        "endLine": 57,
+        "endChar": 61
+      },
+      "revId": "a8366c4827b1455a9daa89d2f49f9cd1b7673685",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1053d429_cc736082",
+        "filename": "keystone/cmd/idutils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 35125
+      },
+      "writtenOn": "2024-03-13T12:32:11Z",
+      "side": 1,
+      "message": "What is this part exactly doing?",
+      "range": {
+        "startLine": 77,
+        "startChar": 8,
+        "endLine": 78,
+        "endChar": 47
+      },
+      "revId": "a8366c4827b1455a9daa89d2f49f9cd1b7673685",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
