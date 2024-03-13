@@ -24,6 +24,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b86a14d_0c1ccdd4",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2024-03-13T12:53:09Z",
+      "side": 1,
+      "message": "This actually follows the same convention as the other classes in keystone-manage, I agree it\u0027s not very descriptive.",
+      "parentUuid": "294fabf9_0bef6247",
+      "range": {
+        "startLine": 232,
+        "startChar": 8,
+        "endLine": 232,
+        "endChar": 13
+      },
+      "revId": "a8366c4827b1455a9daa89d2f49f9cd1b7673685",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1aefb519_3dd081d5",
@@ -47,6 +71,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "73591d19_45ed0316",
+        "filename": "keystone/cmd/idutils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2024-03-13T12:53:09Z",
+      "side": 1,
+      "message": "There is a do_project_setup method in cli.py that sets this.",
+      "parentUuid": "1aefb519_3dd081d5",
+      "range": {
+        "startLine": 57,
+        "startChar": 43,
+        "endLine": 57,
+        "endChar": 61
+      },
+      "revId": "a8366c4827b1455a9daa89d2f49f9cd1b7673685",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1053d429_cc736082",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-03-13T12:32:11Z",
       "side": 1,
       "message": "What is this part exactly doing?",
+      "range": {
+        "startLine": 77,
+        "startChar": 8,
+        "endLine": 78,
+        "endChar": 47
+      },
+      "revId": "a8366c4827b1455a9daa89d2f49f9cd1b7673685",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "552765ff_eec1ac3f",
+        "filename": "keystone/cmd/idutils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2024-03-13T12:53:09Z",
+      "side": 1,
+      "message": "This just ensures that the users default project ID it not actually a domain ID. The definition is in keystone/identity/core.py L910",
+      "parentUuid": "1053d429_cc736082",
       "range": {
         "startLine": 77,
         "startChar": 8,
