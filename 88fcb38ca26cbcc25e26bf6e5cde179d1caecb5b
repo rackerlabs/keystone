@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a640ab15_911ff3d1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2024-03-19T11:30:11Z",
+      "side": 1,
+      "message": "Hi, this is a generated patch, that should be merged as soon as possible. Please merge it, otherwise there won\u0027t exist a 2024.1 Caracal release notes page for the project. (The generated patch looks correct.)",
+      "revId": "88fcb38ca26cbcc25e26bf6e5cde179d1caecb5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
