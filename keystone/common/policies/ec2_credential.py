@@ -48,7 +48,7 @@ deprecated_ec2_delete_credential = policy.DeprecatedRule(
 ec2_credential_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'ec2_get_credential',
-        check_str=base.SYSTEM_READER_OR_CRED_OWNER,
+        check_str=base.ADMIN_OR_SYSTEM_READER_OR_CRED_OWNER,
         scope_types=['system', 'project'],
         description='Show ec2 credential details.',
         operations=[{'path': ('/v3/users/{user_id}/credentials/OS-EC2/'
@@ -76,7 +76,7 @@ ec2_credential_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'ec2_delete_credential',
-        check_str=base.SYSTEM_ADMIN_OR_CRED_OWNER,
+        check_str=base.ADMIN_OR_CRED_OWNER,
         scope_types=['system', 'project'],
         description='Delete ec2 credential.',
         operations=[{'path': ('/v3/users/{user_id}/credentials/OS-EC2/'
