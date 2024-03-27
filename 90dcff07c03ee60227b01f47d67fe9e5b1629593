@@ -67,6 +67,23 @@
       "message": "Elod could you kindly take a look at this one.",
       "revId": "90dcff07c03ee60227b01f47d67fe9e5b1629593",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "556ded27_dafc213b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32755
+      },
+      "writtenOn": "2024-03-27T08:06:40Z",
+      "side": 1,
+      "message": "Could you please kindly take a look at this?!\n\nIt fixes an inconsistency in the Alembic database schema management and certainly is of value to have fixed before any new changes are introduced.",
+      "revId": "90dcff07c03ee60227b01f47d67fe9e5b1629593",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
