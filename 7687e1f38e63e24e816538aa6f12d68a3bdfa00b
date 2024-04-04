@@ -16,6 +16,23 @@
       "message": "recheck - depends-on updated",
       "revId": "7687e1f38e63e24e816538aa6f12d68a3bdfa00b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4db6200e_64b9275b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-04-04T18:41:31Z",
+      "side": 1,
+      "message": "recheck - job missing from zuul",
+      "revId": "7687e1f38e63e24e816538aa6f12d68a3bdfa00b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
