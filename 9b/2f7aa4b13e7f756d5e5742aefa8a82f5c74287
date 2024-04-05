@@ -1,0 +1,9 @@
+Code-Review+2: Douglas Mendizábal <dmendiza@redhat.com>
+Code-Review+2: Grzegorz Grasza <xek@redhat.com>
+Verified+2: Zuul
+Workflow+1: Douglas Mendizábal <dmendiza@redhat.com>
+Submitted-by: Zuul
+Submitted-at: Fri, 05 Apr 2024 16:48:26 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/914212
+Project: openstack/keystone
+Branch: refs/heads/stable/2023.1
