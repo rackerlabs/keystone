@@ -73,7 +73,8 @@ def _generate_totp_passcodes(secret, included_previous_windows=0):
     # will still trigger when scanned by bandit.
     totp = crypto_totp.TOTP(
         decoded, PASSCODE_LENGTH, hashes.SHA1(), PASSCODE_TIME_PERIOD,  # nosec
-        backend=default_backend())
+        backend=default_backend(),
+        enforce_key_length=CONF.totp.enforce_key_length)
 
     passcode_ts = timeutils.utcnow_ts(microsecond=True)
     passcodes = [totp.generate(passcode_ts).decode('utf-8')]
