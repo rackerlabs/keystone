@@ -69,6 +69,24 @@
       "parentUuid": "6f24609d_b16aefa7",
       "revId": "32ef5075035ed2db2c96a469ab49a900c77a0ee7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9232e20_36286a5d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-04-10T12:50:48Z",
+      "side": 1,
+      "message": "It is something very specific that is quite difficult to spot. Thanks for spotting it!",
+      "parentUuid": "fc81e519_b3e6c537",
+      "revId": "32ef5075035ed2db2c96a469ab49a900c77a0ee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
