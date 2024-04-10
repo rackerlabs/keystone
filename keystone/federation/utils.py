@@ -138,9 +138,7 @@ IDP_ATTRIBUTE_MAPPING_SCHEMA_1_0 = {
                 }
             }
         },
-        "schema_version": {
-            "name": {"type": "string"}
-        }
+        "schema_version": {"type": "string"},
     },
     "definitions": {
         "empty": {
