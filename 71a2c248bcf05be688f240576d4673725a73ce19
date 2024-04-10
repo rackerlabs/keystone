@@ -16,6 +16,24 @@
       "message": "validation of the jsonschema is not equal to the validation of the json against schema. Depending on which library and spec version you use there are different behaviors dealing with errors.\njson schema specifies required attributes to be set for certain \"types\". Normally schema is also permissive to allow extensions (that means that whatever is \"beyond\" normal stuff is left untouched).\nOpenAPI is, however, more strict in certain regards. So if you go to https://editor.swagger.io/ and leave the following schema snippet (just a relevant part of the mapping schema) you will see it is wrong:\n```\nopenapi: 3.0.3\ninfo:\n  title: dummy\n  description: dummy\n  version: \"1.0\"\npaths: {}\ncomponents:\n  schemas:\n    Dummy:\n      type: object\n      properties:\n        schema_version:\n          name:\n            type: string\n```\n\njsonschema validation (whether json is valid against schema) tend to have default to \"type\": \"string\" when \"type\" is not present. And the current schema is in that regard not specifying \"type\" at all since it is located under \"name\" attribute what is considered as a user extension.\n\nYou can also verify this by going to any online jsonschema validator (i.e. https://www.jsonschemavalidator.net/) and validate \n```\n{\n  \"schema_version\": {\"foo\": \"bar\"}\n}\n```\n\nagainst following schema \n```\n{\n    \"type\": \"object\",\n    \"propreties\": {\n      \"schema_version\": {\n        \"name\": {\n          \"type\": \"string\"\n        }\n      }\n    }\n}\n```\n\nIt will actually tell you it is a valid json. This is not what you wanted, isn\u0027t it?",
       "revId": "71a2c248bcf05be688f240576d4673725a73ce19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf89bb1f_393b29f4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-04-10T12:49:24Z",
+      "side": 1,
+      "message": "P.S. and if you enter in jsonschemavalidator.net the corrected schema it will be also valid. That demonstrates that not all validators are correct (https://jsonschemalint.com/#!/version/draft-07/markup/json is behaving differently and properly recognizes validity)",
+      "parentUuid": "0933ceba_b5405807",
+      "revId": "71a2c248bcf05be688f240576d4673725a73ce19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
