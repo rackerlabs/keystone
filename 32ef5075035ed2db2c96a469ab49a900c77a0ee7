@@ -51,6 +51,24 @@
       "parentUuid": "51bc50ea_c08fe076",
       "revId": "32ef5075035ed2db2c96a469ab49a900c77a0ee7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc81e519_b3e6c537",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2024-04-10T12:49:48Z",
+      "side": 1,
+      "message": "I see now why the validator does not throw an error:\n```\nfrom jsonschema import validate\n\nschema \u003d {\n    \"type\": \"object\",\n    \"properties\": {\n        \"name\": {\"type\": \"string\"},\n        \"age\": {\"type\": \"number\"},\n        \"schema_version\": {\"name\": {\"type\": \"string\"}},\n    },\n    \"required\": [\"name\"],\n    \"additionalProperties\": False\n}\n\nvalidate(instance\u003d{\"name\": \"John\", \"age\": 30, \"schema_version\": \"2.0\"}, schema\u003dschema)\n\nschema \u003d {\n    \"type\": \"object\",\n    \"properties\": {\n        \"name\": {\"type\": \"string\"},\n        \"age\": {\"type\": \"number\"},\n        \"schema_version\": {\"type\": \"object\", \"name\": {\"type\": \"string\"}},\n    },\n    \"required\": [\"name\"],\n    \"additionalProperties\": False\n}\n\nvalidate(instance\u003d{\"name\": \"John\", \"age\": 30, \"schema_version\": \"2.0\"}, schema\u003dschema)\n```\n\nIf we do not define the schema \"type\"as \"object\" for an object structure, the jsonschema validator will just ignore that definition; that is why the \"schema_version\" was not being validated/matched.",
+      "parentUuid": "6f24609d_b16aefa7",
+      "revId": "32ef5075035ed2db2c96a469ab49a900c77a0ee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
