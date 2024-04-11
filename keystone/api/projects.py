@@ -267,7 +267,8 @@ class ProjectTagsResource(_ProjectTagResourceBase):
             action='identity:delete_project_tags',
             build_target=_build_project_target_enforcement
         )
-        PROVIDERS.resource_api.update_project_tags(project_id, [])
+        PROVIDERS.resource_api.update_project_tags(
+            project_id, [], initiator=self.audit_initiator)
         return None, http.client.NO_CONTENT
 
 

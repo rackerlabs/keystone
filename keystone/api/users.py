@@ -404,7 +404,8 @@ class UserOSEC2CredentialsResourceListCreate(_UserOSEC2CredBaseResource):
             id=credential_id,
             type=CRED_TYPE_EC2
         )
-        PROVIDERS.credential_api.create_credential(credential_id, cred_data)
+        PROVIDERS.credential_api.create_credential(
+            credential_id, cred_data, initiator=self.audit_initiator)
         ref = _convert_v3_to_ec2_credential(cred_data)
         return self.wrap_member(ref), http.client.CREATED
 
@@ -443,7 +444,8 @@ class UserOSEC2CredentialsResourceGetDelete(_UserOSEC2CredBaseResource):
         PROVIDERS.identity_api.get_user(user_id)
         ec2_cred_id = utils.hash_access_key(credential_id)
         self._get_cred_data(ec2_cred_id)
-        PROVIDERS.credential_api.delete_credential(ec2_cred_id)
+        PROVIDERS.credential_api.delete_credential(
+            ec2_cred_id, initiator=self.audit_initiator)
         return None, http.client.NO_CONTENT
 
 
