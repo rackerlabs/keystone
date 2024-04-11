@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from unittest import mock
+
 import http.client
 from oslo_serialization import jsonutils
 import webtest
@@ -196,10 +198,17 @@ class RestfulTestCase(unit.TestCase):
         return response
 
     def _request(self, convert=True, **kwargs):
-        if convert:
-            response = self.restful_request(**kwargs)
-        else:
-            response = self.request(**kwargs)
+        with mock.patch(
+            "keystone.notifications.Audit._emit", autospec=True
+        ) as audit_emit_mock:
+            if convert:
+                response = self.restful_request(**kwargs)
+            else:
+                response = self.request(**kwargs)
+            if audit_emit_mock.called:
+                for call in audit_emit_mock.call_args_list:
+                    if call.args[0] != 'internal':
+                        self.assertIsNotNone(call.args[3])
 
         self.assertValidResponseHeaders(response)
         return response
