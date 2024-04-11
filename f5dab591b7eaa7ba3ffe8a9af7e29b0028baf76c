@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a044a171_356e69b6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2024-04-11T14:37:42Z",
+      "side": 1,
+      "message": "Is this something we could test?\n\nI see there are existing tests for notifications in tests/unit/common/test_notifications.py and there are some checks that initiator is present.",
+      "revId": "f5dab591b7eaa7ba3ffe8a9af7e29b0028baf76c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
