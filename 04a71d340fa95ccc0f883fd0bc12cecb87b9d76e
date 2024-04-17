@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b165a477_17b07e0c",
+        "filename": "keystone/common/policies/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-04-17T18:19:38Z",
+      "side": 1,
+      "message": "this rule might need to be updated to avoid domain admin from accessing all credentials...",
+      "range": {
+        "startLine": 57,
+        "startChar": 23,
+        "endLine": 57,
+        "endChar": 59
+      },
+      "revId": "04a71d340fa95ccc0f883fd0bc12cecb87b9d76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
