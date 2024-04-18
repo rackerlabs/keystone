@@ -16,6 +16,24 @@
       "message": "this lgtm, also you need to update test also which are failing now https://storage.bhs.cloud.ovh.net/v1/AUTH_dcaab5e32b234d56b626f72581e3644c/zuul_opendev_logs_0c9/914759/2/check/keystone-protection-functional/0c9f5da/testr_results.html",
       "revId": "9162501c5f842817bde1e6d49986ad1e3068add7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fd1b05e_b8aa8582",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2024-04-18T22:18:30Z",
+      "side": 1,
+      "message": "what needs to be change in keystone_tempest_plugin test is, domain admin user to allow to get the role of domain[1].\n\nEasy can be to remove all three tests from the DomainAdminTests class[2] and tests definition[3] from its base class SystemAdminTests can be executed as it is for DomainAdminTests class also.\n\n[1] https://github.com/openstack/keystone-tempest-plugin/blob/c0ae2d9930bad1f9e041d85b17e32eb5a9466079/keystone_tempest_plugin/tests/rbac/v3/test_role.py#L331\n\n[2] https://github.com/openstack/keystone-tempest-plugin/blob/c0ae2d9930bad1f9e041d85b17e32eb5a9466079/keystone_tempest_plugin/tests/rbac/v3/test_role.py#L322\n\n[3] https://github.com/openstack/keystone-tempest-plugin/blob/c0ae2d9930bad1f9e041d85b17e32eb5a9466079/keystone_tempest_plugin/tests/rbac/v3/test_role.py#L171",
+      "parentUuid": "8d85c35a_0172bdfd",
+      "revId": "9162501c5f842817bde1e6d49986ad1e3068add7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
