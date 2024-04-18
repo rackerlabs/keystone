@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d85c35a_0172bdfd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2024-04-18T21:20:16Z",
+      "side": 1,
+      "message": "this lgtm, also you need to update test also which are failing now https://storage.bhs.cloud.ovh.net/v1/AUTH_dcaab5e32b234d56b626f72581e3644c/zuul_opendev_logs_0c9/914759/2/check/keystone-protection-functional/0c9f5da/testr_results.html",
+      "revId": "9162501c5f842817bde1e6d49986ad1e3068add7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
