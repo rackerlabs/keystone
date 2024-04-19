@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d339fba4_ca8accfc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8064
+      },
+      "writtenOn": "2024-04-19T00:53:38Z",
+      "side": 1,
+      "message": "Hi! I\u0027m interested in this as we use App Cred extensively and this affects us.\n\nDoes this approach means updating implied roles after an App Cred is created won\u0027t update the effective roles?",
+      "revId": "82b22aca4ac731a5dce90450c99b3f4e829c4d88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
