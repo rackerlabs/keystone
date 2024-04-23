@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e2ba69f_c72601f9",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-04-23T09:09:08Z",
+      "side": 1,
+      "message": "I wonder if we want to accept create/update/delete role by domain admin here as well, if we haven\u0027t yet implemented domain scope separation.",
+      "range": {
+        "startLine": 106,
+        "startChar": 30,
+        "endLine": 106,
+        "endChar": 41
+      },
+      "revId": "522627de3c66113d03019122735cdfc3e0d245c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fa70652_6a1d89a9",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-04-23T09:09:08Z",
+      "side": 1,
+      "message": "ditto. should domain admin be able to manage domain roles ?",
+      "range": {
+        "startLine": 132,
+        "startChar": 28,
+        "endLine": 132,
+        "endChar": 32
+      },
+      "revId": "522627de3c66113d03019122735cdfc3e0d245c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
