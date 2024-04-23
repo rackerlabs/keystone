@@ -34,6 +34,24 @@
       "parentUuid": "8d85c35a_0172bdfd",
       "revId": "9162501c5f842817bde1e6d49986ad1e3068add7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8556f59_ead92f68",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-04-23T05:55:27Z",
+      "side": 1,
+      "message": "I\u0027ve submitted https://review.opendev.org/c/openstack/keystone-tempest-plugin/+/916705 to fix these test cases. Because of cross-dependencies between keystone and keystone-tempest-plugin, the protection job is made non-voting now but will be made voting after these are merged (and probably backported).",
+      "parentUuid": "6fd1b05e_b8aa8582",
+      "revId": "9162501c5f842817bde1e6d49986ad1e3068add7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
