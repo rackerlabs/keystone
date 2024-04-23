@@ -16,6 +16,23 @@
       "message": "recheck the dependency has been updated",
       "revId": "af53770e6242bae084f203b2f7189cc3bac8a45f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac23f2c2_8415ab6b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-04-23T10:34:17Z",
+      "side": 1,
+      "message": "recheck the protection job passed in the dependent change....",
+      "revId": "af53770e6242bae084f203b2f7189cc3bac8a45f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
