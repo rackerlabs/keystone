@@ -16,6 +16,24 @@
       "message": "Hi! I\u0027m interested in this as we use App Cred extensively and this affects us.\n\nDoes this approach means updating implied roles after an App Cred is created won\u0027t update the effective roles?",
       "revId": "82b22aca4ac731a5dce90450c99b3f4e829c4d88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6d5068f_93abdbef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-04-29T13:59:52Z",
+      "side": 1,
+      "message": "you can\u0027t update roles of existing appcred.\nThis change fixes the fact that AppCred created without explicit specification of the roles (using roles of the current token) is not respecting inherited roles resulting in AppCred not having all expected roles.",
+      "parentUuid": "d339fba4_ca8accfc",
+      "revId": "82b22aca4ac731a5dce90450c99b3f4e829c4d88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
