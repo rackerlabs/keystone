@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fce2c70_dcbc224d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2024-04-30T18:02:18Z",
+      "side": 1,
+      "message": "lgtm, agree to make job non voting to unblock the cross dependency.",
+      "revId": "522627de3c66113d03019122735cdfc3e0d245c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5e2ba69f_c72601f9",
