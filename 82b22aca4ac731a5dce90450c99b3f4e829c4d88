@@ -34,6 +34,24 @@
       "parentUuid": "d339fba4_ca8accfc",
       "revId": "82b22aca4ac731a5dce90450c99b3f4e829c4d88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e8bdfb89_b9953b88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31542
+      },
+      "writtenOn": "2024-05-01T10:29:55Z",
+      "side": 1,
+      "message": "If this doesn\u0027t apply to existing app creds I\u0027m not sure it\u0027s sufficient. In the case where we originally noted this, an app cred had a \u0027member\u0027 role, and changes revealed in an upgrade meant this was then useless without the implied \u0027reader\u0027 role, requiring everyone to re-generate their app creds despite no changes on their part.\n\nMy concern is this will just result in the same issue presenting itself in the future if there are further changes to the role hierarchy. It\u0027s particularly confusing from a user perspective if this was to happen, as if they compare the app credential roles to a standard user\u0027s permissions against a project (where only the top level role may be displayed, not the implied ones), it looks like it should work, but the behaviour under the hood differs.",
+      "parentUuid": "e6d5068f_93abdbef",
+      "revId": "82b22aca4ac731a5dce90450c99b3f4e829c4d88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
