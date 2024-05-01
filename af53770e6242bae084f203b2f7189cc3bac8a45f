@@ -33,6 +33,23 @@
       "message": "recheck the protection job passed in the dependent change....",
       "revId": "af53770e6242bae084f203b2f7189cc3bac8a45f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58ba0107_a26245d8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2024-05-01T17:09:01Z",
+      "side": 1,
+      "message": "job passing now. thanks",
+      "revId": "af53770e6242bae084f203b2f7189cc3bac8a45f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
