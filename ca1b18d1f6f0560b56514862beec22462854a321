@@ -16,6 +16,23 @@
       "message": "recheck 500 failure looks randome one",
       "revId": "ca1b18d1f6f0560b56514862beec22462854a321",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec49944b_54122856",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2024-05-01T16:48:56Z",
+      "side": 1,
+      "message": "let\u0027s exclude the breaking version and bump min accordingly. ditto for other changes in this project",
+      "revId": "ca1b18d1f6f0560b56514862beec22462854a321",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
