@@ -900,7 +900,6 @@ class TestCase(BaseTestCase):
         self.config_fixture.config(
             group='catalog',
             driver='sql',
-            template_file=dirs.tests('default_catalog.templates'),
         )
         self.config_fixture.config(
             group='saml', certfile=signing_certfile, keyfile=signing_keyfile
