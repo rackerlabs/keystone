@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "08283ce0_8204ec51",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-05-03T16:38:44Z",
+      "side": 1,
+      "message": "From the latest version of the SRBAC community goal:\n\n\u003e we are keeping the legacy admin same as it is currently, legacy admin (meaning anyone with the admin role on a project) will continue to be able to list all the resources across the deployment\n\nSo then, given that a user with \"admin\" role on a project should be authorized to see cross-project and cross-domain resources, and given that role assignments on a domain grant that same access to projects within it, then it probably makes sense to allow domain-admin here.\n\nI think a domain-admin would be able to get a project-admin token for a project in that domain and get access with the current policy anyway.",
+      "parentUuid": "5e2ba69f_c72601f9",
+      "range": {
+        "startLine": 106,
+        "startChar": 30,
+        "endLine": 106,
+        "endChar": 41
+      },
+      "revId": "522627de3c66113d03019122735cdfc3e0d245c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3fa70652_6a1d89a9",
         "filename": "keystone/common/policies/role.py",
         "patchSetId": 3
@@ -54,6 +78,30 @@
       "writtenOn": "2024-04-23T09:09:08Z",
       "side": 1,
       "message": "ditto. should domain admin be able to manage domain roles ?",
+      "range": {
+        "startLine": 132,
+        "startChar": 28,
+        "endLine": 132,
+        "endChar": 32
+      },
+      "revId": "522627de3c66113d03019122735cdfc3e0d245c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f44a3b29_875ebe18",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-05-03T16:38:44Z",
+      "side": 1,
+      "message": "domain-specific-roles are just regular roles with a reference to a domain_id, so, if we allow domain-admin to create regular roles, then we might as well allow creating roles across any domain.\n\ndomain-manager, whenever we implement that, should only be able to CRUD roles in their own domain.",
+      "parentUuid": "3fa70652_6a1d89a9",
       "range": {
         "startLine": 132,
         "startChar": 28,
