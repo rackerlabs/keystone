@@ -52,6 +52,29 @@
       "parentUuid": "358f39a6_206498a2",
       "revId": "32be36d2f3367cfb62747485692877495ce4390c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e49e2749_ac74f229",
+        "filename": "pyproject.toml",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2024-05-04T09:07:39Z",
+      "side": 1,
+      "message": "Am I right, that `wheel` here always mean \u0027latest\u0027 without being unoverridable by constraints?\n\nI also do not see `wheel` in Nova for instance:\nhttps://review.opendev.org/c/openstack/nova/+/899753/11/pyproject.toml",
+      "range": {
+        "startLine": 2,
+        "startChar": 49,
+        "endLine": 2,
+        "endChar": 54
+      },
+      "revId": "32be36d2f3367cfb62747485692877495ce4390c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
