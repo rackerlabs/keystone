@@ -639,10 +639,6 @@ class UserAppCredListCreateResource(ks_flask.ResourceBase):
                                  app_cred_data)
         token = self.auth_context['token']
         _check_unrestricted_application_credential(token)
-        if self.oslo_context.user_id != user_id:
-            action = _('Cannot create an application credential for another '
-                       'user.')
-            raise ks_exception.ForbiddenAction(action=action)
         project_id = self.oslo_context.project_id
         app_cred_data = self._assign_unique_id(app_cred_data)
         if not app_cred_data.get('secret'):
