@@ -50,6 +50,23 @@
       "message": "job passing now. thanks",
       "revId": "af53770e6242bae084f203b2f7189cc3bac8a45f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8483bec_2adfafe2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-05-11T08:08:54Z",
+      "side": 1,
+      "message": "recheck the dependent change has been merged",
+      "revId": "af53770e6242bae084f203b2f7189cc3bac8a45f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
