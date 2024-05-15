@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8787cfe7_21143780",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2024-05-15T20:17:53Z",
+      "side": 1,
+      "message": "The idea about `user_id` in the url was to allow a cloud admin to GET user\u0027s application credentials.\n\nThe interesting thing about this change is that it promotes application credentials from a day-2 authentication mechanism to a primary authentication mechanism: before you had to sign in with other methods to issue and use the application credentials. The idea might be interesting, but i do not understand the implications of it. What if the user is locked out? Are the application credentials limited or unlimited in this case? I feel that this change needs a spec.\n\nAnd the change definitely needs tests.",
+      "revId": "afa02cc22c03335c090f0d62daad3a7338d2b020",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
