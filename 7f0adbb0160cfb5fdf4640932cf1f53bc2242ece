@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12f341f6_842e9aa6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-05-16T02:57:55Z",
+      "side": 1,
+      "message": "I\u0027ve fixed pep8 errors. This is a remaining item for sqlalchemy 2.0 support and may need early attention,",
+      "revId": "7f0adbb0160cfb5fdf4640932cf1f53bc2242ece",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
