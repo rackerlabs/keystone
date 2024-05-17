@@ -67,6 +67,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a853e4fd_1e3d272d",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2024-05-17T11:23:21Z",
+      "side": 1,
+      "message": "so we should really move away form using domain admin and isntead have domain manager\n\ni.e. use the manager role within domain to allow the crfeation of user and proejct in a domian and the ablity to view/assing roles to user in that domain.\n\n\nideally everything that currently requires an admin role to do in a domain would be possibel with a domain scopoed manager token.",
+      "parentUuid": "08283ce0_8204ec51",
+      "range": {
+        "startLine": 106,
+        "startChar": 30,
+        "endLine": 106,
+        "endChar": 41
+      },
+      "revId": "522627de3c66113d03019122735cdfc3e0d245c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3fa70652_6a1d89a9",
         "filename": "keystone/common/policies/role.py",
         "patchSetId": 3
