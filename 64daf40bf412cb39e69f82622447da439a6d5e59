@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bb1a3f0_6fb9347a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2024-05-21T09:32:40Z",
+      "side": 1,
+      "message": "+1 this seam like a high priority bug to fix given the move to the new policies by defualt",
+      "revId": "64daf40bf412cb39e69f82622447da439a6d5e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "c467f39b_963e1e6d",
@@ -14,6 +31,40 @@
       "writtenOn": "2024-05-21T08:17:59Z",
       "side": 1,
       "message": "recheck - tempest image issue",
+      "revId": "64daf40bf412cb39e69f82622447da439a6d5e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "806a69c2_31ab5bd6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2024-05-21T09:32:40Z",
+      "side": 1,
+      "message": "+1 in general but i was almost -1 on the unit test",
+      "revId": "64daf40bf412cb39e69f82622447da439a6d5e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89b073f6_81cb6c72",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2024-05-21T09:32:40Z",
+      "side": 1,
+      "message": "im not familare with this code but it seam odd to me that you have to create the roles and implied roels expclitly here.\n\nshould this not be a sideffect fo the post at a minium if this was required.\n\n\nbasically this does not look like a unit test to me its doing way to much stuff.\n\nyour creating the app cred body, creating a scopet token, then doign a post \n\nnext your creting rules and implied roles and then usign that to authenticat.\n\nunit tests should generall test one functiona and mock out calles to function that eihter have sideeffect or are outside fo the current module/class that the function under test resides in.\n\nso to me this  is a functional test not a unit test.",
       "revId": "64daf40bf412cb39e69f82622447da439a6d5e59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
