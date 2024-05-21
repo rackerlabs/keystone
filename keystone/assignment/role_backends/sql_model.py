@@ -66,7 +66,7 @@ class RoleTable(sql.ModelBase, sql.ModelDictMixinWithExtras):
         cascade='all,delete,delete-orphan',
         lazy='subquery',
         backref='role',
-        collection_class=collections.attribute_mapped_collection('option_id')
+        collection_class=collections.attribute_keyed_dict('option_id')
     )
     __table_args__ = (sql.UniqueConstraint('name', 'domain_id'),)
 
