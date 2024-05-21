@@ -67,6 +67,24 @@
       "message": "im not familare with this code but it seam odd to me that you have to create the roles and implied roels expclitly here.\n\nshould this not be a sideffect fo the post at a minium if this was required.\n\n\nbasically this does not look like a unit test to me its doing way to much stuff.\n\nyour creating the app cred body, creating a scopet token, then doign a post \n\nnext your creting rules and implied roles and then usign that to authenticat.\n\nunit tests should generall test one functiona and mock out calles to function that eihter have sideeffect or are outside fo the current module/class that the function under test resides in.\n\nso to me this  is a functional test not a unit test.",
       "revId": "64daf40bf412cb39e69f82622447da439a6d5e59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5298416c_4e322d03",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2024-05-21T13:32:58Z",
+      "side": 1,
+      "message": "I see your point, but this test follows the pattern of the other unit tests in Keystone.  Our tests often blur the lines between unit and functional I think due to historical reasons. I don\u0027t think it\u0027s enough to prevent this spec from moving forward though.",
+      "parentUuid": "89b073f6_81cb6c72",
+      "revId": "64daf40bf412cb39e69f82622447da439a6d5e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
