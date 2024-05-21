@@ -85,6 +85,24 @@
       "parentUuid": "89b073f6_81cb6c72",
       "revId": "64daf40bf412cb39e69f82622447da439a6d5e59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59edf5d3_c3ecf463",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2024-05-21T17:48:48Z",
+      "side": 1,
+      "message": "local coding style wins over purity.\n\nwe likely would want this to be boken out in nova before merging but we try to be faily strict on the delinitation between unit and functional tests because we spent a lot of time creating that distinction.",
+      "parentUuid": "5298416c_4e322d03",
+      "revId": "64daf40bf412cb39e69f82622447da439a6d5e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
