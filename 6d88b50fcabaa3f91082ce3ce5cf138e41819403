@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5dc272cd_6fdf718e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-05-31T07:39:37Z",
+      "side": 1,
+      "message": "2024.2 have to support Ubuntu 22.04 which uses sqlalchemy \u003c 2... The old name is still available in SQLAlchemy 2.0.30 .",
+      "revId": "6d88b50fcabaa3f91082ce3ce5cf138e41819403",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
