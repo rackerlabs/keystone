@@ -52,6 +52,23 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a551063_68e4fdf3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-06-03T12:24:17Z",
+      "side": 1,
+      "message": "As discussed in https://review.opendev.org/c/openstack/keystone/+/910337 I personally see a danger in this approach. Current Keystone design relies on immutability of the roles on ApplicationCredentials. It is nearly impossible to explain for user or admin why appcreds are not working one day and work next day (when somebody changes inheritance). In addition to that introducing 2 different ways of dealing with AppCreds created requesting roles explicitly (where all roles are directly auditable) and implicitly (where you can only guess) is also a wrong thing from auditability pov.",
+      "revId": "64daf40bf412cb39e69f82622447da439a6d5e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "89b073f6_81cb6c72",
