@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "583f8138_be879b8c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-06-03T07:55:24Z",
+      "side": 1,
+      "message": "recheck concurrency issue (doesn\u0027t mean I ignore)",
+      "revId": "397d89fe607cdb9cea4245b3e78057c0d1a373d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
