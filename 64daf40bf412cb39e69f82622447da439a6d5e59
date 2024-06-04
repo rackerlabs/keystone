@@ -69,6 +69,23 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8de6b527_cce21f51",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3031
+      },
+      "writtenOn": "2024-06-04T04:03:53Z",
+      "side": 1,
+      "message": "Wondering if any what to sort this. Currently the main issue is the default policy in glance from antelope changes things so that things like listing images needs reader role as opposed to member role. We weren\u0027t using reader role so we make this an implied role to avoid having to add it to all our users (the whole idea of implied roles) \n\nTo work around this bug at the moment we have to define custom policy in glance for about 12 rules that allow member role to pass which isn\u0027t great.\n\nAs an operator if I make a role implied I would expect this to work for all existing application credentials as well",
+      "revId": "64daf40bf412cb39e69f82622447da439a6d5e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "89b073f6_81cb6c72",
