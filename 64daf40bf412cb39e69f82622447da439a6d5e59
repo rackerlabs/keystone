@@ -88,6 +88,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "18179d3d_52690399",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2024-06-04T11:40:41Z",
+      "side": 1,
+      "message": "personally i think this is not jsut a bug that should be fixed on master but backported to all stable branches if that is what you mean.\n\ni would also expect implied roles to be delegated to existing application credentials and it woudl have expect that to happen as part of an online data migration when or similar on upgrade.\n\nso im not sure that doing this at runtime is the correct approch but i do feel the end result of the change i.e. existing applciation credentals have implied roles is important\n\nthe problem with doing this as an online data migration is it makes it a potential interop problem if you forget to do that when enabling the new defautls.\n\nso im not sure which is more correct but i would consider this bug to be a rellitivly high severity one and there need to be some way either automtaic or opt in via the admin to correct this for existing application creadntioal otherwisse it prevents a cloud form adopting the new defaults.",
+      "parentUuid": "8de6b527_cce21f51",
+      "revId": "64daf40bf412cb39e69f82622447da439a6d5e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "89b073f6_81cb6c72",
         "filename": "keystone/tests/unit/test_v3_application_credential.py",
         "patchSetId": 4
