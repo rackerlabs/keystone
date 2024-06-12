@@ -106,6 +106,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "96d1b06f_d0a946b4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3031
+      },
+      "writtenOn": "2024-06-12T03:04:23Z",
+      "side": 1,
+      "message": "Yes please, we have pulled this patch into our keystone which is running antelope so be great if I don\u0027t have to carry this for long. \n\nI also think that a data migration might not be the best as there will be times in the future we refactor our implied roles and our policies and I don\u0027t want to worry about breaking APs or forgetting to run some db script etc.",
+      "parentUuid": "18179d3d_52690399",
+      "revId": "64daf40bf412cb39e69f82622447da439a6d5e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "89b073f6_81cb6c72",
         "filename": "keystone/tests/unit/test_v3_application_credential.py",
         "patchSetId": 4
