@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d189399_1e4c9bac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2024-06-14T15:39:22Z",
+      "side": 1,
+      "message": "Hi jskunda, thanks for this fix!\n\nCould you please cherry pick the following patch instead branch by branch: https://review.opendev.org/c/openstack/keystone/+/919717 ? (so that all will have the same Change-Id)\n\nIt can be easier follow which branch is fixed with this way. Thanks in advance!",
+      "revId": "d837af9b3b2d118d3af0b44f2b7c944c46151db2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
