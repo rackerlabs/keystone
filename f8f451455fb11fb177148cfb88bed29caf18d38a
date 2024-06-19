@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22c4c457_5e746cc3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2024-06-19T09:15:00Z",
+      "side": 1,
+      "message": "nit: we usually prefer (in some projects, it\u0027s required) to contain the \u0027cherry picked from\u0027 lines [1], which is automatically added when you use git cherry-pick with \u0027-x\u0027 option. With that, this would look like:\n\n    Change-Id: I14007ad2356fd41198ac412895c6ae88232b2681\n    (cherry picked from commit 0e00821762f236cea42caf23415de064cc6f663e)\n\n[1] https://docs.openstack.org/project-team-guide/stable-branches.html#proposing-fixes",
+      "revId": "f8f451455fb11fb177148cfb88bed29caf18d38a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0264649d_b5fcc668",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2024-06-19T09:15:00Z",
+      "side": 1,
+      "message": "Clean cherry pick, fixes the gate for stable/2024.1 and eliminates zuul config error [1]. Thanks Jakub!\n\n[1] https://zuul.opendev.org/t/openstack/config-errors?project\u003dopenstack%2Fkeystone\u0026skip\u003d0",
+      "revId": "f8f451455fb11fb177148cfb88bed29caf18d38a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
