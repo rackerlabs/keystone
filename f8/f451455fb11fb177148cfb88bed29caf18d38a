@@ -1,0 +1,11 @@
+Code-Review+2: David Wilde <dwilde@redhat.com>
+Verified+2: Zuul
+Workflow+1: David Wilde <dwilde@redhat.com>
+Code-Review+2: Elod Illes <elod.illes@est.tech>
+Submitted-by: Zuul
+Submitted-at: Fri, 21 Jun 2024 16:26:07 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/922291
+Comments-Total: 2
+Comments-Unresolved: 1
+Project: openstack/keystone
+Branch: refs/heads/stable/2024.1
