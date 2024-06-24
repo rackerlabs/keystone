@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d50db29_97785ae4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2024-06-24T10:35:11Z",
+      "side": 1,
+      "message": "CI-only fix that removes zuul config errors, clean cherry pick from stable/2024.1. LGTM. Thanks Jakub.",
+      "revId": "fee954e9b48fa7a57bdf3ef98e50f743fda969f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
