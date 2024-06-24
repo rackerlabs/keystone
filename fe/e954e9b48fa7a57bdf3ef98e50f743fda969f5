@@ -1,0 +1,10 @@
+Code-Review+2: Elod Illes <elod.illes@est.tech>
+Verified+2: Zuul
+Code-Review+2: Douglas Mendizábal <dmendiza@redhat.com>
+Workflow+1: Douglas Mendizábal <dmendiza@redhat.com>
+Submitted-by: Zuul
+Submitted-at: Mon, 24 Jun 2024 20:57:58 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/922292
+Comments-Total: 1
+Project: openstack/keystone
+Branch: refs/heads/stable/2023.2
