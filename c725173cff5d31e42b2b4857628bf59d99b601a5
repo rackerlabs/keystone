@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "46de7010_b56ca760",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2024-06-24T10:37:49Z",
+      "side": 1,
+      "message": "Clean cherry pick, not yet merged in stable/2023.2, though. Nevertheless, this is a CI-only change that removes zuul config error. LGTM.",
+      "revId": "c725173cff5d31e42b2b4857628bf59d99b601a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
