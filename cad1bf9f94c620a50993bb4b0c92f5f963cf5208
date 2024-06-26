@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "680adb2a_e671971d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2024-06-26T18:27:10Z",
+      "side": 1,
+      "message": "Thanks for the review! Zuul is also happy. Let\u0027s merge this then!",
+      "revId": "cad1bf9f94c620a50993bb4b0c92f5f963cf5208",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
