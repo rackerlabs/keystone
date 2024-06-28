@@ -104,6 +104,12 @@ class ValidationError(Error):
     title = http.client.responses[http.client.BAD_REQUEST]
 
 
+class RequestValidationError(Error):
+    title = http.client.responses[http.client.BAD_REQUEST]
+    message_format = "%(detail)s"
+    code = 400
+
+
 class URLValidationError(ValidationError):
     message_format = _("Cannot create an endpoint with an invalid URL:"
                        " %(url)s.")
