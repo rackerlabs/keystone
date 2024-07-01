@@ -17,10 +17,11 @@ import functools
 import flask
 import http.client
 
+from keystone.api import validation
 from keystone.common import json_home
 from keystone.common import provider_api
 from keystone.common import rbac_enforcer
-from keystone.common import validation
+from keystone.common import validation as old_validation
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _
@@ -53,6 +54,7 @@ class ProjectResource(ks_flask.ResourceBase):
         api='resource_api', method='get_project')
 
     def _expand_project_ref(self, ref):
+        # NOTE(gtema): This functionality is not described in the API-Ref
         parents_as_list = self.query_filter_is_true('parents_as_list')
         parents_as_ids = self.query_filter_is_true('parents_as_ids')
 
@@ -95,7 +97,8 @@ class ProjectResource(ks_flask.ResourceBase):
                 )
             )
 
-    def _get_project(self, project_id):
+    @validation.response_body_schema(schema.get_response_body)
+    def get(self, project_id: str):
         """Get project.
 
         GET/HEAD /v3/projects/{project_id}
@@ -108,7 +111,48 @@ class ProjectResource(ks_flask.ResourceBase):
         self._expand_project_ref(project)
         return self.wrap_member(project)
 
-    def _list_projects(self):
+    def patch(self, project_id):
+        """Update project.
+
+        PATCH /v3/projects/{project_id}
+        """
+        ENFORCER.enforce_call(
+            action='identity:update_project',
+            build_target=_build_project_target_enforcement
+        )
+        project = self.request_body_json.get('project', {})
+        old_validation.lazy_validate(schema.project_update, project)
+        self._require_matching_id(project)
+        ref = PROVIDERS.resource_api.update_project(
+            project_id,
+            project,
+            initiator=self.audit_initiator)
+        return self.wrap_member(ref)
+
+    def delete(self, project_id):
+        """Delete project.
+
+        DELETE /v3/projects/{project_id}
+        """
+        ENFORCER.enforce_call(
+            action='identity:delete_project',
+            build_target=_build_project_target_enforcement
+        )
+        PROVIDERS.resource_api.delete_project(
+            project_id,
+            initiator=self.audit_initiator)
+        return None, http.client.NO_CONTENT
+
+
+class ProjectsResource(ks_flask.ResourceBase):
+    collection_key = 'projects'
+    member_key = 'project'
+    get_member_from_driver = PROVIDERS.deferred_provider_lookup(
+        api='resource_api', method='get_project')
+
+    @validation.request_query_schema(schema.index_request_query)
+    @validation.response_body_schema(schema.index_response_body)
+    def get(self):
         """List projects.
 
         GET/HEAD /v3/projects
@@ -141,17 +185,8 @@ class ProjectResource(ks_flask.ResourceBase):
             filtered_refs = refs
         return self.wrap_collection(filtered_refs, hints=hints)
 
-    def get(self, project_id=None):
-        """Get project or list projects.
-
-        GET/HEAD /v3/projects
-        GET/HEAD /v3/projects/{project_id}
-        """
-        if project_id is not None:
-            return self._get_project(project_id)
-        else:
-            return self._list_projects()
-
+    @validation.request_body_schema(schema.create_request_body)
+    @validation.response_body_schema(schema.create_response_body)
     def post(self):
         """Create project.
 
@@ -162,7 +197,6 @@ class ProjectResource(ks_flask.ResourceBase):
         ENFORCER.enforce_call(
             action='identity:create_project', target_attr=target
         )
-        validation.lazy_validate(schema.project_create, project)
         project = self._assign_unique_id(project)
         if not project.get('is_domain'):
             project = self._normalize_domain_id(project)
@@ -180,38 +214,6 @@ class ProjectResource(ks_flask.ResourceBase):
         except (exception.DomainNotFound, exception.ProjectNotFound) as e:
             raise exception.ValidationError(e)
         return self.wrap_member(ref), http.client.CREATED
-
-    def patch(self, project_id):
-        """Update project.
-
-        PATCH /v3/projects/{project_id}
-        """
-        ENFORCER.enforce_call(
-            action='identity:update_project',
-            build_target=_build_project_target_enforcement
-        )
-        project = self.request_body_json.get('project', {})
-        validation.lazy_validate(schema.project_update, project)
-        self._require_matching_id(project)
-        ref = PROVIDERS.resource_api.update_project(
-            project_id,
-            project,
-            initiator=self.audit_initiator)
-        return self.wrap_member(ref)
-
-    def delete(self, project_id):
-        """Delete project.
-
-        DELETE /v3/projects/{project_id}
-        """
-        ENFORCER.enforce_call(
-            action='identity:delete_project',
-            build_target=_build_project_target_enforcement
-        )
-        PROVIDERS.resource_api.delete_project(
-            project_id,
-            initiator=self.audit_initiator)
-        return None, http.client.NO_CONTENT
 
 
 class _ProjectTagResourceBase(ks_flask.ResourceBase):
@@ -253,7 +255,7 @@ class ProjectTagsResource(_ProjectTagResourceBase):
             build_target=_build_project_target_enforcement
         )
         tags = self.request_body_json.get('tags', {})
-        validation.lazy_validate(schema.project_tags_update, tags)
+        old_validation.lazy_validate(schema.project_tags_update, tags)
         ref = PROVIDERS.resource_api.update_project_tags(
             project_id, tags, initiator=self.audit_initiator)
         return self.wrap_member(ref)
@@ -293,11 +295,11 @@ class ProjectTagResource(_ProjectTagResourceBase):
             action='identity:create_project_tag',
             build_target=_build_project_target_enforcement
         )
-        validation.lazy_validate(schema.project_tag_create, value)
+        old_validation.lazy_validate(schema.project_tag_create, value)
         # Check if we will exceed the max number of tags on this project
         tags = PROVIDERS.resource_api.list_project_tags(project_id)
         tags.append(value)
-        validation.lazy_validate(schema.project_tags_update, tags)
+        old_validation.lazy_validate(schema.project_tags_update, tags)
         PROVIDERS.resource_api.create_project_tag(
             project_id,
             value,
@@ -508,8 +510,23 @@ class ProjectGroupListGrantResource(_ProjectGrantResourceBase):
 class ProjectAPI(ks_flask.APIBase):
     _name = 'projects'
     _import_name = __name__
-    resources = [ProjectResource]
     resource_mapping = [
+        ks_flask.construct_resource_map(
+            resource=ProjectsResource,
+            url='/projects',
+            resource_kwargs={},
+            rel="projects",
+            path_vars=None,
+
+        ),
+        ks_flask.construct_resource_map(
+            resource=ProjectResource,
+            url='/projects/<string:project_id>',
+            resource_kwargs={},
+            rel="project",
+            path_vars={
+                'project_id': json_home.Parameters.PROJECT_ID}
+        ),
         ks_flask.construct_resource_map(
             resource=ProjectTagsResource,
             url='/projects/<string:project_id>/tags',
