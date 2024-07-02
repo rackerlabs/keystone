@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c79387e4_6300416b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2024-07-02T08:09:12Z",
+      "side": 1,
+      "message": "CI-only change to remove zuul config errors. Backported and merged all newer stable and unmaintained branches, let\u0027s merge this, too.",
+      "revId": "bede4b2ef6177f74cb29aa8f7475107741b7866e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
