@@ -1,0 +1,9 @@
+Verified+2: Zuul
+Code-Review+2: Elod Illes <elod.illes@est.tech>
+Workflow+1: Elod Illes <elod.illes@est.tech>
+Submitted-by: Zuul
+Submitted-at: Tue, 02 Jul 2024 11:27:17 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/923168
+Comments-Total: 1
+Project: openstack/keystone
+Branch: refs/heads/unmaintained/xena
