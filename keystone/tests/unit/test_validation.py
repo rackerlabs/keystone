@@ -870,41 +870,58 @@ class CredentialValidationTestCase(unit.BaseTestCase):
     """Test for V3 Credential API validation."""
 
     def setUp(self):
-        super(CredentialValidationTestCase, self).setUp()
+        super().setUp()
 
-        create = credential_schema.credential_create
-        update = credential_schema.credential_update
+        # Use full request body schemas
+        create = credential_schema.create_request_body
+        update = credential_schema.update_request_body
         self.create_credential_validator = validators.SchemaValidator(create)
         self.update_credential_validator = validators.SchemaValidator(update)
 
     def test_validate_credential_succeeds(self):
         """Test that we validate a credential request."""
-        request_to_validate = {'blob': 'some string',
-                               'project_id': uuid.uuid4().hex,
-                               'type': 'ec2',
-                               'user_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'credential': {
+                'blob': 'some string',
+                'project_id': uuid.uuid4().hex,
+                'type': 'ec2',
+                'user_id': uuid.uuid4().hex
+            }
+        }
         self.create_credential_validator.validate(request_to_validate)
 
     def test_validate_credential_without_blob_fails(self):
         """Exception raised without `blob` in create request."""
-        request_to_validate = {'type': 'ec2',
-                               'user_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'credential': {
+                'type': 'ec2',
+                'user_id': uuid.uuid4().hex
+            }
+        }
         self.assertRaises(exception.SchemaValidationError,
                           self.create_credential_validator.validate,
                           request_to_validate)
 
     def test_validate_credential_without_user_id_fails(self):
         """Exception raised without `user_id` in create request."""
-        request_to_validate = {'blob': 'some credential blob',
-                               'type': 'ec2'}
+        request_to_validate = {
+            'credential': {
+                'blob': 'some credential blob',
+                'type': 'ec2'
+            }
+        }
         self.assertRaises(exception.SchemaValidationError,
                           self.create_credential_validator.validate,
                           request_to_validate)
 
     def test_validate_credential_without_type_fails(self):
         """Exception raised without `type` in create request."""
-        request_to_validate = {'blob': 'some credential blob',
-                               'user_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'credential': {
+                'blob': 'some credential blob',
+                'user_id': uuid.uuid4().hex
+            }
+        }
         self.assertRaises(exception.SchemaValidationError,
                           self.create_credential_validator.validate,
                           request_to_validate)
@@ -915,9 +932,13 @@ class CredentialValidationTestCase(unit.BaseTestCase):
         Test that a SchemaValidationError is raised when type is ec2
         and no `project_id` is provided in create request.
         """
-        request_to_validate = {'blob': 'some credential blob',
-                               'type': 'ec2',
-                               'user_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'credential': {
+                'blob': 'some credential blob',
+                'type': 'ec2',
+                'user_id': uuid.uuid4().hex
+            }
+        }
         self.assertRaises(exception.SchemaValidationError,
                           self.create_credential_validator.validate,
                           request_to_validate)
@@ -927,10 +948,14 @@ class CredentialValidationTestCase(unit.BaseTestCase):
         cred_types = ['ec2', 'cert', uuid.uuid4().hex]
 
         for c_type in cred_types:
-            request_to_validate = {'blob': 'some blob',
-                                   'project_id': uuid.uuid4().hex,
-                                   'type': c_type,
-                                   'user_id': uuid.uuid4().hex}
+            request_to_validate = {
+                'credential': {
+                    'blob': 'some blob',
+                    'project_id': uuid.uuid4().hex,
+                    'type': c_type,
+                    'user_id': uuid.uuid4().hex
+                }
+            }
             # Make sure an exception isn't raised
             self.create_credential_validator.validate(request_to_validate)
 
@@ -943,27 +968,39 @@ class CredentialValidationTestCase(unit.BaseTestCase):
         cred_types = ['cert', uuid.uuid4().hex]
 
         for c_type in cred_types:
-            request_to_validate = {'blob': 'some blob',
-                                   'type': c_type,
-                                   'user_id': uuid.uuid4().hex}
+            request_to_validate = {
+                'credential': {
+                    'blob': 'some blob',
+                    'type': c_type,
+                    'user_id': uuid.uuid4().hex
+                }
+            }
             # Make sure an exception isn't raised
             self.create_credential_validator.validate(request_to_validate)
 
     def test_validate_credential_with_extra_parameters_succeeds(self):
         """Validate create request with extra parameters."""
-        request_to_validate = {'blob': 'some string',
-                               'extra': False,
-                               'project_id': uuid.uuid4().hex,
-                               'type': 'ec2',
-                               'user_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'credential': {
+                'blob': 'some string',
+                'extra': False,
+                'project_id': uuid.uuid4().hex,
+                'type': 'ec2',
+                'user_id': uuid.uuid4().hex
+            }
+        }
         self.create_credential_validator.validate(request_to_validate)
 
     def test_validate_credential_update_succeeds(self):
         """Test that a credential request is properly validated."""
-        request_to_validate = {'blob': 'some string',
-                               'project_id': uuid.uuid4().hex,
-                               'type': 'ec2',
-                               'user_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'credential': {
+                'blob': 'some string',
+                'project_id': uuid.uuid4().hex,
+                'type': 'ec2',
+                'user_id': uuid.uuid4().hex
+            }
+        }
         self.update_credential_validator.validate(request_to_validate)
 
     def test_validate_credential_update_without_parameters_fails(self):
@@ -975,11 +1012,15 @@ class CredentialValidationTestCase(unit.BaseTestCase):
 
     def test_validate_credential_update_with_extra_parameters_succeeds(self):
         """Validate credential update with extra parameters."""
-        request_to_validate = {'blob': 'some string',
-                               'extra': False,
-                               'project_id': uuid.uuid4().hex,
-                               'type': 'ec2',
-                               'user_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'credential': {
+                'blob': 'some string',
+                'extra': False,
+                'project_id': uuid.uuid4().hex,
+                'type': 'ec2',
+                'user_id': uuid.uuid4().hex
+            }
+        }
         self.update_credential_validator.validate(request_to_validate)
 
 
