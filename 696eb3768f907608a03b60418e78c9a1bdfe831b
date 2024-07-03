@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d7e4d5e_d2211057",
+        "filename": "keystone/api/projects.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2024-07-03T14:20:02Z",
+      "side": 1,
+      "message": "This will lead to a change in behaviour. Previously the enforcer call came first and you\u0027d get a HTTP 403 if that failed, regardless of the validity of the body. Now, we\u0027ll do schema checks first and those will return HTTP 400 if invalid.\n\nTwo questions:\n\n* Do we care from an API versioning perspective? I would assume an error is an error and we can change things as we see fit, but we should probably confirm this.\n* Is there any change of leaking data? Again, I assume not since the API routes are well known so returning 400 instead of 403 is not harmful, but I\u0027d like to double check that.\n\nAs an aside, we could answering these questions by converting `ENFORCER.enforce_call` calls to decorators and placing on the outermost scope, though idk how much work that is without some investigation.",
+      "revId": "696eb3768f907608a03b60418e78c9a1bdfe831b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
