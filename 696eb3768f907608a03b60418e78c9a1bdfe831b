@@ -34,6 +34,24 @@
       "parentUuid": "4d7e4d5e_d2211057",
       "revId": "696eb3768f907608a03b60418e78c9a1bdfe831b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24477219_6348db17",
+        "filename": "keystone/api/projects.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-07-03T14:46:27Z",
+      "side": 1,
+      "message": "also I see other services are also doing first routing/validation and then privilege evaluation, so this would be more inline with the rest of OpenStack.\n\nAnyway, surely we need to check",
+      "parentUuid": "bbc5a782_d3bed226",
+      "revId": "696eb3768f907608a03b60418e78c9a1bdfe831b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
