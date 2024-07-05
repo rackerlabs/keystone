@@ -1,0 +1,11 @@
+Workflow+1: Tony Breeds <tony@bakeyournoodle.com>
+Code-Review+1: Douglas Mendizábal <dmendiza@redhat.com>
+Code-Review+1: David Wilde <dwilde@redhat.com>
+Code-Review+2: Tony Breeds <tony@bakeyournoodle.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 05 Jul 2024 20:27:19 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/914284
+Comments-Total: 2
+Project: openstack/keystone
+Branch: refs/heads/unmaintained/victoria
