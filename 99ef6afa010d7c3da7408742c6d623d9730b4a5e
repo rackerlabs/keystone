@@ -16,6 +16,23 @@
       "message": "generated patch, LGTM.",
       "revId": "99ef6afa010d7c3da7408742c6d623d9730b4a5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c419114e_eaf4cbc0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-07-05T14:05:55Z",
+      "side": 1,
+      "message": "recheck stale",
+      "revId": "99ef6afa010d7c3da7408742c6d623d9730b4a5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
