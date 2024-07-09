@@ -89,11 +89,16 @@ class RoleAssignmentsResource(ks_flask.ResourceBase):
         project_id = flask.request.args.get('scope.project.id')
         target = None
         if project_id:
-            target = {
-                'project': PROVIDERS.resource_api.get_project(project_id)
-            }
-            # Add target.domain_id to validate domain-scoped tokens
-            target['domain_id'] = target['project']['domain_id']
+            try:
+                target = {
+                    'project': PROVIDERS.resource_api.get_project(project_id)
+                }
+                # Add target.domain_id to validate domain-scoped tokens
+                target['domain_id'] = target['project']['domain_id']
+            except exception.ProjectNotFound:
+                msg = _('scope.project.id must be a valid project_id if '
+                        'include_subtree is also specified')
+                project_id = None
 
         ENFORCER.enforce_call(action='identity:list_role_assignments_for_tree',
                               filters=filters, target_attr=target)
