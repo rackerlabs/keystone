@@ -11,11 +11,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from keystone.tests.unit.ksfixtures.auth_plugins import ConfigAuthPlugins  # noqa
-from keystone.tests.unit.ksfixtures.backendloader import BackendLoader  # noqa
-from keystone.tests.unit.ksfixtures.cache import Cache  # noqa
-from keystone.tests.unit.ksfixtures.jws_key_repository import JWSKeyRepository  # noqa
-from keystone.tests.unit.ksfixtures.key_repository import KeyRepository  # noqa
-from keystone.tests.unit.ksfixtures.logging import StandardLogging  # noqa
-from keystone.tests.unit.ksfixtures.policy import Policy  # noqa
-from keystone.tests.unit.ksfixtures.warnings import WarningsFixture  # noqa
+from keystone.tests.unit.ksfixtures.auth_plugins import ConfigAuthPlugins
+from keystone.tests.unit.ksfixtures.backendloader import BackendLoader
+from keystone.tests.unit.ksfixtures.cache import Cache
+from keystone.tests.unit.ksfixtures.jws_key_repository import JWSKeyRepository
+from keystone.tests.unit.ksfixtures.key_repository import KeyRepository
+from keystone.tests.unit.ksfixtures.logging import StandardLogging
+from keystone.tests.unit.ksfixtures.policy import Policy
+from keystone.tests.unit.ksfixtures.warnings import WarningsFixture
