@@ -1675,7 +1675,7 @@ class Manager(manager.Manager):
 
             if email:
                 LOG.debug(
-                    "Executing the e-mail update for federated user " "[%s].",
+                    "Executing the e-mail update for federated user [%s].",
                     user,
                 )
 

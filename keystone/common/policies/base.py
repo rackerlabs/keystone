@@ -21,10 +21,10 @@ RULE_ADMIN_OR_CREDENTIAL_OWNER = (
     '(rule:owner and user_id:%(target.credential.user_id)s)'
 )
 RULE_ADMIN_OR_TARGET_DOMAIN = (
-    'rule:admin_required or ' 'token.project.domain.id:%(target.domain.id)s'
+    'rule:admin_required or token.project.domain.id:%(target.domain.id)s'
 )
 RULE_ADMIN_OR_TARGET_PROJECT = (
-    'rule:admin_required or ' 'project_id:%(target.project.id)s'
+    'rule:admin_required or project_id:%(target.project.id)s'
 )
 RULE_ADMIN_OR_TOKEN_SUBJECT = 'rule:admin_or_token_subject'  # nosec
 RULE_REVOKE_EVENT_OR_ADMIN = 'rule:revoke_event_or_admin'
@@ -51,7 +51,7 @@ SYSTEM_ADMIN = 'role:admin and system_scope:all'
 DOMAIN_READER = 'role:reader and domain_id:%(target.domain_id)s'
 RULE_SYSTEM_ADMIN_OR_OWNER = '(' + SYSTEM_ADMIN + ') or rule:owner'
 ADMIN_OR_SYSTEM_READER_OR_OWNER = (
-    '(' + RULE_ADMIN_REQUIRED + ') or ' '(' + SYSTEM_READER + ') or rule:owner'
+    '(' + RULE_ADMIN_REQUIRED + ') or (' + SYSTEM_READER + ') or rule:owner'
 )
 RULE_ADMIN_OR_SYSTEM_READER = 'rule:admin_required or (' + SYSTEM_READER + ')'
 
@@ -62,7 +62,7 @@ ADMIN_OR_SYSTEM_READER_OR_CRED_OWNER = (
     'or user_id:%(target.credential.user_id)s'
 )
 ADMIN_OR_CRED_OWNER = (
-    '(' + RULE_ADMIN_REQUIRED + ') ' 'or user_id:%(target.credential.user_id)s'
+    '(' + RULE_ADMIN_REQUIRED + ') or user_id:%(target.credential.user_id)s'
 )
 
 rules = [
