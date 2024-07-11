@@ -125,15 +125,11 @@ group_endpoint_policies = [
         description='Get endpoint group.',
         operations=[
             {
-                'path': (
-                    '/v3/OS-EP-FILTER/endpoint_groups/' '{endpoint_group_id}'
-                ),
+                'path': '/v3/OS-EP-FILTER/endpoint_groups/{endpoint_group_id}',
                 'method': 'GET',
             },
             {
-                'path': (
-                    '/v3/OS-EP-FILTER/endpoint_groups/' '{endpoint_group_id}'
-                ),
+                'path': '/v3/OS-EP-FILTER/endpoint_groups/{endpoint_group_id}',
                 'method': 'HEAD',
             },
         ],
@@ -146,9 +142,7 @@ group_endpoint_policies = [
         description='Update endpoint group.',
         operations=[
             {
-                'path': (
-                    '/v3/OS-EP-FILTER/endpoint_groups/' '{endpoint_group_id}'
-                ),
+                'path': '/v3/OS-EP-FILTER/endpoint_groups/{endpoint_group_id}',
                 'method': 'PATCH',
             }
         ],
@@ -161,9 +155,7 @@ group_endpoint_policies = [
         description='Delete endpoint group.',
         operations=[
             {
-                'path': (
-                    '/v3/OS-EP-FILTER/endpoint_groups/' '{endpoint_group_id}'
-                ),
+                'path': '/v3/OS-EP-FILTER/endpoint_groups/{endpoint_group_id}',
                 'method': 'DELETE',
             }
         ],
@@ -174,14 +166,11 @@ group_endpoint_policies = [
         check_str=base.RULE_ADMIN_OR_SYSTEM_READER,
         scope_types=['system', 'project'],
         description=(
-            'List all projects associated with a specific endpoint ' 'group.'
+            'List all projects associated with a specific endpoint group.'
         ),
         operations=[
             {
-                'path': (
-                    '/v3/OS-EP-FILTER/endpoint_groups/'
-                    '{endpoint_group_id}/projects'
-                ),
+                'path': '/v3/OS-EP-FILTER/endpoint_groups/{endpoint_group_id}/projects',
                 'method': 'GET',
             }
         ],
@@ -194,10 +183,7 @@ group_endpoint_policies = [
         description='List all endpoints associated with an endpoint group.',
         operations=[
             {
-                'path': (
-                    '/v3/OS-EP-FILTER/endpoint_groups/'
-                    '{endpoint_group_id}/endpoints'
-                ),
+                'path': '/v3/OS-EP-FILTER/endpoint_groups/{endpoint_group_id}/endpoints',
                 'method': 'GET',
             }
         ],
@@ -208,7 +194,7 @@ group_endpoint_policies = [
         check_str=base.RULE_ADMIN_OR_SYSTEM_READER,
         scope_types=['system', 'project'],
         description=(
-            'Check if an endpoint group is associated with a ' 'project.'
+            'Check if an endpoint group is associated with a project.'
         ),
         operations=[
             {
@@ -236,7 +222,7 @@ group_endpoint_policies = [
         operations=[
             {
                 'path': (
-                    '/v3/OS-EP-FILTER/projects/{project_id}/' 'endpoint_groups'
+                    '/v3/OS-EP-FILTER/projects/{project_id}/endpoint_groups'
                 ),
                 'method': 'GET',
             }
