@@ -215,8 +215,10 @@ class TestDatabaseDomainConfigs(unit.TestCase):
 
         # Prepare fake driver
         extension = stevedore.extension.Extension(
-            name="foo", entry_point=None,
-            obj=fake_driver.FooDriver(), plugin=None
+            name="foo",
+            entry_point=None,
+            obj=fake_driver.FooDriver(),
+            plugin=None,
         )
         fake_driver_manager = stevedore.DriverManager.make_test_instance(
             extension, namespace="keystone.identity"
@@ -233,14 +235,15 @@ class TestDatabaseDomainConfigs(unit.TestCase):
         )
         self.config_fixture.config(
             additional_whitelisted_options={"foo": ["opt1"]},
-            group="domain_config"
+            group="domain_config",
         )
         domain = unit.new_domain_ref()
         PROVIDERS.resource_api.create_domain(domain["id"], domain)
         # Override two config options for our domain
         conf = {
             "foo": {"opt1": uuid.uuid4().hex},
-            "identity": {"driver": "foo"}}
+            "identity": {"driver": "foo"},
+        }
         PROVIDERS.domain_config_api.create_config(domain["id"], conf)
         domain_config = identity.DomainConfigs()
         domain_config.setup_domain_drivers("foo", PROVIDERS.resource_api)

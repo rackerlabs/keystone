@@ -54,19 +54,23 @@ This has no effect unless `[domain_config] caching` is enabled.
 additional_whitelisted_options = cfg.Opt(
     'additional_whitelisted_options',
     type=cfg.types.Dict(value_type=cfg.types.List(bounds=True)),
-    help=utils.fmt("""
+    help=utils.fmt(
+        """
 Additional whitelisted domain-specific options for out-of-tree drivers.
 This is a dictonary of lists with the key being the group name and value a list
-of group options.""")
+of group options."""
+    ),
 )
 
 additional_sensitive_options = cfg.Opt(
     'additional_sensitive_options',
     type=cfg.types.Dict(value_type=cfg.types.List(bounds=True)),
-    help=utils.fmt("""
+    help=utils.fmt(
+        """
 Additional sensitive domain-specific options for out-of-tree drivers.
 This is a dictonary of lists with the key being the group name and value a list
-of group options.""")
+of group options."""
+    ),
 )
 
 
@@ -76,7 +80,7 @@ ALL_OPTS = [
     caching,
     cache_time,
     additional_whitelisted_options,
-    additional_sensitive_options
+    additional_sensitive_options,
 ]
 
 

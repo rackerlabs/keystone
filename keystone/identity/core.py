@@ -73,13 +73,12 @@ def get_driver(namespace, driver_name, *args):
     looking for additional configuration options required by the driver.
     """
     try:
-        driver_manager = stevedore.DriverManager(namespace,
-                                                 driver_name,
-                                                 invoke_on_load=False,
-                                                 invoke_args=args)
+        driver_manager = stevedore.DriverManager(
+            namespace, driver_name, invoke_on_load=False, invoke_args=args
+        )
         return driver_manager.driver
     except stevedore.exception.NoMatches:
-        msg = (_('Unable to find %(name)r driver in %(namespace)r.'))
+        msg = _('Unable to find %(name)r driver in %(namespace)r.')
         raise ImportError(msg % {'name': driver_name, 'namespace': namespace})
 
 
@@ -331,12 +330,12 @@ class DomainConfigs(provider_api.ProviderAPIMixin, dict):
         # thus require special treatment.
         try:
             driver_name = specific_config.get("identity", {}).get(
-                "driver", domain_config["cfg"].identity.driver)
+                "driver", domain_config["cfg"].identity.driver
+            )
             # For the non in-tree drivers ...
             if driver_name not in ["sql", "ldap"]:
                 # Locate the driver without invoking ...
-                driver = get_driver(
-                    Manager.driver_namespace, driver_name)
+                driver = get_driver(Manager.driver_namespace, driver_name)
                 # Check whether it wants to register additional config options
                 # ...
                 if hasattr(driver, "register_opts"):
@@ -350,7 +349,8 @@ class DomainConfigs(provider_api.ProviderAPIMixin, dict):
             # register config options with the DB configuration loading branch.
             LOG.debug(
                 f"Exception during attempt to load domain specific "
-                f"configuration options: {ex}")
+                f"configuration options: {ex}"
+            )
 
         # Override any options that have been passed in as specified in the
         # database.
@@ -364,7 +364,8 @@ class DomainConfigs(provider_api.ProviderAPIMixin, dict):
                 # to complete the process properly.
                 try:
                     domain_config['cfg'].set_override(
-                        option, specific_config[group][option], group)
+                        option, specific_config[group][option], group
+                    )
                 except (cfg.NoSuchOptError, cfg.NoSuchGroupError):
                     # Error to register config overrides for wrong driver. This
                     # is not worth of logging since it is a normal case during
