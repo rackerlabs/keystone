@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import typing as ty
 import uuid
 
 import fixtures
@@ -36,8 +37,8 @@ CONF = keystone.conf.CONF
 class _TestResourceWithCollectionInfo(flask_common.ResourceBase):
     collection_key = 'arguments'
     member_key = 'argument'
-    __shared_state__ = {}
-    _storage_dict = {}
+    __shared_state__: dict[str, ty.Any] = {}
+    _storage_dict: dict[str, ty.Any] = {}
 
     def __init__(self):
         super().__init__()
