@@ -52,6 +52,23 @@
       "parentUuid": "e6d5068f_93abdbef",
       "revId": "82b22aca4ac731a5dce90450c99b3f4e829c4d88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc02f49f_847730a3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2024-07-12T14:27:07Z",
+      "side": 1,
+      "message": "A release note might be in order",
+      "revId": "82b22aca4ac731a5dce90450c99b3f4e829c4d88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
