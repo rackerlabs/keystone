@@ -20,10 +20,11 @@ SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER = (
     '(role:reader and domain_id:%(target.project.domain_id)s) or '
     'project_id:%(target.project.id)s'
 )
-ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER = (
+ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER = (
     '('
     + base.RULE_ADMIN_REQUIRED
     + ') or '
+    + '(role:manager and domain_id:%(target.project.domain_id)s) or '
     + SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER
 )
 
@@ -49,10 +50,14 @@ SYSTEM_READER_OR_DOMAIN_READER_OR_OWNER = (
     # the context user_id to the target user id.
     'user_id:%(target.user.id)s'
 )
-ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_OWNER = (
+# This is intended for identity:list_user_projects where the rule is slightly
+# different in regards to the domain manager: to properly filter the list,
+# target.user.domain_id must be used as the comparison target
+ADMIN_OR_DOMAIN_MANAGER_SYSTEM_READER_OR_DOMAIN_READER_OR_OWNER = (
     '('
     + base.RULE_ADMIN_REQUIRED
     + ') or '
+    + '(role:manager and domain_id:%(target.user.domain_id)s) or '
     + SYSTEM_READER_OR_DOMAIN_READER_OR_OWNER
 )
 
@@ -61,13 +66,21 @@ SYSTEM_READER_OR_DOMAIN_READER = (
     '(role:reader and domain_id:%(target.domain_id)s)'
 )
 
-ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER = (
-    '(' + base.RULE_ADMIN_REQUIRED + ') or ' + SYSTEM_READER_OR_DOMAIN_READER
+# This is intended for identity:list_projects where the rule is slightly
+# different in regards to the domain manager: to properly filter the list,
+# target.domain_id must be used as the comparison target not
+# target.project.domain_id as used to access individual projects
+ADMIN_OR_DOMAIN_MANAGER_LIST_OR_SYSTEM_READER_OR_DOMAIN_READER = (
+    '('
+    + base.RULE_ADMIN_REQUIRED
+    + ') or '
+    + '(role:manager and domain_id:%(target.domain_id)s) or '
+    + SYSTEM_READER_OR_DOMAIN_READER
 )
 
-SYSTEM_ADMIN_OR_DOMAIN_ADMIN = (
-    '(role:admin and system_scope:all) or '
-    '(role:admin and domain_id:%(target.project.domain_id)s)'
+ADMIN_OR_DOMAIN_MANAGER = (
+    '(' + base.RULE_ADMIN_REQUIRED + ') or '
+    '(role:manager and domain_id:%(target.project.domain_id)s)'
 )
 
 DEPRECATED_REASON = (
@@ -159,7 +172,7 @@ automatically.
 project_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_project',
-        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER,
         scope_types=['system', 'domain', 'project'],
         description='Show project details.',
         operations=[{'path': '/v3/projects/{project_id}', 'method': 'GET'}],
@@ -167,7 +180,7 @@ project_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_projects',
-        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_LIST_OR_SYSTEM_READER_OR_DOMAIN_READER,
         scope_types=['system', 'domain', 'project'],
         description='List projects.',
         operations=[{'path': '/v3/projects', 'method': 'GET'}],
@@ -175,7 +188,7 @@ project_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_user_projects',
-        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_OWNER,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_SYSTEM_READER_OR_DOMAIN_READER_OR_OWNER,
         scope_types=['system', 'domain', 'project'],
         description='List projects for user.',
         operations=[{'path': '/v3/users/{user_id}/projects', 'method': 'GET'}],
@@ -183,7 +196,7 @@ project_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_project',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER,
         scope_types=['system', 'domain', 'project'],
         description='Create project.',
         operations=[{'path': '/v3/projects', 'method': 'POST'}],
@@ -191,7 +204,7 @@ project_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_project',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER,
         scope_types=['system', 'domain', 'project'],
         description='Update project.',
         operations=[{'path': '/v3/projects/{project_id}', 'method': 'PATCH'}],
@@ -199,7 +212,7 @@ project_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_project',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER,
         scope_types=['system', 'domain', 'project'],
         description='Delete project.',
         operations=[{'path': '/v3/projects/{project_id}', 'method': 'DELETE'}],
@@ -207,7 +220,7 @@ project_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_project_tags',
-        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER,
         scope_types=['system', 'domain', 'project'],
         description='List tags for a project.',
         operations=[
@@ -218,7 +231,7 @@ project_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_project_tag',
-        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER,
         scope_types=['system', 'domain', 'project'],
         description='Check if project contains a tag.',
         operations=[
@@ -235,7 +248,7 @@ project_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_project_tags',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER,
         scope_types=['system', 'domain', 'project'],
         description='Replace all tags on a project with the new set of tags.',
         operations=[
@@ -245,7 +258,7 @@ project_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_project_tag',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER,
         scope_types=['system', 'domain', 'project'],
         description='Add a single tag to a project.',
         operations=[
@@ -255,7 +268,7 @@ project_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_project_tags',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER,
         scope_types=['system', 'domain', 'project'],
         description='Remove all tags from a project.',
         operations=[
@@ -265,7 +278,7 @@ project_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_project_tag',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER,
         scope_types=['system', 'domain', 'project'],
         description='Delete a specified tag from project.',
         operations=[
