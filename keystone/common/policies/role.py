@@ -15,6 +15,31 @@ from oslo_policy import policy
 
 from keystone.common.policies import base
 
+ADMIN_OR_SYSTEM_READER_OR_DOMAIN_MANAGER_ROLE = (
+    '(' + base.RULE_ADMIN_OR_SYSTEM_READER + ') or '
+    '(role:manager and rule:domain_managed_target_role)'
+)
+
+ADMIN_OR_SYSTEM_READER_OR_DOMAIN_MANAGER = (
+    '(' + base.RULE_ADMIN_OR_SYSTEM_READER + ') or '
+    'role:manager'
+)
+
+ADMIN_OR_DOMAIN_MANAGER_FOR_DOMAIN_ROLE = (
+    '(' + base.RULE_ADMIN_REQUIRED + ') or '
+    '(role:manager and domain_id:%(target.role.domain_id)s)'
+)
+
+ADMIN_OR_SYSTEM_READER_OR_DOMAIN_MANAGER_FOR_DOMAIN_ROLE = (
+    '(' + base.RULE_ADMIN_OR_SYSTEM_READER + ') or '
+    '(role:manager and domain_id:%(target.role.domain_id)s)'
+)
+
+ADMIN_OR_SYSTEM_READER_OR_DOMAIN_MANAGER_FOR_DOMAIN_ROLE_LIST = (
+    '(' + base.RULE_ADMIN_OR_SYSTEM_READER + ') or '
+    '(role:manager and domain_id:%(target.domain_id)s)'
+)
+
 DEPRECATED_REASON = (
     "The role API is now aware of system scope and default roles."
 )
@@ -84,7 +109,7 @@ deprecated_delete_domain_role = policy.DeprecatedRule(
 role_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_role',
-        check_str=base.RULE_ADMIN_OR_SYSTEM_READER,
+        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_MANAGER_ROLE,
         scope_types=['system', 'domain', 'project'],
         description='Show role details.',
         operations=[{'path': '/v3/roles/{role_id}',
@@ -94,7 +119,7 @@ role_policies = [
         deprecated_rule=deprecated_get_role),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_roles',
-        check_str=base.RULE_ADMIN_OR_SYSTEM_READER,
+        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_MANAGER,
         scope_types=['system', 'domain', 'project'],
         description='List roles.',
         operations=[{'path': '/v3/roles',
@@ -128,8 +153,8 @@ role_policies = [
         deprecated_rule=deprecated_delete_role),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_domain_role',
-        check_str=base.RULE_ADMIN_OR_SYSTEM_READER,
-        scope_types=['system', 'project'],
+        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_MANAGER_FOR_DOMAIN_ROLE,
+        scope_types=['system', 'domain', 'project'],
         description='Show domain role.',
         operations=[{'path': '/v3/roles/{role_id}',
                      'method': 'GET'},
@@ -138,9 +163,9 @@ role_policies = [
         deprecated_rule=deprecated_get_domain_role),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_domain_roles',
-        check_str=base.RULE_ADMIN_OR_SYSTEM_READER,
+        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_MANAGER_FOR_DOMAIN_ROLE_LIST,
         description='List domain roles.',
-        scope_types=['system', 'project'],
+        scope_types=['system', 'domain', 'project'],
         operations=[{'path': '/v3/roles?domain_id={domain_id}',
                      'method': 'GET'},
                     {'path': '/v3/roles?domain_id={domain_id}',
@@ -148,25 +173,25 @@ role_policies = [
         deprecated_rule=deprecated_list_domain_roles),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_domain_role',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_FOR_DOMAIN_ROLE,
         description='Create domain role.',
-        scope_types=['system', 'project'],
+        scope_types=['system', 'domain', 'project'],
         operations=[{'path': '/v3/roles',
                      'method': 'POST'}],
         deprecated_rule=deprecated_create_domain_role),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_domain_role',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_FOR_DOMAIN_ROLE,
         description='Update domain role.',
-        scope_types=['system', 'project'],
+        scope_types=['system', 'domain', 'project'],
         operations=[{'path': '/v3/roles/{role_id}',
                      'method': 'PATCH'}],
         deprecated_rule=deprecated_update_domain_role),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_domain_role',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_FOR_DOMAIN_ROLE,
         description='Delete domain role.',
-        scope_types=['system', 'project'],
+        scope_types=['system', 'domain', 'project'],
         operations=[{'path': '/v3/roles/{role_id}',
                      'method': 'DELETE'}],
         deprecated_rule=deprecated_delete_domain_role)

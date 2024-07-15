@@ -61,13 +61,26 @@ GRANTS_DOMAIN_ADMIN = (
     ' ' + DOMAIN_MATCHES_TARGET_DOMAIN + ')'
 )
 
-ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER = (
+GRANTS_DOMAIN_MANAGER = (
+    '(role:manager and ' + DOMAIN_MATCHES_USER_DOMAIN + ' and'
+    ' ' + DOMAIN_MATCHES_PROJECT_DOMAIN + ') or '
+    '(role:manager and ' + DOMAIN_MATCHES_USER_DOMAIN + ' and'
+    ' ' + DOMAIN_MATCHES_TARGET_DOMAIN + ') or '
+    '(role:manager and ' + DOMAIN_MATCHES_GROUP_DOMAIN + ' and'
+    ' ' + DOMAIN_MATCHES_PROJECT_DOMAIN + ') or '
+    '(role:manager and ' + DOMAIN_MATCHES_GROUP_DOMAIN + ' and'
+    ' ' + DOMAIN_MATCHES_TARGET_DOMAIN + ')'
+)
+
+ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER = (
     '(' + base.RULE_ADMIN_REQUIRED + ') or '
+    '(' + GRANTS_DOMAIN_MANAGER + ') or '
     '(' + SYSTEM_READER_OR_DOMAIN_READER + ')'
 )
 
-ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_LIST = (
+ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER_LIST = (
     '(' + base.RULE_ADMIN_REQUIRED + ') or '
+    '(' + GRANTS_DOMAIN_MANAGER + ') or '
     '(' + SYSTEM_READER_OR_DOMAIN_READER_LIST + ')'
 )
 
@@ -194,7 +207,7 @@ list_grants_operations = (
 grant_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'check_grant',
-        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER,
         scope_types=['system', 'domain', 'project'],
         description=('Check a role grant between a target and an actor. A '
                      'target can be either a domain or a project. An actor '
@@ -206,7 +219,7 @@ grant_policies = [
         deprecated_rule=deprecated_check_grant),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_grants',
-        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_LIST,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER_LIST,
         scope_types=['system', 'domain', 'project'],
         description=('List roles granted to an actor on a target. A target '
                      'can be either a domain or a project. An actor can be '
@@ -218,7 +231,9 @@ grant_policies = [
         deprecated_rule=deprecated_list_grants),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_grant',
-        check_str=ADMIN_OR_DOMAIN_ADMIN,
+        check_str=(ADMIN_OR_DOMAIN_ADMIN +
+                   ' or (' + GRANTS_DOMAIN_MANAGER + ') and ' +
+                   'rule:domain_managed_target_role'),
         scope_types=['system', 'domain', 'project'],
         description=('Create a role grant between a target and an actor. A '
                      'target can be either a domain or a project. An actor '
@@ -230,7 +245,9 @@ grant_policies = [
         deprecated_rule=deprecated_create_grant),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'revoke_grant',
-        check_str=ADMIN_OR_DOMAIN_ADMIN,
+        check_str=(ADMIN_OR_DOMAIN_ADMIN +
+                   ' or (' + GRANTS_DOMAIN_MANAGER + ') and ' +
+                   'rule:domain_managed_target_role'),
         scope_types=['system', 'domain', 'project'],
         description=('Revoke a role grant between a target and an actor. A '
                      'target can be either a domain or a project. An actor '

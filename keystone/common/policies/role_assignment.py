@@ -19,13 +19,14 @@ SYSTEM_READER_OR_DOMAIN_READER = (
     '(' + base.SYSTEM_READER + ') or '
     '(role:reader and domain_id:%(target.domain_id)s)'
 )
-ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER = (
+ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER = (
     '(' + base.RULE_ADMIN_REQUIRED + ') or ' +
     SYSTEM_READER_OR_DOMAIN_READER
 )
 
 SYSTEM_READER_OR_PROJECT_DOMAIN_READER_OR_PROJECT_ADMIN = (
     '(' + base.SYSTEM_READER + ') or '
+    '(role:manager and domain_id:%(target.domain_id)s) or '
     '(role:reader and domain_id:%(target.project.domain_id)s) or '
     '(role:admin and project_id:%(target.project.id)s)'
 )
@@ -51,7 +52,7 @@ deprecated_list_role_assignments_for_tree = policy.DeprecatedRule(
 role_assignment_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_role_assignments',
-        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER,
         scope_types=['system', 'domain', 'project'],
         description='List role assignments.',
         operations=[{'path': '/v3/role_assignments',
@@ -61,7 +62,7 @@ role_assignment_policies = [
         deprecated_rule=deprecated_list_role_assignments),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_role_assignments_for_tree',
-        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER,
         scope_types=['system', 'domain', 'project'],
         description=('List all role assignments for a given tree of '
                      'hierarchical projects.'),
