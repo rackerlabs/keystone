@@ -33,9 +33,19 @@ SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_GROUP_USER = (
     'domain_id:%(target.group.domain_id)s and '
     'domain_id:%(target.user.domain_id)s)'
 )
-ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_GROUP = (
+DOMAIN_MANAGER_FOR_TARGET_GROUP = (
+    'role:manager and domain_id:%(target.group.domain_id)s'
+)
+DOMAIN_MANAGER_FOR_TARGET_GROUP_USER = (
+    'role:manager and '
+    'domain_id:%(target.group.domain_id)s and '
+    'domain_id:%(target.user.domain_id)s'
+)
+ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_GROUP = (
     '('
     + base.RULE_ADMIN_REQUIRED
+    + ') or ('
+    + DOMAIN_MANAGER_FOR_TARGET_GROUP_USER
     + ') or '
     + SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_GROUP_USER
 )
@@ -44,13 +54,33 @@ SYSTEM_READER_OR_DOMAIN_READER = (
     '(role:reader and system_scope:all) or '
     '(role:reader and domain_id:%(target.group.domain_id)s)'
 )
-ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER = (
-    '(' + base.RULE_ADMIN_REQUIRED + ') or ' + SYSTEM_READER_OR_DOMAIN_READER
+ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER = (
+    '('
+    + base.RULE_ADMIN_REQUIRED
+    + ') or ('
+    + DOMAIN_MANAGER_FOR_TARGET_GROUP
+    + ') or '
+    + SYSTEM_READER_OR_DOMAIN_READER
 )
 
 SYSTEM_ADMIN_OR_DOMAIN_ADMIN = (
     '(role:admin and system_scope:all) or '
     '(role:admin and domain_id:%(target.group.domain_id)s)'
+)
+
+ADMIN_OR_DOMAIN_MANAGER_FOR_GROUPS = (
+    '('
+    + base.RULE_ADMIN_REQUIRED
+    + ') or ('
+    + DOMAIN_MANAGER_FOR_TARGET_GROUP
+    + ')'
+)
+ADMIN_OR_DOMAIN_MANAGER_FOR_GROUP_ASSIGNMENTS = (
+    '('
+    + base.RULE_ADMIN_REQUIRED
+    + ') or ('
+    + DOMAIN_MANAGER_FOR_TARGET_GROUP_USER
+    + ')'
 )
 
 DEPRECATED_REASON = (
@@ -121,7 +151,7 @@ deprecated_add_user_to_group = policy.DeprecatedRule(
 group_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_group',
-        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER,
         scope_types=['system', 'domain', 'project'],
         description='Show group details.',
         operations=[
@@ -132,7 +162,7 @@ group_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_groups',
-        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER,
         scope_types=['system', 'domain', 'project'],
         description='List groups.',
         operations=[
@@ -154,7 +184,7 @@ group_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_group',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_FOR_GROUPS,
         scope_types=['system', 'domain', 'project'],
         description='Create group.',
         operations=[{'path': '/v3/groups', 'method': 'POST'}],
@@ -162,7 +192,7 @@ group_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_group',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_FOR_GROUPS,
         scope_types=['system', 'domain', 'project'],
         description='Update group.',
         operations=[{'path': '/v3/groups/{group_id}', 'method': 'PATCH'}],
@@ -170,7 +200,7 @@ group_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_group',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_FOR_GROUPS,
         scope_types=['system', 'domain', 'project'],
         description='Delete group.',
         operations=[{'path': '/v3/groups/{group_id}', 'method': 'DELETE'}],
@@ -178,7 +208,7 @@ group_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_users_in_group',
-        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER,
         scope_types=['system', 'domain', 'project'],
         description='List members of a specific group.',
         operations=[
@@ -189,7 +219,7 @@ group_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'remove_user_from_group',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_FOR_GROUP_ASSIGNMENTS,
         scope_types=['system', 'domain', 'project'],
         description='Remove user from group.',
         operations=[
@@ -202,7 +232,7 @@ group_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'check_user_in_group',
-        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_GROUP,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_GROUP,
         scope_types=['system', 'domain', 'project'],
         description='Check whether a user is a member of a group.',
         operations=[
@@ -216,7 +246,7 @@ group_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'add_user_to_group',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_FOR_GROUP_ASSIGNMENTS,
         scope_types=['system', 'domain', 'project'],
         description='Add user to group.',
         operations=[
