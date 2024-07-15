@@ -65,6 +65,18 @@ ADMIN_OR_CRED_OWNER = (
     'or user_id:%(target.credential.user_id)s'
 )
 
+# This rule template is meant for restricting role assignments done by domain
+# managers. It is intended to restrict the roles a domain manager can assign or
+# revoke to a sensible default set while allowing overrides via policy file by
+# adjusting the corresponding rule definition.
+# For the default, any roles with higher-level privileges than "manager" (e.g.
+# "admin") must be omitted to avoid privilege escalation.
+DOMAIN_MANAGER_ALLOWED_ROLES = (
+    "'manager':%(target.role.name)s or "
+    "'member':%(target.role.name)s or "
+    "'reader':%(target.role.name)s"
+)
+
 rules = [
     policy.RuleDefault(
         name='admin_required',
@@ -90,6 +102,10 @@ rules = [
     policy.RuleDefault(
         name='service_admin_or_token_subject',
         check_str='rule:service_or_admin or rule:token_subject'),
+    policy.RuleDefault(
+        name="domain_managed_target_role",
+        check_str=DOMAIN_MANAGER_ALLOWED_ROLES,
+    ),
 ]
 
 
