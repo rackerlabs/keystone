@@ -15,6 +15,15 @@ from oslo_policy import policy
 
 from keystone.common.policies import base
 
+ADMIN_OR_SYSTEM_READER_OR_DOMAIN_MANAGER_ROLE = (
+    '(' + base.RULE_ADMIN_OR_SYSTEM_READER + ') or '
+    '(role:manager and rule:domain_managed_target_role)'
+)
+
+ADMIN_OR_SYSTEM_READER_OR_DOMAIN_MANAGER = (
+    '(' + base.RULE_ADMIN_OR_SYSTEM_READER + ') or role:manager'
+)
+
 DEPRECATED_REASON = (
     "The role API is now aware of system scope and default roles."
 )
@@ -84,7 +93,7 @@ deprecated_delete_domain_role = policy.DeprecatedRule(
 role_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_role',
-        check_str=base.RULE_ADMIN_OR_SYSTEM_READER,
+        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_MANAGER_ROLE,
         scope_types=['system', 'domain', 'project'],
         description='Show role details.',
         operations=[
@@ -95,7 +104,7 @@ role_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_roles',
-        check_str=base.RULE_ADMIN_OR_SYSTEM_READER,
+        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_MANAGER,
         scope_types=['system', 'domain', 'project'],
         description='List roles.',
         operations=[
