@@ -20,18 +20,33 @@ SYSTEM_READER_OR_DOMAIN_READER_OR_USER = (
     '(role:reader and token.domain.id:%(target.user.domain_id)s) or '
     'user_id:%(target.user.id)s'
 )
-ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_USER = (
+ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_USER = (
     '('
     + base.RULE_ADMIN_REQUIRED
     + ') or '
+    + '(role:manager and token.domain.id:%(target.user.domain_id)s) or '
     + SYSTEM_READER_OR_DOMAIN_READER_OR_USER
 )
 
 SYSTEM_READER_OR_DOMAIN_READER = (
     '(' + base.SYSTEM_READER + ') or (' + base.DOMAIN_READER + ')'
 )
-ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER = (
-    '(' + base.RULE_ADMIN_REQUIRED + ') or ' + SYSTEM_READER_OR_DOMAIN_READER
+
+# This is intended for identity:list_users where the rule is slightly
+# different in regards to the domain manager: to properly filter the list,
+# target.domain_id must be used as the comparison target not
+# target.user.domain_id as used to access individual users
+ADMIN_OR_DOMAIN_MANAGER_SYSTEM_READER_OR_DOMAIN_READER = (
+    '('
+    + base.RULE_ADMIN_REQUIRED
+    + ') or '
+    + '(role:manager and token.domain.id:%(target.domain_id)s) or '
+    + SYSTEM_READER_OR_DOMAIN_READER
+)
+
+ADMIN_OR_DOMAIN_MANAGER = (
+    '(' + base.RULE_ADMIN_REQUIRED + ') or '
+    '(role:manager and token.domain.id:%(target.user.domain_id)s)'
 )
 
 DEPRECATED_REASON = (
@@ -72,7 +87,7 @@ deprecated_delete_user = policy.DeprecatedRule(
 user_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_user',
-        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_USER,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_USER,
         scope_types=['system', 'domain', 'project'],
         description='Show user details.',
         operations=[
@@ -83,7 +98,7 @@ user_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_users',
-        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER,
+        check_str=ADMIN_OR_DOMAIN_MANAGER_SYSTEM_READER_OR_DOMAIN_READER,
         scope_types=['system', 'domain', 'project'],
         description='List users.',
         operations=[
@@ -120,7 +135,7 @@ user_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_user',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER,
         scope_types=['system', 'domain', 'project'],
         description='Create a user.',
         operations=[{'path': '/v3/users', 'method': 'POST'}],
@@ -128,7 +143,7 @@ user_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_user',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER,
         scope_types=['system', 'domain', 'project'],
         description='Update a user, including administrative password resets.',
         operations=[{'path': '/v3/users/{user_id}', 'method': 'PATCH'}],
@@ -136,7 +151,7 @@ user_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_user',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=ADMIN_OR_DOMAIN_MANAGER,
         scope_types=['system', 'domain', 'project'],
         description='Delete a user.',
         operations=[{'path': '/v3/users/{user_id}', 'method': 'DELETE'}],
