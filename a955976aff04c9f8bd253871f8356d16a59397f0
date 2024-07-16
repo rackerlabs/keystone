@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d13d5bc4_540fd19a",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 27665
+      },
+      "writtenOn": "2024-07-16T12:10:37Z",
+      "side": 1,
+      "message": "Note: adding the domain scope for the domain role operations here was necessary for the Domain Manager Persona to be able to work with domain roles. This introduces a change in behavior: a domain-scoped admin can now also use these endpoints, which was previously forbidden.\nSince a domain admin has implicitly a higher privilege level than a domain manager, I don\u0027t deem this problematic.",
+      "revId": "a955976aff04c9f8bd253871f8356d16a59397f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
