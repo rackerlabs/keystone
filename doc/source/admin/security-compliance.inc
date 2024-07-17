@@ -64,6 +64,20 @@ This above example means that users that have not authenticated (inactive) for
 the past 90 days are automatically disabled. Users can be re-enabled by
 explicitly setting the enable user attribute via the API.
 
+Note that because of a bug where the last_active_at database setting was only
+updated when disable_user_account_days_inactive was enabled, it is possible
+for even recently active users to be disabled when enabling
+disable_user_account_days_inactive on a system where it was not previously
+enabled.  To prevent this, set ignore_nulls_for_last_active_at to true.
+
+.. code-block:: ini
+
+   [security_compliance]
+   ignore_nulls_for_last_active_at = true
+
+As last_active_at is now updated on every login, this parameter can be
+disabled after a short transition time.
+
 Force users to change password upon first use
 ---------------------------------------------
 

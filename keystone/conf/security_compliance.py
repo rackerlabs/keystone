@@ -27,6 +27,20 @@ and is considered "inactive", the user's `enabled` attribute in the HTTP API
 may not match the value of the user's `enabled` column in the user table.
 """))
 
+ignore_nulls_for_last_active_at = cfg.BoolOpt(
+    'ignore_nulls_for_last_active_at',
+    default=False,
+    help=utils.fmt("""
+Enabling this option will disable the inactivity check for users with a null
+value in the last_updated_at field.  This is to work around a bug where
+last_updated_at was only being updated when disable_user_account_days_inactive
+was enabled.  For systems that were deployed prior to this fix, users could
+potentially be locked out after the inactivity check was enabled, even if they
+were recently active.  This parameter will prevent that happening.  Because
+last_updated_at is now fixed to always update on every login, it is expected
+that this parameter can be disabled after a transition period.
+"""))
+
 lockout_failure_attempts = cfg.IntOpt(
     'lockout_failure_attempts',
     min=1,

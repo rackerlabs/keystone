@@ -205,8 +205,11 @@ class User(sql.ModelBase, sql.ModelDictMixinWithExtras):
                 'option_value',
                 False)
             last_active = self.last_active_at
-            if not last_active and self.created_at:
-                last_active = self.created_at.date()
+            if not last_active:
+                if CONF.security_compliance.ignore_nulls_for_last_active_at:
+                    return self._enabled
+                if self.created_at:
+                    last_active = self.created_at.date()
             if max_days and last_active:
                 now = datetime.datetime.utcnow().date()
                 days_inactive = (now - last_active).days
