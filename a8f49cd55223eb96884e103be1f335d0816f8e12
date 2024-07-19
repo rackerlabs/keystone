@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d5f321e_5e0c0e66",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2024-07-19T20:07:19Z",
+      "side": 1,
+      "message": "IMHO the changelog must include the rationale. It is not self-evident why this is needed. A reference to some kind of TC resolution would be welcome.",
+      "revId": "a8f49cd55223eb96884e103be1f335d0816f8e12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
