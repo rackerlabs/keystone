@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2cf0687_08f501c2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-07-19T14:42:33Z",
+      "side": 1,
+      "message": "recheck unrelated tempest failure",
+      "revId": "47a8e61a7d8f663a5a2b8caa47ecd83907127556",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
