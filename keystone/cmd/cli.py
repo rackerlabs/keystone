@@ -502,6 +502,20 @@ class DbVersion(BaseApp):
         print(upgrades.get_db_version())
 
 
+class ResetLastActive(BaseApp):
+    """Reset null values for all users to current time."""
+
+    name = "reset_last_active"
+
+    @staticmethod
+    def main():
+        LOG.debug("Resetting null values to now %s",
+                  datetime.datetime.utcnow)
+        drivers = backends.load_backends()
+        identity_api = drivers['identity_api']
+        identity_api.reset_last_active()
+
+
 class BasePermissionsSetup(BaseApp):
     """Common user/group setup for file permissions."""
 
@@ -1628,6 +1642,7 @@ CMDS = [
     ProjectSetup,
     ReceiptRotate,
     ReceiptSetup,
+    ResetLastActive,
     SamlIdentityProviderMetadata,
     TokenRotate,
     TokenSetup,
