@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68f19c4e_b8bc375d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2024-07-19T15:01:27Z",
+      "side": 1,
+      "message": "missed one",
+      "revId": "576757af7cf2f25d8fd4d97f87fb0cd8902e1414",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
