@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5769aa2_2951d168",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2024-07-19T13:29:15Z",
+      "side": 1,
+      "message": "This is looking good. Do you plan adding unit tests for output validation? I remember the spec proposes adding an option for disabling output validation, but I wonder how this would look in practice, enabling us to catch issues in CI",
+      "revId": "e3973b5e3e0c485af855d0658944b972679a840f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
