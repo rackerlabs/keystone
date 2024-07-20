@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b8b2e65_fa11006d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2024-07-20T15:19:28Z",
+      "side": 1,
+      "message": "Commit message looks good, but I have one small question about the tox.ini.",
+      "revId": "0182728f9ee2b2ebef83a7ec561fa02b5addf764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6248d9c7_f4570557",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2024-07-20T15:19:28Z",
+      "side": 1,
+      "message": "Juust 1 silly question: why are yuu adding a E203 here if you also ignore it wholesale in ingnore\u003d above?",
+      "revId": "0182728f9ee2b2ebef83a7ec561fa02b5addf764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

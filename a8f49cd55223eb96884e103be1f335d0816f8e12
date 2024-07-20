@@ -33,6 +33,24 @@
       "message": "what does the TC has to do with it? Release notes are there for functional changes, while here we are modernizing and standardising code basis for easier maintenance (see other changes in the topic). RN is absolutely not applicable here and rationale is given in the first change in the stack. The change is aligned within the Keystone Team.",
       "revId": "a8f49cd55223eb96884e103be1f335d0816f8e12",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f752538_251534e4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 597
+      },
+      "writtenOn": "2024-07-20T15:19:28Z",
+      "side": 1,
+      "message": "One cannot see topics or stack when looking at git. At least put Related-Change-Id in there, make the logs greppable.",
+      "parentUuid": "85a3d45f_1a9ec23c",
+      "revId": "a8f49cd55223eb96884e103be1f335d0816f8e12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
