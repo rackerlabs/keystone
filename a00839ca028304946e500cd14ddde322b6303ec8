@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9ae563b_e3720b9d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2024-07-22T10:39:27Z",
+      "side": 1,
+      "message": "I don\u0027t see any changes in keystone/tests/unit/ksfixtures/__init__.py",
+      "revId": "a00839ca028304946e500cd14ddde322b6303ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
