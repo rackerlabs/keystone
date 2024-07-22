@@ -33,6 +33,24 @@
       "message": "Juust 1 silly question: why are yuu adding a E203 here if you also ignore it wholesale in ingnore\u003d above?",
       "revId": "0182728f9ee2b2ebef83a7ec561fa02b5addf764",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1639dc80_2401520a",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-07-22T07:03:47Z",
+      "side": 1,
+      "message": "right, this is not necessary here. It was a leftover from different series where things were blackified in batches.",
+      "parentUuid": "6248d9c7_f4570557",
+      "revId": "0182728f9ee2b2ebef83a7ec561fa02b5addf764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
