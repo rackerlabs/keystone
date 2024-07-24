@@ -16,6 +16,24 @@
       "message": "Note: adding the domain scope for the domain role operations here was necessary for the Domain Manager Persona to be able to work with domain roles. This introduces a change in behavior: a domain-scoped admin can now also use these endpoints, which was previously forbidden.\nSince a domain admin has implicitly a higher privilege level than a domain manager, I don\u0027t deem this problematic.",
       "revId": "a955976aff04c9f8bd253871f8356d16a59397f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72b159fa_d2e0f9cd",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 27665
+      },
+      "writtenOn": "2024-07-24T14:52:42Z",
+      "side": 1,
+      "message": "Upon further investigation and testing I realized that domain role functions do note make much sense for a Domain Manager. I admit that such statement might sound contradictory at first but here is the reasoning:\n\nA Domain Manager is primarily meant to be used on customer side so that a customer can manage users, groups and role assignments within their domain as self-service functionality.\nTo prevent privelege escalation scenarios, in the original spec we agreed on limiting the roles that a Domain Manager may assign/revoke to a specific set via dedicated policy rule (\"rule:domain_managed_target_role\"). In the default in-code policies this set is defined as \"reader\", \"member\" and \"manager\". As such, a Domain Manager cannot assign the \"admin\" role for example.\nLet\u0027s assume a Domain Manager is able to manage (CRUD) domain roles. They could not choose any name of the global roles (e.g. \"member\") as those already exist as global roles. They would need to choose a different name. This name would not be part of the domain_managed_target_role list and as a result a Domain Manager would unable to assign a domain role they created.\nFurthermore, for any newly created domain role with non-standard name to have any effect, it needs to be considered in the policy.yaml of services in most cases. A customer Domain Manager is unable to access and edit this file since it is part of the cloud configuratin and cannot be influenced via the API.\n\nIn short:\n\n1. A customer Domain Manager cannot adjust the domain_managed_target_role list (part of Keystone\u0027s policy definitions) and as a result would not be able to assign any domain role they create.\n2. A customer Domain Manager cannot adjust the policy.yaml of OpenStack services and as such a newly created domain role would serve little to no purpose (its permission set cannot be specified by the Domain Manager).\n\nHence, I decided to omit the Domain Manager from the domain roles functionality and removed domain role management for the Domain Manager Persona from the patchset.",
+      "parentUuid": "d13d5bc4_540fd19a",
+      "revId": "a955976aff04c9f8bd253871f8356d16a59397f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
