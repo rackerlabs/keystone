@@ -16,6 +16,24 @@
       "message": "This is looking good. Do you plan adding unit tests for output validation? I remember the spec proposes adding an option for disabling output validation, but I wonder how this would look in practice, enabling us to catch issues in CI",
       "revId": "e3973b5e3e0c485af855d0658944b972679a840f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1918ca45_9db201dd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-07-24T15:41:52Z",
+      "side": 1,
+      "message": "missed to post a formal response since it was immediately discussed online. output validation is already in place and it caught few cases where schema was incomplete. It just having good unittests we do not need anything extra.",
+      "parentUuid": "b5769aa2_2951d168",
+      "revId": "e3973b5e3e0c485af855d0658944b972679a840f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
