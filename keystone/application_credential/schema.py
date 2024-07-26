@@ -12,6 +12,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from typing import Any
+
+from keystone.api.validation import response_types
 from keystone.common import validation
 from keystone.common.validation import parameter_types
 
@@ -29,26 +32,77 @@ _role_properties = {
     },
 }
 
+# Individual properties of 'Access Rule'
 _access_rules_properties = {
-    'type': 'array',
-    'items': {
-        'type': 'object',
-        'properties': {
-            'path': {
-                'type': 'string',
-                'minLength': 0,
-                'maxLength': 225,
-                'pattern': r'^\/.*',
-            },
-            'method': {
-                'type': 'string',
-                'pattern': r'^(POST|GET|HEAD|PATCH|PUT|DELETE)$',
-            },
-            'service': parameter_types.id_string,
-            'id': parameter_types.id_string,
-        },
-        'additionalProperties': False,
+    "path": {
+        "type": "string",
+        "minLength": 0,
+        "maxLength": 225,
+        "pattern": r'^/\.*',
+        "description": (
+            "The API path that the application credential is "
+            "permitted to access."
+        ),
     },
+    "method": {
+        "type": "string",
+        "pattern": r'^(POST|GET|HEAD|PATCH|PUT|DELETE)$',
+        "description": (
+            "The request method that the application credential is "
+            "permitted to use for a given API endpoint."
+        ),
+    },
+}
+
+# Common schema of the `Access Rule` resource
+access_rule_schema: dict[str, Any] = {
+    "type": "object",
+    "description": "An access rule object.",
+    "properties": {
+        "id": {
+            "type": "string",
+            "readOnly": True,
+            "description": "The UUID of the access rule",
+        },
+        "links": response_types.resource_links,
+        **_access_rules_properties,
+    },
+    "additionalProperties": True,
+}
+
+# Query parameters of the `/users/{user_d}/access_rules` API
+index_request_query: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "user_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The ID of the user who owns the access rule.",
+        },
+    },
+}
+
+# Response of the `/access_rules` API
+index_response_body: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "access_rules": {
+            "type": "array",
+            "items": access_rule_schema,
+            "description": "A list of access_rule objects.",
+        },
+        "links": response_types.links,
+    },
+    "additionalProperties": False,
+}
+
+# Response of `/access_rules/{access_rule_id}` API returning
+# single access rule
+access_rule_response_body: dict[str, Any] = {
+    "type": "object",
+    "description": "An access rule object.",
+    "properties": {"access rule": access_rule_schema},
+    "additionalProperties": True,
 }
 
 _application_credential_properties = {
