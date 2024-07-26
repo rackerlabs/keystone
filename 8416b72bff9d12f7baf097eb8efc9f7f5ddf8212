@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2dc37c24_33b77e95",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-07-26T10:26:53Z",
+      "side": 1,
+      "message": "Added inline hints on 2 real bugs that were fixed during this joining",
+      "revId": "8416b72bff9d12f7baf097eb8efc9f7f5ddf8212",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e65ddd69_5d199fd9",
+        "filename": "keystone/server/flask/request_processing/middleware/auth_context.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-07-26T10:26:53Z",
+      "side": 1,
+      "message": "jfyi: this is a real bug identified during the work",
+      "revId": "8416b72bff9d12f7baf097eb8efc9f7f5ddf8212",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c91b1b51_cbf9909e",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-07-26T10:26:53Z",
+      "side": 1,
+      "message": "jfyi: another similar bug",
+      "revId": "8416b72bff9d12f7baf097eb8efc9f7f5ddf8212",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
