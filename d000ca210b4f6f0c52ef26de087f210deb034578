@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ca7ab16_aeabb61c",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 27665
+      },
+      "writtenOn": "2024-07-26T14:46:47Z",
+      "side": 1,
+      "message": "Correct. Thanks for spotting! I didn\u0027t notice it during testing since \u0027manager\u0027 also implies \u0027reader\u0027 which also satisfies this check.\n\nFixed.",
+      "parentUuid": "03c146a7_7eb36e8a",
+      "revId": "d000ca210b4f6f0c52ef26de087f210deb034578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2d954fb3_5b8f61b4",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-07-26T14:25:37Z",
       "side": 1,
       "message": "could you please concatenate sting properly \") or role:manager\" (drop a \") or \u0027 \u0027\")",
+      "revId": "d000ca210b4f6f0c52ef26de087f210deb034578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "61100479_7742323c",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 27665
+      },
+      "writtenOn": "2024-07-26T14:46:47Z",
+      "side": 1,
+      "message": "Good catch. This seems to have gotten garbled up during the blackify rebase I did yesterday.\n\nFixed.",
+      "parentUuid": "2d954fb3_5b8f61b4",
       "revId": "d000ca210b4f6f0c52ef26de087f210deb034578",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
