@@ -51,6 +51,24 @@
       "message": "you should do nothing and abandon your change since there is another change already fixing that that was created before and address more improvements.",
       "revId": "e00900eb859ea0e4e8f0bda2a953fbc9a98122d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b80db68_04fcf569",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13114
+      },
+      "writtenOn": "2024-07-26T18:03:44Z",
+      "side": 1,
+      "message": "ok!",
+      "parentUuid": "e21402ac_665018d4",
+      "revId": "e00900eb859ea0e4e8f0bda2a953fbc9a98122d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
