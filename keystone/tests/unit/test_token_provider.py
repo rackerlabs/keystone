@@ -33,7 +33,7 @@ CONF = keystone.conf.CONF
 PROVIDERS = provider_api.ProviderAPIs
 
 FUTURE_DELTA = datetime.timedelta(seconds=CONF.token.expiration)
-CURRENT_DATE = timeutils.utcnow()
+CURRENT_DATE = timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
 
 
 class TestTokenProvider(unit.TestCase):
@@ -70,7 +70,10 @@ class TestTokenProvider(unit.TestCase):
 
         token = token_model.TokenModel()
         token.issued_at = "2013-05-21T00:02:43.941473Z"
-        token.expires_at = utils.isotime(timeutils.utcnow() + FUTURE_DELTA)
+        token.expires_at = utils.isotime(
+            timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
+            + FUTURE_DELTA
+        )
         self.assertIsNone(PROVIDERS.token_provider_api._is_valid_token(token))
 
     def test_validate_v3_token_with_no_token_raises_token_not_found(self):

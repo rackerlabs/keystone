@@ -63,7 +63,10 @@ def default_expire_time():
 
     """
     expire_delta = datetime.timedelta(seconds=CONF.token.expiration)
-    expires_at = timeutils.utcnow() + expire_delta
+    expires_at = (
+        timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
+        + expire_delta
+    )
     return expires_at.replace(microsecond=0)
 
 
@@ -197,7 +200,9 @@ class Manager(manager.Manager):
 
     def _is_valid_token(self, token, window_seconds=0):
         """Verify the token is valid format and has not expired."""
-        current_time = timeutils.normalize_time(timeutils.utcnow())
+        current_time = timeutils.normalize_time(
+            timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
+        )
 
         try:
             expiry = timeutils.parse_isotime(token.expires_at)

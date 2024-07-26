@@ -318,7 +318,10 @@ class TestTokenFormatter(unit.TestCase):
     def test_create_validate_federated_unscoped_token_non_uuid_user_id(self):
         exp_user_id = hashlib.sha256().hexdigest()
         exp_methods = ['password']
-        exp_expires_at = utils.isotime(timeutils.utcnow(), subsecond=True)
+        exp_expires_at = utils.isotime(
+            timeutils.now(datetime.timezone.utc).replace(tzinfo=None),
+            subsecond=True,
+        )
         exp_audit_ids = [provider.random_urlsafe_str()]
         exp_federated_group_ids = [{'id': uuid.uuid4().hex}]
         exp_idp_id = uuid.uuid4().hex
@@ -365,7 +368,10 @@ class TestTokenFormatter(unit.TestCase):
     def test_create_validate_federated_scoped_token_non_uuid_user_id(self):
         exp_user_id = hashlib.sha256().hexdigest()
         exp_methods = ['password']
-        exp_expires_at = utils.isotime(timeutils.utcnow(), subsecond=True)
+        exp_expires_at = utils.isotime(
+            timeutils.now(datetime.timezone.utc).replace(tzinfo=None),
+            subsecond=True,
+        )
         exp_audit_ids = [provider.random_urlsafe_str()]
         exp_federated_group_ids = [{'id': uuid.uuid4().hex}]
         exp_idp_id = uuid.uuid4().hex
@@ -543,7 +549,10 @@ class TestPayloads(unit.TestCase):
 
         exp_user_id = exp_user_id or uuid.uuid4().hex
         exp_methods = exp_methods or ['password']
-        exp_expires_at = utils.isotime(timeutils.utcnow(), subsecond=True)
+        exp_expires_at = utils.isotime(
+            timeutils.now(datetime.timezone.utc).replace(tzinfo=None),
+            subsecond=True,
+        )
         exp_audit_ids = [provider.random_urlsafe_str()]
 
         payload = payload_class.assemble(

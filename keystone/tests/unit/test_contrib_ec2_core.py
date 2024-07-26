@@ -49,7 +49,9 @@ class EC2ContribCoreV3(test_v3.RestfulTestCase):
 
     def _test_valid_authentication_response_with_proper_secret(self, **kwargs):
         signer = ec2_utils.Ec2Signer(self.cred_blob['secret'])
-        timestamp = utils.isotime(timeutils.utcnow())
+        timestamp = utils.isotime(
+            timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
+        )
         credentials = {
             'access': self.cred_blob['access'],
             'secret': self.cred_blob['secret'],
@@ -81,7 +83,9 @@ class EC2ContribCoreV3(test_v3.RestfulTestCase):
 
     def test_valid_authentication_response_with_signature_v4(self):
         signer = ec2_utils.Ec2Signer(self.cred_blob['secret'])
-        timestamp = utils.isotime(timeutils.utcnow())
+        timestamp = utils.isotime(
+            timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
+        )
         hashed_payload = (
             'GET\n'
             '/\n'
@@ -138,7 +142,9 @@ class EC2ContribCoreV3(test_v3.RestfulTestCase):
 
     def test_authenticate_without_proper_secret_returns_unauthorized(self):
         signer = ec2_utils.Ec2Signer('totally not the secret')
-        timestamp = utils.isotime(timeutils.utcnow())
+        timestamp = utils.isotime(
+            timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
+        )
         credentials = {
             'access': self.cred_blob['access'],
             'secret': 'totally not the secret',
@@ -161,7 +167,9 @@ class EC2ContribCoreV3(test_v3.RestfulTestCase):
     def test_authenticate_expired_request(self):
         self.config_fixture.config(group='credential', auth_ttl=5)
         signer = ec2_utils.Ec2Signer(self.cred_blob['secret'])
-        past = timeutils.utcnow() - datetime.timedelta(minutes=10)
+        past = timeutils.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        ) - datetime.timedelta(minutes=10)
         timestamp = utils.isotime(past)
         credentials = {
             'access': self.cred_blob['access'],
@@ -185,7 +193,9 @@ class EC2ContribCoreV3(test_v3.RestfulTestCase):
     def test_authenticate_expired_request_v4(self):
         self.config_fixture.config(group='credential', auth_ttl=5)
         signer = ec2_utils.Ec2Signer(self.cred_blob['secret'])
-        past = timeutils.utcnow() - datetime.timedelta(minutes=10)
+        past = timeutils.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        ) - datetime.timedelta(minutes=10)
         timestamp = utils.isotime(past)
         hashed_payload = (
             'GET\n'

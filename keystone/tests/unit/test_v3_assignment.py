@@ -172,7 +172,9 @@ class AssignmentTestCase(
         self.get(member_url, expected_status=http.client.NOT_FOUND)
 
     def test_crud_user_domain_role_grants(self):
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        )
         with freezegun.freeze_time(time) as frozen_datetime:
             collection_url = (
                 '/domains/%(domain_id)s/users/%(user_id)s/roles'
@@ -227,7 +229,9 @@ class AssignmentTestCase(
         self.get(member_url, expected_status=http.client.NOT_FOUND)
 
     def test_crud_group_project_role_grants(self):
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        )
         with freezegun.freeze_time(time) as frozen_datetime:
             collection_url = (
                 '/projects/%(project_id)s/groups/%(group_id)s/roles'
@@ -282,7 +286,9 @@ class AssignmentTestCase(
         self.get(member_url, expected_status=http.client.NOT_FOUND)
 
     def test_crud_group_domain_role_grants(self):
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        )
         with freezegun.freeze_time(time) as frozen_datetime:
             collection_url = (
                 '/domains/%(domain_id)s/groups/%(group_id)s/roles'
@@ -439,7 +445,9 @@ class AssignmentTestCase(
         by user will be invalid.
 
         """
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        )
         with freezegun.freeze_time(time) as frozen_datetime:
             # creates grant from group on project.
             PROVIDERS.assignment_api.create_grant(
@@ -674,7 +682,9 @@ class AssignmentTestCase(
           been removed
 
         """
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        )
         with freezegun.freeze_time(time) as frozen_datetime:
             # Since the default fixtures already assign some roles to the
             # user it creates, we also need a new user that will not have any
@@ -1865,7 +1875,9 @@ class AssignmentInheritanceTestCase(
         )
 
     def _test_crud_inherited_and_direct_assignment_on_target(self, target_url):
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        )
         with freezegun.freeze_time(time) as frozen_datetime:
             # Create a new role to avoid assignments loaded from sample data
             role = unit.new_role_ref()

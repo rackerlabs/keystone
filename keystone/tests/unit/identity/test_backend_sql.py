@@ -296,9 +296,9 @@ class DisableInactiveUserTests(test_backend_sql.SqlTests):
 
     def test_authenticate_user_disabled_due_to_inactivity(self):
         # create user and set last_active_at beyond the max
-        last_active_at = datetime.datetime.utcnow() - datetime.timedelta(
-            days=self.max_inactive_days + 1
-        )
+        last_active_at = datetime.datetime.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        ) - datetime.timedelta(days=self.max_inactive_days + 1)
         user = self._create_user(self.user_dict, last_active_at.date())
         with self.make_request():
             self.assertRaises(
@@ -321,7 +321,7 @@ class DisableInactiveUserTests(test_backend_sql.SqlTests):
     def test_authenticate_user_not_disabled_due_to_inactivity(self):
         # create user and set last_active_at just below the max
         last_active_at = (
-            datetime.datetime.utcnow()
+            datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None)
             - datetime.timedelta(days=self.max_inactive_days - 1)
         ).date()
         user = self._create_user(self.user_dict, last_active_at)
@@ -335,7 +335,7 @@ class DisableInactiveUserTests(test_backend_sql.SqlTests):
         user = PROVIDERS.identity_api.create_user(self.user_dict)
         # set last_active_at just beyond the max
         last_active_at = (
-            datetime.datetime.utcnow()
+            datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None)
             - datetime.timedelta(self.max_inactive_days + 1)
         ).date()
         self._update_user_last_active_at(user['id'], last_active_at)
@@ -353,7 +353,7 @@ class DisableInactiveUserTests(test_backend_sql.SqlTests):
         self.assertTrue(user['enabled'])
         # set last_active_at just below the max
         last_active_at = (
-            datetime.datetime.utcnow()
+            datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None)
             - datetime.timedelta(self.max_inactive_days - 1)
         ).date()
         self._update_user_last_active_at(user['id'], last_active_at)
@@ -370,7 +370,11 @@ class DisableInactiveUserTests(test_backend_sql.SqlTests):
         user = PROVIDERS.identity_api.create_user(self.user_dict)
         user_ref = self._get_user_ref(user['id'])
         self.assertTrue(user_ref.enabled)
-        now = datetime.datetime.utcnow().date()
+        now = (
+            datetime.datetime.now(datetime.timezone.utc)
+            .replace(tzinfo=None)
+            .date()
+        )
         self.assertGreaterEqual(now, user_ref.last_active_at)
         # set enabled and test
         user['enabled'] = True
@@ -393,7 +397,7 @@ class DisableInactiveUserTests(test_backend_sql.SqlTests):
         user = PROVIDERS.identity_api.create_user(self.user_dict)
         # set last_active_at just beyond the max
         last_active_at = (
-            datetime.datetime.utcnow()
+            datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None)
             - datetime.timedelta(self.max_inactive_days + 1)
         ).date()
         self._update_user_last_active_at(user['id'], last_active_at)
@@ -405,7 +409,7 @@ class DisableInactiveUserTests(test_backend_sql.SqlTests):
         user = PROVIDERS.identity_api.create_user(self.user_dict)
         # set last_active_at just beyond the max
         last_active_at = (
-            datetime.datetime.utcnow()
+            datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None)
             - datetime.timedelta(self.max_inactive_days + 1)
         ).date()
         self._update_user_last_active_at(user['id'], last_active_at)
@@ -732,7 +736,9 @@ class LockingOutUserTests(test_backend_sql.SqlTests):
 
     def test_lockout_duration(self):
         # freeze time
-        with freezegun.freeze_time(datetime.datetime.utcnow()) as frozen_time:
+        with freezegun.freeze_time(
+            datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None)
+        ) as frozen_time:
             with self.make_request():
                 # lockout user
                 self._fail_auth_repeatedly(self.user['id'])
@@ -764,7 +770,9 @@ class LockingOutUserTests(test_backend_sql.SqlTests):
 
     def test_lockout_duration_failed_auth_cnt_resets(self):
         # freeze time
-        with freezegun.freeze_time(datetime.datetime.utcnow()) as frozen_time:
+        with freezegun.freeze_time(
+            datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None)
+        ) as frozen_time:
             with self.make_request():
                 # lockout user
                 self._fail_auth_repeatedly(self.user['id'])
@@ -813,7 +821,9 @@ class PasswordExpiresValidationTests(test_backend_sql.SqlTests):
 
     def test_authenticate_with_expired_password(self):
         # set password created_at so that the password will expire
-        password_created_at = datetime.datetime.utcnow() - datetime.timedelta(
+        password_created_at = datetime.datetime.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) - datetime.timedelta(
             days=CONF.security_compliance.password_expires_days + 1
         )
         user = self._create_user(self.user_dict, password_created_at)
@@ -828,7 +838,9 @@ class PasswordExpiresValidationTests(test_backend_sql.SqlTests):
 
     def test_authenticate_with_non_expired_password(self):
         # set password created_at so that the password will not expire
-        password_created_at = datetime.datetime.utcnow() - datetime.timedelta(
+        password_created_at = datetime.datetime.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) - datetime.timedelta(
             days=CONF.security_compliance.password_expires_days - 1
         )
         user = self._create_user(self.user_dict, password_created_at)
@@ -844,7 +856,9 @@ class PasswordExpiresValidationTests(test_backend_sql.SqlTests):
             iro.IGNORE_PASSWORD_EXPIRY_OPT.option_name
         ] = False
         # set password created_at so that the password will expire
-        password_created_at = datetime.datetime.utcnow() - datetime.timedelta(
+        password_created_at = datetime.datetime.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) - datetime.timedelta(
             days=CONF.security_compliance.password_expires_days + 1
         )
         user = self._create_user(self.user_dict, password_created_at)
@@ -920,7 +934,9 @@ class MinimumPasswordAgeTests(test_backend_sql.SqlTests):
             self.user['id'], self.initial_password, new_password
         )
         # set password_created_at so that the min password age has past
-        password_created_at = datetime.datetime.utcnow() - datetime.timedelta(
+        password_created_at = datetime.datetime.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) - datetime.timedelta(
             days=CONF.security_compliance.minimum_password_age + 1
         )
         self._update_password_created_at(self.user['id'], password_created_at)

@@ -43,7 +43,7 @@ class OAuth(base.AuthMethodHandler):
 
         expires_at = acc_token['expires_at']
         if expires_at:
-            now = timeutils.utcnow()
+            now = timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
             expires = timeutils.normalize_time(
                 timeutils.parse_isotime(expires_at)
             )

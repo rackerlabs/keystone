@@ -219,27 +219,43 @@ class UtilsTestCase(unit.BaseTestCase):
             self.assertTrue(common_utils.is_not_url_safe(base_str + i))
 
     def test_isotime_returns_microseconds_when_subsecond_is_true(self):
-        time = datetime.datetime.utcnow().replace(microsecond=500000)
+        time = (
+            datetime.datetime.now(datetime.timezone.utc)
+            .replace(tzinfo=None)
+            .replace(microsecond=500000)
+        )
         with freezegun.freeze_time(time):
             string_time = common_utils.isotime(subsecond=True)
         expected_string_ending = str(time.second) + '.000000Z'
         self.assertTrue(string_time.endswith(expected_string_ending))
 
     def test_isotime_returns_seconds_when_subsecond_is_false(self):
-        time = datetime.datetime.utcnow().replace(microsecond=500000)
+        time = (
+            datetime.datetime.now(datetime.timezone.utc)
+            .replace(tzinfo=None)
+            .replace(microsecond=500000)
+        )
         with freezegun.freeze_time(time):
             string_time = common_utils.isotime(subsecond=False)
         expected_string_ending = str(time.second) + 'Z'
         self.assertTrue(string_time.endswith(expected_string_ending))
 
     def test_isotime_rounds_microseconds_of_objects_passed_in(self):
-        time = datetime.datetime.utcnow().replace(microsecond=500000)
+        time = (
+            datetime.datetime.now(datetime.timezone.utc)
+            .replace(tzinfo=None)
+            .replace(microsecond=500000)
+        )
         string_time = common_utils.isotime(at=time, subsecond=True)
         expected_string_ending = str(time.second) + '.000000Z'
         self.assertTrue(string_time.endswith(expected_string_ending))
 
     def test_isotime_truncates_microseconds_of_objects_passed_in(self):
-        time = datetime.datetime.utcnow().replace(microsecond=500000)
+        time = (
+            datetime.datetime.now(datetime.timezone.utc)
+            .replace(tzinfo=None)
+            .replace(microsecond=500000)
+        )
         string_time = common_utils.isotime(at=time, subsecond=False)
         expected_string_ending = str(time.second) + 'Z'
         self.assertTrue(string_time.endswith(expected_string_ending))

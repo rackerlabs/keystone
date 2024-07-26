@@ -64,7 +64,9 @@ class ResourceBase(ks_flask.ResourceBase):
                 _('Credential timestamp is invalid: %s') % e
             )
         auth_ttl = datetime.timedelta(minutes=CONF.credential.auth_ttl)
-        current_time = timeutils.normalize_time(timeutils.utcnow())
+        current_time = timeutils.normalize_time(
+            timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
+        )
         if current_time > timestamp + auth_ttl:
             raise ks_exceptions.Unauthorized(_('Credential is expired'))
 

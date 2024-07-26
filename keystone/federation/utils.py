@@ -287,7 +287,10 @@ def validate_expiration(token):
     token_expiration_datetime = timeutils.normalize_time(
         timeutils.parse_isotime(token.expires_at)
     )
-    if timeutils.utcnow() > token_expiration_datetime:
+    if (
+        timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
+        > token_expiration_datetime
+    ):
         raise exception.Unauthorized(_('Federation token is expired'))
 
 

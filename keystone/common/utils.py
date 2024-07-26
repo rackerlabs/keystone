@@ -350,7 +350,7 @@ def isotime(at=None, subsecond=False):
     :rtype: str
     """
     if not at:
-        at = timeutils.utcnow()
+        at = timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
     # NOTE(lbragstad): Datetime objects are immutable, so reassign the date we
     # are working with to itself as we drop microsecond precision.
     at = at.replace(microsecond=0)

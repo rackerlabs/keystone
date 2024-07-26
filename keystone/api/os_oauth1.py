@@ -229,7 +229,7 @@ class AccessTokenResource(_OAuth1ResourceBase):
 
         expires_at = req_token['expires_at']
         if expires_at:
-            now = timeutils.utcnow()
+            now = timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
             expires = timeutils.normalize_time(
                 timeutils.parse_isotime(expires_at)
             )
@@ -327,7 +327,7 @@ class AuthorizeResource(_OAuth1ResourceBase):
 
         expires_at = req_token['expires_at']
         if expires_at:
-            now = timeutils.utcnow()
+            now = timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
             expires = timeutils.normalize_time(
                 timeutils.parse_isotime(expires_at)
             )

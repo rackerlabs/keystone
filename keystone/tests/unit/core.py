@@ -534,7 +534,8 @@ def new_application_credential_ref(
         ref['expires_at'] = expires
     elif isinstance(expires, dict):
         ref['expires_at'] = (
-            timeutils.utcnow() + datetime.timedelta(**expires)
+            timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
+            + datetime.timedelta(**expires)
         ).strftime(TIME_FORMAT)
     elif expires is None:
         pass
@@ -617,7 +618,8 @@ def new_trust_ref(
         ref['expires_at'] = expires
     elif isinstance(expires, dict):
         ref['expires_at'] = (
-            timeutils.utcnow() + datetime.timedelta(**expires)
+            timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
+            + datetime.timedelta(**expires)
         ).strftime(TIME_FORMAT)
     elif expires is None:
         pass

@@ -223,7 +223,10 @@ class TestPayloads(unit.TestCase):
     def _test_payload(self, payload_class, exp_user_id=None, exp_methods=None):
         exp_user_id = exp_user_id or uuid.uuid4().hex
         exp_methods = exp_methods or ['password']
-        exp_expires_at = utils.isotime(timeutils.utcnow(), subsecond=True)
+        exp_expires_at = utils.isotime(
+            timeutils.now(datetime.timezone.utc).replace(tzinfo=None),
+            subsecond=True,
+        )
 
         payload = payload_class.assemble(
             exp_user_id, exp_methods, exp_expires_at

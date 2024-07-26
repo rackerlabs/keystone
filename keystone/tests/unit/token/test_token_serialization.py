@@ -35,7 +35,9 @@ class TestTokenSerialization(base_classes.TestCaseWithBootstrap):
         self.reader_role_id = self.bootstrapper.reader_role_id
 
         self.token_id = uuid.uuid4().hex
-        issued_at = datetime.datetime.utcnow()
+        issued_at = datetime.datetime.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        )
         self.issued_at = ks_utils.isotime(at=issued_at, subsecond=True)
 
         # Reach into the cache registry and pull out an instance of the

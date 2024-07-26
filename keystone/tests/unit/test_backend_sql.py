@@ -715,7 +715,9 @@ class SqlIdentity(
         self.config_fixture.config(
             group='federation', default_authorization_ttl=5
         )
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        )
         tick = datetime.timedelta(minutes=5)
 
         new_group = unit.new_group_ref(domain_id=domain['id'])
@@ -764,7 +766,9 @@ class SqlIdentity(
     def test_add_user_to_group_expiring(self):
         self._build_fed_resource()
         domain = self._get_domain_fixture()
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        )
         tick = datetime.timedelta(minutes=5)
 
         new_group = unit.new_group_ref(domain_id=domain['id'])
@@ -822,7 +826,9 @@ class SqlIdentity(
         self.config_fixture.config(
             group='federation', default_authorization_ttl=5
         )
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        )
         tick = datetime.timedelta(minutes=5)
 
         new_group = unit.new_group_ref(domain_id=domain['id'])

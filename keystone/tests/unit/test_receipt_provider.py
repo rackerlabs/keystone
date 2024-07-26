@@ -33,7 +33,7 @@ CONF = keystone.conf.CONF
 PROVIDERS = provider_api.ProviderAPIs
 
 DELTA = datetime.timedelta(seconds=CONF.receipt.expiration)
-CURRENT_DATE = timeutils.utcnow()
+CURRENT_DATE = timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
 
 
 class TestReceiptProvider(unit.TestCase):

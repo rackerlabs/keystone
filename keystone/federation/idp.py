@@ -113,7 +113,7 @@ class SAMLGenerator:
     def _determine_expiration_time(self, expires_in):
         if expires_in is None:
             expires_in = CONF.saml.assertion_expiration_time
-        now = timeutils.utcnow()
+        now = timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
         future = now + datetime.timedelta(seconds=expires_in)
         return utils.isotime(future, subsecond=True)
 

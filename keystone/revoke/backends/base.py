@@ -28,7 +28,10 @@ def revoked_before_cutoff_time():
     expire_delta = datetime.timedelta(
         seconds=CONF.token.expiration + CONF.revoke.expiration_buffer
     )
-    oldest = timeutils.utcnow() - expire_delta
+    oldest = (
+        timeutils.now(datetime.timezone.utc).replace(tzinfo=None)
+        - expire_delta
+    )
     return oldest
 
 
