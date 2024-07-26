@@ -963,7 +963,9 @@ class TrustFlush(BaseApp):
         )
         parser.add_argument(
             '--date',
-            default=datetime.datetime.utcnow(),
+            default=datetime.datetime.now(datetime.timezone.utc).replace(
+                tzinfo=None
+            ),
             help=(
                 'The date of which the expired or '
                 'non-expired soft-deleted trusts older '

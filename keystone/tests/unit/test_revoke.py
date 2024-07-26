@@ -69,11 +69,15 @@ class RevokeTests:
     def test_list_since(self):
         PROVIDERS.revoke_api.revoke_by_user(user_id=1)
         PROVIDERS.revoke_api.revoke_by_user(user_id=2)
-        past = timeutils.utcnow() - datetime.timedelta(seconds=1000)
+        past = timeutils.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        ) - datetime.timedelta(seconds=1000)
         self.assertEqual(
             2, len(PROVIDERS.revoke_api.list_events(last_fetch=past))
         )
-        future = timeutils.utcnow() + datetime.timedelta(seconds=1000)
+        future = timeutils.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        ) + datetime.timedelta(seconds=1000)
         self.assertEqual(
             0, len(PROVIDERS.revoke_api.list_events(last_fetch=future))
         )
@@ -212,7 +216,9 @@ class RevokeTests:
         PROVIDERS.revoke_api.revoke_by_user(user_id=None)
         PROVIDERS.revoke_api.revoke_by_user(user_id=None)
         self.assertEqual(2, len(revocation_backend.list_events(token=token)))
-        future = timeutils.utcnow() + datetime.timedelta(seconds=1000)
+        future = timeutils.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        ) + datetime.timedelta(seconds=1000)
         token['issued_at'] = future
         self.assertEqual(0, len(revocation_backend.list_events(token=token)))
 
@@ -405,7 +411,7 @@ class RevokeTests:
             token['expires_at'] = utils.isotime(_future_time(), subsecond=True)
             return token
 
-        now = datetime.datetime.utcnow()
+        now = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None)
         now_plus_2h = now + datetime.timedelta(hours=2)
         mock_utcnow.return_value = now
 

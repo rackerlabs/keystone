@@ -217,14 +217,18 @@ class Trust(base.TrustDriverBase):
             trust_ref = session.get(TrustModel, trust_id)
             if not trust_ref:
                 raise exception.TrustNotFound(trust_id=trust_id)
-            trust_ref.deleted_at = timeutils.utcnow()
+            trust_ref.deleted_at = timeutils.now(
+                datetime.timezone.utc
+            ).replace(tzinfo=None)
 
     def delete_trusts_for_project(self, project_id):
         with sql.session_for_write() as session:
             query = session.query(TrustModel)
             trusts = query.filter_by(project_id=project_id)
             for trust_ref in trusts:
-                trust_ref.deleted_at = timeutils.utcnow()
+                trust_ref.deleted_at = timeutils.now(
+                    datetime.timezone.utc
+                ).replace(tzinfo=None)
 
     def flush_expired_and_soft_deleted_trusts(
         self,

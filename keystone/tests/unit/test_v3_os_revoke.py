@@ -89,7 +89,11 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         audit_id = uuid.uuid4().hex
         sample = self._blank_event()
         sample['audit_id'] = str(audit_id)
-        before_time = timeutils.utcnow().replace(microsecond=0)
+        before_time = (
+            timeutils.now(datetime.timezone.utc)
+            .replace(tzinfo=None)
+            .replace(microsecond=0)
+        )
         PROVIDERS.revoke_api.revoke_by_audit_id(audit_id)
         resp = self.get('/OS-REVOKE/events')
         events = resp.json_body['events']
@@ -100,7 +104,11 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         project_id = uuid.uuid4().hex
         sample = dict()
         sample['project_id'] = str(project_id)
-        before_time = timeutils.utcnow().replace(microsecond=0)
+        before_time = (
+            timeutils.now(datetime.timezone.utc)
+            .replace(tzinfo=None)
+            .replace(microsecond=0)
+        )
         PROVIDERS.revoke_api.revoke(
             revoke_model.RevokeEvent(project_id=project_id)
         )
@@ -114,7 +122,11 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         domain_id = uuid.uuid4().hex
         sample = dict()
         sample['domain_id'] = str(domain_id)
-        before_time = timeutils.utcnow().replace(microsecond=0)
+        before_time = (
+            timeutils.now(datetime.timezone.utc)
+            .replace(tzinfo=None)
+            .replace(microsecond=0)
+        )
         PROVIDERS.revoke_api.revoke(
             revoke_model.RevokeEvent(domain_id=domain_id)
         )
@@ -153,9 +165,13 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         self.assertEqual([], events)
 
     def test_revoked_at_in_list(self):
-        time = datetime.datetime.utcnow()
+        time = datetime.datetime.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        )
         with freezegun.freeze_time(time) as frozen_datetime:
-            revoked_at = timeutils.utcnow()
+            revoked_at = timeutils.now(datetime.timezone.utc).replace(
+                tzinfo=None
+            )
             # Given or not, `revoked_at` will always be set in the backend.
             PROVIDERS.revoke_api.revoke(
                 revoke_model.RevokeEvent(revoked_at=revoked_at)

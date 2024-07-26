@@ -167,7 +167,9 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
     def test_create_application_credential_with_expiration(self):
         with self.test_client() as c:
             roles = [{'id': self.role_id}]
-            expires = datetime.datetime.utcnow() + datetime.timedelta(days=365)
+            expires = datetime.datetime.now(datetime.timezone.utc).replace(
+                tzinfo=None
+            ) + datetime.timedelta(days=365)
             expires = str(expires)
             app_cred_body = self._app_cred_body(roles=roles, expires=expires)
             token = self.get_scoped_token()
@@ -194,7 +196,9 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
     def test_create_application_credential_already_expired(self):
         with self.test_client() as c:
             roles = [{'id': self.role_id}]
-            expires = datetime.datetime.utcnow() - datetime.timedelta(hours=1)
+            expires = datetime.datetime.now(datetime.timezone.utc).replace(
+                tzinfo=None
+            ) - datetime.timedelta(hours=1)
             app_cred_body = self._app_cred_body(roles=roles, expires=expires)
             token = self.get_scoped_token()
             c.post(

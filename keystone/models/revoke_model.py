@@ -100,7 +100,11 @@ class RevokeEvent:
             self.expires_at = self.expires_at.replace(microsecond=0)
 
         if self.revoked_at is None:
-            self.revoked_at = timeutils.utcnow().replace(microsecond=0)
+            self.revoked_at = (
+                timeutils.now(datetime.timezone.utc)
+                .replace(tzinfo=None)
+                .replace(microsecond=0)
+            )
         if self.issued_before is None:
             self.issued_before = self.revoked_at
 

@@ -169,7 +169,8 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         )
         for i in range(3):
             ref['expires_at'] = (
-                datetime.datetime.utcnow()
+                datetime.datetime.now(datetime.timezone.utc)
+                .replace(tzinfo=None)
                 .replace(year=2032)
                 .strftime(unit.TIME_FORMAT)
             )

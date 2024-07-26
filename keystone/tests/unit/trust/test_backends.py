@@ -26,7 +26,11 @@ class TrustTests:
     def create_sample_trust(self, new_id, remaining_uses=None):
         self.trustor = self.user_foo
         self.trustee = self.user_two
-        expires_at = datetime.datetime.utcnow().replace(year=2032)
+        expires_at = (
+            datetime.datetime.now(datetime.timezone.utc)
+            .replace(tzinfo=None)
+            .replace(year=2032)
+        )
         trust_data = PROVIDERS.trust_api.create_trust(
             new_id,
             {
@@ -203,17 +207,17 @@ class TrustTests:
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref1['expires_at'] = timeutils.utcnow() - datetime.timedelta(
-            minutes=1
-        )
+        trust_ref1['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) - datetime.timedelta(minutes=1)
         trust_ref2 = core.new_trust_ref(
             self.user_foo['id'],
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref2['expires_at'] = timeutils.utcnow() + datetime.timedelta(
-            minutes=1
-        )
+        trust_ref2['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) + datetime.timedelta(minutes=1)
 
         trust_data = PROVIDERS.trust_api.create_trust(
             trust_ref1['id'], trust_ref1, roles
@@ -225,7 +229,9 @@ class TrustTests:
         self.assertIsNotNone(trust_data)
 
         PROVIDERS.trust_api.flush_expired_and_soft_deleted_trusts(
-            date=datetime.datetime.utcnow()
+            date=datetime.datetime.now(datetime.timezone.utc).replace(
+                tzinfo=None
+            )
         )
         trusts = self.trust_api.list_trusts()
         self.assertEqual(len(trusts), 1)
@@ -238,17 +244,17 @@ class TrustTests:
             self.user_foo['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref1['expires_at'] = timeutils.utcnow() - datetime.timedelta(
-            minutes=1
-        )
+        trust_ref1['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) - datetime.timedelta(minutes=1)
         trust_ref2 = core.new_trust_ref(
             self.user_foo['id'],
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref2['expires_at'] = timeutils.utcnow() - datetime.timedelta(
-            minutes=5
-        )
+        trust_ref2['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) - datetime.timedelta(minutes=5)
 
         trust_data = PROVIDERS.trust_api.create_trust(
             trust_ref1['id'], trust_ref1, roles
@@ -263,7 +269,9 @@ class TrustTests:
             project_id=self.project_bar['id'],
             trustor_user_id=self.user_foo['id'],
             trustee_user_id=self.user_two['id'],
-            date=datetime.datetime.utcnow(),
+            date=datetime.datetime.now(datetime.timezone.utc).replace(
+                tzinfo=None
+            ),
         )
         trusts = self.trust_api.list_trusts()
         self.assertEqual(len(trusts), 1)
@@ -276,17 +284,17 @@ class TrustTests:
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref1['expires_at'] = timeutils.utcnow() - datetime.timedelta(
-            minutes=1
-        )
+        trust_ref1['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) - datetime.timedelta(minutes=1)
         trust_ref2 = core.new_trust_ref(
             self.user_foo['id'],
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref2['expires_at'] = timeutils.utcnow() + datetime.timedelta(
-            minutes=1
-        )
+        trust_ref2['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) + datetime.timedelta(minutes=1)
 
         trust_data = PROVIDERS.trust_api.create_trust(
             trust_ref1['id'], trust_ref1, roles
@@ -300,7 +308,9 @@ class TrustTests:
         PROVIDERS.trust_api.flush_expired_and_soft_deleted_trusts(
             trustor_user_id=self.user_foo['id'],
             trustee_user_id=self.user_two['id'],
-            date=datetime.datetime.utcnow(),
+            date=datetime.datetime.now(datetime.timezone.utc).replace(
+                tzinfo=None
+            ),
         )
         trusts = self.trust_api.list_trusts()
         self.assertEqual(len(trusts), 1)
@@ -313,17 +323,17 @@ class TrustTests:
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref1['expires_at'] = timeutils.utcnow() - datetime.timedelta(
-            minutes=1
-        )
+        trust_ref1['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) - datetime.timedelta(minutes=1)
         trust_ref2 = core.new_trust_ref(
             self.user_foo['id'],
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref2['expires_at'] = timeutils.utcnow() + datetime.timedelta(
-            minutes=1
-        )
+        trust_ref2['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) + datetime.timedelta(minutes=1)
 
         trust_data = PROVIDERS.trust_api.create_trust(
             trust_ref1['id'], trust_ref1, roles
@@ -337,7 +347,9 @@ class TrustTests:
         PROVIDERS.trust_api.flush_expired_and_soft_deleted_trusts(
             project_id=self.project_bar['id'],
             trustee_user_id=self.user_two['id'],
-            date=datetime.datetime.utcnow(),
+            date=datetime.datetime.now(datetime.timezone.utc).replace(
+                tzinfo=None
+            ),
         )
         trusts = self.trust_api.list_trusts()
         self.assertEqual(len(trusts), 1)
@@ -350,17 +362,17 @@ class TrustTests:
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref1['expires_at'] = timeutils.utcnow() - datetime.timedelta(
-            minutes=1
-        )
+        trust_ref1['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) - datetime.timedelta(minutes=1)
         trust_ref2 = core.new_trust_ref(
             self.user_foo['id'],
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref2['expires_at'] = timeutils.utcnow() + datetime.timedelta(
-            minutes=1
-        )
+        trust_ref2['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) + datetime.timedelta(minutes=1)
 
         trust_data = PROVIDERS.trust_api.create_trust(
             trust_ref1['id'], trust_ref1, roles
@@ -374,7 +386,9 @@ class TrustTests:
         PROVIDERS.trust_api.flush_expired_and_soft_deleted_trusts(
             project_id=self.project_bar['id'],
             trustor_user_id=self.user_foo['id'],
-            date=datetime.datetime.utcnow(),
+            date=datetime.datetime.now(datetime.timezone.utc).replace(
+                tzinfo=None
+            ),
         )
         trusts = self.trust_api.list_trusts()
         self.assertEqual(len(trusts), 1)
@@ -387,17 +401,17 @@ class TrustTests:
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref1['expires_at'] = timeutils.utcnow() - datetime.timedelta(
-            minutes=1
-        )
+        trust_ref1['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) - datetime.timedelta(minutes=1)
         trust_ref2 = core.new_trust_ref(
             self.user_foo['id'],
             self.user_two['id'],
             project_id=self.user_foo['id'],
         )
-        trust_ref2['expires_at'] = timeutils.utcnow() - datetime.timedelta(
-            minutes=5
-        )
+        trust_ref2['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) - datetime.timedelta(minutes=5)
 
         trust_data = PROVIDERS.trust_api.create_trust(
             trust_ref1['id'], trust_ref1, roles
@@ -409,7 +423,10 @@ class TrustTests:
         self.assertIsNotNone(trust_data)
 
         PROVIDERS.trust_api.flush_expired_and_soft_deleted_trusts(
-            project_id=self.project_bar['id'], date=datetime.datetime.utcnow()
+            project_id=self.project_bar['id'],
+            date=datetime.datetime.now(datetime.timezone.utc).replace(
+                tzinfo=None
+            ),
         )
         trusts = self.trust_api.list_trusts()
         self.assertEqual(len(trusts), 1)
@@ -422,17 +439,17 @@ class TrustTests:
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref1['expires_at'] = timeutils.utcnow() - datetime.timedelta(
-            minutes=1
-        )
+        trust_ref1['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) - datetime.timedelta(minutes=1)
         trust_ref2 = core.new_trust_ref(
             self.user_foo['id'],
             self.user_foo['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref2['expires_at'] = timeutils.utcnow() - datetime.timedelta(
-            minutes=5
-        )
+        trust_ref2['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) - datetime.timedelta(minutes=5)
 
         trust_data = PROVIDERS.trust_api.create_trust(
             trust_ref1['id'], trust_ref1, roles
@@ -444,7 +461,9 @@ class TrustTests:
         self.assertIsNotNone(trust_data)
         PROVIDERS.trust_api.flush_expired_and_soft_deleted_trusts(
             trustee_user_id=self.user_two['id'],
-            date=datetime.datetime.utcnow(),
+            date=datetime.datetime.now(datetime.timezone.utc).replace(
+                tzinfo=None
+            ),
         )
         trusts = self.trust_api.list_trusts()
         self.assertEqual(len(trusts), 1)
@@ -457,17 +476,17 @@ class TrustTests:
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref1['expires_at'] = timeutils.utcnow() - datetime.timedelta(
-            minutes=1
-        )
+        trust_ref1['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) - datetime.timedelta(minutes=1)
         trust_ref2 = core.new_trust_ref(
             self.user_two['id'],
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref2['expires_at'] = timeutils.utcnow() - datetime.timedelta(
-            minutes=5
-        )
+        trust_ref2['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) - datetime.timedelta(minutes=5)
 
         trust_data = PROVIDERS.trust_api.create_trust(
             trust_ref1['id'], trust_ref1, roles
@@ -480,7 +499,9 @@ class TrustTests:
 
         PROVIDERS.trust_api.flush_expired_and_soft_deleted_trusts(
             trustor_user_id=self.user_foo['id'],
-            date=datetime.datetime.utcnow(),
+            date=datetime.datetime.now(datetime.timezone.utc).replace(
+                tzinfo=None
+            ),
         )
         trusts = self.trust_api.list_trusts()
         self.assertEqual(len(trusts), 1)
@@ -493,17 +514,17 @@ class TrustTests:
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref1['expires_at'] = timeutils.utcnow() + datetime.timedelta(
-            minutes=10
-        )
+        trust_ref1['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) + datetime.timedelta(minutes=10)
         trust_ref2 = core.new_trust_ref(
             self.user_two['id'],
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref2['expires_at'] = timeutils.utcnow() + datetime.timedelta(
-            minutes=5
-        )
+        trust_ref2['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) + datetime.timedelta(minutes=5)
 
         trust_data = PROVIDERS.trust_api.create_trust(
             trust_ref1['id'], trust_ref1, roles
@@ -516,7 +537,9 @@ class TrustTests:
         PROVIDERS.trust_api.delete_trust(trust_ref2['id'])
 
         PROVIDERS.trust_api.flush_expired_and_soft_deleted_trusts(
-            date=datetime.datetime.utcnow()
+            date=datetime.datetime.now(datetime.timezone.utc).replace(
+                tzinfo=None
+            )
         )
         trusts = self.trust_api.list_trusts()
         self.assertEqual(len(trusts), 1)
@@ -529,17 +552,17 @@ class TrustTests:
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref1['expires_at'] = timeutils.utcnow() + datetime.timedelta(
-            minutes=10
-        )
+        trust_ref1['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) + datetime.timedelta(minutes=10)
         trust_ref2 = core.new_trust_ref(
             self.user_two['id'],
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref2['expires_at'] = timeutils.utcnow() + datetime.timedelta(
-            minutes=5
-        )
+        trust_ref2['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) + datetime.timedelta(minutes=5)
         trust_ref3 = core.new_trust_ref(
             self.user_two['id'],
             self.user_foo['id'],
@@ -562,7 +585,9 @@ class TrustTests:
         self.assertIsNotNone(trust_data)
 
         PROVIDERS.trust_api.flush_expired_and_soft_deleted_trusts(
-            date=datetime.datetime.utcnow()
+            date=datetime.datetime.now(datetime.timezone.utc).replace(
+                tzinfo=None
+            )
         )
         trusts = self.trust_api.list_trusts()
         self.assertEqual(len(trusts), 2)
@@ -574,25 +599,25 @@ class TrustTests:
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref1['expires_at'] = timeutils.utcnow() + datetime.timedelta(
-            minutes=10
-        )
+        trust_ref1['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) + datetime.timedelta(minutes=10)
         trust_ref2 = core.new_trust_ref(
             self.user_two['id'],
             self.user_two['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref2['expires_at'] = timeutils.utcnow() + datetime.timedelta(
-            minutes=30
-        )
+        trust_ref2['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) + datetime.timedelta(minutes=30)
         trust_ref3 = core.new_trust_ref(
             self.user_two['id'],
             self.user_foo['id'],
             project_id=self.project_bar['id'],
         )
-        trust_ref3['expires_at'] = timeutils.utcnow() - datetime.timedelta(
-            minutes=30
-        )
+        trust_ref3['expires_at'] = timeutils.now(
+            datetime.timezone.utc
+        ).replace(tzinfo=None) - datetime.timedelta(minutes=30)
 
         trust_data = PROVIDERS.trust_api.create_trust(
             trust_ref1['id'], trust_ref1, roles
@@ -606,7 +631,9 @@ class TrustTests:
             trust_ref3['id'], trust_ref3, roles
         )
         self.assertIsNotNone(trust_data)
-        fake_date = timeutils.utcnow() + datetime.timedelta(minutes=15)
+        fake_date = timeutils.now(datetime.timezone.utc).replace(
+            tzinfo=None
+        ) + datetime.timedelta(minutes=15)
         PROVIDERS.trust_api.flush_expired_and_soft_deleted_trusts(
             date=fake_date
         )
