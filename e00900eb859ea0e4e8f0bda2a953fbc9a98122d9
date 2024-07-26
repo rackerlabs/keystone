@@ -16,6 +16,24 @@
       "message": "We do not support 3.12 as of now. There is work on that in https://review.opendev.org/c/openstack/keystone/+/925008 and https://review.opendev.org/c/openstack/keystone/+/925010",
       "revId": "e00900eb859ea0e4e8f0bda2a953fbc9a98122d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f0e478a_ecd505a0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13114
+      },
+      "writtenOn": "2024-07-26T18:00:24Z",
+      "side": 1,
+      "message": "should I change to 3.10?",
+      "parentUuid": "62648ee7_84cb22b7",
+      "revId": "e00900eb859ea0e4e8f0bda2a953fbc9a98122d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
