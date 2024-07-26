@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eea0cf21_c61fae03",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2024-07-26T06:26:52Z",
+      "side": 1,
+      "message": "Why should this not fail, it is a bad API call anyway?",
+      "revId": "3eef16b861831f028fe0934ea4a5e2e74f3bd3b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e65f6549_c99765ec",
+        "filename": "keystone/api/role_assignments.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2024-07-26T06:26:52Z",
+      "side": 1,
+      "message": "I think you want to do\n\nraise exception.ValidationError(message\u003dmsg)\n\nhere instead? just falling through will fail in L105 below and override the msg again, so this patch currently wouldn\u0027t do what the commit message says?",
+      "revId": "3eef16b861831f028fe0934ea4a5e2e74f3bd3b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
