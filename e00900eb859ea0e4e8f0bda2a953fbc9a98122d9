@@ -34,6 +34,23 @@
       "parentUuid": "62648ee7_84cb22b7",
       "revId": "e00900eb859ea0e4e8f0bda2a953fbc9a98122d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e21402ac_665018d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-07-26T18:01:55Z",
+      "side": 1,
+      "message": "you should do nothing and abandon your change since there is another change already fixing that that was created before and address more improvements.",
+      "revId": "e00900eb859ea0e4e8f0bda2a953fbc9a98122d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
