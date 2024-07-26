@@ -14,9 +14,9 @@
 # under the License.
 
 import datetime
+import http.client
 
 import freezegun
-import http.client
 from oslo_config import fixture as config_fixture
 from oslo_serialization import jsonutils
 
@@ -27,7 +27,6 @@ from keystone.tests.unit import filtering
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import temporaryfile
 from keystone.tests.unit import test_v3
-
 
 CONF = keystone.conf.CONF
 PROVIDERS = provider_api.ProviderAPIs

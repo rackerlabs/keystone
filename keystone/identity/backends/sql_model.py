@@ -26,7 +26,6 @@ from keystone.common import sql
 import keystone.conf
 from keystone.identity.backends import resource_options as iro
 
-
 CONF = keystone.conf.CONF
 
 

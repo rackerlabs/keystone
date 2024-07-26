@@ -11,9 +11,8 @@
 # under the License.
 
 import datetime
-import uuid
-
 import http.client
+import uuid
 
 from keystone.common import provider_api
 import keystone.conf

@@ -11,9 +11,9 @@
 #    under the License.
 
 import datetime
+import http.client
 import uuid
 
-import http.client
 from oslo_serialization import jsonutils
 
 from keystone.common.policies import base as base_policy

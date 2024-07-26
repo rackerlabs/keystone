@@ -27,7 +27,6 @@ from keystone.identity.backends import resource_options as iro
 from keystone.identity.backends import sql_model as model
 from keystone.tests.unit import test_backend_sql
 
-
 CONF = keystone.conf.CONF
 PROVIDERS = provider_api.ProviderAPIs
 

@@ -11,9 +11,9 @@
 # under the License.
 
 import datetime
-import fixtures
 import uuid
 
+import fixtures
 import freezegun
 from oslo_config import fixture as config_fixture
 from oslo_log import log
@@ -27,7 +27,6 @@ from keystone.server.flask import application
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import utils
-
 
 CONF = keystone.conf.CONF
 
