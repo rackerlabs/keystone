@@ -22,6 +22,7 @@ import textwrap
 
 from alembic import op
 from oslo_log import log
+from oslo_utils import timeutils
 import sqlalchemy as sql
 
 from keystone.assignment.backends import sql as assignment_sql
@@ -924,7 +925,7 @@ def upgrade():
             'created_at',
             sql.DateTime(),
             nullable=False,
-            default=datetime.datetime.utcnow,
+            default=timeutils.utcnow,
         ),
     )
 
