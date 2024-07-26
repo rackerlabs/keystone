@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03c146a7_7eb36e8a",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-07-26T14:25:37Z",
+      "side": 1,
+      "message": "shouldn\u0027t that be manager?",
+      "revId": "d000ca210b4f6f0c52ef26de087f210deb034578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d954fb3_5b8f61b4",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-07-26T14:25:37Z",
+      "side": 1,
+      "message": "could you please concatenate sting properly \") or role:manager\" (drop a \") or \u0027 \u0027\")",
+      "revId": "d000ca210b4f6f0c52ef26de087f210deb034578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
