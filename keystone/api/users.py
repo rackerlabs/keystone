@@ -22,12 +22,13 @@ from oslo_serialization import jsonutils
 from werkzeug import exceptions
 
 from keystone.api._shared import json_home_relations
+from keystone.api import validation
 from keystone.application_credential import schema as app_cred_schema
 from keystone.common import json_home
 from keystone.common import provider_api
 from keystone.common import rbac_enforcer
 from keystone.common import utils
-from keystone.common import validation
+from keystone.common import validation as ks_validation
 import keystone.conf
 from keystone import exception as ks_exception
 from keystone.i18n import _
@@ -254,7 +255,7 @@ class UserResource(ks_flask.ResourceBase):
         ENFORCER.enforce_call(
             action='identity:create_user', target_attr=target
         )
-        validation.lazy_validate(schema.user_create, user_data)
+        ks_validation.lazy_validate(schema.user_create, user_data)
         user_data = self._normalize_dict(user_data)
         user_data = self._normalize_domain_id(user_data)
         ref = PROVIDERS.identity_api.create_user(
@@ -273,7 +274,7 @@ class UserResource(ks_flask.ResourceBase):
         )
         PROVIDERS.identity_api.get_user(user_id)
         user_data = self.request_body_json.get('user', {})
-        validation.lazy_validate(schema.user_update, user_data)
+        ks_validation.lazy_validate(schema.user_update, user_data)
         self._require_matching_id(user_data)
         ref = PROVIDERS.identity_api.update_user(
             user_id, user_data, initiator=self.audit_initiator
@@ -304,7 +305,7 @@ class UserChangePasswordResource(ks_flask.ResourceBase):
     @ks_flask.unenforced_api
     def post(self, user_id):
         user_data = self.request_body_json.get('user', {})
-        validation.lazy_validate(schema.password_change, user_data)
+        ks_validation.lazy_validate(schema.password_change, user_data)
 
         try:
             PROVIDERS.identity_api.change_password(
@@ -693,7 +694,7 @@ class UserAppCredListCreateResource(ks_flask.ResourceBase):
         app_cred_data = self.request_body_json.get(
             'application_credential', {}
         )
-        validation.lazy_validate(
+        ks_validation.lazy_validate(
             app_cred_schema.application_credential_create, app_cred_data
         )
         token = self.auth_context['token']
@@ -783,6 +784,8 @@ class UserAccessRuleListResource(ks_flask.ResourceBase):
     collection_key = 'access_rules'
     member_key = 'access_rule'
 
+    @validation.request_query_schema(app_cred_schema.rule_index_request_query)
+    @validation.response_body_schema(app_cred_schema.rule_index_response_body)
     def get(self, user_id):
         """List access rules for user.
 
@@ -809,6 +812,8 @@ class UserAccessRuleGetDeleteResource(ks_flask.ResourceBase):
     collection_key = 'access_rules'
     member_key = 'access_rule'
 
+    @validation.request_query_schema(app_cred_schema.rule_show_request_query)
+    @validation.response_body_schema(app_cred_schema.rule_show_response_body)
     def get(self, user_id, access_rule_id):
         """Get access rule resource.
 
@@ -823,6 +828,8 @@ class UserAccessRuleGetDeleteResource(ks_flask.ResourceBase):
         )
         return self.wrap_member(ref)
 
+    @validation.request_body_schema(None)
+    @validation.response_body_schema(None)
     def delete(self, user_id, access_rule_id):
         """Delete access rule resource.
 
