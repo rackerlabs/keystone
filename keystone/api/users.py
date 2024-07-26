@@ -781,6 +781,8 @@ class UserAccessRuleListResource(ks_flask.ResourceBase):
     collection_key = 'access_rules'
     member_key = 'access_rule'
 
+    @validation.request_query_schema(app_cred_schema.index_request_query)
+    @validation.response_body_schema(app_cred_schema.index_response_body)
     def get(self, user_id):
         """List access rules for user.
 
