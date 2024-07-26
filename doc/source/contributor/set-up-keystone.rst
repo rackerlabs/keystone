@@ -26,7 +26,7 @@ Prerequisites
 This document assumes you are using an Ubuntu, Fedora, or openSUSE platform and
 that you have the following tools pre-installed on your system:
 
-- python_ 3.6, as the programming language;
+- python_ 3.12, as the programming language;
 - git_, as the version control tool;
 
 .. NOTE::
