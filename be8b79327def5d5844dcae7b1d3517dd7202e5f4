@@ -39,6 +39,30 @@
       },
       "revId": "be8b79327def5d5844dcae7b1d3517dd7202e5f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef9f046d_cd342dfe",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-08-01T15:48:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07b2d01a_1bc3944b",
+      "range": {
+        "startLine": 232,
+        "startChar": 8,
+        "endLine": 235,
+        "endChar": 11
+      },
+      "revId": "be8b79327def5d5844dcae7b1d3517dd7202e5f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
