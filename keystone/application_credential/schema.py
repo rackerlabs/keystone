@@ -70,14 +70,15 @@ access_rule_schema: dict[str, Any] = {
     "additionalProperties": True,
 }
 
-# Query parameters of the `/users/{user_d}/access_rules` API
+# Query parameters of the `/users/{user_id}/access_rules`
+# or `/users/{user_id}/application_credentials` API
 index_request_query: dict[str, Any] = {
     "type": "object",
     "properties": {
         "user_id": {
             "type": "string",
             "format": "uuid",
-            "description": "The ID of the user who owns the access rule."
+            "description": "The ID of the user who owns the resource."
         },
     },
 }
@@ -105,19 +106,117 @@ access_rule_response_body: dict[str, Any] = {
     "additionalProperties": True,
 }
 
+# Individual properties of 'Application Credential'
 _application_credential_properties = {
-    'name': parameter_types.name,
-    'description': validation.nullable(parameter_types.description),
-    'secret': {'type': ['null', 'string']},
-    'expires_at': {'type': ['null', 'string']},
-    'roles': _role_properties,
-    'unrestricted': parameter_types.boolean,
-    'access_rules': _access_rules_properties,
+    "name": {
+        "type": "string",
+        "description": (
+            "The name of the application credential. "
+            "Must be unique to a user."
+        ),
+    },
+    "description": {
+        "type": "string",
+        "description": "A description of the application credential's purpose."
+    },
+    "expires_at": {
+        "type": "string",
+        "description": (
+            "The expiration time of the application credential, if one "
+            "was specified."
+        ),
+    },
+    "project_id": {
+        "type": "string",
+        "description": (
+            "The ID of the project the application credential was created for "
+            "and that authentication requests using this application credential "
+            "will be scoped to."
+        ),
+    },
+    "roles": {
+        "type": "array",
+        "description": (
+            "A list of one or more roles that this application credential has "
+            "associated with its project. A token using this application credential "
+            "will have these same roles."
+        ),
+    },
+    "access_rules": {
+        "type": "list",
+        "description": "A lit of access_rules objects."
+    },
+    "unrestricted": {
+        "type": "boolean",
+        "description": (
+            "A flag indicating whether the application credential may be used for "
+            "creation or destruction of other application credentials or trusts."
+        ),
+    },
 }
 
-application_credential_create = {
-    'type': 'object',
-    'properties': _application_credential_properties,
-    'required': ['name'],
-    'additionalProperties': True,
+# Common schema of `Application Credential` resource
+application_credential_schema: dict[str, Any] = {
+    "type": "object",
+    "description": "An application credential object.",
+    "properties": {
+        "id": {
+            "type": "string",
+            "readOnly": True,
+            "description": "The UUID of the application credential",
+        },
+        "links": response_types.resource_links,
+        **_application_credential_properties,
+    },
+    "additionalProperties": True,
+}
+
+# Response of the `/application_credentials` API
+application_credential_index_response_body: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "application_credential": {
+            "type": "array",
+            "items": application_credential_schema,
+            "description": "A list of application_credential objects."
+        },
+        "links": response_types.links,
+    },
+    "additionalProperties": True,
+}
+
+# Response of `/application_credentials/{application_credential_id}` 
+# API returning single access rule
+application_credential_response_body: dict[str, Any] = {
+    "type": "object",
+    "description": "An application credential object.",
+    "properties": {"application credential": application_credential_schema},
+    "additionalProperties": True,
+}
+
+# Request body of the `POST /application_credentials` operation
+create_request_body: dict[str, Any] = {
+    "type": "object",
+    "description": "An application credential object.",
+    "properties": {
+        "application_credential": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The UUID for the credential.",
+                },
+                "secret": {
+                    "type": "string",
+                    "description": (
+                        "The secret that the application credential will be created with. "
+                        "If not provided, one will be generated."
+                    ),
+                }
+                **_application_credential_properties,
+            },
+            "additionalProperties": True,
+            "required": ["name", "user_id"],
+        }
+    }
 }
