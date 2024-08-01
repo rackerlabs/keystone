@@ -16,8 +16,6 @@ from typing import Any
 
 from keystone.api.validation import parameter_types
 from keystone.api.validation import response_types
-from keystone.common import validation
-from keystone.common.validation import parameter_types as ks_parameter_types
 
 _role_properties = {
     'type': 'array',
@@ -118,19 +116,132 @@ rule_show_response_body: dict[str, Any] = {
     "additionalProperties": True,
 }
 
+# Individual properties of 'Application Credential'
 _application_credential_properties = {
-    'name': ks_parameter_types.name,
-    'description': validation.nullable(ks_parameter_types.description),
-    'secret': {'type': ['null', 'string']},
-    'expires_at': {'type': ['null', 'string']},
-    'roles': _role_properties,
-    'unrestricted': ks_parameter_types.boolean,
-    'access_rules': _access_rules_properties,
+    "name": {
+        **parameter_types.name,
+        "description": (
+            "The name of the application credential. "
+            "Must be unique to a user."
+        ),
+    },
+    "description": {
+        "type": ["string", "null"],
+        "description": (
+            "A description of the application credential's purpose."
+        ),
+    },
+    "expires_at": {
+        "type": ["string", "null"],
+        "description": (
+            "The expiration time of the application credential, if one "
+            "was specified."
+        ),
+    },
+    "project_id": {
+        "type": "string",
+        "description": (
+            "The ID of the project the application credential was "
+            "created for and that authentication requests using this "
+            "application credential will be scoped to."
+        ),
+    },
+    "roles": {
+        "type": "array",
+        "items": {
+            "type": "object",
+            "properties": {
+                "id": parameter_types.id_string,
+                "name": parameter_types.name,
+            },
+            "minProperties": 1,
+            "maxProperties": 1,
+            "additionalProperties": False,
+        },
+        "description": (
+            "A list of one or more roles that this application "
+            "credential has associated with its project. A token "
+            "using this application credential will have these "
+            "same roles."
+        ),
+    },
+    "access_rules": {
+        **_access_rules_properties,
+        "description": "A lit of access_rules objects.",
+    },
+    "unrestricted": {
+        **parameter_types.boolean,
+        "description": (
+            "A flag indicating whether the application credential "
+            "may be used for creation or destruction of other "
+            "application credentials or trusts."
+        ),
+    },
+    "secret": {
+        "type": ["string", "null"],
+        "description": (
+            "The secret that the application credential "
+            "will be created with. If not provided, one "
+            "will be generated."
+        ),
+    },
 }
 
-application_credential_create = {
-    'type': 'object',
-    'properties': _application_credential_properties,
-    'required': ['name'],
-    'additionalProperties': True,
+# Common schema of `Application Credential` resource
+application_credential_schema: dict[str, Any] = {
+    "type": "object",
+    "description": "An application credential object.",
+    "properties": {
+        "id": {
+            "type": "string",
+            "readOnly": True,
+            "description": "The UUID of the application credential",
+        },
+        "links": response_types.resource_links,
+        **_application_credential_properties,
+    },
+    "additionalProperties": True,
+}
+
+# Response of the `/application_credentials` API
+application_credential_index_response_body: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "application_credential": {
+            "type": "array",
+            "items": application_credential_schema,
+            "description": "A list of application_credential objects.",
+        },
+        "links": response_types.links,
+    },
+    "additionalProperties": True,
+}
+
+# Response of `/application_credentials/{application_credential_id}`
+# API returning single access rule
+application_credential_response_body: dict[str, Any] = {
+    "type": "object",
+    "description": "An application credential object.",
+    "properties": {"application credential": application_credential_schema},
+    "additionalProperties": True,
+}
+
+# Request body of the `POST /application_credentials` operation
+application_credential_create_request_body: dict[str, Any] = {
+    "type": "object",
+    "description": "An application credential object.",
+    "properties": {
+        "application_credential": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The UUID for the credential.",
+                },
+                **_application_credential_properties,
+            },
+            "additionalProperties": True,
+            "required": ["name"],
+        },
+    },
 }
