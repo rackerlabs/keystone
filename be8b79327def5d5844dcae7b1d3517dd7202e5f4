@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a2d94b7_99710798",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-08-01T15:46:16Z",
+      "side": 1,
+      "message": "Noticed a comment inaccuracy",
+      "revId": "be8b79327def5d5844dcae7b1d3517dd7202e5f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07b2d01a_1bc3944b",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-08-01T15:46:16Z",
+      "side": 1,
+      "message": "This comment header is for POST, but the function is for showing a single credential.",
+      "range": {
+        "startLine": 232,
+        "startChar": 8,
+        "endLine": 235,
+        "endChar": 11
+      },
+      "revId": "be8b79327def5d5844dcae7b1d3517dd7202e5f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
