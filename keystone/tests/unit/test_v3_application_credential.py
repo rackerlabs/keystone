@@ -511,8 +511,7 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
             token = self.get_scoped_token()
             name = app_cred_body['application_credential']['name']
             search_path = (
-                '/v3/users/%(user_id)s/application_credentials?name=%(name)s'
-                % {'user_id': self.user_id, 'name': name}
+                f'/v3/users/{self.user_id}/application_credentials?name={name}'
             )
             resp = c.get(
                 search_path,
