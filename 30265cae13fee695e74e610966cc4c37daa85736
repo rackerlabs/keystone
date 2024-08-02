@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "860680d7_e559fbc0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2024-08-02T15:43:27Z",
+      "side": 1,
+      "message": "Pfff... since when is this non-pep8-compliant?",
+      "revId": "30265cae13fee695e74e610966cc4c37daa85736",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
