@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3cbe9df1_adcbf70a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27665
+      },
+      "writtenOn": "2024-08-05T15:13:14Z",
+      "side": 1,
+      "message": "Thank you very much for the code review Douglas! I implemented some changes and responded to your inline comments.",
+      "revId": "e9732e20df16a45c141ac1e56fb63143ea4ae662",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
