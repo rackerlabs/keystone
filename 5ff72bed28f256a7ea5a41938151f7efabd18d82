@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8226cf4_2bc811f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-08-05T13:56:15Z",
+      "side": 1,
+      "message": "WIP: I\u0027ll be implementing an \"are you sure?\" confirmation to the cli command as discussed in last week\u0027s reviewathon.",
+      "revId": "5ff72bed28f256a7ea5a41938151f7efabd18d82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
