@@ -16,6 +16,23 @@
       "message": "validating",
       "revId": "0783bfe070f73d3239c16fbac160b2d1b1bdd60e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39c18967_fcb4401b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-08-09T14:25:55Z",
+      "side": 1,
+      "message": "The problem happens in Keystone, but the reason is not the Keystone. Here we just changed the default so that one DB field is being populated \"unconditionally\" (last_active). Before it would have been populated only when config option would be enabled. From the trace we see that the problem is not the keystone but osprofiler invoking jsondumps and that failed on that field (which is sql.Date and not sql.DateTime as all others).\nWe need to further look at why it is failing",
+      "revId": "0783bfe070f73d3239c16fbac160b2d1b1bdd60e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
