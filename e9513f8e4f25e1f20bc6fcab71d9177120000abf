@@ -33,6 +33,23 @@
       "message": "LGTM",
       "revId": "e9513f8e4f25e1f20bc6fcab71d9177120000abf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c2f260a_301fc883",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13861
+      },
+      "writtenOn": "2024-08-09T12:47:28Z",
+      "side": 1,
+      "message": "we hitting https://bugs.launchpad.net/neutron/+bug/2076430 since this patch",
+      "revId": "e9513f8e4f25e1f20bc6fcab71d9177120000abf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ],
   "submitRequirementResults": [
