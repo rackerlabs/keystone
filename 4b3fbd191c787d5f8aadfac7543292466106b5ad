@@ -16,6 +16,24 @@
       "message": "This should be changed to the new python version as well",
       "revId": "4b3fbd191c787d5f8aadfac7543292466106b5ad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91d19c8a_fb829eb8",
+        "filename": "doc/source/contributor/set-up-keystone.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-08-09T10:26:01Z",
+      "side": 1,
+      "message": "thks, updated and rephrased above that any supported version can be used not to update the doc too often.",
+      "parentUuid": "319ec779_e37c3966",
+      "revId": "4b3fbd191c787d5f8aadfac7543292466106b5ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
