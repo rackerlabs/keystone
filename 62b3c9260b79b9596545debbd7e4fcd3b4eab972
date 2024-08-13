@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14830697_20b6485c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13861
+      },
+      "writtenOn": "2024-08-13T11:12:42Z",
+      "side": 1,
+      "message": "This broke jobs running with osprofiler https://bugs.launchpad.net/neutron/+bug/2076430 and would require fixes in oslo.serialization and backports",
+      "revId": "62b3c9260b79b9596545debbd7e4fcd3b4eab972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
