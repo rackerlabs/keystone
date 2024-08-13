@@ -33,6 +33,24 @@
       "message": "The problem happens in Keystone, but the reason is not the Keystone. Here we just changed the default so that one DB field is being populated \"unconditionally\" (last_active). Before it would have been populated only when config option would be enabled. From the trace we see that the problem is not the keystone but osprofiler invoking jsondumps and that failed on that field (which is sql.Date and not sql.DateTime as all others).\nWe need to further look at why it is failing",
       "revId": "0783bfe070f73d3239c16fbac160b2d1b1bdd60e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2ddb51d_e8ad1826",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13861
+      },
+      "writtenOn": "2024-08-13T11:11:44Z",
+      "side": 1,
+      "message": "Ok i pushed https://review.opendev.org/c/openstack/oslo.serialization/+/926172 to handle datetime.date",
+      "parentUuid": "39c18967_fcb4401b",
+      "revId": "0783bfe070f73d3239c16fbac160b2d1b1bdd60e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
