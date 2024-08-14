@@ -16,6 +16,24 @@
       "message": "This broke jobs running with osprofiler https://bugs.launchpad.net/neutron/+bug/2076430 and would require fixes in oslo.serialization and backports",
       "revId": "62b3c9260b79b9596545debbd7e4fcd3b4eab972",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "351a0b54_7bab6a1a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13861
+      },
+      "writtenOn": "2024-08-14T07:01:34Z",
+      "side": 1,
+      "message": "Pushed stable/2024.1 backport https://review.opendev.org/c/openstack/oslo.serialization/+/926217\n\nHow far this patch will be backported? accordingly can backport oslo.serialization fix.",
+      "parentUuid": "14830697_20b6485c",
+      "revId": "62b3c9260b79b9596545debbd7e4fcd3b4eab972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
