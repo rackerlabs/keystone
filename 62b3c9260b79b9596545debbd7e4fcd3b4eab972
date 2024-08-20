@@ -34,6 +34,24 @@
       "parentUuid": "14830697_20b6485c",
       "revId": "62b3c9260b79b9596545debbd7e4fcd3b4eab972",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e0a309a_6ef67fd6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-08-20T14:47:46Z",
+      "side": 1,
+      "message": "@yatin the plan is to backport to all maintained branches, so we will backport this to 2023.2 and 2023.1 after this patch merges.",
+      "parentUuid": "351a0b54_7bab6a1a",
+      "revId": "62b3c9260b79b9596545debbd7e4fcd3b4eab972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
