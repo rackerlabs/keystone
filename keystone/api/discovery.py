@@ -18,6 +18,7 @@ from oslo_serialization import jsonutils
 from keystone.common import json_home
 import keystone.conf
 from keystone.server import flask as ks_flask
+from keystone.common import json2html 
 
 
 CONF = keystone.conf.CONF
@@ -44,7 +45,8 @@ def _get_versions_list(identity_url):
     return versions
 
 
-class MimeTypes:
+class MimeTypes(object):
+    HTML = 'text/html'
     JSON = 'application/json'
     JSON_HOME = 'application/json-home'
 
@@ -54,8 +56,8 @@ def v3_mime_type_best_match():
         return MimeTypes.JSON
 
     return request.accept_mimetypes.best_match(
-        [MimeTypes.JSON, MimeTypes.JSON_HOME]
-    )
+        [MimeTypes.JSON, MimeTypes.JSON_HOME,MimeTypes.HTML])
+
 
 
 @_DISCOVERY_BLUEPRINT.route('/')
@@ -65,10 +67,15 @@ def get_versions():
         # understand the JSON-Home document.
         v3_json_home = json_home.JsonHomeResources.resources()
         json_home.translate_urls(v3_json_home, '/v3')
-        return flask.Response(
-            response=jsonutils.dumps(v3_json_home),
-            mimetype=MimeTypes.JSON_HOME,
-        )
+        return flask.Response(response=jsonutils.dumps(v3_json_home),
+                              mimetype=MimeTypes.JSON_HOME)
+    elif v3_mime_type_best_match() == MimeTypes.HTML:
+        v3_json_home = json_home.JsonHomeResources.resources()
+        json_home.translate_urls(v3_json_home, '/v3')
+        data = json2html.json2dd(jsonutils.dumps(v3_json_home))
+        return flask.Response(response=data,
+                              mimetype=MimeTypes.HTML)
+
     else:
         identity_url = '%s/' % ks_flask.base_url()
         versions = _get_versions_list(identity_url)
@@ -78,13 +85,14 @@ def get_versions():
         # simply have a single version so use it as the preferred location.
         preferred_location = identity_url
 
+       data = jsonutils.dumps(
+                {'versions': {
+                    'values': list(versions.values())}})
+
         response = flask.Response(
-            response=jsonutils.dumps(
-                {'versions': {'values': list(versions.values())}}
-            ),
-            mimetype=MimeTypes.JSON,
-            status=http.client.MULTIPLE_CHOICES,
-        )
+            response=data,
+            mimetype="MimeTypes.JSON",
+            status=http.client.MULTIPLE_CHOICES)
         response.headers['Location'] = preferred_location
         return response
 
@@ -96,15 +104,17 @@ def get_version_v3():
         # understand the JSON-Home document.
         content = json_home.JsonHomeResources.resources()
         return flask.Response(
-            response=jsonutils.dumps(content), mimetype=MimeTypes.JSON_HOME
-        )
+		response=jsonutils.dumps(content), mimetype=MimeTypes.JSON_HOME)
+    elif v3_mime_type_best_match() == MimeTypes.HTML:
+        v3_json_home=json_home.JsonHomeResources.resources()
+        json_home.translate_urls(v3_json_home, '/v3')
+        data = json2html.json2dd(jsonutils.dumps(v3_json_home))
+        return flask.Response(response=data, mimetype=MimeTypes.HTML)
     else:
         identity_url = '%s/' % ks_flask.base_url()
         versions = _get_versions_list(identity_url)
-        return flask.Response(
-            response=jsonutils.dumps({'version': versions['v3']}),
-            mimetype=MimeTypes.JSON,
-        )
+        data = jsonutils.dumps({'version': versions['v3']})
+        return flask.Response(response=data, mimetype=MimeTypes.JSON)
 
 
 class DiscoveryAPI:
