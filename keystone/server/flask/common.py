@@ -31,6 +31,7 @@ from keystone.common import authorization
 from keystone.common import context
 from keystone.common import driver_hints
 from keystone.common import json_home
+from keystone.common import json2html 
 from keystone.common.rbac_enforcer import enforcer
 from keystone.common import utils
 import keystone.conf
@@ -314,6 +315,7 @@ class APIBase(metaclass=abc.ABCMeta):
         # but since we instantiate the API in-line we need to do some magic
         # and call it as a normal method.
         self.__api.representation('application/json')(self._output_json)
+        self.__api.representation('text/html')(self._output_html)
 
         self._add_resources()
         self._add_mapped_resources()
@@ -633,6 +635,29 @@ class APIBase(metaclass=abc.ABCMeta):
         dumped = jsonutils.dumps(data, **settings) + "\n"
 
         resp = flask.make_response(dumped, code)
+        resp.headers.extend(headers or {})
+        return resp
+
+    @staticmethod
+    def _output_html(data, code, headers=None):
+        """Make a Flask response with an HTML encoded body.
+
+        """
+        settings = flask.current_app.config.get('RESTFUL_JSON', {})
+
+        # If we're in debug mode, and the indent is not set, we set it to
+        # a reasonable value here. Note that this won't override any existing
+        # value that was set. We also set the "sort_keys" value.
+        if flask.current_app.debug:
+            settings.setdefault('indent', 4)
+            settings.setdefault('sort_keys', not flask_restful.utils.PY3)
+
+        # always end the json dumps with a new line
+        # see https://github.com/mitsuhiko/flask/pull/1262
+        dumped = jsonutils.dumps(data, **settings) + "\n"
+        data = json2html.json2dd(dumped)
+        resp =  flask.Response(response=data,
+                               mimetype="text/html")
         resp.headers.extend(headers or {})
         return resp
 
