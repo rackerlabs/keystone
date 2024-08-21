@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "866c4709_3b650241",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-08-21T18:13:30Z",
+      "side": 1,
+      "message": "I don\u0027t this is desired, because it literally opens door to getting full power auth using the most insecure auth method.",
+      "revId": "9baab511f01d3377bebd0862acf49b8987a7716b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
