@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ec50c91_cafe019a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2024-08-21T07:39:53Z",
+      "side": 1,
+      "message": "I made a cherry-pick for the oslo changes https://review.opendev.org/c/openstack/oslo.serialization/+/926708",
+      "revId": "1829ce0202cbe11602fafd053cd1cd3eb0f996b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
