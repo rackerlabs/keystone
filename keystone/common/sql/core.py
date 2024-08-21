@@ -276,7 +276,17 @@ def _get_main_context_manager():
 
     if not _main_context_manager:
         _main_context_manager = enginefacade.transaction_context()
+        _main_context_manager.configure(
+            # disable oslo.db's "test connection" feature
+            max_retries=0,
 
+            # tell enginefacade it's OK to use the "reader" session for a call
+            # that is not decorated with "async"; meaning, it's OK that we
+            # might read from a replicated DB that has replication lag from the
+            # master.    if this is not set, then "reader" without using
+            # "async.reader" will use the **writer** session
+            synchronous_reader=False,
+        )
     return _main_context_manager
 
 
