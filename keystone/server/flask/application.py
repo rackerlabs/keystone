@@ -119,7 +119,12 @@ def _handle_keystone_exception(error):
     # Add the appropriate WWW-Authenticate header for Unauthorized
     if isinstance(error, exception.Unauthorized):
         url = ks_flask.base_url()
-        response.headers['WWW-Authenticate'] = 'Keystone uri="%s"' % url
+        # note: (ayoung)  Nothing can acutally handle the customer
+        # Keystone header we provided before.  This reponse allows
+        # Web browsers to pop up a Basic Auth dialog.
+        # For non UI based deployments, the correct answer here
+        # Is probably Token, not Keystone.
+        response.headers['WWW-Authenticate'] = 'Basic realm="%s"' % url
     return response
 
 
