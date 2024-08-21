@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "65bf91da_55a5e393",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2024-08-21T14:06:08Z",
+      "side": 1,
+      "message": "this supersedes I81f00368956b9a3c486fb48e9272a4394fda872c which seems to \"fix\" the issue forcing the \"synchronous_reader\" to be the inverse of itself",
+      "revId": "05c66e3727537d4ee222e85fd705f1fa6c2118a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
