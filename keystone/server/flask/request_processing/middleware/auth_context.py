@@ -11,6 +11,8 @@
 # under the License.
 
 
+from base64 import b64decode
+import flask
 import functools
 import re
 import wsgiref.util
@@ -23,6 +25,7 @@ from oslo_serialization import jsonutils
 import webob.dec
 import webob.exc
 
+from keystone.auth import plugins as auth_plugins
 from keystone.common import authorization
 from keystone.common import context
 from keystone.common import provider_api
@@ -38,7 +41,6 @@ from keystone.models import token_model
 
 CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
-PROVIDERS = provider_api.ProviderAPIs
 
 # Environment variable used to pass the request context
 CONTEXT_ENV = 'openstack.context'
@@ -499,6 +501,49 @@ class AuthContextMiddleware(
             # tokenless auth, we don't need a token. So setting it to None
             # should be suffice.
             request_context.token_reference = {'token': None}
+        elif request.headers.get("Authorization"):
+            #we can use basic auth to get an unscoped token
+            vals = request.headers.get("Authorization").split()
+            if len(vals) != 2:
+                return
+            if vals[0].strip().lower() != 'basic':
+                return
+            try:
+                username, password = b64decode(vals[1]).decode().split(':', 1)
+            except:
+                return
+            PROVIDERS = provider_api.ProviderAPIs
+            METHOD_NAME = 'password'
+            auth_payload = {
+                "user": {
+                    "name": username,
+                    "domain": { "id": CONF.identity.default_domain_id },
+                    "password": password
+                }
+            }
+            user_info = auth_plugins.UserAuthInfo.create(
+                auth_payload, METHOD_NAME)
+            try:
+                old_req = flask.request
+                flask.request = request
+                self.identity_api.authenticate(
+                    user_id=user_info.user_id,
+                    password=user_info.password)
+
+                flask.request = old_req
+                auth_context = {'user_id': user_info.user_id}
+                auth_context['is_delegated_auth'] = False
+                token = self.token_provider_api.issue_token(
+                    user_info.user_id, ['password'])
+                request_context.token_reference = (
+                    render_token.render_token_response_from_model(token)
+                )
+
+            except AssertionError as a:
+                flask.request = old_req
+                # authentication failed because of invalid username or password
+                msg = _('Invalid username or password')
+                raise exception.Unauthorized(msg)
         else:
             # There is either no auth token in the request or the certificate
             # issuer is not trusted. No auth context will be set. This
