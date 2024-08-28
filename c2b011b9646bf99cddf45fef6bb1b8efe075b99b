@@ -161,6 +161,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dcfc8b4b_121bb72b",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-08-28T14:49:39Z",
+      "side": 1,
+      "message": "You are correct, I missed that there are different checks after the AND.  This lgtm.",
+      "parentUuid": "6b6f2b85_2088c6dc",
+      "range": {
+        "startLine": 89,
+        "startChar": 4,
+        "endLine": 93,
+        "endChar": 1
+      },
+      "revId": "c2b011b9646bf99cddf45fef6bb1b8efe075b99b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4cd31ba0_2cefe7af",
         "filename": "keystone/common/policies/group.py",
         "patchSetId": 9
