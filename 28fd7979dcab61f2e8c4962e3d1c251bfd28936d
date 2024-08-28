@@ -160,6 +160,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c23472eb_acbd4199",
+        "filename": "keystone/api/roles.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 27665
+      },
+      "writtenOn": "2024-08-28T13:33:57Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "da48802a_910a3b84",
+      "range": {
+        "startLine": 93,
+        "startChar": 12,
+        "endLine": 95,
+        "endChar": 13
+      },
+      "revId": "28fd7979dcab61f2e8c4962e3d1c251bfd28936d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "16fa0d5c_668dbe68",
@@ -291,6 +315,30 @@
       "side": 1,
       "message": "I think this would be confusing for such users because they cannot use domain roles at all, see my second comment here: https://review.opendev.org/c/openstack/keystone/+/924132/1..7/keystone/common/policies/role.py#b178\n\nIn the early versions of the patchset, access to the domain role endpoints was still included for domain managers but I removed it. I don\u0027t think domain roles should be visible to domain managers if they cannot assign/revoke them or change their permission set.",
       "parentUuid": "e5afbe7c_5b8b2f0d",
+      "range": {
+        "startLine": 153,
+        "startChar": 23,
+        "endLine": 153,
+        "endChar": 50
+      },
+      "revId": "28fd7979dcab61f2e8c4962e3d1c251bfd28936d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e209c78_48525274",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 27665
+      },
+      "writtenOn": "2024-08-28T13:33:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "76e267f7_ba806630",
       "range": {
         "startLine": 153,
         "startChar": 23,

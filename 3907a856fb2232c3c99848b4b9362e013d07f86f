@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa4148ad_3ce72a45",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27665
+      },
+      "writtenOn": "2024-08-28T13:33:57Z",
+      "side": 1,
+      "message": "Thank you very much for the thorough review Douglas!\n\nI addressed all the spots you commented on except for one, please see the corresponding comment.",
+      "revId": "3907a856fb2232c3c99848b4b9362e013d07f86f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
