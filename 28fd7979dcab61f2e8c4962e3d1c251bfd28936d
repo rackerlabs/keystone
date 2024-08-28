@@ -114,6 +114,54 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "da48802a_910a3b84",
+        "filename": "keystone/api/roles.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-08-28T05:00:40Z",
+      "side": 1,
+      "message": "I tested the updated policy with (role:manager and not domain_id:None) and it works for me in devstack.  I also tested a project-manager and the policy denied access as expected.",
+      "parentUuid": "e04cb375_febe97b1",
+      "range": {
+        "startLine": 93,
+        "startChar": 12,
+        "endLine": 95,
+        "endChar": 13
+      },
+      "revId": "28fd7979dcab61f2e8c4962e3d1c251bfd28936d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7085ca9b_8163fc2b",
+        "filename": "keystone/api/roles.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-08-28T05:00:40Z",
+      "side": 1,
+      "message": "I tested",
+      "parentUuid": "e04cb375_febe97b1",
+      "range": {
+        "startLine": 93,
+        "startChar": 12,
+        "endLine": 95,
+        "endChar": 13
+      },
+      "revId": "28fd7979dcab61f2e8c4962e3d1c251bfd28936d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "16fa0d5c_668dbe68",
         "filename": "keystone/common/policies/role.py",
         "patchSetId": 7

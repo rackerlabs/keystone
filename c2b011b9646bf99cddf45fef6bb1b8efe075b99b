@@ -1,0 +1,251 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecaeb9ab_0e9137b3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-08-28T05:00:40Z",
+      "side": 1,
+      "message": "I reviewed the rest of the policy changes I had not previously had a chance to look at.  Things are looking good, except for a few policies that should be reverted since they already allowed domain-manager.\n\nThe \"manager\" role is part of the implied role hierarchy [1].  This means that a domain-manager is implied to also be a domain-member, and a domain-reader.\n\nAll policies which currently allow domain-member also allow domain-manager and domain-admin without having to be explicitly added to the policy.\n\nLikewise, all policies that currently allow domain-reader also allow domain-member, domain-manager, and domain-admin without having to name any of those roles in the policy.\n\nThis works because keystone adds all implied roles to the user\u0027s token when it is issued.\n\n[1] https://opendev.org/openstack/keystone/src/commit/b95b2b80021360524c314f4c45d3a1aa6f407da2/keystone/cmd/bootstrap.py#L195\n\ne.g.",
+      "revId": "c2b011b9646bf99cddf45fef6bb1b8efe075b99b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3155383_2d51574b",
+        "filename": "keystone/common/policies/domain.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-08-28T05:00:40Z",
+      "side": 1,
+      "message": "This is not needed.  The policy already allows domain-manager without this change because the manager role is part of the implied roles hierarchy.\n\nThe context object contains the assigned role (in this case \"manager\") and also includes all implied roles (in this case, \"member\" and \"reader\").\n\nSince the context object for a domain-manager already includes the \"reader\" role, the clause below will allow access.",
+      "range": {
+        "startLine": 60,
+        "startChar": 4,
+        "endLine": 60,
+        "endChar": 59
+      },
+      "revId": "c2b011b9646bf99cddf45fef6bb1b8efe075b99b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "975fbffa_0b363e02",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-08-28T05:00:40Z",
+      "side": 1,
+      "message": "These changes are not needed. The context for a domain-manager includes all roles in the implied roles hierarchy, which includes \"reader\".\n\nA domain-manager would already be allowed because GRANTS_DOMAIN_READER evaluates to true for domain-manager as well as domain-member.",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 1
+      },
+      "revId": "c2b011b9646bf99cddf45fef6bb1b8efe075b99b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a26a92bb_b550404e",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-08-28T05:00:40Z",
+      "side": 1,
+      "message": "This policy can be simplified by removing GRANTS_DOMAIN_ADMIN and replacing with GRANTS_DOMAIN_MANAGER.\n\nEven though the explicit check for \"admin\" is removed, the context object for a domain-admin will also include the \"manager\" role because it is implied in the role hierarchy.",
+      "range": {
+        "startLine": 89,
+        "startChar": 4,
+        "endLine": 93,
+        "endChar": 1
+      },
+      "revId": "c2b011b9646bf99cddf45fef6bb1b8efe075b99b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4cd31ba0_2cefe7af",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-08-28T05:00:40Z",
+      "side": 1,
+      "message": "This change is not necessary because domain-manager is already allowed by SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_GROUP_USER due to implied roles.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 1
+      },
+      "revId": "c2b011b9646bf99cddf45fef6bb1b8efe075b99b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2dddc17_31a5003e",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-08-28T05:00:40Z",
+      "side": 1,
+      "message": "This change is not necessary. domain-manager is already allowed by SYSTEM_READER_OR_DOMAIN_READER because of implied roles.",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 1
+      },
+      "revId": "c2b011b9646bf99cddf45fef6bb1b8efe075b99b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38422677_b385c510",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-08-28T05:00:40Z",
+      "side": 1,
+      "message": "This change is not necessary.  domain-manager is already allowed by SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_GROUP_USER because of implied roles.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 1
+      },
+      "revId": "c2b011b9646bf99cddf45fef6bb1b8efe075b99b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc2a7586_c0b00635",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-08-28T05:00:40Z",
+      "side": 1,
+      "message": "This change is not necessary. SYSTEM_READER_OR_DOMAIN_READER_OR_OWNER already allows domain-manager because of implied roles.",
+      "range": {
+        "startLine": 60,
+        "startChar": 6,
+        "endLine": 61,
+        "endChar": 45
+      },
+      "revId": "c2b011b9646bf99cddf45fef6bb1b8efe075b99b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f89340b_cfd987f3",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-08-28T05:00:40Z",
+      "side": 1,
+      "message": "This change is not necessary.  SYSTEM_READER_OR_DOMAIN_READER already allows domain-manager because of implied roles.",
+      "range": {
+        "startLine": 77,
+        "startChar": 6,
+        "endLine": 78,
+        "endChar": 36
+      },
+      "revId": "c2b011b9646bf99cddf45fef6bb1b8efe075b99b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7acfabd_537e81fe",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-08-28T05:00:40Z",
+      "side": 1,
+      "message": "This change is not necessary.  SYSTEM_READER_OR_DOMAIN_READER_OR_USER already allows domain-manager because of implied roles.",
+      "range": {
+        "startLine": 27,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 44
+      },
+      "revId": "c2b011b9646bf99cddf45fef6bb1b8efe075b99b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f77f4090_2e9d47c5",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-08-28T05:00:40Z",
+      "side": 1,
+      "message": "This change is not necessary. SYSTEM_READER_OR_DOMAIN_READER already allows domain-manager because of implied roles.",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 44,
+        "endChar": 36
+      },
+      "revId": "c2b011b9646bf99cddf45fef6bb1b8efe075b99b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
