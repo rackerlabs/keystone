@@ -14,10 +14,10 @@
 
 import http.client
 
+from keystone.api import validation
 from keystone.catalog import schema
 from keystone.common import provider_api
 from keystone.common import rbac_enforcer
-from keystone.common import validation
 from keystone.server import flask as ks_flask
 
 
@@ -40,25 +40,41 @@ class ServicesResource(ks_flask.ResourceBase):
         refs = PROVIDERS.catalog_api.list_services(hints=hints)
         return self.wrap_collection(refs, hints=hints)
 
+    @validation.request_query_schema(schema.service_index_request_query)
+    @validation.response_body_schema(schema.service_index_response_body)
     def get(self, service_id=None):
+        """List all services.
+        
+        GET /v3/services
+        """
         if service_id is not None:
             return self._get_service(service_id)
         return self._list_service()
 
+    @validation.request_body_schema(schema.service_create_request_body)
+    @validation.response_body_schema(schema.service_response_body)
     def post(self):
+        """Create new services.
+        
+        POST /v3/services
+        """
         ENFORCER.enforce_call(action='identity:create_service')
         service = self.request_body_json.get('service')
-        validation.lazy_validate(schema.service_create, service)
         service = self._assign_unique_id(self._normalize_dict(service))
         ref = PROVIDERS.catalog_api.create_service(
             service['id'], service, initiator=self.audit_initiator
         )
         return self.wrap_member(ref), http.client.CREATED
 
+    @validation.request_body_schema(schema.service_update_request_body)
+    @validation.response_body_schema(schema.service_response_body)
     def patch(self, service_id):
+        """Update existing services.
+        
+        PATCH /v3/services/{service_id}
+        """
         ENFORCER.enforce_call(action='identity:update_service')
         service = self.request_body_json.get('service')
-        validation.lazy_validate(schema.service_update, service)
         self._require_matching_id(service)
         ref = PROVIDERS.catalog_api.update_service(
             service_id, service, initiator=self.audit_initiator
