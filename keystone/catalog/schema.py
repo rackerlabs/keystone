@@ -10,6 +10,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from typing import Any
+
+from keystone.api.validation import response_types
 from keystone.common import validation
 from keystone.common.validation import parameter_types
 
@@ -38,25 +41,103 @@ region_update = {
 }
 
 # Schema for Service v3
-
+# Individual properties of 'Service'
 _service_properties = {
-    'enabled': parameter_types.boolean,
-    'name': parameter_types.name,
-    'type': _service_properties_type,
+    "name": {
+        "type": "string",
+        "description": "The service name.",
+    },
+    "enabled": {
+        "type": "boolean",
+        "description": (
+            "Defines whether the service and its endpoints appear in the service "
+            "catalog - false. The service and its endpoints do not appear in the "
+            "service catalog - true."
+        ),
+    },
+    "type": {
+        "type": "string",
+        "description": (
+            "The service type, which describes the API implemented by the service. "
+            "Value is compute, ec2, identity, image, network, or volume."
+        ),
+    },
 }
 
-service_create = {
-    'type': 'object',
-    'properties': _service_properties,
-    'required': ['type'],
-    'additionalProperties': True,
+# Common schema of `Service` resource
+service_schema: dict[str, Any] = {
+    "type": "object",
+    "description": "A service object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "readOnly": True,
+            "description": "The UUID of the service to which the endpoint belongs.",
+        },
+        "links": response_types.resource_links,
+        **_service_properties,
+    },
+    "additionalProperties": False,
 }
 
-service_update = {
-    'type': 'object',
-    'properties': _service_properties,
-    'minProperties': 1,
-    'additionalProperties': True,
+# Query parameters of the `/services` API
+service_index_request_query: dict[str, Any] = {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": True,
+}
+
+# Response of the `/services` API
+service_index_response_body: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "services": {
+            "type": "array",
+            "items": service_schema,
+            "description": "A list of service object.",
+        },
+        "links": response_types.links,
+    },
+    "additionalProperties": True,
+}
+
+# Response of the `/services` API returning a single service
+service_response_body: dict[str, Any] = {
+    "type": "object",
+    "description": "A service object.",
+    "properties": {"service": service_schema},
+    "additionalProperties": False,
+}
+
+# Request body of the `POST /services` operation
+service_create_request_body: dict[str, Any] = {
+    "type": "object",
+    "description": "A service object.",
+    "properties": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string",
+                "description": "The UUID of the service to which the endpoint belongs.",
+            },
+            **_service_properties,
+        },
+        "additionalProperties": False,
+    },
+}
+
+# Request body of the `PATCH /services/{service_id}` operation
+service_update_request_body: dict[str, Any] = {
+    "type": "object",
+    "description": "A service object.",
+    "properties": {
+        "service": {
+            "type": "object",
+            "properties": _service_properties,
+            "additionalProperties": True,
+            "minProperties": 1,
+        },
+    },
 }
 
 _endpoint_properties = {
