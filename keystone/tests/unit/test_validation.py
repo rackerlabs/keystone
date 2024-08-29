@@ -1284,8 +1284,8 @@ class ServiceValidationTestCase(unit.BaseTestCase):
     def setUp(self):
         super().setUp()
 
-        create = catalog_schema.service_create
-        update = catalog_schema.service_update
+        create = catalog_schema.service_create_request_body
+        update = catalog_schema.service_update_request_body
         self.create_service_validator = validators.SchemaValidator(create)
         self.update_service_validator = validators.SchemaValidator(update)
 
