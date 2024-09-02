@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67fa85b9_923ade07",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2024-09-02T11:02:21Z",
+      "side": 1,
+      "message": "yep we have done the same in nova thanks for looking at other porjects that might be impacted the same way",
+      "revId": "637fb7534a79674f4adef086bc01f661558b2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
