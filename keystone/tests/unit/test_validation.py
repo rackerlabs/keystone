@@ -1471,19 +1471,21 @@ class EndpointValidationTestCase(unit.BaseTestCase):
     def setUp(self):
         super().setUp()
 
-        create = catalog_schema.endpoint_create
-        update = catalog_schema.endpoint_update
+        create = catalog_schema.endpoint_create_request_body
+        update = catalog_schema.endpoint_update_request_body
         self.create_endpoint_validator = validators.SchemaValidator(create)
         self.update_endpoint_validator = validators.SchemaValidator(update)
 
     def test_validate_endpoint_request_succeeds(self):
         """Test that we validate an endpoint request."""
         request_to_validate = {
-            'enabled': True,
-            'interface': 'admin',
-            'region_id': uuid.uuid4().hex,
-            'service_id': uuid.uuid4().hex,
-            'url': 'https://service.example.com:5000/',
+            'endpoint': {
+                'enabled': True,
+                'interface': 'admin',
+                'region_id': uuid.uuid4().hex,
+                'service_id': uuid.uuid4().hex,
+                'url': 'https://service.example.com:5000/',
+            }
         }
         self.create_endpoint_validator.validate(request_to_validate)
 
@@ -1492,9 +1494,11 @@ class EndpointValidationTestCase(unit.BaseTestCase):
         # According to the Identity V3 API endpoint creation requires
         # 'service_id', 'interface', and 'url'
         request_to_validate = {
-            'service_id': uuid.uuid4().hex,
-            'interface': 'public',
-            'url': 'https://service.example.com:5000/',
+            'endpoint': {
+                'service_id': uuid.uuid4().hex,
+                'interface': 'public',
+                'url': 'https://service.example.com:5000/',
+            }
         }
         self.create_endpoint_validator.validate(request_to_validate)
 
@@ -1505,10 +1509,12 @@ class EndpointValidationTestCase(unit.BaseTestCase):
         """
         for valid_enabled in _VALID_ENABLED_FORMATS:
             request_to_validate = {
-                'enabled': valid_enabled,
-                'service_id': uuid.uuid4().hex,
-                'interface': 'public',
-                'url': 'https://service.example.com:5000/',
+                'endpoint': {
+                    'enabled': valid_enabled,
+                    'service_id': uuid.uuid4().hex,
+                    'interface': 'public',
+                    'url': 'https://service.example.com:5000/',
+                }
             }
             self.create_endpoint_validator.validate(request_to_validate)
 
@@ -1516,10 +1522,12 @@ class EndpointValidationTestCase(unit.BaseTestCase):
         """Exception raised when boolean-like values as `enabled`."""
         for invalid_enabled in _INVALID_ENABLED_FORMATS:
             request_to_validate = {
-                'enabled': invalid_enabled,
-                'service_id': uuid.uuid4().hex,
-                'interface': 'public',
-                'url': 'https://service.example.com:5000/',
+                'endpoint': {
+                    'enabled': invalid_enabled,
+                    'service_id': uuid.uuid4().hex,
+                    'interface': 'public',
+                    'url': 'https://service.example.com:5000/',
+                }
             }
             self.assertRaises(
                 exception.SchemaValidationError,
@@ -1530,18 +1538,22 @@ class EndpointValidationTestCase(unit.BaseTestCase):
     def test_validate_endpoint_create_succeeds_with_extra_parameters(self):
         """Test that extra parameters pass validation on create endpoint."""
         request_to_validate = {
-            'other_attr': uuid.uuid4().hex,
-            'service_id': uuid.uuid4().hex,
-            'interface': 'public',
-            'url': 'https://service.example.com:5000/',
+            'endpoint': {
+                'other_attr': uuid.uuid4().hex,
+                'service_id': uuid.uuid4().hex,
+                'interface': 'public',
+                'url': 'https://service.example.com:5000/',
+            }
         }
         self.create_endpoint_validator.validate(request_to_validate)
 
     def test_validate_endpoint_create_fails_without_service_id(self):
         """Exception raised when `service_id` isn't in endpoint request."""
         request_to_validate = {
-            'interface': 'public',
-            'url': 'https://service.example.com:5000/',
+            'endpoint': {
+                'interface': 'public',
+                'url': 'https://service.example.com:5000/',
+            }
         }
         self.assertRaises(
             exception.SchemaValidationError,
@@ -1552,8 +1564,10 @@ class EndpointValidationTestCase(unit.BaseTestCase):
     def test_validate_endpoint_create_fails_without_interface(self):
         """Exception raised when `interface` isn't in endpoint request."""
         request_to_validate = {
-            'service_id': uuid.uuid4().hex,
-            'url': 'https://service.example.com:5000/',
+            'endpoint': {
+                'service_id': uuid.uuid4().hex,
+                'url': 'https://service.example.com:5000/',
+            }
         }
         self.assertRaises(
             exception.SchemaValidationError,
@@ -1564,8 +1578,10 @@ class EndpointValidationTestCase(unit.BaseTestCase):
     def test_validate_endpoint_create_fails_without_url(self):
         """Exception raised when `url` isn't in endpoint request."""
         request_to_validate = {
-            'service_id': uuid.uuid4().hex,
-            'interface': 'public',
+            'endpoint': {
+                'service_id': uuid.uuid4().hex,
+                'interface': 'public',
+            }
         }
         self.assertRaises(
             exception.SchemaValidationError,
@@ -1576,18 +1592,22 @@ class EndpointValidationTestCase(unit.BaseTestCase):
     def test_validate_endpoint_create_succeeds_with_url(self):
         """Validate `url` attribute in endpoint create request."""
         request_to_validate = {
-            'service_id': uuid.uuid4().hex,
-            'interface': 'public',
+            'endpoint': {
+                'service_id': uuid.uuid4().hex,
+                'interface': 'public',
+            }
         }
         for url in _VALID_URLS:
-            request_to_validate['url'] = url
+            request_to_validate['endpoint']['url'] = url
             self.create_endpoint_validator.validate(request_to_validate)
 
     def test_validate_endpoint_create_fails_with_invalid_url(self):
         """Exception raised when passing invalid `url` in request."""
         request_to_validate = {
-            'service_id': uuid.uuid4().hex,
-            'interface': 'public',
+            'endpoint': {
+                'service_id': uuid.uuid4().hex,
+                'interface': 'public',
+            }
         }
         for url in _INVALID_URLS:
             request_to_validate['url'] = url
@@ -1600,9 +1620,11 @@ class EndpointValidationTestCase(unit.BaseTestCase):
     def test_validate_endpoint_create_fails_with_invalid_interface(self):
         """Exception raised with invalid `interface`."""
         request_to_validate = {
-            'interface': uuid.uuid4().hex,
-            'service_id': uuid.uuid4().hex,
-            'url': 'https://service.example.com:5000/',
+            'endpoint': {
+                'interface': uuid.uuid4().hex,
+                'service_id': uuid.uuid4().hex,
+                'url': 'https://service.example.com:5000/',
+            }
         }
         self.assertRaises(
             exception.SchemaValidationError,
@@ -1613,10 +1635,12 @@ class EndpointValidationTestCase(unit.BaseTestCase):
     def test_validate_endpoint_create_fails_with_invalid_region_id(self):
         """Exception raised when passing invalid `region(_id)` in request."""
         request_to_validate = {
-            'interface': 'admin',
-            'region_id': 1234,
-            'service_id': uuid.uuid4().hex,
-            'url': 'https://service.example.com:5000/',
+            'endpoint': {
+                'interface': 'admin',
+                'region_id': 1234,
+                'service_id': uuid.uuid4().hex,
+                'url': 'https://service.example.com:5000/',
+            }
         }
 
         self.assertRaises(
@@ -1626,10 +1650,12 @@ class EndpointValidationTestCase(unit.BaseTestCase):
         )
 
         request_to_validate = {
-            'interface': 'admin',
-            'region': 1234,
-            'service_id': uuid.uuid4().hex,
-            'url': 'https://service.example.com:5000/',
+            'endpoint': {
+                'interface': 'admin',
+                'region': 1234,
+                'service_id': uuid.uuid4().hex,
+                'url': 'https://service.example.com:5000/',
+            }
         }
 
         self.assertRaises(
@@ -1641,7 +1667,7 @@ class EndpointValidationTestCase(unit.BaseTestCase):
     def test_validate_endpoint_update_fails_with_invalid_enabled(self):
         """Exception raised when `enabled` is boolean-like value."""
         for invalid_enabled in _INVALID_ENABLED_FORMATS:
-            request_to_validate = {'enabled': invalid_enabled}
+            request_to_validate = {'endpoint': {'enabled': invalid_enabled}}
             self.assertRaises(
                 exception.SchemaValidationError,
                 self.update_endpoint_validator.validate,
@@ -1651,15 +1677,17 @@ class EndpointValidationTestCase(unit.BaseTestCase):
     def test_validate_endpoint_update_succeeds_with_valid_enabled(self):
         """Validate `enabled` as boolean values."""
         for valid_enabled in _VALID_ENABLED_FORMATS:
-            request_to_validate = {'enabled': valid_enabled}
+            request_to_validate = {'endpoint': {'enabled': valid_enabled}}
             self.update_endpoint_validator.validate(request_to_validate)
 
     def test_validate_endpoint_update_fails_with_invalid_interface(self):
         """Exception raised when invalid `interface` on endpoint update."""
         request_to_validate = {
-            'interface': uuid.uuid4().hex,
-            'service_id': uuid.uuid4().hex,
-            'url': 'https://service.example.com:5000/',
+            'endpoint': {
+                'interface': uuid.uuid4().hex,
+                'service_id': uuid.uuid4().hex,
+                'url': 'https://service.example.com:5000/',
+            }
         }
         self.assertRaises(
             exception.SchemaValidationError,
@@ -1670,11 +1698,13 @@ class EndpointValidationTestCase(unit.BaseTestCase):
     def test_validate_endpoint_update_request_succeeds(self):
         """Test that we validate an endpoint update request."""
         request_to_validate = {
-            'enabled': True,
-            'interface': 'admin',
-            'region_id': uuid.uuid4().hex,
-            'service_id': uuid.uuid4().hex,
-            'url': 'https://service.example.com:5000/',
+            'endpoint': {
+                'enabled': True,
+                'interface': 'admin',
+                'region_id': uuid.uuid4().hex,
+                'service_id': uuid.uuid4().hex,
+                'url': 'https://service.example.com:5000/',
+            }
         }
         self.update_endpoint_validator.validate(request_to_validate)
 
@@ -1690,20 +1720,24 @@ class EndpointValidationTestCase(unit.BaseTestCase):
     def test_validate_endpoint_update_succeeds_with_extra_parameters(self):
         """Test that extra parameters pass validation on update endpoint."""
         request_to_validate = {
-            'enabled': True,
-            'interface': 'admin',
-            'region_id': uuid.uuid4().hex,
-            'service_id': uuid.uuid4().hex,
-            'url': 'https://service.example.com:5000/',
-            'other_attr': uuid.uuid4().hex,
+            'endpoint': {
+                'enabled': True,
+                'interface': 'admin',
+                'region_id': uuid.uuid4().hex,
+                'service_id': uuid.uuid4().hex,
+                'url': 'https://service.example.com:5000/',
+                'other_attr': uuid.uuid4().hex,
+            }
         }
         self.update_endpoint_validator.validate(request_to_validate)
 
     def test_validate_endpoint_update_succeeds_with_url(self):
         """Validate `url` attribute in endpoint update request."""
         request_to_validate = {
-            'service_id': uuid.uuid4().hex,
-            'interface': 'public',
+            'endpoint': {
+                'service_id': uuid.uuid4().hex,
+                'interface': 'public',
+            }
         }
         for url in _VALID_URLS:
             request_to_validate['url'] = url
@@ -1712,11 +1746,13 @@ class EndpointValidationTestCase(unit.BaseTestCase):
     def test_validate_endpoint_update_fails_with_invalid_url(self):
         """Exception raised when passing invalid `url` in request."""
         request_to_validate = {
-            'service_id': uuid.uuid4().hex,
-            'interface': 'public',
+            'endpoint': {
+                'service_id': uuid.uuid4().hex,
+                'interface': 'public',
+            }
         }
         for url in _INVALID_URLS:
-            request_to_validate['url'] = url
+            request_to_validate['endpoint']['url'] = url
             self.assertRaises(
                 exception.SchemaValidationError,
                 self.update_endpoint_validator.validate,
@@ -1726,10 +1762,12 @@ class EndpointValidationTestCase(unit.BaseTestCase):
     def test_validate_endpoint_update_fails_with_invalid_region_id(self):
         """Exception raised when passing invalid `region(_id)` in request."""
         request_to_validate = {
-            'interface': 'admin',
-            'region_id': 1234,
-            'service_id': uuid.uuid4().hex,
-            'url': 'https://service.example.com:5000/',
+            'endpoint': {
+                'interface': 'admin',
+                'region_id': 1234,
+                'service_id': uuid.uuid4().hex,
+                'url': 'https://service.example.com:5000/',
+            }
         }
 
         self.assertRaises(
@@ -1739,10 +1777,12 @@ class EndpointValidationTestCase(unit.BaseTestCase):
         )
 
         request_to_validate = {
-            'interface': 'admin',
-            'region': 1234,
-            'service_id': uuid.uuid4().hex,
-            'url': 'https://service.example.com:5000/',
+            'endpoint': {
+                'interface': 'admin',
+                'region': 1234,
+                'service_id': uuid.uuid4().hex,
+                'url': 'https://service.example.com:5000/',
+            }
         }
 
         self.assertRaises(
