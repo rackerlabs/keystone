@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b975a0be_3fbd6d90",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-09-03T02:35:53Z",
+      "side": 1,
+      "message": "recheck https://review.opendev.org/c/openstack/keystone/+/927682 was merged",
+      "revId": "d01cde5a19d83736c9be235b27af8cc84ee01ed6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
