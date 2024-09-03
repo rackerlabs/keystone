@@ -17,12 +17,12 @@ import http.client
 import flask_restful
 
 from keystone.api._shared import json_home_relations
+from keystone.api import validation
 from keystone.catalog import schema
 from keystone.common import json_home
 from keystone.common import provider_api
 from keystone.common import rbac_enforcer
 from keystone.common import utils
-from keystone.common import validation
 from keystone import exception
 from keystone import notifications
 from keystone.server import flask as ks_flask
@@ -90,15 +90,26 @@ class EndpointResource(ks_flask.ResourceBase):
             [_filter_endpoint(r) for r in refs], hints=hints
         )
 
+    @validation.request_query_schema(schema.endpoint_index_request_query)
+    @validation.response_body_schema(schema.endpoint_index_response_body)
     def get(self, endpoint_id=None):
+        """List all endpoints.
+
+        GET /v3/endpoints
+        """
         if endpoint_id is not None:
             return self._get_endpoint(endpoint_id)
         return self._list_endpoints()
 
+    @validation.request_body_schema(schema.endpoint_create_request_body)
+    @validation.response_body_schema(schema.endpoint_response_body)
     def post(self):
+        """Create new endpoints.
+
+        POST /v3/endpoints
+        """
         ENFORCER.enforce_call(action='identity:create_endpoint')
         endpoint = self.request_body_json.get('endpoint')
-        validation.lazy_validate(schema.endpoint_create, endpoint)
         utils.check_endpoint_url(endpoint['url'])
         endpoint = self._assign_unique_id(self._normalize_dict(endpoint))
         endpoint = self._validate_endpoint_region(endpoint)
@@ -107,10 +118,15 @@ class EndpointResource(ks_flask.ResourceBase):
         )
         return self.wrap_member(_filter_endpoint(ref)), http.client.CREATED
 
+    @validation.request_body_schema(schema.endpoint_update_request_body)
+    @validation.response_body_schema(schema.endpoint_response_body)
     def patch(self, endpoint_id):
+        """Update existing endpoints.
+
+        PATCH /v3/endpoints/{endpoint_id}
+        """
         ENFORCER.enforce_call(action='identity:update_endpoint')
         endpoint = self.request_body_json.get('endpoint')
-        validation.lazy_validate(schema.endpoint_update, endpoint)
         self._require_matching_id(endpoint)
         endpoint = self._validate_endpoint_region(endpoint)
         ref = PROVIDERS.catalog_api.update_endpoint(
