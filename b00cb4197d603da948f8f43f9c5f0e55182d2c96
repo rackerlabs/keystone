@@ -33,6 +33,23 @@
       "message": "Do not merge until release is branched out",
       "revId": "b00cb4197d603da948f8f43f9c5f0e55182d2c96",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6e584f0_7365d865",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2024-09-06T14:53:27Z",
+      "side": 1,
+      "message": "We decided to wait with this potentially breaking change till the end of the cycle.",
+      "revId": "b00cb4197d603da948f8f43f9c5f0e55182d2c96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
