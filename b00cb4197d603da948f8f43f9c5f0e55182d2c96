@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "b00cb4197d603da948f8f43f9c5f0e55182d2c96",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "937445a3_a95ce90c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-09-06T14:53:25Z",
+      "side": 1,
+      "message": "Do not merge until release is branched out",
+      "revId": "b00cb4197d603da948f8f43f9c5f0e55182d2c96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
