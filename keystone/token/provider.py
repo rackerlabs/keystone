@@ -125,7 +125,7 @@ class Manager(manager.Manager):
         consuming notifications that signal invalidating the token cache.
 
         """
-        if CONF.token.cache_on_issue or CONF.token.caching:
+        if CONF.token.caching:
             TOKENS_REGION.invalidate()
 
     @MEMOIZE_TOKENS
@@ -328,7 +328,7 @@ class Manager(manager.Manager):
         token.mint(token_id, issued_at)
 
         # cache the token object and with ID
-        if CONF.token.cache_on_issue or CONF.token.caching:
+        if CONF.token.caching:
             # NOTE(amakarov): here and above TOKENS_REGION is to be passed
             # to serve as required positional "self" argument. It's ignored,
             # so I've put it here for convenience - any placeholder is fine.

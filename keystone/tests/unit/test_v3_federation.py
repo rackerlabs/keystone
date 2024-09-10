@@ -2044,7 +2044,7 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         # ID isn't compressed into byte format during validation. Turn off
         # cache on issue so that we validate the token online right after we
         # get it to make sure the token provider is called.
-        self.config_fixture.config(group='token', cache_on_issue=False)
+        self.config_fixture.config(group='token', caching=False)
 
         # Grab an unscoped token to get a domain-scoped token with.
         token = self._issue_unscoped_token()
