@@ -1,0 +1,9 @@
+---
+upgrade:
+  - |
+    The deprecated ``[token] cache_on_issue`` option has been removed.
+
+deprecations:
+  - |
+    The ``[receipt] cache_on_issue`` option has been deprecated. Caching will
+    be controlled solely by the ``[receipt] caching`` option in the future.

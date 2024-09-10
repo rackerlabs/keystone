@@ -72,6 +72,18 @@ no effect unless both global and `[receipt] caching` are enabled.
 cache_on_issue = cfg.BoolOpt(
     'cache_on_issue',
     default=True,
+    deprecated_since='2024.2',
+    deprecated_reason=utils.fmt(
+        """
+Keystone already exposes a configuration option for caching receipts. Having a
+separate configuration option to cache receipts when they are issued is
+redundant, unnecessarily complicated, and is misleading if recepit caching is
+disabled because receipts will still be pre-cached by default when they are
+issued. The ability to pre-cache receipts when they are issued is going to rely
+exclusively on the ``keystone.conf [receipt] caching`` option in the future.
+"""
+    ),
+    deprecated_for_removal=True,
     help=utils.fmt(
         """
 Enable storing issued receipt data to receipt validation cache so that first

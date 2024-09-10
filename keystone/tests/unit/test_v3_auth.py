@@ -2979,7 +2979,6 @@ class TokenAPITests:
         PROVIDERS.federation_api.create_mapping(mapping['id'], mapping)
 
     def test_verify_oauth2_token_project_scope_ok(self):
-        cache_on_issue = CONF.token.cache_on_issue
         caching = CONF.token.caching
         self._create_mapping()
         user, user_domain, _ = self._create_project_user()
@@ -2996,7 +2995,6 @@ class TokenAPITests:
         )
 
         cert_content = self._get_cert_content(client_cert)
-        CONF.token.cache_on_issue = False
         CONF.token.caching = False
         resp = self._get_oauth2_access_token(user['id'], cert_content)
 
@@ -3023,7 +3021,6 @@ class TokenAPITests:
             utils.get_certificate_thumbprint(cert_content),
             check_oauth2['x5t#S256'],
         )
-        CONF.token.cache_on_issue = cache_on_issue
         CONF.token.caching = caching
 
 
@@ -3175,7 +3172,7 @@ class TestFernetTokenAPIs(
     def config_overrides(self):
         super().config_overrides()
         self.config_fixture.config(
-            group='token', provider='fernet', cache_on_issue=True
+            group='token', provider='fernet'
         )
         self.useFixture(
             ksfixtures.KeyRepository(
@@ -3249,7 +3246,7 @@ class TestJWSTokenAPIs(test_v3.RestfulTestCase, TokenAPITests, TokenDataTests):
     def config_overrides(self):
         super().config_overrides()
         self.config_fixture.config(
-            group='token', provider='jws', cache_on_issue=True
+            group='token', provider='jws'
         )
         self.useFixture(ksfixtures.JWSKeyRepository(self.config_fixture))
 
@@ -6302,7 +6299,7 @@ class ApplicationCredentialAuth(test_v3.RestfulTestCase):
         self.v3_create_token(auth_data, expected_status=http.client.CREATED)
 
     def test_validate_application_credential_token_populates_restricted(self):
-        self.config_fixture.config(group='token', cache_on_issue=False)
+        self.config_fixture.config(group='token', caching=False)
         app_cred = self._make_app_cred()
         app_cred_ref = self.app_cred_api.create_application_credential(
             app_cred
