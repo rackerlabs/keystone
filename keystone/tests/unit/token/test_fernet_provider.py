@@ -290,7 +290,6 @@ class TestValidateWithoutCache(TestValidate):
     def config_overrides(self):
         super().config_overrides()
         self.config_fixture.config(group='token', caching=False)
-        self.config_fixture.config(group='token', cache_on_issue=False)
 
 
 class TestTokenFormatter(unit.TestCase):
