@@ -1,0 +1,5 @@
+---
+deprecations:
+  - |
+    The ``[DEFAULT] max_param_size`` option has been deprecated. This option
+    has had no effect for several cycles.
