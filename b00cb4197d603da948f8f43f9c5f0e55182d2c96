@@ -50,6 +50,23 @@
       "message": "We decided to wait with this potentially breaking change till the end of the cycle.",
       "revId": "b00cb4197d603da948f8f43f9c5f0e55182d2c96",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47d3904b_f1b91728",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-09-11T13:49:53Z",
+      "side": 1,
+      "message": "branching happened, free to land",
+      "revId": "b00cb4197d603da948f8f43f9c5f0e55182d2c96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
