@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9cdae75e_9ea60c3e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-09-11T15:21:34Z",
+      "side": 1,
+      "message": "On-hold until 2024.2 branch is created.",
+      "revId": "9baf2d123e9d546c70d2e4f99ec1bf5bb4b043d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
