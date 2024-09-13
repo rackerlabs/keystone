@@ -87,6 +87,11 @@ can lead to unusual errors and behaviors from Keystone.
    be specified to have only alphanumerics or a dash ("-"). This is because
    `mod_wsgi blocks headers that do not fit this criteria`_.
 
+.. note::
+
+   In some cases you may have to set ``OIDCClaimDelimiter`` to ``;`` for lists,
+   like the ``groups`` scope, to be handled properly in a mapping.
+
 .. _mod_wsgi blocks headers that do not fit this criteria: http://modwsgi.readthedocs.org/en/latest/release-notes/version-4.3.0.html#bugs-fixed
 
 Configure Protected Endpoints
