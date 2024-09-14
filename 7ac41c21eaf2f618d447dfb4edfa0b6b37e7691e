@@ -16,6 +16,23 @@
       "message": "It\u0027d be better to merge this after 2024.2 RC release. Timeline for removal is not changed even if we included this in 2024.2 (We can remove the deprecated option after 2025.1 becaue of SLURP).",
       "revId": "7ac41c21eaf2f618d447dfb4edfa0b6b37e7691e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5397c5ba_4f46b71d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-09-14T03:01:38Z",
+      "side": 1,
+      "message": "Branch was cut so this is ready",
+      "revId": "7ac41c21eaf2f618d447dfb4edfa0b6b37e7691e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
