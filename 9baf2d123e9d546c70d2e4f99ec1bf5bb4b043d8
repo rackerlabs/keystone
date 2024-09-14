@@ -16,6 +16,23 @@
       "message": "On-hold until 2024.2 branch is created.",
       "revId": "9baf2d123e9d546c70d2e4f99ec1bf5bb4b043d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b13f41a_53205b50",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-09-14T03:01:43Z",
+      "side": 1,
+      "message": "Branch was cut so this is ready",
+      "revId": "9baf2d123e9d546c70d2e4f99ec1bf5bb4b043d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
