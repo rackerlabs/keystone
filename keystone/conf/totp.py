@@ -14,6 +14,17 @@ from oslo_config import cfg
 
 from keystone.conf import utils
 
+enforce_key_length = cfg.BoolOpt(
+    "enforce_key_length",
+    default=True,
+    help=utils.fmt(
+        """
+A boolean flag defaulting to True that toggles whether a minimum key length
+of 128 bits is enforced for TOTP secrets. Only disable if your existing TOTP
+secrets are smaller than the enforced 128 bits.
+"""
+    ),
+)
 included_previous_windows = cfg.IntOpt(
     'included_previous_windows',
     default=1,
@@ -29,6 +40,7 @@ The number of previous windows to check when processing TOTP passcodes.
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
+    enforce_key_length,
     included_previous_windows,
 ]
 

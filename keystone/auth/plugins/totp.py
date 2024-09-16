@@ -76,6 +76,7 @@ def _generate_totp_passcodes(secret, included_previous_windows=0):
         hashes.SHA1(),  # nosec
         PASSCODE_TIME_PERIOD,
         backend=default_backend(),
+        enforce_key_length=CONF.totp.enforce_key_length,
     )
 
     passcode_ts = timeutils.utcnow_ts(microsecond=True)
