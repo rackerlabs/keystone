@@ -89,6 +89,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "283e8d2e_6b65c7ca",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2024-09-17T18:11:31Z",
+      "side": 1,
+      "message": "Ack, thanks for confirming.",
+      "parentUuid": "90f660af_d2bf426c",
+      "range": {
+        "startLine": 74,
+        "startChar": 16,
+        "endLine": 74,
+        "endChar": 30
+      },
+      "revId": "6a3306513df4f553f3f3441d86a3093b8a52ff09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f2f80a89_a69639a2",
@@ -198,6 +222,30 @@
       "side": 1,
       "message": "ok, then both Antonia and I misunderstood your comment. Unfortunately there is way to create service with `1 \u003e len(name) \u003e 255` - you do not specify the name in the create request and keystone will return \u0027\u0027 once you fetch such. So on create request the field is 1\u003ename\u003e255 but optional, on response you get empty or 1\u003ename\u003e255",
       "parentUuid": "7f2f25d0_5b410c15",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 10
+      },
+      "revId": "6a3306513df4f553f3f3441d86a3093b8a52ff09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02da4046_a3880ec4",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2024-09-17T18:11:31Z",
+      "side": 1,
+      "message": "Okay. That is unfortunate 😞 In this case, I guess we want:\n\n```\n        \"minLength\": 0,\n        \"maxLength\": 255,\n```\n\nhere?\n\nWe can probably also be a bit cleverer and de-dupe here but that\u0027s for later.",
+      "parentUuid": "23d27fbf_f8d35a79",
       "range": {
         "startLine": 85,
         "startChar": 0,
