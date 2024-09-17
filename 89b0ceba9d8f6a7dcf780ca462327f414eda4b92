@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89d32edb_3b447564",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2024-09-17T11:41:46Z",
+      "side": 1,
+      "message": "Hi, this is a generated patch, that should merge as soon as possible.\nPlease merge it, otherwise there won\u0027t exist a release notes page for the project.\nThe generated patch looks correct.",
+      "revId": "89b0ceba9d8f6a7dcf780ca462327f414eda4b92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
