@@ -18,6 +18,7 @@ import itertools
 from oslo_log import log
 import passlib.hash
 
+from keystone.common.password_hashers import scrypt
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _
@@ -29,9 +30,9 @@ SUPPORTED_HASHERS = frozenset(
     [
         passlib.hash.bcrypt,
         passlib.hash.bcrypt_sha256,
-        passlib.hash.scrypt,
         passlib.hash.pbkdf2_sha512,
         passlib.hash.sha512_crypt,
+        scrypt.Scrypt,
     ]
 )
 
@@ -48,12 +49,12 @@ _HASHER_NAME_MAP = {hasher.name: hasher for hasher in SUPPORTED_HASHERS}
 # the metadata, actual indent is represented with a <prefix> instead.
 def _get_hash_ident(hashers):
     for hasher in hashers:
-        if hasattr(hasher, 'prefix'):
-            ident = (getattr(hasher, 'prefix'),)
-        elif hasattr(hasher, 'ident_values'):
-            ident = getattr(hasher, 'ident_values')
+        if hasattr(hasher, "prefix"):
+            ident = (getattr(hasher, "prefix"),)
+        elif hasattr(hasher, "ident_values"):
+            ident = getattr(hasher, "ident_values")
         else:
-            ident = (getattr(hasher, 'ident'),)
+            ident = (getattr(hasher, "ident"),)
         yield (hasher, ident)
 
 
@@ -70,15 +71,15 @@ _HASHER_IDENT_MAP = {
 
 def _get_hasher_from_ident(hashed):
     try:
-        return _HASHER_IDENT_MAP[hashed[0 : hashed.index('$', 1) + 1]]
+        return _HASHER_IDENT_MAP[hashed[0 : hashed.index("$", 1) + 1]]
     except KeyError:
         raise ValueError(
-            _('Unsupported password hashing algorithm ident: %s')
-            % hashed[0 : hashed.index('$', 1) + 1]
+            _("Unsupported password hashing algorithm ident: %s")
+            % hashed[0 : hashed.index("$", 1) + 1]
         )
 
 
-def verify_length_and_trunc_password(password):
+def verify_length_and_trunc_password(password) -> bytes:
     """Verify and truncate the provided password to the max_password_length.
 
     We also need to check that the configured password hashing algorithm does
@@ -92,17 +93,20 @@ def verify_length_and_trunc_password(password):
     # https://passlib.readthedocs.io/en/stable/lib/passlib.hash.bcrypt.html#security-issues
     BCRYPT_MAX_LENGTH = 72
     if (
-        CONF.identity.password_hash_algorithm == 'bcrypt'  # nosec: B105
+        CONF.identity.password_hash_algorithm == "bcrypt"  # nosec: B105
         and CONF.identity.max_password_length > BCRYPT_MAX_LENGTH
     ):
-        msg = "Truncating password to algorithm specific maximum length %d characters."
+        msg = (
+            "Truncating password to algorithm specific maximum length %d"
+            " characters."
+        )
         LOG.warning(msg, BCRYPT_MAX_LENGTH)
         max_length = BCRYPT_MAX_LENGTH
     else:
         max_length = CONF.identity.max_password_length
 
     try:
-        password_utf8 = password.encode('utf-8')
+        password_utf8 = password.encode("utf-8")
         if len(password_utf8) > max_length:
             if CONF.strict_password_check:
                 raise exception.PasswordVerificationError(size=max_length)
@@ -113,10 +117,10 @@ def verify_length_and_trunc_password(password):
         else:
             return password_utf8
     except AttributeError:
-        raise exception.ValidationError(attribute='string', target='password')
+        raise exception.ValidationError(attribute="string", target="password")
 
 
-def check_password(password, hashed):
+def check_password(password: str, hashed: str) -> bool:
     """Check that a plaintext password matches hashed.
 
     hashpw returns the salt value concatenated with the actual hash value.
@@ -132,14 +136,14 @@ def check_password(password, hashed):
 
 def hash_user_password(user):
     """Hash a user dict's password without modifying the passed-in dict."""
-    password = user.get('password')
+    password = user.get("password")
     if password is None:
         return user
 
     return dict(user, password=hash_password(password))
 
 
-def hash_password(password):
+def hash_password(password: str) -> str:
     """Hash a password. Harder."""
     params = {}
     password_utf8 = verify_length_and_trunc_password(password)
@@ -148,21 +152,23 @@ def hash_password(password):
 
     if hasher is None:
         raise RuntimeError(
-            _('Password Hash Algorithm %s not found')
+            _("Password Hash Algorithm %s not found")
             % CONF.identity.password_hash_algorithm
         )
 
     if CONF.identity.password_hash_rounds:
-        params['rounds'] = CONF.identity.password_hash_rounds
-    if hasher is passlib.hash.scrypt:
-        if CONF.identity.scrypt_block_size:
-            params['block_size'] = CONF.identity.scrypt_block_size
-        if CONF.identity.scrypt_parallelism:
-            params['parallelism'] = CONF.identity.scrypt_parallelism
-        if CONF.identity.salt_bytesize:
-            params['salt_size'] = CONF.identity.salt_bytesize
+        params["rounds"] = CONF.identity.password_hash_rounds
     if hasher is passlib.hash.pbkdf2_sha512:
         if CONF.identity.salt_bytesize:
-            params['salt_size'] = CONF.identity.salt_bytesize
+            params["salt_size"] = CONF.identity.salt_bytesize
+    if hasher is scrypt.Scrypt:
+        params["n"] = 65536  # 2**16
+        if CONF.identity.scrypt_block_size:
+            params["r"] = CONF.identity.scrypt_block_size
+        if CONF.identity.scrypt_parallelism:
+            params["p"] = CONF.identity.scrypt_parallelism
+        if CONF.identity.salt_bytesize:
+            params["salt_size"] = CONF.identity.salt_bytesize
+        return scrypt.Scrypt.hash(password_utf8, **params)
 
     return hasher.using(**params).hash(password_utf8)
