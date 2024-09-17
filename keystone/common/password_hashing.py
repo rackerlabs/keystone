@@ -14,10 +14,12 @@
 #    under the License.
 
 import itertools
+import os
 
 from oslo_log import log
 import passlib.hash
 
+from keystone.common.password_hashers import scrypt
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _
@@ -29,9 +31,9 @@ SUPPORTED_HASHERS = frozenset(
     [
         passlib.hash.bcrypt,
         passlib.hash.bcrypt_sha256,
-        passlib.hash.scrypt,
         passlib.hash.pbkdf2_sha512,
         passlib.hash.sha512_crypt,
+        scrypt.Scrypt,
     ]
 )
 
@@ -78,7 +80,7 @@ def _get_hasher_from_ident(hashed):
         )
 
 
-def verify_length_and_trunc_password(password):
+def verify_length_and_trunc_password(password) -> bytes:
     """Verify and truncate the provided password to the max_password_length.
 
     We also need to check that the configured password hashing algorithm does
@@ -95,7 +97,10 @@ def verify_length_and_trunc_password(password):
         CONF.identity.password_hash_algorithm == 'bcrypt'  # nosec: B105
         and CONF.identity.max_password_length > BCRYPT_MAX_LENGTH
     ):
-        msg = "Truncating password to algorithm specific maximum length %d characters."
+        msg = (
+            "Truncating password to algorithm specific maximum length %d"
+            " characters."
+        )
         LOG.warning(msg, BCRYPT_MAX_LENGTH)
         max_length = BCRYPT_MAX_LENGTH
     else:
@@ -116,7 +121,7 @@ def verify_length_and_trunc_password(password):
         raise exception.ValidationError(attribute='string', target='password')
 
 
-def check_password(password, hashed):
+def check_password(password: str, hashed: str) -> bool:
     """Check that a plaintext password matches hashed.
 
     hashpw returns the salt value concatenated with the actual hash value.
@@ -139,7 +144,7 @@ def hash_user_password(user):
     return dict(user, password=hash_password(password))
 
 
-def hash_password(password):
+def hash_password(password: str) -> str:
     """Hash a password. Harder."""
     params = {}
     password_utf8 = verify_length_and_trunc_password(password)
@@ -154,15 +159,24 @@ def hash_password(password):
 
     if CONF.identity.password_hash_rounds:
         params['rounds'] = CONF.identity.password_hash_rounds
-    if hasher is passlib.hash.scrypt:
-        if CONF.identity.scrypt_block_size:
-            params['block_size'] = CONF.identity.scrypt_block_size
-        if CONF.identity.scrypt_parallelism:
-            params['parallelism'] = CONF.identity.scrypt_parallelism
-        if CONF.identity.salt_bytesize:
-            params['salt_size'] = CONF.identity.salt_bytesize
     if hasher is passlib.hash.pbkdf2_sha512:
         if CONF.identity.salt_bytesize:
             params['salt_size'] = CONF.identity.salt_bytesize
+    if hasher is scrypt.Scrypt:
+        opts: dict = {
+            "n": 65536,
+            "r": 8,
+            "p": 1,
+        }
+        if CONF.identity.scrypt_block_size:
+            opts["r"] = CONF.identity.scrypt_block_size
+        if CONF.identity.scrypt_parallelism:
+            opts["p"] = CONF.identity.scrypt_parallelism
+        if CONF.identity.salt_bytesize:
+            salt_size = CONF.identity.salt_bytesize
+        else:
+            salt_size = 16
+        salt: bytes = os.urandom(salt_size)
+        return scrypt.Scrypt.hash(password_utf8, salt, **opts)
 
     return hasher.using(**params).hash(password_utf8)
