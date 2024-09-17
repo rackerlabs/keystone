@@ -186,6 +186,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "23d27fbf_f8d35a79",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-09-17T17:44:24Z",
+      "side": 1,
+      "message": "ok, then both Antonia and I misunderstood your comment. Unfortunately there is way to create service with `1 \u003e len(name) \u003e 255` - you do not specify the name in the create request and keystone will return \u0027\u0027 once you fetch such. So on create request the field is 1\u003ename\u003e255 but optional, on response you get empty or 1\u003ename\u003e255",
+      "parentUuid": "7f2f25d0_5b410c15",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 10
+      },
+      "revId": "6a3306513df4f553f3f3441d86a3093b8a52ff09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9edbfe24_22610d53",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 8
