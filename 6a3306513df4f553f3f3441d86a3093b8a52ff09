@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f00b123d_26084795",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2024-09-17T10:41:50Z",
+      "side": 1,
+      "message": "This looks pretty good and is passing CI now. -1 for the two potential issues. I also have a question around potential simplification.",
+      "revId": "6a3306513df4f553f3f3441d86a3093b8a52ff09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e0d2a25_580c0ddf",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2024-09-17T10:41:50Z",
+      "side": 1,
+      "message": "fyi, dicts are only subscriptable in Python 3.9+. Since Keystone technically still supports Python 3.8 (see `python_requires` in `setup.cfg`) I think you need to do\n\n\n```suggestion\nservice_schema: Dict[str, Any] \u003d {\n```\n\nor\n\n```\nservice_schema: ty.Dict[str, ty.Any]\n```",
+      "range": {
+        "startLine": 74,
+        "startChar": 16,
+        "endLine": 74,
+        "endChar": 30
+      },
+      "revId": "6a3306513df4f553f3f3441d86a3093b8a52ff09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2f80a89_a69639a2",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2024-09-17T10:41:50Z",
+      "side": 1,
+      "message": "Ah, I\u0027m guessing this is what you and @artem.goncharov@gmail.com were talking about recently? Namely, that there is a limit on the name in requests but not in responses. Do we care? The 255 limit looks like a DB-enforced limit so realistically the response field will *always* be \u003c 255 anyway. Might as well keep them the same (and combine `_service_name_properties` back into `_service_properties`), no?",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 10
+      },
+      "revId": "6a3306513df4f553f3f3441d86a3093b8a52ff09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9edbfe24_22610d53",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2024-09-17T10:41:50Z",
+      "side": 1,
+      "message": "Is this supposed to be here? It wasn\u0027t in `service_create`",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 18
+      },
+      "revId": "6a3306513df4f553f3f3441d86a3093b8a52ff09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
