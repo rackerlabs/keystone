@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "02e841c6_932aacbc",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-09-17T16:21:45Z",
+      "side": 1,
+      "message": "That makes sense. I can do it that way, was just following Artem\u0027s changes https://review.opendev.org/c/openstack/keystone/+/923324/8/keystone/credential/schema.py",
+      "parentUuid": "5e0d2a25_580c0ddf",
+      "range": {
+        "startLine": 74,
+        "startChar": 16,
+        "endLine": 74,
+        "endChar": 30
+      },
+      "revId": "6a3306513df4f553f3f3441d86a3093b8a52ff09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f2f80a89_a69639a2",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 8
@@ -66,6 +90,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3a681a9f_08d5a75d",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-09-17T16:21:45Z",
+      "side": 1,
+      "message": "Yes, though the issue we found was the limit being \u003c 1 in the response when the request is made with an empty (\u003c 1) string. For that reason I had to split up `_service_name_properties` from `_service_properties`. However following your logic I could remove the 255 limit since the DB enforces it anyway.",
+      "parentUuid": "f2f80a89_a69639a2",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 10
+      },
+      "revId": "6a3306513df4f553f3f3441d86a3093b8a52ff09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9edbfe24_22610d53",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 8
@@ -77,6 +125,30 @@
       "writtenOn": "2024-09-17T10:41:50Z",
       "side": 1,
       "message": "Is this supposed to be here? It wasn\u0027t in `service_create`",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 18
+      },
+      "revId": "6a3306513df4f553f3f3441d86a3093b8a52ff09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a4af797_8bb174c8",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-09-17T16:21:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9edbfe24_22610d53",
       "range": {
         "startLine": 132,
         "startChar": 0,
