@@ -162,6 +162,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7f2f25d0_5b410c15",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2024-09-17T17:39:05Z",
+      "side": 1,
+      "message": "I\u0027m not suggestiong to remove constraints: I\u0027m suggesting to add it.\n\nThis schema is used for response bodies. As there is no way to create a service with 1 \u003e len(name) \u003e 255, there is no way to retrieve a service without these constraints. Ergo, we should use the same constraint across both, right?\n\nThis should be a good thing since it normalizes our schema *and* adds more constraints for code generation.",
+      "parentUuid": "69f70c6d_191cbfa4",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 10
+      },
+      "revId": "6a3306513df4f553f3f3441d86a3093b8a52ff09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9edbfe24_22610d53",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 8
