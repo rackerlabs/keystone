@@ -18,11 +18,11 @@ import flask_restful
 
 from keystone.api._shared import json_home_relations
 from keystone.api import endpoints as _endpoints_api
+from keystone.api import validation
 from keystone.catalog import schema
 from keystone.common import json_home
 from keystone.common import provider_api
 from keystone.common import rbac_enforcer
-from keystone.common import validation
 from keystone import exception
 from keystone.i18n import _
 from keystone.server import flask as ks_flask
@@ -77,15 +77,24 @@ class EndpointGroupsResource(ks_flask.ResourceBase):
         refs = PROVIDERS.catalog_api.list_endpoint_groups(hints)
         return self.wrap_collection(refs, hints=hints)
 
+    @validation.request_query_schema(schema.endpoint_group_index_request_query)
+    @validation.response_body_schema(schema.endpoint_group_index_response_body)
     def get(self, endpoint_group_id=None):
-        if endpoint_group_id is not None:
-            return self._get_endpoint_group(endpoint_group_id)
+        """List all endpoint groups.
+
+        GET /v3/OS-EP-FILTER/endpoint_groups
+        """
         return self._list_endpoint_groups()
 
+    @validation.request_body_schema(schema.endpoint_group_create_request_body)
+    @validation.response_body_schema(schema.endpoint_group_response_body)
     def post(self):
+        """Create new endpoint groups.
+
+        POST /v3/OS-EP-FILTER/endpoint_groups
+        """
         ENFORCER.enforce_call(action='identity:create_endpoint_group')
         ep_group = self.request_body_json.get('endpoint_group', {})
-        validation.lazy_validate(schema.endpoint_group_create, ep_group)
         if not ep_group.get('filters'):
             # TODO(morgan): Make this not require substitution. Substitution is
             # done here due to String Freeze in the Rocky release.
@@ -102,10 +111,29 @@ class EndpointGroupsResource(ks_flask.ResourceBase):
             http.client.CREATED,
         )
 
+
+class EndpointGroupResource(ks_flask.ResourceBase):
+    collection_key = 'endpoint_groups'
+    member_key = 'endpoint_group'
+
+    @validation.request_query_schema(schema.endpoint_group_index_request_query)
+    @validation.response_body_schema(schema.endpoint_group_index_response_body)
+    def get(self, endpoint_group_id=None):
+        """Get Endpoint Group
+
+        GET /v3/OS-EP-FILTER/endpoint_groups/{endpoint_group_id}
+        """
+        return self._get_endpoint_group(endpoint_group_id)
+
+    @validation.request_body_schema(schema.endpoint_group_update_request_body)
+    @validation.response_body_schema(schema.endpoint_group_response_body)
     def patch(self, endpoint_group_id):
+        """Update existing endpoint groups
+
+        PATCH /v3/OS-EP-FILTER/endpoint_groups/{endpoint_group_id}
+        """
         ENFORCER.enforce_call(action='identity:update_endpoint_group')
         ep_group = self.request_body_json.get('endpoint_group', {})
-        validation.lazy_validate(schema.endpoint_group_update, ep_group)
         if 'filters' in ep_group:
             self._require_valid_filter(ep_group)
         self._require_matching_id(ep_group)
