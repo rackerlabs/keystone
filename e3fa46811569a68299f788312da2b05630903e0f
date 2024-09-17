@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f1a498a_a7bf93a6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2024-09-17T08:47:20Z",
+      "side": 1,
+      "message": "Generated patch, looks good, should be merged as soon as possible, so, fast-approving.",
+      "revId": "e3fa46811569a68299f788312da2b05630903e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
