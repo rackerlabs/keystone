@@ -10,6 +10,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from typing import Any
+
+from keystone.api.validation import response_types
 from keystone.common import validation
 from keystone.common.validation import parameter_types
 
@@ -82,20 +85,100 @@ endpoint_update = {
     'additionalProperties': True,
 }
 
+# Individual properties of 'Endpoint Group'
 _endpoint_group_properties = {
-    'description': validation.nullable(parameter_types.description),
-    'filters': {'type': 'object'},
-    'name': parameter_types.name,
+    "description": {
+        "type": "string",
+        "description": "The endpoint group description.",
+    },
+    "filters": {
+        "type": "object",
+        "description": (
+            "Describes the filtering performed by the endpoint group. "
+            "The filter used must be an endpoint property, such as "
+            "interface, service_id, region, and enabled. Note that "
+            "if using interface as a filter, the only available values "
+            "are public, internal, and admin."
+        ),
+    },
+    "name": {
+        "type": "string",
+        "description": "The name of the endpoint group.",
+    },
 }
 
-endpoint_group_create = {
-    'type': 'object',
-    'properties': _endpoint_group_properties,
-    'required': ['name', 'filters'],
+# Common schema of `Endpoint Group` resource
+endpoint_group_schema: dict[str, Any] = {
+    "type": "object",
+    "description": "An endpoint group object.",
+    "properties": {
+        "id": {
+            "type": "string",
+            "readOnly": True,
+            "description": "The endpoint group ID",
+        },
+        "links": response_types.resource_links,
+        **_endpoint_group_properties,
+    },
+    "additionalProperties": True,
 }
 
-endpoint_group_update = {
-    'type': 'object',
-    'properties': _endpoint_group_properties,
-    'minProperties': 1,
+# Query parameters of the `/endpoint_groups` API
+endpoint_group_index_request_query: dict[str, Any] = {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": True,
+}
+
+# Response of the `/endpoint_groups` API
+endpoint_group_index_response_body: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "endpoint_groups": {
+            "type": "array",
+            "items": endpoint_group_schema,
+            "description": "A list of endpoint group objects",
+        },
+        "links": response_types.links,
+    },
+    "additionalProperties": True,
+}
+
+# Response of the `/endpoint_groups/{endpoint_group_id}` API
+# returning a single endpoint group
+endpoint_group_response_body: dict[str, Any] = {
+    "type": "object",
+    "description": "An endpoint group object",
+    "properties": {"endpoint_group": endpoint_group_schema},
+    "additionalProperties": False,
+}
+
+# Request body of the `POST /endpoint_groups` operation
+endpoint_group_create_request_body: dict[str, Any] = {
+    "type": "object",
+    "description": "An endpoint group object",
+    "properties": {
+        "endpoint_group": {
+            "type": "object",
+            "properties": _endpoint_group_properties,
+            "required": ["name", "filters"],
+            "additionalProperties": True,
+        },
+    },
+    "additionalProperties": False,
+}
+
+# Request body of the `PATCH /endpoint_groups/{endpoint_group_id}` operation
+endpoint_group_update_request_body: dict[str, Any] = {
+    "type": "object",
+    "description": "An endpoint group object",
+    "properties": {
+        "endpoint_group": {
+            "type": "object",
+            "properties": _endpoint_group_properties,
+            "minProperties": 1,
+            "additionalProperties": True,
+        },
+    },
+    "required": ["endpoint_group"],
 }
