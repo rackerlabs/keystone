@@ -50,6 +50,24 @@
       "message": "I think you want to do\n\nraise exception.ValidationError(message\u003dmsg)\n\nhere instead? just falling through will fail in L105 below and override the msg again, so this patch currently wouldn\u0027t do what the commit message says?",
       "revId": "3eef16b861831f028fe0934ea4a5e2e74f3bd3b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1a1cae9_7b7fb5fd",
+        "filename": "keystone/api/role_assignments.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2024-09-18T12:55:26Z",
+      "side": 1,
+      "message": "actually no, to tell the truth if I raise ValidationError here, as result I have htp500, and long traceback in keystone log (... Sep 18 12:28:57 jammy devstack@keystone.service[133204]: ERROR keystone AssertionError: PROGRAMMING ERROR: enforcement (`keystone.common.rbac_enforcer.enforcer.RBACEnforcer.enforce_call()`) has not been called; API is unenforced.\n\")\n\nIf I set project_id\u003dNone and raise ValidationError in l125. then the result will be a short exception (like: {\"error\":{\"code\":404,\"message\":\"Could not find project: 13f6f0f6fa8740d4921d04908d7220eb.\",\"title\":\"Not Found\"}} ), which is not the same as without include_subtree, but better to give actual feedback to the user.",
+      "parentUuid": "e65f6549_c99765ec",
+      "revId": "3eef16b861831f028fe0934ea4a5e2e74f3bd3b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
