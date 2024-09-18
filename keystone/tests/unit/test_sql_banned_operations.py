@@ -333,6 +333,30 @@ class KeystoneMigrationsWalk(test_fixtures.OpportunisticDBTestMixin):
             'idx_project_id', {x['name'] for x in indexes}
         )
 
+    def _pre_upgrade_742c857f1dfb(self, connection):
+        inspector = sqlalchemy.inspect(connection)
+        indexes = inspector.get_indexes('revocation_event')
+        self.assertNotIn(
+            'idx_revocation_event_project_id_user_id',
+            {x['name'] for x in indexes}
+        )
+        self.assertNotIn(
+            'idx_revocation_event_composite',
+            {x['name'] for x in indexes}
+        )
+
+    def _check_742c857f1dfb(self, connection):
+        inspector = sqlalchemy.inspect(connection)
+        indexes = inspector.get_indexes('revocation_event')
+        self.assertIn(
+            'idx_revocation_event_project_id_user_id',
+            {x['name'] for x in indexes}
+        )
+        self.assertIn(
+            'idx_revocation_event_composite',
+            {x['name'] for x in indexes}
+        )
+
     def test_single_base_revision(self):
         """Ensure we only have a single base revision.
 
