@@ -1,0 +1,10 @@
+Workflow+1: Grzegorz Grasza <xek@redhat.com>
+Code-Review+2: David Wilde <dwilde@redhat.com>
+Verified+2: Zuul
+Code-Review+2: Grzegorz Grasza <xek@redhat.com>
+Submitted-by: Zuul
+Submitted-at: Fri, 20 Sep 2024 16:43:11 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/928923
+Comments-Total: 2
+Project: openstack/keystone
+Branch: refs/heads/master
