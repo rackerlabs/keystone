@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2071799_513580e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2024-09-20T14:16:28Z",
+      "side": 1,
+      "message": "Artem will also test and compare performance with an implementation using the cryptograhpy library",
+      "revId": "3655826a7f7c68837d766abd8ac63184d3e009d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
