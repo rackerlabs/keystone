@@ -307,7 +307,7 @@ class SqlModels(SqlTests):
     def test_project_model(self):
         cols = (
             ('id', sql.String, 64),
-            ('name', sql.String, 64),
+            ('name', sql.String, 96),
             ('description', sql.Text, None),
             ('domain_id', sql.String, 64),
             ('enabled', sql.Boolean, None),

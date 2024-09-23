@@ -478,7 +478,7 @@ class ProjectValidationTestCase(unit.BaseTestCase):
 
     def test_validate_project_request_with_name_too_long(self):
         """Exception is raised when `name` is too long."""
-        long_project_name = 'a' * 65
+        long_project_name = 'a' * 97
         request_to_validate = {'name': long_project_name}
         self.assertRaises(
             exception.SchemaValidationError,
@@ -488,7 +488,7 @@ class ProjectValidationTestCase(unit.BaseTestCase):
 
     def test_validate_project_create_fails_with_invalid_name(self):
         """Exception when validating a create request with invalid `name`."""
-        for invalid_name in _INVALID_NAMES + ['a' * 65]:
+        for invalid_name in _INVALID_NAMES + ['a' * 97]:
             request_to_validate = {'name': invalid_name}
             self.assertRaises(
                 exception.SchemaValidationError,
@@ -583,7 +583,7 @@ class ProjectValidationTestCase(unit.BaseTestCase):
 
     def test_validate_project_update_request_with_name_too_long_fails(self):
         """Exception raised when updating a project with `name` too long."""
-        long_project_name = 'a' * 65
+        long_project_name = 'a' * 97
         request_to_validate = {'name': long_project_name}
         self.assertRaises(
             exception.SchemaValidationError,

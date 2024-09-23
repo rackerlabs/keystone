@@ -254,7 +254,7 @@ def upgrade():
     op.create_table(
         'project',
         sql.Column('id', sql.String(length=64), primary_key=True),
-        sql.Column('name', sql.String(length=64), nullable=False),
+        sql.Column('name', sql.String(length=96), nullable=False),
         sql.Column('extra', ks_sql.JsonBlob.impl),
         sql.Column('description', sql.Text),
         sql.Column('enabled', sql.Boolean),

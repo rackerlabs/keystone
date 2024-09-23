@@ -230,7 +230,7 @@ class ResourceTests:
 
     def test_create_project_long_name_fails(self):
         project = unit.new_project_ref(
-            name='a' * 65, domain_id=CONF.identity.default_domain_id
+            name='a' * 97, domain_id=CONF.identity.default_domain_id
         )
         self.assertRaises(
             exception.ValidationError,

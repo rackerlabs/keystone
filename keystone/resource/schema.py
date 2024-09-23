@@ -14,7 +14,7 @@ from keystone.common import validation
 from keystone.common.validation import parameter_types
 from keystone.resource.backends import resource_options as ro
 
-_name_properties = {
+_project_name_properties = {
     'type': 'string',
     'minLength': 1,
     'maxLength': 64,
@@ -47,7 +47,7 @@ _project_properties = {
     'enabled': parameter_types.boolean,
     'is_domain': parameter_types.boolean,
     'parent_id': validation.nullable(parameter_types.id_string),
-    'name': _name_properties,
+    'name': _project_name_properties,
     'tags': _project_tags_list_properties,
     'options': ro.PROJECT_OPTIONS_REGISTRY.json_schema,
 }
@@ -76,10 +76,17 @@ project_update = {
     'additionalProperties': True,
 }
 
+_domain_name_properties = {
+    'type': 'string',
+    'minLength': 1,
+    'maxLength': 64,
+    'pattern': r'[\S]+',
+}
+
 _domain_properties = {
     'description': validation.nullable(parameter_types.description),
     'enabled': parameter_types.boolean,
-    'name': _name_properties,
+    'name': _domain_name_properties,
     'tags': project_tags_update,
 }
 
