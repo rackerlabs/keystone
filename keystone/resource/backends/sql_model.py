@@ -66,7 +66,7 @@ class Project(sql.ModelBase, sql.ModelDictMixinWithExtras):
     ]
     resource_options_registry = ro.PROJECT_OPTIONS_REGISTRY
     id = sql.Column(sql.String(64), primary_key=True)
-    name = sql.Column(sql.String(64), nullable=False)
+    name = sql.Column(sql.String(96), nullable=False)
     domain_id = sql.Column(
         sql.String(64), sql.ForeignKey('project.id'), nullable=False
     )
