@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b73830cf_7be8fee0",
+        "filename": "keystone/api/os_ep_filter.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-09-23T16:10:50Z",
+      "side": 1,
+      "message": "`endpoint_` is treated by sphinx as link (which is logically missing). Please correct this typo.",
+      "revId": "7ce059ae2a1536b48678931ed76995cec85fa631",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
