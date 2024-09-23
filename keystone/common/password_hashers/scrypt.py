@@ -30,7 +30,7 @@ class Scrypt(password_hashers.PasswordHasher):
     def hash(
         password: bytes,
         salt_size: int = 16,
-        n: int = 2**16,
+        n: int = 16,
         r: int = 8,
         p: int = 1,
         **kwargs,
@@ -49,7 +49,7 @@ class Scrypt(password_hashers.PasswordHasher):
         """
         salt: bytes = os.urandom(salt_size)
         # Prepare the kdf function
-        kdf = Scrypt_kdf(salt=salt, length=32, n=n, r=r, p=p)
+        kdf = Scrypt_kdf(salt=salt, length=32, n=2**n, r=r, p=p)
         # derive - build a digest
         digest = kdf.derive(password)
         # convert digest to string using stripped base64
