@@ -23,13 +23,13 @@ from oslo_log import log
 from oslo_policy import _checks as op_checks
 
 from keystone.api._shared import json_home_relations
+from keystone.api import validation
 from keystone.common import context
 from keystone.common import json_home
 from keystone.common import provider_api
 from keystone.common import rbac_enforcer
 from keystone.common.rbac_enforcer import policy
 from keystone.common import utils
-from keystone.common import validation
 from keystone import exception
 from keystone.i18n import _
 from keystone.server import flask as ks_flask
@@ -100,7 +100,7 @@ def _normalize_trust_roles(trust):
     }
 
 
-class TrustResource(ks_flask.ResourceBase):
+class TrustsResource(ks_flask.ResourceBase):
     collection_key = 'trusts'
     member_key = 'trust'
     api_prefix = '/OS-TRUST'
@@ -285,21 +285,26 @@ class TrustResource(ks_flask.ResourceBase):
 
         return self.wrap_collection(trusts)
 
-    def get(self, trust_id=None):
-        """Dispatch for GET/HEAD or LIST trusts."""
-        if trust_id is not None:
-            return self._get_trust(trust_id=trust_id)
-        else:
-            return self._list_trusts()
+    @validation.request_query_schema(schema.trust_index_request_query)
+    @validation.response_body_schema(schema.trust_index_response_body)
+    def get(self):
+        """Dispatch for LIST trusts.
 
+        GET /v3/OS-TRUST/trusts
+        """
+        return self._list_trusts()
+
+    @validation.request_body_schema(schema.trust_create_request_body)
+    @validation.response_body_schema(schema.trust_create_response_body)
     def post(self):
         """Create a new trust.
 
         The User creating the trust must be the trustor.
+
+        POST /v3/OS-TRUST/trusts
         """
         ENFORCER.enforce_call(action='identity:create_trust')
         trust = self.request_body_json.get('trust', {})
-        validation.lazy_validate(schema.trust_create, trust)
         self._check_unrestricted()
 
         if trust.get('project_id') and not trust.get('roles'):
@@ -332,7 +337,25 @@ class TrustResource(ks_flask.ResourceBase):
         _normalize_trust_roles(return_trust)
         return self.wrap_member(return_trust), http.client.CREATED
 
+
+class TrustResource(ks_flask.ResourceBase):
+    collection_key = 'trusts'
+    member_key = 'trust'
+
+    @validation.request_query_schema(schema.trust_index_request_query)
+    @validation.response_body_schema(schema.trust_index_response_body)
+    def get(self, trust_id=None):
+        """Get trust.
+
+        GET /v3/OS-TRUST/trusts/{trust_id}
+        """
+        return self._get_trust(trust_id=trust_id)
+
     def delete(self, trust_id):
+        """Delete trust.
+
+        DELETE /v3/OS-TRUST/trusts/{trust_id}
+        """
         ENFORCER.enforce_call(
             action='identity:delete_trust',
             build_target=_build_trust_target_enforcement,
