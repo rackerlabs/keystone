@@ -23,13 +23,14 @@ from oslo_log import log
 from oslo_policy import _checks as op_checks
 
 from keystone.api._shared import json_home_relations
+from keystone.api import validation
 from keystone.common import context
 from keystone.common import json_home
 from keystone.common import provider_api
 from keystone.common import rbac_enforcer
 from keystone.common.rbac_enforcer import policy
 from keystone.common import utils
-from keystone.common import validation
+from keystone.common import validation as ks_validation
 from keystone import exception
 from keystone.i18n import _
 from keystone.server import flask as ks_flask
@@ -285,21 +286,30 @@ class TrustResource(ks_flask.ResourceBase):
 
         return self.wrap_collection(trusts)
 
+    @validation.request_query_schema(schema.trust_index_request_query)
+    @validation.response_body_schema(schema.trust_index_response_body)
     def get(self, trust_id=None):
-        """Dispatch for GET/HEAD or LIST trusts."""
+        """Dispatch for GET/HEAD or LIST trusts.
+
+        GET /v3/OS-TRUST/trusts
+        """
         if trust_id is not None:
             return self._get_trust(trust_id=trust_id)
         else:
             return self._list_trusts()
 
+    @validation.request_body_schema(schema.trust_create_request_body)
+    @validation.response_body_schema(schema.trust_response_body)
     def post(self):
         """Create a new trust.
 
         The User creating the trust must be the trustor.
+
+        POST /v3/OS-TRUST/trusts
         """
         ENFORCER.enforce_call(action='identity:create_trust')
         trust = self.request_body_json.get('trust', {})
-        validation.lazy_validate(schema.trust_create, trust)
+        ks_validation.lazy_validate(schema.trust_create, trust)
         self._check_unrestricted()
 
         if trust.get('project_id') and not trust.get('roles'):
