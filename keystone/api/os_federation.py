@@ -21,10 +21,11 @@ from oslo_serialization import jsonutils
 
 from keystone.api._shared import authentication
 from keystone.api._shared import json_home_relations
+from keystone.api import validation
 from keystone.common import provider_api
 from keystone.common import rbac_enforcer
 from keystone.common import render_token
-from keystone.common import validation
+from keystone.common import validation as ks_validation
 import keystone.conf
 from keystone import exception
 from keystone.federation import schema
@@ -104,6 +105,12 @@ class IdentityProvidersResource(_ResourceBase):
         for name in ['protocols']:
             ref['links'][name] = '/'.join([base_path, name])
 
+    @validation.request_query_schema(
+        schema.identity_provider_index_request_query
+    )
+    @validation.response_body_schema(
+        schema.identity_provider_index_response_body
+    )
     def get(self, idp_id=None):
         if idp_id is not None:
             return self._get_idp(idp_id)
@@ -136,6 +143,10 @@ class IdentityProvidersResource(_ResourceBase):
             self._add_related_links(r)
         return collection
 
+    @validation.request_body_schema(
+        schema.identity_provider_create_request_body
+    )
+    @validation.response_body_schema(schema.identity_provider_response_body)
     def put(self, idp_id):
         """Create an idp resource for federated authentication.
 
@@ -143,16 +154,18 @@ class IdentityProvidersResource(_ResourceBase):
         """
         ENFORCER.enforce_call(action='identity:create_identity_provider')
         idp = self.request_body_json.get('identity_provider', {})
-        validation.lazy_validate(schema.identity_provider_create, idp)
         idp = self._normalize_dict(idp)
         idp.setdefault('enabled', False)
         idp_ref = PROVIDERS.federation_api.create_idp(idp_id, idp)
         return self.wrap_member(idp_ref), http.client.CREATED
 
+    @validation.request_body_schema(
+        schema.identity_provider_update_request_body
+    )
+    @validation.response_body_schema(schema.identity_provider_response_body)
     def patch(self, idp_id):
         ENFORCER.enforce_call(action='identity:update_identity_provider')
         idp = self.request_body_json.get('identity_provider', {})
-        validation.lazy_validate(schema.identity_provider_update, idp)
         idp = self._normalize_dict(idp)
         idp_ref = PROVIDERS.federation_api.update_idp(idp_id, idp)
         return self.wrap_member(idp_ref)
@@ -223,7 +236,7 @@ class IDPProtocolsCRUDResource(_IdentityProvidersProtocolsResourceBase):
         """
         ENFORCER.enforce_call(action='identity:create_protocol')
         protocol = self.request_body_json.get('protocol', {})
-        validation.lazy_validate(schema.protocol_create, protocol)
+        ks_validation.lazy_validate(schema.protocol_create, protocol)
         protocol = self._normalize_dict(protocol)
         ref = PROVIDERS.federation_api.create_protocol(
             idp_id, protocol_id, protocol
@@ -238,7 +251,7 @@ class IDPProtocolsCRUDResource(_IdentityProvidersProtocolsResourceBase):
         """
         ENFORCER.enforce_call(action='identity:update_protocol')
         protocol = self.request_body_json.get('protocol', {})
-        validation.lazy_validate(schema.protocol_update, protocol)
+        ks_validation.lazy_validate(schema.protocol_update, protocol)
         ref = PROVIDERS.federation_api.update_protocol(
             idp_id, protocol_id, protocol
         )
@@ -399,7 +412,7 @@ class ServiceProvidersResource(_ResourceBase):
         """
         ENFORCER.enforce_call(action='identity:create_service_provider')
         sp = self.request_body_json.get('service_provider', {})
-        validation.lazy_validate(schema.service_provider_create, sp)
+        ks_validation.lazy_validate(schema.service_provider_create, sp)
         sp = self._normalize_dict(sp)
         sp.setdefault('enabled', False)
         sp.setdefault('relay_state_prefix', CONF.saml.relay_state_prefix)
@@ -413,7 +426,7 @@ class ServiceProvidersResource(_ResourceBase):
         """
         ENFORCER.enforce_call(action='identity:update_service_provider')
         sp = self.request_body_json.get('service_provider', {})
-        validation.lazy_validate(schema.service_provider_update, sp)
+        ks_validation.lazy_validate(schema.service_provider_update, sp)
         sp = self._normalize_dict(sp)
         sp_ref = PROVIDERS.federation_api.update_sp(sp_id, sp)
         return self.wrap_member(sp_ref)
