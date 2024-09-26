@@ -124,8 +124,10 @@ MAPPING_ID_PARAM_RELATION = json_home.build_v3_extension_parameter_relation(
     'OS-FEDERATION', '1.0', 'mapping_id'
 )
 
-SP_ID_PARAMETER_RELATION = json_home.build_v3_extension_parameter_relation(
-    'OS-FEDERATION', '1.0', 'sp_id'
+SERVICE_PROVIDER_ID_PARAMETER_RELATION = (
+    json_home.build_v3_extension_parameter_relation(
+        'OS-FEDERATION', '1.0', 'service_provider_id'
+    )
 )
 
 CONSUMER_ID_PARAMETER_RELATION = (
@@ -506,9 +508,9 @@ V3_JSON_HOME_RESOURCES = {
         },
     },
     _build_federation_rel(resource_name='service_provider'): {
-        'href-template': '/OS-FEDERATION/service_providers/{sp_id}',
+        'href-template': '/OS-FEDERATION/service_providers/{service_provider_id}',
         'href-vars': {
-            'sp_id': SP_ID_PARAMETER_RELATION,
+            'service_provider_id': SERVICE_PROVIDER_ID_PARAMETER_RELATION,
         },
     },
     _build_federation_rel(resource_name='mapping'): {
