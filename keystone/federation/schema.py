@@ -10,6 +10,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from typing import Any
+
+from keystone.api.validation import response_types
 from keystone.common import validation
 from keystone.common.validation import parameter_types
 
@@ -46,27 +49,102 @@ saml_create = {
 _service_provider_properties = {
     # NOTE(rodrigods): The database accepts URLs with 256 as max length,
     # but parameter_types.url uses 225 as max length.
-    'auth_url': parameter_types.url,
-    'sp_url': parameter_types.url,
-    'description': validation.nullable(parameter_types.description),
-    'enabled': parameter_types.boolean,
-    'relay_state_prefix': validation.nullable(parameter_types.description),
+    "auth_url": {
+        "type": "string",
+        "description": "The URL to authenticate against",
+        "minLength": 0,
+        "maxLength": 225,
+        "pattern": "^[a-zA-Z0-9+.-]+:.+",
+    },
+    "sp_url": {
+        "type": "string",
+        "description": "The service provider's URL",
+        "minLength": 0,
+        "maxLength": 225,
+        "pattern": "^[a-zA-Z0-9+.-]+:.+",
+    },
+    "description": {
+        "type": "string",
+        "description": "The description of the service provider",
+    },
+    "enabled": {
+        "type": "boolean",
+        "description": "Whether the service provider is enabled or not",
+    },
+    "relay_state_prefix": {
+        "type": "string",
+        "description": "The prefix of the RelayState SAML attribute",
+    },
 }
 
-service_provider_create = {
-    'type': 'object',
-    'properties': _service_provider_properties,
-    # NOTE(rodrigods): 'id' is not required since it is passed in the URL
-    'required': ['auth_url', 'sp_url'],
-    'additionalProperties': False,
+service_provider_schema: dict[str, Any] = {
+    "type": "object",
+    "description": "A service provider object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "readOnly": True,
+            "description": "The service provider ID",
+        },
+        "links": response_types.resource_links,
+        **_service_provider_properties,
+    },
+    "additionalProperties": True,
 }
 
-service_provider_update = {
-    'type': 'object',
-    'properties': _service_provider_properties,
-    # Make sure at least one property is being updated
-    'minProperties': 1,
-    'additionalProperties': False,
+service_provider_index_request_query: dict[str, Any] = {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": True,
+}
+
+service_provider_index_response_body: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "service_providers": {
+            "type": "array",
+            "items": service_provider_schema,
+            "description": "A list of service provider objects",
+        },
+        "links": response_types.links,
+    },
+    "additionalProperties": True,
+}
+
+service_provider_response_body: dict[str, Any] = {
+    "type": "object",
+    "description": "A service provider object",
+    "properties": {"service_provider": service_provider_schema},
+    "additionalProperties": False,
+}
+
+service_provider_create_request_body: dict[str, Any] = {
+    "type": "object",
+    "description": "A service provider object",
+    "properties": {
+        "service_provider": {
+            "type": "object",
+            "properties": _service_provider_properties,
+            "required": ["auth_url", "sp_url"],
+            "additionalProperties": False,
+        }
+    },
+    "additionalProperties": False,
+}
+
+service_provider_update_request_body: dict[str, Any] = {
+    "type": "object",
+    "description": "A service provider object",
+    "properties": {
+        # NOTE(rodrigods): 'id' is not required since it is passed in the URL
+        "service_provider": {
+            "type": "object",
+            "properties": _service_provider_properties,
+            "additionalProperties": False,
+            "minProperties": 1,
+        },
+    },
+    "required": ["service_provider"],
 }
 
 _identity_provider_properties_create = {
