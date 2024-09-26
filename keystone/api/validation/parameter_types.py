@@ -67,3 +67,10 @@ tags: dict[str, Any] = {
         }
     },
 }
+
+url: dict[str, Any] = {
+    "type": "string",
+    "minLength": 0,
+    "maxLength": 225,
+    "pattern": "^[a-zA-Z0-9+.-]+:.+",
+}
