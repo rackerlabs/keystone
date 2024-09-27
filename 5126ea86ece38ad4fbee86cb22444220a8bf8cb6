@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "61ac65cb_9f505a08",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-09-27T14:39:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3426421c_9581656e",
+      "revId": "5126ea86ece38ad4fbee86cb22444220a8bf8cb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d0039724_c8becc1f",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-09-27T14:28:50Z",
       "side": 1,
       "message": "please add under the region_id to signal to the codegenerator that this field was deprecated in ...\n```\nx-openstack:\n  max-ver: 3.2\n```",
+      "revId": "5126ea86ece38ad4fbee86cb22444220a8bf8cb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "efc75859_3cc3cc1e",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-09-27T14:39:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d0039724_c8becc1f",
       "revId": "5126ea86ece38ad4fbee86cb22444220a8bf8cb6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
@@ -52,6 +88,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7272bb7_dfaea185",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-09-27T14:39:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7d177fbc_413af1cc",
+      "revId": "5126ea86ece38ad4fbee86cb22444220a8bf8cb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9d199ac7_b90eaa08",
@@ -69,6 +123,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5dae81be_bd9d8369",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-09-27T14:39:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9d199ac7_b90eaa08",
+      "revId": "5126ea86ece38ad4fbee86cb22444220a8bf8cb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "91c54664_5e64f327",
@@ -82,6 +154,24 @@
       "writtenOn": "2024-09-27T14:28:50Z",
       "side": 1,
       "message": "additionaProperties: false is missing",
+      "revId": "5126ea86ece38ad4fbee86cb22444220a8bf8cb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e45d0bd3_c35a2454",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-09-27T14:39:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91c54664_5e64f327",
       "revId": "5126ea86ece38ad4fbee86cb22444220a8bf8cb6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
