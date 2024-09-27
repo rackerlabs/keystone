@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdf552e9_15216c2e",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-09-27T15:39:37Z",
+      "side": 1,
+      "message": "the property is named `filters`",
+      "revId": "334cf96155c7e79ce61d7eae3c9d09a195890c55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
