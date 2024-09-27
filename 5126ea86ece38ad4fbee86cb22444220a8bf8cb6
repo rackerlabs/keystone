@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3426421c_9581656e",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-09-27T14:28:50Z",
+      "side": 1,
+      "message": "please add under the region_id to signal to the codegenerator that this field was added in ...\n```\nx-openstack:\n  min-ver: 3.2\n```",
+      "revId": "5126ea86ece38ad4fbee86cb22444220a8bf8cb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0039724_c8becc1f",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-09-27T14:28:50Z",
+      "side": 1,
+      "message": "please add under the region_id to signal to the codegenerator that this field was deprecated in ...\n```\nx-openstack:\n  max-ver: 3.2\n```",
+      "revId": "5126ea86ece38ad4fbee86cb22444220a8bf8cb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d177fbc_413af1cc",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-09-27T14:28:50Z",
+      "side": 1,
+      "message": "Endpoint listing supports few query params: https://docs.openstack.org/api-ref/identity/v3/index.html#id711\nWith that please also make additionalProperties: false to forbid all unknown QP",
+      "revId": "5126ea86ece38ad4fbee86cb22444220a8bf8cb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d199ac7_b90eaa08",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-09-27T14:28:50Z",
+      "side": 1,
+      "message": "let\u0027s do additionalProperties: false here and add `truncated` as in https://review.opendev.org/c/openstack/keystone/+/923324. We should be very preciese what can come in the \"envelope\"",
+      "revId": "5126ea86ece38ad4fbee86cb22444220a8bf8cb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91c54664_5e64f327",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-09-27T14:28:50Z",
+      "side": 1,
+      "message": "additionaProperties: false is missing",
+      "revId": "5126ea86ece38ad4fbee86cb22444220a8bf8cb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
