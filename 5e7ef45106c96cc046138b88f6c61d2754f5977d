@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7db2969e_84113d17",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2024-09-27T14:29:20Z",
+      "side": 1,
+      "message": "s/Create new/Retrieve existing/",
+      "range": {
+        "startLine": 232,
+        "startChar": 11,
+        "endLine": 232,
+        "endChar": 21
+      },
+      "revId": "5e7ef45106c96cc046138b88f6c61d2754f5977d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
