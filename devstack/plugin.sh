@@ -72,9 +72,8 @@ elif [[ "$1" == "stack" && "$2" == "test-config" ]]; then
         configure_tests_settings
     fi
     if [[ "$(trueorfalse False KEYSTONE_ENFORCE_SCOPE)" == "True" ]] ; then
-        # devstack and tempest assume enforce_scope is false, so need to wait
+        # tempest assumes enforce_scope is false, so need to wait
         # until the final phase to turn it on
-        configure_enforce_scope
         configure_protection_tests
     fi
 fi
