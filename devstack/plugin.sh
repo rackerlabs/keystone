@@ -21,8 +21,6 @@ elif is_service_enabled keystone-oidc-federation; then
     source $KEYSTONE_PLUGIN/lib/oidc.sh
 fi
 
-source $KEYSTONE_PLUGIN/lib/scope.sh
-
 # For more information on Devstack plugins, including a more detailed
 # explanation on when the different steps are executed please see:
 # https://docs.openstack.org/devstack/latest/plugins.html
@@ -70,11 +68,6 @@ elif [[ "$1" == "stack" && "$2" == "test-config" ]]; then
     elif is_service_enabled keystone-oidc-federation; then
         echo "config tests settings for oidc"
         configure_tests_settings
-    fi
-    if [[ "$(trueorfalse False KEYSTONE_ENFORCE_SCOPE)" == "True" ]] ; then
-        # tempest assumes enforce_scope is false, so need to wait
-        # until the final phase to turn it on
-        configure_protection_tests
     fi
 fi
 
