@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "51fe290e_0a5031f3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5890
+      },
+      "writtenOn": "2024-09-30T22:18:34Z",
+      "side": 1,
+      "message": "gtema: I wanted to continue the convo on the patch.",
+      "revId": "5e7d3dc12b23b26102060146f599d101a7e3a933",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
