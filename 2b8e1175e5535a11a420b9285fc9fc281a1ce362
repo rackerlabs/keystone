@@ -16,6 +16,24 @@
       "message": "There should be unit tests for this. Without unit tests it will get broken again and nobody will notice until the next upgrade.",
       "revId": "2b8e1175e5535a11a420b9285fc9fc281a1ce362",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6670d559_e1b7dda5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2024-10-02T16:51:11Z",
+      "side": 1,
+      "message": "While I do agree, at the moment there\u0027re just no tests around upgrades at all. So I\u0027m kind of on the fence time wise, since it\u0027s not actually about adding a specific test case, but covering whole migrations with tests kinda.\n\nAnd I\u0027m not able to justify spent time on that activity right now.",
+      "parentUuid": "0ac0ec7d_6a56ec72",
+      "revId": "2b8e1175e5535a11a420b9285fc9fc281a1ce362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
