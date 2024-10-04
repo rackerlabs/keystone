@@ -17,10 +17,10 @@ import http.client
 import flask
 import flask_restful
 
+from keystone.api import validation
 from keystone.common import json_home
 from keystone.common import provider_api
 from keystone.common import rbac_enforcer
-from keystone.common import validation
 from keystone import exception
 from keystone.limit import schema
 from keystone.server import flask as ks_flask
@@ -58,7 +58,9 @@ class LimitsResource(ks_flask.ResourceBase):
         api='unified_limit_api', method='get_limit'
     )
 
-    def _list_limits(self):
+    @validation.request_query_schema(schema.limits_index_request_query)
+    @validation.response_body_schema(schema.limits_index_response_body)
+    def get(self):
         filters = [
             'service_id',
             'region_id',
@@ -95,7 +97,18 @@ class LimitsResource(ks_flask.ResourceBase):
 
         return self.wrap_collection(filtered_refs, hints=hints)
 
-    def _get_limit(self, limit_id):
+
+class LimitResource(ks_flask.ResourceBase):
+    collection_key = 'limits'
+    member_key = 'limit'
+    json_home_resource_status = json_home.Status.EXPERIMENTAL
+    get_member_from_driver = PROVIDERS.deferred_provider_lookup(
+        api='unified_limit_api', method='get_limit'
+    )
+
+    @validation.request_body_schema(None)
+    @validation.response_body_schema(schema.limit_show_response_body)
+    def get(self, limit_id):
         ENFORCER.enforce_call(
             action='identity:get_limit',
             build_target=_build_limit_enforcement_target,
@@ -103,17 +116,13 @@ class LimitsResource(ks_flask.ResourceBase):
         ref = PROVIDERS.unified_limit_api.get_limit(limit_id)
         return self.wrap_member(ref)
 
-    def get(self, limit_id=None):
-        if limit_id is not None:
-            return self._get_limit(limit_id)
-        return self._list_limits()
-
+    @validation.request_body_schema(schema.limits_create_request_body)
+    @validation.response_body_schema(schema.limits_create_response_body)
     def post(self):
         ENFORCER.enforce_call(action='identity:create_limits')
         limits_b = (flask.request.get_json(silent=True, force=True) or {}).get(
             'limits', {}
         )
-        validation.lazy_validate(schema.limit_create, limits_b)
         limits = [
             self._assign_unique_id(self._normalize_dict(limit))
             for limit in limits_b
@@ -123,16 +132,19 @@ class LimitsResource(ks_flask.ResourceBase):
         refs.pop('links')
         return refs, http.client.CREATED
 
+    @validation.request_body_schema(schema.limit_update_request_body)
+    @validation.response_body_schema(schema.limit_show_response_body)
     def patch(self, limit_id):
         ENFORCER.enforce_call(action='identity:update_limit')
         limit = (flask.request.get_json(silent=True, force=True) or {}).get(
             'limit', {}
         )
-        validation.lazy_validate(schema.limit_update, limit)
         self._require_matching_id(limit)
         ref = PROVIDERS.unified_limit_api.update_limit(limit_id, limit)
         return self.wrap_member(ref)
 
+    @validation.request_body_schema(None)
+    @validation.response_body_schema(None)
     def delete(self, limit_id):
         ENFORCER.enforce_call(action='identity:delete_limit')
         return (
@@ -142,6 +154,8 @@ class LimitsResource(ks_flask.ResourceBase):
 
 
 class LimitModelResource(flask_restful.Resource):
+    @validation.request_body_schema(None)
+    @validation.response_body_schema(schema.limit_model_show_response_body)
     def get(self):
         ENFORCER.enforce_call(action='identity:get_limit_model')
         model = PROVIDERS.unified_limit_api.get_model()
@@ -151,15 +165,30 @@ class LimitModelResource(flask_restful.Resource):
 class LimitsAPI(ks_flask.APIBase):
     _name = 'limits'
     _import_name = __name__
-    resources = [LimitsResource]
     resource_mapping = [
+        ks_flask.construct_resource_map(
+            resource=LimitsResource,
+            url='/limits',
+            resource_kwargs={},
+            rel="limits",
+            path_vars=None,
+        ),
+        ks_flask.construct_resource_map(
+            resource=LimitResource,
+            url='/limits/<string:limit_id>',
+            resource_kwargs={},
+            rel="limit",
+            path_vars={
+                'limit_id': json_home.build_v3_parameter_relation("limit_id")
+            },
+        ),
         ks_flask.construct_resource_map(
             resource=LimitModelResource,
             resource_kwargs={},
             url='/limits/model',
             rel='limit_model',
             status=json_home.Status.EXPERIMENTAL,
-        )
+        ),
     ]
 
 
