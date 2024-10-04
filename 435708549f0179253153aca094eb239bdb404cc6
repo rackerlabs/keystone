@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b812fc2e_1fac4a68",
+        "filename": "keystone/api/os_ep_filter.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-04T10:02:19Z",
+      "side": 1,
+      "message": "neah, we need to split the controller same as done for credentials. It is impossible to differentiate request/body for a combined operation (and this method is invoked for both list and get)",
+      "revId": "435708549f0179253153aca094eb239bdb404cc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
