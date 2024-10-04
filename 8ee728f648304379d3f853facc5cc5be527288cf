@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a7b5d7c_56b67bdf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-04T16:48:18Z",
+      "side": 1,
+      "message": "I was unable to use `keystone/api/parameter_types`:\n\n- The `url` attribute does not exist\n- The `description` attribute does not exist\n- The `boolean` attribute now accepts a boolean and string, and thus causes a test to fail (see comment under `keystone/tests/unit/test_validation`\n\nShould I add these attributes and change the test? Or keep it as is? I\u0027m assuming changing the test is out of our scope, not sure about adding the attributes to `keystone/api/parameter_types`.",
+      "revId": "8ee728f648304379d3f853facc5cc5be527288cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9e2d42a_d51c75cf",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2182,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-04T16:48:18Z",
+      "side": 1,
+      "message": "This test will fail with `keystone/api/parameter_types.boolean` due to the invalid enabled formats \"True\" and \"False\" being valid. (The boolean declared in `keystone/api` is of type boolean *and* string).",
+      "revId": "8ee728f648304379d3f853facc5cc5be527288cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
