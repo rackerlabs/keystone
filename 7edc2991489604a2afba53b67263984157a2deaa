@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e44f4181_dea39cac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2024-10-04T14:33:28Z",
+      "side": 1,
+      "message": "https://review.opendev.org/c/openstack/requirements/+/921873 - This is the patch for master.",
+      "parentUuid": "fb2d8900_c527d76e",
+      "revId": "7edc2991489604a2afba53b67263984157a2deaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19df430a_acd5eaf8",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-10-04T14:20:06Z",
       "side": 1,
       "message": "I think we can also remove the dependency on this version of bcrypt",
+      "revId": "7edc2991489604a2afba53b67263984157a2deaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71376076_82f0a497",
+        "filename": "requirements.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2024-10-04T14:33:28Z",
+      "side": 1,
+      "message": "This is a lower constraint, we can probably leave this as is and remove/adjust the pin in upstream requirements.",
+      "parentUuid": "19df430a_acd5eaf8",
       "revId": "7edc2991489604a2afba53b67263984157a2deaa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
