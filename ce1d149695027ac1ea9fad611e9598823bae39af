@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "062f5de8_a70f1d87",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-04T15:36:26Z",
+      "side": 1,
+      "message": "after you fix the links you\u0027ll see this one starting to fail. Reason is that it is an optional parameter which may be included in the output being \"null\" - known stuff as with some other params.",
+      "revId": "ce1d149695027ac1ea9fad611e9598823bae39af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81734093_0d884c7d",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-04T15:36:26Z",
+      "side": 1,
+      "message": "links of the IDP return additional field \"protocols\" - see example under https://docs.openstack.org/api-ref/identity/v3-ext/#list-identity-providers I suggest you create here a local param_type links which extends the `{**response_types.links, \"protocols\": {\"type\":\"string\"}`",
+      "revId": "ce1d149695027ac1ea9fad611e9598823bae39af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
