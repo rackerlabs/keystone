@@ -34,6 +34,24 @@
       "parentUuid": "0ac0ec7d_6a56ec72",
       "revId": "2b8e1175e5535a11a420b9285fc9fc281a1ce362",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85e94a61_d1eb119d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2024-10-04T22:01:03Z",
+      "side": 1,
+      "message": "I\u0027d suggest adding a tests with a follow-up, as Keystone DB sync check is pretty much broken for a while, which is nasty...\n\nWith that I will try to find some time soonish for creating some testing around this as a follow-up.",
+      "parentUuid": "6670d559_e1b7dda5",
+      "revId": "2b8e1175e5535a11a420b9285fc9fc281a1ce362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
