@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19df430a_acd5eaf8",
+        "filename": "requirements.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2024-10-04T14:20:06Z",
+      "side": 1,
+      "message": "I think we can also remove the dependency on this version of bcrypt",
+      "revId": "7edc2991489604a2afba53b67263984157a2deaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
