@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee898f2c_2780b337",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2024-10-04T15:29:20Z",
+      "side": 1,
+      "message": "The failure in the tests is as a result of removing the `nullable` wrapper. If you revert this, the tests should look much happier.",
+      "revId": "515ec1b4625a452d15d4b49133b923ebb8094d42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

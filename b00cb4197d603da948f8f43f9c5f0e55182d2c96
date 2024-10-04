@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "676c71a7_640acd3d",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2024-10-04T15:29:20Z",
+      "side": 0,
+      "message": "As discussed in the meeting today, you don\u0027t want to get rid of these. Rather, we should copy (or move, if there are no other references) these variables from `keystone/common/validation/parameter_types.py` to `keystone/api/validation/parameter_types.py` and use them instead.",
+      "revId": "b00cb4197d603da948f8f43f9c5f0e55182d2c96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
