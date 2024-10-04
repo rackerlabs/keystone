@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb2d8900_c527d76e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2024-10-04T14:21:16Z",
+      "side": 1,
+      "message": "Once this merges we can also undo what was done here: https://review.opendev.org/c/openstack/requirements/+/928092",
+      "revId": "7edc2991489604a2afba53b67263984157a2deaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19df430a_acd5eaf8",
