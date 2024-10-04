@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c180e53_fc89319d",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-04T10:03:32Z",
+      "side": 1,
+      "message": "and here you need to split the controller",
+      "revId": "ada3965ec4b5ab67e1c44cbdb67fbf80f9d8798e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
