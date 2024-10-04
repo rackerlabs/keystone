@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a5cc440_0665de69",
+        "filename": "keystone/api/endpoints.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-04T10:03:06Z",
+      "side": 1,
+      "message": "also here you need to split controller into 2 for one with ENDPOINT_ID and one without",
+      "revId": "3da7286e3fd6803f21b3dd838c9b2868f8607afd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
