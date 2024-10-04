@@ -20,6 +20,7 @@ name: dict[str, Any] = {
     "minLength": 1,
     "maxLength": 255,
     "pattern": r"[\S]+",
+    "description": "The resource name.",
 }
 
 boolean = {
@@ -36,12 +37,35 @@ boolean = {
     ],
 }
 
-
-domain_id: dict[str, str] = {
+description: dict[str, Any] = {
     "type": "string",
+    "description": "The resource description.",
+}
+
+domain_id: dict[str, Any] = {
+    "type": "string",
+    "minLength": 1,
+    "maxLength": 64,
+    "pattern": r"^[a-zA-Z0-9-]+$",
+    "description": "The ID of the domain.",
+}
+
+project_id: dict[str, Any] = {
+    "type": "string",
+    "minLength": 1,
+    "maxLength": 64,
+    "pattern": r"^[a-zA-Z0-9-]+$",
+    "description": "The ID of the project.",
 }
 
 parent_id: dict[str, str] = {"type": "string", "format": "uuid"}
+
+region_id: dict[str, Any] = {
+    "type": ["string", "null"],
+    "minLength": 1,
+    "maxLength": 255,
+    "description": "The ID of the region.",
+}
 
 _tag_name_property = {
     "type": "string",
@@ -51,7 +75,7 @@ _tag_name_property = {
     # guidelines as set by the API-WG, which matches anything that
     # does not contain a '/' or ','.
     # https://specs.openstack.org/openstack/api-wg/guidelines/tags.html
-    "pattern": "^[^,/]*$",
+    "pattern": r"^[^,/]*$",
 }
 
 tags: dict[str, Any] = {
