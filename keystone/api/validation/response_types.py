@@ -16,6 +16,7 @@ from typing import Any
 # Common schema for resource `link` attribute
 links: dict[str, Any] = {
     "type": "object",
+    "description": "Links for the collection of resources.",
     "properties": {
         "next": {"type": ["string", "null"], "format": "uri"},
         "previous": {"type": ["string", "null"], "format": "uri"},
@@ -23,13 +24,16 @@ links: dict[str, Any] = {
     },
     "required": ["self"],
     "additionalProperties": False,
+    "readOnly": True,
 }
 
 # Resource `links` attribute schema
 resource_links: dict[str, Any] = {
     "type": "object",
+    "description": "The link to the resource in question.",
     "properties": {"self": {"type": "string", "format": "uri"}},
     "additionalProperties": False,
+    "readOnly": True,
 }
 
 truncated: dict[str, Any] = {
