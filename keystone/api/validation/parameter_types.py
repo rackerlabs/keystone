@@ -36,9 +36,24 @@ boolean = {
     ],
 }
 
-
-domain_id: dict[str, str] = {
+# FIXME(0weng): I found the extra restrictions (min/maxLength and pattern)
+# from id_string in keystone.common.validation.parameter_types,
+# which is what was originally used - should the restrictions be kept here
+# since I'm trying to migrate things away from using that?
+domain_id: dict[str, Any] = {
     "type": "string",
+    "minLength": 1,
+    "maxLength": 64,
+    "pattern": r"^[a-zA-Z0-9-]+$",
+    "description": "The ID of the domain.",
+}
+
+project_id: dict[str, Any] = {
+    "type": "string",
+    "minLength": 1,
+    "maxLength": 64,
+    "pattern": r"^[a-zA-Z0-9-]+$",
+    "description": "The ID of the project.",
 }
 
 parent_id: dict[str, str] = {"type": "string", "format": "uuid"}
@@ -51,7 +66,7 @@ _tag_name_property = {
     # guidelines as set by the API-WG, which matches anything that
     # does not contain a '/' or ','.
     # https://specs.openstack.org/openstack/api-wg/guidelines/tags.html
-    "pattern": "^[^,/]*$",
+    "pattern": r"^[^,/]*$",
 }
 
 tags: dict[str, Any] = {
