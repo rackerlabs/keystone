@@ -211,6 +211,8 @@
             irrelevant-files: *tempest-irrelevant-files
         # FIXME(dmendiza): temporarily disabling protection job
         # - keystone-protection-functional:
+        - keystone-dsvm-functional-oidc-federation:
+            irrelevant-files: *irrelevant-files
     gate:
       jobs:
         - keystone-dsvm-py3-functional:
@@ -234,5 +236,3 @@
             irrelevant-files: *irrelevant-files
         - tempest-pg-full:
             irrelevant-files: *tempest-irrelevant-files
-        - keystone-dsvm-functional-oidc-federation:
-            irrelevant-files: *irrelevant-files
