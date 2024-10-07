@@ -47,7 +47,7 @@
     nodeset: devstack-single-node-opensuse-15
     vars:
       devstack_localrc:
-        TEMPEST_PLUGINS: '/opt/stack/keystone-tempest-plugin'
+        TEMPEST_PLUGINS: "/opt/stack/keystone-tempest-plugin"
       devstack_services:
         keystone-saml2-federation: true
         tls-proxy: false
@@ -62,7 +62,7 @@
     parent: keystone-dsvm-functional-federation-opensuse15
     vars:
       devstack_localrc:
-        TEMPEST_PLUGINS: '/opt/stack/keystone-tempest-plugin'
+        TEMPEST_PLUGINS: "/opt/stack/keystone-tempest-plugin"
         USE_PYTHON3: True
       zuul_copy_output:
         /etc/shibboleth: logs
@@ -211,6 +211,8 @@
             irrelevant-files: *tempest-irrelevant-files
         # FIXME(dmendiza): temporarily disabling protection job
         # - keystone-protection-functional:
+        - keystone-dsvm-functional-oidc-federation:
+            irrelevant-files: *irrelevant-files
     gate:
       jobs:
         - keystone-dsvm-py3-functional:
@@ -234,5 +236,3 @@
             irrelevant-files: *irrelevant-files
         - tempest-pg-full:
             irrelevant-files: *tempest-irrelevant-files
-        - keystone-dsvm-functional-oidc-federation:
-            irrelevant-files: *irrelevant-files
