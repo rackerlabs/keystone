@@ -34,6 +34,23 @@
       "parentUuid": "c01ba543_bbc7283a",
       "revId": "624a872fc232ebcbd84401a6f4a992bbbedaf519",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4862d600_ce1a5c11",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2024-10-09T15:34:29Z",
+      "side": 1,
+      "message": "Also, as an aside, if you\u0027d kept application of the upgrade (`U`) rules to a separate change, this would probably be much smaller...",
+      "revId": "624a872fc232ebcbd84401a6f4a992bbbedaf519",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
