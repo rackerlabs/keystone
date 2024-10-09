@@ -16,6 +16,24 @@
       "message": "Did you forget the `pyproject.toml`/`ruff.toml` file?",
       "revId": "624a872fc232ebcbd84401a6f4a992bbbedaf519",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e267a5d9_34ed0a43",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-09T15:34:23Z",
+      "side": 1,
+      "message": "nope, it;s in the bottom of 238 files",
+      "parentUuid": "c01ba543_bbc7283a",
+      "revId": "624a872fc232ebcbd84401a6f4a992bbbedaf519",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
