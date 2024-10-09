@@ -1,0 +1,20 @@
+[build-system]
+requires = ["pbr>=6.0.0", "setuptools>=64.0.0"]
+build-backend = "pbr.build"
+
+[tool.ruff]
+line-length = 79
+target-version = "py38"
+
+[tool.ruff.lint]
+# enable the following rule classes:
+#
+# C4: https://docs.astral.sh/ruff/rules/#flake8-comprehensions-c4
+# UP: https://docs.astral.sh/ruff/rules/#pyupgrade-up
+select = ["C4", "UP"]
+
+[tool.ruff.format]
+quote-style = "preserve"
+docstring-code-format = true
+docstring-code-line-length = "dynamic"
+skip-magic-trailing-comma = true
