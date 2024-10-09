@@ -26,8 +26,8 @@ class JsonHomeTest(unit.BaseTestCase):
         resource_name = self.getUniqueString()
         relation = json_home.build_v3_resource_relation(resource_name)
         exp_relation = (
-            'https://docs.openstack.org/api/openstack-identity/3/rel/%s'
-            % resource_name
+            'https://docs.openstack.org/api/openstack-identity/3/rel/'
+            f'{resource_name}'
         )
         self.assertThat(relation, matchers.Equals(exp_relation))
 
@@ -39,8 +39,9 @@ class JsonHomeTest(unit.BaseTestCase):
             extension_name, extension_version, resource_name
         )
         exp_relation = (
-            'https://docs.openstack.org/api/openstack-identity/3/ext/%s/%s/rel'
-            '/%s' % (extension_name, extension_version, resource_name)
+            'https://docs.openstack.org/api/openstack-identity/3/ext/'
+            f'{extension_name}/{extension_version}/rel'
+            f'/{resource_name}'
         )
         self.assertThat(relation, matchers.Equals(exp_relation))
 
@@ -48,8 +49,8 @@ class JsonHomeTest(unit.BaseTestCase):
         parameter_name = self.getUniqueString()
         relation = json_home.build_v3_parameter_relation(parameter_name)
         exp_relation = (
-            'https://docs.openstack.org/api/openstack-identity/3/param/%s'
-            % parameter_name
+            'https://docs.openstack.org/api/openstack-identity/3/'
+            f'param/{parameter_name}'
         )
         self.assertThat(relation, matchers.Equals(exp_relation))
 
@@ -61,8 +62,9 @@ class JsonHomeTest(unit.BaseTestCase):
             extension_name, extension_version, parameter_name
         )
         exp_relation = (
-            'https://docs.openstack.org/api/openstack-identity/3/ext/%s/%s/'
-            'param/%s' % (extension_name, extension_version, parameter_name)
+            'https://docs.openstack.org/api/openstack-identity/3/ext/'
+            f'{extension_name}/{extension_version}/'
+            f'param/{parameter_name}'
         )
         self.assertThat(relation, matchers.Equals(exp_relation))
 

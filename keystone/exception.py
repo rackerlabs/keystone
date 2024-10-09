@@ -328,7 +328,7 @@ class InsufficientAuthMethods(Error):
     title = 'Unauthorized'
 
     def __init__(self, message=None, user_id=None, methods=None):
-        methods_str = '[%s]' % ','.join(methods)
+        methods_str = '[{}]'.format(','.join(methods))
         super().__init__(message, user_id=user_id, methods=methods_str)
 
         self.user_id = user_id
@@ -428,10 +428,11 @@ class LimitTreeExceedError(Exception):
     def __init__(self, project_id, max_limit_depth):
         super().__init__(
             _(
-                "Keystone cannot start due to project hierarchical depth in the "
-                "current deployment (project_ids: %(project_id)s) exceeds the "
-                "enforcement model's maximum limit of %(max_limit_depth)s. Please "
-                "use a different enforcement model to correct the issue."
+                "Keystone cannot start due to project hierarchical depth in "
+                "the current deployment (project_ids: %(project_id)s) exceeds "
+                "the enforcement model's maximum limit of "
+                "%(max_limit_depth)s. Please use a different enforcement "
+                "model to correct the issue."
             )
             % {'project_id': project_id, 'max_limit_depth': max_limit_depth}
         )
@@ -639,7 +640,6 @@ class UnexpectedError(SecurityError):
     )
 
     def _build_message(self, message, **kwargs):
-
         # Ensure that exception has a value to be extra defensive for
         # substitutions and make sure the exception doesn't raise an
         # exception.
@@ -735,8 +735,9 @@ class MigrationNotProvided(Exception):
     def __init__(self, mod_name, path):
         super().__init__(
             _(
-                "%(mod_name)s doesn't provide database migrations. The migration"
-                " repository path at %(path)s doesn't exist or isn't a directory."
+                "%(mod_name)s doesn't provide database migrations. "
+                "The migration repository path at %(path)s doesn't exist "
+                "or isn't a directory."
             )
             % {'mod_name': mod_name, 'path': path}
         )
@@ -801,7 +802,6 @@ class LDAPSizeLimitExceeded(UnexpectedError):
 
 
 class CacheDeserializationError(Exception):
-
     def __init__(self, obj, data):
         super().__init__(
             _('Failed to deserialize %(obj)s. Data is %(data)s')
@@ -826,7 +826,6 @@ class ResourceDeleteForbidden(ForbiddenNotSecurity):
 
 
 class OAuth2Error(Error):
-
     def __init__(self, code, title, error_title, message):
         self.code = code
         self.title = title

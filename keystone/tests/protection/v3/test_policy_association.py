@@ -45,8 +45,8 @@ class _SystemUserPoliciesAssociationTests:
 
         with self.test_client() as c:
             c.get(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/endpoints/%s'
-                % (policy['id'], endpoint['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"endpoints/{endpoint['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.NO_CONTENT,
             )
@@ -65,8 +65,8 @@ class _SystemUserPoliciesAssociationTests:
 
         with self.test_client() as c:
             c.get(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/services/%s'
-                % (policy['id'], service['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"services/{service['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.NO_CONTENT,
             )
@@ -87,8 +87,8 @@ class _SystemUserPoliciesAssociationTests:
 
         with self.test_client() as c:
             c.get(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/services/%s/regions/%s'
-                % (policy['id'], service['id'], region['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"services/{service['id']}/regions/{region['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.NO_CONTENT,
             )
@@ -108,8 +108,7 @@ class _SystemUserPoliciesAssociationTests:
         )
         with self.test_client() as c:
             c.get(
-                '/v3/endpoints/%s/OS-ENDPOINT-POLICY/policy'
-                % (endpoint['id']),
+                f"/v3/endpoints/{endpoint['id']}/OS-ENDPOINT-POLICY/policy",
                 headers=self.headers,
             )
 
@@ -128,8 +127,7 @@ class _SystemUserPoliciesAssociationTests:
         )
         with self.test_client() as c:
             r = c.get(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/endpoints'
-                % (policy['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/endpoints",
                 headers=self.headers,
             )
             for endpoint_itr in r.json['endpoints']:
@@ -137,7 +135,6 @@ class _SystemUserPoliciesAssociationTests:
 
 
 class _SystemReaderAndMemberPoliciesAssociationTests:
-
     def test_user_cannot_create_policy_association_for_endpoint(self):
         policy = unit.new_policy_ref()
         policy = PROVIDERS.policy_api.create_policy(policy['id'], policy)
@@ -151,8 +148,8 @@ class _SystemReaderAndMemberPoliciesAssociationTests:
 
         with self.test_client() as c:
             c.put(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/endpoints/%s'
-                % (policy['id'], endpoint['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"endpoints/{endpoint['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -170,8 +167,8 @@ class _SystemReaderAndMemberPoliciesAssociationTests:
 
         with self.test_client() as c:
             c.delete(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/endpoints/%s'
-                % (policy['id'], endpoint['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"endpoints/{endpoint['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -184,8 +181,8 @@ class _SystemReaderAndMemberPoliciesAssociationTests:
         )
         with self.test_client() as c:
             c.put(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/services/%s'
-                % (policy['id'], service['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"services/{service['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -199,8 +196,8 @@ class _SystemReaderAndMemberPoliciesAssociationTests:
 
         with self.test_client() as c:
             c.delete(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/services/%s'
-                % (policy['id'], service['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"services/{service['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -215,8 +212,8 @@ class _SystemReaderAndMemberPoliciesAssociationTests:
 
         with self.test_client() as c:
             c.put(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/services/%s/regions/%s'
-                % (policy['id'], service['id'], region['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"services/{service['id']}/regions/{region['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -231,15 +228,14 @@ class _SystemReaderAndMemberPoliciesAssociationTests:
 
         with self.test_client() as c:
             c.delete(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/services/%s/regions/%s'
-                % (policy['id'], service['id'], region['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"services/{service['id']}/regions/{region['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
 
 
 class _DomainAndProjectUserPolicyAssociationsTests:
-
     def test_user_cannot_check_policy_association_for_endpoint(self):
         policy = unit.new_policy_ref()
         policy = PROVIDERS.policy_api.create_policy(policy['id'], policy)
@@ -258,8 +254,8 @@ class _DomainAndProjectUserPolicyAssociationsTests:
 
         with self.test_client() as c:
             c.get(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/endpoints/%s'
-                % (policy['id'], endpoint['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"endpoints/{endpoint['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -278,8 +274,8 @@ class _DomainAndProjectUserPolicyAssociationsTests:
 
         with self.test_client() as c:
             c.get(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/services/%s'
-                % (policy['id'], service['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"services/{service['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -300,8 +296,8 @@ class _DomainAndProjectUserPolicyAssociationsTests:
 
         with self.test_client() as c:
             c.get(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/services/%s/regions/%s'
-                % (policy['id'], service['id'], region['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"services/{service['id']}/regions/{region['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -321,8 +317,7 @@ class _DomainAndProjectUserPolicyAssociationsTests:
         )
         with self.test_client() as c:
             c.get(
-                '/v3/endpoints/%s/OS-ENDPOINT-POLICY/policy'
-                % (endpoint['id']),
+                f"/v3/endpoints/{endpoint['id']}/OS-ENDPOINT-POLICY/policy",
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -342,8 +337,7 @@ class _DomainAndProjectUserPolicyAssociationsTests:
         )
         with self.test_client() as c:
             c.get(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/endpoints'
-                % (policy['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/endpoints",
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -361,8 +355,8 @@ class _DomainAndProjectUserPolicyAssociationsTests:
 
         with self.test_client() as c:
             c.put(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/endpoints/%s'
-                % (policy['id'], endpoint['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"endpoints/{endpoint['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -380,8 +374,8 @@ class _DomainAndProjectUserPolicyAssociationsTests:
 
         with self.test_client() as c:
             c.delete(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/endpoints/%s'
-                % (policy['id'], endpoint['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"endpoints/{endpoint['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -394,8 +388,8 @@ class _DomainAndProjectUserPolicyAssociationsTests:
         )
         with self.test_client() as c:
             c.put(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/services/%s'
-                % (policy['id'], service['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"services/{service['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -409,8 +403,8 @@ class _DomainAndProjectUserPolicyAssociationsTests:
 
         with self.test_client() as c:
             c.delete(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/services/%s'
-                % (policy['id'], service['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"services/{service['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -425,8 +419,8 @@ class _DomainAndProjectUserPolicyAssociationsTests:
 
         with self.test_client() as c:
             c.put(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/services/%s/regions/%s'
-                % (policy['id'], service['id'], region['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"services/{service['id']}/regions/{region['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -441,8 +435,8 @@ class _DomainAndProjectUserPolicyAssociationsTests:
 
         with self.test_client() as c:
             c.delete(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/services/%s/regions/%s'
-                % (policy['id'], service['id'], region['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"services/{service['id']}/regions/{region['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -454,7 +448,6 @@ class SystemReaderTests(
     _SystemUserPoliciesAssociationTests,
     _SystemReaderAndMemberPoliciesAssociationTests,
 ):
-
     def setUp(self):
         super().setUp()
         self.loadapp()
@@ -489,7 +482,6 @@ class SystemMemberTests(
     _SystemUserPoliciesAssociationTests,
     _SystemReaderAndMemberPoliciesAssociationTests,
 ):
-
     def setUp(self):
         super().setUp()
         self.loadapp()
@@ -523,7 +515,6 @@ class SystemAdminTests(
     common_auth.AuthTestMixin,
     _SystemUserPoliciesAssociationTests,
 ):
-
     def setUp(self):
         super().setUp()
         self.loadapp()
@@ -559,8 +550,8 @@ class SystemAdminTests(
 
         with self.test_client() as c:
             c.put(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/endpoints/%s'
-                % (policy['id'], endpoint['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"endpoints/{endpoint['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.NO_CONTENT,
             )
@@ -578,8 +569,8 @@ class SystemAdminTests(
 
         with self.test_client() as c:
             c.delete(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/endpoints/%s'
-                % (policy['id'], endpoint['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"endpoints/{endpoint['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.NO_CONTENT,
             )
@@ -592,8 +583,8 @@ class SystemAdminTests(
         )
         with self.test_client() as c:
             c.put(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/services/%s'
-                % (policy['id'], service['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"services/{service['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.NO_CONTENT,
             )
@@ -607,8 +598,8 @@ class SystemAdminTests(
 
         with self.test_client() as c:
             c.delete(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/services/%s'
-                % (policy['id'], service['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"services/{service['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.NO_CONTENT,
             )
@@ -623,8 +614,8 @@ class SystemAdminTests(
 
         with self.test_client() as c:
             c.put(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/services/%s/regions/%s'
-                % (policy['id'], service['id'], region['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"services/{service['id']}/regions/{region['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.NO_CONTENT,
             )
@@ -639,8 +630,8 @@ class SystemAdminTests(
 
         with self.test_client() as c:
             c.delete(
-                '/v3/policies/%s/OS-ENDPOINT-POLICY/services/%s/regions/%s'
-                % (policy['id'], service['id'], region['id']),
+                f"/v3/policies/{policy['id']}/OS-ENDPOINT-POLICY/"
+                f"services/{service['id']}/regions/{region['id']}",
                 headers=self.headers,
                 expected_status_code=http.client.NO_CONTENT,
             )
@@ -651,7 +642,6 @@ class DomainUserTests(
     common_auth.AuthTestMixin,
     _DomainAndProjectUserPolicyAssociationsTests,
 ):
-
     def setUp(self):
         super().setUp()
         self.loadapp()
@@ -689,7 +679,6 @@ class ProjectUserTests(
     common_auth.AuthTestMixin,
     _DomainAndProjectUserPolicyAssociationsTests,
 ):
-
     def setUp(self):
         super().setUp()
         self.loadapp()
@@ -716,7 +705,6 @@ class ProjectUserTestsWithoutEnforceScope(
     common_auth.AuthTestMixin,
     _DomainAndProjectUserPolicyAssociationsTests,
 ):
-
     def setUp(self):
         super().setUp()
         self.loadapp()

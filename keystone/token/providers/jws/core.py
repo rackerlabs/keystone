@@ -26,7 +26,6 @@ CONF = keystone.conf.CONF
 
 
 class Provider(base.Provider):
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -44,7 +43,8 @@ class Provider(base.Provider):
             subs = {'private_key': private_key}
             raise SystemExit(
                 _(
-                    '%(private_key)s does not exist. You can generate a key pair '
+                    '%(private_key)s does not exist. '
+                    'You can generate a key pair '
                     'using `keystone-manage create_jws_keypair`.'
                 )
                 % subs
@@ -92,7 +92,6 @@ class Provider(base.Provider):
 
 
 class JWSFormatter:
-
     # NOTE(lbragstad): If in the future we expand support for different
     # algorithms, make this configurable and validate it against a blessed list
     # of supported algorithms.
@@ -133,7 +132,6 @@ class JWSFormatter:
         app_cred_id=None,
         thumbprint=None,
     ):
-
         issued_at = utils.isotime(subsecond=True)
         issued_at_int = self._convert_time_string_to_int(issued_at)
         expires_at_int = self._convert_time_string_to_int(expires_at)
@@ -213,7 +211,7 @@ class JWSFormatter:
         )
 
     def _decode_token_from_id(self, token_id):
-        options = dict()
+        options = {}
         options['verify_exp'] = False
         for public_key in self.public_keys:
             try:

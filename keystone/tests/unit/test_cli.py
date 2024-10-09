@@ -61,7 +61,6 @@ PROVIDERS = provider_api.ProviderAPIs
 
 
 class CliLoggingTestCase(unit.BaseTestCase):
-
     def setUp(self):
         self.config_fixture = self.useFixture(oslo_config.fixture.Config(CONF))
         self.config_fixture.register_cli_opt(cli.command_opt)
@@ -104,7 +103,6 @@ class CliLoggingTestCase(unit.BaseTestCase):
 
 
 class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
-
     def setUp(self):
         self.useFixture(database.Database())
         super().setUp()
@@ -410,7 +408,6 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
 
 
 class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
-
     def config(self, config_files):
         CONF(
             args=['bootstrap'],
@@ -575,7 +572,6 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
 
 
 class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
-
     def setUp(self):
         self.useFixture(database.Database())
         super().setUp()
@@ -619,7 +615,6 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
         )
 
     def setup_initial_domains(self):
-
         def create_domain(domain):
             return PROVIDERS.resource_api.create_domain(domain['id'], domain)
 
@@ -630,7 +625,7 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
         self.domains = {}
         self.addCleanup(self.cleanup_domains)
         for x in range(1, self.domain_count):
-            domain = 'domain%s' % x
+            domain = f'domain{x}'
             self.domains[domain] = create_domain(
                 {'id': uuid.uuid4().hex, 'name': domain}
             )
@@ -693,7 +688,6 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
 
 
 class CliDomainConfigSingleDomainTestCase(CliDomainConfigAllTestCase):
-
     def config(self, config_files):
         CONF(
             args=['domain_config_upload', '--domain-name', 'Default'],
@@ -746,7 +740,7 @@ class CliDomainConfigSingleDomainTestCase(CliDomainConfigAllTestCase):
         provider_api.ProviderAPIs._clear_registry_instances()
         with mock.patch('builtins.print') as mock_print:
             self.assertRaises(unit.UnexpectedExit, cli.DomainConfigUpload.main)
-            file_name = 'keystone.%s.conf' % self.default_domain['name']
+            file_name = 'keystone.{}.conf'.format(self.default_domain['name'])
             error_msg = _(
                 'Domain: %(domain)s already has a configuration defined - '
                 'ignoring file: %(file)s.'
@@ -766,7 +760,6 @@ class CliDomainConfigSingleDomainTestCase(CliDomainConfigAllTestCase):
 
 
 class CliDomainConfigNoOptionsTestCase(CliDomainConfigAllTestCase):
-
     def config(self, config_files):
         CONF(
             args=['domain_config_upload'],
@@ -791,7 +784,6 @@ class CliDomainConfigNoOptionsTestCase(CliDomainConfigAllTestCase):
 
 
 class CliDomainConfigTooManyOptionsTestCase(CliDomainConfigAllTestCase):
-
     def config(self, config_files):
         CONF(
             args=['domain_config_upload', '--all', '--domain-name', 'Default'],
@@ -816,7 +808,6 @@ class CliDomainConfigTooManyOptionsTestCase(CliDomainConfigAllTestCase):
 
 
 class CliDomainConfigInvalidDomainTestCase(CliDomainConfigAllTestCase):
-
     def config(self, config_files):
         self.invalid_domain_name = uuid.uuid4().hex
         CONF(
@@ -833,7 +824,7 @@ class CliDomainConfigInvalidDomainTestCase(CliDomainConfigAllTestCase):
         provider_api.ProviderAPIs._clear_registry_instances()
         with mock.patch('builtins.print') as mock_print:
             self.assertRaises(unit.UnexpectedExit, cli.DomainConfigUpload.main)
-            file_name = 'keystone.%s.conf' % self.invalid_domain_name
+            file_name = f'keystone.{self.invalid_domain_name}.conf'
             error_msg = _(
                 'Invalid domain name: %(domain)s found in config file name: '
                 '%(file)s - ignoring this file.'
@@ -847,7 +838,6 @@ class CliDomainConfigInvalidDomainTestCase(CliDomainConfigAllTestCase):
 
 
 class TestDomainConfigFinder(unit.BaseTestCase):
-
     def setUp(self):
         super().setUp()
         self.logging = self.useFixture(fixtures.LoggerFixture())
@@ -855,7 +845,7 @@ class TestDomainConfigFinder(unit.BaseTestCase):
     @mock.patch('os.walk')
     def test_finder_ignores_files(self, mock_walk):
         mock_walk.return_value = [
-            ['.', [], ['file.txt', 'keystone.conf', 'keystone.domain0.conf']],
+            ['.', [], ['file.txt', 'keystone.conf', 'keystone.domain0.conf']]
         ]
 
         domain_configs = list(cli._domain_config_finder('.'))
@@ -879,7 +869,6 @@ class TestDomainConfigFinder(unit.BaseTestCase):
 
 
 class CliDBSyncTestCase(unit.BaseTestCase):
-
     class FakeConfCommand:
         def __init__(self, parent):
             self.extension = False
@@ -965,7 +954,6 @@ class CliDBSyncTestCase(unit.BaseTestCase):
 
 
 class TestMappingPopulate(unit.SQLDriverOverrides, unit.TestCase):
-
     def setUp(self):
         sqldb = self.useFixture(database.Database())
         super().setUp()
@@ -1045,7 +1033,6 @@ class TestMappingPopulate(unit.SQLDriverOverrides, unit.TestCase):
 
 
 class CliDomainConfigUploadNothing(unit.BaseTestCase):
-
     def setUp(self):
         super().setUp()
 
@@ -1082,14 +1069,13 @@ class CliDomainConfigUploadNothing(unit.BaseTestCase):
         cli.DomainConfigUpload.main()
 
         expected_msg = (
-            'No domain configs uploaded from %r'
-            % CONF.identity.domain_config_dir
+            'No domain configs uploaded from '
+            f'{CONF.identity.domain_config_dir!r}'
         )
         self.assertThat(self.logging.output, matchers.Contains(expected_msg))
 
 
 class CachingDoctorTests(unit.TestCase):
-
     def test_symptom_caching_disabled(self):
         # Symptom Detected: Caching disabled
         self.config_fixture.config(group='cache', enabled=False)
@@ -1185,7 +1171,6 @@ class CachingDoctorTests(unit.TestCase):
 
 
 class CredentialDoctorTests(unit.TestCase):
-
     def test_credential_and_fernet_key_repositories_match(self):
         # Symptom Detected: Key repository paths are not unique
         directory = self.useFixture(fixtures.TempDir()).path
@@ -1261,7 +1246,6 @@ class CredentialDoctorTests(unit.TestCase):
 
 
 class DatabaseDoctorTests(unit.TestCase):
-
     def test_symptom_is_raised_if_database_connection_is_SQLite(self):
         # Symptom Detected: Database connection is sqlite
         self.config_fixture.config(
@@ -1282,7 +1266,6 @@ class DatabaseDoctorTests(unit.TestCase):
 
 
 class DebugDoctorTests(unit.TestCase):
-
     def test_symptom_debug_mode_is_enabled(self):
         # Symptom Detected: Debug mode is enabled
         self.config_fixture.config(debug=True)
@@ -1294,7 +1277,6 @@ class DebugDoctorTests(unit.TestCase):
 
 
 class FederationDoctorTests(unit.TestCase):
-
     def test_symptom_comma_in_SAML_public_certificate_path(self):
         # Symptom Detected: There is a comma in path to public cert file
         self.config_fixture.config(group='saml', certfile='file,cert.pem')
@@ -1323,7 +1305,6 @@ class FederationDoctorTests(unit.TestCase):
 
 
 class LdapDoctorTests(unit.TestCase):
-
     def test_user_enabled_emulation_dn_ignored_raised(self):
         # Symptom when user_enabled_emulation_dn is being ignored because the
         # user did not enable the user_enabled_emulation
@@ -1523,7 +1504,6 @@ class LdapDoctorTests(unit.TestCase):
 
 
 class SecurityComplianceDoctorTests(unit.TestCase):
-
     def test_minimum_password_age_greater_than_password_expires_days(self):
         # Symptom Detected: Minimum password age is greater than the password
         # expires days. Both values are positive integers greater than zero.
@@ -1534,7 +1514,7 @@ class SecurityComplianceDoctorTests(unit.TestCase):
             group='security_compliance', password_expires_days=1
         )
         self.assertTrue(
-            security_compliance.symptom_minimum_password_age_greater_than_expires_days()
+            security_compliance.symptom_minimum_password_age_greater_than_expires_days()  # noqa: E501
         )
 
     def test_minimum_password_age_equal_to_password_expires_days(self):
@@ -1547,7 +1527,7 @@ class SecurityComplianceDoctorTests(unit.TestCase):
             group='security_compliance', password_expires_days=1
         )
         self.assertTrue(
-            security_compliance.symptom_minimum_password_age_greater_than_expires_days()
+            security_compliance.symptom_minimum_password_age_greater_than_expires_days()  # noqa: E501
         )
 
     def test_minimum_password_age_less_than_password_expires_days(self):
@@ -1560,14 +1540,14 @@ class SecurityComplianceDoctorTests(unit.TestCase):
             group='security_compliance', password_expires_days=2
         )
         self.assertFalse(
-            security_compliance.symptom_minimum_password_age_greater_than_expires_days()
+            security_compliance.symptom_minimum_password_age_greater_than_expires_days()  # noqa: E501
         )
 
     def test_minimum_password_age_and_password_expires_days_deactivated(self):
         # No Symptom Detected: when minimum_password_age's default value is 0
         # and password_expires_days' default value is None
         self.assertFalse(
-            security_compliance.symptom_minimum_password_age_greater_than_expires_days()
+            security_compliance.symptom_minimum_password_age_greater_than_expires_days()  # noqa: E501
         )
 
     def test_invalid_password_regular_expression(self):
@@ -1608,7 +1588,7 @@ class SecurityComplianceDoctorTests(unit.TestCase):
             group='security_compliance', password_regex_description=None
         )
         self.assertTrue(
-            security_compliance.symptom_password_regular_expression_description_not_set()
+            security_compliance.symptom_password_regular_expression_description_not_set()  # noqa: E501
         )
 
     def test_password_regular_expression_description_set(self):
@@ -1622,7 +1602,7 @@ class SecurityComplianceDoctorTests(unit.TestCase):
             group='security_compliance', password_regex_description=desc
         )
         self.assertFalse(
-            security_compliance.symptom_password_regular_expression_description_not_set()
+            security_compliance.symptom_password_regular_expression_description_not_set()  # noqa: E501
         )
 
     def test_password_regular_expression_description_deactivated(self):
@@ -1635,12 +1615,11 @@ class SecurityComplianceDoctorTests(unit.TestCase):
             group='security_compliance', password_regex_description=None
         )
         self.assertFalse(
-            security_compliance.symptom_password_regular_expression_description_not_set()
+            security_compliance.symptom_password_regular_expression_description_not_set()  # noqa: E501
         )
 
 
 class TokensDoctorTests(unit.TestCase):
-
     def test_unreasonable_max_token_size_raised(self):
         # Symptom Detected: the max_token_size for fernet is greater than 255
         self.config_fixture.config(group='token', provider='fernet')
@@ -1660,7 +1639,6 @@ class TokensDoctorTests(unit.TestCase):
 
 
 class TokenFernetDoctorTests(unit.TestCase):
-
     @mock.patch('keystone.cmd.doctor.tokens_fernet.utils')
     def test_usability_of_Fernet_key_repository_raised(self, mock_utils):
         # Symptom Detected: Fernet key repo is world readable
@@ -1713,7 +1691,6 @@ class TokenFernetDoctorTests(unit.TestCase):
 
 
 class TestMappingPurge(unit.SQLDriverOverrides, unit.BaseTestCase):
-
     class FakeConfCommand:
         def __init__(self, parent):
             self.extension = False
@@ -1814,10 +1791,10 @@ class TestMappingPurge(unit.SQLDriverOverrides, unit.BaseTestCase):
         )
 
         def fake_load_backends():
-            return dict(
-                id_mapping_api=keystone.identity.core.MappingManager,
-                resource_api=None,
-            )
+            return {
+                'id_mapping_api': keystone.identity.core.MappingManager,
+                'resource_api': None,
+            }
 
         self.useFixture(
             fixtures.MockPatch(
@@ -1837,7 +1814,6 @@ class TestMappingPurge(unit.SQLDriverOverrides, unit.BaseTestCase):
 
 
 class TestUserMappingPurgeFunctional(unit.SQLDriverOverrides, unit.TestCase):
-
     def setUp(self):
         sqldb = self.useFixture(database.Database())
         super().setUp()
@@ -1931,7 +1907,6 @@ class TestUserMappingPurgeFunctional(unit.SQLDriverOverrides, unit.TestCase):
 
 
 class TestGroupMappingPurgeFunctional(unit.SQLDriverOverrides, unit.TestCase):
-
     def setUp(self):
         sqldb = self.useFixture(database.Database())
         super().setUp()
@@ -2023,7 +1998,6 @@ class TestGroupMappingPurgeFunctional(unit.SQLDriverOverrides, unit.TestCase):
 
 
 class TestTrustFlush(unit.SQLDriverOverrides, unit.BaseTestCase):
-
     class FakeConfCommand:
         def __init__(self, parent):
             self.extension = False
@@ -2061,7 +2035,7 @@ class TestTrustFlush(unit.SQLDriverOverrides, unit.BaseTestCase):
         )
 
         def fake_load_backends():
-            return dict(trust_api=keystone.trust.core.Manager())
+            return {'trust_api': keystone.trust.core.Manager()}
 
         self.useFixture(
             fixtures.MockPatch(
@@ -2084,7 +2058,7 @@ class TestTrustFlush(unit.SQLDriverOverrides, unit.BaseTestCase):
         )
 
         def fake_load_backends():
-            return dict(trust_api=keystone.trust.core.Manager())
+            return {'trust_api': keystone.trust.core.Manager()}
 
         self.useFixture(
             fixtures.MockPatch(
@@ -2099,7 +2073,6 @@ class TestTrustFlush(unit.SQLDriverOverrides, unit.BaseTestCase):
 
 
 class TestMappingEngineTester(unit.BaseTestCase):
-
     class FakeConfCommand:
         def __init__(self, parent):
             self.extension = False
@@ -2272,7 +2245,6 @@ class TestMappingEngineTester(unit.BaseTestCase):
 
 
 class CliStatusTestCase(unit.SQLDriverOverrides, unit.TestCase):
-
     def setUp(self):
         self.useFixture(database.Database())
         super().setUp()

@@ -85,10 +85,11 @@ def symptom_LDAP_file_based_domain_specific_configs():
         if invalid_files:
             invalid_str = ', '.join(invalid_files)
             print(
-                'Warning: The following non-config files were found: %s\n'
+                'Warning: The following non-config files were found: '
+                f'{invalid_str}\n'
                 'If they are intended to be config files then rename them '
                 'to the form of `keystone.<domain_name>.conf`. '
-                'Otherwise, ignore this warning' % invalid_str
+                'Otherwise, ignore this warning'
             )
             return True
     else:
