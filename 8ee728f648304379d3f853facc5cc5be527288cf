@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "aeb70ac8_a376e1cf",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-09T14:45:15Z",
+      "side": 1,
+      "message": "please split the controller. It will not work properly this way",
+      "revId": "8ee728f648304379d3f853facc5cc5be527288cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e9e2d42a_d51c75cf",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 4
