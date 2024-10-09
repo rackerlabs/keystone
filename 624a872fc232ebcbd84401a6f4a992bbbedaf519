@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c01ba543_bbc7283a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2024-10-09T15:33:19Z",
+      "side": 1,
+      "message": "Did you forget the `pyproject.toml`/`ruff.toml` file?",
+      "revId": "624a872fc232ebcbd84401a6f4a992bbbedaf519",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
