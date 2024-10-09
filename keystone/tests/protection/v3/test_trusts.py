@@ -170,7 +170,7 @@ class AdminTokenTests(TrustTests, _AdminTestsMixin):
 
         with self.test_client() as c:
             c.delete(
-                '/v3/OS-TRUST/trusts/%s' % ref['id'],
+                '/v3/OS-TRUST/trusts/{}'.format(ref['id']),
                 headers=self.headers,
                 expected_status_code=http.client.NO_CONTENT,
             )
@@ -179,7 +179,7 @@ class AdminTokenTests(TrustTests, _AdminTestsMixin):
         trust_id = uuid.uuid4().hex
         with self.test_client() as c:
             c.get(
-                '/v3/OS-TRUST/trusts/%s' % trust_id,
+                f'/v3/OS-TRUST/trusts/{trust_id}',
                 headers=self.headers,
                 expected_status_code=http.client.NOT_FOUND,
             )
@@ -189,7 +189,7 @@ class AdminTokenTests(TrustTests, _AdminTestsMixin):
 
         with self.test_client() as c:
             c.get(
-                '/v3/OS-TRUST/trusts/%s' % self.trust_id,
+                f'/v3/OS-TRUST/trusts/{self.trust_id}',
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -199,7 +199,7 @@ class AdminTokenTests(TrustTests, _AdminTestsMixin):
 
         with self.test_client() as c:
             c.get(
-                '/v3/OS-TRUST/trusts/%s/roles' % self.trust_id,
+                f'/v3/OS-TRUST/trusts/{self.trust_id}/roles',
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -210,8 +210,8 @@ class AdminTokenTests(TrustTests, _AdminTestsMixin):
         with self.test_client() as c:
             c.get(
                 (
-                    '/v3/OS-TRUST/trusts/%s/roles/%s'
-                    % (self.trust_id, self.bootstrapper.member_role_id)
+                    f'/v3/OS-TRUST/trusts/{self.trust_id}/roles/'
+                    f'{self.bootstrapper.member_role_id}'
                 ),
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
@@ -225,7 +225,7 @@ class _SystemUserTests:
         trust_id = uuid.uuid4().hex
         with self.test_client() as c:
             c.get(
-                '/v3/OS-TRUST/trusts/%s' % trust_id,
+                f'/v3/OS-TRUST/trusts/{trust_id}',
                 headers=self.headers,
                 expected_status_code=http.client.NOT_FOUND,
             )
@@ -235,7 +235,7 @@ class _SystemUserTests:
 
         with self.test_client() as c:
             r = c.get(
-                '/v3/OS-TRUST/trusts/%s' % self.trust_id, headers=self.headers
+                f'/v3/OS-TRUST/trusts/{self.trust_id}', headers=self.headers
             )
         self.assertEqual(r.json['trust']['id'], self.trust_id)
 
@@ -245,8 +245,8 @@ class _SystemUserTests:
         with self.test_client() as c:
             c.get(
                 (
-                    '/v3/OS-TRUST/trusts?trustee_user_id=%s'
-                    % self.trustee_user_id
+                    '/v3/OS-TRUST/trusts?trustee_user_id='
+                    f'{self.trustee_user_id}'
                 ),
                 headers=self.headers,
             )
@@ -257,8 +257,8 @@ class _SystemUserTests:
         with self.test_client() as c:
             c.get(
                 (
-                    '/v3/OS-TRUST/trusts?trustor_user_id=%s'
-                    % self.trustor_user_id
+                    '/v3/OS-TRUST/trusts?trustor_user_id='
+                    f'{self.trustor_user_id}'
                 ),
                 headers=self.headers,
             )
@@ -268,7 +268,7 @@ class _SystemUserTests:
 
         with self.test_client() as c:
             r = c.get(
-                '/v3/OS-TRUST/trusts/%s/roles' % self.trust_id,
+                f'/v3/OS-TRUST/trusts/{self.trust_id}/roles',
                 headers=self.headers,
             )
         self.assertEqual(
@@ -281,8 +281,8 @@ class _SystemUserTests:
         with self.test_client() as c:
             c.get(
                 (
-                    '/v3/OS-TRUST/trusts/%s/roles/%s'
-                    % (self.trust_id, self.bootstrapper.member_role_id)
+                    f'/v3/OS-TRUST/trusts/{self.trust_id}/roles/'
+                    f'{self.bootstrapper.member_role_id}'
                 ),
                 headers=self.headers,
             )
@@ -310,7 +310,7 @@ class _SystemReaderMemberTests(_SystemUserTests):
 
         with self.test_client() as c:
             c.delete(
-                '/v3/OS-TRUST/trusts/%s' % ref['id'],
+                '/v3/OS-TRUST/trusts/{}'.format(ref['id']),
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -402,7 +402,8 @@ class SystemAdminTests(TrustTests, _AdminTestsMixin, _SystemUserTests):
 
         with self.test_client() as c:
             c.delete(
-                '/v3/OS-TRUST/trusts/%s' % ref['id'], headers=self.headers
+                '/v3/OS-TRUST/trusts/{}'.format(ref['id']),
+                headers=self.headers,
             )
 
     def test_admin_cannot_delete_trust_for_user_overridden_defaults(self):
@@ -414,7 +415,7 @@ class SystemAdminTests(TrustTests, _AdminTestsMixin, _SystemUserTests):
 
         with self.test_client() as c:
             c.delete(
-                '/v3/OS-TRUST/trusts/%s' % ref['id'],
+                '/v3/OS-TRUST/trusts/{}'.format(ref['id']),
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -425,7 +426,7 @@ class SystemAdminTests(TrustTests, _AdminTestsMixin, _SystemUserTests):
 
         with self.test_client() as c:
             c.get(
-                '/v3/OS-TRUST/trusts/%s' % self.trust_id,
+                f'/v3/OS-TRUST/trusts/{self.trust_id}',
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -436,7 +437,7 @@ class SystemAdminTests(TrustTests, _AdminTestsMixin, _SystemUserTests):
 
         with self.test_client() as c:
             c.get(
-                '/v3/OS-TRUST/trusts/%s/roles' % self.trust_id,
+                f'/v3/OS-TRUST/trusts/{self.trust_id}/roles',
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -448,8 +449,8 @@ class SystemAdminTests(TrustTests, _AdminTestsMixin, _SystemUserTests):
         with self.test_client() as c:
             c.get(
                 (
-                    '/v3/OS-TRUST/trusts/%s/roles/%s'
-                    % (self.trust_id, self.bootstrapper.member_role_id)
+                    f'/v3/OS-TRUST/trusts/{self.trust_id}/roles/'
+                    f'{self.bootstrapper.member_role_id}'
                 ),
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
@@ -497,8 +498,8 @@ class ProjectUserTests(TrustTests):
         with self.test_client() as c:
             r = c.get(
                 (
-                    '/v3/OS-TRUST/trusts?trustor_user_id=%s'
-                    % self.trustor_user_id
+                    '/v3/OS-TRUST/trusts?trustor_user_id='
+                    f'{self.trustor_user_id}'
                 ),
                 headers=self.trustor_headers,
             )
@@ -511,8 +512,8 @@ class ProjectUserTests(TrustTests):
         with self.test_client() as c:
             r = c.get(
                 (
-                    '/v3/OS-TRUST/trusts?trustee_user_id=%s'
-                    % self.trustee_user_id
+                    '/v3/OS-TRUST/trusts?trustee_user_id='
+                    f'{self.trustee_user_id}'
                 ),
                 headers=self.trustee_headers,
             )
@@ -525,8 +526,8 @@ class ProjectUserTests(TrustTests):
         with self.test_client() as c:
             c.get(
                 (
-                    '/v3/OS-TRUST/trusts?trustee_user_id=%s'
-                    % self.trustee_user_id
+                    '/v3/OS-TRUST/trusts?trustee_user_id='
+                    f'{self.trustee_user_id}'
                 ),
                 headers=self.trustor_headers,
                 expected_status_code=http.client.FORBIDDEN,
@@ -538,8 +539,8 @@ class ProjectUserTests(TrustTests):
         with self.test_client() as c:
             c.get(
                 (
-                    '/v3/OS-TRUST/trusts?trustor_user_id=%s'
-                    % self.trustor_user_id
+                    '/v3/OS-TRUST/trusts?trustor_user_id='
+                    f'{self.trustor_user_id}'
                 ),
                 headers=self.trustee_headers,
                 expected_status_code=http.client.FORBIDDEN,
@@ -551,8 +552,8 @@ class ProjectUserTests(TrustTests):
         with self.test_client() as c:
             c.get(
                 (
-                    '/v3/OS-TRUST/trusts?trustor_user_id=%s'
-                    % self.trustor_user_id
+                    '/v3/OS-TRUST/trusts?trustor_user_id='
+                    f'{self.trustor_user_id}'
                 ),
                 headers=self.other_headers,
                 expected_status_code=http.client.FORBIDDEN,
@@ -564,8 +565,8 @@ class ProjectUserTests(TrustTests):
         with self.test_client() as c:
             c.get(
                 (
-                    '/v3/OS-TRUST/trusts?trustee_user_id=%s'
-                    % self.trustee_user_id
+                    '/v3/OS-TRUST/trusts?trustee_user_id='
+                    f'{self.trustee_user_id}'
                 ),
                 headers=self.other_headers,
                 expected_status_code=http.client.FORBIDDEN,
@@ -588,7 +589,7 @@ class ProjectUserTests(TrustTests):
 
         with self.test_client() as c:
             c.get(
-                '/v3/OS-TRUST/trusts/%s' % ref['id'],
+                '/v3/OS-TRUST/trusts/{}'.format(ref['id']),
                 headers=self.other_headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -597,7 +598,7 @@ class ProjectUserTests(TrustTests):
         trust_id = uuid.uuid4().hex
         with self.test_client() as c:
             c.get(
-                '/v3/OS-TRUST/trusts/%s' % trust_id,
+                f'/v3/OS-TRUST/trusts/{trust_id}',
                 headers=self.other_headers,
                 expected_status_code=http.client.NOT_FOUND,
             )
@@ -609,7 +610,7 @@ class ProjectUserTests(TrustTests):
 
         with self.test_client() as c:
             c.get(
-                '/v3/OS-TRUST/trusts/%s' % ref['id'],
+                '/v3/OS-TRUST/trusts/{}'.format(ref['id']),
                 headers=self.trustor_headers,
             )
 
@@ -620,7 +621,7 @@ class ProjectUserTests(TrustTests):
 
         with self.test_client() as c:
             r = c.get(
-                '/v3/OS-TRUST/trusts/%s' % ref['id'],
+                '/v3/OS-TRUST/trusts/{}'.format(ref['id']),
                 headers=self.trustee_headers,
             )
         self.assertEqual(r.json['trust']['id'], self.trust_id)
@@ -653,7 +654,7 @@ class ProjectUserTests(TrustTests):
 
         with self.test_client() as c:
             c.delete(
-                '/v3/OS-TRUST/trusts/%s' % ref['id'],
+                '/v3/OS-TRUST/trusts/{}'.format(ref['id']),
                 headers=self.trustor_headers,
             )
 
@@ -664,7 +665,7 @@ class ProjectUserTests(TrustTests):
 
         with self.test_client() as c:
             c.delete(
-                '/v3/OS-TRUST/trusts/%s' % ref['id'],
+                '/v3/OS-TRUST/trusts/{}'.format(ref['id']),
                 headers=self.trustee_headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -676,7 +677,7 @@ class ProjectUserTests(TrustTests):
 
         with self.test_client() as c:
             c.delete(
-                '/v3/OS-TRUST/trusts/%s' % ref['id'],
+                '/v3/OS-TRUST/trusts/{}'.format(ref['id']),
                 headers=self.other_headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -686,7 +687,7 @@ class ProjectUserTests(TrustTests):
 
         with self.test_client() as c:
             r = c.get(
-                '/v3/OS-TRUST/trusts/%s/roles' % self.trust_id,
+                f'/v3/OS-TRUST/trusts/{self.trust_id}/roles',
                 headers=self.trustor_headers,
             )
         self.assertEqual(
@@ -698,7 +699,7 @@ class ProjectUserTests(TrustTests):
 
         with self.test_client() as c:
             r = c.get(
-                '/v3/OS-TRUST/trusts/%s/roles' % self.trust_id,
+                f'/v3/OS-TRUST/trusts/{self.trust_id}/roles',
                 headers=self.trustee_headers,
             )
         self.assertEqual(
@@ -710,7 +711,7 @@ class ProjectUserTests(TrustTests):
 
         with self.test_client() as c:
             c.get(
-                '/v3/OS-TRUST/trusts/%s/roles' % self.trust_id,
+                f'/v3/OS-TRUST/trusts/{self.trust_id}/roles',
                 headers=self.other_headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -721,8 +722,8 @@ class ProjectUserTests(TrustTests):
         with self.test_client() as c:
             c.head(
                 (
-                    '/v3/OS-TRUST/trusts/%s/roles/%s'
-                    % (self.trust_id, self.bootstrapper.member_role_id)
+                    f'/v3/OS-TRUST/trusts/{self.trust_id}/roles/'
+                    f'{self.bootstrapper.member_role_id}'
                 ),
                 headers=self.trustor_headers,
             )
@@ -733,8 +734,8 @@ class ProjectUserTests(TrustTests):
         with self.test_client() as c:
             c.head(
                 (
-                    '/v3/OS-TRUST/trusts/%s/roles/%s'
-                    % (self.trust_id, self.bootstrapper.member_role_id)
+                    f'/v3/OS-TRUST/trusts/{self.trust_id}/roles/'
+                    f'{self.bootstrapper.member_role_id}'
                 ),
                 headers=self.trustee_headers,
             )
@@ -745,8 +746,8 @@ class ProjectUserTests(TrustTests):
         with self.test_client() as c:
             c.head(
                 (
-                    '/v3/OS-TRUST/trusts/%s/roles/%s'
-                    % (self.trust_id, self.bootstrapper.member_role_id)
+                    f'/v3/OS-TRUST/trusts/{self.trust_id}/roles/'
+                    f'{self.bootstrapper.member_role_id}'
                 ),
                 headers=self.other_headers,
                 expected_status_code=http.client.FORBIDDEN,
@@ -759,8 +760,8 @@ class ProjectUserTests(TrustTests):
         with self.test_client() as c:
             c.get(
                 (
-                    '/v3/OS-TRUST/trusts?trustee_user_id=%s'
-                    % self.trustee_user_id
+                    '/v3/OS-TRUST/trusts?trustee_user_id='
+                    f'{self.trustee_user_id}'
                 ),
                 headers=self.trustor_headers,
                 expected_status_code=http.client.FORBIDDEN,
@@ -773,8 +774,8 @@ class ProjectUserTests(TrustTests):
         with self.test_client() as c:
             c.get(
                 (
-                    '/v3/OS-TRUST/trusts?trustor_user_id=%s'
-                    % self.trustor_user_id
+                    '/v3/OS-TRUST/trusts?trustor_user_id='
+                    f'{self.trustor_user_id}'
                 ),
                 headers=self.trustee_headers,
                 expected_status_code=http.client.FORBIDDEN,
@@ -787,8 +788,8 @@ class ProjectUserTests(TrustTests):
         with self.test_client() as c:
             c.get(
                 (
-                    '/v3/OS-TRUST/trusts?trustor_user_id=%s'
-                    % self.trustor_user_id
+                    '/v3/OS-TRUST/trusts?trustor_user_id='
+                    f'{self.trustor_user_id}'
                 ),
                 headers=self.other_headers,
                 expected_status_code=http.client.FORBIDDEN,
@@ -801,8 +802,8 @@ class ProjectUserTests(TrustTests):
         with self.test_client() as c:
             c.get(
                 (
-                    '/v3/OS-TRUST/trusts?trustee_user_id=%s'
-                    % self.trustee_user_id
+                    '/v3/OS-TRUST/trusts?trustee_user_id='
+                    f'{self.trustee_user_id}'
                 ),
                 headers=self.other_headers,
                 expected_status_code=http.client.FORBIDDEN,
@@ -827,7 +828,7 @@ class ProjectUserTests(TrustTests):
 
         with self.test_client() as c:
             c.delete(
-                '/v3/OS-TRUST/trusts/%s' % ref['id'],
+                '/v3/OS-TRUST/trusts/{}'.format(ref['id']),
                 headers=self.trustor_headers,
             )
 
@@ -839,7 +840,7 @@ class ProjectUserTests(TrustTests):
 
         with self.test_client() as c:
             c.delete(
-                '/v3/OS-TRUST/trusts/%s' % ref['id'],
+                '/v3/OS-TRUST/trusts/{}'.format(ref['id']),
                 headers=self.trustee_headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -852,7 +853,7 @@ class ProjectUserTests(TrustTests):
 
         with self.test_client() as c:
             c.delete(
-                '/v3/OS-TRUST/trusts/%s' % ref['id'],
+                '/v3/OS-TRUST/trusts/{}'.format(ref['id']),
                 headers=self.other_headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -865,7 +866,7 @@ class ProjectUserTests(TrustTests):
 
         with self.test_client() as c:
             c.get(
-                '/v3/OS-TRUST/trusts/%s' % ref['id'],
+                '/v3/OS-TRUST/trusts/{}'.format(ref['id']),
                 headers=self.trustor_headers,
             )
 
@@ -877,7 +878,7 @@ class ProjectUserTests(TrustTests):
 
         with self.test_client() as c:
             r = c.get(
-                '/v3/OS-TRUST/trusts/%s' % ref['id'],
+                '/v3/OS-TRUST/trusts/{}'.format(ref['id']),
                 headers=self.trustee_headers,
             )
         self.assertEqual(r.json['trust']['id'], self.trust_id)
@@ -888,7 +889,7 @@ class ProjectUserTests(TrustTests):
 
         with self.test_client() as c:
             r = c.get(
-                '/v3/OS-TRUST/trusts/%s/roles' % self.trust_id,
+                f'/v3/OS-TRUST/trusts/{self.trust_id}/roles',
                 headers=self.trustor_headers,
             )
         self.assertEqual(
@@ -901,7 +902,7 @@ class ProjectUserTests(TrustTests):
 
         with self.test_client() as c:
             r = c.get(
-                '/v3/OS-TRUST/trusts/%s/roles' % self.trust_id,
+                f'/v3/OS-TRUST/trusts/{self.trust_id}/roles',
                 headers=self.trustee_headers,
             )
         self.assertEqual(
@@ -914,7 +915,7 @@ class ProjectUserTests(TrustTests):
 
         with self.test_client() as c:
             c.get(
-                '/v3/OS-TRUST/trusts/%s/roles' % self.trust_id,
+                f'/v3/OS-TRUST/trusts/{self.trust_id}/roles',
                 headers=self.other_headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -926,8 +927,8 @@ class ProjectUserTests(TrustTests):
         with self.test_client() as c:
             c.head(
                 (
-                    '/v3/OS-TRUST/trusts/%s/roles/%s'
-                    % (self.trust_id, self.bootstrapper.member_role_id)
+                    f'/v3/OS-TRUST/trusts/{self.trust_id}/roles/'
+                    f'{self.bootstrapper.member_role_id}'
                 ),
                 headers=self.trustor_headers,
             )
@@ -939,8 +940,8 @@ class ProjectUserTests(TrustTests):
         with self.test_client() as c:
             c.head(
                 (
-                    '/v3/OS-TRUST/trusts/%s/roles/%s'
-                    % (self.trust_id, self.bootstrapper.member_role_id)
+                    f'/v3/OS-TRUST/trusts/{self.trust_id}/roles/'
+                    f'{self.bootstrapper.member_role_id}'
                 ),
                 headers=self.trustee_headers,
             )
@@ -952,8 +953,8 @@ class ProjectUserTests(TrustTests):
         with self.test_client() as c:
             c.head(
                 (
-                    '/v3/OS-TRUST/trusts/%s/roles/%s'
-                    % (self.trust_id, self.bootstrapper.member_role_id)
+                    f'/v3/OS-TRUST/trusts/{self.trust_id}/roles/'
+                    f'{self.bootstrapper.member_role_id}'
                 ),
                 headers=self.other_headers,
                 expected_status_code=http.client.FORBIDDEN,
@@ -995,8 +996,8 @@ class DomainUserTests(TrustTests):
         with self.test_client() as c:
             c.get(
                 (
-                    '/v3/OS-TRUST/trusts?trustee_user_id=%s'
-                    % self.trustee_user_id
+                    f'/v3/OS-TRUST/trusts?trustee_user_id='
+                    f'{self.trustee_user_id}'
                 ),
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
@@ -1008,8 +1009,8 @@ class DomainUserTests(TrustTests):
         with self.test_client() as c:
             c.get(
                 (
-                    '/v3/OS-TRUST/trusts?trustor_user_id=%s'
-                    % self.trustor_user_id
+                    f'/v3/OS-TRUST/trusts?trustor_user_id='
+                    f'{self.trustor_user_id}'
                 ),
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
@@ -1032,7 +1033,7 @@ class DomainUserTests(TrustTests):
 
         with self.test_client() as c:
             c.get(
-                '/v3/OS-TRUST/trusts/%s' % ref['id'],
+                '/v3/OS-TRUST/trusts/{}'.format(ref['id']),
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -1041,7 +1042,7 @@ class DomainUserTests(TrustTests):
         trust_id = uuid.uuid4().hex
         with self.test_client() as c:
             c.get(
-                '/v3/OS-TRUST/trusts/%s' % trust_id,
+                f'/v3/OS-TRUST/trusts/{trust_id}',
                 headers=self.headers,
                 expected_status_code=http.client.NOT_FOUND,
             )
@@ -1067,7 +1068,7 @@ class DomainUserTests(TrustTests):
 
         with self.test_client() as c:
             c.delete(
-                '/v3/OS-TRUST/trusts/%s' % ref['id'],
+                '/v3/OS-TRUST/trusts/{}'.format(ref['id']),
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -1077,7 +1078,7 @@ class DomainUserTests(TrustTests):
 
         with self.test_client() as c:
             c.get(
-                '/v3/OS-TRUST/trusts/%s/roles' % self.trust_id,
+                f'/v3/OS-TRUST/trusts/{self.trust_id}/roles',
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,
             )
@@ -1088,8 +1089,8 @@ class DomainUserTests(TrustTests):
         with self.test_client() as c:
             c.head(
                 (
-                    '/v3/OS-TRUST/trusts/%s/roles/%s'
-                    % (self.trust_id, self.bootstrapper.member_role_id)
+                    f'/v3/OS-TRUST/trusts/{self.trust_id}/roles/'
+                    f'{self.bootstrapper.member_role_id}'
                 ),
                 headers=self.headers,
                 expected_status_code=http.client.FORBIDDEN,

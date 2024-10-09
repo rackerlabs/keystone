@@ -577,9 +577,9 @@ class Manager(manager.Manager):
         if not self.is_leaf_project(project_id) and not cascade:
             raise exception.ForbiddenNotSecurity(
                 _(
-                    'Cannot delete the project %s since it is not a leaf in the '
-                    'hierarchy. Use the cascade option if you want to delete a '
-                    'whole subtree.'
+                    'Cannot delete the project %s since it is not a leaf in '
+                    'the hierarchy. Use the cascade option if you want to '
+                    'delete a whole subtree.'
                 )
                 % project_id
             )
@@ -594,8 +594,8 @@ class Manager(manager.Manager):
             ):
                 raise exception.ForbiddenNotSecurity(
                     _(
-                        'Cannot delete project %(project_id)s since its subtree '
-                        'contains enabled projects.'
+                        'Cannot delete project %(project_id)s since its '
+                        'subtree contains enabled projects.'
                     )
                     % {'project_id': project_id}
                 )
@@ -612,9 +612,9 @@ class Manager(manager.Manager):
 
         reason = (
             'The token cache is being invalidate because project '
-            '%(project_id)s was deleted. Authorization will be recalculated '
+            f'{project_id} was deleted. Authorization will be recalculated '
             'and enforced accordingly the next time users authenticate or '
-            'validate a token.' % {'project_id': project_id}
+            'validate a token.'
         )
         notifications.invalidate_token_cache_notification(reason)
         return ret
@@ -919,8 +919,8 @@ class Manager(manager.Manager):
         if domain['enabled']:
             raise exception.ForbiddenNotSecurity(
                 _(
-                    'Cannot delete a domain that is enabled, please disable it '
-                    'first.'
+                    'Cannot delete a domain that is enabled, please disable '
+                    'it first.'
                 )
             )
 

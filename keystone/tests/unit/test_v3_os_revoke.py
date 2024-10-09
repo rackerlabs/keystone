@@ -35,12 +35,9 @@ def _future_time_string():
 
 
 class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
-
     JSON_HOME_DATA = {
         'https://docs.openstack.org/api/openstack-identity/3/ext/OS-REVOKE/1.0'
-        '/rel/events': {
-            'href': '/OS-REVOKE/events',
-        },
+        '/rel/events': {'href': '/OS-REVOKE/events'}
     }
 
     def test_get_empty_list(self):
@@ -57,23 +54,20 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         event_issued_before = timeutils.normalize_time(
             timeutils.parse_isotime(event['issued_before'])
         )
+        event_t = utils.isotime(event_issued_before, subsecond=True)
+        before_t = utils.isotime(before_time, subsecond=True)
+        after_t = utils.isotime(after_time, subsecond=True)
         self.assertLessEqual(
             before_time,
             event_issued_before,
-            'invalid event issued_before time; %s is not later than %s.'
-            % (
-                utils.isotime(event_issued_before, subsecond=True),
-                utils.isotime(before_time, subsecond=True),
-            ),
+            f'invalid event issued_before time; {event_t} is not later '
+            f'than {before_t}.',
         )
         self.assertLessEqual(
             event_issued_before,
             after_time,
-            'invalid event issued_before time; %s is not earlier than %s.'
-            % (
-                utils.isotime(event_issued_before, subsecond=True),
-                utils.isotime(after_time, subsecond=True),
-            ),
+            f'invalid event issued_before time; {event_t} is not earlier '
+            f'than {after_t}.',
         )
         del event['issued_before']
         del event['revoked_at']
@@ -98,7 +92,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
 
     def test_disabled_project_in_list(self):
         project_id = uuid.uuid4().hex
-        sample = dict()
+        sample = {}
         sample['project_id'] = str(project_id)
         before_time = timeutils.utcnow().replace(microsecond=0)
         PROVIDERS.revoke_api.revoke(
@@ -112,7 +106,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
 
     def test_disabled_domain_in_list(self):
         domain_id = uuid.uuid4().hex
-        sample = dict()
+        sample = {}
         sample['domain_id'] = str(domain_id)
         before_time = timeutils.utcnow().replace(microsecond=0)
         PROVIDERS.revoke_api.revoke(
@@ -137,7 +131,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
 
     def test_since_future_time_no_events(self):
         domain_id = uuid.uuid4().hex
-        sample = dict()
+        sample = {}
         sample['domain_id'] = str(domain_id)
 
         PROVIDERS.revoke_api.revoke(
@@ -148,7 +142,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         events = resp.json_body['events']
         self.assertEqual(1, len(events))
 
-        resp = self.get('/OS-REVOKE/events?since=%s' % _future_time_string())
+        resp = self.get(f'/OS-REVOKE/events?since={_future_time_string()}')
         events = resp.json_body['events']
         self.assertEqual([], events)
 
