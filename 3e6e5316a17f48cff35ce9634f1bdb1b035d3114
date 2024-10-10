@@ -16,6 +16,24 @@
       "message": "I wonder if we can name this `api.py` instead. public is the old terminology kept since 2.0 API and I think it\u0027s a good chance to drop it.",
       "revId": "3e6e5316a17f48cff35ce9634f1bdb1b035d3114",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "908a9be8_0a332b34",
+        "filename": "keystone/wsgi/public.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-10T16:19:20Z",
+      "side": 1,
+      "message": "I agree, I am anyway waiting checks to complete. I have a strong feeling there are lot of underwater stones that are not visible yet (in general we can\u0027t use apache mod_wsgi directly and instead need to have uwsgi/gunicorn with apache doing proxypass). And all because wsgi_scripts are not a thing to live anymore. I wonder what is the sense of mod_wsgi then",
+      "parentUuid": "13b9c905_c90c1089",
+      "revId": "3e6e5316a17f48cff35ce9634f1bdb1b035d3114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
