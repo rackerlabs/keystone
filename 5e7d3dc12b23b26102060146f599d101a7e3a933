@@ -16,6 +16,23 @@
       "message": "gtema: I wanted to continue the convo on the patch.",
       "revId": "5e7d3dc12b23b26102060146f599d101a7e3a933",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56bd1cd9_c331cf52",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-10T13:20:41Z",
+      "side": 1,
+      "message": "Can you please also add the option to the `devstack/files/oidc/apache_oidc.conf` to have at least rough testing?",
+      "revId": "5e7d3dc12b23b26102060146f599d101a7e3a933",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
