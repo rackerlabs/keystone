@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "658d5ddb_576d0224",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-10T13:34:00Z",
+      "side": 1,
+      "message": "Needed to use ruff.toml instead of pyproject.toml since otherwise lovely wsgi_scripts topic pops up (addressing in separate change)",
+      "revId": "8c74b3b961e157aea9f0c99a14080b483a3fa73e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
