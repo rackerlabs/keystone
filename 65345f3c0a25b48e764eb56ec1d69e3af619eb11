@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a004adbe_90f588a2",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-11T15:37:06Z",
+      "side": 1,
+      "message": "I think you should be using `\u003cstring:sp_id\u003e` here and under path_vars also use \u0027sp_id:...\u0027 but maybe we should rather rename the param in jsonhome tests since service_provider_id is more meaningful than sp_id",
+      "revId": "65345f3c0a25b48e764eb56ec1d69e3af619eb11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
