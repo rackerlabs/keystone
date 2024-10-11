@@ -174,6 +174,24 @@
       "message": "uhm, I need to check whether codegenerator would support such nesting. It is correct from jsonschema pov, but is nearly impossible to decompose into useful info for sdk/cli. Alternatively you could specify common \"required\" not under the \"allOf\" but on the normal level and add oneOf which overrides it repeating common props adding project_id in one case and domain_id in other case. In such case it is pretty easy to identify that service_id, resource_name and resource_limit are mandatory in every case leaving one extra not required by sdk/cli\nbtw, every oneOf/anyOf/etc overwrites others. Means if in the oneOf you have required: domain_id it becomes that domain_id is the only required param",
       "revId": "e34b8e56861dc444140256d85aac64d20d68930a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcc23f58_4de3021c",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 36482
+      },
+      "writtenOn": "2024-10-11T19:34:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81f3d8db_599e73ad",
+      "revId": "e34b8e56861dc444140256d85aac64d20d68930a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
