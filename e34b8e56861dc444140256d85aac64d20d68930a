@@ -125,6 +125,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6a77074c_75cd7abe",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 36482
+      },
+      "writtenOn": "2024-10-11T16:19:51Z",
+      "side": 1,
+      "message": "As discussed during the meeting today (10/11/2024), this is not necessarily a UUID, but there is the constraint that the string can\u0027t be longer than 255 characters - I will add this.",
+      "parentUuid": "76e8e278_dbbd96f6",
+      "revId": "e34b8e56861dc444140256d85aac64d20d68930a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "81f3d8db_599e73ad",
         "filename": "keystone/limit/schema.py",
         "patchSetId": 12
