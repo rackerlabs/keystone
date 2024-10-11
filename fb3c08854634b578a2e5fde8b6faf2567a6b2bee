@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb8dede6_56de6e7b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-10-11T15:52:07Z",
+      "side": 1,
+      "message": "recheck 500 error from github while downloading etcd",
+      "revId": "fb3c08854634b578a2e5fde8b6faf2567a6b2bee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
