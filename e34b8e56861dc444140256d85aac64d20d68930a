@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58521a3a_7d5836d6",
+        "filename": "keystone/api/validation/parameter_types.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-11T12:17:00Z",
+      "side": 1,
+      "message": "this is a shared location for parameters and all schemas should import such common things directly from here. That means that all global constraints should be also kept here. When certain API modifies such restrictions we should fix copy and overwrite schema there.",
+      "revId": "e34b8e56861dc444140256d85aac64d20d68930a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63acbe16_748b2119",
+        "filename": "keystone/api/validation/parameter_types.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-11T12:17:00Z",
+      "side": 1,
+      "message": "great. Let\u0027s add also description strings here",
+      "revId": "e34b8e56861dc444140256d85aac64d20d68930a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9068ac19_43ae5a60",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-11T12:17:00Z",
+      "side": 1,
+      "message": "since you anyway touch parameter_types I suggest copy the description there and add string description directly.",
+      "revId": "e34b8e56861dc444140256d85aac64d20d68930a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76e8e278_dbbd96f6",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-11T12:17:00Z",
+      "side": 1,
+      "message": "when it is a string it \"should\" be uuid. So overall you can convert it into\n```\nregion_id: {\n  anyOf: [\n    {type: string, format: uuid},\n    {type: null}\n  ],\n  ...\n```\n\nThat would be general pattern to deal with params with different \"constraints\" based on the type. HOWEVER, since it is \"null\" you can just do\n```\ntype: [\"string\", \"null\"]\nformat: uuid\n```\ntype:null is only specifying that the field can be empty (in which case format is not applicable)",
+      "revId": "e34b8e56861dc444140256d85aac64d20d68930a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81f3d8db_599e73ad",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-11T12:17:00Z",
+      "side": 1,
+      "message": "uhm, I need to check whether codegenerator would support such nesting. It is correct from jsonschema pov, but is nearly impossible to decompose into useful info for sdk/cli. Alternatively you could specify common \"required\" not under the \"allOf\" but on the normal level and add oneOf which overrides it repeating common props adding project_id in one case and domain_id in other case. In such case it is pretty easy to identify that service_id, resource_name and resource_limit are mandatory in every case leaving one extra not required by sdk/cli\nbtw, every oneOf/anyOf/etc overwrites others. Means if in the oneOf you have required: domain_id it becomes that domain_id is the only required param",
+      "revId": "e34b8e56861dc444140256d85aac64d20d68930a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
