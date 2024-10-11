@@ -33,6 +33,24 @@
       "message": "Can you please also add the option to the `devstack/files/oidc/apache_oidc.conf` to have at least rough testing?",
       "revId": "5e7d3dc12b23b26102060146f599d101a7e3a933",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be07cc85_1bad9e51",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5890
+      },
+      "writtenOn": "2024-10-11T01:18:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56bd1cd9_c331cf52",
+      "revId": "5e7d3dc12b23b26102060146f599d101a7e3a933",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
