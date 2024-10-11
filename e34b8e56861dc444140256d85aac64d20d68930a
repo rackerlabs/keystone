@@ -141,6 +141,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b506c058_2301cc78",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 36482
+      },
+      "writtenOn": "2024-10-11T19:31:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6a77074c_75cd7abe",
+      "revId": "e34b8e56861dc444140256d85aac64d20d68930a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "81f3d8db_599e73ad",
