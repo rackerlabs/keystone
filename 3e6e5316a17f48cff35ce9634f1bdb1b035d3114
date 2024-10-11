@@ -34,6 +34,24 @@
       "parentUuid": "13b9c905_c90c1089",
       "revId": "3e6e5316a17f48cff35ce9634f1bdb1b035d3114",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "889dafd1_ddf98678",
+        "filename": "keystone/wsgi/public.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-10-11T08:38:49Z",
+      "side": 1,
+      "message": "IIRC what was suggested before was that the distributors add tiny wsgi script by themselves into the packages as the wsgi script is not longer provide by the original sofrware(like keystone or nova, I mean)",
+      "parentUuid": "908a9be8_0a332b34",
+      "revId": "3e6e5316a17f48cff35ce9634f1bdb1b035d3114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
