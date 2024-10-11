@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9993509_18d95b7b",
+        "filename": "keystone/api/validation/parameter_types.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 36482
+      },
+      "writtenOn": "2024-10-11T16:16:50Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "58521a3a_7d5836d6",
+      "revId": "e34b8e56861dc444140256d85aac64d20d68930a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "63acbe16_748b2119",
@@ -35,6 +53,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "29d74e9c_1ceeb380",
+        "filename": "keystone/api/validation/parameter_types.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 36482
+      },
+      "writtenOn": "2024-10-11T16:16:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63acbe16_748b2119",
+      "revId": "e34b8e56861dc444140256d85aac64d20d68930a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9068ac19_43ae5a60",
@@ -48,6 +84,24 @@
       "writtenOn": "2024-10-11T12:17:00Z",
       "side": 1,
       "message": "since you anyway touch parameter_types I suggest copy the description there and add string description directly.",
+      "revId": "e34b8e56861dc444140256d85aac64d20d68930a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fd2fb5e_20be6e5f",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 36482
+      },
+      "writtenOn": "2024-10-11T16:16:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9068ac19_43ae5a60",
       "revId": "e34b8e56861dc444140256d85aac64d20d68930a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
