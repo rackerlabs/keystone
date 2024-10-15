@@ -150,6 +150,84 @@ applicable with the `sql` backend for the `[identity] driver`.
     ),
 )
 
+invalid_password_hash_include = cfg.BoolOpt(
+    'invalid_password_hash_include',
+    default=False,
+    help=utils.fmt(
+        """
+If set to true, enriches `identity.authenticate.failure` audit notifications
+with partial invalid password hash, that could be further used to distinguish
+bruteforce attacks from e.g. external user automations that did not timely
+update rotated password. Additional configuration parameters are available
+using other `invalid_password_hash_*` configuration entires, that only take
+effect when this option is set to true.
+"""
+    ),
+)
+
+invalid_password_hash_pepper = cfg.StrOpt(
+    'invalid_password_hash_pepper',
+    secret=True,
+    help=utils.fmt(
+        """
+If `invalid_password_hash_include` set to true, applies pepper
+(https://en.wikipedia.org/wiki/Pepper_(cryptography)) when generating password
+hashes to make them unique and distinct from any other Keystone installations
+out there. This value could also be considered as an "encryption key" for the
+generated hashes. Should be some secret static value specific to the current
+installation (the same value should be used in distributed installations
+working with the same backend, to make them all generate equal hashes for equal
+invalid passwords). 16 bytes (128 bits) or more is recommended.
+"""
+    ),
+)
+
+invalid_password_hash_arguments = cfg.DictOpt(
+    'invalid_password_hash_arguments',
+    default=dict(
+        n=2**4,
+        r=8,
+        p=1,
+        maxmem=0,
+        dklen=64,
+        hash_name="sha512",
+        iterations=25_000,
+    ),
+    advanced=True,
+    help=utils.fmt(
+        """
+If `invalid_password_hash_include` set to true, controls the work factors of
+the hashing function. The arguments are explained in hashlib module
+documentation:
+* https://docs.python.org/3/library/hashlib.html#hashlib.scrypt
+* https://docs.python.org/3/library/hashlib.html#hashlib.pbkdf2_hmac
+Improper arguments values could lead to weakened security of hashes, or
+degraded performance of the system. Only update with clear sense of the values
+you provide, after performing benchmarks. Example value:
+```
+n:16384,r:8,p:5,iterations:210000
+```
+Additional security could be achieved by minimizing
+`invalid_password_max_hashed_chars` configuration option.
+"""
+    ),
+)
+
+invalid_password_hash_max_chars = cfg.IntOpt(
+    'invalid_password_hash_max_chars',
+    default=5,
+    min=1,
+    help=utils.fmt(
+        """
+If `invalid_password_include_in_notifications` set to true, defines the number
+of characters of hash of invalid password that will be included in
+notifications. Should be the least reasonable value - hashing function with
+default arguments generates encoded hashes of 86 characters long, that'll be
+truncated to the number of characters provided by this option.
+"""
+    ),
+)
+
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
@@ -162,6 +240,10 @@ ALL_OPTS = [
     password_regex,
     password_regex_description,
     change_password_upon_first_use,
+    invalid_password_hash_include,
+    invalid_password_hash_pepper,
+    invalid_password_hash_arguments,
+    invalid_password_hash_max_chars,
 ]
 
 
