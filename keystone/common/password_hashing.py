@@ -13,6 +13,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import base64
+import hashlib
 import itertools
 
 from oslo_log import log
@@ -23,6 +25,7 @@ from keystone.common.password_hashers import pbkdf2
 from keystone.common.password_hashers import scrypt
 from keystone.common.password_hashers import sha512_crypt
 import keystone.conf
+from keystone.conf.security_compliance import invalid_password_hash_arguments
 from keystone import exception
 from keystone.i18n import _
 
@@ -185,3 +188,68 @@ def hash_password(password: str) -> str:
             _('Password Hash Algorithm %s not implemented')
             % CONF.identity.password_hash_algorithm
         )
+
+
+def generate_partial_password_hash(password: str, salt: str, **kwargs) -> str:
+    """Generates partial password hash for reporting purposes.
+
+    The generated password hash is base64 encoded, and `max_chars` of it are
+    returned.
+    """
+    pepper = (
+        kwargs.get("pepper")
+        or CONF.security_compliance.invalid_password_hash_pepper
+    )
+    if pepper is None:
+        raise RuntimeError(_('Hash Pepper value has to be provided'))
+
+    conf_defaults = invalid_password_hash_arguments.default
+    conf = getattr(CONF, "security_compliance", {})
+    conf_values = conf.get("invalid_password_hash_arguments", {})
+
+    int_args = {}
+    for arg in ["n", "r", "p", "maxmem", "dklen", "iterations"]:
+        int_args[arg] = (
+            kwargs.get(arg)
+            or (conf_values.get(arg) and int(conf_values.get(arg)))
+            or conf_defaults[arg]
+        )
+
+    str_args = {}
+    for arg in ["hash_name"]:
+        str_args[arg] = (
+            kwargs.get(arg) or conf_values.get(arg) or conf_defaults[arg]
+        )
+
+    # https://docs.python.org/3/library/hashlib.html#hashlib.scrypt
+    salted = hashlib.scrypt(
+        bytes(password, "utf-8"),
+        salt=bytes(salt, "utf-8"),
+        n=int_args["n"],
+        r=int_args["r"],
+        p=int_args["p"],
+        maxmem=int_args["maxmem"],
+        dklen=int_args["dklen"],
+    )
+
+    # https://docs.python.org/3/library/hashlib.html#hashlib.pbkdf2_hmac
+    peppered = hashlib.pbkdf2_hmac(
+        hash_name=str_args["hash_name"],
+        password=salted,
+        salt=bytes(pepper, "utf-8"),
+        iterations=int_args["iterations"],
+        dklen=int_args["dklen"],
+    )
+
+    # encode to utilize more characters to reduce collisions when further
+    # truncating
+    encoded = base64.b64encode(peppered).decode("utf-8").rstrip("=")
+
+    max_chars = (
+        kwargs.get("max_chars")
+        or CONF.security_compliance.invalid_password_hash_max_chars
+    )
+    idx = max(0, len(encoded) - max_chars)
+    partial = encoded[idx:]
+
+    return partial
