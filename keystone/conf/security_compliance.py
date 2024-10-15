@@ -150,6 +150,64 @@ applicable with the `sql` backend for the `[identity] driver`.
     ),
 )
 
+invalid_password_hash_include = cfg.BoolOpt(
+    'invalid_password_hash_include',
+    default=False,
+    help=utils.fmt(
+        """
+If set to true, enriches `identity.authenticate.failure` audit notifications
+with partial invalid password hash, that could be further used to distinguish
+bruteforce attacks from e.g. external user automations that did not timely
+update rotated password. Additional configuration parameters are available
+using other `invalid_password_hash_*` configuration entires, that only take
+effect when this option is set to true.
+"""
+    ),
+)
+
+invalid_password_hash_secret_key = cfg.StrOpt(
+    'invalid_password_hash_secret_key',
+    secret=True,
+    help=utils.fmt(
+        """
+If `invalid_password_hash_include` set to true, configured secret key used when
+generating password hashes to make them unique and distinct from any other
+Keystone installations out there. Should be some secret static value specific
+to the current installation (the same value should be used in distributed
+installations working with the same backend, to make them all generate equal
+hashes for equal invalid passwords). 16 bytes (128 bits) or more is
+recommended.
+"""
+    ),
+)
+
+invalid_password_hash_function = cfg.StrOpt(
+    'invalid_password_hash_function',
+    default='sha256',
+    help=utils.fmt(
+        """
+If `invalid_password_hash_include` set to true, defines the hash function to be
+used by HMAC. Possible values are names suitable to hashlib.new():
+* https://docs.python.org/3/library/hashlib.html#hashlib.new
+"""
+    ),
+)
+
+invalid_password_hash_max_chars = cfg.IntOpt(
+    'invalid_password_hash_max_chars',
+    default=5,
+    help=utils.fmt(
+        """
+If `invalid_password_include_in_notifications` set to true, defines the number
+of characters of hash of invalid password that will be included in
+notifications. Should be the least reasonable value - hashing function with
+default arguments generates encoded hashes of TODO characters long, that'll be
+truncated to the number of characters provided by this option. Values `<1`
+cause to return full hash.
+"""
+    ),
+)
+
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
@@ -162,6 +220,10 @@ ALL_OPTS = [
     password_regex,
     password_regex_description,
     change_password_upon_first_use,
+    invalid_password_hash_include,
+    invalid_password_hash_secret_key,
+    invalid_password_hash_function,
+    invalid_password_hash_max_chars,
 ]
 
 
