@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import hashlib
+
 from oslo_config import cfg
 
 from keystone.conf import utils
@@ -150,6 +152,63 @@ applicable with the `sql` backend for the `[identity] driver`.
     ),
 )
 
+bad_password_include_in_notifications = cfg.BoolOpt(
+    'bad_password_include_in_notifications',
+    default=False,
+    help=utils.fmt(
+        """
+If set to true, enriches `identity.authenticate.failure` audit notifications
+with partial bad password hash, that could be further used to distinguish
+bruteforce attacks from e.g. external user automations that did not timely
+update rotated password. Additional configuration parameters are available
+using other `bad_password_*` configuration entires, that only take effect when
+`bad_password_include_in_notifications` is set to true.
+"""
+    ),
+)
+
+bad_password_hash_algorithm = cfg.StrOpt(
+    'bad_password_hash_algorithm',
+    default="blake2b",
+    choices=hashlib.algorithms_guaranteed,
+    help=utils.fmt(
+        """
+If `bad_password_include_in_notifications` set to true, causes the hashing
+function to use a provided hash algorithm from `hashlib.algorithms_guaranteed`
+(https://docs.python.org/3/library/hashlib.html#hash-algorithms).
+"""
+    ),
+)
+
+bad_password_hash_personalization = cfg.StrOpt(
+    'bad_password_hash_personalization',
+    secret=True,
+    help=utils.fmt(
+        """
+If `bad_password_include_in_notifications` set to true, applies personalization
+salt when generating password hashes to make them distinct from any other
+Keystone installations out there
+(https://docs.python.org/3/library/hashlib.html#personalization). Should be
+some unique static (also possibly random) value specific to the current
+installation. 16 bytes (128 bits) or more is generally sufficient.
+"""
+    ),
+)
+
+bad_password_max_hashed_chars = cfg.IntOpt(
+    'bad_password_max_hashed_chars',
+    default=5,
+    min=1,
+    help=utils.fmt(
+        """
+If `bad_password_include_in_notifications` set to true, defines the number of
+characters of hash of bad password that will be included in notifications.
+Should be the least reasonable value, less than hash algorithm digest size (the
+default `blake2b` algorithm generates encoded hashes of 88 characters long).
+"""
+    ),
+)
+
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
@@ -162,6 +221,10 @@ ALL_OPTS = [
     password_regex,
     password_regex_description,
     change_password_upon_first_use,
+    bad_password_include_in_notifications,
+    bad_password_hash_algorithm,
+    bad_password_hash_personalization,
+    bad_password_max_hashed_chars,
 ]
 
 

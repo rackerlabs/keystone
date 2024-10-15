@@ -13,6 +13,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import base64
+import hashlib
 import itertools
 
 from oslo_log import log
@@ -185,3 +187,42 @@ def hash_password(password: str) -> str:
             _('Password Hash Algorithm %s not implemented')
             % CONF.identity.password_hash_algorithm
         )
+
+
+def generate_partial_password_hash(password: str, **kwargs) -> str:
+    """Generates partial password hash for e.g. reporting purposes.
+
+    Hash algorithms from `hashlib.algorithms_guaranteed`
+    (https://docs.python.org/3/library/hashlib.html#hash-algorithms) are
+    supported, set via `CONF.security_compliance.bad_password_hash_algorithm`.
+
+    The produced password hash is then base64 encoded, and
+    `CONF.security_compliance.bad_password_password_hash_max_characters`
+    characters of it are eventually returned.
+    """
+
+    salt = (
+        CONF.security_compliance.bad_password_hash_personalization
+        or kwargs.get("salt")
+    )
+    if salt is None:
+        raise RuntimeError(_('Hash Personalization value has to be provided'))
+
+    algo = CONF.security_compliance.bad_password_hash_algorithm
+    data = bytes(password + salt, "utf-8")
+    hasher = getattr(hashlib, algo)(data)
+
+    digest_args = []
+    if algo.startswith("shake_"):
+        # https://docs.python.org/3/library/hashlib.html#shake-variable-length-digests
+        digest_args.append(128)
+    hashed = hasher.digest(*digest_args)
+
+    # encode to utilize more characters to reduce collisions when further
+    # truncating
+    encoded = base64.b64encode(hashed).decode("utf-8")
+
+    max_chars = CONF.security_compliance.bad_password_max_hashed_chars
+    partial = encoded[:max_chars]
+
+    return partial
