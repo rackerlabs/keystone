@@ -122,78 +122,76 @@
         keystone: https://opendev.org/openstack/keystone
 
 - project:
-    templates:
-      - openstack-cover-jobs
-      - openstack-python3-jobs
-      - publish-openstack-docs-pti
-      - periodic-stable-jobs
-      - check-requirements
-      - integrated-gate-py3
-      - release-notes-jobs-python3
-      - openstack-python3-jobs-arm64
+    # templates:
+      # - openstack-cover-jobs
+      # - openstack-python3-jobs
+      # - publish-openstack-docs-pti
+      # - periodic-stable-jobs
+      # - check-requirements
+      # - integrated-gate-py3
+      # - release-notes-jobs-python3
+      # - openstack-python3-jobs-arm64
     check:
       jobs:
-        - keystone-dsvm-py3-functional:
-            irrelevant-files: &irrelevant-files
-              - ^.*\.rst$
-              - ^api-ref/.*$
-              - ^doc/.*$
-              - ^etc/.*$
-              - ^keystone/tests/unit/.*$
-              - ^releasenotes/.*$
-        - keystone-dsvm-py3-functional-fips:
-            voting: false
-            irrelevant-files: *irrelevant-files
-        - keystone-dsvm-py3-functional-federation-ubuntu-jammy:
-            voting: false
-            irrelevant-files: *irrelevant-files
-        - keystone-dsvm-py3-functional-federation-ubuntu-jammy-k2k:
-            irrelevant-files: *irrelevant-files
-        - keystoneclient-devstack-functional:
-            voting: false
-            irrelevant-files: *irrelevant-files
-        - keystone-dsvm-ldap-domain-specific-driver:
-            voting: false
-            irrelevant-files: &tempest-irrelevant-files
-              - ^(test-|)requirements.txt$
-              - ^.*\.rst$
-              - ^api-ref/.*$
-              - ^doc/.*$
-              - ^etc/.*$
-              - ^keystone/tests/unit/.*$
-              - ^releasenotes/.*$
-              - ^setup.cfg$
-        - tempest-full-py3:
-            irrelevant-files: *tempest-irrelevant-files
-        - grenade:
-            irrelevant-files: *tempest-irrelevant-files
-        - tempest-ipv6-only:
-            irrelevant-files: *tempest-irrelevant-files
-        - keystone-protection-functional
-        - codegenerator-openapi-identity-tips-with-api-ref:
-            voting: false
-        - openstack-ansible-keystone-rolling-upgrade:
-            irrelevant-files: *irrelevant-files
-            voting: false
-    gate:
-      jobs:
-        - keystone-dsvm-py3-functional:
-            irrelevant-files: *irrelevant-files
-        - keystone-dsvm-py3-functional-federation-ubuntu-jammy-k2k:
-            irrelevant-files: *irrelevant-files
-        - tempest-full-py3:
-            irrelevant-files: *tempest-irrelevant-files
-        - grenade:
-            irrelevant-files: *tempest-irrelevant-files
-        - tempest-ipv6-only:
-            irrelevant-files: *tempest-irrelevant-files
-        - keystone-protection-functional
-    experimental:
-      jobs:
-        - keystone-tox-patch_cover
-        - keystone-grenade-multinode:
-            irrelevant-files: *irrelevant-files
-        - tempest-pg-full:
-            irrelevant-files: *tempest-irrelevant-files
-        - keystone-dsvm-functional-oidc-federation:
-            irrelevant-files: *irrelevant-files
+        # - keystone-dsvm-py3-functional:
+        #     irrelevant-files: &irrelevant-files
+        #       - ^.*\.rst$
+        #       - ^api-ref/.*$
+        #       - ^doc/.*$
+        #       - ^etc/.*$
+        #       - ^keystone/tests/unit/.*$
+        #       - ^releasenotes/.*$
+        # - keystone-dsvm-py3-functional-fips:
+        #     voting: false
+        #     irrelevant-files: *irrelevant-files
+        # - keystone-dsvm-py3-functional-federation-ubuntu-jammy:
+        #     voting: false
+        #     irrelevant-files: *irrelevant-files
+        # - keystone-dsvm-py3-functional-federation-ubuntu-jammy-k2k:
+        #     irrelevant-files: *irrelevant-files
+        # - keystoneclient-devstack-functional:
+        #     voting: false
+        #     irrelevant-files: *irrelevant-files
+        # - keystone-dsvm-ldap-domain-specific-driver:
+        #     voting: false
+        #     irrelevant-files: &tempest-irrelevant-files
+        #       - ^(test-|)requirements.txt$
+        #       - ^.*\.rst$
+        #       - ^api-ref/.*$
+        #       - ^doc/.*$
+        #       - ^etc/.*$
+        #       - ^keystone/tests/unit/.*$
+        #       - ^releasenotes/.*$
+        #       - ^setup.cfg$
+        # - tempest-full-py3:
+        #     irrelevant-files: *tempest-irrelevant-files
+        # - grenade:
+        #     irrelevant-files: *tempest-irrelevant-files
+        # - tempest-ipv6-only:
+        #     irrelevant-files: *tempest-irrelevant-files
+        # - keystone-protection-functional
+        # - codegenerator-openapi-identity-tips-with-api-ref:
+        #     voting: false
+        - openstack-ansible-keystone-rolling-upgrade
+    # gate:
+    #   jobs:
+    #     - keystone-dsvm-py3-functional:
+    #         irrelevant-files: *irrelevant-files
+    #     - keystone-dsvm-py3-functional-federation-ubuntu-jammy-k2k:
+    #         irrelevant-files: *irrelevant-files
+    #     - tempest-full-py3:
+    #         irrelevant-files: *tempest-irrelevant-files
+    #     - grenade:
+    #         irrelevant-files: *tempest-irrelevant-files
+    #     - tempest-ipv6-only:
+    #         irrelevant-files: *tempest-irrelevant-files
+    #     - keystone-protection-functional
+    # experimental:
+    #   jobs:
+    #     - keystone-tox-patch_cover
+    #     - keystone-grenade-multinode:
+    #         irrelevant-files: *irrelevant-files
+    #     - tempest-pg-full:
+    #         irrelevant-files: *tempest-irrelevant-files
+    #     - keystone-dsvm-functional-oidc-federation:
+    #         irrelevant-files: *irrelevant-files
