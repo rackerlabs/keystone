@@ -65,17 +65,6 @@
       devstack_localrc:
         IDP_ID: k2k
 
-# This job will execute 'tox -e upgrade' from the OSA
-# repo specified in 'osa_test_repo'.
-- job:
-    name: openstack-ansible-keystone-rolling-upgrade
-    parent: openstack-ansible-cross-repo-functional
-    required-projects:
-      - name: openstack/openstack-ansible-os_keystone
-    vars:
-      tox_env: upgrade
-      osa_test_repo: openstack/openstack-ansible-os_keystone
-
 - job:
     name: keystone-dsvm-ldap-domain-specific-driver
     parent: devstack-tempest
@@ -178,6 +167,9 @@
         - keystone-protection-functional
         - codegenerator-openapi-identity-tips-with-api-ref:
             voting: false
+        - openstack-ansible-upgrade-infra_lxc-ubuntu-jammy:
+            irrelevant-files: *irrelevant-files
+            voting: false
     gate:
       jobs:
         - keystone-dsvm-py3-functional:
@@ -195,8 +187,6 @@
       jobs:
         - keystone-tox-patch_cover
         - keystone-grenade-multinode:
-            irrelevant-files: *irrelevant-files
-        - openstack-ansible-keystone-rolling-upgrade:
             irrelevant-files: *irrelevant-files
         - tempest-pg-full:
             irrelevant-files: *tempest-irrelevant-files
