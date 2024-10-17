@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c50b8cad_aa7d325d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2024-10-17T08:20:45Z",
+      "side": 1,
+      "message": "it seems that job is doing what\u0027s intended and result in a tempest run on N:\nhttps://storage.bhs.cloud.ovh.net/v1/AUTH_dcaab5e32b234d56b626f72581e3644c/zuul_opendev_logs_5fd/932512/2/check/openstack-ansible-upgrade-infra_lxc-ubuntu-jammy/5fd324d/logs/openstack/aio1-utility-container-e06f6b0b/utility/stestr_results.html",
+      "revId": "382d65aac75a8410f892b706399b3a678d275c6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
