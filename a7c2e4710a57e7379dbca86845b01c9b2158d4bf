@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6529b632_054f79e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-18T17:31:34Z",
+      "side": 1,
+      "message": "Had to make some changes for consistency with the dependent change for [application credentials](https://review.opendev.org/c/openstack/keystone/+/925517):\n\n- Removed `rule` from `rule_index_request_query` as it is used by both resources.\n- Reverted to using parameter types from `api/validation` and added the `id_string` to be used by the `service` attribute in the rule properties.",
+      "revId": "a7c2e4710a57e7379dbca86845b01c9b2158d4bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
