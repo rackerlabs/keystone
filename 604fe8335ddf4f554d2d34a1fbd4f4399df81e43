@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "359803bd_848d2054",
+        "filename": "keystone/api/os_ep_filter.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-21T15:43:01Z",
+      "side": 1,
+      "message": "I think we should be doing `filters \u003d endpoint_group.get(\u0027filters\u0027, {})` to guarantee that the following `filters.keys` will not fail when filters are not passed at all",
+      "revId": "604fe8335ddf4f554d2d34a1fbd4f4399df81e43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13fa9298_aa7dd1c5",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-21T15:43:01Z",
+      "side": 1,
+      "message": "what else can be returned here?",
+      "revId": "604fe8335ddf4f554d2d34a1fbd4f4399df81e43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "419154de_2413c30c",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-21T15:43:01Z",
+      "side": 1,
+      "message": "there might be \"truncated\" field as well",
+      "revId": "604fe8335ddf4f554d2d34a1fbd4f4399df81e43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
