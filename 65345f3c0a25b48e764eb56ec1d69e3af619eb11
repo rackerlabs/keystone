@@ -34,6 +34,24 @@
       "parentUuid": "a004adbe_90f588a2",
       "revId": "65345f3c0a25b48e764eb56ec1d69e3af619eb11",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "508ca9d6_d2533ad7",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-21T15:38:54Z",
+      "side": 1,
+      "message": "use service_provider_id please",
+      "parentUuid": "3f525f42_f7740c82",
+      "revId": "65345f3c0a25b48e764eb56ec1d69e3af619eb11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
