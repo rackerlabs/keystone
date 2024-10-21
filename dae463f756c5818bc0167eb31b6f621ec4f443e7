@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd4490be_990f7bc7",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-21T15:25:35Z",
+      "side": 1,
+      "message": "that doesn\u0027t look good (even if it work) having `self` as argument to a non-class member. What is passed is the ks_flask.ResourceBase.\nI think a bit more attractive approach would be to define class\n```\nTrustResourceBase(ks_flask.ResourceBase):\n    def _check_unrestricted(self):\n       ...\n       \nTrustsResource(TrustResourceBase):\n    ...\n```\nI that common method would be static not requiring access to `self` this would not be necessary",
+      "revId": "dae463f756c5818bc0167eb31b6f621ec4f443e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5fb0305c_af605e43",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-21T15:25:35Z",
+      "side": 1,
+      "message": "since this method really requires trust_id `\u003dNone` is unnecessary and potentially harming",
+      "revId": "dae463f756c5818bc0167eb31b6f621ec4f443e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e4c4709_c38ca881",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-21T15:25:35Z",
+      "side": 1,
+      "message": "what are the other possible attributes? in the root of the list response we should be only having trusts and links with maybe only `truncated` else",
+      "revId": "dae463f756c5818bc0167eb31b6f621ec4f443e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
