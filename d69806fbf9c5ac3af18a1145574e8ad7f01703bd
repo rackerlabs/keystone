@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "722117cf_93abfcd8",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-21T15:35:57Z",
+      "side": 1,
+      "message": "there can be additional attribute \"truncated: boolean\" once the global limit is reached",
+      "revId": "d69806fbf9c5ac3af18a1145574e8ad7f01703bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "768bac43_57989838",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-21T15:35:57Z",
+      "side": 1,
+      "message": "would you please place the common required service_id/resource_name/resource_limit unconditionally and in addition define the inner \"oneOf\" to help codegenerator to mark service_id/resource_name/resource_limit as unconditionally required while domain_id or project_id will stay not required (on the sdk/cli side)",
+      "revId": "d69806fbf9c5ac3af18a1145574e8ad7f01703bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
