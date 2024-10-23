@@ -35,6 +35,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ba0d4d7_306893a6",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-23T19:06:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aeb70ac8_a376e1cf",
+      "revId": "8ee728f648304379d3f853facc5cc5be527288cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e9e2d42a_d51c75cf",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-10-04T16:48:18Z",
       "side": 1,
       "message": "This test will fail with `keystone/api/parameter_types.boolean` due to the invalid enabled formats \"True\" and \"False\" being valid. (The boolean declared in `keystone/api` is of type boolean *and* string).",
+      "revId": "8ee728f648304379d3f853facc5cc5be527288cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ba9860f_bad56b42",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2182,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-23T19:06:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9e2d42a_d51c75cf",
       "revId": "8ee728f648304379d3f853facc5cc5be527288cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }

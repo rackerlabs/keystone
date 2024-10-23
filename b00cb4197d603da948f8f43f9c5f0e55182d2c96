@@ -34,6 +34,24 @@
       "parentUuid": "676c71a7_640acd3d",
       "revId": "b00cb4197d603da948f8f43f9c5f0e55182d2c96",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c14bdf0_2d1b1a3b",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-23T19:06:46Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "a8fd3644_7f036f6a",
+      "revId": "b00cb4197d603da948f8f43f9c5f0e55182d2c96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
