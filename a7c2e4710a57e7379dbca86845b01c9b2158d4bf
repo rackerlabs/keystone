@@ -33,6 +33,24 @@
       "message": "there may be \"truncated\" as a boolean field additionally which is returned when filters are passed and amount of entries exceeds configured limit",
       "revId": "a7c2e4710a57e7379dbca86845b01c9b2158d4bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ec6794d_2b226ecd",
+        "filename": "keystone/application_credential/schema.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-23T20:12:47Z",
+      "side": 1,
+      "message": "Would you prefer I set `additionalProperties` to true, or include \"truncated\"?",
+      "parentUuid": "26545f0b_557117bf",
+      "revId": "a7c2e4710a57e7379dbca86845b01c9b2158d4bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
