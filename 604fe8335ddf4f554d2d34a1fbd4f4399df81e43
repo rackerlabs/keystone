@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c768c8e_ed630439",
+        "filename": "keystone/api/os_ep_filter.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-23T20:24:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "359803bd_848d2054",
+      "revId": "604fe8335ddf4f554d2d34a1fbd4f4399df81e43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "13fa9298_aa7dd1c5",
@@ -35,6 +53,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "21d1bdbf_932d6eeb",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-23T20:24:45Z",
+      "side": 1,
+      "message": "Good question, I can\u0027t remember why I set that to true.",
+      "parentUuid": "13fa9298_aa7dd1c5",
+      "revId": "604fe8335ddf4f554d2d34a1fbd4f4399df81e43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "419154de_2413c30c",
@@ -48,6 +84,24 @@
       "writtenOn": "2024-10-21T15:43:01Z",
       "side": 1,
       "message": "there might be \"truncated\" field as well",
+      "revId": "604fe8335ddf4f554d2d34a1fbd4f4399df81e43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8824874d_531095de",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-23T20:24:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "419154de_2413c30c",
       "revId": "604fe8335ddf4f554d2d34a1fbd4f4399df81e43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
