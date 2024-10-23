@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "85695f09_54b87334",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-23T20:09:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd4490be_990f7bc7",
+      "revId": "dae463f756c5818bc0167eb31b6f621ec4f443e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5fb0305c_af605e43",
@@ -35,6 +53,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e25251a6_2ed5ff4b",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-23T20:09:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5fb0305c_af605e43",
+      "revId": "dae463f756c5818bc0167eb31b6f621ec4f443e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1e4c4709_c38ca881",
@@ -48,6 +84,24 @@
       "writtenOn": "2024-10-21T15:25:35Z",
       "side": 1,
       "message": "what are the other possible attributes? in the root of the list response we should be only having trusts and links with maybe only `truncated` else",
+      "revId": "dae463f756c5818bc0167eb31b6f621ec4f443e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15857ff3_0426462e",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-23T20:09:24Z",
+      "side": 1,
+      "message": "Because I\u0027m using this for the GET request by ID which returns a `trust` object instead of an array of trusts, I had to set this to true. Should I create a separate response body for a single trust object?\n\nI did this throughout all of my changes, so let me know and I can separate them in all.",
+      "parentUuid": "1e4c4709_c38ca881",
       "revId": "dae463f756c5818bc0167eb31b6f621ec4f443e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
