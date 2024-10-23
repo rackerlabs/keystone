@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a24981e_05378740",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-23T19:02:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "062f5de8_a70f1d87",
+      "revId": "ce1d149695027ac1ea9fad611e9598823bae39af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "81734093_0d884c7d",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-10-04T15:36:26Z",
       "side": 1,
       "message": "links of the IDP return additional field \"protocols\" - see example under https://docs.openstack.org/api-ref/identity/v3-ext/#list-identity-providers I suggest you create here a local param_type links which extends the `{**response_types.links, \"protocols\": {\"type\":\"string\"}`",
+      "revId": "ce1d149695027ac1ea9fad611e9598823bae39af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b1cc627_274666a9",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-23T19:02:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81734093_0d884c7d",
       "revId": "ce1d149695027ac1ea9fad611e9598823bae39af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
