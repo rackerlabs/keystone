@@ -73,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c8aed882_051ecfda",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-24T19:10:59Z",
+      "side": 1,
+      "message": "I see now why, same problem as described [here](https://review.opendev.org/c/openstack/keystone/+/930361/comment/1e4c4709_c38ca881/)",
+      "parentUuid": "21d1bdbf_932d6eeb",
+      "revId": "604fe8335ddf4f554d2d34a1fbd4f4399df81e43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "419154de_2413c30c",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 12
