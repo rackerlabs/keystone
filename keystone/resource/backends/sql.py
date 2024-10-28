@@ -10,11 +10,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_db.sqlalchemy import utils as sqlalchemyutils
 from oslo_log import log
 from sqlalchemy import orm
 from sqlalchemy.sql import expression
 
-from keystone.common import driver_hints
 from keystone.common import resource_options
 from keystone.common import sql
 from keystone import exception
@@ -64,7 +64,7 @@ class Resource(base.ResourceDriverBase):
                 raise exception.ProjectNotFound(project_id=project_name)
             return project_ref.to_dict()
 
-    @driver_hints.truncated
+    # @driver_hints.truncated
     def list_projects(self, hints):
         # If there is a filter on domain_id and the value is None, then to
         # ensure that the sql filtering works correctly, we need to patch
@@ -78,10 +78,27 @@ class Resource(base.ResourceDriverBase):
         with sql.session_for_read() as session:
             query = session.query(sql_model.Project)
             query = query.filter(sql_model.Project.id != base.NULL_DOMAIN_ID)
-            project_refs = sql.filter_limit_query(
-                sql_model.Project, query, hints
+            query = sql.filter_query(sql_model.Project, query, hints)
+            marker_row = None
+            if hints.marker is not None:
+                marker_row = (
+                    session.query(sql_model.Project)
+                    .filter_by(id=hints.marker)
+                    .first()
+                )
+                if not marker_row:
+                    raise exception.MarkerNotFound(marker=hints.marker)
+
+            project_refs = sqlalchemyutils.paginate_query(
+                query,
+                sql_model.Project,
+                hints.limit["limit"] if hints.limit else 10,
+                ["id"],
+                marker=marker_row,
             )
-            return [project_ref.to_dict() for project_ref in project_refs]
+            return [
+                project_ref.to_dict() for project_ref in project_refs.all()
+            ]
 
     def list_projects_from_ids(self, ids):
         if not ids:

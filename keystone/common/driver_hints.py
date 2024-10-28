@@ -96,6 +96,7 @@ class Hints:
 
     def __init__(self):
         self.limit = None
+        self.marker = None
         self.filters = list()
         self.cannot_match = False
 
@@ -121,3 +122,7 @@ class Hints:
     def set_limit(self, limit, truncated=False):
         """Set a limit to indicate the list should be truncated."""
         self.limit = {'limit': limit, 'truncated': truncated}
+
+    def set_marker(self, marker):
+        """Set a marker pointing to the last entry of the page."""
+        self.marker = marker
