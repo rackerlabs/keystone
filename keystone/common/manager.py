@@ -56,9 +56,11 @@ def response_truncated(f):
         if kwargs.get('hints') is None:
             return f(self, *args, **kwargs)
 
-        list_limit = self.driver._get_list_limit()
-        if list_limit:
-            kwargs['hints'].set_limit(list_limit)
+        # Set default limit if not there already
+        if kwargs['hints'].get("limit") is None:
+            list_limit = self.driver._get_list_limit()
+            if list_limit:
+                kwargs['hints'].set_limit(list_limit)
         return f(self, *args, **kwargs)
 
     return wrapper
