@@ -733,6 +733,22 @@ class ResourceBase(flask_restful.Resource):
         container = {collection: refs}
         self_url = full_url(flask.request.environ['PATH_INFO'])
         container['links'] = {'next': None, 'self': self_url, 'previous': None}
+        # When pagination is enabled generate link to the next page
+        if (
+            hints
+            and (hints.limit or hints.marker)
+            and len(refs) > 0
+            # We do not know whether there are entries on the next page,
+            # let's just emit link to the next page if current page is full.
+            and list_limited
+        ):
+            args = flask.request.view_args
+            # Update the marker with the ID of last entry
+            args["marker"] = refs[-1]["id"]
+            container["links"]["next"] = base_url(
+                flask.url_for(flask.request.endpoint, **args)
+            )
+
         if list_limited:
             container['truncated'] = True
 
@@ -878,11 +894,14 @@ class ResourceBase(flask_restful.Resource):
         return flask.request.get_json(silent=True, force=True) or {}
 
     @staticmethod
-    def build_driver_hints(supported_filters):
+    def build_driver_hints(
+        supported_filters, default_limit: ty.Optional[int] = None
+    ):
         """Build list hints based on the context query string.
 
         :param supported_filters: list of filters supported, so ignore any
                                   keys in query_dict that are not in this list.
+        :param default_limit: default page size (PROVIDER._get_list_limit)
 
         """
         hints = driver_hints.Hints()
@@ -929,9 +948,20 @@ class ResourceBase(flask_restful.Resource):
                     case_sensitive=case_sensitive,
                 )
 
-        # NOTE(henry-nash): If we were to support pagination, we would pull any
-        # pagination directives out of the query_dict here, and add them into
-        # the hints list.
+        marker = flask.request.args.get("marker")
+        if marker:
+            hints.set_marker(marker)
+        limit = flask.request.args.get("limit", default_limit)
+        # Set page limit as whatever requested in query parameters
+        # or whatever provider uses as a limit. In any way do not exceed the
+        # maximum page size limit.
+        # NOTE(gtema): It is important to set limit here (in the API flow)
+        # otherwise limited pagination is being applied also for internal
+        # invocations what is most likely not desired.
+        if limit:
+            # NOTE(gtema) remember limit is still conditional
+            hints.set_limit(min(int(limit), CONF.max_db_limit), False)
+
         return hints
 
     @classmethod
