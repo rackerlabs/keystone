@@ -742,6 +742,15 @@ class ResourceBase(flask_restful.Resource):
         container = {collection: refs}
         self_url = full_url(flask.request.environ['PATH_INFO'])
         container['links'] = {'next': None, 'self': self_url, 'previous': None}
+        # When pagination is enabled generate link to the next page
+        if (hints.limit or hints.marker) and len(refs) > 0:
+            args = flask.request.view_args
+            # Update the marker with the ID of last entry
+            args["marker"] = refs[-1]["id"]
+            container["links"]["next"] = flask.url_for(
+                flask.request.endpoint, **args
+            )
+
         if list_limited:
             container['truncated'] = True
 
@@ -941,6 +950,13 @@ class ResourceBase(flask_restful.Resource):
         # NOTE(henry-nash): If we were to support pagination, we would pull any
         # pagination directives out of the query_dict here, and add them into
         # the hints list.
+        marker = flask.request.args.get("marker")
+        if marker:
+            hints.set_marker(marker)
+        limit = flask.request.args.get("limit")
+        if limit:
+            hints.set_limit(int(limit), False)
+
         return hints
 
     @classmethod
