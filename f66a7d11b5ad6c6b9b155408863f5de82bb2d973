@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78279be6_d06a54f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9542
+      },
+      "writtenOn": "2024-10-30T10:20:01Z",
+      "side": 1,
+      "message": "this is breaking backward compatibility.\n\nThis seems to have worked just fine with default cabundle (if it validates the LDAP server of course), and one did not have to specify cafile or cadir in this case.\n\nNow this effectively requires that when using TLS for LDAP, either certfile or certdir MUST be configured, breaking access to LDAP when upgrading an env that did fine with default bundles.",
+      "revId": "f66a7d11b5ad6c6b9b155408863f5de82bb2d973",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
