@@ -51,6 +51,24 @@
       "parentUuid": "26545f0b_557117bf",
       "revId": "a7c2e4710a57e7379dbca86845b01c9b2158d4bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81eceda9_c1c8c1ab",
+        "filename": "keystone/application_credential/schema.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-31T15:50:22Z",
+      "side": 1,
+      "message": "truncated - we want to be as explicit as possible and prevent silently missing known attributes",
+      "parentUuid": "9ec6794d_2b226ecd",
+      "revId": "a7c2e4710a57e7379dbca86845b01c9b2158d4bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
