@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6e3ab95_68d9983e",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-31T16:41:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e3758868_32500a33",
+      "revId": "2cec5447c919c45ab99151d58532aad9fc5f0511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "73568f10_143a9422",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-10-31T15:56:04Z",
       "side": 1,
       "message": "try setting it to false",
+      "revId": "2cec5447c919c45ab99151d58532aad9fc5f0511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "efb5ee4d_49e70a47",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-31T16:41:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "73568f10_143a9422",
       "revId": "2cec5447c919c45ab99151d58532aad9fc5f0511",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
@@ -54,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "135a3e4e_ab09bb76",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-31T16:41:44Z",
+      "side": 1,
+      "message": "Not here. There is a test `test_validate_endpoint_create_succeeds_with_extra_parameters` that fails.",
+      "parentUuid": "ff585ce7_a5b04d34",
+      "revId": "2cec5447c919c45ab99151d58532aad9fc5f0511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "73da6eee_068c5d84",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 11
@@ -65,6 +119,24 @@
       "writtenOn": "2024-10-31T15:56:04Z",
       "side": 1,
       "message": "and lastly here hopefully false will work",
+      "revId": "2cec5447c919c45ab99151d58532aad9fc5f0511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f1fa9c2_7330e8cf",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-10-31T16:41:44Z",
+      "side": 1,
+      "message": "Here a similar test fails, `test_validate_endpoint_update_succeeds_with_extra_parameters`",
+      "parentUuid": "73da6eee_068c5d84",
       "revId": "2cec5447c919c45ab99151d58532aad9fc5f0511",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
