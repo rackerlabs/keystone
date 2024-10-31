@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3758868_32500a33",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-31T15:56:04Z",
+      "side": 1,
+      "message": "I think there should not be any additional props so we should go for prohibiting additionalProps",
+      "revId": "2cec5447c919c45ab99151d58532aad9fc5f0511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73568f10_143a9422",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-31T15:56:04Z",
+      "side": 1,
+      "message": "try setting it to false",
+      "revId": "2cec5447c919c45ab99151d58532aad9fc5f0511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff585ce7_a5b04d34",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-31T15:56:04Z",
+      "side": 1,
+      "message": "would false work?",
+      "revId": "2cec5447c919c45ab99151d58532aad9fc5f0511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73da6eee_068c5d84",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-31T15:56:04Z",
+      "side": 1,
+      "message": "and lastly here hopefully false will work",
+      "revId": "2cec5447c919c45ab99151d58532aad9fc5f0511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
