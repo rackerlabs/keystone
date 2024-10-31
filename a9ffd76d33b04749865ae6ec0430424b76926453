@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "703210d8_b6e5c6b8",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-10-31T16:01:03Z",
+      "side": 1,
+      "message": "yes, exactly this way we should do it for now",
+      "revId": "a9ffd76d33b04749865ae6ec0430424b76926453",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
