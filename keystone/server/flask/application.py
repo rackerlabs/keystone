@@ -17,13 +17,7 @@ import flask
 import oslo_i18n
 from oslo_log import log
 from oslo_middleware import healthcheck
-
-try:
-    # werkzeug 0.15.x
-    from werkzeug.middleware import dispatcher as wsgi_dispatcher
-except ImportError:
-    # werkzeug 0.14.x
-    import werkzeug.wsgi as wsgi_dispatcher
+from werkzeug.middleware import dispatcher as wsgi_dispatcher
 
 from keystone.api import auth
 from keystone.api import credentials
