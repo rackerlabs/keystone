@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7de18a6e_59fe22e7",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-11-01T15:19:17Z",
+      "side": 1,
+      "message": "since this is a GET and not GET or LIST you should use proper schemas and make service_provider_id function argument non-optional",
+      "revId": "4c69a93e54a2903f358d66d463113290ee3135ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
