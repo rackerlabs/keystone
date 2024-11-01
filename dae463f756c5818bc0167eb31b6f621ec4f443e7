@@ -122,6 +122,24 @@
       "parentUuid": "15857ff3_0426462e",
       "revId": "dae463f756c5818bc0167eb31b6f621ec4f443e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d49c545e_e7c97c30",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-11-01T20:15:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0882d97a_9fdaab3b",
+      "revId": "dae463f756c5818bc0167eb31b6f621ec4f443e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
