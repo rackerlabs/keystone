@@ -104,6 +104,24 @@
       "parentUuid": "1e4c4709_c38ca881",
       "revId": "dae463f756c5818bc0167eb31b6f621ec4f443e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0882d97a_9fdaab3b",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-11-01T15:17:34Z",
+      "side": 1,
+      "message": "good that you mention it. It is actually wrong: response of list and response of GET are different. In first case you get back `trusts: [{},{}]` in later `trust: {}`. `trust_response_body` is what you should use for result of GET and keep `trust_index_response_body` for list",
+      "parentUuid": "15857ff3_0426462e",
+      "revId": "dae463f756c5818bc0167eb31b6f621ec4f443e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
