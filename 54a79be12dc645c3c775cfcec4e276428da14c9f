@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2d7fb2e_60f99ba1",
+        "filename": "keystone/api/users.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-11-08T15:28:57Z",
+      "side": 1,
+      "message": "Show appcreds is not accepting filter params",
+      "revId": "54a79be12dc645c3c775cfcec4e276428da14c9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
