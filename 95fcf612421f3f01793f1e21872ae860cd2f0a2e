@@ -16,6 +16,23 @@
       "message": "recheck post failure is not what we are expecting",
       "revId": "95fcf612421f3f01793f1e21872ae860cd2f0a2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3277f94e_ac2f34e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31068
+      },
+      "writtenOn": "2024-11-13T15:14:38Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "95fcf612421f3f01793f1e21872ae860cd2f0a2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
