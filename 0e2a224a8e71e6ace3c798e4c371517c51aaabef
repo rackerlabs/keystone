@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1217467a_c77c5e6e",
+        "filename": "keystone/api/endpoints.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-11-13T18:48:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "824a1e89_0bc45a5d",
+      "revId": "0e2a224a8e71e6ace3c798e4c371517c51aaabef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3f20333c_162fc198",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-11-08T14:33:52Z",
       "side": 1,
       "message": "it is possible to filter endpoints with interface/service_id/region_id parameters",
+      "revId": "0e2a224a8e71e6ace3c798e4c371517c51aaabef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ecc8f70_be5b70c9",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-11-13T18:48:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f20333c_162fc198",
       "revId": "0e2a224a8e71e6ace3c798e4c371517c51aaabef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
