@@ -544,15 +544,22 @@ def _sign_assertion(assertion):
             # parsing.
             stderr=subprocess.STDOUT,
         )
-    except Exception as e:
-        msg = 'Error when signing assertion, reason: %(reason)s%(output)s'
+    except subprocess.CalledProcessError as e:
+        msg = (
+            'Error when signing assertion, '
+            'reason: %(reason)s, output: %(output)s'
+        )
         LOG.error(
             msg,
             {
                 'reason': e,
-                'output': ' ' + e.output if hasattr(e, 'output') else '',
+                'output': e.output.decode() if e.output is not None else '',
             },
         )
+        raise exception.SAMLSigningError(reason=e)
+    except Exception as e:
+        msg = 'Error when signing assertion, reason: %(reason)s'
+        LOG.error(msg, {'reason': e})
         raise exception.SAMLSigningError(reason=e)
     finally:
         try:
