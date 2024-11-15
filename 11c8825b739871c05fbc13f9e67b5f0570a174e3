@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4969fa4_b0ded7dc",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-11-15T13:54:18Z",
+      "side": 1,
+      "message": "still index query params for show operation",
+      "revId": "11c8825b739871c05fbc13f9e67b5f0570a174e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1e8336d_5383fc1f",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-11-15T13:54:18Z",
+      "side": 1,
+      "message": "please mark service_provider as required (root key)",
+      "revId": "11c8825b739871c05fbc13f9e67b5f0570a174e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd235ecf_e74b570d",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-11-15T13:54:18Z",
+      "side": 1,
+      "message": "additionalProps - false",
+      "revId": "11c8825b739871c05fbc13f9e67b5f0570a174e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
