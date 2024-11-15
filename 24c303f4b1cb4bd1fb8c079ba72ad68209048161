@@ -16,6 +16,23 @@
       "message": "recheck dependency merged a while ago",
       "revId": "24c303f4b1cb4bd1fb8c079ba72ad68209048161",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae897560_badc5b97",
+        "filename": "keystone/application_credential/schema.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-11-15T14:07:12Z",
+      "side": 1,
+      "message": "why is it true?",
+      "revId": "24c303f4b1cb4bd1fb8c079ba72ad68209048161",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
