@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7408c45b_cf05ffbe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2024-11-15T15:59:05Z",
+      "side": 1,
+      "message": "We discussed either throwing a warning in the logs or rejecting a client request which would cause the max limit to be exceeded, but my opinion is that it all depends on how this configuration will be used in practice, so in the end these actions might not be useful.",
+      "revId": "5ab90821cd59124b7cd0aa8ddbe4615471becc12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
