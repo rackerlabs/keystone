@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b5da4c6_f16ae63c",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-11-15T13:51:08Z",
+      "side": 1,
+      "message": "here you still use index query parameters for show operation",
+      "revId": "380c34fa66110295df2c9e56b0a213aa7e92d38a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dae72be1_0e92eb9b",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-11-15T13:51:08Z",
+      "side": 1,
+      "message": "it is possible to filter IDPs by `id` and `enabled` flag (https://docs.openstack.org/api-ref/identity/v3-ext/#id281)",
+      "revId": "380c34fa66110295df2c9e56b0a213aa7e92d38a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8874238_e448f275",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-11-15T13:51:08Z",
+      "side": 1,
+      "message": "please mark required properties",
+      "revId": "380c34fa66110295df2c9e56b0a213aa7e92d38a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
