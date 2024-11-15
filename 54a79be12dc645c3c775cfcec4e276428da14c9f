@@ -16,6 +16,40 @@
       "message": "Show appcreds is not accepting filter params",
       "revId": "54a79be12dc645c3c775cfcec4e276428da14c9f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3f6afde_61f2d2cd",
+        "filename": "keystone/application_credential/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-11-15T14:03:11Z",
+      "side": 1,
+      "message": "why is it true?",
+      "revId": "54a79be12dc645c3c775cfcec4e276428da14c9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4111d61_e60709fd",
+        "filename": "keystone/application_credential/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-11-15T14:03:11Z",
+      "side": 1,
+      "message": "pls \u0027application_credential\u0027 prop as required and additionalProps to false",
+      "revId": "54a79be12dc645c3c775cfcec4e276428da14c9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
