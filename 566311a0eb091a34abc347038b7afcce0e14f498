@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01a0fa26_b7aa9c80",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-11-15T14:10:47Z",
+      "side": 1,
+      "message": "\"trust\" as root prop is definitely required as well",
+      "revId": "566311a0eb091a34abc347038b7afcce0e14f498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4eed66f7_cd7bc893",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-11-15T14:10:47Z",
+      "side": 1,
+      "message": "why true?",
+      "revId": "566311a0eb091a34abc347038b7afcce0e14f498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
