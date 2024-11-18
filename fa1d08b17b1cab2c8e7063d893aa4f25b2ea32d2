@@ -16,6 +16,24 @@
       "message": "This is fine but fwiw the _proper_ fix for this is https://review.opendev.org/c/openstack/requirements/+/927102\n\nPillow distributes pre-built wheels so we shouldn\u0027t need to install these libraries. The reason we need them on Noble is because our current cap version of Pillow is too old to have Python 3.12 wheels available. Bump the version of pillow and this dep will no longer be needed.",
       "revId": "fa1d08b17b1cab2c8e7063d893aa4f25b2ea32d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c2a7cdf_7a3e66b9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2024-11-18T17:55:38Z",
+      "side": 1,
+      "message": "nice, I will wait requirement change to merge and then can abandon this change",
+      "parentUuid": "d93ec18f_75adeaab",
+      "revId": "fa1d08b17b1cab2c8e7063d893aa4f25b2ea32d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
