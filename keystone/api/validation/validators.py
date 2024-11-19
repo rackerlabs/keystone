@@ -25,6 +25,9 @@ from keystone import exception
 from keystone.i18n import _
 
 
+_FORMAT_CHECKER = jsonschema.FormatChecker()
+
+
 def _soft_validate_additional_properties(
     validator,
     additional_properties_value,
@@ -117,7 +120,7 @@ def _validate_string_length(
     )
 
 
-@jsonschema.FormatChecker.cls_checks("date-time")
+@_FORMAT_CHECKER.checks("date-time")
 def _validate_datetime_format(instance: object) -> bool:
     # format checks constrain to the relevant primitive type
     # https://github.com/OAI/OpenAPI-Specification/issues/3148
@@ -131,7 +134,7 @@ def _validate_datetime_format(instance: object) -> bool:
         return True
 
 
-@jsonschema.FormatChecker.cls_checks("uuid")
+@_FORMAT_CHECKER.checks("uuid")
 def _validate_uuid_format(instance: object) -> bool:
     # format checks constrain to the relevant primitive type
     # https://github.com/OAI/OpenAPI-Specification/issues/3148
