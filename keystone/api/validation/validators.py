@@ -117,7 +117,7 @@ def _validate_string_length(
     )
 
 
-@jsonschema.FormatChecker.cls_checks("date-time")
+@jsonschema.draft202012_format_checker.checks("date-time")
 def _validate_datetime_format(instance: object) -> bool:
     # format checks constrain to the relevant primitive type
     # https://github.com/OAI/OpenAPI-Specification/issues/3148
@@ -131,7 +131,7 @@ def _validate_datetime_format(instance: object) -> bool:
         return True
 
 
-@jsonschema.FormatChecker.cls_checks("uuid")
+@jsonschema.draft202012_format_checker.checks("uuid")
 def _validate_uuid_format(instance: object) -> bool:
     # format checks constrain to the relevant primitive type
     # https://github.com/OAI/OpenAPI-Specification/issues/3148

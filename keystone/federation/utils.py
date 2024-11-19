@@ -276,7 +276,7 @@ def validate_mapping_structure(ref):
         version,
     )
 
-    v = jsonschema.Draft4Validator(
+    v = jsonschema.Draft202012Validator(
         IDP_ATTRIBUTE_MAPPING_SCHEMAS[version]['schema']
     )
 
