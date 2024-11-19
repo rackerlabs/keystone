@@ -16,6 +16,24 @@
       "message": "yes, exactly this way we should do it for now",
       "revId": "a9ffd76d33b04749865ae6ec0430424b76926453",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d35b396_3a850571",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 36482
+      },
+      "writtenOn": "2024-11-19T21:03:52Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "703210d8_b6e5c6b8",
+      "revId": "a9ffd76d33b04749865ae6ec0430424b76926453",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

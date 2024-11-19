@@ -16,6 +16,24 @@
       "message": "nit: I checked that create operation will not truncate results, but this is not harmful since I am anyway reworking pagination globally and truncation will be dropped",
       "revId": "d0a987bc422b2480814543624a625580ff9f5def",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d57bc521_a8eff9ff",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 36482
+      },
+      "writtenOn": "2024-11-19T21:03:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "514d5bac_a6b01ff6",
+      "revId": "d0a987bc422b2480814543624a625580ff9f5def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
