@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d72c8a5_f0f49c58",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2024-11-20T04:42:53Z",
+      "side": 1,
+      "message": "An alternative approach is to pre-generate svg and use it (as was done in a few other projects such as nova or octavia) but I think this approach is also good.",
+      "revId": "51045cc0dd1622fe03be78a0e2b273e4c975106e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
