@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5944400d_c30ea7ae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 37374
+      },
+      "writtenOn": "2024-11-20T12:06:50Z",
+      "side": 1,
+      "message": "I was able to start Keystone uwsgi with the new module:\n```\nuwsgi --http-socket 127.0.0.1:8000 -w \"keystone.wsgi.api:application\"\n```\n\nDoes it make sense to also update the contributor documentation at https://opendev.org/openstack/keystone/src/commit/15f34eff17f14074bdadc558e6fe80308e371476/doc/source/contributor/set-up-keystone.rst?display\u003dsource#L229?",
+      "revId": "57c6b3187fc47e7d5cf6f1b5cde10fd867edb49f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
