@@ -33,6 +33,24 @@
       "message": "why is it true?",
       "revId": "24c303f4b1cb4bd1fb8c079ba72ad68209048161",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5eae371d_f55a7d13",
+        "filename": "keystone/application_credential/schema.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-11-21T19:42:42Z",
+      "side": 1,
+      "message": "Fixed. The `access_rule` property was missing an underscore so it wasn\u0027t recognizing the access rule object.",
+      "parentUuid": "ae897560_badc5b97",
+      "revId": "24c303f4b1cb4bd1fb8c079ba72ad68209048161",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
