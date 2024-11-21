@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2141a795_6c3c21b2",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-11-21T19:52:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "01a0fa26_b7aa9c80",
+      "revId": "566311a0eb091a34abc347038b7afcce0e14f498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4eed66f7_cd7bc893",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-11-15T14:10:47Z",
       "side": 1,
       "message": "why true?",
+      "revId": "566311a0eb091a34abc347038b7afcce0e14f498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb51eed2_ba608e60",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-11-21T19:52:41Z",
+      "side": 1,
+      "message": "For some reason this is expected to be an array. But I realized that this create response body is the same as the normal response body, so I removed it. Passing locally so waiting for Zuul tests to be sure this is correct.",
+      "parentUuid": "4eed66f7_cd7bc893",
       "revId": "566311a0eb091a34abc347038b7afcce0e14f498",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
