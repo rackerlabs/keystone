@@ -16,6 +16,23 @@
       "message": "recheck failure not related",
       "revId": "04ff247ad03227ad7a53a3f86a66e2a88af0ce85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "586ff171_b9386934",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2024-11-21T01:39:20Z",
+      "side": 1,
+      "message": "recheck doc job is fixed",
+      "revId": "04ff247ad03227ad7a53a3f86a66e2a88af0ce85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
