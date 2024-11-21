@@ -16,6 +16,23 @@
       "message": "testing CI on noble with integration/unit/doc job on noble",
       "revId": "fb8bb032971d2925f409991b42754bcba5be268e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e47daf42_581c9b99",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2024-11-21T01:39:58Z",
+      "side": 1,
+      "message": "recheck this failure does not seems to be related to noble, occured on jammy also",
+      "revId": "fb8bb032971d2925f409991b42754bcba5be268e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
