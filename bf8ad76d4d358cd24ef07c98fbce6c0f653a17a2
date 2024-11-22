@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f815674_99058f91",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2024-11-22T17:24:02Z",
+      "side": 1,
+      "message": "that seams reasonably to me given glance requires it now as the only way to set limits/quotas :)",
+      "revId": "bf8ad76d4d358cd24ef07c98fbce6c0f653a17a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
