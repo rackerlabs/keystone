@@ -16,6 +16,23 @@
       "message": "Hi, this is a generated patch, that should merge as soon as possible.\nPlease merge it, otherwise there won\u0027t exist a release notes page for the project.\nThe generated patch looks correct.",
       "revId": "89b0ceba9d8f6a7dcf780ca462327f414eda4b92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06f49e63_5b12e6b3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15197
+      },
+      "writtenOn": "2024-11-22T15:19:16Z",
+      "side": 1,
+      "message": "Keystone release notes for 2024.2 are still missing, please approve!",
+      "revId": "89b0ceba9d8f6a7dcf780ca462327f414eda4b92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
