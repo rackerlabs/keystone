@@ -1,0 +1,12 @@
+Code-Review+2: Douglas Mendizábal <dmendiza@redhat.com>
+Code-Review+2: Grzegorz Grasza <xek@redhat.com>
+Code-Review+1: Artem Goncharov <artem.goncharov@gmail.com>
+Workflow+1: Douglas Mendizábal <dmendiza@redhat.com>
+Verified+2: Zuul
+Code-Review+1: Doug Goldstein <cardoe@cardoe.com>
+Submitted-by: Zuul
+Submitted-at: Fri, 22 Nov 2024 17:36:15 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/931675
+Comments-Total: 1
+Project: openstack/keystone
+Branch: refs/heads/master
