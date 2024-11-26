@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e32ae9f8_c32ab63e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2024-11-26T14:35:35Z",
+      "side": 1,
+      "message": "recheck - devstack is fixed on unmaintained/2023.1",
+      "revId": "9e3dfb4bcf39394462c0b1c1625beb3276c2f5eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
