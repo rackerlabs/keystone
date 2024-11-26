@@ -125,7 +125,17 @@ _application_credential_properties = {
     'expires_at': {'type': ['null', 'string']},
     'roles': _role_properties,
     'unrestricted': ks_parameter_types.boolean,
-    'access_rules': _access_rules_properties,
+    'access_rules': {
+        'type': 'array',
+        'items': {
+            'type': 'object',
+            'properties': {
+                'id': parameter_types.id_string,
+                **_access_rules_properties,
+            },
+            'additionalProperties': False,
+        },
+    },
 }
 
 application_credential_create = {
