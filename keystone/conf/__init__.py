@@ -17,6 +17,7 @@ from oslo_config import cfg
 from oslo_log import log
 import oslo_messaging
 from oslo_middleware import cors
+from oslo_policy import opts as policy_opts
 from osprofiler import opts as profiler
 
 from keystone.conf import application_credential
@@ -159,6 +160,9 @@ def set_external_opts_defaults():
 
     # configure OSprofiler options
     profiler.set_defaults(CONF, enabled=False, trace_sqlalchemy=False)
+
+    # Load oslo.policy options
+    policy_opts.set_defaults(CONF, DEFAULT_POLICY_FILE)
 
     # Oslo.cache is always enabled by default for request-local caching
     # TODO(morganfainberg): Fix this to not use internal interface when
