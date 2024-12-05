@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "31ee808b_cfd6a82d",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-12-05T21:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6b5da4c6_f16ae63c",
+      "revId": "380c34fa66110295df2c9e56b0a213aa7e92d38a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dae72be1_0e92eb9b",
@@ -35,6 +53,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "08220333_67890ef9",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-12-05T21:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae72be1_0e92eb9b",
+      "revId": "380c34fa66110295df2c9e56b0a213aa7e92d38a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f8874238_e448f275",
@@ -48,6 +84,24 @@
       "writtenOn": "2024-11-15T13:51:08Z",
       "side": 1,
       "message": "please mark required properties",
+      "revId": "380c34fa66110295df2c9e56b0a213aa7e92d38a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "93399fee_06253023",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-12-05T21:10:06Z",
+      "side": 1,
+      "message": "Confirmed with osc api that no required properties exist (all get default values):\n```\n❯ osc api identity OS-FEDERATION/identity_providers/test_idp -m put --os-cloud local\n{\"identity_provider\":{\"authorization_ttl\":null,\"description\":null,\"domain_id\":\"bad9607fc3e64b74af985629b2537178\",\"enabled\":false,\"id\":\"test_idp\",\"links\":{\"self\":\"http://localhost:5000/v3/OS-FEDERATION/identity_providers/test_idp\"},\"remote_ids\":[]}}\n```",
+      "parentUuid": "f8874238_e448f275",
       "revId": "380c34fa66110295df2c9e56b0a213aa7e92d38a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
