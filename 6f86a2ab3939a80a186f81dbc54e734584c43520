@@ -18,6 +18,42 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb8e62af_2dff2ba4",
+        "filename": "keystone/application_credential/schema.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-12-05T21:51:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9bfba0f1_d8e4d0ef",
+      "revId": "6f86a2ab3939a80a186f81dbc54e734584c43520",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84678102_3ed8b9ae",
+        "filename": "keystone/application_credential/schema.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-12-05T21:51:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9bfba0f1_d8e4d0ef",
+      "revId": "6f86a2ab3939a80a186f81dbc54e734584c43520",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2b34ec4b_c3ad4319",
@@ -31,6 +67,24 @@
       "writtenOn": "2024-12-04T15:43:04Z",
       "side": 1,
       "message": "false?",
+      "revId": "6f86a2ab3939a80a186f81dbc54e734584c43520",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90310975_3638744b",
+        "filename": "keystone/application_credential/schema.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-12-05T21:51:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b34ec4b_c3ad4319",
       "revId": "6f86a2ab3939a80a186f81dbc54e734584c43520",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
@@ -52,6 +106,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfa8a2a6_c4fe1e0e",
+        "filename": "keystone/application_credential/schema.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-12-05T21:51:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a503d392_a75c5160",
+      "revId": "6f86a2ab3939a80a186f81dbc54e734584c43520",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7571c478_0663e10d",
@@ -65,6 +137,24 @@
       "writtenOn": "2024-12-04T15:43:04Z",
       "side": 1,
       "message": "I am not sure there are possible additionalProperties",
+      "revId": "6f86a2ab3939a80a186f81dbc54e734584c43520",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f491b482_1cd92947",
+        "filename": "keystone/application_credential/schema.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-12-05T21:51:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7571c478_0663e10d",
       "revId": "6f86a2ab3939a80a186f81dbc54e734584c43520",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
