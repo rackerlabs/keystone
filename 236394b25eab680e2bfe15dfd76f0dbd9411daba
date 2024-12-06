@@ -22,6 +22,30 @@
       },
       "revId": "236394b25eab680e2bfe15dfd76f0dbd9411daba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee1dc114_9ba19ed0",
+        "filename": "keystone/application_credential/schema.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-12-06T18:23:05Z",
+      "side": 1,
+      "message": "Added system to properties and user_id to schema (response only)",
+      "parentUuid": "ded527ee_8a79bad9",
+      "range": {
+        "startLine": 210,
+        "startChar": 28,
+        "endLine": 210,
+        "endChar": 32
+      },
+      "revId": "236394b25eab680e2bfe15dfd76f0dbd9411daba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
