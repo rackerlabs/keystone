@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ded527ee_8a79bad9",
+        "filename": "keystone/application_credential/schema.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 35548
+      },
+      "writtenOn": "2024-12-06T17:50:50Z",
+      "side": 1,
+      "message": "I had to enable additional properties as the post request returns `user_id` and `system`. Let me know if you want me to add that to the schema properties and set additional props back to false",
+      "range": {
+        "startLine": 210,
+        "startChar": 28,
+        "endLine": 210,
+        "endChar": 32
+      },
+      "revId": "236394b25eab680e2bfe15dfd76f0dbd9411daba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
