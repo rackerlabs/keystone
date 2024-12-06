@@ -16,6 +16,23 @@
       "message": "recheck codegenerator adapted",
       "revId": "6b8f931e98709ac7cac388eb2454c4014bd61593",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aafb71af_9092ce10",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2024-12-06T14:26:34Z",
+      "side": 1,
+      "message": "TODO: remove the commented out code",
+      "revId": "6b8f931e98709ac7cac388eb2454c4014bd61593",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
