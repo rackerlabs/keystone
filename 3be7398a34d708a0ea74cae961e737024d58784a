@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "579baeb3_9d271bf3",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2024-12-13T14:41:21Z",
+      "side": 1,
+      "message": "the length should be adapted here as well. It is not enough to extend a DB column, we also need to allow API to accept longer values",
+      "revId": "3be7398a34d708a0ea74cae961e737024d58784a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
