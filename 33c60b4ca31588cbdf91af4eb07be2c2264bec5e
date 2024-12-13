@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "25917753_ffc174bc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11583
+      },
+      "writtenOn": "2024-12-13T21:29:55Z",
+      "side": 1,
+      "message": "I figured out the same thing in our CI, but I finally did #937731 instead",
+      "revId": "33c60b4ca31588cbdf91af4eb07be2c2264bec5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
