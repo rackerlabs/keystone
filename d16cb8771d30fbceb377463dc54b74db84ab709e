@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7932de08_c0aa3d6f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33455
+      },
+      "writtenOn": "2024-12-26T06:26:22Z",
+      "side": 1,
+      "message": "Updated the contents with the latest 2024.2 release and added notes regarding apache2 configuration and short forms of Distinguished Names. Please kindly review this patch again.",
+      "revId": "d16cb8771d30fbceb377463dc54b74db84ab709e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
