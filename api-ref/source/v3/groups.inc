@@ -40,6 +40,8 @@ Parameters
 
    - name: group_name_query
    - domain_id: domain_id_query
+   - limit: limit_query
+   - marker: marker_query
 
 Response
 --------

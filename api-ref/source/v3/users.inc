@@ -41,6 +41,8 @@ Parameters
    - password_expires_at: password_expires_at_query
    - protocol_id: protocol_id_query
    - unique_id: unique_id_query
+   - limit: limit_query
+   - marker: marker_query
 
 Response
 --------
