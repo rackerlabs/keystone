@@ -16,6 +16,23 @@
       "message": "recheck expired logs",
       "revId": "b06a3d04c2a9a23c0299f7b0f038be932a735c7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec5f47cf_a41d469c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-01-09T13:40:02Z",
+      "side": 1,
+      "message": "recheck codegenerator prepared",
+      "revId": "b06a3d04c2a9a23c0299f7b0f038be932a735c7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
