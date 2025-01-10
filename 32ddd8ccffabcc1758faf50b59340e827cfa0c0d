@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba3c4b0d_e891fce2",
+        "filename": "keystone/api/validation/parameter_types.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-01-10T14:42:25Z",
+      "side": 1,
+      "message": "if it is necessary maybe we can improve the pattern, but isn\u0027t `type: string format: uri` sufficient? Or where is the pattern coming from?",
+      "revId": "32ddd8ccffabcc1758faf50b59340e827cfa0c0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
