@@ -193,6 +193,11 @@ class Identity(base.IdentityDriverBase):
     def delete_group(self, group_id):
         raise exception.Forbidden(READ_ONLY_LDAP_ERROR_MESSAGE)
 
+    def reset_last_active(self):
+        # reset_last_active is only used to reset the last_active
+        # column in the SQL backend
+        raise exception.NotImplemented()  # pragma: no cover
+
     # Test implementations
     def _create_user(self, user_id, user):
         msg = _DEPRECATION_MSG % "create_user"
