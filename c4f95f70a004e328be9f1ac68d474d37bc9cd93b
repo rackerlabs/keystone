@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f28e435_7d35901b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2025-01-14T07:11:24Z",
+      "side": 1,
+      "message": "CI-only change that removes a zuul config error. fast-approving.",
+      "revId": "c4f95f70a004e328be9f1ac68d474d37bc9cd93b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
