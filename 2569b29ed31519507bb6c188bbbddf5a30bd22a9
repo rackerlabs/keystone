@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15142c3f_ae5e77ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2025-01-14T10:37:55Z",
+      "side": 1,
+      "message": "CI-only patch that removes zuul config error, fast-approving.",
+      "revId": "2569b29ed31519507bb6c188bbbddf5a30bd22a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
