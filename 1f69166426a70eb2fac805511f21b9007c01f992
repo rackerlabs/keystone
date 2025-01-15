@@ -33,6 +33,24 @@
       "message": "Isn\u0027t `reset_last_active` already implemented here?",
       "revId": "1f69166426a70eb2fac805511f21b9007c01f992",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20ecf580_2af13b13",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-01-15T17:05:28Z",
+      "side": 1,
+      "message": "indeed, and that is exactly the reason why mypy complains",
+      "parentUuid": "a2555c99_7da2af20",
+      "revId": "1f69166426a70eb2fac805511f21b9007c01f992",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
