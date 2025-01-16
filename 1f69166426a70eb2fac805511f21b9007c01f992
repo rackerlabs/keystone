@@ -18,6 +18,23 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a47ab93_4ac83828",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2025-01-16T15:59:36Z",
+      "side": 1,
+      "message": "Thanks for the review, y\u0027all.  You\u0027re right.  I was confused because we saw this issue in one of our downstream branches, but I think it was a bad backport on our end.  Abandoning this change.",
+      "revId": "1f69166426a70eb2fac805511f21b9007c01f992",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a2555c99_7da2af20",
