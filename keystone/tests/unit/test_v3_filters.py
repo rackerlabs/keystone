@@ -33,14 +33,6 @@ CONF = keystone.conf.CONF
 PROVIDERS = provider_api.ProviderAPIs
 
 
-def _get_id_list_from_ref_list(ref_list):
-    """Get entity IDs from the response"""
-    result_list = []
-    for x in ref_list:
-        result_list.append(x['id'])
-    return result_list
-
-
 class IdentityTestFilteredCase(filtering.FilterTests, test_v3.RestfulTestCase):
     """Test filter enforcement on the v3 Identity API."""
 
@@ -104,6 +96,12 @@ class IdentityTestFilteredCase(filtering.FilterTests, test_v3.RestfulTestCase):
             user_id=self.user1['id'], password=self.user1['password']
         )
 
+    def _get_id_list_from_ref_list(self, ref_list):
+        result_list = []
+        for x in ref_list:
+            result_list.append(x['id'])
+        return result_list
+
     def _set_policy(self, new_policy):
         with open(self.tmpfilename, "w") as policyfile:
             policyfile.write(jsonutils.dumps(new_policy))
@@ -122,7 +120,7 @@ class IdentityTestFilteredCase(filtering.FilterTests, test_v3.RestfulTestCase):
         url_by_name = '/users?domain_id={}'.format(self.domainB['id'])
         r = self.get(url_by_name, auth=self.auth)
         # We should  get back two users, those in DomainB
-        id_list = _get_id_list_from_ref_list(r.result.get('users'))
+        id_list = self._get_id_list_from_ref_list(r.result.get('users'))
         self.assertIn(self.user2['id'], id_list)
         self.assertIn(self.user3['id'], id_list)
 
@@ -142,28 +140,28 @@ class IdentityTestFilteredCase(filtering.FilterTests, test_v3.RestfulTestCase):
         new_policy = {"identity:list_domains": []}
         self._set_policy(new_policy)
         r = self.get('/domains?enabled=0', auth=self.auth)
-        id_list = _get_id_list_from_ref_list(r.result.get('domains'))
+        id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
         self.assertEqual(1, len(id_list))
         self.assertIn(self.domainC['id'], id_list)
 
         # Try a few ways of specifying 'false'
         for val in ('0', 'false', 'False', 'FALSE', 'n', 'no', 'off'):
             r = self.get(f'/domains?enabled={val}', auth=self.auth)
-            id_list = _get_id_list_from_ref_list(r.result.get('domains'))
+            id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
             self.assertEqual([self.domainC['id']], id_list)
 
         # Now try a few ways of specifying 'true' when we should get back
         # the other two domains, plus the default domain
         for val in ('1', 'true', 'True', 'TRUE', 'y', 'yes', 'on'):
             r = self.get(f'/domains?enabled={val}', auth=self.auth)
-            id_list = _get_id_list_from_ref_list(r.result.get('domains'))
+            id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
             self.assertEqual(3, len(id_list))
             self.assertIn(self.domainA['id'], id_list)
             self.assertIn(self.domainB['id'], id_list)
             self.assertIn(CONF.identity.default_domain_id, id_list)
 
         r = self.get('/domains?enabled', auth=self.auth)
-        id_list = _get_id_list_from_ref_list(r.result.get('domains'))
+        id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
         self.assertEqual(3, len(id_list))
         self.assertIn(self.domainA['id'], id_list)
         self.assertIn(self.domainB['id'], id_list)
@@ -184,7 +182,7 @@ class IdentityTestFilteredCase(filtering.FilterTests, test_v3.RestfulTestCase):
 
         my_url = '/domains?enabled&name={}'.format(self.domainA['name'])
         r = self.get(my_url, auth=self.auth)
-        id_list = _get_id_list_from_ref_list(r.result.get('domains'))
+        id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
         self.assertEqual(1, len(id_list))
         self.assertIn(self.domainA['id'], id_list)
         self.assertIs(True, r.result.get('domains')[0]['enabled'])
@@ -204,7 +202,7 @@ class IdentityTestFilteredCase(filtering.FilterTests, test_v3.RestfulTestCase):
 
         my_url = '/domains?enableds=0&name={}'.format(self.domainA['name'])
         r = self.get(my_url, auth=self.auth)
-        id_list = _get_id_list_from_ref_list(r.result.get('domains'))
+        id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
 
         # domainA is returned and it is enabled, since enableds=0 is not the
         # same as enabled=0
@@ -240,7 +238,7 @@ class IdentityTestFilteredCase(filtering.FilterTests, test_v3.RestfulTestCase):
             r = self.get(url_by_name, auth=self.auth)
 
             self.assertEqual(1, len(r.result.get('users')))
-            self.assertIn(user['id'], [x["id"] for x in r.result.get('users')])
+            self.assertEqual(user['id'], r.result.get('users')[0]['id'])
 
     def test_inexact_filters(self):
         # Create 20 users
@@ -299,19 +297,13 @@ class IdentityTestFilteredCase(filtering.FilterTests, test_v3.RestfulTestCase):
         url_by_name = '/users?name__endswith=of'
         r = self.get(url_by_name, auth=self.auth)
         self.assertEqual(1, len(r.result.get('users')))
-        self.assertIn(
-            user_list[7]['id'], [x["id"] for x in r.result.get('users')]
-        )
+        self.assertEqual(user_list[7]['id'], r.result.get('users')[0]['id'])
 
         url_by_name = '/users?name__iendswith=OF'
         r = self.get(url_by_name, auth=self.auth)
         self.assertEqual(2, len(r.result.get('users')))
-        self.assertIn(
-            user_list[7]['id'], [x["id"] for x in r.result.get('users')]
-        )
-        self.assertIn(
-            user_list[10]['id'], [x["id"] for x in r.result.get('users')]
-        )
+        self.assertEqual(user_list[7]['id'], r.result.get('users')[0]['id'])
+        self.assertEqual(user_list[10]['id'], r.result.get('users')[1]['id'])
 
         self._delete_test_data('user', user_list)
 
@@ -484,7 +476,7 @@ class IdentityPasswordExpiryFilteredTestCase(
             'eq',
         )
         resp_users = self.get(expire_at_url).result.get('users')
-        self.assertIn(self.user2['id'], [x["id"] for x in resp_users])
+        self.assertEqual(self.user2['id'], resp_users[0]['id'])
 
         expire_at_url = self._list_users_by_password_expires_at(
             self._format_timestamp(
@@ -492,10 +484,9 @@ class IdentityPasswordExpiryFilteredTestCase(
             ),
             'neq',
         )
-        resp_users = self.get(expire_at_url).result.get("users")
-        id_list = _get_id_list_from_ref_list(resp_users)
-        self.assertIn(self.user['id'], id_list)
-        self.assertIn(self.user3['id'], id_list)
+        resp_users = self.get(expire_at_url).result.get('users')
+        self.assertEqual(self.user['id'], resp_users[0]['id'])
+        self.assertEqual(self.user3['id'], resp_users[1]['id'])
 
     def test_list_users_by_password_expires_before(self):
         """Ensure users can be filtered on lt and lte.
@@ -511,9 +502,8 @@ class IdentityPasswordExpiryFilteredTestCase(
             'lt',
         )
         resp_users = self.get(expire_before_url).result.get('users')
-        id_list = _get_id_list_from_ref_list(resp_users)
-        self.assertIn(self.user['id'], id_list)
-        self.assertIn(self.user2['id'], id_list)
+        self.assertEqual(self.user['id'], resp_users[0]['id'])
+        self.assertEqual(self.user2['id'], resp_users[1]['id'])
 
         expire_before_url = self._list_users_by_password_expires_at(
             self._format_timestamp(
@@ -522,9 +512,8 @@ class IdentityPasswordExpiryFilteredTestCase(
             'lte',
         )
         resp_users = self.get(expire_before_url).result.get('users')
-        id_list = _get_id_list_from_ref_list(resp_users)
-        self.assertIn(self.user['id'], id_list)
-        self.assertIn(self.user2['id'], id_list)
+        self.assertEqual(self.user['id'], resp_users[0]['id'])
+        self.assertEqual(self.user2['id'], resp_users[1]['id'])
 
     def test_list_users_by_password_expires_after(self):
         """Ensure users can be filtered on gt and gte.
@@ -540,7 +529,7 @@ class IdentityPasswordExpiryFilteredTestCase(
             'gt',
         )
         resp_users = self.get(expire_after_url).result.get('users')
-        self.assertIn(self.user3['id'], [x["id"] for x in resp_users])
+        self.assertEqual(self.user3['id'], resp_users[0]['id'])
 
         expire_after_url = self._list_users_by_password_expires_at(
             self._format_timestamp(
@@ -549,9 +538,8 @@ class IdentityPasswordExpiryFilteredTestCase(
             'gte',
         )
         resp_users = self.get(expire_after_url).result.get('users')
-        id_list = _get_id_list_from_ref_list(resp_users)
-        self.assertIn(self.user2['id'], id_list)
-        self.assertIn(self.user3['id'], id_list)
+        self.assertEqual(self.user2['id'], resp_users[0]['id'])
+        self.assertEqual(self.user3['id'], resp_users[1]['id'])
 
     def test_list_users_by_password_expires_interval(self):
         """Ensure users can be filtered on time intervals.
@@ -574,7 +562,7 @@ class IdentityPasswordExpiryFilteredTestCase(
             'gt',
         )
         resp_users = self.get(expire_interval_url).result.get('users')
-        self.assertIn(self.user2['id'], [x["id"] for x in resp_users])
+        self.assertEqual(self.user2['id'], resp_users[0]['id'])
 
         expire_interval_url = self._list_users_by_multiple_password_expires_at(
             self._format_timestamp(
@@ -587,7 +575,7 @@ class IdentityPasswordExpiryFilteredTestCase(
             'lte',
         )
         resp_users = self.get(expire_interval_url).result.get('users')
-        self.assertIn(self.user2['id'], [x["id"] for x in resp_users])
+        self.assertEqual(self.user2['id'], resp_users[0]['id'])
 
     def test_list_users_by_password_expires_with_bad_operator_fails(self):
         """Ensure an invalid operator returns a Bad Request.
@@ -687,7 +675,7 @@ class IdentityPasswordExpiryFilteredTestCase(
             'eq',
         )
         resp_users = self.get(expire_at_url).result.get('users')
-        self.assertIn(self.user2['id'], [x["id"] for x in resp_users])
+        self.assertEqual(self.user2['id'], resp_users[0]['id'])
 
         expire_at_url = self._list_users_in_group_by_password_expires_at(
             self._format_timestamp(
@@ -696,7 +684,7 @@ class IdentityPasswordExpiryFilteredTestCase(
             'neq',
         )
         resp_users = self.get(expire_at_url).result.get('users')
-        self.assertIn(self.user3['id'], [x["id"] for x in resp_users])
+        self.assertEqual(self.user3['id'], resp_users[0]['id'])
 
     def test_list_users_in_group_by_password_expires_before(self):
         """Ensure users in a group can be filtered on with lt and lte.
@@ -712,7 +700,7 @@ class IdentityPasswordExpiryFilteredTestCase(
             'lt',
         )
         resp_users = self.get(expire_before_url).result.get('users')
-        self.assertIn(self.user2['id'], [x["id"] for x in resp_users])
+        self.assertEqual(self.user2['id'], resp_users[0]['id'])
 
         expire_before_url = self._list_users_in_group_by_password_expires_at(
             self._format_timestamp(
@@ -721,7 +709,7 @@ class IdentityPasswordExpiryFilteredTestCase(
             'lte',
         )
         resp_users = self.get(expire_before_url).result.get('users')
-        self.assertIn(self.user2['id'], [x["id"] for x in resp_users])
+        self.assertEqual(self.user2['id'], resp_users[0]['id'])
 
     def test_list_users_in_group_by_password_expires_after(self):
         """Ensure users in a group can be filtered on with gt and gte.
@@ -737,7 +725,7 @@ class IdentityPasswordExpiryFilteredTestCase(
             'gt',
         )
         resp_users = self.get(expire_after_url).result.get('users')
-        self.assertIn(self.user3['id'], [x["id"] for x in resp_users])
+        self.assertEqual(self.user3['id'], resp_users[0]['id'])
 
         expire_after_url = self._list_users_in_group_by_password_expires_at(
             self._format_timestamp(
@@ -746,9 +734,8 @@ class IdentityPasswordExpiryFilteredTestCase(
             'gte',
         )
         resp_users = self.get(expire_after_url).result.get('users')
-        id_list = _get_id_list_from_ref_list(resp_users)
-        self.assertIn(self.user2['id'], id_list)
-        self.assertIn(self.user3['id'], id_list)
+        self.assertEqual(self.user2['id'], resp_users[0]['id'])
+        self.assertEqual(self.user3['id'], resp_users[1]['id'])
 
     def test_list_users_in_group_by_password_expires_interval(self):
         """Ensure users in a group can be filtered on time intervals.
@@ -773,9 +760,8 @@ class IdentityPasswordExpiryFilteredTestCase(
             )
         )
         resp_users = self.get(expire_interval_url).result.get('users')
-        id_list = _get_id_list_from_ref_list(resp_users)
-        self.assertIn(self.user2['id'], id_list)
-        self.assertIn(self.user3['id'], id_list)
+        self.assertEqual(self.user2['id'], resp_users[0]['id'])
+        self.assertEqual(self.user3['id'], resp_users[1]['id'])
 
         expire_interval_url = (
             self._list_users_in_group_by_multiple_password_expires_at(
@@ -790,9 +776,8 @@ class IdentityPasswordExpiryFilteredTestCase(
             )
         )
         resp_users = self.get(expire_interval_url).result.get('users')
-        id_list = _get_id_list_from_ref_list(resp_users)
-        self.assertIn(self.user2['id'], id_list)
-        self.assertIn(self.user3['id'], id_list)
+        self.assertEqual(self.user2['id'], resp_users[0]['id'])
+        self.assertEqual(self.user3['id'], resp_users[1]['id'])
 
     def test_list_users_in_group_by_password_expires_bad_operator_fails(self):
         """Ensure an invalid operator returns a Bad Request.
