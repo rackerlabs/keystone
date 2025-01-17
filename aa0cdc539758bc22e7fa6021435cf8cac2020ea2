@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05f21a75_3efbb83e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2025-01-17T14:25:36Z",
+      "side": 1,
+      "message": "pep8 passed, LGTM!",
+      "revId": "aa0cdc539758bc22e7fa6021435cf8cac2020ea2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
