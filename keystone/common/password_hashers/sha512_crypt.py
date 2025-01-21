@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import crypt
+from oslo_utils import secretutils
 
 from keystone.common import password_hashers
 
@@ -34,6 +34,7 @@ class Sha512_crypt(password_hashers.PasswordHasher):
         """
 
         return (
-            crypt.crypt(password.decode("utf8"), hashed[0 : hashed.rfind("$")])
+            secretutils.crypt_password(password.decode("utf8"),
+                                       hashed[0 : hashed.rfind("$")])
             == hashed
         )
