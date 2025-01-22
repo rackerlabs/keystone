@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "668ff78e_4cf98662",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-01-22T08:13:46Z",
+      "side": 1,
+      "message": "support for crypt was deprecated in Keystone multiple years ago and is just there for \"upgrade\" reasons. When I was replacing the passlib we discussed already upcoming deprecation of crypt and agreed to still port it but drop it from the code once we need to start supporting py313. The change is fine but since we are not allowing new deployments to use crypt it makes no sense to pull new dependency and we can now simply drop the sha512_crypt method completely.",
+      "revId": "3c0b6b372d82396bbf6c9331b63286fad0fb2830",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
