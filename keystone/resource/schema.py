@@ -274,3 +274,26 @@ tags_update_request_body: dict[str, Any] = {
     },
     "additionalProperties": False,
 }
+
+# Response body of the `GET /[projects|domains]/{id}/[users|groups]/{id}/roles`
+# API operations returning a list of roles
+grants_get_response_body: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "links": response_types.links,
+        "roles": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": parameter_types.id_string,
+                    "name": parameter_types.name,
+                    "links": response_types.resource_links,
+                },
+                "additionalProperties": False,
+            },
+        },
+        "truncated": response_types.truncated,
+    },
+    "additionalProperties": False,
+}
