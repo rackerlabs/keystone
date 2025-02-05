@@ -16,6 +16,23 @@
       "message": "pep8 passed, LGTM!",
       "revId": "aa0cdc539758bc22e7fa6021435cf8cac2020ea2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e7a8ff6_93cae98d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-02-05T14:32:12Z",
+      "side": 1,
+      "message": "recheck the openapi job",
+      "revId": "aa0cdc539758bc22e7fa6021435cf8cac2020ea2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
