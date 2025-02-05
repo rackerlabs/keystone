@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9cf63b2_4b498192",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-02-05T14:52:02Z",
+      "side": 0,
+      "message": "Those tests are dropped since in general we want to have consistency in the API. Certain tests explicitly validate that a string `True` is accepted, so we will also do this for services.",
+      "revId": "6965c2a24bdf8bc2f5adb7ff559148cffe5b2694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
