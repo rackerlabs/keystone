@@ -1,0 +1,10 @@
+Verified+2: Zuul
+Workflow+1: Artem Goncharov <artem.goncharov@gmail.com>
+Code-Review+2: Grzegorz Grasza <xek@redhat.com>
+Code-Review+2: Artem Goncharov <artem.goncharov@gmail.com>
+Submitted-by: Zuul
+Submitted-at: Thu, 06 Feb 2025 12:36:03 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/925517
+Comments-Total: 30
+Project: openstack/keystone
+Branch: refs/heads/master
