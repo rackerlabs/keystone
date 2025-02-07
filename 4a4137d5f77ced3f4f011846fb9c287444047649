@@ -16,6 +16,23 @@
       "message": "JFR, some additional background of the change - https://review.opendev.org/c/openstack/keystone/+/939739/comments/668ff78e_4cf98662",
       "revId": "4a4137d5f77ced3f4f011846fb9c287444047649",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50384ebf_bae446d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2025-02-07T14:19:58Z",
+      "side": 1,
+      "message": "recheck - gate",
+      "revId": "4a4137d5f77ced3f4f011846fb9c287444047649",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
