@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c1bf4ca_de056615",
+        "filename": "releasenotes/notes/pci-dss-invalid-password-reporting-975955d2d79c21b3.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 37374
+      },
+      "writtenOn": "2025-02-18T14:06:25Z",
+      "side": 1,
+      "message": "The link will have to be changed if and when https://review.opendev.org/c/openstack/keystone-specs/+/942084 is merged.",
+      "range": {
+        "startLine": 10,
+        "startChar": 14,
+        "endLine": 10,
+        "endChar": 129
+      },
+      "revId": "f72b1aaec7fc6d8ac2186e7215ae991be8368b1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
