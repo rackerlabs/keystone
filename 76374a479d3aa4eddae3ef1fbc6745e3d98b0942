@@ -16,6 +16,24 @@
       "message": "I have no idea if this should be in 2024.01.\nI used the tool provided here:\nhttps://docs.openstack.org/keystone/latest/contributor/database-migrations.html\n\nLet me know if that needs to be moved somewhere else? Maybe 2024.02?",
       "revId": "76374a479d3aa4eddae3ef1fbc6745e3d98b0942",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e218a1d_0afcbdeb",
+        "filename": "keystone/common/sql/migrations/versions/2024.01/expand/e8725d6fa226_add_project_id_index_to_project_.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-02-18T14:13:04Z",
+      "side": 1,
+      "message": "@artem.goncharov@gmail.com Hello Artem, may be your can help with this question, please?",
+      "parentUuid": "c508b666_b5ccfad2",
+      "revId": "76374a479d3aa4eddae3ef1fbc6745e3d98b0942",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
