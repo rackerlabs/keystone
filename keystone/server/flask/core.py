@@ -13,6 +13,7 @@
 import collections
 import os
 
+from keystonemiddleware import external_oauth2_token
 from oslo_log import log
 import stevedore
 
@@ -28,6 +29,7 @@ import keystone.conf
 import keystone.server
 from keystone.server.flask import application
 from keystone.server.flask.request_processing.middleware import auth_context
+from keystone.server.flask.request_processing.middleware import external_auth
 from keystone.server.flask.request_processing.middleware import url_normalize
 
 # NOTE(morgan): Middleware Named Tuple with the following values:
@@ -64,17 +66,6 @@ _APP_MIDDLEWARE = (
     ),
 )
 
-# NOTE(morgan): ORDER HERE IS IMPORTANT! Each of these middlewares are
-# implemented/defined explicitly in Keystone Server. They do some level of
-# lifting to ensure the request is properly handled. It is importat to note
-# that these will be processed in the order of this list AND after all
-# middleware defined in _APP_MIDDLEWARE. AuthContextMiddleware should always
-# be the last element here as long as it is an actual Middleware.
-_KEYSTONE_MIDDLEWARE = (
-    url_normalize.URLNormalizingMiddleware,
-    auth_context.AuthContextMiddleware,
-)
-
 
 def _get_config_files(env=None):
     if env is None:
@@ -97,12 +88,21 @@ def _get_config_files(env=None):
 
 
 def setup_app_middleware(app):
+    # Apply internal-only Middleware (e.g. AuthContextMiddleware). These
+    # are below all externally loaded middleware in request processing.
+
+    try:
+        app.wsgi_app = external_auth.ExternalOAuth2Context(app.wsgi_app)
+    except external_oauth2_token.ConfigurationError:
+        app.wsgi_app = auth_context.AuthContextMiddleware(app.wsgi_app)
+
+    app.wsgi_app = url_normalize.URLNormalizingMiddleware(app.wsgi_app)
+
     # NOTE(morgan): Load the middleware, in reverse order, we wrap the app
     # explicitly; reverse order to ensure the first element in _APP_MIDDLEWARE
     # processes the request first.
 
     MW = _APP_MIDDLEWARE
-    IMW = _KEYSTONE_MIDDLEWARE
 
     # Add in optional (config-based) middleware
     # NOTE(morgan): Each of these may need to be in a specific location
@@ -114,11 +114,6 @@ def setup_app_middleware(app):
                 namespace='keystone.server_middleware', ep='debug', conf={}
             ),
         ) + _APP_MIDDLEWARE
-
-    # Apply internal-only Middleware (e.g. AuthContextMiddleware). These
-    # are below all externally loaded middleware in request processing.
-    for mw in reversed(IMW):
-        app.wsgi_app = mw(app.wsgi_app)
 
     # Apply the middleware to the application.
     for mw in reversed(MW):
