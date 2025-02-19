@@ -61,6 +61,7 @@ class RequestContext(oslo_context.RequestContext):
         # this is reworked, it is not possible to merge the token render
         # function into keystone.api
         values = super().to_policy_values()
-        values['token'] = self.token_reference['token']
+        if hasattr(self, 'token_reference'):
+            values['token'] = self.token_reference['token']
         values['domain_id'] = self.domain_id if self.domain_id else None
         return values
