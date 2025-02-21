@@ -34,6 +34,24 @@
       "parentUuid": "c508b666_b5ccfad2",
       "revId": "76374a479d3aa4eddae3ef1fbc6745e3d98b0942",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "729ee126_273ecfd1",
+        "filename": "keystone/common/sql/migrations/versions/2024.01/expand/e8725d6fa226_add_project_id_index_to_project_.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-02-21T16:51:43Z",
+      "side": 1,
+      "message": "@arnaud.morin@gmail.com hello Arnaud, please check this moment:\n\n\nbandit...................................................................Passed\nhacking..................................................................Passed\nmypy.....................................................................Passed\npre-commit hook(s) made changes.\nIf you are seeing this message in CI, reproduce locally with: `pre-commit run --all-files`.\nTo run `pre-commit` as part of git workflow, use `pre-commit install`.\nAll changes made by hooks:\ndiff --git a/keystone/common/sql/migrations/versions/2025.01/expand/e8725d6fa226_add_project_id_index_to_project_.py b/keystone/common/sql/migrations/versions/2025.01/expand/e8725d6fa226_add_project_id_index_to_project_.py\nindex 3a0576700..17d7f2ba3 100644\n--- a/keystone/common/sql/migrations/versions/2025.01/expand/e8725d6fa226_add_project_id_index_to_project_.py\n+++ b/keystone/common/sql/migrations/versions/2025.01/expand/e8725d6fa226_add_project_id_index_to_project_.py\n@@ -28,5 +28,4 @@ depends_on \u003d None\n \n \n def upgrade():\n-    op.create_index(\n-        \u0027idx_project_id\u0027, \u0027project_endpoint_group\u0027, [\u0027project_id\u0027])\n\\ No newline at end of file\n+    op.create_index(\u0027idx_project_id\u0027, \u0027project_endpoint_group\u0027, [\u0027project_id\u0027])\npep8: 107020 C exit 1 (102.97 seconds) /home/zuul/src/opendev.org/openstack/keystone\u003e pre-commit run --all-files --show-diff-on-failure pid\u003d6954 [tox/execute/api.py:294]\n.pkg: 107021 D delete package /home/zuul/src/opendev.org/openstack/keystone/.tox/.tmp/package/2/keystone-26.1.0.dev95-0.editable-py3-none-any.whl [tox/tox_env/python/virtual_env/package/pyproject.py:224]\n  pep8: FAIL code 1 (106.63\u003dsetup[3.67]+cmd[102.97] seconds)\n  evaluation failed :( (106.83 seconds)\n  \n  I think need add changes by Artem comment.",
+      "parentUuid": "4e218a1d_0afcbdeb",
+      "revId": "76374a479d3aa4eddae3ef1fbc6745e3d98b0942",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
