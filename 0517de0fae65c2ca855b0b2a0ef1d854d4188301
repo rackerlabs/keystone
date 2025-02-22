@@ -16,6 +16,24 @@
       "message": "I think the script you refer is not always working perfectly. It is currently neither 2024.1 nor 2024.2 - it should be 2025.1 already\nIn addition to that please install pre-commit and init it in the repository (\u0027pre-commit install\u0027) to allow it to re-format the code before you actually push it.",
       "revId": "0517de0fae65c2ca855b0b2a0ef1d854d4188301",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8aecf967_71b0ac4e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11583
+      },
+      "writtenOn": "2025-02-22T12:42:34Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "a951fd43_67eb4763",
+      "revId": "0517de0fae65c2ca855b0b2a0ef1d854d4188301",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
