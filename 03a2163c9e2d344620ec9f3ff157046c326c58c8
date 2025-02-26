@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28130192_0c7bac2a",
+        "filename": ".zuul.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1131
+      },
+      "writtenOn": "2025-02-26T14:19:37Z",
+      "side": 1,
+      "message": "That does work :) and is better than a pin I guess. I\u0027ll need to do something similar on zed too I think.",
+      "revId": "03a2163c9e2d344620ec9f3ff157046c326c58c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
