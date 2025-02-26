@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4a84151_8149907e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2025-02-26T16:45:00Z",
+      "side": 1,
+      "message": "Thanks Brian and sorry for not adding this in zed o:) LGTM, CI-only patch that unblocks the gate + coming from fellow stable maintainer and unmaintainer so single-approving.",
+      "revId": "d629602ab6e371d4fdb00771064c1d88fa41f249",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
