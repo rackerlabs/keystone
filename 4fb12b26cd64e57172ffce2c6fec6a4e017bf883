@@ -16,6 +16,23 @@
       "message": "recheck CI patch merged",
       "revId": "4fb12b26cd64e57172ffce2c6fec6a4e017bf883",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd4cda50_2c23fb36",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1131
+      },
+      "writtenOn": "2025-02-26T20:42:16Z",
+      "side": 1,
+      "message": "recheck unrelated timeout",
+      "revId": "4fb12b26cd64e57172ffce2c6fec6a4e017bf883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
