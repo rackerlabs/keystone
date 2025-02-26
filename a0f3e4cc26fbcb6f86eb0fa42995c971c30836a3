@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ef966b1_70f7601f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1131
+      },
+      "writtenOn": "2025-02-26T19:44:47Z",
+      "side": 1,
+      "message": "recheck CI fix merged",
+      "revId": "a0f3e4cc26fbcb6f86eb0fa42995c971c30836a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
