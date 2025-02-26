@@ -16,6 +16,41 @@
       "message": "That does work :) and is better than a pin I guess. I\u0027ll need to do something similar on zed too I think.",
       "revId": "03a2163c9e2d344620ec9f3ff157046c326c58c8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e629c7d6_b6ee587a",
+        "filename": ".zuul.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1131
+      },
+      "writtenOn": "2025-02-26T17:01:33Z",
+      "side": 1,
+      "message": "https://review.opendev.org/c/openstack/keystone/+/942809 for zed.\n\nAnd I\u0027ll just approve this one as there aren\u0027t many unmaintained approvers",
+      "parentUuid": "28130192_0c7bac2a",
+      "revId": "03a2163c9e2d344620ec9f3ff157046c326c58c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b80b3253_6fe623c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1131
+      },
+      "writtenOn": "2025-02-26T17:01:33Z",
+      "side": 1,
+      "message": "CI-only patch that unblocks the gate + coming from fellow stable maintainer and unmaintainer so single-approving",
+      "revId": "03a2163c9e2d344620ec9f3ff157046c326c58c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
