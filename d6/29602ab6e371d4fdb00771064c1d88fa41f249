@@ -1,0 +1,9 @@
+Code-Review+2: Elod Illes <elod.illes@est.tech>
+Workflow+1: Elod Illes <elod.illes@est.tech>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 26 Feb 2025 18:33:30 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/942809
+Comments-Total: 1
+Project: openstack/keystone
+Branch: refs/heads/unmaintained/zed
