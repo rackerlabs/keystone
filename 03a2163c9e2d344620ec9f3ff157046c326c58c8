@@ -38,6 +38,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "68597a10_573ac3a5",
+        "filename": ".zuul.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2025-02-27T07:04:21Z",
+      "side": 1,
+      "message": "Thanks Brian! o/",
+      "parentUuid": "e629c7d6_b6ee587a",
+      "revId": "03a2163c9e2d344620ec9f3ff157046c326c58c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "b80b3253_6fe623c5",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 3
