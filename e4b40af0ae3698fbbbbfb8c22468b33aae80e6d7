@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "e4b40af0ae3698fbbbbfb8c22468b33aae80e6d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29cad086_a46d9190",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2025-02-27T07:21:09Z",
+      "side": 1,
+      "message": "not marked as a bug but it\u0027s kind of a performance related bug. already backported and merged to stable/2023.2 so let\u0027s merge this here as well now that the gate is functional again. besides, clean cherry pick. LGTM.",
+      "revId": "e4b40af0ae3698fbbbbfb8c22468b33aae80e6d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
