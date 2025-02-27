@@ -33,6 +33,23 @@
       "message": "recheck unrelated timeout",
       "revId": "4fb12b26cd64e57172ffce2c6fec6a4e017bf883",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c706aa5d_2b46d82a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2025-02-27T13:24:49Z",
+      "side": 1,
+      "message": "Clean cherry pick and merged in unmaintained/2023.1 so this is good to go. Thanks for the patch o/",
+      "revId": "4fb12b26cd64e57172ffce2c6fec6a4e017bf883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
