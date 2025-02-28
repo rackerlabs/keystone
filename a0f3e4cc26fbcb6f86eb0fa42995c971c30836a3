@@ -16,6 +16,23 @@
       "message": "recheck CI fix merged",
       "revId": "a0f3e4cc26fbcb6f86eb0fa42995c971c30836a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "105a7222_7bfa18a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2025-02-28T08:50:33Z",
+      "side": 1,
+      "message": "just like the former cherry picks on newer branches: this is also a clean cherry pick. besides, merged in unmaintained/zed, so this is good to go too.",
+      "revId": "a0f3e4cc26fbcb6f86eb0fa42995c971c30836a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
