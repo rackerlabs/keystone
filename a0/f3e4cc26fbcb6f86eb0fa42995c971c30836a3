@@ -1,0 +1,10 @@
+Code-Review+2: Elod Illes <elod.illes@est.tech>
+Verified+2: Zuul
+Workflow+1: Elod Illes <elod.illes@est.tech>
+Code-Review+2: Brian Haley <haleyb.dev@gmail.com>
+Submitted-by: Zuul
+Submitted-at: Fri, 28 Feb 2025 10:39:07 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/940286
+Comments-Total: 2
+Project: openstack/keystone
+Branch: refs/heads/unmaintained/yoga
