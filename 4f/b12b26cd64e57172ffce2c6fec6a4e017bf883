@@ -1,0 +1,10 @@
+Code-Review+2: Elod Illes <elod.illes@est.tech>
+Workflow+1: Elod Illes <elod.illes@est.tech>
+Code-Review+2: Brian Haley <haleyb.dev@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 28 Feb 2025 01:43:15 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/940285
+Comments-Total: 3
+Project: openstack/keystone
+Branch: refs/heads/unmaintained/zed
