@@ -22,6 +22,30 @@
       },
       "revId": "b4001a870a8412a7a3ccc569ba956854372188ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abd4473f_bc459ecb",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-03-01T16:18:09Z",
+      "side": 1,
+      "message": "right, I just wanted to keep the change isolated, but it makes sense",
+      "parentUuid": "56c857c8_97eb3704",
+      "range": {
+        "startLine": 178,
+        "startChar": 43,
+        "endLine": 178,
+        "endChar": 49
+      },
+      "revId": "b4001a870a8412a7a3ccc569ba956854372188ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
