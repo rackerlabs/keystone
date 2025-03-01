@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56c857c8_97eb3704",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2025-03-01T16:00:06Z",
+      "side": 1,
+      "message": "Because the member role is now created during bootstrap you can hard-code the role name and use it, as is done in devstack ( https://github.com/openstack/devstack/blob/01755f8bdf8c1f1b39ff93e982952692e18d5cb1/lib/keystone#L299-L301 )\n\nSee https://review.opendev.org/c/openstack/keystone/+/943098 .",
+      "range": {
+        "startLine": 178,
+        "startChar": 43,
+        "endLine": 178,
+        "endChar": 49
+      },
+      "revId": "b4001a870a8412a7a3ccc569ba956854372188ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
