@@ -107,7 +107,7 @@ function register_federation {
     local federated_domain=$(get_or_create_domain $DOMAIN_NAME)
     local federated_project=$(get_or_create_project $PROJECT_NAME $DOMAIN_NAME)
     local federated_users=$(get_or_create_group $GROUP_NAME $DOMAIN_NAME)
-    local member_role=$(get_or_create_role Member)
+    local member_role=$(get_or_create_role member)
 
     openstack role add --group $federated_users --domain $federated_domain $member_role
     openstack role add --group $federated_users --project $federated_project $member_role
