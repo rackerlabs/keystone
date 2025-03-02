@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "05462354cd01dd82bcb4aadb1a6f0dc9a9c0d8d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1594a373_db560afc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2025-03-02T03:41:00Z",
+      "side": 1,
+      "message": "recheck CI has been fixed.",
+      "revId": "05462354cd01dd82bcb4aadb1a6f0dc9a9c0d8d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
