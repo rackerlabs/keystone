@@ -38,6 +38,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "abe9e744_eff94942",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-03-07T14:44:55Z",
+      "side": 1,
+      "message": "looks like you only pass max_chars from tests. But in tests you can also set the config. It would be much cleaner to rely on the config value here",
+      "revId": "f72b1aaec7fc6d8ac2186e7215ae991be8368b1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "aa32cd2f_747ad8a7",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 9
@@ -49,6 +66,23 @@
       "writtenOn": "2025-03-07T14:26:59Z",
       "side": 1,
       "message": "Could we add a max here? To ensure that the full hashes cannot be accidentally leaked by changing the config. Maybe a value around 10 would work?",
+      "revId": "f72b1aaec7fc6d8ac2186e7215ae991be8368b1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0253ea5f_e007eb66",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1264,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-03-07T14:44:55Z",
+      "side": 1,
+      "message": "it looks confusing that you mock the import and not the function itself. It took me a while to understand what is `notifications.generate_partial_password_hash`. I would prefer if you mock `common.password_hashing.generate_partial_password_hash`",
       "revId": "f72b1aaec7fc6d8ac2186e7215ae991be8368b1f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
