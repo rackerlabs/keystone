@@ -16,6 +16,23 @@
       "message": "recheck state of the world",
       "revId": "2e3ba39105edb46bcd02e4f7fbf1b84b5d39c97f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d6a5c1b_a135e53f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 37470
+      },
+      "writtenOn": "2025-03-10T14:41:05Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "2e3ba39105edb46bcd02e4f7fbf1b84b5d39c97f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
