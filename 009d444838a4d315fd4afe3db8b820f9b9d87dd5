@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43a00b0f_30f80c13",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 36482
+      },
+      "writtenOn": "2025-03-13T20:14:19Z",
+      "side": 1,
+      "message": "recheck - keystone-dsvm-functional-oidc-federation job fixed (\"member\" role case sensitivity issue)",
+      "revId": "009d444838a4d315fd4afe3db8b820f9b9d87dd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
