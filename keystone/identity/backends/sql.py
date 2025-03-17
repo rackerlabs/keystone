@@ -439,7 +439,22 @@ class Identity(base.IdentityDriverBase):
                 session, query, hints
             )
             query = sql.filter_limit_query(model.User, query, hints)
-            return [base.filter_user(u.to_dict()) for u in query]
+            users = [base.filter_user(u.to_dict()) for u in query]
+
+            query = session.query(model.ExpiringUserGroupMembership)
+            query = query.filter(
+                model.ExpiringUserGroupMembership.group_id == group_id
+            )
+            query = sql.filter_limit_query(
+                model.UserGroupMembership, query, hints
+            )
+            expiring_users = [
+                self.get_user(r.to_dict().get('user_id'))
+                for r in query.all()
+                if not r.expired
+            ]
+
+            return self._apply_limits_to_list(users + expiring_users, hints)
 
     @oslo_db_api.wrap_db_retry(retry_on_deadlock=True)
     def delete_user(self, user_id):
