@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Expiring Group Memberships are now considered in the
+    `list_groups_for_user()` method used by `/v3/groups/{group_id}/users`.
