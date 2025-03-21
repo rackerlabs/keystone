@@ -1,0 +1,11 @@
+Code-Review+1: Dmitriy Chubinidze <dcu995@gmail.com>
+Code-Review+2: Artem Goncharov <artem.goncharov@gmail.com>
+Code-Review+2: Douglas Mendizábal <dmendiza@redhat.com>
+Code-Review+1: Ivan Anfimov <lazekteam@gmail.com>
+Workflow+1: Artem Goncharov <artem.goncharov@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 21 Mar 2025 15:18:36 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/941936
+Project: openstack/keystone
+Branch: refs/heads/master
