@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5e14be5_654fbcea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-03-21T14:53:40Z",
+      "side": 1,
+      "message": "I think it is worth of leaving few words about that feature in the documentation. Simply the config is not that helpful. We have already something on https://docs.openstack.org/keystone/latest/admin/event_notifications.html and I would suggest to extend it with a dedicated chapter on that describing how to configure it and show how the events would look like",
+      "revId": "7db8d5fe58cb719b15d63d3f74bfb8535eda179c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
