@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b867ac33_5ed3899d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2025-03-25T18:27:39Z",
+      "side": 1,
+      "message": "I\u0027m not sure whether this one is worth backporting, but it\u0027s low risk so 🤷",
+      "revId": "a904f9b03f6b3f19465add4e88ad224ea5ca56b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
