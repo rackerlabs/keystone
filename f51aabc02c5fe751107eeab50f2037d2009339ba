@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "574714f6_a7cd12eb",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2025-03-25T18:26:50Z",
+      "side": 0,
+      "message": "This was another bug",
+      "revId": "f51aabc02c5fe751107eeab50f2037d2009339ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
