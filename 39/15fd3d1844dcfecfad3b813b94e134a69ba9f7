@@ -1,0 +1,11 @@
+Verified+2: Zuul
+Code-Review+2: Grzegorz Grasza <xek@redhat.com>
+Code-Review+1: Ivan Anfimov <lazekteam@gmail.com>
+Workflow+1: Douglas Mendizábal <dmendiza@redhat.com>
+Code-Review+2: Douglas Mendizábal <dmendiza@redhat.com>
+Submitted-by: Zuul
+Submitted-at: Fri, 28 Mar 2025 16:08:13 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/910359
+Comments-Total: 1
+Project: openstack/keystone
+Branch: refs/heads/master
