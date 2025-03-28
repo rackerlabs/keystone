@@ -33,6 +33,23 @@
       "message": "recheck",
       "revId": "b293e0df453f521ccd8844abb568b03d12606bbf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6427ed4_5613000c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-03-28T14:26:07Z",
+      "side": 1,
+      "message": "@arnaud.morin@gmail.com Hello Arnaud, branching for 2025.1 has already happened, I think we need move this in 2025.2.",
+      "revId": "b293e0df453f521ccd8844abb568b03d12606bbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
