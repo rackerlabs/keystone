@@ -16,6 +16,24 @@
       "message": "@seanmooney8202@yahoo.ie \nHello, could you please lookup to this change? What\u0027d you think about using https in that construction?",
       "revId": "ae799911b6b634b687ae53931b1ac96066039c2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49a8dfb5_9178d183",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-04-22T21:13:46Z",
+      "side": 1,
+      "message": "@smooney@redhat.com\n\u003e Hello, could you please lookup to this change? What\u0027d you think about using https in that construction?",
+      "parentUuid": "68985bc9_13a3f50f",
+      "revId": "ae799911b6b634b687ae53931b1ac96066039c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
