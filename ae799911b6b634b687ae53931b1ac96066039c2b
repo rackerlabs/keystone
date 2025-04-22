@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68985bc9_13a3f50f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 37632
+      },
+      "writtenOn": "2025-04-22T20:34:06Z",
+      "side": 1,
+      "message": "@seanmooney8202@yahoo.ie \nHello, could you please lookup to this change? What\u0027d you think about using https in that construction?",
+      "revId": "ae799911b6b634b687ae53931b1ac96066039c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
