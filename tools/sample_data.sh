@@ -74,28 +74,28 @@ export OS_PROJECT_NAME=admin
 export OS_USER_DOMAIN_ID=default
 export OS_PROJECT_DOMAIN_ID=default
 export OS_IDENTITY_API_VERSION=3
-export OS_AUTH_URL=http://$CONTROLLER_PUBLIC_ADDRESS:${KEYSTONE_PORT}/v3
+export OS_AUTH_URL=https://$CONTROLLER_PUBLIC_ADDRESS:${KEYSTONE_PORT}/v3
 
 export OS_BOOTSTRAP_PASSWORD=$ADMIN_PASSWORD
 export OS_BOOTSTRAP_REGION_ID=RegionOne
-export OS_BOOTSTRAP_ADMIN_URL="http://$CONTROLLER_PUBLIC_ADDRESS:${KEYSTONE_PORT}/v3"
-export OS_BOOTSTRAP_PUBLIC_URL="http://$CONTROLLER_ADMIN_ADDRESS:${KEYSTONE_PORT}/v3"
-export OS_BOOTSTRAP_INTERNAL_URL="http://$CONTROLLER_INTERNAL_ADDRESS:${KEYSTONE_PORT}/v3"
+export OS_BOOTSTRAP_ADMIN_URL="https://$CONTROLLER_PUBLIC_ADDRESS:${KEYSTONE_PORT}/v3"
+export OS_BOOTSTRAP_PUBLIC_URL="https://$CONTROLLER_ADMIN_ADDRESS:${KEYSTONE_PORT}/v3"
+export OS_BOOTSTRAP_INTERNAL_URL="https://$CONTROLLER_INTERNAL_ADDRESS:${KEYSTONE_PORT}/v3"
 keystone-manage bootstrap
 
 #
-# Default tenant
+# Default project
 #
 openstack project create demo \
-                         --description "Default Tenant"
+                         --description "Default Project"
 
 #
-# Service tenant
+# Service project
 #
 openstack role create service
 
 openstack project create service \
-                  --description "Service Tenant"
+                  --description "Service Project"
 
 openstack user create glance --project service\
                       --password "${GLANCE_PASSWORD}"
@@ -135,28 +135,16 @@ openstack role add --user neutron \
 #
 # Nova service
 #
-openstack service create --name=nova_legacy \
-                         --description="Nova Compute Service (Legacy 2.0)" \
-                         compute_legacy
-if [[ -z "$DISABLE_ENDPOINTS" ]]; then
-    openstack endpoint create --region RegionOne \
-        compute public "http://$CONTROLLER_PUBLIC_ADDRESS:8774/v2/\$(project_id)s"
-    openstack endpoint create --region RegionOne \
-        compute admin "http://$CONTROLLER_ADMIN_ADDRESS:8774/v2/\$(project_id)s"
-    openstack endpoint create --region RegionOne \
-        compute internal "http://$CONTROLLER_INTERNAL_ADDRESS:8774/v2/\$(project_id)s"
-fi
-
 openstack service create --name=nova \
                          --description="Nova Compute Service" \
                          compute
 if [[ -z "$DISABLE_ENDPOINTS" ]]; then
     openstack endpoint create --region RegionOne \
-        compute public "http://$CONTROLLER_PUBLIC_ADDRESS:8774/v2.1"
+        compute public "https://$CONTROLLER_PUBLIC_ADDRESS:8774/v2.1"
     openstack endpoint create --region RegionOne \
-        compute admin "http://$CONTROLLER_ADMIN_ADDRESS:8774/v2.1"
+        compute admin "https://$CONTROLLER_ADMIN_ADDRESS:8774/v2.1"
     openstack endpoint create --region RegionOne \
-        compute internal "http://$CONTROLLER_INTERNAL_ADDRESS:8774/v2.1"
+        compute internal "https://$CONTROLLER_INTERNAL_ADDRESS:8774/v2.1"
 fi
 
 #
@@ -167,11 +155,11 @@ openstack service create --name=cinderv3 \
                          volumev3
 if [[ -z "$DISABLE_ENDPOINTS" ]]; then
     openstack endpoint create --region RegionOne \
-        volume public "http://$CONTROLLER_PUBLIC_ADDRESS:8776/v3"
+        volume public "https://$CONTROLLER_PUBLIC_ADDRESS:8776/v3"
     openstack endpoint create --region RegionOne \
-        volume admin "http://$CONTROLLER_ADMIN_ADDRESS:8776/v3"
+        volume admin "https://$CONTROLLER_ADMIN_ADDRESS:8776/v3"
     openstack endpoint create --region RegionOne \
-        volume internal "http://$CONTROLLER_INTERNAL_ADDRESS:8776/v3"
+        volume internal "https://$CONTROLLER_INTERNAL_ADDRESS:8776/v3"
 fi
 
 #
@@ -182,11 +170,11 @@ openstack service create --name=glance \
                          image
 if [[ -z "$DISABLE_ENDPOINTS" ]]; then
     openstack endpoint create --region RegionOne  \
-        image public "http://$CONTROLLER_PUBLIC_ADDRESS:9292"
+        image public "https://$CONTROLLER_PUBLIC_ADDRESS:9292"
     openstack endpoint create --region RegionOne  \
-        image admin "http://$CONTROLLER_ADMIN_ADDRESS:9292"
+        image admin "https://$CONTROLLER_ADMIN_ADDRESS:9292"
     openstack endpoint create --region RegionOne  \
-        image internal "http://$CONTROLLER_INTERNAL_ADDRESS:9292"
+        image internal "https://$CONTROLLER_INTERNAL_ADDRESS:9292"
 fi
 
 #
@@ -197,11 +185,11 @@ openstack service create --name=swift \
                          object-store
 if [[ -z "$DISABLE_ENDPOINTS" ]]; then
     openstack endpoint create --region RegionOne \
-        object-store public "http://$CONTROLLER_PUBLIC_ADDRESS:8080/v1/AUTH_\$(project_id)s"
+        object-store public "https://$CONTROLLER_PUBLIC_ADDRESS:8080/v1/AUTH_\$(project_id)s"
     openstack endpoint create --region RegionOne \
-        object-store admin "http://$CONTROLLER_ADMIN_ADDRESS:8080/v1"
+        object-store admin "https://$CONTROLLER_ADMIN_ADDRESS:8080/v1"
     openstack endpoint create --region RegionOne \
-        object-store internal "http://$CONTROLLER_INTERNAL_ADDRESS:8080/v1/AUTH_\$(project_id)s"
+        object-store internal "https://$CONTROLLER_INTERNAL_ADDRESS:8080/v1/AUTH_\$(project_id)s"
 fi
 
 #
@@ -212,9 +200,9 @@ openstack service create --name=neutron \
                          network
 if [[ -z "$DISABLE_ENDPOINTS" ]]; then
     openstack endpoint create --region RegionOne \
-        network public "http://$CONTROLLER_PUBLIC_ADDRESS:9696"
+        network public "https://$CONTROLLER_PUBLIC_ADDRESS:9696"
     openstack endpoint create --region RegionOne \
-        network admin "http://$CONTROLLER_ADMIN_ADDRESS:9696"
+        network admin "https://$CONTROLLER_ADMIN_ADDRESS:9696"
     openstack endpoint create --region RegionOne \
-        network internal "http://$CONTROLLER_INTERNAL_ADDRESS:9696"
+        network internal "https://$CONTROLLER_INTERNAL_ADDRESS:9696"
 fi
