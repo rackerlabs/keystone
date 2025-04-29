@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72967dae_1831ee98",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2025-04-29T22:12:47Z",
+      "side": 1,
+      "message": "I have added the detail about misunderstanding of \u0027TC tags framework\u0027/ \u0027existing valid badges\u0027 in https://review.opendev.org/c/openstack/placement/+/941792/comment/cc271fe9_7b981fe4/\n\nI am not going to duplicate the details here but please check the real issue in above comment instead of removing these valid badges.",
+      "revId": "68a5bee28859a7f90afc4b669d365acde9de19b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
