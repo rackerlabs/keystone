@@ -2,11 +2,6 @@
 OpenStack Keystone
 ==================
 
-.. image:: https://governance.openstack.org/tc/badges/keystone.svg
-    :target: https://governance.openstack.org/tc/reference/tags/index.html
-
-.. Change things from this point on
-
 OpenStack Keystone provides authentication, authorization and service discovery
 mechanisms via HTTP primarily for use by projects in the OpenStack family. It
 is most commonly deployed as an HTTP interface to existing identity systems,
