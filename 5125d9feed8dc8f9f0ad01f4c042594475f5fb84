@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2da70997_ca249c27",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2025-04-30T08:18:36Z",
+      "side": 1,
+      "message": "So pretty much keystone upgrades are still pretty much borked. Just got https://bugs.launchpad.net/openstack-ansible/+bug/2109672 related to this.",
+      "revId": "5125d9feed8dc8f9f0ad01f4c042594475f5fb84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
