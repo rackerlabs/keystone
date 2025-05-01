@@ -34,6 +34,23 @@
       "parentUuid": "68985bc9_13a3f50f",
       "revId": "ae799911b6b634b687ae53931b1ac96066039c2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91cd0deb_459ebbc5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-05-01T16:42:21Z",
+      "side": 1,
+      "message": "@artem.goncharov@gmail.com Artem hello, what do you think about this change?",
+      "revId": "ae799911b6b634b687ae53931b1ac96066039c2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
