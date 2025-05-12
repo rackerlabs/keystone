@@ -33,6 +33,24 @@
       "message": "context for keystone team\n\nIn the qa team etherpad there was a topic about possible removing centos 9 stream support form devstack  because GLOBAL_VENV\u003dtrue was not supprot amoung other reasosn\n\nat the end of the day it was decied not to do that but i was courious why so i started looking into that during the ptg.\n\nthe failure mode was that the keystone wsgi script were not being generated so keystone did not start properly and as a result everything else would fail.\n\nthis was just a symptom of a larger problem which is that the behavior of pip install -e changed as of pip 23.1\n\npreviously if there was no pyproject.toml pip would fall back to calling setup.py install which would execute pbr to generate the custom enteryproits for wsgi files\n\nunlike console scripts wsgi_scripts is not actull a standard thing\n\nconsole_script generation was actully done by setup tools but wsgi_script generation is done by pbr.\n\nin the new pip behalfor instead of doing a local install a temporary wheel is built\nand then and editable install from that wheel is done\n\nthat has the effect of runing some but not all of pbr to generate thigns like package metadta for source files but it does not result in the wsgi files form being generated in teh pip install -e case.\n\nyou can replicate this behavior pretty simplely on cenots by createing a venv and installing keystone without this patch\n```\ngit clone https://opendev.org/openstack/keystone\ncd keystone\npython3 -m venv .venv\n. .venv/bin/activate\npython3 -m pip install -U pip\npython3 -m pip install -e --verbose .\nls .venv/bin/keystone*\n```\n\nthis will not have .venv/bin/keystone-wsgi-admin  .venv/bin/keystone-wsgi-public\n\n\nif you downgrade pip or remove -e those files will be installed.\n\nthis might be a bug in how editable installs are done for weels in pip or in pbr\nbut a better long term solution is ot just start using pyproject.toml instead of\nrelying on the deprecated/removed fallback.\n\nthis change has the minium pyproject.toml form \n\nhttps://github.com/openstack/pbr/blob/d03d617c09e7ba8ddf62d1e53d71685cd708e2da/pbr/build.py#L19-L21\n\nto use pbr as a pep-517 build system backend\n\npbr will continue to read configuraiton form setup.cfg as it did when\ninvoked form setup.py install so adding this pyproject.toml does not requrie us to drop support for setup.py although we could also do that eventually in a seperate step.\n\nits a public holiday in ireland on monday so ill be back to work on tuesday and ill send a mail to the list about this then. assumign there are no objections im going to suggest we implemet this change on all openstack repo (or at least thos with wsgi_scripts)",
       "revId": "ea3de49e8303faa96939487475aa9ff2c02de1e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ad30514_85f6eff5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2025-05-12T12:03:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7b0b2ba_b76fdbb1",
+      "revId": "ea3de49e8303faa96939487475aa9ff2c02de1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
