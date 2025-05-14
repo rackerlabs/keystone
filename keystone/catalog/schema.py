@@ -226,6 +226,27 @@ endpoint_schema: dict[str, Any] = {
     "additionalProperties": False,
 }
 
+# Short schema of `Endpoint` resource
+endpoint_schema_short: dict[str, Any] = {
+    "type": "object",
+    "description": "An endpoint object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "readOnly": True,
+            "description": "The endpoint ID",
+        },
+        "interface": _endpoint_properties["interface"],
+        "region": _endpoint_properties["region"],
+        "region_id": _endpoint_properties["region_id"],
+        "name": _endpoint_properties["name"],
+        "description": _endpoint_properties["description"],
+        "url": _endpoint_properties["url"],
+    },
+    "required": ["id", "interface", "region", "region_id", "url"],
+    "additionalProperties": False,
+}
+
 # Query parameters of the `/endpoints` API
 endpoint_index_request_query: dict[str, Any] = {
     "type": "object",

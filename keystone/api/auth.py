@@ -26,13 +26,14 @@ import werkzeug.exceptions
 from keystone.api._shared import authentication
 from keystone.api._shared import json_home_relations
 from keystone.api._shared import saml
+from keystone.api import validation
 from keystone.auth import schema as auth_schema
 from keystone.common import authorization
 from keystone.common import provider_api
 from keystone.common import rbac_enforcer
 from keystone.common import render_token
 from keystone.common import utils as k_utils
-from keystone.common import validation
+from keystone.common import validation as ks_validation
 import keystone.conf
 from keystone import exception
 from keystone.federation import idp as keystone_idp
@@ -120,6 +121,11 @@ class AuthProjectsResource(ks_flask.ResourceBase):
     collection_key = 'projects'
     member_key = 'project'
 
+    @validation.request_body_schema(None)
+    @validation.request_query_schema(None)
+    @validation.response_body_schema(
+        auth_schema.auth_projects_index_response_body
+    )
     def get(self):
         """Get possible project scopes for token.
 
@@ -154,6 +160,11 @@ class AuthDomainsResource(ks_flask.ResourceBase):
     collection_key = 'domains'
     member_key = 'domain'
 
+    @validation.request_body_schema(None)
+    @validation.request_query_schema(None)
+    @validation.response_body_schema(
+        auth_schema.auth_domains_index_response_body
+    )
     def get(self):
         """Get possible domain scopes for token.
 
@@ -186,6 +197,11 @@ class AuthDomainsResource(ks_flask.ResourceBase):
 
 
 class AuthSystemResource(_AuthFederationWebSSOBase):
+    @validation.request_body_schema(None)
+    @validation.request_query_schema(None)
+    @validation.response_body_schema(
+        auth_schema.auth_system_index_response_body
+    )
     def get(self):
         """Get possible system scopes for token.
 
@@ -234,6 +250,11 @@ class AuthSystemResource(_AuthFederationWebSSOBase):
 
 
 class AuthCatalogResource(_AuthFederationWebSSOBase):
+    @validation.request_body_schema(None)
+    @validation.request_query_schema(None)
+    @validation.response_body_schema(
+        auth_schema.auth_catalog_index_response_body
+    )
     def get(self):
         """Get service catalog for token.
 
@@ -418,7 +439,7 @@ class AuthFederationSaml2Resource(_AuthFederationWebSSOBase):
         POST /v3/auth/OS-FEDERATION/saml2
         """
         auth = self.request_body_json.get('auth')
-        validation.lazy_validate(federation_schema.saml_create, auth)
+        ks_validation.lazy_validate(federation_schema.saml_create, auth)
         response, service_provider = saml.create_base_saml_assertion(auth)
         headers = _build_response_headers(service_provider)
         response = flask.make_response(response.to_string(), http.client.OK)
@@ -438,7 +459,7 @@ class AuthFederationSaml2ECPResource(_AuthFederationWebSSOBase):
         POST /v3/auth/OS-FEDERATION/saml2/ecp
         """
         auth = self.request_body_json.get('auth')
-        validation.lazy_validate(federation_schema.saml_create, auth)
+        ks_validation.lazy_validate(federation_schema.saml_create, auth)
         saml_assertion, service_provider = saml.create_base_saml_assertion(
             auth
         )

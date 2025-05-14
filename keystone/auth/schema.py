@@ -10,10 +10,111 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from typing import Any
+
+from keystone.api.validation import parameter_types
+from keystone.api.validation import response_types
+from keystone.catalog.schema import endpoint_schema_short
 from keystone.common import validation
-from keystone.common.validation import parameter_types
 from keystone import exception
 from keystone.i18n import _
+from keystone.resource.schema import domain_schema
+from keystone.resource.schema import project_schema
+
+_auth_properties: dict[str, Any] = {}
+
+auth_schema: dict[str, Any] = {}
+
+auth_catalog_index_response_body: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "catalog": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "endpoints": {
+                        "type": "array",
+                        "items": endpoint_schema_short,
+                        "description": "A list of endpoint objects.",
+                    },
+                    "id": {
+                        **parameter_types.id_string,
+                        "description": "The UUID of the service to which the endpoints belong.",
+                    },
+                    "type": {
+                        "enum": [
+                            "compute",
+                            "ec2",
+                            "identity",
+                            "image",
+                            "network",
+                            "volume",
+                        ]
+                    },
+                    "name": parameter_types.name,
+                },
+                "required": ["endpoints", "id", "type", "name"],
+                "additionalProperties": False,
+            },
+            "description": "A service catalog for the provided token.",
+        },
+        "links": response_types.links,
+        "truncated": response_types.truncated,
+    },
+    "required": ["catalog"],
+    "additionalProperties": False,
+}
+
+auth_projects_index_response_body: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "projects": {
+            "type": "array",
+            "items": project_schema,
+            "description": "A list of projects available to be scoped to, based on the provided token.",
+        },
+        "links": response_types.links,
+        "truncated": response_types.truncated,
+    },
+    "required": ["projects"],
+    "additionalProperties": False,
+}
+
+auth_domains_index_response_body: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "domains": {
+            "type": "array",
+            "items": domain_schema,
+            "description": "A list of domains available to be scoped to, based on the provided token.",
+        },
+        "links": response_types.links,
+        "truncated": response_types.truncated,
+    },
+    "required": ["domains"],
+    "additionalProperties": False,
+}
+
+auth_system_index_response_body: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "system": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {"all": parameter_types.boolean},
+                "required": ["all"],
+                "additionalProperties": False,
+            },
+            "description": "A list of systems to access based on role assignments.",
+        },
+        "links": response_types.links,
+        "truncated": response_types.truncated,
+    },
+    "required": ["system"],
+    "additionalProperties": False,
+}
 
 token_issue = {
     'type': 'object',
