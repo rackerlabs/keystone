@@ -53,3 +53,38 @@ tags: dict[str, Any] = {
     },
     "additionalProperties": False,
 }
+
+domain_id: dict[str, Any] = {
+    "type": "string",
+    "minLength": 1,
+    "maxLength": 64,
+    "pattern": r"^[a-zA-Z0-9-]+$",
+    "description": "The ID of the domain.",
+}
+
+user_id: dict[str, Any] = {
+    "type": "string",
+    "description": "The ID of the user.",
+}
+
+id_string: dict[str, Any] = {
+    "type": "string",
+    "minLength": 1,
+    "maxLength": 64,
+    "pattern": r"^[a-zA-Z0-9-]+$",
+}
+
+name: dict[str, Any] = {
+    "type": "string",
+    "minLength": 1,
+    "maxLength": 255,
+    "pattern": r"[\S]+",
+    "description": "The resource name.",
+}
+
+datetime: dict[str, Any] = {
+    "type": ["string"],
+    "format": "CCYY-MM-DDThh:mm:ss.ssssssZ",
+    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{6}Z$",
+    "examples": ["2015-08-27T09:49:58.000000Z"],
+}
