@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab34c18a_4a01f3c8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-05-16T17:54:23Z",
+      "side": 1,
+      "message": "self approving tiny change blocking on the other side of the fence",
+      "revId": "3c17d3a1c4961ead791fea274907649b8522e4d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
