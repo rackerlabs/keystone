@@ -114,27 +114,56 @@ _user_properties: dict[str, Any] = {
             'required': ['idp_id', 'protocols'],
         },
     },
-    'links': response_types.links,
     'name': _identity_name,
-    'password_expires_at': {
-        "type": ["string", "null"],
-        "format": "date-time",
-        "description": (
-            "The date and time when the password expires. The time zone is UTC. "
-            "This is a response object attribute; not valid for requests. A "
-            "null value indicates that the password never expires."
-        ),
-        "readOnly": True,
-    },
     'options': ro.USER_OPTIONS_REGISTRY.json_schema,
 }
 
 user_schema: dict[str, Any] = {
     "type": "object",
-    "properties": _user_properties,
+    "properties": {
+        "id": {"type": "string", "description": "The user ID."},
+        "default_project_id": validation.nullable(parameter_types.id_string),
+        "description": validation.nullable(parameter_types.description),
+        "domain_id": parameter_types.id_string,
+        "enabled": {"type": "boolean"},
+        "federated": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "idp_id": {"type": "string"},
+                    "protocols": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "protocol_id": {"type": "string"},
+                                "unique_id": {"type": "string"},
+                            },
+                            "required": ["protocol_id", "unique_id"],
+                        },
+                        "minItems": 1,
+                    },
+                },
+                "required": ["idp_id", "protocols"],
+            },
+        },
+        "links": response_types.links,
+        "name": _identity_name,
+        "password_expires_at": {
+            "type": ["string", "null"],
+            "format": "date-time",
+            "description": (
+                "The date and time when the password expires. The time zone is UTC. "
+            ),
+            "readOnly": True,
+        },
+        "options": ro.USER_OPTIONS_REGISTRY.json_schema,
+    },
     # NOTE(gtema) User resource supports additional attributes which are stored
     # in the `extra` DB field
     "additionalProperties": True,
+    "required": ["id", "domain_id", "enabled", "name"],
 }
 
 user_index_response_body: dict[str, Any] = {
