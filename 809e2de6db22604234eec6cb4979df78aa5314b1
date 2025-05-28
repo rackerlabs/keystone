@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21e9d2d2_7eef5f67",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-05-28T09:34:04Z",
+      "side": 1,
+      "message": "Could you please clarify more background? It all depends on how keystone is deployed.",
+      "revId": "809e2de6db22604234eec6cb4979df78aa5314b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
