@@ -51,6 +51,24 @@
       "parentUuid": "21e9d2d2_7eef5f67",
       "revId": "809e2de6db22604234eec6cb4979df78aa5314b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8038b85_0467f55c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-05-28T14:36:08Z",
+      "side": 1,
+      "message": "yes, I understand that. The change title doesn\u0027t explain that reasonably and in addition to that it touches the sample_data.sh script which is not used in the same way. When Keystone is bootstrapped locally for development purposes (this is where the sample data is eventually used) you have https enabled. Actually you do not currently get https enabled by default when installing devstack (I only see apache doing dummy proxy pass to the wsgi socket)\n\nI have no problem with doc changes, only with the script change.",
+      "parentUuid": "7a31e5c7_4909e262",
+      "revId": "809e2de6db22604234eec6cb4979df78aa5314b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
