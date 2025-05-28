@@ -38,6 +38,27 @@ create a database.
 
 3. Grant proper access to the ``keystone`` database:
 
+.. note::
+
+   Replace ``KEYSTONE_DBPASS`` with a suitable password.
+
+.. note::
+
+   On MySQL 8 and 9, the user must be created first:
+
+   .. code-block:: console
+
+      MariaDB [(none)]> CREATE USER 'keystone'@'localhost' IDENTIFIED BY 'KEYSTONE-DBPASS';
+      MariaDB [(none)]> GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'localhost';
+      MariaDB [(none)]> CREATE USER 'keystone'@'%' IDENTIFIED BY 'KEYSTONE-DBPASS';
+      MariaDB [(none)]> GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'%';
+
+   .. end
+
+.. note::
+
+   On MySQL 5.7, the following commands will create the user on the same line:
+
    .. code-block:: console
 
       MariaDB [(none)]> GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'localhost' \
@@ -46,8 +67,6 @@ create a database.
       IDENTIFIED BY 'KEYSTONE_DBPASS';
 
    .. end
-
-   Replace ``KEYSTONE_DBPASS`` with a suitable password.
 
 4. Exit the database access client.
 
