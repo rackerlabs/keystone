@@ -19,7 +19,7 @@ Prerequisites
 Before you install and configure the Identity service, you must
 create a database.
 
-#. Use the database access client to connect to the database
+1. Use the database access client to connect to the database
    server as the ``root`` user:
 
    .. code-block:: console
@@ -36,7 +36,7 @@ create a database.
 
    .. end
 
-#. Grant proper access to the ``keystone`` database:
+3. Grant proper access to the ``keystone`` database:
 
    .. code-block:: console
 
@@ -49,7 +49,7 @@ create a database.
 
    Replace ``KEYSTONE_DBPASS`` with a suitable password.
 
-#. Exit the database access client.
+4. Exit the database access client.
 
 .. _keystone-install-configure-ubuntu:
 
@@ -66,7 +66,7 @@ Install and configure components
    for you (including the activation of the ``mod_wsgi`` apache2 module and
    keystone configuration in Apache).
 
-#. Run the following command to install the packages:
+1. Run the following command to install the packages:
 
    .. code-block:: console
 
@@ -156,7 +156,7 @@ Install and configure components
 Configure the Apache HTTP server
 --------------------------------
 
-#. Edit the ``/etc/apache2/apache2.conf`` file and configure the
+1. Edit the ``/etc/apache2/apache2.conf`` file and configure the
    ``ServerName`` option to reference the controller node:
 
    .. path /etc/apache2/apache2.conf
@@ -177,7 +177,7 @@ behind an SSL terminator.
 Finalize the installation
 -------------------------
 
-#. Restart the Apache service:
+1. Restart the Apache service:
 
    .. code-block:: console
 
