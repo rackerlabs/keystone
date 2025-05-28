@@ -16,6 +16,41 @@
       "message": "Could you please clarify more background? It all depends on how keystone is deployed.",
       "revId": "809e2de6db22604234eec6cb4979df78aa5314b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3cac63b_6336d5bc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2025-05-28T11:55:58Z",
+      "side": 1,
+      "message": "the",
+      "revId": "809e2de6db22604234eec6cb4979df78aa5314b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a31e5c7_4909e262",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2025-05-28T11:55:58Z",
+      "side": 1,
+      "message": "the wider context is https://review.opendev.org/c/openstack/nova/+/938680\n\nIn Nova we moved to using https instead of http when we made the service_user requried to resovle a cve with keystone.\n\nthe tl;dr is we didnt think it was reasonabelin 202X ot stil document using http by default when interacting with keystone or really any openstack service \n\nWe moved to testing with HTTPS by default in devstack many many years ago and we also moved to deploying each service endpoint as a subfolder on the same server to reduce the number of open port in devstack too.\n\nso when weadded the service user we followed the more modern way fo deploying when documenting our recomened way to deply nova with service tokens.\n\nin 2025 i don think its reaosnable to deocuemtn not being secure by default so i push back on https://review.opendev.org/c/openstack/nova/+/938680 becasue i see it as a regression in that regard but i reluctantly agree that we coudl proceed with it on consitency ground but ask that the insecure default be adressed in keyston as a follwo up. hence this patch.",
+      "parentUuid": "21e9d2d2_7eef5f67",
+      "revId": "809e2de6db22604234eec6cb4979df78aa5314b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
