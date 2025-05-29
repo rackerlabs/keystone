@@ -313,7 +313,7 @@ role_assignment_schema: dict[str, Any] = {
                     "required": ["id"],
                     "additionalProperties": False,
                 },
-                "id": parameter_types.id_string,
+                "id": parameter_types.user_id,
                 "name": parameter_types.name,
             },
             "required": ["id"],
