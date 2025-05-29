@@ -199,7 +199,7 @@ application_credential_schema: dict[str, Any] = {
             "items": {
                 "type": "object",
                 "properties": {
-                    "id": parameter_types.id_string,
+                    "id": parameter_types.role_id,
                     "name": parameter_types.name,
                     "domain_id": {
                         "type": ["string", "null"],
@@ -311,7 +311,7 @@ application_credential_create_request_body: dict[str, Any] = {
                     "items": {
                         "type": "object",
                         "properties": {
-                            "id": parameter_types.id_string,
+                            "id": parameter_types.role_id,
                             "name": parameter_types.name,
                         },
                         "minProperties": 1,

@@ -66,6 +66,14 @@ user_id: dict[str, Any] = {
     "description": "The ID of the user.",
 }
 
+group_id: dict[str, Any] = {
+    "type": "string",
+    "minLength": 1,
+    "maxLength": 64,
+    "pattern": r"^[a-zA-Z0-9-]+$",
+    "description": "The ID of the group.",
+}
+
 domain_id: dict[str, Any] = {
     "type": "string",
     "minLength": 1,
@@ -80,6 +88,14 @@ project_id: dict[str, Any] = {
     "maxLength": 64,
     "pattern": r"^[a-zA-Z0-9-]+$",
     "description": "The ID of the project.",
+}
+
+role_id: dict[str, Any] = {
+    "type": "string",
+    "minLength": 1,
+    "maxLength": 64,
+    "pattern": r"^[a-zA-Z0-9-]+$",
+    "description": "The ID of the role.",
 }
 
 parent_id: dict[str, str] = {"type": "string", "format": "uuid"}

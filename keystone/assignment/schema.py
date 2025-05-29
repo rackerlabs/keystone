@@ -247,13 +247,13 @@ role_assignment_schema: dict[str, Any] = {
                 "domain": {
                     "type": "object",
                     "properties": {
-                        "id": parameter_types.id_string,
+                        "id": parameter_types.domain_id,
                         "name": parameter_types.name,
                     },
                     "required": ["id"],
                     "additionalProperties": False,
                 },
-                "id": parameter_types.id_string,
+                "id": parameter_types.role_id,
                 "name": parameter_types.name,
             },
             "required": ["id"],
@@ -267,13 +267,13 @@ role_assignment_schema: dict[str, Any] = {
                         "domain": {
                             "type": "object",
                             "properties": {
-                                "id": parameter_types.id_string,
+                                "id": parameter_types.domain_id,
                                 "name": parameter_types.name,
                             },
                             "required": ["id"],
                             "additionalProperties": False,
                         },
-                        "id": parameter_types.id_string,
+                        "id": parameter_types.project_id,
                         "name": parameter_types.name,
                     },
                     "required": ["id"],
@@ -283,7 +283,7 @@ role_assignment_schema: dict[str, Any] = {
                 "domain": {
                     "type": "object",
                     "properties": {
-                        "id": parameter_types.id_string,
+                        "id": parameter_types.domain_id,
                         "name": parameter_types.name,
                     },
                     "required": ["id"],
@@ -307,7 +307,7 @@ role_assignment_schema: dict[str, Any] = {
                 "domain": {
                     "type": "object",
                     "properties": {
-                        "id": parameter_types.id_string,
+                        "id": parameter_types.domain_id,
                         "name": parameter_types.name,
                     },
                     "required": ["id"],
@@ -325,13 +325,13 @@ role_assignment_schema: dict[str, Any] = {
                 "domain": {
                     "type": "object",
                     "properties": {
-                        "id": parameter_types.id_string,
+                        "id": parameter_types.domain_id,
                         "name": parameter_types.name,
                     },
                     "required": ["id"],
                     "additionalProperties": False,
                 },
-                "id": parameter_types.id_string,
+                "id": parameter_types.group_id,
                 "name": parameter_types.name,
             },
             "required": ["id"],
@@ -354,8 +354,8 @@ role_assignments_index_request_query: dict[str, Any] = {
         "effective": {},
         "include_names": {},
         "include_subtree": {},
-        "group.id": parameter_types.id_string,
-        "role.id": parameter_types.id_string,
+        "group.id": parameter_types.group_id,
+        "role.id": parameter_types.role_id,
         # NOTE(0weng): Similar to the previous note, `scope.system`
         # accepts anything, but it will only be interpreted as true if
         # its value is "all"; otherwise it's ignored.

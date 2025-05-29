@@ -88,9 +88,9 @@ user_index_request_query: dict[str, Any] = {
 
 _user_properties: dict[str, Any] = {
     'id': parameter_types.user_id,
-    'default_project_id': validation.nullable(parameter_types.id_string),
+    'default_project_id': validation.nullable(parameter_types.project_id),
     'description': validation.nullable(parameter_types.description),
-    'domain_id': parameter_types.id_string,
+    'domain_id': parameter_types.domain_id,
     'enabled': parameter_types.boolean,
     'federated': {
         'type': 'array',
@@ -215,8 +215,8 @@ group_index_request_query: dict[str, Any] = {
 
 _group_properties: dict[str, Any] = {
     'description': validation.nullable(parameter_types.description),
-    'domain_id': parameter_types.id_string,
-    'id': {"type": "string", "description": "The user ID.", "readOnly": True},
+    'domain_id': parameter_types.domain_id,
+    'id': parameter_types.group_id,
     'name': _identity_name,
 }
 

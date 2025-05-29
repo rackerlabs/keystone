@@ -24,7 +24,7 @@ _role_response_properties = {
         "properties": {
             "description": validation.nullable(parameter_types.description),
             "domain_id": validation.nullable(parameter_types.domain_id),
-            "id": parameter_types.id_string,
+            "id": parameter_types.role_id,
             "name": parameter_types.name,
             "options": ro.ROLE_OPTIONS_REGISTRY.json_schema,
             "links": response_types.links,
@@ -218,7 +218,7 @@ trust_create_request_body: dict[str, Any] = {
                     "items": {
                         "type": "object",
                         "properties": {
-                            "id": parameter_types.id_string,
+                            "id": parameter_types.role_id,
                             "name": parameter_types.name,
                         },
                         "minProperties": 1,
