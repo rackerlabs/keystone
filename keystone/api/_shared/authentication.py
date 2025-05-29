@@ -176,7 +176,11 @@ def authenticate(auth_info, auth_context):
                 # here in the .authenticate method. If the auth attempt was
                 # not successful do not update the auth_context
                 resp_method_names = resp.response_data.pop('method_names', [])
-                auth_context['method_names'].extend(resp_method_names)
+                # NOTE(stephenfin): We only update the methods names if we
+                # are *not* using token auth. If we are, we already have all
+                # information we need.
+                if auth_context['method_names'] != ['token']:
+                    auth_context['method_names'].extend(resp_method_names)
                 auth_context.update(resp.response_data or {})
             elif resp.response_body:
                 auth_response['methods'].append(method_name)
