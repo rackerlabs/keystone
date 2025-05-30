@@ -32,9 +32,9 @@
 - job:
     name: keystone-tempest-fips
     parent: keystone-tempest
-    nodeset: devstack-single-node-centos-9-stream
+    nodeset: devstack-single-node-centos-10-stream
     description: |
-      Functional testing for a FIPS enabled Centos 9 system
+      Functional testing for a FIPS enabled Centos 10 system
     pre-run: playbooks/enable-fips.yaml
     vars:
       nslookup_target: "opendev.org"
@@ -53,9 +53,9 @@
         keystone: https://opendev.org/openstack/keystone
 
 - job:
-    name: keystone-tempest-federation-ubuntu-jammy
+    name: keystone-tempest-federation-ubuntu-noble
     parent: keystone-tempest
-    nodeset: openstack-single-node-jammy
+    nodeset: openstack-single-node-noble
     vars:
       devstack_localrc:
         TEMPEST_PLUGINS: "/opt/stack/keystone-tempest-plugin"
@@ -69,8 +69,8 @@
         /var/log/shibboleth: logs
 
 - job:
-    name: keystone-tempest-federation-ubuntu-jammy-k2k
-    parent: keystone-tempest-federation-ubuntu-jammy
+    name: keystone-tempest-federation-ubuntu-noble-k2k
+    parent: keystone-tempest-federation-ubuntu-noble
     vars:
       devstack_localrc:
         IDP_ID: k2k
@@ -137,10 +137,10 @@
         - keystone-tempest-fips:
             voting: false
             irrelevant-files: *irrelevant-files
-        - keystone-tempest-federation-ubuntu-jammy:
+        - keystone-tempest-federation-ubuntu-noble:
             voting: false
             irrelevant-files: *irrelevant-files
-        - keystone-tempest-federation-ubuntu-jammy-k2k:
+        - keystone-tempest-federation-ubuntu-noble-k2k:
             irrelevant-files: *irrelevant-files
         - keystone-tempest-oidc-federation:
             irrelevant-files: *irrelevant-files
@@ -171,7 +171,7 @@
       jobs:
         - keystone-tempest:
             irrelevant-files: *irrelevant-files
-        - keystone-tempest-federation-ubuntu-jammy-k2k:
+        - keystone-tempest-federation-ubuntu-noble-k2k:
             irrelevant-files: *irrelevant-files
         - tempest-full-py3:
             irrelevant-files: *tempest-irrelevant-files
