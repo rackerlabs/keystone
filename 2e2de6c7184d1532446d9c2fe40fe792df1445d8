@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28b7f8f3_6dacbda5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-05-30T09:39:38Z",
+      "side": 1,
+      "message": "Unfortunately this would open a security hole. I am working on the fix but I wonder how was unnoticed so far or what has changed that this started happening. Apparently all clients (even those written by you and me) are not renewing token from token when appcred auth is used, otherwise we would have noticed that.",
+      "revId": "2e2de6c7184d1532446d9c2fe40fe792df1445d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
