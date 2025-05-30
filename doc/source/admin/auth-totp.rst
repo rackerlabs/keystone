@@ -70,7 +70,7 @@ Create ``totp`` credentials for user:
             "user_id": "'$USER_ID'"
         }
     }' \
-      http://localhost:5000/v3/credentials ; echo
+      https://localhost:5000/v3/credentials ; echo
 
 Google Authenticator
 --------------------
@@ -135,4 +135,4 @@ Get a token with default scope (may be unscoped) using totp:
             }
         }
     }' \
-      http://localhost:5000/v3/auth/tokens ; echo
+      https://localhost:5000/v3/auth/tokens ; echo
