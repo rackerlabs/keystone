@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "759749f4_e9fc1c3e",
+        "filename": "keystone/api/validation/response_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2025-05-30T12:20:42Z",
+      "side": 1,
+      "message": "Rather than `_short`, how about `_embedded` (or simply `_embed`)? It feels a little more descriptive.",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 12
+      },
+      "revId": "58cc0c3599e65be43e150817ecc4c0e57645d28d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37592940_59c37fd9",
+        "filename": "keystone/api/validation/response_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2025-05-30T12:20:42Z",
+      "side": 1,
+      "message": "Any reason these don\u0027t get their own variables?",
+      "range": {
+        "startLine": 113,
+        "startChar": 19,
+        "endLine": 115,
+        "endChar": 74
+      },
+      "revId": "58cc0c3599e65be43e150817ecc4c0e57645d28d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16a216cf_e02c8e4f",
+        "filename": "keystone/api/validation/response_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2025-05-30T12:20:42Z",
+      "side": 1,
+      "message": "I think this is wrong. Shouldn\u0027t it be under a `domain` key? (like `domain` on the project above)?",
+      "revId": "58cc0c3599e65be43e150817ecc4c0e57645d28d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
