@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "23295363_c172ec47",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2025-05-30T12:24:23Z",
+      "side": 1,
+      "message": "I\u0027ve a few more things in https://review.opendev.org/c/openstack/keystone/+/951297 also. Would it make sense to squash that into here?",
+      "revId": "58cc0c3599e65be43e150817ecc4c0e57645d28d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "759749f4_e9fc1c3e",
@@ -60,6 +77,29 @@
       "writtenOn": "2025-05-30T12:20:42Z",
       "side": 1,
       "message": "I think this is wrong. Shouldn\u0027t it be under a `domain` key? (like `domain` on the project above)?",
+      "revId": "58cc0c3599e65be43e150817ecc4c0e57645d28d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96773de3_818e5262",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2025-05-30T12:24:23Z",
+      "side": 1,
+      "message": "Per https://review.opendev.org/c/openstack/keystone/+/951297, all of these are also present in `keystone/application_credential/schema.py`. You should probably harmonise things and place them in the preceding file also.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 1
+      },
       "revId": "58cc0c3599e65be43e150817ecc4c0e57645d28d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
