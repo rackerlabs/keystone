@@ -301,9 +301,9 @@ interpolation)
 .. code-block:: ini
 
     [DEFAULT]
-    catalog.RegionOne.identity.publicURL = http://localhost:$(public_port)s/v3
-    catalog.RegionOne.identity.adminURL = http://localhost:$(public_port)s/v3
-    catalog.RegionOne.identity.internalURL = http://localhost:$(public_port)s/v3
+    catalog.RegionOne.identity.publicURL = https://localhost:$(public_port)s/v3
+    catalog.RegionOne.identity.adminURL = https://localhost:$(public_port)s/v3
+    catalog.RegionOne.identity.internalURL = https://localhost:$(public_port)s/v3
     catalog.RegionOne.identity.name = 'Identity Service'
 
 

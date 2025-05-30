@@ -50,7 +50,7 @@ to be passed as arguments each time:
     $ export OS_PASSWORD=my_password
     $ export OS_PROJECT_NAME=my_project
     $ export OS_PROJECT_DOMAIN_NAME=my_project_domain
-    $ export OS_AUTH_URL=http://localhost:5000/v3
+    $ export OS_AUTH_URL=https://localhost:5000/v3
     $ export OS_IDENTITY_API_VERSION=3
 
 For example, the commands ``user list``, ``token issue`` and ``project create``
@@ -64,7 +64,7 @@ can be invoked as follows:
     $ export OS_PASSWORD=secret
     $ export OS_PROJECT_NAME=admin
     $ export OS_PROJECT_DOMAIN_NAME=Default
-    $ export OS_AUTH_URL=http://localhost:5000/v3
+    $ export OS_AUTH_URL=https://localhost:5000/v3
     $ export OS_IDENTITY_API_VERSION=3
     $ openstack user list
     $ openstack project create demo
@@ -74,10 +74,10 @@ can be invoked as follows:
     $ openstack --os-username=admin --os-user-domain-name=Default \
                 --os-password=secret \
                 --os-project-name=admin --os-project-domain-name=Default \
-                --os-auth-url=http://localhost:5000/v3 --os-identity-api-version=3 \
+                --os-auth-url=https://localhost:5000/v3 --os-identity-api-version=3 \
                 user list
     $ openstack --os-username=admin --os-user-domain-name=Default \
                 --os-password=secret \
                 --os-project-name=admin --os-project-domain-name=Default \
-                --os-auth-url=http://localhost:5000/v3 --os-identity-api-version=3 \
+                --os-auth-url=https://localhost:5000/v3 --os-identity-api-version=3 \
                 project create demo
