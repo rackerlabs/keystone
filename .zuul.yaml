@@ -26,9 +26,9 @@
 - job:
     name: keystone-tempest-fips
     parent: keystone-tempest
-    nodeset: devstack-single-node-centos-9-stream
+    nodeset: devstack-single-node-centos-10-stream
     description: |
-      Functional testing for a FIPS enabled Centos 9 system
+      Functional testing for a FIPS enabled Centos 10 system
     pre-run: playbooks/enable-fips.yaml
     vars:
       nslookup_target: "opendev.org"
@@ -49,7 +49,7 @@
 - job:
     name: keystone-tempest-federation
     parent: keystone-tempest
-    nodeset: openstack-single-node-jammy
+    nodeset: openstack-single-node-noble
     vars:
       devstack_localrc:
         TEMPEST_PLUGINS: "/opt/stack/keystone-tempest-plugin"
