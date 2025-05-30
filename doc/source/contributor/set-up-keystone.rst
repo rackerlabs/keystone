@@ -23,20 +23,20 @@ Setting up Keystone
 Prerequisites
 =============
 
-This document assumes you are using an Ubuntu, Fedora, or openSUSE platform and
+This document assumes you are using an Ubuntu, RHEL or CentOS Stream and
 that you have the following tools pre-installed on your system:
 
 - python_ 3.11 or later, as the programming language;
-- git_, as the version control tool;
+- git-scm_, as the version control tool;
 
 .. NOTE::
 
-    Keystone dropped the support of python_ 2.7 in the Ussuri release of Openstack.
+    Keystone dropped the support of python_ 2.7 in the Ussuri release of OpenStack.
 
 **Reminder**: If you are successfully using a different platform, or a
 different version of the above, please document your configuration here!
 
-.. _git: http://git-scm.com/
+.. _git-scm: https://git-scm.com
 
 Installing from source
 ======================
@@ -47,11 +47,11 @@ Package Index (PyPi_) for development environment installations..
 
 .. _PyPi: https://pypi.org/project/pypi
 
-It's expected that your system already has python_, pip_, and git_ available.
+It's expected that your system already has python_, pip_, and git-scm_ available.
 
-.. _python: http://www.python.org
-.. _pip: http://www.pip-installer.org/en/latest/installing.html
-.. _git: http://git-scm.com/
+.. _python: https://www.python.org
+.. _pip: https://pip.pypa.io/en/latest/installation/
+.. _git-scm: https://git-scm.com
 
 Clone the keystone repository:
 
@@ -89,7 +89,7 @@ keystone tests using `tox`, which uses virtualenv_ to isolate the Python
 environment. After running it, notice the existence of a `.tox` directory.
 
 .. _`Project Team Guide: Python Project Guide`: https://docs.openstack.org/project-team-guide/project-setup/python.html
-.. _virtualenv: http://www.virtualenv.org/
+.. _virtualenv: https://virtualenv.pypa.io/en/latest/
 
 Deploying configuration files
 =============================
@@ -195,14 +195,14 @@ Once run, you can see the sample data that has been created by using the
     $ export OS_USER_DOMAIN_ID=default
     $ export OS_PROJECT_DOMAIN_ID=default
     $ export OS_IDENTITY_API_VERSION=3
-    $ export OS_AUTH_URL=http://localhost:5000/v3
+    $ export OS_AUTH_URL=https://localhost:5000/v3/
     $ openstack user list
 
 The `python-openstackclient`_ can be installed using the following:
 
 .. code-block:: bash
 
-    $ pip install python-openstackclient
+    $ pip3 install python-openstackclient
 
 Verifying keystone is set up
 ----------------------------

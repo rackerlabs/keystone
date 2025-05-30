@@ -68,9 +68,9 @@ Verbosely, keystone can be bootstrapped with:
         --bootstrap-role-name admin \
         --bootstrap-service-name keystone \
         --bootstrap-region-id RegionOne \
-        --bootstrap-admin-url http://localhost:5000 \
-        --bootstrap-public-url http://localhost:5000 \
-        --bootstrap-internal-url http://localhost:5000
+        --bootstrap-admin-url https://localhost:5000 \
+        --bootstrap-public-url https://localhost:5000 \
+        --bootstrap-internal-url https://localhost:5000
 
 This will create an ``admin`` user with the ``admin`` role on the ``admin``
 project and the system. This allows the user to generate project-scoped and
@@ -99,7 +99,7 @@ To test a proper configuration, a user can use OpenStackClient CLI:
 
     $ openstack project list --os-username admin --os-project-name admin \
         --os-user-domain-id default --os-project-domain-id default \
-        --os-identity-api-version 3 --os-auth-url http://localhost:5000 \
+        --os-identity-api-version 3 --os-auth-url https://localhost:5000 \
         --os-password s3cr3t
 
 Using a shared secret
