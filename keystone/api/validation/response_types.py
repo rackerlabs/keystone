@@ -53,3 +53,68 @@ tags: dict[str, Any] = {
     },
     "additionalProperties": False,
 }
+
+domain_id: dict[str, Any] = {
+    "type": "string",
+    "minLength": 1,
+    "maxLength": 64,
+    "description": "The ID of the domain.",
+}
+
+domain_name: dict[str, Any] = {
+    "type": "string",
+    "description": "The name of the domain.",
+}
+
+domain_short: dict[str, Any] = {
+    "type": "object",
+    "properties": {"id": domain_id, "name": domain_name},
+    "required": ["id"],
+    "additionalProperties": False,
+}
+
+group_short: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "id": {"type": "string", "description": "The ID of the user group"},
+        "name": {
+            "type": "string",
+            "description": "The name of the user group",
+        },
+        "domain": domain_short,
+    },
+    "required": ["id"],
+    "additionalProperties": False,
+}
+
+project_id: dict[str, Any] = {
+    "type": "string",
+    "description": "The ID of the project.",
+}
+
+project_name: dict[str, Any] = {
+    "type": "string",
+    "description": "The name of the project.",
+}
+
+project_short: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "id": project_id,
+        "name": project_name,
+        "domain": domain_short,
+    },
+    "required": ["id"],
+    "additionalProperties": False,
+}
+
+user_short: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "id": {"type": "string", "description": "The ID of the user"},
+        "name": {"type": "string", "description": "The name of the user"},
+        **domain_short,
+    },
+    "required": ["id"],
+    "additionalProperties": False,
+}

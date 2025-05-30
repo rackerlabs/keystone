@@ -19,8 +19,20 @@ from keystone.common import validation
 
 # Schema for Identity v3 API
 
+role_id: dict[str, Any] = {
+    "type": "string",
+    "minLength": 1,
+    "maxLength": 64,
+    "description": "The ID of the role.",
+}
+
+role_name: dict[str, Any] = {
+    "type": "string",
+    "description": "The name of the role.",
+}
+
 _role_properties: dict[str, Any] = {
-    "name": parameter_types.name,
+    "name": role_name,
     "description": validation.nullable(parameter_types.description),
     "domain_id": validation.nullable(parameter_types.domain_id),
     "options": ro.ROLE_OPTIONS_REGISTRY.json_schema,
@@ -33,14 +45,15 @@ role_schema: dict[str, Any] = {
     "type": "object",
     "description": "A role object.",
     "properties": {
-        "id": {
+        "id": role_id,
+        "name": role_name,
+        "description": {
             "type": "string",
-            "format": "uuid",
-            "description": "The role ID.",
-            "readOnly": True,
+            "description": "The role description.",
         },
+        "domain_id": validation.nullable(response_types.domain_id),
+        "options": ro.ROLE_OPTIONS_REGISTRY.json_schema,
         "links": response_types.resource_links,
-        **_role_properties,
     },
     "additionalProperties": True,
 }
@@ -125,14 +138,9 @@ role_update_request_body = {
 
 # Individual properties of a returned prior/implied role
 _implied_role_properties: dict[str, Any] = {
-    "id": {
-        "type": "string",
-        "format": "uuid",
-        "description": "The role ID.",
-        "readOnly": True,
-    },
+    "id": role_id,
+    "name": role_name,
     "links": response_types.resource_links,
-    "name": parameter_types.name,
 }
 
 # Common schema of prior role
@@ -244,50 +252,18 @@ role_assignment_schema: dict[str, Any] = {
         "role": {
             "type": "object",
             "properties": {
-                "domain": {
-                    "type": "object",
-                    "properties": {
-                        "id": parameter_types.id_string,
-                        "name": parameter_types.name,
-                    },
-                    "required": ["id"],
-                    "additionalProperties": False,
-                },
-                "id": parameter_types.id_string,
-                "name": parameter_types.name,
+                "id": role_id,
+                "name": role_name,
+                "domain": response_types.domain_short,
             },
             "required": ["id"],
             "additionalProperties": False,
         },
         "scope": {
             "properties": {
-                "project": {
-                    "type": "object",
-                    "properties": {
-                        "domain": {
-                            "type": "object",
-                            "properties": {
-                                "id": parameter_types.id_string,
-                                "name": parameter_types.name,
-                            },
-                            "required": ["id"],
-                            "additionalProperties": False,
-                        },
-                        "id": parameter_types.id_string,
-                        "name": parameter_types.name,
-                    },
-                    "required": ["id"],
-                    "additionalProperties": False,
-                },
+                "project": response_types.project_short,
+                "domain": response_types.domain_short,
                 "OS-INHERIT:inherited_to": {"const": "projects"},
-                "domain": {
-                    "type": "object",
-                    "properties": {
-                        "id": parameter_types.id_string,
-                        "name": parameter_types.name,
-                    },
-                    "required": ["id"],
-                },
                 "system": {
                     "type": "object",
                     "properties": {"all": {"const": True}},
@@ -301,42 +277,8 @@ role_assignment_schema: dict[str, Any] = {
             ],
             "additionalProperties": False,
         },
-        "user": {
-            "type": "object",
-            "properties": {
-                "domain": {
-                    "type": "object",
-                    "properties": {
-                        "id": parameter_types.id_string,
-                        "name": parameter_types.name,
-                    },
-                    "required": ["id"],
-                    "additionalProperties": False,
-                },
-                "id": parameter_types.id_string,
-                "name": parameter_types.name,
-            },
-            "required": ["id"],
-            "additionalProperties": False,
-        },
-        "group": {
-            "type": "object",
-            "properties": {
-                "domain": {
-                    "type": "object",
-                    "properties": {
-                        "id": parameter_types.id_string,
-                        "name": parameter_types.name,
-                    },
-                    "required": ["id"],
-                    "additionalProperties": False,
-                },
-                "id": parameter_types.id_string,
-                "name": parameter_types.name,
-            },
-            "required": ["id"],
-            "additionalProperties": False,
-        },
+        "user": response_types.user_short,
+        "group": response_types.group_short,
     },
     "required": ["role", "links", "scope"],
     "oneOf": [{"required": ["user"]}, {"required": ["group"]}],
