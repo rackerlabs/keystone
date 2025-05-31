@@ -87,6 +87,24 @@
       "parentUuid": "d8038b85_0467f55c",
       "revId": "809e2de6db22604234eec6cb4979df78aa5314b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd54b527_065c63b7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2025-05-31T12:52:10Z",
+      "side": 1,
+      "message": "your right in devstack you have to enale the tls proxy for tls which we do by defautl in jobs\n\ni also do that locally but that because most of the time i base my local envs off something close to our standard jobs. i sometimes forget that is not the actual default in devstack when you use a minimal local.conf.",
+      "parentUuid": "3b797bce_ecdc0f10",
+      "revId": "809e2de6db22604234eec6cb4979df78aa5314b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
