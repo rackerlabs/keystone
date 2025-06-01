@@ -16,6 +16,24 @@
       "message": "IMO this has broken the install guide since you nowhere say how to install the service with TLS enabled, just changing the referenced URLs will not magically perform that task",
       "revId": "3c72ffb369d68861bd40e0db785c8cb860b1058a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "174b346d_fdafbad1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10342
+      },
+      "writtenOn": "2025-06-01T16:11:57Z",
+      "side": 1,
+      "message": "I think this is further evidenced by the continued use of the http ports in the URLs.",
+      "parentUuid": "ec7aacc2_cd99c318",
+      "revId": "3c72ffb369d68861bd40e0db785c8cb860b1058a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ],
   "submitRequirementResults": [
