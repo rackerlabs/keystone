@@ -433,28 +433,49 @@ class GroupApi(common_ldap.BaseLdap):
         """Return a list of user dns which are members of a group."""
         group_ref = self.get(group_id)
         group_dn = group_ref['dn']
+        attribute = self.member_attribute
 
         try:
             if self.group_ad_nesting:
                 # NOTE(ayoung): LDAP_SCOPE is used here instead of hard-
                 # coding to SCOPE_SUBTREE to get through the unit tests.
                 # However, it is also probably more correct.
+                attribute = "distinguishedName"
                 attrs = self._ldap_get_list(
+<<<<<<< HEAD   (4e2e36 Fix DB migrations after alembic integration)
                     self.tree_dn, self.LDAP_SCOPE,
+=======
+                    self.user_tree_dn,
+                    self.LDAP_SCOPE,
+>>>>>>> CHANGE (f8338b Fix AD nested groups issues)
                     query_params={
+<<<<<<< HEAD   (4e2e36 Fix DB migrations after alembic integration)
                         "member:%s:" % LDAP_MATCHING_RULE_IN_CHAIN:
                         group_dn},
                     attrlist=[self.member_attribute])
+=======
+                        f"memberOf:{LDAP_MATCHING_RULE_IN_CHAIN}:": group_dn
+                    },
+                    attrlist=[attribute],
+                    object_class=self.user_objectclass,
+                )
+>>>>>>> CHANGE (f8338b Fix AD nested groups issues)
             else:
+<<<<<<< HEAD   (4e2e36 Fix DB migrations after alembic integration)
                 attrs = self._ldap_get_list(group_dn, ldap.SCOPE_BASE,
                                             attrlist=[self.member_attribute])
+=======
+                attrs = self._ldap_get_list(
+                    group_dn, ldap.SCOPE_BASE, attrlist=[attribute]
+                )
+>>>>>>> CHANGE (f8338b Fix AD nested groups issues)
 
         except ldap.NO_SUCH_OBJECT:
             raise self.NotFound(group_id=group_id)
 
         users = []
         for dn, member in attrs:
-            user_dns = member.get(self.member_attribute, [])
+            user_dns = member.get(attribute, [])
             for user_dn in user_dns:
                 users.append(user_dn)
         return users
