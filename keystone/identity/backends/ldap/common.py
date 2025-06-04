@@ -1202,6 +1202,12 @@ class BaseLdap(object):
         self.auth_pool_conn_lifetime = conf.ldap.auth_pool_connection_lifetime
 
         if self.options_name is not None:
+            self.user_tree_dn = (
+                conf.ldap.user_tree_dn
+                or f'{self.DEFAULT_OU},{conf.ldap.suffix}'
+            )
+            self.user_objectclass = conf.ldap.user_objectclass
+
             self.tree_dn = (
                 getattr(conf.ldap, '%s_tree_dn' % self.options_name)
                 or '%s,%s' % (self.DEFAULT_OU, conf.ldap.suffix))
@@ -1617,9 +1623,15 @@ class BaseLdap(object):
         # compared to explicit filtering by 'name' through ldap result.
         return self._filter_ldap_result_by_attr(res, 'name')
 
-    def _ldap_get_list(self, search_base, scope, query_params=None,
-                       attrlist=None):
-        query = u'(objectClass=%s)' % self.object_class
+    def _ldap_get_list(
+        self,
+        search_base,
+        scope,
+        query_params=None,
+        attrlist=None,
+        object_class=None,
+    ):
+        query = f'(objectClass={object_class or self.object_class})'
         if query_params:
 
             def calc_filter(attrname, value):
