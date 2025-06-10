@@ -82,6 +82,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0360d74_78e3aa6a",
+        "filename": "keystone/api/validation/response_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2025-06-10T15:29:52Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "8188ca7b_c3fe6113",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 12
+      },
+      "revId": "58cc0c3599e65be43e150817ecc4c0e57645d28d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "37592940_59c37fd9",
@@ -129,6 +153,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a81408d5_7dec5564",
+        "filename": "keystone/api/validation/response_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2025-06-10T15:29:52Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "d4e153d7_7bdfbb6a",
+      "range": {
+        "startLine": 113,
+        "startChar": 19,
+        "endLine": 115,
+        "endChar": 74
+      },
+      "revId": "58cc0c3599e65be43e150817ecc4c0e57645d28d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "16a216cf_e02c8e4f",
@@ -160,6 +208,24 @@
       "side": 1,
       "message": "you are absolutely right, I fixed most of them during working on that, but that squeezed through",
       "parentUuid": "16a216cf_e02c8e4f",
+      "revId": "58cc0c3599e65be43e150817ecc4c0e57645d28d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a413f18_0bd3454e",
+        "filename": "keystone/api/validation/response_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2025-06-10T15:29:52Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "78cfe17e_58a80661",
       "revId": "58cc0c3599e65be43e150817ecc4c0e57645d28d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
