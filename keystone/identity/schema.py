@@ -23,7 +23,7 @@ CONF = keystone.conf.CONF
 
 
 _identity_name: dict[str, Any] = {
-    "type": "string",
+    "type": ["string", "null"],
     "minLength": 1,
     "maxLength": 255,
     "pattern": r"[\S]+",
@@ -203,7 +203,7 @@ user_schema: dict[str, Any] = {
         },
         "links": response_types.links,
         "name": {
-            "type": "string",
+            "type": ["string", "null"],
             "description": (
                 "The user name. Must be unique within the owning domain."
             ),
