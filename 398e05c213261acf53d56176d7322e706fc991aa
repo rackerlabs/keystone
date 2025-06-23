@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92088fce_a968380e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-06-23T15:23:34Z",
+      "side": 1,
+      "message": "fast self-approve as a fix for the openapi (which now passes) job that is itself necessary to resolve other openapi dependency chain",
+      "revId": "398e05c213261acf53d56176d7322e706fc991aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
