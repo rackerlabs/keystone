@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dde6f6f1_5656a4fc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-06-23T07:40:05Z",
+      "side": 1,
+      "message": "Technically the change looks ok, but we first need to find a way to get ldap tests back working (trying to figure out reason or solution for a segfault of slapd during start in Ubuntu). Accepting such a change without verifying it does not break the normal ldap is not possible.",
+      "revId": "8f7d2bc6296e6f9aedff5e057ba2f30fa18d2fd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
