@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4cffd1f_72156c2e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-07-18T14:12:17Z",
+      "side": 1,
+      "message": "I do not think anybody should be ever viewing the strictly REST api directly in the browser",
+      "revId": "0bca43289fd0d0440ce4f8914d471c202c31fcd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
