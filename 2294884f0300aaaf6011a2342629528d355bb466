@@ -16,6 +16,24 @@
       "message": "I does not make sense for the REST api",
       "revId": "2294884f0300aaaf6011a2342629528d355bb466",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c18b99cb_ebf8e278",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2025-07-18T16:11:28Z",
+      "side": 1,
+      "message": "Of course  it does.  Nothing about REST says that it is ONLY for machine consumption. \n\nUsing the Keystone API from the Browser would make most Keystone use cases implemented at the same time for interactive user/ browser and for automated CLI implementation.  It would simplify the learning curve for administrators. And it would clarify where the Keystone API falls down on discover ability.\n\nKeystone IS exposed to the end user,  necessarily so Federated Identity.  The fact that it shows a JSON RPC message is unhelpful.",
+      "parentUuid": "a6b61b65_ff185c05",
+      "revId": "2294884f0300aaaf6011a2342629528d355bb466",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
