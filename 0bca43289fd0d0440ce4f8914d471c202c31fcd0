@@ -16,6 +16,23 @@
       "message": "I do not think anybody should be ever viewing the strictly REST api directly in the browser",
       "revId": "0bca43289fd0d0440ce4f8914d471c202c31fcd0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "552e1b3e_985ffd67",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2025-07-18T16:12:35Z",
+      "side": 1,
+      "message": "But they are going to, and they do.  See my comments on the other review.\n\nKeystone is a stand alone service.  Rendering its output as browser visual is fairly simple and will be a great help in debugging, setup, and assigning user roles.",
+      "revId": "0bca43289fd0d0440ce4f8914d471c202c31fcd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
