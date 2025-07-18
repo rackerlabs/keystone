@@ -1,0 +1,10 @@
+Code-Review+2: Artem Goncharov <artem.goncharov@gmail.com>
+Verified+2: Zuul
+Code-Review+1: Ivan Anfimov <lazekteam@gmail.com>
+Workflow+1: David Wilde <dwilde@redhat.com>
+Code-Review+2: David Wilde <dwilde@redhat.com>
+Submitted-by: Zuul
+Submitted-at: Fri, 18 Jul 2025 16:57:51 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/953089
+Project: openstack/keystone
+Branch: refs/heads/master
