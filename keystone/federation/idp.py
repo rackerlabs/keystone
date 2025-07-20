@@ -385,11 +385,7 @@ class SAMLGenerator:
 
         """
         canonicalization_method = xmldsig.CanonicalizationMethod()
-        # TODO(stephenfin): Drop when we remove support for pysaml < 7.1.0
-        if hasattr(xmldsig, 'TRANSFORM_C14N'):  # >= 7.1.0
-            canonicalization_method.algorithm = xmldsig.TRANSFORM_C14N
-        else:  # < 7.1.0
-            canonicalization_method.algorithm = xmldsig.ALG_EXC_C14N
+        canonicalization_method.algorithm = xmldsig.TRANSFORM_C14N
         signature_method = xmldsig.SignatureMethod(
             algorithm=xmldsig.SIG_RSA_SHA1
         )
@@ -399,11 +395,7 @@ class SAMLGenerator:
             algorithm=xmldsig.TRANSFORM_ENVELOPED
         )
 
-        # TODO(stephenfin): Drop when we remove support for pysaml < 7.1.0
-        if hasattr(xmldsig, 'TRANSFORM_C14N'):  # >= 7.1.0
-            c14_transform = xmldsig.Transform(algorithm=xmldsig.TRANSFORM_C14N)
-        else:  # < 7.1.0
-            c14_transform = xmldsig.Transform(algorithm=xmldsig.ALG_EXC_C14N)
+        c14_transform = xmldsig.Transform(algorithm=xmldsig.TRANSFORM_C14N)
         transforms.transform = [envelope_transform, c14_transform]
 
         digest_method = xmldsig.DigestMethod(algorithm=xmldsig.DIGEST_SHA1)
