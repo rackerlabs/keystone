@@ -52,6 +52,24 @@
       "parentUuid": "76a17121_e299df66",
       "revId": "d9b8ca0524f518e165c24377330d870cd2fdffaf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "809eca98_c35919fd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-07-25T14:36:00Z",
+      "side": 1,
+      "message": "but what is next? A version discovery returns xhtml, how should that help? How is the user supposed to use keystone api directly using the browser without Horizon or similar?",
+      "parentUuid": "e20941b0_b4ee3380",
+      "revId": "d9b8ca0524f518e165c24377330d870cd2fdffaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
