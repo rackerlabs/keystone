@@ -1755,10 +1755,21 @@ class Manager(manager.Manager):
         :returns: dictionary of the mapped User entity
         """
         user_dict = self._shadow_federated_user(idp_id, protocol_id, user)
-
         # Note(knikolla): The shadowing operation can be cached,
         # however we need to update the expiring group memberships.
         if group_ids:
+            existing_groups = (
+                PROVIDERS.shadow_user_api.list_expiring_groups_for_user(
+                    user_dict['id'])
+            )
+            existing_groups_ids = [g['id'] for g in existing_groups]
+            cache_needs_invalidation = False
+            if set(existing_groups_ids) != set(group_ids):
+                # we cannot immediately invalidate the cache, because it might
+                # get recreated while the group membership is changed; defer
+                # this to the end of the call
+                cache_needs_invalidation = True
+
             for group_id in group_ids:
                 LOG.info(
                     "Adding user [%s] to group [%s].", user_dict, group_id
@@ -1766,6 +1777,12 @@ class Manager(manager.Manager):
                 PROVIDERS.shadow_users_api.add_user_to_group_expires(
                     user_dict['id'], group_id
                 )
+
+            if cache_needs_invalidation:
+                # Invalidate user role assignments cache region, as it may
+                # now need to include role assignments from the specified
+                # group to its users
+                assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
         return user_dict
 
 

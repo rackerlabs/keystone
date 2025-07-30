@@ -261,3 +261,20 @@ class ShadowUsers(base.ShadowUsersDriverBase):
                         last_verified=timeutils.utcnow(),
                     )
                 )
+
+    def list_expiring_groups_for_user(self, user_id):
+        def row_to_group_dict(row):
+            group = row.group.to_dict()
+            group['membership_expires_at'] = row.expires
+            return group
+
+        with sql.session_for_read() as session:
+            query = session.query(model.ExpiringUserGroupMembership)
+            query = query.filter(
+                model.ExpiringUserGroupMembership.user_id == user_id
+            )
+            expiring_groups = [
+                row_to_group_dict(r) for r in query.all() if not r.expired
+            ]
+
+            return expiring_groups
