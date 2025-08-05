@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "609eb875_442b264c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 36765
+      },
+      "writtenOn": "2025-08-05T10:27:01Z",
+      "side": 1,
+      "message": "Could this be backported to 2025.1? We\u0027re seeing problem when interacting with keystone credentials because of the uuid format constraints after we upgraded the system from 2024.1 to 2025.1",
+      "revId": "84a30d56071ab2ed48dfdb3172af723dc74cdd28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
