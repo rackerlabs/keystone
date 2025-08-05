@@ -539,6 +539,9 @@ def _sign_assertion(assertion):
             # attempt command injection via string
             # parsing.
             stderr=subprocess.STDOUT,
+            text=True,
+            encoding='utf-8',
+            errors='replace',
         )
     except Exception as e:
         msg = 'Error when signing assertion, reason: %(reason)s%(output)s'

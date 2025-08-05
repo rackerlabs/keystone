@@ -10,10 +10,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import subprocess
+from unittest import mock
 import uuid
 
 from keystone.common import provider_api
 from keystone import exception
+from keystone.federation import idp
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
@@ -118,3 +121,35 @@ class TestFederationProtocol(unit.TestCase):
             protocol['remote_id_attribute'],
             protocol_ret['remote_id_attribute'],
         )
+
+
+class TestIdpSigning(unit.TestCase):
+    def test_error_path_raises_saml_signing_error(self):
+        assertion = mock.Mock()
+        assertion.to_string.return_value = b"<Assertion ID='x'/>"
+
+        with mock.patch(
+            'subprocess.check_output',
+            side_effect=subprocess.CalledProcessError(
+                1, ['xmlsec1'], output='some string'
+            ),
+        ):
+            self.assertRaises(
+                exception.SAMLSigningError, idp._sign_assertion, assertion
+            )
+
+    def test_signing_failure_uses_text_mode(self):
+        assertion = mock.Mock()
+        assertion.to_string.return_value = b"<Assertion ID='x'/>"
+
+        with mock.patch('subprocess.check_output') as mock_check_output:
+            mock_check_output.side_effect = [
+                '/usr/bin/xmlsec1\n',
+                subprocess.CalledProcessError(
+                    1, ['xmlsec1'], output='some string'
+                ),
+            ]
+
+            self.assertRaises(
+                exception.SAMLSigningError, idp._sign_assertion, assertion
+            )

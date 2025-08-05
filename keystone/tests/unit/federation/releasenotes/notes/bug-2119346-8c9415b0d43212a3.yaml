@@ -1,0 +1,11 @@
+---
+fixes:
+  - |
+    [`bug 2119346 <https://bugs.launchpad.net/keystone/+bug/2119346>`_]
+    Fixes a Python 3.13 compatibility issue in SAML assertion signing that
+    could raise a TypeError when an xmlsec1 failure occurred and the
+    error output was logged. Keystone now invokes the signing command in
+    text mode with a known encoding and safely handles undecodable output.
+    Operators running Keystone under Python 3.13 will no longer see the
+    logging crash; the request fails with a proper SAMLSigningError and
+    logs include the underlying xmlsec1 output for troubleshooting.
