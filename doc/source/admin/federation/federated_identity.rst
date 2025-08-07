@@ -8,3 +8,4 @@ Federated Identity
     introduction.rst
     configure_federation.rst
     mapping_combinations.rst
+    dinamyc_project_assignments.rst
