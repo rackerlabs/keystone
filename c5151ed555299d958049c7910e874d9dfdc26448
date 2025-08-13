@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41503666_250f732f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2025-08-13T13:32:29Z",
+      "side": 1,
+      "message": "Hello Artem, \nI have amended this patch to fix the conflict. \n\nCan you guys review it?",
+      "revId": "c5151ed555299d958049c7910e874d9dfdc26448",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
