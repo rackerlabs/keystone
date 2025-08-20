@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57e8de0d_025f5883",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-08-20T15:32:34Z",
+      "side": 1,
+      "message": "still waiting for devstack to merge the workaround",
+      "revId": "f8338be43073f23f3db64fa4ba658c3e1f554aa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
