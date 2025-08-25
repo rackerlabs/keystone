@@ -34,3 +34,11 @@ override this global value with a specific limit, for example:
 If a response to ``list_{entity}`` call has been truncated, then the response
 status code will still be 200 (OK), but the ``truncated`` attribute in the
 collection will be set to ``true``.
+
+Another constraint on return size was added during 2025.1 (Epoxy) release
+by the ``max_db_limit`` which sets an absolute limit of entries which will be
+fetched from the database on a request. This parameter has an implied
+precedence over list_limit values and has a default of ``1000`` records.
+
+This way ``max_db_limit`` must be higher or equal to the ``list_limit``,
+or amount of records in reply will be capped by ``max_db_limit``.
