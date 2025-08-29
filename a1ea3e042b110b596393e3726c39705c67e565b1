@@ -16,6 +16,23 @@
       "message": "We use OIDC for most of our users and user id is not in uuid format.\nAfter upgrading from 2024.1 to 2025.1, keystone credentials were not able to be listed because of the uuid format constraint.\nTherefore, I\u0027d like to propose a back-port of this change to 2025.1",
       "revId": "a1ea3e042b110b596393e3726c39705c67e565b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac0592de_c1810630",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-08-29T16:00:50Z",
+      "side": 1,
+      "message": "recheck gates should be fixed",
+      "revId": "a1ea3e042b110b596393e3726c39705c67e565b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
