@@ -33,6 +33,23 @@
       "message": "recheck gates should be fixed",
       "revId": "a1ea3e042b110b596393e3726c39705c67e565b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d8c3050_f773e842",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-08-30T07:10:51Z",
+      "side": 1,
+      "message": "recheck gate fixed",
+      "revId": "a1ea3e042b110b596393e3726c39705c67e565b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
