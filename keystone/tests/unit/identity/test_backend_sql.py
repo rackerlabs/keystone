@@ -11,6 +11,7 @@
 # under the License.
 
 import datetime
+from unittest import mock
 import uuid
 
 import freezegun
@@ -72,10 +73,45 @@ class UserPasswordHashingTestsNoCompat(test_backend_sql.SqlTests):
         )
 
     def test_configured_algorithm_used(self):
+        user_ref = self._get_user(self.user_foo['id'])
+        self.assertEqual(
+            password_hashers.scrypt.Scrypt,
+            password_hashing._get_hasher_from_ident(user_ref.password),
+        )
+
+    def _get_user(self, user_id):
         with sql.session_for_read() as session:
-            user_ref = PROVIDERS.identity_api._get_user(
-                session, self.user_foo['id']
+            user_ref = PROVIDERS.identity_api._get_user(session, user_id)
+        return user_ref
+
+    def test_deprecated_password_hash_is_updated_on_auth(self):
+        user_dict = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id,
+            'enabled': True,
+            'password': 'password123',
+        }
+        with sql.session_for_write() as session:
+            user_ref = model.User.from_dict(user_dict)
+            session.add(user_ref)
+            password_hash = password_hashers.bcrypt.Bcrypt.hash(
+                user_dict['password'].encode('utf-8')
             )
+            user_ref.password_ref.password_hash = password_hash
+            session.add(user_ref.password_ref)
+
+        # Fake that Bcrypt is deprecated
+        with mock.patch.object(
+            password_hashing,
+            'DEPRECATED_HASHERS',
+            frozenset([password_hashers.bcrypt.Bcrypt]),
+        ):
+            PROVIDERS.identity_api.driver.authenticate(
+                user_dict['id'], user_dict['password']
+            )
+        user_ref = self._get_user(user_dict['id'])
+
         self.assertEqual(
             password_hashers.scrypt.Scrypt,
             password_hashing._get_hasher_from_ident(user_ref.password),
