@@ -16,6 +16,23 @@
       "message": "I think this should work.\n\nDespite `passlib.hash.sha512_crypt` being in `SUPPORTED_HASHERS` might seem confusing, I\u0027d say it kinda acceptable, given that hash algo can\u0027t be set for usage in config anyway:\nhttps://opendev.org/openstack/keystone/src/commit/4e2e36ad7767a459277987d21f748cec54ac09e0/keystone/conf/identity.py#L117",
       "revId": "46ca6953831d667c7e58d563ef122699384cae43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee9a4b17_0e89f0aa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2025-09-03T06:32:55Z",
+      "side": 1,
+      "message": "I will test it though in a sandbox shortly 😊",
+      "revId": "46ca6953831d667c7e58d563ef122699384cae43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
