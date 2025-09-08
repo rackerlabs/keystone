@@ -16,6 +16,23 @@
       "message": "Hello guys, \nI have rebased this patch. Everything seems to be fine here now. This patch implements a spec that was merge quite a while ago.",
       "revId": "d23a14b8969d201b06097cee1ca0d84fe21f915c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2f98267_5d099fc3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2025-09-08T10:34:08Z",
+      "side": 1,
+      "message": "Hello Keystone team. \nWhat would be the next steps on this one to get it merged?",
+      "revId": "d23a14b8969d201b06097cee1ca0d84fe21f915c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
