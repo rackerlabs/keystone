@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac613980_357fe090",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2025-09-15T15:15:23Z",
+      "side": 1,
+      "message": "generated patch, LGTM. please merge this ASAP, otherwise the 2025.2 Flamingo release notes page of the project won\u0027t be generated.",
+      "revId": "7fa2f6a2001216492ef3b4d1c3d5eacdb8550e0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
