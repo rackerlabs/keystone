@@ -13,7 +13,7 @@
 # under the License.
 
 import datetime
-import random as _random
+import secrets
 import uuid
 
 from oslo_serialization import jsonutils
@@ -26,7 +26,7 @@ from keystone.i18n import _
 from keystone.oauth1.backends import base
 
 
-random = _random.SystemRandom()
+system_random = secrets.SystemRandom()
 
 
 class Consumer(sql.ModelBase, sql.ModelDictMixinWithExtras):
@@ -188,8 +188,9 @@ class OAuth1(base.Oauth1DriverBase):
             token_ref = self._get_request_token(session, request_token_id)
             token_dict = token_ref.to_dict()
             token_dict['authorizing_user_id'] = user_id
-            token_dict['verifier'] = ''.join(random.sample(base.VERIFIER_CHARS,
-                                                           8))
+            token_dict['verifier'] = ''.join(
+                system_random.sample(base.VERIFIER_CHARS, 8)
+            )
             token_dict['role_ids'] = jsonutils.dumps(role_ids)
 
             new_token = RequestToken.from_dict(token_dict)
