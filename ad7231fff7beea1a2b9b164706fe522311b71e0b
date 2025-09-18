@@ -16,6 +16,23 @@
       "message": "The failing pep8 test causing the Zuul tests to fail is due to what looks like a false positive from bandit that is nothing to do with my change.",
       "revId": "ad7231fff7beea1a2b9b164706fe522311b71e0b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3aba3d59_648780f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35986
+      },
+      "writtenOn": "2025-09-18T05:14:28Z",
+      "side": 1,
+      "message": "I\u0027ve submitted https://review.opendev.org/c/openstack/keystone/+/961585 to fix the issue than bandit is preventing the pep8 job from passing",
+      "revId": "ad7231fff7beea1a2b9b164706fe522311b71e0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
