@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae438ae9_b2a89031",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2025-09-18T16:58:52Z",
+      "side": 1,
+      "message": "i agree that defining this job in keystone so that it can be extended/update as keystone continues to enhance this functionality is the right approach.",
+      "revId": "38204d9f0bfd8456f7eca9fd046c5adaac417ba0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
