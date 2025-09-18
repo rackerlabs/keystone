@@ -109,6 +109,18 @@
       devstack_services:
         ldap: true
 
+- job:
+    name: devstack-identity-security-compliance
+    parent: devstack-tempest
+    description: |
+      This job runs devstack with the security compliance feature enabled
+      in the Identity (Keystone) service.
+    vars:
+      devstack_localrc:
+        KEYSTONE_SECURITY_COMPLIANCE_ENABLED: true
+        ADMIN_PASSWORD: secretadmin1
+        SERVICE_PASSWORD: secretservice1
+
 # Experimental
 - job:
     name: keystone-grenade-multinode
@@ -178,6 +190,8 @@
         - grenade-skip-level:
             irrelevant-files: *tempest-irrelevant-files
         - keystone-protection-functional
+        - devstack-identity-security-compliance:
+            irrelevant-files: *tempest-irrelevant-files
         - codegenerator-openapi-identity-tips-with-api-ref:
             voting: false
     gate:
@@ -195,6 +209,8 @@
         - grenade-skip-level:
             irrelevant-files: *tempest-irrelevant-files
         - keystone-protection-functional
+        - devstack-identity-security-compliance:
+            irrelevant-files: *tempest-irrelevant-files
     experimental:
       jobs:
         - keystone-grenade-multinode:
