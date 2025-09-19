@@ -79,16 +79,37 @@ class CredentialBaseTestCase(test_v3.RestfulTestCase):
 
         # Now make a request to validate the signed dummy request via the
         # ec2tokens API.  This proves the v3 ec2 credentials actually work.
+<<<<<<< HEAD   (4219df Update .gitreview for unmaintained/2024.1)
         sig_ref = {'access': access,
                    'signature': signature,
                    'host': 'foo',
                    'verb': 'GET',
                    'path': '/bar',
                    'params': params}
+=======
+        sig_ref = {
+            'access': access,
+            'signature': signature,
+            'host': 'foo',
+            'verb': 'GET',
+            'path': '/bar',
+            'params': params,
+        }
+        PROVIDERS.assignment_api.create_system_grant_for_user(
+            self.user_id, self.role_id
+        )
+        token = self.get_system_scoped_token()
+>>>>>>> CHANGE (aea59e Add service user authentication to ec2 and s3 endpoints)
         r = self.post(
             '/ec2tokens',
             body={'ec2Credentials': sig_ref},
+<<<<<<< HEAD   (4219df Update .gitreview for unmaintained/2024.1)
             expected_status=http.client.OK)
+=======
+            expected_status=http.client.OK,
+            token=token,
+        )
+>>>>>>> CHANGE (aea59e Add service user authentication to ec2 and s3 endpoints)
         self.assertValidTokenResponse(r)
         return r.result['token']
 

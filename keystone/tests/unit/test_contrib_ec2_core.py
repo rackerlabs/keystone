@@ -60,12 +60,44 @@ class EC2ContribCoreV3(test_v3.RestfulTestCase):
             },
         }
         credentials['signature'] = signer.generate(credentials)
+        # Authenticate as system admin by default unless overridden via kwargs
+        token = None
+        if 'noauth' in kwargs and kwargs['noauth']:
+            token = None
+        else:
+            PROVIDERS.assignment_api.create_system_grant_for_user(
+                self.user_id, self.role_id
+            )
+            token = self.get_system_scoped_token()
+
+        expected_status = kwargs.get('expected_status', http.client.OK)
         resp = self.post(
             '/ec2tokens',
             body={'credentials': credentials},
+<<<<<<< HEAD   (4219df Update .gitreview for unmaintained/2024.1)
             expected_status=http.client.OK)
         self.assertValidProjectScopedTokenResponse(resp, self.user)
+=======
+            expected_status=expected_status,
+            token=token,
+            noauth=kwargs.get('noauth'),
+        )
+        if expected_status == http.client.OK:
+            self.assertValidProjectScopedTokenResponse(resp, self.user)
+>>>>>>> CHANGE (aea59e Add service user authentication to ec2 and s3 endpoints)
 
+<<<<<<< HEAD   (4219df Update .gitreview for unmaintained/2024.1)
+=======
+    def test_valid_authentication_response_with_proper_secret(self):
+        self._test_valid_authentication_response_with_proper_secret()
+
+    def test_valid_authentication_response_with_proper_secret_noauth(self):
+        # ec2 endpoint now enforces RBAC; unauthenticated should be denied
+        self._test_valid_authentication_response_with_proper_secret(
+            expected_status=http.client.UNAUTHORIZED, noauth=True
+        )
+
+>>>>>>> CHANGE (aea59e Add service user authentication to ec2 and s3 endpoints)
     def test_valid_authentication_response_with_signature_v4(self):
         signer = ec2_utils.Ec2Signer(self.cred_blob['secret'])
         timestamp = utils.isotime(timeutils.utcnow())

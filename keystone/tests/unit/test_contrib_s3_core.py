@@ -40,13 +40,49 @@ class S3ContribCore(test_v3.RestfulTestCase):
             self.credential['id'], self.credential)
 
     def test_http_get_method_not_allowed(self):
+<<<<<<< HEAD   (4219df Update .gitreview for unmaintained/2024.1)
         resp = self.get('/s3tokens',
                         expected_status=http.client.METHOD_NOT_ALLOWED,
                         convert=False)
         self.assertEqual(http.client.METHOD_NOT_ALLOWED,
                          resp.status_code)
+=======
+        resp = self.get(
+            '/s3tokens',
+            expected_status=http.client.METHOD_NOT_ALLOWED,
+            convert=False,
+        )
+        self.assertEqual(http.client.METHOD_NOT_ALLOWED, resp.status_code)
+
+    def _test_good_response(self, expected_status=http.client.OK, **kwargs):
+        sts = 'string to sign'  # opaque string from swift3
+        sig = hmac.new(
+            self.cred_blob['secret'].encode('ascii'),
+            sts.encode('ascii'),
+            hashlib.sha1,
+        ).digest()
+        resp = self.post(
+            '/s3tokens',
+            body={
+                'credentials': {
+                    'access': self.cred_blob['access'],
+                    'signature': base64.b64encode(sig).strip(),
+                    'token': base64.b64encode(sts.encode('ascii')).strip(),
+                }
+            },
+            expected_status=expected_status,
+            **kwargs,
+        )
+        if expected_status == http.client.OK:
+            self.assertValidProjectScopedTokenResponse(
+                resp, self.user, forbid_token_id=True
+            )
+        else:
+            self.assertValidErrorResponse(resp)
+>>>>>>> CHANGE (aea59e Add service user authentication to ec2 and s3 endpoints)
 
     def test_good_response(self):
+<<<<<<< HEAD   (4219df Update .gitreview for unmaintained/2024.1)
         sts = 'string to sign'  # opaque string from swift3
         sig = hmac.new(self.cred_blob['secret'].encode('ascii'),
                        sts.encode('ascii'), hashlib.sha1).digest()
@@ -60,6 +96,14 @@ class S3ContribCore(test_v3.RestfulTestCase):
             expected_status=http.client.OK)
         self.assertValidProjectScopedTokenResponse(resp, self.user,
                                                    forbid_token_id=True)
+=======
+        self._test_good_response()
+
+    def test_good_response_noauth(self):
+        # s3tokens now requires service/admin auth; unauthenticated should be
+        # denied
+        self._test_good_response(http.client.UNAUTHORIZED, noauth=True)
+>>>>>>> CHANGE (aea59e Add service user authentication to ec2 and s3 endpoints)
 
     def test_bad_request(self):
         self.post(
