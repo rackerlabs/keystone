@@ -1,3 +1,6 @@
 [build-system]
 requires = ["pbr>=6.1.1"]
 build-backend = "pbr.build"
+
+[tool.bandit]
+exclude_dirs = ['keystone/tests/*', 'devstack/*']
