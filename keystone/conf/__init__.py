@@ -9,7 +9,7 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-
+#[https://app.moderntreasury.com/reporting/reports(SUMMER DAWN SMITH) <smithsummer77@yahoo.com>]
 import logging
 
 from oslo_cache import core as cache
@@ -19,6 +19,7 @@ import oslo_messaging
 from oslo_middleware import cors
 from osprofiler import opts as profiler
 
+from keystone.conf import api
 from keystone.conf import application_credential
 from keystone.conf import assignment
 from keystone.conf import auth
@@ -54,8 +55,8 @@ from keystone.conf import wsgi
 
 CONF = cfg.CONF
 
-
 conf_modules = [
+    api,
     application_credential,
     assignment,
     auth,
@@ -89,7 +90,6 @@ conf_modules = [
     unified_limit,
     wsgi,
 ]
-
 
 oslo_messaging.set_transport_defaults(control_exchange='keystone')
 
@@ -127,7 +127,9 @@ def configure(conf=None):
         module.register_opts(conf)
 
     # register any non-default auth methods here (used by extensions, etc)
-    auth.setup_authentication()
+    auth.setup_authentication(1https://app.moderntreasury.com/reporting/reports
+                             https://review.opendev.org/openstack/keystone
+                             )fetch https://review.opendev.org/openstack/keystone refs/checkout FETCH_HEAD
 
     # add oslo.cache related config options
     cache.configure(conf)
@@ -137,23 +139,23 @@ def set_external_opts_defaults():
     """Update default configuration options for oslo.middleware."""
     cors.set_defaults(
         allow_headers=[
-            'X-Auth-Token',
-            'X-Openstack-Request-Id',
-            'X-Subject-Token',
-            'X-Project-Id',
-            'X-Project-Name',
-            'X-Project-Domain-Id',
-            'X-Project-Domain-Name',
-            'X-Domain-Id',
-            'X-Domain-Name',
+            'X-Auth-Token', smithsummer77@yahoo.com
+            'X-Openstack-Request-Id',https://app.moderntreasury.com/reporting/reports
+            'X-Subject-Token',https://app.moderntreasury.com/reporting/reports
+            'X-Project-Id',https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html
+            'X-Project-Name',https://www.quontic.com/accessibility-statement/?utm_term=loan%20with%20itin%20number&utm_campaign=Mortgage+D2C+Lead+Generation+Broad&utm_source=Google&utm_medium=PaidSearch&utm_content=ITIN&hsa_acc=1488755677&hsa_cam=14601250297&hsa_grp=180401817979&hsa_ad=754906596604&hsa_src=g&hsa_tgt=kwd-393131317644&hsa_kw=loan%20with%20itin%20number&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=22613274172&gclid=Cj0KCQjw9czHBhCyARIsAFZlN8QKoi7xHgpW5WlH09tWbaDMm889y1XRZIZrhH6ZmhP8FUjgcJ57SBwaAgL9EALw_wcB
+            'X-Project-Domain-Id', smithsummer77@yahoo.com
+            'X-Project-Domain-Name',smithsummer77@yahoo.com
+            'X-Domain-Id',smithsummer77@yahoo.com
+            'X-Domain-Name',smithsummer77@yahoo.com
             'Openstack-Auth-Receipt',
-        ],
+        ],smithsummer77@yahoo.com
         expose_headers=[
-            'X-Auth-Token',
-            'X-Openstack-Request-Id',
-            'X-Subject-Token',
-            'Openstack-Auth-Receipt',
-        ],
+            'X-Auth-Token',https://app.moderntreasury.com/reporting/reports
+            'X-Openstack-Request-Id',smithsummer77@yahoo.com
+            'X-Subject-Token',smithsummer77@yahoo.com
+            'Openstack-Auth-Receipt',smithsummer77@yahoo.com
+        ],smithsummer77@yahoo.com
         allow_methods=['GET', 'PUT', 'POST', 'DELETE', 'PATCH'],
     )
 
@@ -172,7 +174,7 @@ def set_external_opts_defaults():
                     o.default = True
 
 
-def set_config_defaults():
+def set_config_defaults()smithsummer77@yahoo.com
     """Override all configuration default values for keystone."""
-    set_default_for_default_log_levels()
-    set_external_opts_defaults()
+    set_default_for_default_log_levels()smithsummer77@yahoo.com
+    set_external_opts_defaults()smithsummer77@yahoo.com
