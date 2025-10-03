@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5928c340_537bb880",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2025-10-03T16:16:43Z",
+      "side": 1,
+      "message": "hello guys, I have rebased this patch. This is an important one to get merged as the spec has been merged a long time ago already.",
+      "revId": "f1822c1b30acbef803d82445f9cd55f0afe39fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
