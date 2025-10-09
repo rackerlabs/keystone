@@ -720,6 +720,11 @@ class UserAppCredListCreateResource(ks_flask.ResourceBase):
             )
             raise ks_exception.ForbiddenAction(action=action)
         project_id = self.oslo_context.project_id
+        if not project_id:
+            action = _(
+                'Application credentials are only possible with project scope'
+            )
+            raise ks_exception.ForbiddenAction(action=action)
         app_cred_data = self._assign_unique_id(app_cred_data)
         if not app_cred_data.get('secret'):
             app_cred_data['secret'] = self._generate_secret()
