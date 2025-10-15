@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a1b4ad2_c4d64e16",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2025-10-15T18:31:02Z",
+      "side": 1,
+      "message": "you want to use this one right? https://review.opendev.org/c/openstack/devstack/+/957969/4\n\nthe one you are using now is WIP change",
+      "range": {
+        "startLine": 12,
+        "startChar": 12,
+        "endLine": 12,
+        "endChar": 68
+      },
+      "revId": "813819f91359da630d9fa663b32b8f0066e21389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd8d51f4_910888e2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2025-10-15T18:31:02Z",
+      "side": 1,
+      "message": "can you make this depends on tempest change also so that we can see new test result in the new job\n\nDepends-On: https://review.opendev.org/c/openstack/tempest/+/954029",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 1
+      },
+      "revId": "813819f91359da630d9fa663b32b8f0066e21389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a9e8515_ca01ef0f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2025-10-15T18:31:02Z",
+      "side": 1,
+      "message": "lgtm, some comment about depends-on to see the new test result (basically tempest and devsytack change results)",
+      "revId": "813819f91359da630d9fa663b32b8f0066e21389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
