@@ -34,6 +34,24 @@
       "parentUuid": "b60f5e6f_4bcb66e9",
       "revId": "13944f5d604b249a9c1961ee711a855928f522cc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d67449df_47183515",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9542
+      },
+      "writtenOn": "2025-10-20T17:02:26Z",
+      "side": 1,
+      "message": "Oh, yes, and the largest giveaway maybe is that there\u0027s no domain id or system scope field to store the scope for appcreds in DB. \nThat strongly implies that auth with appcreds is not and never was possible with domain or system scope, Keystone has no way to record for which specific domain or system the appcreds are valid (even if there\u0027s only one, `all`, system for now).",
+      "parentUuid": "a74a3e27_85e519fa",
+      "revId": "13944f5d604b249a9c1961ee711a855928f522cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
