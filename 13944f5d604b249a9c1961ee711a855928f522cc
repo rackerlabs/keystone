@@ -16,6 +16,24 @@
       "message": "My understanding has been that i can also create appcreds with system scope. Am i wrong?",
       "revId": "13944f5d604b249a9c1961ee711a855928f522cc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a74a3e27_85e519fa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9542
+      },
+      "writtenOn": "2025-10-20T16:55:43Z",
+      "side": 1,
+      "message": "TBH I don\u0027t know what the original intent was. \n\nBut right now, if one enables scope enforcing in policies (already default in oslo.policy btw), you can only create appcreds with project scope\nhttps://opendev.org/openstack/keystone/src/branch/stable/2025.2/keystone/common/policies/application_credential.py#L72\n\nand response validation also requires project_id to be a string (not `None`)\nhttps://opendev.org/openstack/keystone/src/branch/stable/2025.2/keystone/application_credential/schema.py#L158\n\nOn the other hand, the project_id is nullable in DB schema\nhttps://opendev.org/openstack/keystone/src/branch/stable/2025.2/keystone/application_credential/backends/sql.py#L45\n\nSo like 2 vs 1 that project id is a must 😊 although this is indeed confusing.",
+      "parentUuid": "b60f5e6f_4bcb66e9",
+      "revId": "13944f5d604b249a9c1961ee711a855928f522cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
