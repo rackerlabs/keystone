@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b60f5e6f_4bcb66e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2025-10-20T12:26:13Z",
+      "side": 1,
+      "message": "My understanding has been that i can also create appcreds with system scope. Am i wrong?",
+      "revId": "13944f5d604b249a9c1961ee711a855928f522cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
