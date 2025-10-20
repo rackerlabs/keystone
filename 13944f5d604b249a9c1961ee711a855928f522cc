@@ -52,6 +52,24 @@
       "parentUuid": "a74a3e27_85e519fa",
       "revId": "13944f5d604b249a9c1961ee711a855928f522cc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f723fe5c_ff4a06fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9542
+      },
+      "writtenOn": "2025-10-20T17:07:46Z",
+      "side": 1,
+      "message": "correction, there is a \u0027system\u0027 field indeed. looks like there was a plan to extend it to system scope, but it got nowhere I guess\nhttps://opendev.org/openstack/keystone/commit/d94d9c566f5fc686f14a3e463ed79230509c7c05",
+      "parentUuid": "d67449df_47183515",
+      "revId": "13944f5d604b249a9c1961ee711a855928f522cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
