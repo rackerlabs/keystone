@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d1efb50_532c6b90",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-10-21T09:24:57Z",
+      "side": 1,
+      "message": "restored the revision 4 before the harmful change introduced in 5 and 6",
+      "revId": "fff71c4470fd6b29b20c464f9d62b85cca66f534",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
