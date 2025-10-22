@@ -16,6 +16,23 @@
       "message": "hello guys, I have rebased this patch. This is an important one to get merged as the spec has been merged a long time ago already.",
       "revId": "f1822c1b30acbef803d82445f9cd55f0afe39fdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ccbd03c_b4f9a000",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2025-10-22T10:24:16Z",
+      "side": 1,
+      "message": "Hello guys, \nThis is a friendly reminder of this patch. It is ready for your review, and it would be nice for us to get it merged as the spec was already merged a long time ago.",
+      "revId": "f1822c1b30acbef803d82445f9cd55f0afe39fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
