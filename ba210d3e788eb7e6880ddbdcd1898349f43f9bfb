@@ -16,6 +16,23 @@
       "message": "waiting for deps to land",
       "revId": "ba210d3e788eb7e6880ddbdcd1898349f43f9bfb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ed6a5f6_34ed8874",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2025-10-24T14:25:41Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "ba210d3e788eb7e6880ddbdcd1898349f43f9bfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
