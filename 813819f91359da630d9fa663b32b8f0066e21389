@@ -48,6 +48,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "99b0465e_a89008cf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 34637
+      },
+      "writtenOn": "2025-10-29T14:13:58Z",
+      "side": 1,
+      "message": "I changed the depends on patch to https://review.opendev.org/c/openstack/devstack/+/957969",
+      "parentUuid": "7a1b4ad2_c4d64e16",
+      "range": {
+        "startLine": 12,
+        "startChar": 12,
+        "endLine": 12,
+        "endChar": 68
+      },
+      "revId": "813819f91359da630d9fa663b32b8f0066e21389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dd8d51f4_910888e2",
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "this need to be added also",
       "parentUuid": "dd8d51f4_910888e2",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 1
+      },
+      "revId": "813819f91359da630d9fa663b32b8f0066e21389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cecd1607_2f8e41c2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 34637
+      },
+      "writtenOn": "2025-10-29T14:13:58Z",
+      "side": 1,
+      "message": "Adding the depends on creates a cycle and the build fails:\n\n\"Build failed (ARM64 pipeline).\nhttps://zuul.opendev.org/t/openstack/buildset/687b741148314fdb8d0bd3e34a4cfe75\n\nWarning:\nDependency cycle detected and project openstack/tempest doesn\u0027t allow circular dependencies\"\n\nChanging it back to have the single Depends-On: https://review.opendev.org/c/openstack/devstack/+/962897",
+      "parentUuid": "639731bc_c883e35b",
       "range": {
         "startLine": 13,
         "startChar": 0,
