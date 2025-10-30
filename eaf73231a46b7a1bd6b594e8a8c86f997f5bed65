@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "064732f4_9efcb852",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-10-30T13:14:05Z",
+      "side": 1,
+      "message": "recheck to see whether devstack merged changes help",
+      "revId": "eaf73231a46b7a1bd6b594e8a8c86f997f5bed65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
