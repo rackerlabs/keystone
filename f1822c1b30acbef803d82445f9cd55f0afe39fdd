@@ -33,6 +33,108 @@
       "message": "Hello guys, \nThis is a friendly reminder of this patch. It is ready for your review, and it would be nice for us to get it merged as the spec was already merged a long time ago.",
       "revId": "f1822c1b30acbef803d82445f9cd55f0afe39fdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14c9bc87_b8f2c05c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-10-30T11:27:28Z",
+      "side": 1,
+      "message": "Documentation is desperately needed in this change. Without it reviewing it is hard. Users would have absolutely no chance start using it in any way.\nIt would be nice to at least hint how projects_json can be generated on the idp side - I guess this is one of the most complex things. That also means there is no chance test it functionally.\nAnd we have agreed in the spec that the \u0027projects\u0027 attribute is being extended and not that \u0027projects_json\u0027 is being add.",
+      "revId": "f1822c1b30acbef803d82445f9cd55f0afe39fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e76e85e_68117479",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-10-30T11:27:28Z",
+      "side": 1,
+      "message": "nit: not sure we ever even thought of versioning scheme here. I am just wondering whether it is really required to raise the major version (whether it is a major as such) when we add new field (more on that later)",
+      "revId": "f1822c1b30acbef803d82445f9cd55f0afe39fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2e54d47_23c52d7f",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-10-30T11:27:28Z",
+      "side": 1,
+      "message": "I am very confused here. Is it a really a string? Code handling it is pretty veiled, test as well. And unfortunately there is absolutely no documentation added on how the feature is supposed to be used. Last, but not least, in the spec we agreed that the \u0027projects\u0027 fields is object or a string and NOT that \u0027projects_json\u0027 is being added.",
+      "revId": "f1822c1b30acbef803d82445f9cd55f0afe39fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f9f29c6_f4f76706",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1105,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-10-30T11:27:28Z",
+      "side": 1,
+      "message": "commonwealth English is pretty uncommon in our code. My first reaction to that was that it is a typo.",
+      "revId": "f1822c1b30acbef803d82445f9cd55f0afe39fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0ae8f4c_97077078",
+        "filename": "keystone/tests/unit/auth/plugins/test_mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-10-30T11:27:28Z",
+      "side": 1,
+      "message": "I would love to see a test that verbosely specifies the projects structure in the new form verifying that grants are added/removed. The test in the current form is hiding the relation to the 3.0 mapping",
+      "revId": "f1822c1b30acbef803d82445f9cd55f0afe39fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59d69670_db4217f2",
+        "filename": "keystone/tests/unit/federation/test_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-10-30T11:27:28Z",
+      "side": 1,
+      "message": "here we see that projects_json is actually an array of objects and not the string how it was declared above.",
+      "revId": "f1822c1b30acbef803d82445f9cd55f0afe39fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
