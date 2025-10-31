@@ -16,6 +16,23 @@
       "message": "recheck the world has changed",
       "revId": "2d47a47cb42a4e3a0e5f691fcd029d084b7614e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "049039d8_cbc18717",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-10-31T11:11:36Z",
+      "side": 1,
+      "message": "fast selfapprove of the gate unblock cherrypick fix",
+      "revId": "2d47a47cb42a4e3a0e5f691fcd029d084b7614e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
