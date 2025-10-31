@@ -59,7 +59,6 @@ def load_auth_methods():
 
 
 def get_auth_method(method_name):
-    global AUTH_METHODS
     if method_name not in AUTH_METHODS:
         raise exception.AuthMethodNotSupported()
     return AUTH_METHODS[method_name]
