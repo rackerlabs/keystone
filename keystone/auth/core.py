@@ -46,6 +46,7 @@ def load_auth_method(method):
 
 def load_auth_methods():
     global AUTH_PLUGINS_LOADED
+    global AUTH_METHODS
 
     if AUTH_PLUGINS_LOADED:
         # Only try and load methods a single time.
@@ -59,7 +60,6 @@ def load_auth_methods():
 
 
 def get_auth_method(method_name):
-    global AUTH_METHODS
     if method_name not in AUTH_METHODS:
         raise exception.AuthMethodNotSupported()
     return AUTH_METHODS[method_name]
