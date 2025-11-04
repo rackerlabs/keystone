@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "786d75a7_9c6fafd7",
+        "filename": "keystone/common/policies/s3tokens.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2025-11-04T14:27:14Z",
+      "side": 1,
+      "message": "Dot FTW!",
+      "revId": "1b4d59227d2ac40b3a8f82114311897a23bad962",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
