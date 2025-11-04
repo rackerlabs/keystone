@@ -39,6 +39,29 @@
       },
       "revId": "5a8e4443d8607cc96de38c5609a9ed979f11f944",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fab2b395_05ed053b",
+        "filename": "keystone/tests/unit/test_contrib_s3_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2025-11-04T18:30:41Z",
+      "side": 1,
+      "message": "any reason why test has a different approach then for ec2_core?\n\nAs there it\u0027s using `expected_status \u003d kwargs.get(\u0027expected_status\u0027, http.client.OK)` instead of passing it as arg.\n\nI don\u0027t mind any option, but would be nice to get this aligned.",
+      "range": {
+        "startLine": 58,
+        "startChar": 34,
+        "endLine": 58,
+        "endChar": 74
+      },
+      "revId": "5a8e4443d8607cc96de38c5609a9ed979f11f944",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
