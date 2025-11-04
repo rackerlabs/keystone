@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "820c45f2_3463a77b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2025-11-04T16:34:26Z",
+      "side": 1,
+      "message": "might be good to add a reno referencing the bug? could be done in a followup together with the typo fix?",
+      "revId": "5a8e4443d8607cc96de38c5609a9ed979f11f944",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "caafdf4b_14ee6457",
+        "filename": "doc/source/getting-started/policy_mapping.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2025-11-04T16:34:26Z",
+      "side": 1,
+      "message": "```suggestion\nidentity:ec2tokens_validate                                POST /v3/ec2tokens\n```\n?",
+      "range": {
+        "startLine": 249,
+        "startChar": 68,
+        "endLine": 249,
+        "endChar": 77
+      },
+      "revId": "5a8e4443d8607cc96de38c5609a9ed979f11f944",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
