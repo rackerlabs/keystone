@@ -21,7 +21,7 @@ DEPRECATED_REASON = (
 
 deprecated_ec2_get_credential = policy.DeprecatedRule(
     name=base.IDENTITY % 'ec2_get_credential',
-    check_str=base.RULE_ADMIN_OR_CREDENTIAL_OWNER,
+    check_str=base.RULE_ADMIN_OR_SERVICE_OR_CREDENTIAL_OWNER,
     deprecated_reason=DEPRECATED_REASON,
     deprecated_since=versionutils.deprecated.TRAIN,
 )

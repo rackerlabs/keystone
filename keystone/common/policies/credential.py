@@ -54,7 +54,7 @@ deprecated_delete_credential = policy.DeprecatedRule(
 credential_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_credential',
-        check_str=base.ADMIN_OR_SYSTEM_READER_OR_CRED_OWNER,
+        check_str=base.ADMIN_OR_SERVICE_OR_SYSTEM_READER_OR_CRED_OWNER,
         scope_types=['system', 'domain', 'project'],
         description='Show credentials details.',
         operations=[
