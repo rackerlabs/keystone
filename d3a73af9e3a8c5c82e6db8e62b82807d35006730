@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4877906_521350f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1131
+      },
+      "writtenOn": "2025-11-06T14:11:18Z",
+      "side": 1,
+      "message": "I pushed an update for this since there is a recent security issue that will need to be merged to this branch. Might need another change as well.\n\nhttps://bugs.launchpad.net/keystone/+bug/2119646",
+      "revId": "d3a73af9e3a8c5c82e6db8e62b82807d35006730",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
