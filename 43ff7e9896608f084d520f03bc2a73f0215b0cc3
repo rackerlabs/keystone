@@ -16,6 +16,24 @@
       "message": "The other option is to just remove these lines completely and save CI cycles.",
       "revId": "43ff7e9896608f084d520f03bc2a73f0215b0cc3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32907646_30350d89",
+        "filename": ".zuul.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1131
+      },
+      "writtenOn": "2025-11-06T15:23:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66e36519_48617f1d",
+      "revId": "43ff7e9896608f084d520f03bc2a73f0215b0cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
