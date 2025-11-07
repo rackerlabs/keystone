@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06f96dc7_596690f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1131
+      },
+      "writtenOn": "2025-11-07T13:23:00Z",
+      "side": 1,
+      "message": "I give up for now, failures don\u0027t seem to be related to change",
+      "revId": "e875da85b8118332b2e0537f7e16f6b9f62bcc30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
