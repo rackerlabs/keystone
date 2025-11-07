@@ -307,7 +307,7 @@ class RegisteredLimitTests:
         }
 
         self.assertRaises(
-            exception.RegisteredLimitError,
+            exception.RegisteredLimitUpdateError,
             PROVIDERS.unified_limit_api.update_registered_limit,
             registered_limit_1['id'],
             registered_limit_update,
@@ -337,7 +337,7 @@ class RegisteredLimitTests:
         }
 
         self.assertRaises(
-            exception.RegisteredLimitError,
+            exception.RegisteredLimitUpdateError,
             PROVIDERS.unified_limit_api.update_registered_limit,
             registered_limit_2['id'],
             registered_limit_update,
@@ -531,7 +531,7 @@ class RegisteredLimitTests:
         PROVIDERS.unified_limit_api.create_limits([limit_1])
 
         self.assertRaises(
-            exception.RegisteredLimitError,
+            exception.RegisteredLimitDeleteError,
             PROVIDERS.unified_limit_api.delete_registered_limit,
             registered_limit_1['id'],
         )
@@ -555,7 +555,7 @@ class RegisteredLimitTests:
         PROVIDERS.unified_limit_api.create_limits([limit_2])
 
         self.assertRaises(
-            exception.RegisteredLimitError,
+            exception.RegisteredLimitDeleteError,
             PROVIDERS.unified_limit_api.delete_registered_limit,
             registered_limit_2['id'],
         )

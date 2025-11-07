@@ -161,15 +161,20 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
             limit_type = 'registered_limit' if is_registered_limit else 'limit'
             raise exception.Conflict(type=limit_type, details=msg)
 
-    def _check_referenced_limit_reference(self, registered_limit):
-        # When updating or deleting a registered limit, we should ensure there
-        # is no reference limit.
+    def _has_referencing_limits(self, registered_limit):
         with sql.session_for_read() as session:
             limits = session.query(LimitModel).filter_by(
                 registered_limit_id=registered_limit['id']
             )
-        if limits.all():
-            raise exception.RegisteredLimitError(id=registered_limit.id)
+        return bool(limits.all())
+
+    def _assert_no_referencing_limits_on_update(self, registered_limit):
+        if self._has_referencing_limits(registered_limit):
+            raise exception.RegisteredLimitUpdateError(id=registered_limit.id)
+
+    def _assert_no_referencing_limits_on_delete(self, registered_limit):
+        if self._has_referencing_limits(registered_limit):
+            raise exception.RegisteredLimitDeleteError(id=registered_limit.id)
 
     @sql.handle_conflicts(conflict_type='registered_limit')
     def create_registered_limits(self, registered_limits):
@@ -187,7 +192,6 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
         try:
             with sql.session_for_write() as session:
                 ref = self._get_registered_limit(session, registered_limit_id)
-                self._check_referenced_limit_reference(ref)
                 old_dict = ref.to_dict()
                 old_dict.update(registered_limit)
                 if (
@@ -195,6 +199,7 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
                     or 'region_id' in registered_limit
                     or registered_limit.get('resource_name')
                 ):
+                    self._assert_no_referencing_limits_on_update(ref)
                     self._check_unified_limit_unique(old_dict)
                 new_registered_limit = RegisteredLimitModel.from_dict(old_dict)
                 for attr in registered_limit:
@@ -202,7 +207,7 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
                         setattr(ref, attr, getattr(new_registered_limit, attr))
                 return ref.to_dict()
         except db_exception.DBReferenceError:
-            raise exception.RegisteredLimitError(id=registered_limit_id)
+            raise exception.RegisteredLimitUpdateError(id=registered_limit_id)
 
     @driver_hints.truncated
     def list_registered_limits(self, hints):
@@ -232,10 +237,10 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
         try:
             with sql.session_for_write() as session:
                 ref = self._get_registered_limit(session, registered_limit_id)
-                self._check_referenced_limit_reference(ref)
+                self._assert_no_referencing_limits_on_delete(ref)
                 session.delete(ref)
         except db_exception.DBReferenceError:
-            raise exception.RegisteredLimitError(id=registered_limit_id)
+            raise exception.RegisteredLimitDeleteError(id=registered_limit_id)
 
     def _check_and_fill_registered_limit_id(self, limit):
         # Make sure there is a referenced registered limit first. Then add
