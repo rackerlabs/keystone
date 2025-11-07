@@ -587,9 +587,17 @@ class NoLimitReference(Forbidden):
     )
 
 
-class RegisteredLimitError(ForbiddenNotSecurity):
+class RegisteredLimitUpdateError(ForbiddenNotSecurity):
     message_format = _(
-        "Unable to update or delete registered limit %(id)s "
+        "Unable to update registered limit %(id)s "
+        "because there are project limits associated with it. "
+        "Only updates to default_limit and description are allowed."
+    )
+
+
+class RegisteredLimitDeleteError(ForbiddenNotSecurity):
+    message_format = _(
+        "Unable to delete registered limit %(id)s "
         "because there are project limits associated with it."
     )
 

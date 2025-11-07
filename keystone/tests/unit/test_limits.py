@@ -498,6 +498,101 @@ class RegisteredLimitsTestCase(test_v3.RestfulTestCase):
             expected_status=http.client.FORBIDDEN,
         )
 
+    def test_update_registered_limit_value_with_referenced_limit(self):
+        ref = unit.new_registered_limit_ref(
+            service_id=self.service_id,
+            region_id=self.region_id,
+            resource_name='volume',
+            default_limit=10,
+        )
+        r = self.post(
+            '/registered_limits',
+            body={'registered_limits': [ref]},
+            token=self.system_admin_token,
+            expected_status=http.client.CREATED,
+        )
+
+        limit_ref = unit.new_limit_ref(
+            project_id=self.project_id,
+            service_id=self.service_id,
+            region_id=self.region_id,
+            resource_name='volume',
+        )
+        self.post(
+            '/limits',
+            body={'limits': [limit_ref]},
+            token=self.system_admin_token,
+            expected_status=http.client.CREATED,
+        )
+
+        registered_limit_id = r.result['registered_limits'][0]['id']
+        update_ref = {
+            'default_limit': 15,
+            'description': 'updated description',
+        }
+        r2 = self.patch(
+            f'/registered_limits/{registered_limit_id}',
+            body={'registered_limit': update_ref},
+            token=self.system_admin_token,
+            expected_status=http.client.OK,
+        )
+        updated = r2.result['registered_limit']
+        self.assertEqual(15, updated['default_limit'])
+        self.assertEqual('updated description', updated['description'])
+        self.assertEqual(self.service_id, updated['service_id'])
+        self.assertEqual(self.region_id, updated['region_id'])
+        self.assertEqual('volume', updated['resource_name'])
+
+    def test_update_registered_limit_value_fail_with_referenced_limit(self):
+        ref = unit.new_registered_limit_ref(
+            service_id=self.service_id,
+            region_id=self.region_id,
+            resource_name='volume',
+            default_limit=10,
+        )
+        r = self.post(
+            '/registered_limits',
+            body={'registered_limits': [ref]},
+            token=self.system_admin_token,
+            expected_status=http.client.CREATED,
+        )
+
+        limit_ref = unit.new_limit_ref(
+            project_id=self.project_id,
+            service_id=self.service_id,
+            region_id=self.region_id,
+            resource_name='volume',
+        )
+        self.post(
+            '/limits',
+            body={'limits': [limit_ref]},
+            token=self.system_admin_token,
+            expected_status=http.client.CREATED,
+        )
+
+        registered_limit_id = r.result['registered_limits'][0]['id']
+
+        self.patch(
+            f'/registered_limits/{registered_limit_id}',
+            body={'registered_limit': {'service_id': self.service_id2}},
+            token=self.system_admin_token,
+            expected_status=http.client.FORBIDDEN,
+        )
+
+        self.patch(
+            f'/registered_limits/{registered_limit_id}',
+            body={'registered_limit': {'region_id': self.region_id2}},
+            token=self.system_admin_token,
+            expected_status=http.client.FORBIDDEN,
+        )
+
+        self.patch(
+            f'/registered_limits/{registered_limit_id}',
+            body={'registered_limit': {'resource_name': 'snapshot'}},
+            token=self.system_admin_token,
+            expected_status=http.client.FORBIDDEN,
+        )
+
     def test_list_registered_limit(self):
         r = self.get('/registered_limits', expected_status=http.client.OK)
         self.assertEqual([], r.result.get('registered_limits'))
