@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9342447f_bb4f281b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2025-11-10T21:07:43Z",
+      "side": 1,
+      "message": "Somewhat of a nit, but you\u0027ve got a blank line between `Closes-bug:...` and the other lines at the end of the commit message, so that line technically isn\u0027t part of the \"trailer\" block from Git\u0027s perspective and may not be picked up by automated tools that expect proper commit message formatting.",
+      "revId": "058d4a1715dfbd79e48871a04101cb23db304f24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
