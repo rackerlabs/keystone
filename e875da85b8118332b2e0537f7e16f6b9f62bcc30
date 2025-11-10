@@ -16,6 +16,24 @@
       "message": "I give up for now, failures don\u0027t seem to be related to change",
       "revId": "e875da85b8118332b2e0537f7e16f6b9f62bcc30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bea6b2e9_e63202e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-11-10T09:20:33Z",
+      "side": 1,
+      "message": "as mentioned in the discuss - I gave up on this as well. When fix stops working immediately after the branch got renamed it is a signal something is completely broken and it makes no sense to invest our time.",
+      "parentUuid": "06f96dc7_596690f9",
+      "revId": "e875da85b8118332b2e0537f7e16f6b9f62bcc30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
