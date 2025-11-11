@@ -20,6 +20,10 @@ RULE_ADMIN_OR_CREDENTIAL_OWNER = (
     'rule:admin_required or '
     '(rule:owner and user_id:%(target.credential.user_id)s)'
 )
+RULE_ADMIN_OR_SERVICE_OR_CREDENTIAL_OWNER = (
+    'rule:service_or_admin or '
+    '(rule:owner and user_id:%(target.credential.user_id)s)'
+)
 RULE_ADMIN_OR_TARGET_DOMAIN = (
     'rule:admin_required or token.project.domain.id:%(target.domain.id)s'
 )
@@ -51,9 +55,17 @@ RULE_SYSTEM_ADMIN_OR_OWNER = '(' + SYSTEM_ADMIN + ') or rule:owner'
 ADMIN_OR_SYSTEM_READER_OR_OWNER = (
     '(' + RULE_ADMIN_REQUIRED + ') or (' + SYSTEM_READER + ') or rule:owner'
 )
+ADMIN_OR_SERVICE_OR_SYSTEM_READER_OR_OWNER = (
+    '(' + RULE_SERVICE_OR_ADMIN + ') or (' + SYSTEM_READER + ') or rule:owner'
+)
 RULE_ADMIN_OR_SYSTEM_READER = 'rule:admin_required or (' + SYSTEM_READER + ')'
 
 # Credential and EC2 Credential policies
+ADMIN_OR_SERVICE_OR_SYSTEM_READER_OR_CRED_OWNER = (
+    '(' + RULE_SERVICE_OR_ADMIN + ') or '
+    '(' + SYSTEM_READER + ') '
+    'or user_id:%(target.credential.user_id)s'
+)
 ADMIN_OR_SYSTEM_READER_OR_CRED_OWNER = (
     '(' + RULE_ADMIN_REQUIRED + ') or '
     '(' + SYSTEM_READER + ') '

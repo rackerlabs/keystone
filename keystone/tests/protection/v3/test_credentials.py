@@ -444,6 +444,212 @@ class _ProjectUsersTests:
             )
 
 
+class _ServiceRoleCredentialTests:
+    """Tests that are common for service role."""
+
+    def test_service_user_can_get_credentials_for_other_users(self):
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user_password = user['password']
+        user = PROVIDERS.identity_api.create_user(user)
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id
+        )
+        project = PROVIDERS.resource_api.create_project(project['id'], project)
+        PROVIDERS.assignment_api.create_grant(
+            self.bootstrapper.member_role_id,
+            user_id=user['id'],
+            project_id=project['id'],
+        )
+        user_auth = self.build_authentication_request(
+            user_id=user['id'],
+            password=user_password,
+            project_id=project['id'],
+        )
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=user_auth)
+            token_id = r.headers['X-Subject-Token']
+            headers = {'X-Auth-Token': token_id}
+            create = {
+                'credential': {
+                    'blob': uuid.uuid4().hex,
+                    'type': uuid.uuid4().hex,
+                    'user_id': user['id'],
+                }
+            }
+            r = c.post('/v3/credentials', json=create, headers=headers)
+            credential_id = r.json['credential']['id']
+        with self.test_client() as c:
+            path = f'/v3/credentials/{credential_id}'
+            c.get(
+                path, headers=self.headers, expected_status_code=http.client.OK
+            )
+
+    def test_service_user_can_list_credentials_for_other_users(self):
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user_password = user['password']
+        user = PROVIDERS.identity_api.create_user(user)
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id
+        )
+        project = PROVIDERS.resource_api.create_project(project['id'], project)
+        PROVIDERS.assignment_api.create_grant(
+            self.bootstrapper.member_role_id,
+            user_id=user['id'],
+            project_id=project['id'],
+        )
+        user_auth = self.build_authentication_request(
+            user_id=user['id'],
+            password=user_password,
+            project_id=project['id'],
+        )
+
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=user_auth)
+            token_id = r.headers['X-Subject-Token']
+            headers = {'X-Auth-Token': token_id}
+
+            create = {
+                'credential': {
+                    'blob': uuid.uuid4().hex,
+                    'type': uuid.uuid4().hex,
+                    'user_id': user['id'],
+                }
+            }
+            r = c.post('/v3/credentials', json=create, headers=headers)
+            credential_id = r.json['credential']['id']
+
+        with self.test_client() as c:
+            r = c.get('/v3/credentials', headers=self.headers)
+            self.assertEqual(1, len(r.json['credentials']))
+            self.assertEqual(credential_id, r.json['credentials'][0]['id'])
+            self.assertEqual(user['id'], r.json['credentials'][0]['user_id'])
+
+    def test_user_cannot_update_credentials_for_others(self):
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user_password = user['password']
+        user = PROVIDERS.identity_api.create_user(user)
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id
+        )
+        project = PROVIDERS.resource_api.create_project(project['id'], project)
+        PROVIDERS.assignment_api.create_grant(
+            self.bootstrapper.member_role_id,
+            user_id=user['id'],
+            project_id=project['id'],
+        )
+        user_auth = self.build_authentication_request(
+            user_id=user['id'],
+            password=user_password,
+            project_id=project['id'],
+        )
+
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=user_auth)
+            token_id = r.headers['X-Subject-Token']
+            headers = {'X-Auth-Token': token_id}
+
+            create = {
+                'credential': {
+                    'blob': uuid.uuid4().hex,
+                    'type': uuid.uuid4().hex,
+                    'user_id': user['id'],
+                }
+            }
+            r = c.post('/v3/credentials', json=create, headers=headers)
+            credential_id = r.json['credential']['id']
+
+        with self.test_client() as c:
+            update = {'credential': {'blob': uuid.uuid4().hex}}
+            path = f'/v3/credentials/{credential_id}'
+            c.patch(
+                path,
+                json=update,
+                headers=self.headers,
+                expected_status_code=http.client.FORBIDDEN,
+            )
+
+    def test_user_cannot_update_non_existant_credential_forbidden(self):
+        with self.test_client() as c:
+            update = {'credential': {'blob': uuid.uuid4().hex}}
+
+            c.patch(
+                f'/v3/credentials/{uuid.uuid4().hex}',
+                json=update,
+                headers=self.headers,
+                expected_status_code=http.client.FORBIDDEN,
+            )
+
+    def test_user_cannot_create_credentials_for_other_users(self):
+        user = PROVIDERS.identity_api.create_user(
+            unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        )
+
+        with self.test_client() as c:
+            create = {
+                'credential': {
+                    'blob': uuid.uuid4().hex,
+                    'type': uuid.uuid4().hex,
+                    'user_id': user['id'],
+                }
+            }
+            c.post(
+                '/v3/credentials',
+                json=create,
+                headers=self.headers,
+                expected_status_code=http.client.FORBIDDEN,
+            )
+
+    def test_user_cannot_delete_credentials_for_others(self):
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user_password = user['password']
+        user = PROVIDERS.identity_api.create_user(user)
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id
+        )
+        project = PROVIDERS.resource_api.create_project(project['id'], project)
+        PROVIDERS.assignment_api.create_grant(
+            self.bootstrapper.member_role_id,
+            user_id=user['id'],
+            project_id=project['id'],
+        )
+        user_auth = self.build_authentication_request(
+            user_id=user['id'],
+            password=user_password,
+            project_id=project['id'],
+        )
+
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=user_auth)
+            token_id = r.headers['X-Subject-Token']
+            headers = {'X-Auth-Token': token_id}
+
+            create = {
+                'credential': {
+                    'blob': uuid.uuid4().hex,
+                    'type': uuid.uuid4().hex,
+                    'user_id': user['id'],
+                }
+            }
+            r = c.post('/v3/credentials', json=create, headers=headers)
+            credential_id = r.json['credential']['id']
+
+        with self.test_client() as c:
+            path = f'/v3/credentials/{credential_id}'
+            c.delete(
+                path,
+                headers=self.headers,
+                expected_status_code=http.client.FORBIDDEN,
+            )
+
+    def test_user_cannot_delete_non_existant_credential_forbidden(self):
+        with self.test_client() as c:
+            c.delete(
+                f'/v3/credentials/{uuid.uuid4().hex}',
+                headers=self.headers,
+                expected_status_code=http.client.FORBIDDEN,
+            )
+
+
 class _SystemUserCredentialTests:
     """Tests that are common across all system users."""
 
@@ -1055,6 +1261,36 @@ class SystemAdminTests(
             self.headers = {'X-Auth-Token': self.token_id}
 
 
+class SystemServiceTests(
+    base_classes.TestCaseWithBootstrap,
+    common_auth.AuthTestMixin,
+    _UserCredentialTests,
+    _SystemUserCredentialTests,
+    _ServiceRoleCredentialTests,
+):
+    def setUp(self):
+        super().setUp()
+        self.loadapp()
+        self.useFixture(ksfixtures.Policy(self.config_fixture))
+        self.config_fixture.config(group='oslo_policy', enforce_scope=True)
+        system_user = unit.new_user_ref(
+            domain_id=CONF.identity.default_domain_id
+        )
+        self.user_id = PROVIDERS.identity_api.create_user(system_user)['id']
+        PROVIDERS.assignment_api.create_system_grant_for_user(
+            self.user_id, self.bootstrapper.service_role_id
+        )
+        auth = self.build_authentication_request(
+            user_id=self.user_id, password=system_user['password'], system=True
+        )
+        # Grab a token using the persona we're testing and prepare headers
+        # for requests we'll be making in the tests.
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=auth)
+            self.token_id = r.headers['X-Subject-Token']
+            self.headers = {'X-Auth-Token': self.token_id}
+
+
 class ProjectReaderTests(
     base_classes.TestCaseWithBootstrap,
     common_auth.AuthTestMixin,
@@ -1193,6 +1429,43 @@ class ProjectAdminTests(
                 'identity:delete_credential': bp.ADMIN_OR_CRED_OWNER,
             }
             f.write(jsonutils.dumps(overridden_policies))
+
+
+class ProjectServiceTests(
+    base_classes.TestCaseWithBootstrap,
+    common_auth.AuthTestMixin,
+    _UserCredentialTests,
+    _ServiceRoleCredentialTests,
+):
+    def setUp(self):
+        super().setUp()
+        self.loadapp()
+        self.useFixture(ksfixtures.Policy(self.config_fixture))
+        self.config_fixture.config(group='oslo_policy', enforce_scope=True)
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id
+        )
+        project = PROVIDERS.resource_api.create_project(project['id'], project)
+        project_user = unit.new_user_ref(
+            domain_id=CONF.identity.default_domain_id
+        )
+        self.user_id = PROVIDERS.identity_api.create_user(project_user)['id']
+        PROVIDERS.assignment_api.create_grant(
+            self.bootstrapper.service_role_id,
+            user_id=self.user_id,
+            project_id=project['id'],
+        )
+        auth = self.build_authentication_request(
+            user_id=self.user_id,
+            password=project_user['password'],
+            project_id=project['id'],
+        )
+        # Grab a token using the persona we're testing and prepare headers
+        # for requests we'll be making in the tests.
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=auth)
+            self.token_id = r.headers['X-Subject-Token']
+            self.headers = {'X-Auth-Token': self.token_id}
 
 
 class ProjectReaderTestsEnforceScopeFalse(
