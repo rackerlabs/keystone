@@ -86,6 +86,23 @@
       "message": "recheck for new logs",
       "revId": "e875da85b8118332b2e0537f7e16f6b9f62bcc30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf180f24_2e498e7d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2025-11-11T15:33:19Z",
+      "side": 1,
+      "message": "thanks for fixing the issues Brian, LGTM, besides, zuul likes it too :)",
+      "revId": "e875da85b8118332b2e0537f7e16f6b9f62bcc30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
