@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32a86ceb_6e668402",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-11-11T15:37:24Z",
+      "side": 0,
+      "message": "I am not sure about that one. We still have it on master and to be honest I can\u0027t completely oversee the impact of such removal.",
+      "revId": "4e2e36ad7767a459277987d21f748cec54ac09e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
