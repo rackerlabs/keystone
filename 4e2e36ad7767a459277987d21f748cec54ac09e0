@@ -16,6 +16,24 @@
       "message": "I am not sure about that one. We still have it on master and to be honest I can\u0027t completely oversee the impact of such removal.",
       "revId": "4e2e36ad7767a459277987d21f748cec54ac09e0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e29da8f_14c12983",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2025-11-11T16:08:57Z",
+      "side": 0,
+      "message": "hmmm. right, if this is present on newer branches then pep8 should not be broken on this one. maybe some other fix (or workaround) would be better.",
+      "parentUuid": "32a86ceb_6e668402",
+      "revId": "4e2e36ad7767a459277987d21f748cec54ac09e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
