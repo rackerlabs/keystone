@@ -34,6 +34,24 @@
       "parentUuid": "32a86ceb_6e668402",
       "revId": "4e2e36ad7767a459277987d21f748cec54ac09e0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d6608b8_faa6db11",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1131
+      },
+      "writtenOn": "2025-11-11T19:05:57Z",
+      "side": 0,
+      "message": "I might have to pin pylint, let me put it back and see what the complaint is again.",
+      "parentUuid": "5e29da8f_14c12983",
+      "revId": "4e2e36ad7767a459277987d21f748cec54ac09e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
