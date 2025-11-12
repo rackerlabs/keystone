@@ -16,6 +16,23 @@
       "message": "recheck unrelated test failure",
       "revId": "4219df075196e16071a87dc51b5292c13514fe70",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff3b0861_e2c9ec6a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2025-11-12T09:38:13Z",
+      "side": 1,
+      "message": "thanks Brian, this is now a CI-only patch, so considering we are on unmaintained branch, I\u0027m fast-approving this.",
+      "revId": "4219df075196e16071a87dc51b5292c13514fe70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
