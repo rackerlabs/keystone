@@ -84,6 +84,23 @@ class Manager(manager.Manager):
     def _get_group_ids_for_user_id(self, user_id):
         # TODO(morganfainberg): Implement a way to get only group_ids
         # instead of the more expensive to_dict() call for each record.
+
+        # For federated users, invalidate cache to ensure fresh group data
+        try:
+            fed_objects = PROVIDERS.shadow_users_api.get_federated_objects(
+                user_id
+            )
+            if fed_objects:
+                LOG.debug(
+                    'Detected federated user %s, invalidating cache for '
+                    'fresh group lookup',
+                    user_id,
+                )
+                self.invalidate_user_role_assignments_cache(user_id)
+        except Exception:
+            # If shadow_users_api fails, continue normally
+            pass
+
         return [
             x['id']
             for x in PROVIDERS.identity_api.list_groups_for_user(user_id)
@@ -1292,6 +1309,23 @@ class Manager(manager.Manager):
         for assignment in system_assignments:
             self.delete_system_grant_for_user(user_id, assignment['id'])
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
+
+    def invalidate_user_role_assignments_cache(self, user_id):
+        """Invalidate cached role assignments when federated group membership changes."""
+        LOG.debug(
+            'Invalidating caches for user %s due to group membership changes',
+            user_id,
+        )
+
+        # Invalidate role assignment cache
+        COMPUTED_ASSIGNMENTS_REGION.invalidate()
+
+        # Invalidate token cache
+        reason = (
+            f'Invalidating token cache for user {user_id} due to '
+            'federated group membership changes.'
+        )
+        notifications.invalidate_token_cache_notification(reason)
 
     def check_system_grant_for_user(self, user_id, role_id):
         """Check if a user has a specific role on the system.
