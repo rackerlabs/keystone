@@ -97,6 +97,22 @@ def handle_scoped_token(token, federation_api, identity_api):
         )
         utils.validate_mapped_group_ids(group_ids, mapping['id'], identity_api)
 
+        # Update group memberships and check if cache invalidation is needed
+        # This ensures that even when using scoped tokens, group membership TTL
+        # is refreshed and any new groups discovered during re-authentication
+        # will invalidate the role assignment cache
+        membership_changed = False
+        for group_id in group_ids:
+            # This returns True if it's a new membership, False if just refreshed
+            if PROVIDERS.shadow_users_api.add_user_to_group_expires(
+                    user_id, group_id):
+                membership_changed = True
+
+        # Invalidate role assignment cache if group membership changed
+        if membership_changed:
+            PROVIDERS.assignment_api.invalidate_user_role_assignments_cache(
+                user_id)
+
     except Exception:
         # NOTE(topol): Diaper defense to catch any exception, so we can
         # send off failed authentication notification, raise the exception
@@ -296,6 +312,19 @@ def handle_unscoped_token(
                 mapped_properties['user'],
                 group_ids=mapped_properties['group_ids'],
             )
+
+            # Check if group memberships have changed and invalidate cache if needed
+            membership_changed = False
+            for group_id in mapped_properties['group_ids']:
+                # This returns True if it's a new membership, False if just refreshed
+                if PROVIDERS.shadow_users_api.add_user_to_group_expires(
+                        user['id'], group_id):
+                    membership_changed = True
+
+            # Invalidate role assignment cache if group membership changed
+            if membership_changed:
+                PROVIDERS.assignment_api.invalidate_user_role_assignments_cache(
+                    user['id'])
 
             if 'projects' in mapped_properties:
                 existing_roles = {

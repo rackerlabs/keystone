@@ -251,9 +251,13 @@ class ShadowUsers(base.ShadowUsersDriverBase):
             membership = query.first()
 
             if membership:
-                membership.last_verified = timeutils.utcnow()
+                # Update existing membership - this refreshes the TTL
+                membership.last_verified = datetime.datetime.utcnow()
+                # Return False since this is just a renewal, not a new membership
+                return False
             else:
-                session.add(
+                # Create new membership - this is a change that affects assignments
+                   session.add(
                     model.ExpiringUserGroupMembership(
                         user_id=user_id,
                         group_id=group_id,
@@ -261,3 +265,5 @@ class ShadowUsers(base.ShadowUsersDriverBase):
                         last_verified=timeutils.utcnow(),
                     )
                 )
+                # Return True since this is a new group membership
+                return True
