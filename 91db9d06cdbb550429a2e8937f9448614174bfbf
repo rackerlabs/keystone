@@ -16,6 +16,23 @@
       "message": "recheck (network issue?)",
       "revId": "91db9d06cdbb550429a2e8937f9448614174bfbf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "76fbcee7_0021f507",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-11-14T15:13:50Z",
+      "side": 1,
+      "message": "still waiting for the devstack changes to land - it is a disaster",
+      "revId": "91db9d06cdbb550429a2e8937f9448614174bfbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
