@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a91706e0_db592234",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2025-11-14T10:41:39Z",
+      "side": 1,
+      "message": "Hi Artem,\n\nI\u0027ve added you as a reviewer since you recently worked on identity backend \ncaching issues. This patch addresses a related problem where federated users\u0027 \nrole assignments don\u0027t update when their group membership changes in the IdP.\n\nWould appreciate your feedback on the cache invalidation approach!\n\nThanks,\nMoutaz",
+      "revId": "a1a01ea0e181db9a75cd809dfbb03d6914365cb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
