@@ -39,6 +39,30 @@
       },
       "revId": "543ef0a944cdfddf4902ba0330f9c8cfe8df56d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdd50c72_c3732300",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-11-14T08:14:48Z",
+      "side": 1,
+      "message": "you are very right, thanks. It was back and forth with different approaches due to the related findings.",
+      "parentUuid": "14a0dd20_30484d5c",
+      "range": {
+        "startLine": 237,
+        "startChar": 0,
+        "endLine": 244,
+        "endChar": 21
+      },
+      "revId": "543ef0a944cdfddf4902ba0330f9c8cfe8df56d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
