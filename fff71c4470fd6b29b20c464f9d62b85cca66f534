@@ -16,6 +16,23 @@
       "message": "restored the revision 4 before the harmful change introduced in 5 and 6",
       "revId": "fff71c4470fd6b29b20c464f9d62b85cca66f534",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7a77641_946236e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-11-14T14:21:48Z",
+      "side": 1,
+      "message": "recheck devstack change finally landed",
+      "revId": "fff71c4470fd6b29b20c464f9d62b85cca66f534",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
