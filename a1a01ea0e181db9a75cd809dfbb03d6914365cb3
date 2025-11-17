@@ -16,6 +16,23 @@
       "message": "Hi Artem,\n\nI\u0027ve added you as a reviewer since you recently worked on identity backend \ncaching issues. This patch addresses a related problem where federated users\u0027 \nrole assignments don\u0027t update when their group membership changes in the IdP.\n\nWould appreciate your feedback on the cache invalidation approach!\n\nThanks,\nMoutaz",
       "revId": "a1a01ea0e181db9a75cd809dfbb03d6914365cb3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4cb5a020_28e8b60c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-11-17T14:55:24Z",
+      "side": 1,
+      "message": "I am wondering whether you should try to invalidate the cache with your logic in the place suggested in the ticket itself. Refreshing group memberships now additionally in a different place feels weird. And sadly we of course do not have any usable tests to check whether the change breaks the flow or whether it fixes reported issue. Have you had a chance to look whether introducing any tests validating the functionality (the issue provides sensible test scenario).",
+      "revId": "a1a01ea0e181db9a75cd809dfbb03d6914365cb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
