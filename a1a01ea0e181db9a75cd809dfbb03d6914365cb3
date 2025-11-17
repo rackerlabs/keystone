@@ -33,6 +33,24 @@
       "message": "I am wondering whether you should try to invalidate the cache with your logic in the place suggested in the ticket itself. Refreshing group memberships now additionally in a different place feels weird. And sadly we of course do not have any usable tests to check whether the change breaks the flow or whether it fixes reported issue. Have you had a chance to look whether introducing any tests validating the functionality (the issue provides sensible test scenario).",
       "revId": "a1a01ea0e181db9a75cd809dfbb03d6914365cb3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da5a0da7_f821b45a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2025-11-17T20:20:31Z",
+      "side": 1,
+      "message": "Hi Artem,\n\nThanks for looking at this. I\u0027ve refactored it to put the cache invalidation right in shadow_federated_user() where it is suggested.\n\nThe big change is I made it conditional - cache only invalidates when group membership actually changes, not on every auth. Modified add_user_to_group_expires() to return true/false so we can tell new memberships apart from TTL refreshes. This way the cache stays effective for repeated logins with the same groups.\n\nRegarding tests- yeah, this is honestly pretty hard to test properly. You\u0027d need to mock the IdP, configure caching, simulate membership changes between auths, and somehow verify the cache state. The current federation tests don\u0027t really have that infrastructure. I can take a look at it but wanted to get your thoughts first - is this worth the effort or should we rely on manual validation for now?",
+      "parentUuid": "4cb5a020_28e8b60c",
+      "revId": "a1a01ea0e181db9a75cd809dfbb03d6914365cb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
