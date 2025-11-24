@@ -16,6 +16,23 @@
       "message": "We did a similar index on our cluster, but only the latest one.\nWhy do you create the first one?",
       "revId": "f5f54c143c61fb8753d96b9ff9c23741ba893285",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84daa31c_434b6346",
+        "filename": "keystone/common/sql/migrations/versions/2024.01/expand/e19ee1de655c_add_index_in_revocation_event.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 11583
+      },
+      "writtenOn": "2025-11-24T08:32:45Z",
+      "side": 1,
+      "message": "Why is this index needed?",
+      "revId": "f5f54c143c61fb8753d96b9ff9c23741ba893285",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
