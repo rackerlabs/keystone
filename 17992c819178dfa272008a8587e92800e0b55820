@@ -16,6 +16,23 @@
       "message": "@Arnaud - I think now pep will again complain, since the format is not what ruff will do.",
       "revId": "17992c819178dfa272008a8587e92800e0b55820",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca0afc64_dd66f647",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11583
+      },
+      "writtenOn": "2025-11-24T19:30:20Z",
+      "side": 1,
+      "message": "Damn, right, I will ruff it tomorrow then",
+      "revId": "17992c819178dfa272008a8587e92800e0b55820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
