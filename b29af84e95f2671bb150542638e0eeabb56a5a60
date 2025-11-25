@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ea41002_15b5853e",
+        "filename": "keystone/common/sql/migrations/versions/2026.01/expand/742c857f1dfb_add_index_in_revocation_event.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 11583
+      },
+      "writtenOn": "2025-11-25T12:32:12Z",
+      "side": 1,
+      "message": "Before approving, I want to understand why this index was needed for infomaniak, because on our side (OVH), only the second one was needed",
+      "revId": "b29af84e95f2671bb150542638e0eeabb56a5a60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
