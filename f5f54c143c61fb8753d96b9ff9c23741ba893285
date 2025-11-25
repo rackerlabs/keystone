@@ -36,6 +36,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "453b8ca0_8e96debe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-11-25T13:32:07Z",
+      "side": 1,
+      "message": "I think it would depend on the system usage pattern - whichever revocation events are representing the majority: regular token revokes, trust revokes, etc. Based on that db will decide whether existing indexes make sense.\nTo be honest I still wonder that the first index had a major effect, since every lookup will contain issued_before and audit_id (already existing index). Maybe in your case DB decided to join 2 indexes, in such case the second index would logically not bring much improvement, since it is already included in 2 other indexes.\nAnyway, unless the index is too huge I do not think it is a real problem having it. The real problem is that the table becomes too big. This is not as it was supposed to happen, but fixing that is most likely not that easy.",
+      "parentUuid": "6bb9d3a3_6c0e03a5",
+      "revId": "f5f54c143c61fb8753d96b9ff9c23741ba893285",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "84daa31c_434b6346",
