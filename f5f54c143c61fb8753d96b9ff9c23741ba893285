@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bb9d3a3_6c0e03a5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29422
+      },
+      "writtenOn": "2025-11-25T13:19:38Z",
+      "side": 1,
+      "message": "Hi Arnaud,\n\nIn our setup, the first option had the greatest impact on reducing CPU load.\nThe second one also helped, but to a lesser degree.",
+      "parentUuid": "d2afd7cf_9402bce8",
+      "revId": "f5f54c143c61fb8753d96b9ff9c23741ba893285",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "84daa31c_434b6346",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-11-24T08:32:45Z",
       "side": 1,
       "message": "Why is this index needed?",
+      "revId": "f5f54c143c61fb8753d96b9ff9c23741ba893285",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e134ea3_0f1d4359",
+        "filename": "keystone/common/sql/migrations/versions/2024.01/expand/e19ee1de655c_add_index_in_revocation_event.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 29422
+      },
+      "writtenOn": "2025-11-25T13:19:38Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "84daa31c_434b6346",
       "revId": "f5f54c143c61fb8753d96b9ff9c23741ba893285",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }

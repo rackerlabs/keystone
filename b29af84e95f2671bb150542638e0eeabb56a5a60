@@ -33,6 +33,24 @@
       "message": "Before approving, I want to understand why this index was needed for infomaniak, because on our side (OVH), only the second one was needed",
       "revId": "b29af84e95f2671bb150542638e0eeabb56a5a60",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "521357b1_b4d8c695",
+        "filename": "keystone/common/sql/migrations/versions/2026.01/expand/742c857f1dfb_add_index_in_revocation_event.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 29422
+      },
+      "writtenOn": "2025-11-25T13:19:38Z",
+      "side": 1,
+      "message": "Back then after analyzing slow logs in our setup the first index gave better results. Attachink a link to a CPU load screesnhot after appliying the index 17/09/2024, https://www.swisstransfer.com/d/f87310a2-33e9-41a4-b164-b42a086c9cc6",
+      "parentUuid": "5ea41002_15b5853e",
+      "revId": "b29af84e95f2671bb150542638e0eeabb56a5a60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
