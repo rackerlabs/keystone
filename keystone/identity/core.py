@@ -34,11 +34,12 @@ from keystone.common import driver_hints
 from keystone.common import manager
 from keystone.common import provider_api
 from keystone.common.validation import validators
-import keystone.conf
 from keystone import exception
 from keystone.i18n import _
 from keystone.identity.mapping_backends import mapping
 from keystone import notifications
+
+import keystone.conf
 
 CONF = keystone.conf.CONF
 
@@ -1764,14 +1765,42 @@ class Manager(manager.Manager):
 
         # Note(knikolla): The shadowing operation can be cached,
         # however we need to update the expiring group memberships.
-        if group_ids:
-            for group_id in group_ids:
-                LOG.info(
-                    "Adding user [%s] to group [%s].", user_dict, group_id
-                )
-                PROVIDERS.shadow_users_api.add_user_to_group_expires(
-                    user_dict['id'], group_id
-                )
+
+        if group_ids is None:
+            group_ids = []
+
+        membership_changed = False
+
+        for group_id in group_ids:
+            LOG.info("Adding user [%s] to group [%s].", user_dict, group_id)
+            if PROVIDERS.shadow_users_api.add_user_to_group_expires(
+                user_dict['id'], group_id
+            ):
+                membership_changed = True
+
+        removed_group_ids = (
+            PROVIDERS.shadow_users_api.cleanup_stale_group_memberships(
+                user_dict['id'], idp_id, group_ids
+            )
+        )
+
+        if removed_group_ids:
+            LOG.debug(
+                'User %s was removed from groups %s, marking as membership changed',
+                user_dict['id'],
+                removed_group_ids,
+            )
+            membership_changed = True
+
+        if membership_changed:
+            LOG.debug(
+                'Group membership changed for federated user %s, '
+                'revoking tokens',
+                user_dict['id'],
+            )
+            PROVIDERS.assignment_api.invalidate_user_cache_on_group_change(
+                user_dict['id']
+            )
         return user_dict
 
 
