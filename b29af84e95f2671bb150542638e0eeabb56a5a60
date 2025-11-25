@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "50445bf6_ac77a5b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11583
+      },
+      "writtenOn": "2025-11-25T12:34:20Z",
+      "side": 1,
+      "message": "Also, I discovered that there is no magic happening to apply the expand upgrade.\nIt needs to be explicitely given in upgrades.py, see here as e.g.\nhttps://review.opendev.org/c/openstack/keystone/+/968300",
+      "revId": "b29af84e95f2671bb150542638e0eeabb56a5a60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5ea41002_15b5853e",
         "filename": "keystone/common/sql/migrations/versions/2026.01/expand/742c857f1dfb_add_index_in_revocation_event.py",
         "patchSetId": 7
