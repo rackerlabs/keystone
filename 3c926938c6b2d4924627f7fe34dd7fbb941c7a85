@@ -33,6 +33,24 @@
       "message": "it should then also include the 2026.1 (if land after the index) or the index change should be updated",
       "revId": "3c926938c6b2d4924627f7fe34dd7fbb941c7a85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd717870_4a9f2090",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11583
+      },
+      "writtenOn": "2025-11-25T13:30:11Z",
+      "side": 1,
+      "message": "agree, I propose to build a relation chain to add the other patchset after this one, so we can proceed with clean backport to 2025.2 eventually",
+      "parentUuid": "0169fbd3_14bdc654",
+      "revId": "3c926938c6b2d4924627f7fe34dd7fbb941c7a85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
