@@ -12,14 +12,13 @@
 
 import copy
 
+import sqlalchemy
 from oslo_config import cfg
 from oslo_db import api as oslo_db_api
 from oslo_utils import timeutils
-import sqlalchemy
 
-from keystone.common import provider_api
-from keystone.common import sql
 from keystone import exception
+from keystone.common import provider_api, sql
 from keystone.identity.backends import base as identity_base
 from keystone.identity.backends import sql_model as model
 from keystone.identity.shadow_backends import base
@@ -251,8 +250,11 @@ class ShadowUsers(base.ShadowUsersDriverBase):
             membership = query.first()
 
             if membership:
+                # Existing membership, just refresh TTL
                 membership.last_verified = timeutils.utcnow()
+                return False  # No change, just renewal
             else:
+                # New membership - this is a change
                 session.add(
                     model.ExpiringUserGroupMembership(
                         user_id=user_id,
@@ -261,3 +263,23 @@ class ShadowUsers(base.ShadowUsersDriverBase):
                         last_verified=timeutils.utcnow(),
                     )
                 )
+                return True  # New membership added
+
+    def cleanup_stale_group_memberships(
+        self, user_id, idp_id, current_group_ids
+    ):
+        """Remove expiring group memberships that are no longer in the IdP assertion."""
+        with sql.session_for_write() as session:
+            query = session.query(model.ExpiringUserGroupMembership)
+            query = query.filter_by(user_id=user_id, idp_id=idp_id)
+            existing_memberships = query.all()
+
+            current_group_set = set(current_group_ids)
+            removed_group_ids = []
+
+            for membership in existing_memberships:
+                if membership.group_id not in current_group_set:
+                    removed_group_ids.append(membership.group_id)
+                    session.delete(membership)
+
+            return removed_group_ids
