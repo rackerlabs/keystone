@@ -16,6 +16,23 @@
       "message": "hi @artem.goncharov@gmail.com, I\u0027d like your thought on this one?",
       "revId": "6de287366a9cbab31668046ad0a2b95e4340857d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "edff921c_4334730e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-11-25T12:51:09Z",
+      "side": 1,
+      "message": "Yeah, sure",
+      "revId": "6de287366a9cbab31668046ad0a2b95e4340857d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
