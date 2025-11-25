@@ -16,6 +16,23 @@
       "message": "I need to patch the units",
       "revId": "3c926938c6b2d4924627f7fe34dd7fbb941c7a85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0169fbd3_14bdc654",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-11-25T12:54:53Z",
+      "side": 1,
+      "message": "it should then also include the 2026.1 (if land after the index) or the index change should be updated",
+      "revId": "3c926938c6b2d4924627f7fe34dd7fbb941c7a85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
