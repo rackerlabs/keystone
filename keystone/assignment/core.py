@@ -24,10 +24,11 @@ from keystone.common import driver_hints
 from keystone.common import manager
 from keystone.common import provider_api
 from keystone.common.resource_options import options as ro_opt
-import keystone.conf
 from keystone import exception
 from keystone.i18n import _
 from keystone import notifications
+
+import keystone.conf
 
 CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
@@ -1292,6 +1293,23 @@ class Manager(manager.Manager):
         for assignment in system_assignments:
             self.delete_system_grant_for_user(user_id, assignment['id'])
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
+
+    def invalidate_user_cache_on_group_change(self, user_id):
+        """Invalidate user cache when group membership changes."""
+        LOG.debug(
+            'Revoking tokens for federated user %(user_id)s due to group '
+            'membership changes in the identity provider',
+            {'user_id': user_id},
+        )
+
+        COMPUTED_ASSIGNMENTS_REGION.invalidate()
+
+        notifications.Audit.internal(
+            notifications.PERSIST_REVOCATION_EVENT_FOR_USER, user_id
+        )
+
+        reason = f'User {user_id} group membership changed'
+        notifications.invalidate_token_cache_notification(reason)
 
     def check_system_grant_for_user(self, user_id, role_id):
         """Check if a user has a specific role on the system.
