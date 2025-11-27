@@ -33,6 +33,24 @@
       "message": "Hi Artem,\nI could debug it and trace the execution path for it and you were right about the shared memcache, but my initial thoughts were actually correct - I do need the notification because `COMPUTED_ASSIGNMENTS_REGION` and `TOKENS_REGION `are separate cache regions with different RegionInvalidationManager instances.\n\nWhen I invalidate the assignment region, it doesn\u0027t touch the token region at all. The cached token validations still have the old group memberships.\n\nThe notification is what triggers the token provider\u0027s callback to invalidate TOKENS_REGION.\n\n**Here\u0027s the execution trace from my local patch:**\n\n1. Group membership change detected at `keystone/identity/core.py:1782`.\n\n2. Calls `invalidate_user_role_assignments_cache()` at `keystone/assignment/core.py:1296-1311`.\n\n3. Invalidates `COMPUTED_ASSIGNMENTS_REGION`, then calls `invalidate_token_cache_notification()` at https://opendev.org/openstack/keystone/src/branch/master/keystone/notifications.py#L325-L351\n\n4. This calls `Audit._emit()` at https://opendev.org/openstack/keystone/src/branch/master/keystone/notifications.py#L345 which calls `_send_notification()` at https://opendev.org/openstack/keystone/src/branch/master/keystone/notifications.py#L162-L169, which then calls `notify_event_callbacks()` at https://opendev.org/openstack/keystone/src/branch/master/keystone/notifications.py#L466\n5. `notify_event_callbacks()` triggers the registered callbacks: https://opendev.org/openstack/keystone/src/branch/master/keystone/token/provider.py#L96-L114\n6. The `_drop_token_cache()` callback executes: https://opendev.org/openstack/keystone/src/branch/master/keystone/token/provider.py#L121-L130 and invalidates `TOKENS_REGION`\n\n**This same pattern already exists:** For example, when a user is enabled/disabled (https://opendev.org/openstack/keystone/src/branch/master/keystone/identity/core.py#L1385) which call `invalidate_token_cache_notification()` which triggers the same callback chain to invalidate the token cache.\n\nWithout the notification, steps 4-6 never happen and the token cache keeps stale validation results.\n\nWDYT?",
       "revId": "7fd031aab2dbccfc61c20e35185357441ae473d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d07b980c_74ef91a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-11-27T15:43:16Z",
+      "side": 1,
+      "message": "let\u0027s do a pragmatic test (or is it exactly what you did?):\n- authenticate user to get a token with initial set of groups (token1)\n- change group relations (add/remove) on the IdP\n- authenticate user to get a new token with updated set of groups and corresponding roles (token2)\n- invoke token validation endpoint (GET /v3/auth/tokens) for the token1 and ensure that roles and group memberships are updated.\n\nIf you see that this works - no token invalidation is necessary. Otherwise it is necessary.\n\nHonestly this is so tricky that it is nearly impossible to really check that by looking at the code, therefore the test will show the truth. I do not think that roles would be a problem, but group memberships themselves might be since group list is technically part of the token payload. That would force us not only to invalidate the cache, but to actually forcibly invalidate (revoke) all tokens of the user (add is not itself a problem, but removal is). This does not happen when you only invalidate the cache.\n\nSummary: I agree that token cache invalidation may be necessary, but now I think it may be not even sufficient.",
+      "parentUuid": "abbdbb21_811d0a29",
+      "revId": "7fd031aab2dbccfc61c20e35185357441ae473d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
