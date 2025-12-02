@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "2397d48b_3c5620ce",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2025-12-02T09:48:08Z",
+      "side": 1,
+      "message": "conflicts are due to 2 missing patches, which are somewhat incorporated in this backport:\n1) \"Add test with noauth for s3tokens and ec2tokens\" [1]\n   this patch could have been cherry picked separately i think, as it is fully part of this backport\n2) \"Blackify the keystone code base\" [2]\n   this is something that we clearly don\u0027t want to backport: however the changes are trivial, it is a huge patch (on the other hand this will impact a lot of backports, sadly). nevertheless, a tiny partial backport could make this bug fix backport cleanly appliable.\n\n[1] https://review.opendev.org/c/openstack/keystone/+/908763\n[2] https://review.opendev.org/c/openstack/keystone/+/924522",
+      "revId": "4f51cdcc5c1f4f082a5fffd470d1f65b6fa65ecd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "dff60d45_8483fe6c",
@@ -14,6 +31,23 @@
       "writtenOn": "2025-11-12T19:28:04Z",
       "side": 1,
       "message": "Merge conflicts fixed",
+      "revId": "4f51cdcc5c1f4f082a5fffd470d1f65b6fa65ecd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e2db687_a6a65605",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2025-12-02T09:48:08Z",
+      "side": 1,
+      "message": "Thanks for all the reviews, only the conflicting files were a bit hard to resolve (see my comment in the commit message) otherwise the backport seems to be fine to me. Considering that this is on an unmaintained branch and the patch is reviewed by others already (thanks again for that!) i\u0027m fast approving this.",
       "revId": "4f51cdcc5c1f4f082a5fffd470d1f65b6fa65ecd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
