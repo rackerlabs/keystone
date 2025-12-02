@@ -51,6 +51,24 @@
       "parentUuid": "abbdbb21_811d0a29",
       "revId": "7fd031aab2dbccfc61c20e35185357441ae473d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e358394_dace8c3b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2025-12-02T09:13:52Z",
+      "side": 1,
+      "message": "Hi,\n\nI\u0027ve done the test and you were right - token cache invalidation is necessary and it is not sufficient so i included the revocation for the tokens.\n\nThe patch now handles all three scenarios:\n\n1. Group Addition - when user gains new groups from IdP\n2. Group Removal - via `cleanup_stale_group_memberships()`\n3. Token Invalidation - both trigger `invalidate_user_cache_on_group_change()`\n\nThis invalidates/clears when there is a change \u0026 the user is already exists:\n\n- COMPUTED_ASSIGNMENTS_REGION.\n\n- Token cache (TOKENS_REGION).\n\n- Revocation events - Via `PERSIST_REVOCATION_EVENT_FOR_USER`.\n\nWDYT?",
+      "parentUuid": "d07b980c_74ef91a1",
+      "revId": "7fd031aab2dbccfc61c20e35185357441ae473d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
