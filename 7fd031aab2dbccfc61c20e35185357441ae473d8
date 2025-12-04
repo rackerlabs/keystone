@@ -69,6 +69,24 @@
       "parentUuid": "d07b980c_74ef91a1",
       "revId": "7fd031aab2dbccfc61c20e35185357441ae473d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c273826_5b6dd727",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-12-04T09:28:27Z",
+      "side": 1,
+      "message": "To a discussion from yesterday, I think let\u0027s invalidate tokens with -1 sec due to the time race.\nThis would also definitely require a release note since this is a pretty hard UX change",
+      "parentUuid": "1e358394_dace8c3b",
+      "revId": "7fd031aab2dbccfc61c20e35185357441ae473d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
