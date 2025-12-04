@@ -87,6 +87,24 @@
       "parentUuid": "1e358394_dace8c3b",
       "revId": "7fd031aab2dbccfc61c20e35185357441ae473d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c086d7ae_5203a7fa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2025-12-04T16:11:34Z",
+      "side": 1,
+      "message": "I\u0027ve implemented the -1 second approach as you suggested. By setting `issued_before \u003d current_time - 1 second`, we now revoke only tokens issued before the group membership change, leaving new tokens valid.",
+      "parentUuid": "6c273826_5b6dd727",
+      "revId": "7fd031aab2dbccfc61c20e35185357441ae473d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
