@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f6c5543_944d00cb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 37374
+      },
+      "writtenOn": "2025-12-05T18:01:38Z",
+      "side": 1,
+      "message": "Was able to see it in action at runtime, along with https://review.opendev.org/c/openstack/keystone/+/962851",
+      "revId": "2ae5536c38834b376bbcc2e8846bcbf6c9d1140d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
