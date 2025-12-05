@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d904181_a41eedd1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-12-05T16:10:18Z",
+      "side": 1,
+      "message": "which user (role/access) is radosgw using now? I think I understand the intention from the Rados pov, but the change in this form breaks the least privilege concept - it grants too much access to all service users - i.e. Nova does not need this access.",
+      "revId": "bb0745a204f7941e935dedc2bb98d0eb4f8472d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
