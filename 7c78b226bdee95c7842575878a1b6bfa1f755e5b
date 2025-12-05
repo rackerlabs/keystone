@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "7c78b226bdee95c7842575878a1b6bfa1f755e5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3aee3860_13f637bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-12-05T22:15:10Z",
+      "side": 1,
+      "message": "recheck (TimeoutError: timed out)",
+      "revId": "7c78b226bdee95c7842575878a1b6bfa1f755e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
