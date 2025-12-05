@@ -16,9 +16,18 @@ import functools
 import typing as ty
 
 import flask
+from oslo_log import log
 from oslo_serialization import jsonutils
 
 from keystone.api.validation import validators
+<<<<<<< HEAD   (47f155 Bytes-vs-str mismatch causes repeated ID mapping creates on )
+=======
+import keystone.conf
+from keystone import exception
+
+CONF = keystone.conf.CONF
+LOG = log.getLogger(__name__)
+>>>>>>> CHANGE (03500a Import LOG where it is used)
 
 
 def validated(cls):
