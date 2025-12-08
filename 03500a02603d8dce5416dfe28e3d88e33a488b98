@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "678376c7_140851c3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2025-12-08T18:07:55Z",
+      "side": 1,
+      "message": "Sigh, sorry @artem.goncharov@gmail.com",
+      "revId": "03500a02603d8dce5416dfe28e3d88e33a488b98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
