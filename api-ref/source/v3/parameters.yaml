@@ -935,6 +935,17 @@ endpoint:
   in: body
   required: true
   type: object
+endpoint_description:
+  description: |
+    (Deprecated) The endpoint description. It is returned only when set on the
+    resource.
+
+    We don't encourage the use of this field, since it provides no value, and
+    Endpoints are highly coupled with Services, which already have a
+    description field.
+  in: body
+  required: false
+  type: string
 endpoint_enabled:
   description: |
     Indicates whether the endpoint appears in the
