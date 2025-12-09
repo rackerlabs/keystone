@@ -16,6 +16,24 @@
       "message": "The field is not deprecated, afaik. It was just missed.",
       "revId": "4c48016ace3ac7264142c91221285f4c6c16a3fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb197cd4_c8ed0161",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 36630
+      },
+      "writtenOn": "2025-12-09T17:30:30Z",
+      "side": 1,
+      "message": "I didn\u0027t find any related commit about removing this field from parameters or docs, so it makes sense not to indicate it as deprecated.\n\nI\u0027ll change this patch to remove this flag and make it available via docs.",
+      "parentUuid": "266be76e_a9b36faa",
+      "revId": "4c48016ace3ac7264142c91221285f4c6c16a3fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
