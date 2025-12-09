@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "266be76e_a9b36faa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2025-12-09T12:18:47Z",
+      "side": 1,
+      "message": "The field is not deprecated, afaik. It was just missed.",
+      "revId": "4c48016ace3ac7264142c91221285f4c6c16a3fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
