@@ -16,6 +16,23 @@
       "message": "Here\u0027s a rendered copy of the docs: https://cardoe.com/keystone/improve-federated-mapping-docs/admin/federation/mapping_combinations.html",
       "revId": "50f0f023bdd23bea8b9c21823a569a159af9ebeb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af6c77f7_bc5b91eb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16011
+      },
+      "writtenOn": "2025-12-09T15:13:40Z",
+      "side": 1,
+      "message": "Fantastic addition to the documentation! Thanks, Doug!",
+      "revId": "50f0f023bdd23bea8b9c21823a569a159af9ebeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
