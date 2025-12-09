@@ -16,6 +16,23 @@
       "message": "it does look good to me. @b.bobrov@sap.com would appreciate your view on that",
       "revId": "ad87d8212a1bab654e4a6d791d7271e6b3bcd1b5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f617c325_fcb16185",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2025-12-09T09:57:42Z",
+      "side": 1,
+      "message": "LGTM!",
+      "revId": "ad87d8212a1bab654e4a6d791d7271e6b3bcd1b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
