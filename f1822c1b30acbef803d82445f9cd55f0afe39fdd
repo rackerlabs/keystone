@@ -70,6 +70,23 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3efe3da_9464795a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2025-12-10T13:20:24Z",
+      "side": 1,
+      "message": "Artem, thanks for your valuable review!\n\nI have added documentation on how to use this feature with one IdP (Keycloak), which is the IdP we use. \n\nMoreover, I have responded to your inquiries, and I added some tests for the projects_json definition as String.\n\nI have not merged the options projects_json with projects to avoid mixing the implementation and to take advantage of the schema version. Therefore, when this is merged, and somebody upgrades in production, the new code is not activated. I think that is safer and more secure than merging the workflows.\n\nIf you have something else to ask here , let me know.\n\nAlso, if you need help using/testing this one, you can ping me, and I can help you setup this with the IdP of your choice.",
+      "revId": "f1822c1b30acbef803d82445f9cd55f0afe39fdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e76e85e_68117479",
