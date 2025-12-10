@@ -1,0 +1,9 @@
+Workflow+1: Artem Goncharov <artem.goncharov@gmail.com>
+Code-Review+2: Artem Goncharov <artem.goncharov@gmail.com>
+Verified+2: Zuul
+Code-Review+1: Winicius Allan Bezerra da Silva <winiciusab12@gmail.com>
+Submitted-by: Zuul
+Submitted-at: Wed, 10 Dec 2025 08:34:03 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/970164
+Project: openstack/keystone
+Branch: refs/heads/master
