@@ -1,0 +1,8 @@
+Code-Review+2: Grzegorz Grasza <xek@redhat.com>
+Verified+2: Zuul
+Workflow+1: Artem Goncharov <artem.goncharov@gmail.com>
+Submitted-by: Zuul
+Submitted-at: Fri, 12 Dec 2025 18:56:20 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/970340
+Project: openstack/keystone
+Branch: refs/heads/stable/2025.2
