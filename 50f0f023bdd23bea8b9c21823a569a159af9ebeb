@@ -33,6 +33,91 @@
       "message": "Fantastic addition to the documentation! Thanks, Doug!",
       "revId": "50f0f023bdd23bea8b9c21823a569a159af9ebeb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1952811_fbc1bcc2",
+        "filename": "doc/source/admin/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-12-12T18:25:58Z",
+      "side": 1,
+      "message": "```suggestion\n-----------------------\n```",
+      "revId": "50f0f023bdd23bea8b9c21823a569a159af9ebeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e059ea3e_2931ae2f",
+        "filename": "doc/source/admin/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1173,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-12-12T18:25:58Z",
+      "side": 1,
+      "message": "```suggestion\n~~~~~~~~~~~~~~~~~~~~~~~~~\n```",
+      "revId": "50f0f023bdd23bea8b9c21823a569a159af9ebeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c3b3f51_ebaf5915",
+        "filename": "doc/source/admin/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1309,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-12-12T18:25:58Z",
+      "side": 1,
+      "message": "```suggestion\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n```",
+      "revId": "50f0f023bdd23bea8b9c21823a569a159af9ebeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94b0aec6_52823ac3",
+        "filename": "doc/source/admin/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1371,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-12-12T18:25:58Z",
+      "side": 1,
+      "message": "```suggestion\n-----------------------------------\n```",
+      "revId": "50f0f023bdd23bea8b9c21823a569a159af9ebeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53717550_6acd3c4f",
+        "filename": "doc/source/admin/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1374,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-12-12T18:25:58Z",
+      "side": 1,
+      "message": "```suggestion\n~~~~~~~~~~~~~~~~~~~~~~~~~~~\n```",
+      "revId": "50f0f023bdd23bea8b9c21823a569a159af9ebeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
