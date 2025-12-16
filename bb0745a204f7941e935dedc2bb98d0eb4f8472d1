@@ -34,6 +34,24 @@
       "parentUuid": "9d904181_a41eedd1",
       "revId": "bb0745a204f7941e935dedc2bb98d0eb4f8472d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7080a8cb_49c2ccc5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16137
+      },
+      "writtenOn": "2025-12-16T15:25:06Z",
+      "side": 1,
+      "message": "I should also note that I\u0027m also not satisfied with the global/shared ``service`` approach, but it\u0027s what we have today unless we start introducing more roles.",
+      "parentUuid": "e3d84a18_a2a689cd",
+      "revId": "bb0745a204f7941e935dedc2bb98d0eb4f8472d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
