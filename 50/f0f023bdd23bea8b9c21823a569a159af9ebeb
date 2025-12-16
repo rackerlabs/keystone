@@ -1,0 +1,13 @@
+Workflow+1: Grzegorz Grasza <xek@redhat.com>
+Code-Review+1: James Denton <james.denton@outlook.com>
+Code-Review+1: Ivan Anfimov <lazekteam@gmail.com>
+Verified+2: Zuul
+Code-Review+2: Artem Goncharov <artem.goncharov@gmail.com>
+Code-Review+2: Grzegorz Grasza <xek@redhat.com>
+Submitted-by: Zuul
+Submitted-at: Tue, 16 Dec 2025 15:12:48 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/970166
+Comments-Total: 8
+Comments-Unresolved: 6
+Project: openstack/keystone
+Branch: refs/heads/master
