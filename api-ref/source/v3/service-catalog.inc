@@ -453,6 +453,7 @@ Parameters
 
    - endpoint: endpoint
    - name: endpoint_name
+   - enabled: endpoind_enabled
    - links: endpoint_links
    - url: endpoint_url
    - region: endpoint_region
@@ -504,6 +505,7 @@ Parameters
    - service_id: service_id
    - endpoint_id: endpoint_id_path
    - name: endpoint_name
+   - enabled: endpoint_enabled
 
 Example
 ~~~~~~~
@@ -527,6 +529,7 @@ Parameters
    - interface: endpoint_interface
    - name: endpoint_name
    - service_id: service_id
+   - enabled: endpoint_enabled
 
 Status Codes
 ~~~~~~~~~~~~
