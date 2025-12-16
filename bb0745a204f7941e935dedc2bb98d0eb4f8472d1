@@ -16,6 +16,24 @@
       "message": "which user (role/access) is radosgw using now? I think I understand the intention from the Rados pov, but the change in this form breaks the least privilege concept - it grants too much access to all service users - i.e. Nova does not need this access.",
       "revId": "bb0745a204f7941e935dedc2bb98d0eb4f8472d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3d84a18_a2a689cd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16137
+      },
+      "writtenOn": "2025-12-16T15:23:50Z",
+      "side": 1,
+      "message": "Hello Artem, today the RadosGW service needs the ``admin`` role _or_ a custom role that allows the ``identity:ec2_get_credential`` and ``identity:s3tokens_validate`` (new since OSSA-2025-002) policies, or the `service` role (since OSSA-2025-002) for `identity:s3tokens_validate`` and a custom role for ``identity:ec2_get_credential``\n\nPlease see my mailing list post about what Keystone access RadosGW needs [1].\n\nI\u0027m open to any suggestions, I don\u0027t remember why listing is included here so I can probably narrow this down but if that\u0027s not enough what is the next step, do we add a new default role? do we leave this as a problem for operators to solve with custom roles?\n\n[1] https://marc.info/?l\u003dceph-users\u0026m\u003d176241342607057\u0026w\u003d2",
+      "parentUuid": "9d904181_a41eedd1",
+      "revId": "bb0745a204f7941e935dedc2bb98d0eb4f8472d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
