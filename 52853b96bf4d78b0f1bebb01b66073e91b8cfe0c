@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55033c49_c1c4bb0d",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-12-23T22:42:19Z",
+      "side": 1,
+      "message": "```suggestion\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n```",
+      "revId": "52853b96bf4d78b0f1bebb01b66073e91b8cfe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8719e7ac_73ae01c1",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-12-23T22:42:19Z",
+      "side": 1,
+      "message": "```suggestion\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n```",
+      "revId": "52853b96bf4d78b0f1bebb01b66073e91b8cfe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3e10e96_cd655a20",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-12-23T22:42:19Z",
+      "side": 1,
+      "message": "```suggestion\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n```",
+      "revId": "52853b96bf4d78b0f1bebb01b66073e91b8cfe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0395ad4_3cc139dd",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-12-23T22:42:19Z",
+      "side": 1,
+      "message": "```suggestion\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n```",
+      "revId": "52853b96bf4d78b0f1bebb01b66073e91b8cfe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e22cecf_968dfb84",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-12-23T22:42:19Z",
+      "side": 1,
+      "message": "```suggestion\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n```",
+      "revId": "52853b96bf4d78b0f1bebb01b66073e91b8cfe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d912ae26_761cbcb5",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-12-23T22:42:19Z",
+      "side": 1,
+      "message": "```suggestion\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n```",
+      "revId": "52853b96bf4d78b0f1bebb01b66073e91b8cfe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "093f9aec_ae5b3e5b",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-12-23T22:42:19Z",
+      "side": 1,
+      "message": "```suggestion\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n```",
+      "revId": "52853b96bf4d78b0f1bebb01b66073e91b8cfe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30ae6345_91df123f",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 632,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-12-23T22:42:19Z",
+      "side": 1,
+      "message": "```suggestion\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n```",
+      "revId": "52853b96bf4d78b0f1bebb01b66073e91b8cfe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ec97ed1_6be5ed68",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-12-23T22:42:19Z",
+      "side": 1,
+      "message": "```suggestion\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n```",
+      "revId": "52853b96bf4d78b0f1bebb01b66073e91b8cfe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd7808a5_8bc457df",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-12-23T22:42:19Z",
+      "side": 1,
+      "message": "```suggestion\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n```",
+      "revId": "52853b96bf4d78b0f1bebb01b66073e91b8cfe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "463536c2_07edabc4",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2025-12-23T22:42:19Z",
+      "side": 1,
+      "message": "```suggestion\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n```",
+      "revId": "52853b96bf4d78b0f1bebb01b66073e91b8cfe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
