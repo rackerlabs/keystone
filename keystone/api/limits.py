@@ -77,6 +77,9 @@ class LimitsResource(ks_flask.ResourceBase):
 
         hints = self.build_driver_hints(filters)
 
+        query_project_id = flask.request.args.get('project_id')
+        query_domain_id = flask.request.args.get('domain_id')
+
         filtered_refs = []
         if self.oslo_context.system_scope:
             refs = PROVIDERS.unified_limit_api.list_limits(hints)
@@ -94,10 +97,27 @@ class LimitsResource(ks_flask.ResourceBase):
                 elif limit.get('domain_id'):
                     if limit['domain_id'] == self.oslo_context.domain_id:
                         filtered_refs.append(limit)
+        elif query_project_id:
+            hints.add_filter('project_id', query_project_id)
+            refs = PROVIDERS.unified_limit_api.list_limits(hints)
+            filtered_refs = refs
         elif self.oslo_context.project_id:
             hints.add_filter('project_id', self.oslo_context.project_id)
             refs = PROVIDERS.unified_limit_api.list_limits(hints)
             filtered_refs = refs
+        elif query_domain_id:
+            refs = PROVIDERS.unified_limit_api.list_limits(hints)
+            projects = PROVIDERS.resource_api.list_projects_in_domain(
+                query_domain_id
+            )
+            project_ids = [project['id'] for project in projects]
+            for limit in refs:
+                if limit.get('project_id'):
+                    if limit['project_id'] in project_ids:
+                        filtered_refs.append(limit)
+                elif limit.get('domain_id'):
+                    if limit['domain_id'] == query_domain_id:
+                        filtered_refs.append(limit)
 
         return self.wrap_collection(filtered_refs, hints=hints)
 
