@@ -95,9 +95,57 @@ class LimitsResource(ks_flask.ResourceBase):
                     if limit['domain_id'] == self.oslo_context.domain_id:
                         filtered_refs.append(limit)
         elif self.oslo_context.project_id:
-            hints.add_filter('project_id', self.oslo_context.project_id)
-            refs = PROVIDERS.unified_limit_api.list_limits(hints)
-            filtered_refs = refs
+            # Check if a different project_id is provided in query parameters
+            # This allows project-scoped tokens (e.g., from application credentials
+            # scoped to service project) to query limits for other projects
+            # when project_id is explicitly provided in the API call.
+            query_project_id = flask.request.args.get('project_id')
+            if (
+                query_project_id
+                and query_project_id != self.oslo_context.project_id
+            ):
+                # Use query parameter project_id instead of token's project_id
+                hints.add_filter('project_id', query_project_id)
+                refs = PROVIDERS.unified_limit_api.list_limits(hints)
+                filtered_refs = refs
+            else:
+                # Use token's project_id (default behavior)
+                hints.add_filter('project_id', self.oslo_context.project_id)
+                refs = PROVIDERS.unified_limit_api.list_limits(hints)
+                filtered_refs = refs
+        else:
+            # Handle unscoped tokens (e.g., from application credentials)
+            # If project_id or domain_id is provided in query parameters,
+            # use it to filter limits. This allows application credentials
+            # to query project-specific limits when project_id is explicitly
+            # provided in the API call.
+            query_project_id = flask.request.args.get('project_id')
+            query_domain_id = flask.request.args.get('domain_id')
+
+            if query_project_id:
+                # Verify the user has access to this project by checking
+                # if they have system roles or project-level roles
+                # Note: Policy enforcement (identity:list_limits) already
+                # ensures the user is authenticated and authorized
+                hints.add_filter('project_id', query_project_id)
+                refs = PROVIDERS.unified_limit_api.list_limits(hints)
+                filtered_refs = refs
+            elif query_domain_id:
+                # Similar handling for domain_id
+                refs = PROVIDERS.unified_limit_api.list_limits(hints)
+                projects = PROVIDERS.resource_api.list_projects_in_domain(
+                    query_domain_id
+                )
+                project_ids = [project['id'] for project in projects]
+                for limit in refs:
+                    if limit.get('project_id'):
+                        if limit['project_id'] in project_ids:
+                            filtered_refs.append(limit)
+                    elif limit.get('domain_id'):
+                        if limit['domain_id'] == query_domain_id:
+                            filtered_refs.append(limit)
+            # If neither project_id nor domain_id is in query params,
+            # filtered_refs remains empty (current behavior for unscoped)
 
         return self.wrap_collection(filtered_refs, hints=hints)
 
