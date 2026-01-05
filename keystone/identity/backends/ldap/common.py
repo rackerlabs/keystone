@@ -185,8 +185,10 @@ def convert_ldap_result(ldap_result):
 
         for kind, values in attrs.items():
             try:
-                val2py = enabled2py if kind == 'enabled' else ldap2py
-                ldap_attrs[kind] = [val2py(x) for x in values]
+                if kind == 'enabled':
+                    ldap_attrs[kind] = [enabled2py(ldap2py(x)) for x in values]
+                else:
+                    ldap_attrs[kind] = [ldap2py(x) for x in values]
             except UnicodeDecodeError:
                 LOG.debug('Unable to decode value for attribute %s', kind)
         py_result.append((dn, ldap_attrs))
