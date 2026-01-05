@@ -589,6 +589,27 @@ class CommonLdapTestCase(unit.BaseTestCase):
         exp_object_guid = '7452d8dd-5dee-4162-8e28-e3390be1f8e8'
         self.assertEqual(exp_object_guid, py_result[0][1]['objectGUID'][0])
 
+    def test_ldap_enabled_value_with_binary_string(self):
+        # Both string and binary should be converted correctly
+        enabled_cases = [
+            ('TRUE', True),
+            (b'TRUE', True),
+            ('FALSE', False),
+            (b'FALSE', False),
+        ]
+        for enabled_value, expected in enabled_cases:
+            result = [
+                (
+                    'cn=dummy,dc=example,dc=com',
+                    {
+                        'user_id': [uuid.uuid4().hex],
+                        'enabled': [enabled_value],
+                    },
+                )
+            ]
+            py_result = common_ldap.convert_ldap_result(result)
+            self.assertIs(expected, py_result[0][1]['enabled'][0])
+
 
 class LDAPFilterQueryCompositionTest(unit.BaseTestCase):
     """These test cases test LDAP filter generation."""
