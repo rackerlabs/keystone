@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "71434c10_0bdce897",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2026-01-08T13:20:22Z",
+      "side": 1,
+      "message": "Hi Grzegorz Grasza\n\nJust reported this bug in launchpad\nhttps://bugs.launchpad.net/keystone/+bug/2137711\n\nWe have results for glance with keystone fix, but need to wait for results of glance patch without keystone fix.\n\nGlance Patch without keystone fix: https://review.opendev.org/c/openstack/glance/+/972677\nGlance patch with keystone fix: https://review.opendev.org/c/openstack/glance/+/971682",
+      "parentUuid": "c4f4e772_ce272eee",
+      "revId": "e248c69e98f62a79a95ee7a8c564348e2229873e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "70b769e5_9c8ab00e",
