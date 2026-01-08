@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4f4e772_ce272eee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2026-01-08T11:06:48Z",
+      "side": 1,
+      "message": "Hi, please describe the rationale behind this change, maybe also include a link to a launchpad bug.",
+      "revId": "e248c69e98f62a79a95ee7a8c564348e2229873e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "70b769e5_9c8ab00e",
