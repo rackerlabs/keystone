@@ -742,11 +742,16 @@ class ResourceBase(flask_restful.Resource):
             and list_limited
         ):
             args = flask.request.args.to_dict()
-            # Update the marker with the ID of last entry
-            args["marker"] = refs[-1]["id"]
-            args["limit"] = hints.limit.get("limit", args.get("limit"))
+            args.update(
+                {
+                    "marker": refs[-1]["id"],
+                    "limit": hints.limit.get("limit", args.get("limit")),
+                }
+            )
             container["links"]["next"] = base_url(
-                flask.url_for(flask.request.endpoint, **args)
+                flask.url_for(
+                    flask.request.endpoint, **flask.request.view_args, **args
+                )
             )
 
         if list_limited:

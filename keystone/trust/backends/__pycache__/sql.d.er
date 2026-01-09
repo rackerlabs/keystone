@@ -1,0 +1,54 @@
+##[pylyzer] failed /home/agoncharov/workspace/opendev.org/openstack/keystone/keystone/trust/backends/sql.py 1766504020 10050
+.___v_desugar_1: Never
+.timeutils: Never
+.sqlalchemy: Never
+
+.___v_desugar_2: Never
+.hybrid_property: Never
+.___v_desugar_3: Never
+.sql: Never
+.___v_desugar_4: Never
+.exception: Never
+.___v_desugar_5: Never
+.base: Never
+.MAXIMUM_CONSUME_ATTEMPTS: {10}
+.TrustModel: ClassType
+.TrustModel <: Never
+.TrustModel.__tablename__: {"trust"}
+.TrustModel.attributes: global::List!({"impersonation", "redelegated_trust_id", "trustee_user_id", "expires_at", "id", "trustor_user_id", "project_id", "deleted_at", "redelegation_count", "remaining_uses"}, 10)
+.TrustModel.id: Never
+.TrustModel.trustor_user_id: Never
+.TrustModel.trustee_user_id: Never
+.TrustModel.project_id: Never
+.TrustModel.impersonation: Never
+.TrustModel.deleted_at: Never
+.TrustModel._expires_at: Never
+.TrustModel.expires_at_int: Never
+.TrustModel.remaining_uses: Never
+.TrustModel.redelegated_trust_id: Never
+.TrustModel.redelegation_count: Never
+.TrustModel.extra: Never
+.TrustModel.__table_args__: global::Tuple([Never])
+.TrustModel.expires_at: (self: sql.TrustModel) -> Never
+.TrustModel.expires_at: (self: sql.TrustModel, value: Obj) -> NoneType
+
+.TrustRole: ClassType
+.TrustRole <: Never
+.TrustRole.__tablename__: {"trust_role"}
+.TrustRole.attributes: global::List!({"trust_id", "role_id"}, 2)
+.TrustRole.trust_id: Never
+.TrustRole.role_id: Never
+
+.Trust: ClassType
+.Trust <: Never
+.Trust.create_trust: (self: sql.Trust, trust_id: Obj, trust: Obj, roles: global::Iterable(global::Indexable(Obj, Never))) -> NoneType
+.Trust._add_roles: |Type_390: Type, Type_224 <: Structural({.query = (self: Obj, Type_389) -> Type_390}), Type_389 :> {sql.TrustRole}|(self: sql.Trust, trust_id: Obj, session: Type_224, trust_dict: global::Dict!({{"roles"}: global::List!(global::Dict!({{"id"}: Never}), 1)})) -> NoneType
+.Trust.consume_use: (self: sql.Trust, trust_id: Obj) -> NoneType
+.Trust.get_trust: (self: sql.Trust, trust_id: Obj, deleted: Bool := Bool) -> NoneType
+.Trust.list_trusts: (self: sql.Trust) -> NoneType
+.Trust.list_trusts_for_trustee: (self: sql.Trust, trustee_user_id: Obj) -> NoneType
+.Trust.list_trusts_for_trustor: (self: sql.Trust, trustor_user_id: Obj, redelegated_trust_id: Bool := Bool) -> NoneType
+.Trust.delete_trust: (self: sql.Trust, trust_id: Obj) -> NoneType
+.Trust.delete_trusts_for_project: (self: sql.Trust, project_id: Obj) -> NoneType
+.Trust.flush_expired_and_soft_deleted_trusts: (self: sql.Trust, project_id: Bool := Bool, trustor_user_id: Bool := Bool, trustee_user_id: Bool := Bool, date: Obj := Obj) -> NoneType
+
