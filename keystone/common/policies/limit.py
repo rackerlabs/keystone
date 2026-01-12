@@ -14,6 +14,14 @@ from oslo_policy import policy
 
 from keystone.common.policies import base
 
+
+ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_READER = (
+    base.RULE_ADMIN_REQUIRED + ' or '
+    '(' + base.SYSTEM_READER + ') or '
+    '( role:reader and domain_id:%(target.domain_id)s ) or '
+    '( role:reader and project_id:%(target.project_id)s )'
+)
+
 ADMIN_OR_SYSTEM_OR_DOMAIN_OR_PROJECT_USER = (
     base.RULE_ADMIN_REQUIRED + ' or '
     '(' + base.SYSTEM_READER + ') or '
@@ -30,7 +38,7 @@ ADMIN_OR_SYSTEM_OR_DOMAIN_OR_PROJECT_USER = (
 limit_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_limit_model',
-        check_str='',
+        check_str=ADMIN_OR_SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_READER,
         scope_types=['system', 'domain', 'project'],
         description='Get limit enforcement model.',
         operations=[

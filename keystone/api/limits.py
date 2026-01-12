@@ -72,19 +72,26 @@ class LimitsResource(ks_flask.ResourceBase):
             'project_id',
             'domain_id',
         ]
-
         ENFORCER.enforce_call(action='identity:list_limits', filters=filters)
 
+        # NOTE: hints are used in the sql query to select rows, so we remove
+        # 'domain_id' from the filters here to exclude it form the hints
+        # because domain_id is null for limits that are created for a specific
+        # project_id.
+        # Otherwise we'd end up filtering out a lot of limit entries for
+        # relevant projects because their domain_id is set to null.
+        filters.remove('domain_id')
         hints = self.build_driver_hints(filters)
 
-        filtered_refs = []
-        if self.oslo_context.system_scope:
-            refs = PROVIDERS.unified_limit_api.list_limits(hints)
-            filtered_refs = refs
-        elif self.oslo_context.domain_id:
-            refs = PROVIDERS.unified_limit_api.list_limits(hints)
+        refs = PROVIDERS.unified_limit_api.list_limits(hints)
+
+        target_domain_id = flask.request.args.get('domain_id')
+        if target_domain_id:
+            # request is for a specific domain_id so we return limits
+            # for that domain and any projects that belong to that domain.
+            filtered_refs = list()
             projects = PROVIDERS.resource_api.list_projects_in_domain(
-                self.oslo_context.domain_id
+                target_domain_id
             )
             project_ids = [project['id'] for project in projects]
             for limit in refs:
@@ -92,14 +99,11 @@ class LimitsResource(ks_flask.ResourceBase):
                     if limit['project_id'] in project_ids:
                         filtered_refs.append(limit)
                 elif limit.get('domain_id'):
-                    if limit['domain_id'] == self.oslo_context.domain_id:
+                    if limit['domain_id'] == target_domain_id:
                         filtered_refs.append(limit)
-        elif self.oslo_context.project_id:
-            hints.add_filter('project_id', self.oslo_context.project_id)
-            refs = PROVIDERS.unified_limit_api.list_limits(hints)
-            filtered_refs = refs
+            refs = filtered_refs
 
-        return self.wrap_collection(filtered_refs, hints=hints)
+        return self.wrap_collection(refs, hints=hints)
 
     @validation.request_body_schema(schema.limits_create_request_body)
     @validation.response_body_schema(schema.limits_create_response_body)
