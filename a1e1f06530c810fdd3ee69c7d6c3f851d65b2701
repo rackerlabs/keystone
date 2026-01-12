@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "a1e1f06530c810fdd3ee69c7d6c3f851d65b2701",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "787ed9ed_16d6d7fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2026-01-12T15:06:04Z",
+      "side": 1,
+      "message": "Thanks for the patch, Abishek.  IMO the root issue here is that the code is trying to enforce AuthZ in the controller itself instead of deferring to oslo.policy.  I\u0027m working on a patch that will enforce AuthZ in policy instead of hard-coding it like it is now, which I think may be a better approach rather than adding more cases to the API itself.",
+      "revId": "a1e1f06530c810fdd3ee69c7d6c3f851d65b2701",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
