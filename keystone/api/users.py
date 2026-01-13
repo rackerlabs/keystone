@@ -21,6 +21,7 @@ import flask
 from oslo_serialization import jsonutils
 from werkzeug import exceptions
 
+from keystone.api._shared import ec2_credentials
 from keystone.api._shared import json_home_relations
 from keystone.api import validation
 from keystone.application_credential import schema as app_cred_schema
@@ -427,7 +428,7 @@ class UserOSEC2CredentialsResourceListCreate(_UserOSEC2CredBaseResource):
         _check_unrestricted_application_credential(token)
         PROVIDERS.identity_api.get_user(user_id)
         tenant_id = self.request_body_json.get('tenant_id')
-        PROVIDERS.resource_api.get_project(tenant_id)
+        ec2_credentials.validate_project_access(user_id, tenant_id)
         blob = {
             'access': uuid.uuid4().hex,
             'secret': uuid.uuid4().hex,
