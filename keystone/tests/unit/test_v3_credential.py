@@ -1054,3 +1054,21 @@ class TestCredentialEc2(CredentialBaseTestCase):
             PROVIDERS.credential_api.get_credential,
             cred_from_credential_api[0]['id'],
         )
+
+    def test_ec2_create_credential_without_project_role(self):
+        """Test ec2 credential creation fails without project role.
+
+        A user should not be able to create EC2 credentials for a project
+        where they have no role assignments.
+        """
+        # Create a new project where the user has no roles
+        new_project = unit.new_project_ref(domain_id=self.domain_id)
+        PROVIDERS.resource_api.create_project(new_project['id'], new_project)
+
+        # Try to create EC2 credential for the project without roles
+        uri = self._get_ec2_cred_uri()
+        self.post(
+            uri,
+            body={'tenant_id': new_project['id']},
+            expected_status=http.client.UNAUTHORIZED,
+        )
