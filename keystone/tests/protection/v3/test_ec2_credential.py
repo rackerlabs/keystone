@@ -219,6 +219,23 @@ class _SystemUserNegativeTests:
                 expected_status_code=http.client.FORBIDDEN,
             )
 
+    def test_user_cannot_create_ec2_credentials_for_project_without_grant(self):
+        """Test that users cannot create EC2 credentials for projects without role assignments."""
+        # Create a project where the user has NO role assignment
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id
+        )
+        project = PROVIDERS.resource_api.create_project(project['id'], project)
+        # Note: No grant created for self.user_id on this project
+
+        with self.test_client() as c:
+            c.post(
+                f'/v3/users/{self.user_id}/credentials/OS-EC2',
+                json={'tenant_id': project['id']},
+                headers=self.headers,
+                expected_status_code=http.client.UNAUTHORIZED,
+            )
+
 
 class _SystemReaderAndMemberTests:
     def test_user_cannot_list_ec2_credentials_for_others(self):
