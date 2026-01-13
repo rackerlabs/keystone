@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ed32bc0_e651c3e4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2026-01-13T14:45:33Z",
+      "side": 1,
+      "message": "Testing it here\nhttps://review.opendev.org/c/openstack/glance/+/971682",
+      "revId": "9312db7a47db6e301ad3377bb01904e11ef83100",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
