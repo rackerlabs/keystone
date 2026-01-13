@@ -426,6 +426,18 @@ class UserOSEC2CredentialsResourceListCreate(_UserOSEC2CredBaseResource):
         PROVIDERS.identity_api.get_user(user_id)
         tenant_id = self.request_body_json.get('tenant_id')
         PROVIDERS.resource_api.get_project(tenant_id)
+        # Verify the user has roles in the target project
+        roles = PROVIDERS.assignment_api.get_roles_for_user_and_project(
+            user_id, tenant_id
+        )
+        if not roles:
+            raise ks_exception.Unauthorized(
+                message=_(
+                    'You are not authorized to create credentials for '
+                    'project %s.'
+                )
+                % tenant_id
+            )
         blob = {
             'access': uuid.uuid4().hex,
             'secret': uuid.uuid4().hex,
