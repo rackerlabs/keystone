@@ -18,6 +18,7 @@ import http.client
 import flask
 from oslo_serialization import jsonutils
 
+from keystone.api._shared import ec2_credentials
 from keystone.api import validation
 from keystone.common import json_home
 from keystone.common import provider_api
@@ -198,24 +199,24 @@ class CredentialsResource(ks_flask.ResourceBase):
             action='identity:create_credential', target_attr=target
         )
         token = self.auth_context['token']
-        if credential.get('type', '').lower() == 'ec2':
-            _check_unrestricted_application_credential(token)
         trust_id = getattr(self.oslo_context, 'trust_id', None)
         app_cred_id = getattr(token, 'application_credential_id', None)
         access_token_id = getattr(token, 'access_token_id', None)
-        if (
-            app_cred_id is not None
-            and credential.get('type', '').lower() == 'ec2'
-        ):
-            ac_api = PROVIDERS.application_credential_api
-            app_cred = ac_api.get_application_credential(app_cred_id)
-            if credential.get('project_id') != app_cred['project_id']:
-                action = _(
-                    'EC2 credential project_id must match the '
-                    'project of the application credential used '
-                    'to authenticate'
-                )
-                raise exception.ForbiddenAction(action=action)
+        if credential.get('type', '').lower() == 'ec2':
+            _check_unrestricted_application_credential(token)
+            if app_cred_id is not None:
+                ac_api = PROVIDERS.application_credential_api
+                app_cred = ac_api.get_application_credential(app_cred_id)
+                if credential.get('project_id') != app_cred['project_id']:
+                    action = _(
+                        'EC2 credential project_id must match the '
+                        'project of the application credential used '
+                        'to authenticate'
+                    )
+                    raise exception.ForbiddenAction(action=action)
+            ec2_credentials.validate_project_access(
+                credential.get('user_id'), credential.get('project_id')
+            )
         ref = self._assign_unique_id(
             self._normalize_dict(credential),
             trust_id=trust_id,

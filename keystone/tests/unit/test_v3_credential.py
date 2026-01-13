@@ -510,6 +510,27 @@ class CredentialTestCase(CredentialBaseTestCase):
             expected_status=http.client.CONFLICT,
         )
 
+    def test_create_ec2_credential_without_project_role(self):
+        """Call ``POST /credentials`` for an inaccessible project."""
+        new_project = unit.new_project_ref(domain_id=self.domain_id)
+        PROVIDERS.resource_api.create_project(new_project['id'], new_project)
+        _, ref = unit.new_ec2_credential(
+            user_id=self.user['id'], project_id=new_project['id']
+        )
+
+        response = self.post(
+            '/credentials',
+            body={'credential': ref},
+            expected_status=http.client.NOT_FOUND,
+        )
+
+        self.assertValidErrorResponse(response)
+        self.assertEqual(
+            http.client.NOT_FOUND, response.result['error']['code']
+        )
+        self.assertEqual('Not Found', response.result['error']['title'])
+        self.assertIn(new_project['id'], response.result['error']['message'])
+
     def test_get_ec2_dict_blob(self):
         """Ensure non-JSON blob data is correctly converted."""
         expected_blob, credential_id = self._create_dict_blob_credential()
@@ -1230,3 +1251,21 @@ class TestCredentialEc2(CredentialBaseTestCase):
         ec2_cred = r.result['credential']
         self.assertEqual(self.user_id, ec2_cred['user_id'])
         self.assertEqual(self.project_id, ec2_cred['tenant_id'])
+
+    def test_ec2_create_credential_without_project_role(self):
+        """Test ec2 credential creation fails without project role.
+
+        A user should not be able to create EC2 credentials for a project
+        where they have no role assignments.
+        """
+        # Create a new project where the user has no roles
+        new_project = unit.new_project_ref(domain_id=self.domain_id)
+        PROVIDERS.resource_api.create_project(new_project['id'], new_project)
+
+        # Try to create EC2 credential for the project without roles
+        uri = self._get_ec2_cred_uri()
+        self.post(
+            uri,
+            body={'tenant_id': new_project['id']},
+            expected_status=http.client.NOT_FOUND,
+        )
