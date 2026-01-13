@@ -18,6 +18,7 @@ import http.client
 import flask
 from oslo_serialization import jsonutils
 
+from keystone.api._shared import ec2_credentials
 from keystone.api import validation
 from keystone.common import json_home
 from keystone.common import provider_api
@@ -200,6 +201,9 @@ class CredentialsResource(ks_flask.ResourceBase):
         token = self.auth_context['token']
         if credential.get('type', '').lower() == 'ec2':
             _check_unrestricted_application_credential(token)
+            ec2_credentials.validate_project_access(
+                credential.get('user_id'), credential.get('project_id')
+            )
         trust_id = getattr(self.oslo_context, 'trust_id', None)
         app_cred_id = getattr(token, 'application_credential_id', None)
         access_token_id = getattr(token, 'access_token_id', None)

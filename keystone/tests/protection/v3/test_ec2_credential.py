@@ -219,6 +219,23 @@ class _SystemUserNegativeTests:
                 expected_status_code=http.client.FORBIDDEN,
             )
 
+    def test_user_cannot_create_ec2_credentials_for_project_without_grant(
+        self,
+    ):
+        """Users cannot create EC2 credentials for inaccessible projects."""
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id
+        )
+        project = PROVIDERS.resource_api.create_project(project['id'], project)
+
+        with self.test_client() as c:
+            c.post(
+                f'/v3/users/{self.user_id}/credentials/OS-EC2',
+                json={'tenant_id': project['id']},
+                headers=self.headers,
+                expected_status_code=http.client.NOT_FOUND,
+            )
+
 
 class _SystemReaderAndMemberTests:
     def test_user_cannot_list_ec2_credentials_for_others(self):
