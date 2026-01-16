@@ -426,13 +426,71 @@ Enabled emulation
    in order to create a default value on the integer attribute (512 = NORMAL
    ACCOUNT in Active Directory).
 
+Password expiration
+   Many LDAP directories store password expiration information, but not all
+   enforce it at bind time. For example, OpenLDAP's ``shadowAccount`` schema
+   stores expiration in the ``shadowExpire`` attribute, but OpenLDAP does not
+   reject binds for expired passwords (another example is 389ds).
+   Keystone can read these attributes and enforce password expiration on its
+   own, returning a ``PasswordExpired`` error to clients so they can prompt
+   for a password change like the SQL identity backend.
+
+   Two configuration options work together to enable this:
+
+   * ``user_additional_attribute_mapping`` maps the LDAP attribute to the
+     Keystone ``password_expires_at`` field.
+   * ``user_password_expiry_format_mapping`` tells Keystone how to convert
+     the raw LDAP value to a datetime.
+
+   The format is ``<ldap_attribute>:<converter>``. Three built-in converters
+   are available:
+
+   * ``epoch_days`` -- Value is the number of days since the Unix epoch
+     (1970-01-01). Used by RFC 2307 ``shadowAccount`` schemas
+     (e.g. ``shadowExpire``).
+   * ``windows_filetime`` -- Value is the number of 100-nanosecond intervals
+     since 1601-01-01. Used by Active Directory (e.g. ``accountExpires``).
+     The sentinel values ``0`` and ``9223372036854775807`` are treated as
+     "never expires".
+   * ``generalized_time`` -- Value is an ITU X.680 Generalized Time string
+     (``YYYYMMDDHHmmSS.ffffffZ``). Used by the LDAP ppolicy overlay
+     (e.g. ``pwdExpirationTime``).
+
+   **Configuration examples with the above builtin converters**
+
+   **OpenLDAP with shadowAccount**
+
+   The ``shadowExpire`` attribute stores the number of days since 1970-01-01
+   when the password expires:
+
+   .. code-block:: ini
+
+      [ldap]
+      user_additional_attribute_mapping = shadowExpire:password_expires_at
+      user_password_expiry_format_mapping = shadowExpire:epoch_days
+
+   **Active Directory**
+
+   The ``accountExpires`` attribute stores a Windows FILETIME value:
+
+   .. code-block:: ini
+
+      [ldap]
+      user_additional_attribute_mapping = accountExpires:password_expires_at
+      user_password_expiry_format_mapping = accountExpires:windows_filetime
+
+   **LDAP with ppolicy overlay**
+
+   The ``pwdExpirationTime`` attribute stores a Generalized Time string:
+
+   .. code-block:: ini
+
+      [ldap]
+      user_additional_attribute_mapping = pwdExpirationTime:password_expires_at
+      user_password_expiry_format_mapping = pwdExpirationTime:generalized_time
+
 When you have finished configuration, restart the OpenStack Identity
 service.
-
-.. warning::
-
-   During service restart, authentication and authorization are
-   unavailable.
 
 Secure the OpenStack Identity service connection to an LDAP back end
 --------------------------------------------------------------------

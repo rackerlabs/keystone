@@ -1372,6 +1372,7 @@ class BaseLdap:
     DEFAULT_OBJECTCLASS: str
     DEFAULT_FILTER: ty.Optional[str] = None
     DEFAULT_EXTRA_ATTR_MAPPING: list[str] = []
+    DEFAULT_PW_EXPIRY_FORMAT_MAPPING: list[str] = []
     NotFound: ty.Type[exception.Error]
     notfound_arg: ty.Optional[str] = None
     options_name: ty.Optional[str] = None

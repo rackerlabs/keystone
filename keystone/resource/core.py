@@ -1196,6 +1196,7 @@ class DomainConfigManager(manager.Manager):
             'user_enabled_emulation_dn',
             'user_enabled_emulation_use_group_config',
             'user_additional_attribute_mapping',
+            'user_password_expiry_format_mapping',
             'group_tree_dn',
             'group_filter',
             'group_objectclass',
