@@ -350,6 +350,36 @@ API.
     ),
 )
 
+user_password_expiry_format_mapping = cfg.ListOpt(
+    'user_password_expiry_format_mapping',
+    default=[],
+    help=utils.fmt(
+        """
+A list of LDAP password expiry attribute and converter method pairs. The
+expected format is `<ldap_attribute>:<converter>`. The LDAP attribute must
+also be present in `user_additional_attribute_mapping` mapped to
+`password_expires_at`. Keystone checks the converted expiration time before
+the LDAP bind and returns a PasswordExpired error when the password has
+expired. Available converters: `epoch_days` (RFC 2307 shadowAccount, e.g.
+shadowExpire -- days since 1970-01-01), `windows_filetime` (Active Directory,
+e.g. accountExpires -- 100ns intervals since 1601-01-01),
+`generalized_time` (LDAP ppolicy, e.g. pwdExpirationTime --
+YYYYMMDDHHmmSS.ffffffZ). Examples: `shadowExpire:epoch_days`,
+`accountExpires:windows_filetime`, `pwdExpirationTime:generalized_time`.
+"""
+    ),
+)
+
+group_password_expiry_format_mapping = cfg.ListOpt(
+    'group_password_expiry_format_mapping',
+    default=[],
+    help=utils.fmt(
+        """
+A list of LDAP password expiry attribute name and converter method pairing.
+"""
+    ),
+)
+
 group_tree_dn = cfg.StrOpt(
     'group_tree_dn',
     help=utils.fmt(
@@ -676,6 +706,7 @@ ALL_OPTS = [
     user_enabled_emulation_dn,
     user_enabled_emulation_use_group_config,
     user_additional_attribute_mapping,
+    user_password_expiry_format_mapping,
     group_tree_dn,
     group_filter,
     group_objectclass,
@@ -686,6 +717,7 @@ ALL_OPTS = [
     group_desc_attribute,
     group_attribute_ignore,
     group_additional_attribute_mapping,
+    group_password_expiry_format_mapping,
     group_ad_nesting,
     tls_cacertfile,
     tls_cacertdir,

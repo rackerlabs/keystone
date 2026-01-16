@@ -14,6 +14,7 @@
 # under the License.
 
 import copy
+import datetime
 import http.client
 from unittest import mock
 import uuid
@@ -830,6 +831,89 @@ class BaseLDAPIdentity(
                 password=None,
             )
 
+    def _get_epoch_time(self, date):
+        base_date = datetime.datetime.strptime('1970-01-01', '%Y-%m-%d')
+        return (datetime.datetime.strptime(date, '%Y-%m-%d') - base_date).days
+
+    def test_password_expired_passwordexpired_raised(self):
+        self.config_fixture.config(
+            group='ldap',
+            user_additional_attribute_mapping=[
+                'shadowExpire:password_expires_at'
+            ],
+            user_password_expiry_format_mapping=['shadowExpire:epoch_days'],
+        )
+        self.load_backends()
+
+        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        password = user['password']
+        user = PROVIDERS.identity_api.create_user(user)
+
+        driver = PROVIDERS.identity_api._select_identity_driver(
+            user['domain_id']
+        )
+
+        epoch = self._get_epoch_time('2020-01-01')
+        user_dn = driver.user._id_to_dn(user['id'])
+        conn = driver.user.get_connection()
+        conn.modify_s(user_dn, [(ldap.MOD_ADD, 'shadowExpire', [epoch])])
+
+        with self.make_request():
+            self.assertRaises(
+                exception.PasswordExpired,
+                PROVIDERS.identity_api.authenticate,
+                user_id=user['id'],
+                password=password,
+            )
+
+    def test_password_expired_non_expired(self):
+        self.config_fixture.config(
+            group='ldap',
+            user_additional_attribute_mapping=[
+                'shadowExpire:password_expires_at'
+            ],
+            user_password_expiry_format_mapping=['shadowExpire:epoch_days'],
+        )
+        self.load_backends()
+
+        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        password = user['password']
+        user = PROVIDERS.identity_api.create_user(user)
+
+        driver = PROVIDERS.identity_api._select_identity_driver(
+            user['domain_id']
+        )
+        user_dn = driver.user._id_to_dn(user['id'])
+        conn = driver.user.get_connection()
+
+        epoch = self._get_epoch_time('2099-01-01')
+        conn.modify_s(user_dn, [(ldap.MOD_ADD, 'shadowExpire', [epoch])])
+
+        with self.make_request():
+            PROVIDERS.identity_api.authenticate(
+                user_id=user['id'], password=password
+            )
+
+    def test_password_expired_none(self):
+        self.config_fixture.config(
+            group='ldap',
+            user_additional_attribute_mapping=[
+                'shadowExpire:password_expires_at'
+            ],
+            user_password_expiry_format_mapping=['shadowExpire:epoch_days'],
+        )
+        self.load_backends()
+
+        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        password = user['password']
+        user = PROVIDERS.identity_api.create_user(user)
+
+        # No shadowExpire attribute set so password_expires_at is None.
+        with self.make_request():
+            PROVIDERS.identity_api.authenticate(
+                user_id=user['id'], password=password
+            )
+
     @mock.patch.object(versionutils, 'report_deprecated_feature')
     def test_user_crud(self, mock_deprecator):
         # NOTE(stevemar): As of the Mitaka release, we now check for calls that
@@ -1553,6 +1637,144 @@ class LDAPIdentity(BaseLDAPIdentity):
         # is as expected.
         self.assertEqual(level, mocked_fakeldap.call_args[-1]['debug_level'])
 
+    def test_user_password_expiry_format_mapping_epoch_days(self):
+        self.config_fixture.config(
+            group='ldap',
+            user_additional_attribute_mapping=[
+                'shadowExpire:password_expires_at'
+            ],
+            user_password_expiry_format_mapping=['shadowExpire:epoch_days'],
+        )
+        self.load_backends()
+
+        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = PROVIDERS.identity_api.create_user(user)
+
+        driver = PROVIDERS.identity_api._select_identity_driver(
+            user['domain_id']
+        )
+        user_dn = driver.user._id_to_dn(user['id'])
+        conn = driver.user.get_connection()
+        epoch = self._get_epoch_time('2025-12-31')
+        conn.modify_s(user_dn, [(ldap.MOD_ADD, 'shadowExpire', [epoch])])
+
+        user_ref = PROVIDERS.identity_api.get_user(user['id'])
+        self.assertIsNotNone(user_ref['password_expires_at'])
+        self.assertEqual(
+            datetime.datetime(2025, 12, 31, tzinfo=datetime.timezone.utc),
+            user_ref['password_expires_at'],
+        )
+
+    def test_user_password_expiry_format_mapping_widows_file_time(self):
+        self.config_fixture.config(
+            group='ldap',
+            user_additional_attribute_mapping=[
+                'accountExpires:password_expires_at'
+            ],
+            user_password_expiry_format_mapping=[
+                'accountExpires:windows_filetime'
+            ],
+        )
+        self.load_backends()
+
+        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = PROVIDERS.identity_api.create_user(user)
+
+        driver = PROVIDERS.identity_api._select_identity_driver(
+            user['domain_id']
+        )
+        user_dn = driver.user._id_to_dn(user['id'])
+        conn = driver.user.get_connection()
+
+        # Windows filetime for 2025-12-31
+        conn.modify_s(
+            user_dn, [(ldap.MOD_ADD, 'accountExpires', ['134116128000000000'])]
+        )
+
+        user_ref = PROVIDERS.identity_api.get_user(user['id'])
+        self.assertIsNotNone(user_ref['password_expires_at'])
+        self.assertEqual(
+            datetime.datetime(2025, 12, 31, tzinfo=datetime.timezone.utc),
+            user_ref['password_expires_at'],
+        )
+
+    def test_user_password_expiry_format_mapping_generalized_time(self):
+        self.config_fixture.config(
+            group='ldap',
+            user_additional_attribute_mapping=[
+                'pwdExpirationTime:password_expires_at'
+            ],
+            user_password_expiry_format_mapping=[
+                'pwdExpirationTime:generalized_time'
+            ],
+        )
+        self.load_backends()
+
+        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = PROVIDERS.identity_api.create_user(user)
+
+        driver = PROVIDERS.identity_api._select_identity_driver(
+            user['domain_id']
+        )
+        user_dn = driver.user._id_to_dn(user['id'])
+        conn = driver.user.get_connection()
+
+        # Generalized time fomat for  for 2025-12-31
+        conn.modify_s(
+            user_dn,
+            [(ldap.MOD_ADD, 'pwdExpirationTime', ['20251231000000.000000Z'])],
+        )
+
+        user_ref = PROVIDERS.identity_api.get_user(user['id'])
+        self.assertIsNotNone(user_ref['password_expires_at'])
+        self.assertEqual(
+            datetime.datetime(2025, 12, 31, 0, 0),
+            user_ref['password_expires_at'],
+        )
+
+    def test_user_password_expiry_format_mapping_none(self):
+        self.config_fixture.config(
+            group='ldap',
+            user_additional_attribute_mapping=[
+                'shadowExpire:password_expires_at'
+            ],
+            user_password_expiry_format_mapping=['shadowExpire:epoch_days'],
+        )
+        self.load_backends()
+
+        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = PROVIDERS.identity_api.create_user(user)
+
+        # No shadowExpire attribute — password_expires_at should be None.
+        user_ref = PROVIDERS.identity_api.get_user(user['id'])
+        self.assertIsNone(user_ref['password_expires_at'])
+
+    def test_group_password_expiry_format_mapping(self):
+        # group_password_expiry_format_mapping is parsed by BaseLdap
+        # but GroupApi._ldap_res_to_model does not use the converters,
+        # so just verify the config is parsed into the mapping dict.
+        self.config_fixture.config(
+            group='ldap',
+            group_password_expiry_format_mapping=['shadowExpire:epoch_days'],
+        )
+        self.load_backends()
+
+        driver = PROVIDERS.identity_api._select_identity_driver(
+            CONF.identity.default_domain_id
+        )
+        self.assertEqual(
+            {'shadowExpire': 'epoch_days'}, driver.group.pw_expiry_mapping
+        )
+
+    def test_group_password_expiry_format_mapping_none(self):
+        # When not configured, the mapping should be empty.
+        self.load_backends()
+
+        driver = PROVIDERS.identity_api._select_identity_driver(
+            CONF.identity.default_domain_id
+        )
+        self.assertEqual({}, driver.group.pw_expiry_mapping)
+
     def test_user_extra_attribute_mapping(self):
         self.config_fixture.config(
             group='ldap',
@@ -1567,6 +1789,29 @@ class LDAPIdentity(BaseLDAPIdentity):
         user = PROVIDERS.identity_api.create_user(user)
         dn, attrs = PROVIDERS.identity_api.driver.user._ldap_get(user['id'])
         self.assertThat([user['name']], matchers.Equals(attrs['description']))
+
+    def test_user_password_expiry_format_mapping_to_dict(self):
+        mapping = PROVIDERS.identity_api.driver.user._parse_expiry_mapping(
+            [
+                'shadowExpire:epoch_days',
+                'accountExpires:windows_filetime',
+                'pwdExpirationTime:generalized_time',
+            ]
+        )
+
+        expected_mapping = {
+            'shadowExpire': 'epoch_days',
+            'accountExpires': 'windows_filetime',
+            'pwdExpirationTime': 'generalized_time',
+        }
+        self.assertEqual(expected_mapping, mapping)
+
+    def test_user_password_expiry_format_mapping_invalid(self):
+        mapping = PROVIDERS.identity_api.driver.user._parse_expiry_mapping(
+            ['valid:epoch_days', 'no_colon', 'too:many:colons', '']
+        )
+        expected_mapping = {'valid': 'epoch_days'}
+        self.assertEqual(expected_mapping, mapping)
 
     def test_user_description_attribute_mapping(self):
         self.config_fixture.config(

@@ -11,11 +11,13 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+import datetime
 import uuid
 
 import ldap.filter
 from oslo_log import log
 from oslo_log import versionutils
+from oslo_utils import timeutils
 
 import keystone.conf
 from keystone import exception
@@ -36,6 +38,91 @@ _DEPRECATION_MSG = (
 READ_ONLY_LDAP_ERROR_MESSAGE = _("LDAP does not support write operations")
 
 LDAP_MATCHING_RULE_IN_CHAIN = "1.2.840.113556.1.4.1941"
+
+
+def _convert_epoch_days(value):
+    """Convert an LDAP epoch-days value to a UTC datetime.
+
+    Some LDAP schemas (e.g. RFC 2307 shadowAccount) store password
+    expiration as the number of days since the Unix epoch (1970-01-01).
+    For example, the ``shadowExpire`` attribute uses this format.
+
+    In Keystone's LDAP confir section this method can be referenced like this:
+    user_password_expiry_format_mapping = shadowExpire:epoch_days
+
+    :param value: Number of days since 1970-01-01 (as string or int).
+    :returns: A timezone-aware UTC datetime.
+    :raises: ValueError if the value cannot be converted to an integer.
+    """
+    days = int(value)
+    return datetime.datetime(
+        1970, 1, 1, tzinfo=datetime.timezone.utc
+    ) + datetime.timedelta(days=days)
+
+
+def _convert_windows_filetime(value):
+    """Convert a Windows FILETIME / AD timestamp to a UTC datetime.
+
+    Active Directory stores password expiration in attributes like
+    ``accountExpires`` as the number of 100-nanosecond intervals since
+    1601-01-01 00:00:00 UTC (Windows FILETIME epoch).
+
+    Two sentinel values mean "never expires":
+    - 0: the attribute was never set.
+    - 0x7FFFFFFFFFFFFFFF / Int64 max: AD uses this value to explicitly
+      indicate the account never expires.
+
+    In Keystone's LDAP confir section this method can be referenced like this:
+    user_password_expiry_format_mapping = accountExpires:windows_filetime
+
+    :param value: 100-nanosec intervals since 1601-01-01 (as string or int).
+    :returns: A timezone-aware UTC datetime, or None if the account
+              never expires.
+    """
+    intervals = int(value)
+    # 0 means "not set" and 0x7FFFFFFFFFFFFFFF (9223372036854775807, the
+    # maximum signed 64-bit integer) is Active Directory's sentinel value
+    # meaning "account never expires".
+    if intervals == 0 or intervals == 0x7FFFFFFFFFFFFFFF:
+        return None  # Never expires
+    return datetime.datetime(
+        1601, 1, 1, tzinfo=datetime.timezone.utc
+    ) + datetime.timedelta(microseconds=intervals / 10)
+
+
+def _convert_generalized_time(value):
+    """Convert an LDAP Generalized Time string to a datetime.
+
+    Some LDAP schemas store timestamps in the ITU X.680 Generalized Time
+    format (``YYYYMMDDHHmmSS.ffffffZ``). This is used, for example, by
+    the ``pwdExpirationTime`` attribute in the LDAP password policy
+    overlay (ppolicy).
+
+    In Keystone's LDAP confir section this method can be referenced like this:
+    user_password_expiry_format_mapping = pwdExpirationTime:generalized_time
+
+    :param value: A Generalized Time string, e.g. ``'20260319120000Z'``
+                  or ``'20260319120000.000000Z'``.
+    :returns: A timezone-aware UTC datetime parsed from the string.
+    """
+    for fmt in ('%Y%m%d%H%M%SZ', '%Y%m%d%H%M%S.%fZ'):
+        try:
+            return timeutils.parse_strtime(value, fmt=fmt)
+        except ValueError:
+            continue
+    raise ValueError(f'Unable to parse generalized time: {value}')
+
+
+# Some converters for LDAP password expiration formats.
+# epoch_days:        RFC 2307 shadowAccount (e.g. shadowExpire)
+# windows_filetime:  Active Directory (e.g. accountExpires)
+# generalized_time:  LDAP ppolicy overlay (e.g. pwdExpirationTime)
+# To support a new format, add a converter function and register it here.
+EXPIRY_CONVERTERS = {
+    'epoch_days': _convert_epoch_days,
+    'windows_filetime': _convert_windows_filetime,
+    'generalized_time': _convert_generalized_time,
+}
 
 
 class Identity(base.IdentityDriverBase):
@@ -63,6 +150,20 @@ class Identity(base.IdentityDriverBase):
             raise AssertionError(_('Invalid user / password'))
         if not user_id or not password:
             raise AssertionError(_('Invalid user / password'))
+
+        # Check if password is expired before attempting LDAP bind.
+        # Not all LDAP servers enforce password expiry at bind time
+        # (e.g. OpenLDAP shadowAccount is informational only).
+        # Checking here lets Keystone return a specific PasswordExpired
+        # error so clients can prompt for a password change.
+        # This mirrors the SQL backend behaviour.
+        if user_ref.get('password_expires_at'):
+            expires_at = timeutils.normalize_time(
+                user_ref['password_expires_at']
+            )
+            if timeutils.utcnow() >= expires_at:
+                raise exception.PasswordExpired(user_id=user_id)
+
         conn = None
         try:
             conn = self.user.get_connection(
@@ -287,6 +388,22 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
             else:
                 obj['enabled'] = enabled
         obj['dn'] = res[0]
+
+        lower_res = {k.lower(): v for k, v in res[1].items()}
+        for ldap_attr in self.pw_expiry_mapping:
+            if ldap_attr.lower() in lower_res:
+                value = lower_res[ldap_attr.lower()][0]
+                try:
+                    converter = EXPIRY_CONVERTERS[
+                        self.pw_expiry_mapping[ldap_attr]
+                    ]
+                    obj['password_expires_at'] = converter(value)
+                except (ValueError, TypeError):
+                    LOG.warning(
+                        'Invalid password expiry value for %s: %s',
+                        ldap_attr,
+                        value,
+                    )
 
         return obj
 
