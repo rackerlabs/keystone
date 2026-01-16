@@ -11,11 +11,13 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+import datetime
 import uuid
 
 import ldap.filter
 from oslo_log import log
 from oslo_log import versionutils
+from oslo_utils import timeutils
 
 import keystone.conf
 from keystone import exception
@@ -36,6 +38,33 @@ _DEPRECATION_MSG = (
 READ_ONLY_LDAP_ERROR_MESSAGE = _("LDAP does not support write operations")
 
 LDAP_MATCHING_RULE_IN_CHAIN = "1.2.840.113556.1.4.1941"
+
+
+def _convert_epoch_days(value):
+    days = int(value)
+    return datetime(
+        1970, 1, 1, tzinfo=datetime.timezone.utc
+    ) + datetime.timedelta(days=days)
+
+
+def _convert_windows_filetime(value):
+    intervals = int(value)
+    if intervals == 0 or intervals == 9223372036854775807:
+        return None  # Never expires
+    return datetime(
+        1601, 1, 1, tzinfo=datetime.timezone.utc
+    ) + datetime.timedelta(microseconds=intervals / 10)
+
+
+def _convert_generalized_time(value):
+    return timeutils.parse_strtime(value, fmt='%Y%m%d%H%M%S.%fZ')
+
+
+EXPIRY_CONVERTERS = {
+    'epoch_days': _convert_epoch_days,
+    'windows_filetime': _convert_windows_filetime,
+    'generalized_time': _convert_generalized_time,
+}
 
 
 class Identity(base.IdentityDriverBase):
@@ -63,6 +92,15 @@ class Identity(base.IdentityDriverBase):
             raise AssertionError(_('Invalid user / password'))
         if not user_id or not password:
             raise AssertionError(_('Invalid user / password'))
+
+        # Check if password is expired
+        if user_ref.get('password_expires_at'):
+            expires_at = timeutils.normalize_time(
+                user_ref['password_expires_at']
+            )
+            if timeutils.utcnow() >= expires_at:
+                raise exception.PasswordExpired(user_id=user_id)
+
         conn = None
         try:
             conn = self.user.get_connection(
@@ -287,6 +325,25 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
             else:
                 obj['enabled'] = enabled
         obj['dn'] = res[0]
+
+        # Process extra attributes from user_additional_attribute_mapping
+        lower_res = {k.lower(): v for k, v in res[1].items()}
+        for ldap_attr, keystone_attr in self.extra_attr_mapping.items():
+            if ldap_attr.lower() in lower_res:
+                value = lower_res[ldap_attr.lower()][0]
+                if ldap_attr in self.pw_expiry_mapping:
+                    try:
+                        converter = EXPIRY_CONVERTERS[
+                            self.pw_expiry_mapping[ldap_attr]
+                        ]
+                        res = converter(value)
+                        # days = int(value)
+                        # epoch = datetime(1970, 1, 1, tzinfo=timezone.utc)
+                        obj['password_expires_at'] = res
+                    except (ValueError, TypeError):
+                        LOG.warning('Invalid shadowExpire value: %s', value)
+                else:
+                    obj[keystone_attr] = value
 
         return obj
 
