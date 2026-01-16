@@ -350,6 +350,31 @@ API.
     ),
 )
 
+user_password_expiry_format_mapping = cfg.ListOpt(
+    'user_password_expiry_format_mapping',
+    default=[],
+    help=utils.fmt(
+        """
+A list of LDAP password expiry attribute name and converter method pairing.
+The expected format is
+'<ldap_expiry_param>:<format_converter_method>', where ldap_expiry_param is
+the LDAP object name for password expiration and format_converter_method is
+the converter that can convert to axpires_at time format.
+Example: shadowExpire:epoch_days,accountExpires:windows_filetime
+"""
+    ),
+)
+
+group_password_expiry_format_mapping = cfg.ListOpt(
+    'group_password_expiry_format_mapping',
+    default=[],
+    help=utils.fmt(
+        """
+A list of LDAP password expiry attribute name and converter method pairing.
+"""
+    ),
+)
+
 group_tree_dn = cfg.StrOpt(
     'group_tree_dn',
     help=utils.fmt(
@@ -676,6 +701,7 @@ ALL_OPTS = [
     user_enabled_emulation_dn,
     user_enabled_emulation_use_group_config,
     user_additional_attribute_mapping,
+    user_password_expiry_format_mapping,
     group_tree_dn,
     group_filter,
     group_objectclass,
@@ -686,6 +712,7 @@ ALL_OPTS = [
     group_desc_attribute,
     group_attribute_ignore,
     group_additional_attribute_mapping,
+    group_password_expiry_format_mapping,
     group_ad_nesting,
     tls_cacertfile,
     tls_cacertdir,
