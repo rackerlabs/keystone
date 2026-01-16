@@ -1372,6 +1372,7 @@ class BaseLdap:
     DEFAULT_OBJECTCLASS: str
     DEFAULT_FILTER: ty.Optional[str] = None
     DEFAULT_EXTRA_ATTR_MAPPING: list[str] = []
+    DEFAULT_PW_EXPIRY_FORMAT_MAPPING: list[str] = []
     NotFound: ty.Type[exception.Error]
     notfound_arg: ty.Optional[str] = None
     options_name: ty.Optional[str] = None
@@ -1448,6 +1449,17 @@ class BaseLdap:
             )
             self.extra_attr_mapping = self._parse_extra_attrs(attr_mapping)
 
+            pw_expiry_mapping_opt = (
+                f'{self.options_name}_password_expiry_format_mapping'
+            )
+            pw_expiry_mapping = (
+                getattr(conf.ldap, pw_expiry_mapping_opt)
+                or self.DEFAULT_PW_EXPIRY_FORMAT_MAPPING
+            )
+            self.pw_expiry_mapping = self._parse_expiry_mapping(
+                pw_expiry_mapping
+            )
+
             ldap_filter = f'{self.options_name}_filter'
             self.ldap_filter = (
                 getattr(conf.ldap, ldap_filter) or self.DEFAULT_FILTER
@@ -1469,6 +1481,24 @@ class BaseLdap:
             return exception.NotFound(target=object_id)
         else:
             return self.NotFound(**{self.notfound_arg: object_id})
+
+    @staticmethod
+    def _parse_expiry_mapping(option_list):
+        mapping = {}
+        for item in option_list:
+            try:
+                # TODO(lajoskatona): check also if ldap_attr is present
+                # in the self.extra_attr_mapping
+                ldap_attr, exp_format = item.split(':')
+            except ValueError:
+                LOG.warning(
+                    'Invalid password expiry format mapping: "%s". '
+                    'Format must be <ldap_attribute>:<expiry_format_mapping>',
+                    item,
+                )
+                continue
+            mapping[ldap_attr] = exp_format
+        return mapping
 
     @staticmethod
     def _parse_extra_attrs(option_list):
