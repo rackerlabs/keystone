@@ -16,6 +16,23 @@
       "message": "This does solve the issue of glance quota usage with application credentials enabled.",
       "revId": "8a42793e714efb0b5c1bb07bcb81d2b4ab59b600",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "97967130_a6250231",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2026-01-20T16:56:07Z",
+      "side": 1,
+      "message": "I think we should also backport these to stable branches, right?",
+      "revId": "8a42793e714efb0b5c1bb07bcb81d2b4ab59b600",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ],
   "submitRequirementResults": [
