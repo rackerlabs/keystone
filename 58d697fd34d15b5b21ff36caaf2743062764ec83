@@ -16,6 +16,98 @@
       "message": "Thanks Grzegorz!\n\nIf you guys need any assistance with the integration of Keycloak and Keystone; let me know, and I can try to help you all.\n\nEager to see this one merged \u003d), and then to propose other improvements we did on top of this one.",
       "revId": "58d697fd34d15b5b21ff36caaf2743062764ec83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb826900_22db4a67",
+        "filename": "doc/source/admin/federation/dynamic_project_assignments.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2026-01-26T12:31:18Z",
+      "side": 1,
+      "message": "nit: should be single \u003c",
+      "range": {
+        "startLine": 147,
+        "startChar": 203,
+        "endLine": 147,
+        "endChar": 205
+      },
+      "revId": "58d697fd34d15b5b21ff36caaf2743062764ec83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d0928b5_8a053a7e",
+        "filename": "doc/source/admin/federation/mapping_combinations.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2026-01-26T12:31:18Z",
+      "side": 1,
+      "message": "nit: missing backtick",
+      "range": {
+        "startLine": 1051,
+        "startChar": 2,
+        "endLine": 1051,
+        "endChar": 3
+      },
+      "revId": "58d697fd34d15b5b21ff36caaf2743062764ec83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f7e3eff_ad7ac34b",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2026-01-26T12:31:18Z",
+      "side": 1,
+      "message": "this should say 3.0?",
+      "range": {
+        "startLine": 244,
+        "startChar": 22,
+        "endLine": 244,
+        "endChar": 25
+      },
+      "revId": "58d697fd34d15b5b21ff36caaf2743062764ec83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7cb4d74_69e8afa6",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2026-01-26T12:31:18Z",
+      "side": 1,
+      "message": "this should say 3.0?",
+      "range": {
+        "startLine": 372,
+        "startChar": 48,
+        "endLine": 372,
+        "endChar": 51
+      },
+      "revId": "58d697fd34d15b5b21ff36caaf2743062764ec83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
