@@ -41,6 +41,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "648686bd_c1277939",
+        "filename": "doc/source/admin/federation/dynamic_project_assignments.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2026-01-26T12:40:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb826900_22db4a67",
+      "range": {
+        "startLine": 147,
+        "startChar": 203,
+        "endLine": 147,
+        "endChar": 205
+      },
+      "revId": "58d697fd34d15b5b21ff36caaf2743062764ec83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3d0928b5_8a053a7e",
@@ -54,6 +78,30 @@
       "writtenOn": "2026-01-26T12:31:18Z",
       "side": 1,
       "message": "nit: missing backtick",
+      "range": {
+        "startLine": 1051,
+        "startChar": 2,
+        "endLine": 1051,
+        "endChar": 3
+      },
+      "revId": "58d697fd34d15b5b21ff36caaf2743062764ec83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56c3c488_46e4fde7",
+        "filename": "doc/source/admin/federation/mapping_combinations.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2026-01-26T12:40:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d0928b5_8a053a7e",
       "range": {
         "startLine": 1051,
         "startChar": 2,
@@ -87,6 +135,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "18a0b34e_9a85f985",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2026-01-26T12:40:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f7e3eff_ad7ac34b",
+      "range": {
+        "startLine": 244,
+        "startChar": 22,
+        "endLine": 244,
+        "endChar": 25
+      },
+      "revId": "58d697fd34d15b5b21ff36caaf2743062764ec83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e7cb4d74_69e8afa6",
@@ -100,6 +172,30 @@
       "writtenOn": "2026-01-26T12:31:18Z",
       "side": 1,
       "message": "this should say 3.0?",
+      "range": {
+        "startLine": 372,
+        "startChar": 48,
+        "endLine": 372,
+        "endChar": 51
+      },
+      "revId": "58d697fd34d15b5b21ff36caaf2743062764ec83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d8d9722_5cbc75ca",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2026-01-26T12:40:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7cb4d74_69e8afa6",
       "range": {
         "startLine": 372,
         "startChar": 48,
