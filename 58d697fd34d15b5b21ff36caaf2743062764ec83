@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2e7f487_0d0e17e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2026-01-26T12:26:27Z",
+      "side": 1,
+      "message": "Thanks Grzegorz!\n\nIf you guys need any assistance with the integration of Keycloak and Keystone; let me know, and I can try to help you all.\n\nEager to see this one merged \u003d), and then to propose other improvements we did on top of this one.",
+      "revId": "58d697fd34d15b5b21ff36caaf2743062764ec83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
