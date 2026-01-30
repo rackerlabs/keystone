@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "518ce5c8_47d8fe5c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5890
+      },
+      "writtenOn": "2026-01-30T22:29:27Z",
+      "side": 1,
+      "message": "Would like to have this backported to stable/2025.2",
+      "revId": "634d16530fdc08059285c46ef9e8778043eda346",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
