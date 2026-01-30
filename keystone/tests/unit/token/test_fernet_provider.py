@@ -108,6 +108,20 @@ class TestFernetTokenProvider(unit.TestCase):
         )
         self.assertNotIn(expected_output, self.logging.output)
 
+    def test_no_crash_on_undefined_federated_tokens(self):
+        token = token_model.TokenModel()
+        token.user_id = '0123456789abcdef0123456789abcdef0123456789abcdef'
+        token.project_id = '0123456789abcdef0123456789abcdef0123456789abcdef'
+        token.expires_at = utils.isotime(
+            provider.default_expire_time(), subsecond=True
+        )
+        token.methods = ['password']
+        token.audit_id = provider.random_urlsafe_str()
+        token.is_federated = True
+        token_class = self.provider._determine_payload_class_from_token(token)
+        self.assertIsNotNone(token_class)
+
+
 
 class TestValidate(unit.TestCase):
     def setUp(self):

@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Avoid crash on federated tokens with fernet support.
+    [`bug 2139467 <https://bugs.launchpad.net/keystone/+bug/2139467>`_]
