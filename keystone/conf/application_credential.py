@@ -61,9 +61,43 @@ keystone database or open keystone to a DoS attack.
     ),
 )
 
+disallow_user_secrets = cfg.BoolOpt(
+    'disallow_user_secrets',
+    default=False,
+    help=utils.fmt(
+        """
+If set to true, users are not allowed to provide their own secret when
+creating an application credential. Instead, keystone will generate a
+random secret for them. This ensures all application credential secrets
+have high entropy and are not susceptible to weak password choices.
+"""
+    ),
+)
+
+max_lifetime_days = cfg.IntOpt(
+    'max_lifetime_days',
+    default=0,
+    min=0,
+    help=utils.fmt(
+        """
+Maximum allowed lifetime for application credentials in days. When set to a
+positive value, application credentials must have an expiration date and it
+must not exceed the maximum lifetime from creation time. A value of 0 means
+no restriction.
+"""
+    ),
+)
+
 
 GROUP_NAME = __name__.split('.')[-1]
-ALL_OPTS = [driver, caching, cache_time, user_limit]
+ALL_OPTS = [
+    driver,
+    caching,
+    cache_time,
+    user_limit,
+    disallow_user_secrets,
+    max_lifetime_days,
+]
 
 
 def register_opts(conf):

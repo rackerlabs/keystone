@@ -829,3 +829,94 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
                 expected_status_code=http.client.NO_CONTENT,
                 headers={"X-Auth-Token": token},
             )
+
+    def test_create_app_cred_user_secret_disallowed(self):
+        """Test that user-provided secrets are rejected when disallowed."""
+        self.config_fixture.config(
+            group='application_credential', disallow_user_secrets=True
+        )
+        with self.test_client() as c:
+            roles = [{'id': self.role_id}]
+            secret = 'supersecuresecret'
+            app_cred_body = self._app_cred_body(roles=roles, secret=secret)
+            token = self.get_scoped_token()
+            c.post(
+                f'/v3/users/{self.user_id}/application_credentials',
+                json=app_cred_body,
+                expected_status_code=http.client.BAD_REQUEST,
+                headers={'X-Auth-Token': token},
+            )
+
+    def test_create_app_cred_auto_secret_when_disallowed(self):
+        """Test that secrets are auto-generated when user secrets disallowed."""
+        self.config_fixture.config(
+            group='application_credential', disallow_user_secrets=True
+        )
+        with self.test_client() as c:
+            roles = [{'id': self.role_id}]
+            app_cred_body = self._app_cred_body(roles=roles)
+            token = self.get_scoped_token()
+            resp = c.post(
+                f'/v3/users/{self.user_id}/application_credentials',
+                json=app_cred_body,
+                expected_status_code=http.client.CREATED,
+                headers={'X-Auth-Token': token},
+            )
+        # Verify secret is auto-generated
+        self.assertIn('secret', resp.json['application_credential'])
+        self.assertIsNotNone(resp.json['application_credential']['secret'])
+
+    def test_create_app_cred_no_expiry_max_lifetime(self):
+        """Test missing expiration rejected when max_lifetime_days set."""
+        self.config_fixture.config(
+            group='application_credential', max_lifetime_days=90
+        )
+        with self.test_client() as c:
+            roles = [{'id': self.role_id}]
+            app_cred_body = self._app_cred_body(roles=roles)
+            token = self.get_scoped_token()
+            c.post(
+                f'/v3/users/{self.user_id}/application_credentials',
+                json=app_cred_body,
+                expected_status_code=http.client.BAD_REQUEST,
+                headers={'X-Auth-Token': token},
+            )
+
+    def test_create_app_cred_expiry_exceeds_max_lifetime(self):
+        """Test that expiration beyond max lifetime is rejected."""
+        self.config_fixture.config(
+            group='application_credential', max_lifetime_days=90
+        )
+        with self.test_client() as c:
+            roles = [{'id': self.role_id}]
+            # Set expiration to 180 days (exceeds 90 day limit)
+            expires = timeutils.utcnow() + datetime.timedelta(days=180)
+            expires = str(expires)
+            app_cred_body = self._app_cred_body(roles=roles, expires=expires)
+            token = self.get_scoped_token()
+            c.post(
+                f'/v3/users/{self.user_id}/application_credentials',
+                json=app_cred_body,
+                expected_status_code=http.client.BAD_REQUEST,
+                headers={'X-Auth-Token': token},
+            )
+
+    def test_create_app_cred_expiry_within_max_lifetime(self):
+        """Test that expiration within max lifetime is accepted."""
+        self.config_fixture.config(
+            group='application_credential', max_lifetime_days=90
+        )
+        with self.test_client() as c:
+            roles = [{'id': self.role_id}]
+            # Set expiration to 30 days (within 90 day limit)
+            expires = timeutils.utcnow() + datetime.timedelta(days=30)
+            expires = str(expires)
+            app_cred_body = self._app_cred_body(roles=roles, expires=expires)
+            token = self.get_scoped_token()
+            resp = c.post(
+                f'/v3/users/{self.user_id}/application_credentials',
+                json=app_cred_body,
+                expected_status_code=http.client.CREATED,
+                headers={'X-Auth-Token': token},
+            )
+        self.assertIn('expires_at', resp.json['application_credential'])
