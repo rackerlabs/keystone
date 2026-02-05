@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83554e3c_9f32d4b9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-02-05T13:26:41Z",
+      "side": 1,
+      "message": "The change itself is very good. And it is great that a protection test is added.\n\nThe problem is that the protection tests are non-voting, and nobody really looks into them. A unit test should be added for this change as well.",
+      "revId": "54db8340fe6488da801d7dd41019724d67d56ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
