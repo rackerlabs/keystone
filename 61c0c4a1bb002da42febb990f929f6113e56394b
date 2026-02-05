@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26eeca5c_a46e252a",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-02-05T11:09:47Z",
+      "side": 1,
+      "message": "I don\u0027t understand this. The payload of the token is neither federation-project-, nor federation-domain-scoped, nor federation-unscoped. What is the type then? Can it also be federation-system-scoped?\n\nThe scope type should not fallback to FederatedUnscopedPayload in this case. It should be clearly determined what type of scope it is.",
+      "revId": "61c0c4a1bb002da42febb990f929f6113e56394b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
