@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Added ``[auth]/totp`` configuration option to support overriding the
+    TOTP authentication plugin loaded.

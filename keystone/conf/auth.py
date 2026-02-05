@@ -105,6 +105,17 @@ authentication plugin.
     ),
 )
 
+totp = cfg.StrOpt(
+    'totp',
+    help=utils.fmt(
+        """
+Entry point for the totp auth plugin module in the `keystone.auth.totp`
+namespace. You do not need to set this unless you are overriding keystone's own
+`totp` authentication plugin.
+"""
+    ),
+)
+
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
@@ -115,6 +126,7 @@ ALL_OPTS = [
     oauth1,
     mapped,
     application_credential,
+    totp,
 ]
 
 
