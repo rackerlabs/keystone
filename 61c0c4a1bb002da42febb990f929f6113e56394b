@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "29d5e34e_2af176e2",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-02-05T12:50:49Z",
+      "side": 1,
+      "message": "The test passes for me without the change to the code.",
+      "revId": "61c0c4a1bb002da42febb990f929f6113e56394b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "26eeca5c_a46e252a",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 2
@@ -32,6 +49,24 @@
       "side": 1,
       "message": "Tell me what kind of token it is then? Whatever skyline is doing causes the code to come out of that handled else case and crash keystone. The fallback case in the Un-federated is to say unscoped so I made this match.\n\nThe function is unsound as it is as it must return a non-None type yet it is returning None.",
       "parentUuid": "26eeca5c_a46e252a",
+      "revId": "61c0c4a1bb002da42febb990f929f6113e56394b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40679484_88914853",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-02-05T12:50:49Z",
+      "side": 1,
+      "message": "Sorry, i don\u0027t know what kind of token it is. The bugreport doesn\u0027t offer any insight into it. And the test creates project-scoped federated token, not an unscoped token.\n\nHow was the token obtained? What are the exact steps to reproduce the problem? This needs to be listed in the bugreport. After that, the test needs to reflect these steps too.",
+      "parentUuid": "bbcb23f0_d4944c44",
       "revId": "61c0c4a1bb002da42febb990f929f6113e56394b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
