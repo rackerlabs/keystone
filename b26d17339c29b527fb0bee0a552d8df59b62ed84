@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "043cc488_a4fb2fb1",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-02-05T13:30:45Z",
+      "side": 1,
+      "message": "The unit test where this is being added is wrong. It checks that a case where user id begins with 0.\n\nThe checks should be added into a separate unit test.",
+      "range": {
+        "startLine": 505,
+        "startChar": 8,
+        "endLine": 505,
+        "endChar": 34
+      },
+      "revId": "b26d17339c29b527fb0bee0a552d8df59b62ed84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
