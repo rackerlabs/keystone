@@ -13,6 +13,7 @@
 # This file handles all flask-restful resources for /v3/users
 
 import base64
+import datetime
 import http.client
 import secrets
 import uuid
@@ -719,6 +720,18 @@ class UserAppCredListCreateResource(ks_flask.ResourceBase):
                 'Cannot create an application credential for another user.'
             )
             raise ks_exception.ForbiddenAction(action=action)
+
+        # Check if user-provided secrets are disallowed
+        if CONF.application_credential.disallow_user_secrets:
+            if app_cred_data.get('secret'):
+                detail = _(
+                    'User-provided secrets are not allowed. '
+                    'Remove the secret field from the request.'
+                )
+                raise ks_exception.ApplicationCredentialValidationError(
+                    detail=detail
+                )
+
         project_id = self.oslo_context.project_id
         app_cred_data = self._assign_unique_id(app_cred_data)
         if not app_cred_data.get('secret'):
@@ -730,6 +743,34 @@ class UserAppCredListCreateResource(ks_flask.ResourceBase):
             app_cred_data['expires_at'] = utils.parse_expiration_date(
                 app_cred_data['expires_at']
             )
+
+        # Check max_lifetime_days constraint
+        max_lifetime = CONF.application_credential.max_lifetime_days
+        if max_lifetime > 0:
+            if not app_cred_data.get('expires_at'):
+                detail = _(
+                    'Application credentials must have an expiration date. '
+                    'Provide an expires_at value.'
+                )
+                raise ks_exception.ApplicationCredentialValidationError(
+                    detail=detail
+                )
+            # Check if expiration exceeds max lifetime
+            max_expiry = datetime.datetime.now(
+                datetime.timezone.utc
+            ) + datetime.timedelta(days=max_lifetime)
+            if app_cred_data['expires_at'] > max_expiry:
+                detail = (
+                    _(
+                        'Application credential expiration exceeds the maximum '
+                        'allowed lifetime of %d days.'
+                    )
+                    % max_lifetime
+                )
+                raise ks_exception.ApplicationCredentialValidationError(
+                    detail=detail
+                )
+
         if app_cred_data.get('access_rules'):
             for access_rule in app_cred_data['access_rules']:
                 # If user provides an access rule by ID, it will be looked up
