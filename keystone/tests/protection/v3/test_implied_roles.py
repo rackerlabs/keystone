@@ -70,9 +70,9 @@ class _SystemUserImpliedRoleTests:
 
         with self.test_client() as c:
             r = c.get('/v3/role_inferences', headers=self.headers)
-            # There should be three role inferences: two from the defaults and
-            # one from the test setup
-            self.assertEqual(3, len(r.json['role_inferences']))
+            # There should be four role inferences: three from the defaults
+            # and one from the test setup
+            self.assertEqual(4, len(r.json['role_inferences']))
 
 
 class _SystemReaderAndMemberImpliedRoleTests:
