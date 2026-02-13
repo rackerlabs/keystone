@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d09f5869_47d0d945",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2026-02-13T09:02:12Z",
+      "side": 1,
+      "message": "I have to double check this, the fact that user and group cfg options kind of mirrored this way confuse me regarding these LDAP options now, so I have to read more and think about it.",
+      "range": {
+        "startLine": 368,
+        "startChar": 0,
+        "endLine": 376,
+        "endChar": 1
+      },
+      "revId": "0aa6bfa705502aaa6e7dc314528b40d32320ad56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
