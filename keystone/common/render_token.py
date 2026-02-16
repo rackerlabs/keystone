@@ -28,7 +28,8 @@ def render_token_response_from_model(token, include_catalog=True):
                 },
                 'id': token.user_id,
                 'name': token.user['name'],
-                'password_expires_at': token.user['password_expires_at'],
+                'password_expires_at': token.user.get(
+                    'password_expires_at', None),
             },
             'audit_ids': token.audit_ids,
             'expires_at': token.expires_at,
