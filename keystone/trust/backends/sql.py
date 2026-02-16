@@ -12,12 +12,14 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_context import context as oslo_context
 from oslo_utils import timeutils
 import sqlalchemy
 from sqlalchemy.ext.hybrid import hybrid_property
 
 from keystone.common import sql
 from keystone import exception
+from keystone.i18n import _
 from keystone.trust.backends import base
 
 # The maximum number of iterations that will be attempted for optimistic
@@ -82,8 +84,19 @@ class TrustRole(sql.ModelBase):
 
 
 class Trust(base.TrustDriverBase):
+    def _ensure_create_trust_allowed(self, trust):
+        request_context = oslo_context.get_current()
+        if (
+            request_context
+            and request_context.user_id
+            and request_context.user_id != trust.get('trustor_user_id')
+        ):
+            action = _("The authenticated user should match the trustor")
+            raise exception.ForbiddenAction(action=action)
+
     @sql.handle_conflicts(conflict_type='trust')
     def create_trust(self, trust_id, trust, roles):
+        self._ensure_create_trust_allowed(trust)
         with sql.session_for_write() as session:
             ref = TrustModel.from_dict(trust)
             ref['id'] = trust_id

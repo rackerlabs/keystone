@@ -38,6 +38,7 @@ repos:
     hooks:
       - id: hacking
         additional_dependencies:
+          - setuptools<81
           - flake8-import-order~=0.18.2
         exclude: '^(doc|releasenotes|tools|devstack)/.*$'
   - repo: https://github.com/openstack/bashate
