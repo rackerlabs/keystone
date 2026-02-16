@@ -268,10 +268,6 @@ class TrustsResource(TrustResourceBase):
             action = _('At least one role should be specified')
             raise exception.ForbiddenAction(action=action)
 
-        if self.oslo_context.user_id != trust.get('trustor_user_id'):
-            action = _("The authenticated user should match the trustor")
-            raise exception.ForbiddenAction(action=action)
-
         # Ensure the trustee exists
         PROVIDERS.identity_api.get_user(trust['trustee_user_id'])
 
