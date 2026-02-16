@@ -239,6 +239,21 @@ class TestAuthMFA(unit.TestCase):
             sot.check_auth_methods_against_rules(user_id, ["password"])
         )
 
+    def test_missing_user_options_does_not_crash(self):
+        identity_mock = mock.MagicMock()
+        PROVIDERS._register_provider_api("identity_api", identity_mock)
+
+        user_id = 'fake-user-id'
+        identity_mock.get_user.return_value = {
+            'id': user_id,
+            'name': 'test-user',
+        }
+
+        sot = auth.core.UserMFARulesValidator
+        result = sot.check_auth_methods_against_rules(user_id, ['password'])
+
+        self.assertTrue(result)
+
 
 class TestMapped(unit.TestCase):
     def config_files(self):
