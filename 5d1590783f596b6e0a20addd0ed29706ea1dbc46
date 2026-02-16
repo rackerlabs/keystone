@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b915b755_e3af39f9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2026-02-16T17:33:29Z",
+      "side": 1,
+      "message": "Please take a moment to read https://wiki.openstack.org/wiki/GitCommitMessages to find commit message guideline.\n\nAlso the message describes the change itself and does not explain why we need it. What\u0027s the actual problem resolved by this ?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 138
+      },
+      "revId": "5d1590783f596b6e0a20addd0ed29706ea1dbc46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7311e4a_ce8879e2",
+        "filename": "releasenotes/notes/move-trust-validation-to-sql-driver-92b7caca995aeaad.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2026-02-16T17:33:29Z",
+      "side": 1,
+      "message": "If this is an internal change then we don\u0027t need a release note, IMHO. This is for users.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 33
+      },
+      "revId": "5d1590783f596b6e0a20addd0ed29706ea1dbc46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
