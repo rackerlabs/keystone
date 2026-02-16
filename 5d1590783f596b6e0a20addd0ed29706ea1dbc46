@@ -24,6 +24,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9916746_5fc73ff5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 34391
+      },
+      "writtenOn": "2026-02-16T18:38:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b915b755_e3af39f9",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 138
+      },
+      "revId": "5d1590783f596b6e0a20addd0ed29706ea1dbc46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f7311e4a_ce8879e2",
@@ -37,6 +61,30 @@
       "writtenOn": "2026-02-16T17:33:29Z",
       "side": 1,
       "message": "If this is an internal change then we don\u0027t need a release note, IMHO. This is for users.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 33
+      },
+      "revId": "5d1590783f596b6e0a20addd0ed29706ea1dbc46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36387b95_27abc5bf",
+        "filename": "releasenotes/notes/move-trust-validation-to-sql-driver-92b7caca995aeaad.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 34391
+      },
+      "writtenOn": "2026-02-16T18:38:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f7311e4a_ce8879e2",
       "range": {
         "startLine": 2,
         "startChar": 0,
