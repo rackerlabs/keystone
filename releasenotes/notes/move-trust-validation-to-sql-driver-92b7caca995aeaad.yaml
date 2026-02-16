@@ -1,0 +1,7 @@
+---
+other:
+  - |
+    Moved the validation ensuring the authenticated user matches the trustor
+    during trust creation from the API layer to the Trust SQL driver. No
+    functional or API behavior changes are introduced; this is an internal
+    refactor to improve layering.
