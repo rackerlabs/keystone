@@ -1,0 +1,17 @@
+---
+fixes:
+  - >
+    Keystone now relies on oslo policy to enforce that the authenticated user
+    matches ``trustor_user_id`` during trust creation. A redundant controller
+    check in the v3 trusts API was removed. Default API behavior is unchanged: trust
+    creation still fails with ``ForbiddenAction`` when the authenticated user
+    differs from the trustor.
+
+security:
+  - >
+    Operators should ensure that their policy for ``identity:create_trust``
+    enforces that the authenticated user matches the trustor, for example by
+    including ``user_id:%(trust.trustor_user_id)s``. This preserves the expected
+    restriction when customizing policy.
+    When ``identity:create_trust`` is not overridden, the default policy already
+    includes ``user_id:%(trust.trustor_user_id)s``.
