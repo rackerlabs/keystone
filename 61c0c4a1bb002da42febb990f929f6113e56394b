@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "820295d0_b0db7691",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-02-17T10:34:33Z",
+      "side": 1,
+      "message": "Looking at the code I think it would make sense to try setting system scope into the token. The same could be actually with the trust, but then much more data should be set.",
+      "parentUuid": "29d5e34e_2af176e2",
+      "revId": "61c0c4a1bb002da42febb990f929f6113e56394b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "26eeca5c_a46e252a",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 2
@@ -67,6 +85,24 @@
       "side": 1,
       "message": "Sorry, i don\u0027t know what kind of token it is. The bugreport doesn\u0027t offer any insight into it. And the test creates project-scoped federated token, not an unscoped token.\n\nHow was the token obtained? What are the exact steps to reproduce the problem? This needs to be listed in the bugreport. After that, the test needs to reflect these steps too.",
       "parentUuid": "bbcb23f0_d4944c44",
+      "revId": "61c0c4a1bb002da42febb990f929f6113e56394b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0d4dc7b_e4343b50",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-02-17T10:34:33Z",
+      "side": 1,
+      "message": "I absolutely agree with this change. The code is buggy on many places and potentially allows having `is_federated` flag without anything else to match properly. From the federation logic pov the token can be only project, domain or unscoped. From the token_model code pov it is enough to have an empty project_id (\"\" instead of none) to be considered as a project scoped (the same for domain, system, trust). Failed condition hints the token could be matching system or trust scope validation. But that makes on sense and should be prohibited.\nSomehow the \"user\" has been able to authenticate already passing the scope information and we are here now in the identification of which token payload type we are going to apply, for federated login it can be either project, domain or unscoped.\nIt would be good to debug this situation deeper, but it is only going to be possible with direct code changes exposing internal data what we can\u0027t have normally due to the security constraints.",
+      "parentUuid": "40679484_88914853",
       "revId": "61c0c4a1bb002da42febb990f929f6113e56394b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
