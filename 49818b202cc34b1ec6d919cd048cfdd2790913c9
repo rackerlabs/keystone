@@ -142,6 +142,30 @@
       },
       "revId": "49818b202cc34b1ec6d919cd048cfdd2790913c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9cafc8cf_72ad76ea",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2026-02-17T15:42:12Z",
+      "side": 1,
+      "message": "I\u0027ve not tested this actually but I think you are correct and trust.trustor_user_id !\u003d user_id is checked both at policy later and code logic and we can remove the latter. Can you try customizing the rule and see if works (I expect not), and then removing the rule fixes it ? Once that is confirmed we can create a bug to track this work, I think.\n\nNote that the fix has theoretically upgrade impact in deployments overriding create_trust policy, in cse that trustor_user_id part is removed, so we should document that impact properly in a release note.",
+      "parentUuid": "3aec7dae_2a937a93",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 24
+      },
+      "revId": "49818b202cc34b1ec6d919cd048cfdd2790913c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
