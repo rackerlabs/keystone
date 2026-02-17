@@ -22,6 +22,30 @@
       },
       "revId": "49818b202cc34b1ec6d919cd048cfdd2790913c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "791fde3b_d7e7d60b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 34391
+      },
+      "writtenOn": "2026-02-17T14:02:15Z",
+      "side": 1,
+      "message": "Hi Takashi, thanks for the swift feedback.\n\nI agree that removing it from the API layer would possibly expose a security risk when a Keystone admin already overrides the Trust SQL backend, and I agree that it is not a purely SQL-backend change.\n\nAnother solution would be to make the validation in the API layer optional using an oslo config opt (defaults to validation enabled). What are your thoughts on this?\n\n\n```\n[trust]\nvalidate_trustor \u003d True\n```",
+      "parentUuid": "9e4b4745_faf795ce",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 24
+      },
+      "revId": "49818b202cc34b1ec6d919cd048cfdd2790913c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
