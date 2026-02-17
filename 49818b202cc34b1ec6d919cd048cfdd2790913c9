@@ -94,6 +94,30 @@
       },
       "revId": "49818b202cc34b1ec6d919cd048cfdd2790913c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e57ce946_d938a203",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2026-02-17T14:50:52Z",
+      "side": 1,
+      "message": "I\u0027m still unsure if the check should be done within backend for the described use case. It sounds like more general requirement which is independent from backend mechanism.\n\nThen IMO this check shouldn\u0027t be implemented within backend and should be implemented at api layer, and we should allow customization for policy rules. That\u0027s how in general we apply access control for resources.",
+      "parentUuid": "a610c2f0_d4c17cc8",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 24
+      },
+      "revId": "49818b202cc34b1ec6d919cd048cfdd2790913c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
