@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d84eb3a_c4d0764d",
+        "filename": ".pre-commit-config.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2026-02-17T14:30:09Z",
+      "side": 1,
+      "message": "This likely conflicts with global requirements. We should bump flake8-import-order instead.",
+      "range": {
+        "startLine": 41,
+        "startChar": 12,
+        "endLine": 41,
+        "endChar": 25
+      },
+      "revId": "8da61709886e9b0c553969582652e422f6e2204b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
