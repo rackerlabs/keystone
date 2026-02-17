@@ -118,6 +118,30 @@
       },
       "revId": "49818b202cc34b1ec6d919cd048cfdd2790913c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3aec7dae_2a937a93",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 34391
+      },
+      "writtenOn": "2026-02-17T15:06:57Z",
+      "side": 1,
+      "message": "That sounds reasonable and flexible.\n\nI currently see this policy being enforced in create_trust(). So removing the static validation statement would still enforce the authenticated user being the trustor AFAICS.\n\n```\nRULE_TRUST_OWNER \u003d \u0027user_id:%(trust.trustor_user_id)s\u0027\n...\n    policy.DocumentedRuleDefault(\n        name\u003dbase.IDENTITY % \u0027create_trust\u0027,\n        check_str\u003dbase.RULE_TRUST_OWNER,\n        # FIXME(lbragstad): Trusts have the ability to optionally include a\n        # project, but until trusts deal with system scope it\u0027s not really\n        # useful. For now, this should be a project only operation.\n        scope_types\u003d[\u0027project\u0027],\n        description\u003d\u0027Create trust.\u0027,\n        operations\u003d[{\u0027path\u0027: \u0027/v3/OS-TRUST/trusts\u0027, \u0027method\u0027: \u0027POST\u0027}],\n    ),\n```\n\nWould simply removing the redundant static validation if-condition be acceptable? Thanks.",
+      "parentUuid": "e57ce946_d938a203",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 24
+      },
+      "revId": "49818b202cc34b1ec6d919cd048cfdd2790913c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
