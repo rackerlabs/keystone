@@ -46,6 +46,30 @@
       },
       "revId": "49818b202cc34b1ec6d919cd048cfdd2790913c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44cfd835_20583290",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2026-02-17T14:26:56Z",
+      "side": 1,
+      "message": "So you want to \"disable\" the check for your backend, not enforcing it, right ? I still don\u0027t understand why that is required specifically for your backend. Maybe reporting a bug with more details can help.\n\nAlso, note that removing the check exposes a huge risk becasue any user can create a trust to access resources of a different user, and that shouldn\u0027t be open for any users. I think the right approach is to create a separate policy rule, but I\u0027m unsure if that\u0027s an acceptable approach without understanding the actual use case where this is specifically needed.",
+      "parentUuid": "791fde3b_d7e7d60b",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 24
+      },
+      "revId": "49818b202cc34b1ec6d919cd048cfdd2790913c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
