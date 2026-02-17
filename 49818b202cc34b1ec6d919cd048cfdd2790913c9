@@ -166,6 +166,30 @@
       },
       "revId": "49818b202cc34b1ec6d919cd048cfdd2790913c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fca1ce3_61cef562",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 34391
+      },
+      "writtenOn": "2026-02-17T22:00:23Z",
+      "side": 1,
+      "message": "Hey Takashi, verified and it indeed works as expected (Oslo policy still restricts by default).\n\n- Updated the Change description\n\n- Added a reno file\n\nPlease let me know if there\u0027s anything left to do. Thanks.",
+      "parentUuid": "9cafc8cf_72ad76ea",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 24
+      },
+      "revId": "49818b202cc34b1ec6d919cd048cfdd2790913c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
