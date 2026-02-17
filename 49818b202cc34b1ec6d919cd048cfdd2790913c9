@@ -70,6 +70,30 @@
       },
       "revId": "49818b202cc34b1ec6d919cd048cfdd2790913c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a610c2f0_d4c17cc8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 34391
+      },
+      "writtenOn": "2026-02-17T14:45:23Z",
+      "side": 1,
+      "message": "Thanks for the questions, and we absolutely understand the risks here.\n\nWe have some operational workflows that require admin controlled impersonation, similar to what systems like Keycloak support, where administrators can act in a user’s context for automation or support scenarios. Because of these needs, we would like the flexibility to handle the validation in the backend instead of having a non overridable check in the API.\n\nThe intention is not to weaken the default behavior or open this to regular users. The default backend continues to enforce the check, and any change would be an explicit operator decision with proper controls.\n\nMoving the validation into the backend (or being able to disable the API layer validation) is simply the first step to make this possible in a clean and consistent way.",
+      "parentUuid": "44cfd835_20583290",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 24
+      },
+      "revId": "49818b202cc34b1ec6d919cd048cfdd2790913c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
