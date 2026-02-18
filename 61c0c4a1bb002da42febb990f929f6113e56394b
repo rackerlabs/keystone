@@ -105,6 +105,24 @@
       "parentUuid": "40679484_88914853",
       "revId": "61c0c4a1bb002da42febb990f929f6113e56394b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b8081f4_c7c0ceaa",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5890
+      },
+      "writtenOn": "2026-02-18T15:27:14Z",
+      "side": 1,
+      "message": "I\u0027m happy to make any updates needed. I just don\u0027t know how to proceed. I\u0027m not really sure how but skyline makes keystone crash with regularity.",
+      "parentUuid": "c0d4dc7b_e4343b50",
+      "revId": "61c0c4a1bb002da42febb990f929f6113e56394b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
