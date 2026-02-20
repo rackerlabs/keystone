@@ -16,6 +16,24 @@
       "message": "Yeah this should have been documented when https://review.opendev.org/c/openstack/keystone/+/424334 was merged ...",
       "revId": "66061afea309116662eed9497c5e1c57138f3f03",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3861c87c_29c000f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2026-02-20T14:26:10Z",
+      "side": 1,
+      "message": "(and also https://review.opendev.org/c/openstack/keystone/+/678322 which touched project and role, though role schema isn\u0027t documented anywhere)",
+      "parentUuid": "f3762243_d3fb35c7",
+      "revId": "66061afea309116662eed9497c5e1c57138f3f03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
