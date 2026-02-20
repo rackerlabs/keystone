@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3762243_d3fb35c7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2026-02-20T14:22:52Z",
+      "side": 1,
+      "message": "Yeah this should have been documented when https://review.opendev.org/c/openstack/keystone/+/424334 was merged ...",
+      "revId": "66061afea309116662eed9497c5e1c57138f3f03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
