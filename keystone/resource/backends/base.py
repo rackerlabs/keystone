@@ -208,6 +208,8 @@ class ResourceDriverBase(metaclass=abc.ABCMeta):
                     type: string
                 is_domain:
                     type: boolean
+                options:
+                    type: dictionary
             required: [id, name, domain_id]
             additionalProperties: true
 

@@ -79,6 +79,8 @@ class IdentityDriverBase(metaclass=abc.ABCMeta):
                 type: boolean
             default_project_id:
                 type: string
+            options:
+                type: dictionary
         required: [id, name, domain_id, enabled]
         additionalProperties: True
 
@@ -98,6 +100,8 @@ class IdentityDriverBase(metaclass=abc.ABCMeta):
                 type: boolean
             default_project_id:
                 type: string
+            options:
+                type: dictionary
         required: [id, name, enabled]
         additionalProperties: True
         # Note that domain_id is not allowed as a property
