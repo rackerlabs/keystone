@@ -701,7 +701,7 @@ class DomainConfigTests:
             res = PROVIDERS.domain_config_api.get_config_with_sensitive_info(
                 self.domain['id']
             )
-        self.assertFalse(mock_log.warn.called)
+        self.assertFalse(mock_log.warning.called)
         # The escaping '%' should have been removed
         self.assertEqual('my_url/%(password)s', res['ldap']['url'])
 
