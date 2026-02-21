@@ -83,7 +83,7 @@ class CliLoggingTestCase(unit.BaseTestCase):
             fixtures.MockPatchObject(CONF, 'command', FakeConfCommand())
         )
 
-        self.logging = self.useFixture(fixtures.FakeLogger(level=log.WARN))
+        self.logging = self.useFixture(fixtures.FakeLogger(level=log.WARNING))
 
     def test_absent_config_logs_warning(self):
         expected_msg = 'Config file not found, using default configs.'

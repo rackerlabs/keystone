@@ -273,7 +273,9 @@ class TestSecurityErrorTranslation(unit.BaseTestCase):
         super().setUp()
         self.config_fixture = self.useFixture(config_fixture.Config(CONF))
         self.config_fixture.config(insecure_debug=False)
-        self.warning_log = self.useFixture(fixtures.FakeLogger(level=log.WARN))
+        self.warning_log = self.useFixture(
+            fixtures.FakeLogger(level=log.WARNING)
+        )
 
         exception._FATAL_EXCEPTION_FORMAT_ERRORS = False
         self.addCleanup(
