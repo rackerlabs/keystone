@@ -16,6 +16,23 @@
       "message": "Hello guys, \nAbout this one, do you want some other addition or changes here?",
       "revId": "e6a15ba337bbf7950e707b04bbbe3ea609b9a131",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9abe3fa6_43f731b7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2026-02-22T19:55:17Z",
+      "side": 1,
+      "message": "Thanks Grzegorz Grasza for the previous review. Are you still with a +2 on this one?",
+      "revId": "e6a15ba337bbf7950e707b04bbbe3ea609b9a131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
