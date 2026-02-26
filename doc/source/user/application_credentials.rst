@@ -181,6 +181,16 @@ may also delegate more fine-grained access control by using access rules.
    Application credentials with access rules require additional configuration
    of each service that will use it. See below for details.
 
+.. warning::
+
+   Access rules are enforced by `keystonemiddleware
+   <https://docs.openstack.org/keystonemiddleware/latest/>`__ on downstream
+   OpenStack services (Nova, Cinder, Swift, etc.). Keystone
+   does **not** enforce access rules on its own identity API endpoints.
+   Access to Keystone's API is governed solely by the role-based policy
+   associated with the application credential's roles. Specifying
+   ``"service": "identity"`` in an access rule has no effect.
+
 If application credentials with access rules are required, an OpenStack
 service using keystonemiddleware to authenticate with keystone, needs to
 define ``service_type`` in its configuration file. Following is an example for the

@@ -39,6 +39,15 @@ their application credentials by using access rules. For example, to create an
 application credential that is constricted to creating servers in nova, the
 user can add the following access rules:
 
+.. note::
+
+   Access rules are enforced by keystonemiddleware on downstream OpenStack
+   services (Nova, Cinder, Swift, etc.). Keystone does not enforce access
+   rules on its own identity API endpoints. Access to Keystone's API is
+   governed solely by the role-based policy associated with the application
+   credential. Specifying ``"service": "identity"`` in an access rule has
+   no effect.
+
 ::
 
     "access_rules": [
