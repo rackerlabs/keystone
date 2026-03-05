@@ -200,7 +200,7 @@ IDP_ATTRIBUTE_MAPPING_SCHEMA_1_0 = {
                 "domain": {"$ref": "#/definitions/domain"},
             },
             "additionalProperties": False,
-            "required": ["name", "domain"],
+            "required": ["name"],
         },
     },
 }
@@ -571,29 +571,25 @@ class RuleProcessor:
                 return group
 
             group_dicts = [convert_json(g) for g in group_names_list]
-            for g in group_dicts:
-                if 'domain' not in g:
-                    msg = _(
-                        "Invalid rule: %(identity_value)s. Both "
-                        "'groups' and 'domain' keywords must be "
-                        "specified."
-                    )
-                    msg = msg % {'identity_value': identity_value}
-                    raise exception.ValidationError(msg)
+            # NOTE: Groups without a 'domain' key are allowed through.
+            # The auth plugin layer will default their domain to the
+            # IdP's domain_id, mirroring user domain behavior
+            # (see apply_mapping_filter in auth/plugins/mapped.py).
         else:
-            if 'domain' not in identity_value:
-                msg = _(
-                    "Invalid rule: %(identity_value)s. Both "
-                    "'groups' and 'domain' keywords must be "
-                    "specified."
-                )
-                msg = msg % {'identity_value': identity_value}
-                raise exception.ValidationError(msg)
             group_names_list = self._ast_literal_eval(identity_value['groups'])
-            domain = identity_value['domain']
-            group_dicts = [
-                {'name': name, 'domain': domain} for name in group_names_list
-            ]
+            domain = identity_value.get('domain')
+            if domain:
+                group_dicts = [
+                    {'name': name, 'domain': domain}
+                    for name in group_names_list
+                ]
+            else:
+                # NOTE: When no domain is specified, produce group dicts
+                # without a domain. The auth plugin layer will default
+                # their domain to the IdP's domain_id, mirroring user
+                # domain behavior (see apply_mapping_filter in
+                # auth/plugins/mapped.py).
+                group_dicts = [{'name': name} for name in group_names_list]
         return group_dicts
 
     def normalize_user(self, user, default_mapping_domain):
@@ -710,7 +706,10 @@ class RuleProcessor:
         }
 
     def process_group_by_name(self, group, groups_by_domain):
-        domain = group['domain'].get('name') or group['domain'].get('id')
+        if 'domain' in group:
+            domain = group['domain'].get('name') or group['domain'].get('id')
+        else:
+            domain = None
         groups_by_domain.setdefault(domain, []).append(group)
         return self.extract_groups(groups_by_domain)
 

@@ -2974,6 +2974,156 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         self.assertEqual(r.user_domain["id"], domain_ref["id"])
         self.assertNotEqual(r.user_domain["id"], self.idp["domain_id"])
 
+    def test_group_no_domain_defaults_to_idp_domain_direct(self):
+        """Test that a direct group-by-name mapping without domain works.
+
+        When a mapping rule assigns a group by name without specifying a
+        domain, the group should be resolved in the IdP's domain.
+
+        The test scenario is:
+         - Create a group in the IdP's auto-created domain
+         - Update the mapping to reference that group by name only
+         - Issue an unscoped token
+         - Verify the token contains the group
+
+        """
+        idp_domain_id = self.idp['domain_id']
+
+        group = unit.new_group_ref(
+            domain_id=idp_domain_id, name='idp_domain_group'
+        )
+        group = PROVIDERS.identity_api.create_group(group)
+
+        # Grant a role so the group is useful for scoping
+        PROVIDERS.assignment_api.create_grant(
+            self.role_employee['id'],
+            group_id=group['id'],
+            project_id=self.proj_employees['id'],
+        )
+
+        # Mapping references group by name only -- no domain specified
+        rules = {
+            'rules': [
+                {
+                    'local': [
+                        {'user': {'name': '{0}'}},
+                        {'group': {'name': 'idp_domain_group'}},
+                    ],
+                    'remote': [
+                        {'type': 'UserName'},
+                        {
+                            'type': 'orgPersonType',
+                            'any_one_of': ['NoDomainGroup'],
+                        },
+                    ],
+                }
+            ]
+        }
+        PROVIDERS.federation_api.update_mapping(self.mapping['id'], rules)
+        r = self._issue_unscoped_token(
+            assertion='GROUP_NO_DOMAIN_DIRECT_ASSERTION'
+        )
+        token_group_ids = {g['id'] for g in r.federated_groups}
+        self.assertIn(group['id'], token_group_ids)
+
+    def test_group_explicit_domain_still_honored(self):
+        """Regression: explicit group domain is preserved, not overwritten.
+
+        When a mapping rule specifies an explicit domain for a group,
+        that domain must be used even when it differs from the IdP's
+        domain.
+
+        """
+        # Create a group in domainA (not the IdP's auto-created domain)
+        group = unit.new_group_ref(
+            domain_id=self.domainA['id'], name='explicit_domain_group'
+        )
+        group = PROVIDERS.identity_api.create_group(group)
+
+        PROVIDERS.assignment_api.create_grant(
+            self.role_employee['id'],
+            group_id=group['id'],
+            project_id=self.proj_employees['id'],
+        )
+
+        # Mapping references group by name with explicit domain
+        rules = {
+            'rules': [
+                {
+                    'local': [
+                        {'user': {'name': '{0}'}},
+                        {
+                            'group': {
+                                'name': 'explicit_domain_group',
+                                'domain': {'id': self.domainA['id']},
+                            }
+                        },
+                    ],
+                    'remote': [
+                        {'type': 'UserName'},
+                        {
+                            'type': 'orgPersonType',
+                            'any_one_of': ['NoDomainGroup'],
+                        },
+                    ],
+                }
+            ]
+        }
+        PROVIDERS.federation_api.update_mapping(self.mapping['id'], rules)
+        r = self._issue_unscoped_token(
+            assertion='GROUP_NO_DOMAIN_DIRECT_ASSERTION'
+        )
+        token_group_ids = {g['id'] for g in r.federated_groups}
+        self.assertIn(group['id'], token_group_ids)
+
+    def test_whitelist_group_no_domain_defaults_to_idp_domain(self):
+        """Test whitelist pass-through groups default to IdP domain.
+
+        When a mapping uses whitelist to pass through group names from
+        the assertion without specifying a domain, the groups should be
+        resolved in the IdP's domain.
+
+        The test scenario is:
+         - Create groups in the IdP's domain
+         - Set mapping rules with a whitelist that omits the domain
+         - Issue an unscoped token
+         - Verify token contains the whitelisted groups
+
+        """
+        idp_domain_id = self.idp['domain_id']
+
+        group_one = unit.new_group_ref(
+            domain_id=idp_domain_id, name='idp_group_one'
+        )
+        group_one = PROVIDERS.identity_api.create_group(group_one)
+
+        group_two = unit.new_group_ref(
+            domain_id=idp_domain_id, name='idp_group_two'
+        )
+        group_two = PROVIDERS.identity_api.create_group(group_two)
+
+        expected_group_ids = {group_one['id'], group_two['id']}
+
+        # Whitelist mapping with no domain for groups
+        rules = {
+            'rules': [
+                {
+                    "local": [{"user": {"name": "{0}", "id": "{0}"}}],
+                    "remote": [{"type": "REMOTE_USER"}],
+                },
+                {
+                    "local": [{"groups": "{0}"}],
+                    "remote": [{"type": "REMOTE_USER_GROUPS"}],
+                },
+            ]
+        }
+        PROVIDERS.federation_api.update_mapping(self.mapping['id'], rules)
+        r = self._issue_unscoped_token(
+            assertion='GROUP_DEFAULT_DOMAIN_ASSERTION'
+        )
+        token_group_ids = {g['id'] for g in r.federated_groups}
+        self.assertEqual(expected_group_ids, token_group_ids)
+
 
 class FernetFederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
     AUTH_METHOD = 'token'
