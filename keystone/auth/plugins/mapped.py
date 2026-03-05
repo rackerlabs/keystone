@@ -380,6 +380,16 @@ def apply_mapping_filter(
         identity_provider, protocol, assertion
     )
 
+    # NOTE: Default group domain to IdP domain when the mapping omits it,
+    # mirroring the user domain defaulting behavior in
+    # validate_and_prepare_federated_user(). This allows a single shared
+    # mapping to work across multiple customers/domains, with each IdP's
+    # groups resolved in its own domain.
+    idp_domain_id = idp['domain_id']
+    for group in mapped_properties['group_names']:
+        if 'domain' not in group:
+            group['domain'] = {'id': idp_domain_id}
+
     # NOTE(marek-denis): We update group_ids only here to avoid fetching
     # groups identified by name/domain twice.
     # NOTE(marek-denis): Groups are translated from name/domain to their

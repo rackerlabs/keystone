@@ -1158,3 +1158,52 @@ MAPPING_PROJECTS_WITHOUT_NAME = {
         }
     ]
 }
+
+# Mapping with groups and user but no group domain specified.
+# With IdP domain defaulting, the groups should inherit the IdP's domain.
+MAPPING_GROUPS_WHITELIST_MISSING_DOMAIN_WITH_USER = {
+    "rules": [
+        {
+            "remote": [
+                {
+                    "type": "orgPersonType",
+                    "whitelist": ["Developer", "Contractor"],
+                },
+                {"type": "UserName"},
+            ],
+            "local": [
+                {"groups": "{0}"},
+                {"user": {"name": "{1}"}},
+            ],
+        }
+    ]
+}
+
+# Assertion for JSON-encoded groups without embedded domain.
+# Used to test that _normalize_groups tolerates missing domain
+# in individual JSON group dicts.
+GROUPS_NO_DOMAIN_ASSERTION = {
+    'openstack_user': 'bwilliams',
+    'openstack_groups': 'JSON:{"name":"group1"};JSON:{"name":"group2"}',
+}
+
+# Assertion for JSON-encoded groups where some have domain and some don't.
+GROUPS_MIXED_DOMAIN_ASSERTION = {
+    'openstack_user': 'bwilliams',
+    'openstack_groups': 'JSON:{"name":"group1","domain":{"name":"xxx"}};'
+    'JSON:{"name":"group2"}',
+}
+
+# Assertion for group-domain-defaulting integration tests.
+# Used with REMOTE_USER_GROUPS pass-through mappings.
+GROUP_DEFAULT_DOMAIN_ASSERTION = {
+    'REMOTE_USER': 'testuser',
+    'REMOTE_USER_GROUPS': 'idp_group_one;idp_group_two',
+}
+
+# Assertion that triggers a direct group-by-name mapping rule.
+GROUP_NO_DOMAIN_DIRECT_ASSERTION = {
+    'Email': 'nodomain@example.com',
+    'UserName': 'nodomain_user',
+    'orgPersonType': 'NoDomainGroup',
+}

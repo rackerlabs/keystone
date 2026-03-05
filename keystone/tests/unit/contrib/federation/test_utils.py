@@ -442,26 +442,51 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         self.assertEqual([], mapped_properties['group_ids'])
 
     def test_rule_engine_whitelist_direct_group_mapping_missing_domain(self):
-        """Test if the local rule is rejected upon missing domain value.
+        """Test that groups without domain pass through the mapping engine.
 
-        This is a variation with a ``whitelist`` filter.
+        When a mapping rule uses a ``whitelist`` filter and does not
+        specify a group domain, the mapping engine should produce group
+        dicts without a domain. The auth plugin layer will default the
+        domain to the IdP's domain_id later.
 
         """
         mapping = mapping_fixtures.MAPPING_GROUPS_WHITELIST_MISSING_DOMAIN
         assertion = mapping_fixtures.EMPLOYEE_ASSERTION_MULTIPLE_GROUPS
         rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
-        self.assertRaises(exception.ValidationError, rp.process, assertion)
+        mapped_properties = rp.process(assertion)
+        self.assertIsNotNone(mapped_properties)
+        # Groups should be returned without domain
+        for group in mapped_properties['group_names']:
+            self.assertIn('name', group)
+            self.assertNotIn('domain', group)
+        # The whitelist filters to Developer and Contractor
+        group_names = [g['name'] for g in mapped_properties['group_names']]
+        self.assertIn('Developer', group_names)
+        self.assertIn('Contractor', group_names)
 
     def test_rule_engine_blacklist_direct_group_mapping_missing_domain(self):
-        """Test if the local rule is rejected upon missing domain value.
+        """Test that groups without domain pass through the mapping engine.
 
-        This is a variation with a ``blacklist`` filter.
+        When a mapping rule uses a ``blacklist`` filter and does not
+        specify a group domain, the mapping engine should produce group
+        dicts without a domain. The auth plugin layer will default the
+        domain to the IdP's domain_id later.
 
         """
         mapping = mapping_fixtures.MAPPING_GROUPS_BLACKLIST_MISSING_DOMAIN
         assertion = mapping_fixtures.EMPLOYEE_ASSERTION_MULTIPLE_GROUPS
         rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
-        self.assertRaises(exception.ValidationError, rp.process, assertion)
+        mapped_properties = rp.process(assertion)
+        self.assertIsNotNone(mapped_properties)
+        # Groups should be returned without domain
+        for group in mapped_properties['group_names']:
+            self.assertIn('name', group)
+            self.assertNotIn('domain', group)
+        # The blacklist removes Developer and Manager, leaving Contractor
+        group_names = [g['name'] for g in mapped_properties['group_names']]
+        self.assertIn('Contractor', group_names)
+        self.assertNotIn('Developer', group_names)
+        self.assertNotIn('Manager', group_names)
 
     def test_rule_engine_no_groups_allowed(self):
         """Should return user mapped to no groups.
@@ -753,12 +778,10 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         )
 
     def test_mapping_validation_with_group_name_without_domain(self):
+        # Group name without domain is now valid; the domain defaults
+        # to the identity provider's domain at authentication time.
         mapping = mapping_fixtures.MAPPING_GROUP_NAME_WITHOUT_DOMAIN
-        self.assertRaises(
-            exception.ValidationError,
-            mapping_utils.validate_mapping_structure,
-            mapping,
-        )
+        mapping_utils.validate_mapping_structure(mapping)
 
     def test_mapping_validation_with_group_id_and_domain(self):
         mapping = mapping_fixtures.MAPPING_GROUP_ID_WITH_DOMAIN
@@ -941,6 +964,188 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         self.assertEqual(user_name, name)
         self.assertEqual(user_groups, group_list)
         self.assertEqual([], group_ids)
+
+    def test_rule_engine_json_groups_without_domain(self):
+        """Test that JSON-encoded groups without domain pass through.
+
+        When groups are sent as JSON objects via the assertion but
+        individual group dicts lack a 'domain' key, the mapping engine
+        should produce group dicts without a domain. The auth plugin
+        layer will default the domain to the IdP's domain_id later.
+
+        """
+        mapping = mapping_fixtures.MAPPING_GROUPS_DOMAIN_OF_USER
+        assertion = mapping_fixtures.GROUPS_NO_DOMAIN_ASSERTION
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
+        values = rp.process(assertion)
+
+        self.assertValidMappedUserObject(values)
+        groups = values.get('group_names', [])
+        group_list = [g.get('name') for g in groups]
+        self.assertEqual(['group1', 'group2'], group_list)
+        # Groups should have no domain -- it will be added later
+        for group in groups:
+            self.assertNotIn('domain', group)
+
+    def test_rule_engine_json_groups_mixed_domain(self):
+        """Test JSON groups where some have domain and some don't.
+
+        Groups that include a domain should keep it. Groups that lack
+        a domain should be returned without one.
+
+        """
+        mapping = mapping_fixtures.MAPPING_GROUPS_DOMAIN_OF_USER
+        assertion = mapping_fixtures.GROUPS_MIXED_DOMAIN_ASSERTION
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
+        values = rp.process(assertion)
+
+        self.assertValidMappedUserObject(values)
+        groups = values.get('group_names', [])
+        group_list = [g.get('name') for g in groups]
+        self.assertEqual(['group1', 'group2'], group_list)
+        # group1 has an explicit domain, group2 does not
+        self.assertIn('domain', groups[0])
+        self.assertEqual({'name': 'xxx'}, groups[0]['domain'])
+        self.assertNotIn('domain', groups[1])
+
+    def test_rule_engine_groups_with_domain_unchanged(self):
+        """Test that groups with explicit domain are not affected.
+
+        When the mapping specifies a domain for groups, that domain
+        must be preserved unchanged. This is a regression check that
+        the new missing-domain tolerance does not alter existing
+        behavior.
+
+        """
+        mapping = mapping_fixtures.MAPPING_GROUPS_WHITELIST
+        assertion = mapping_fixtures.EMPLOYEE_ASSERTION_MULTIPLE_GROUPS
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
+        mapped_properties = rp.process(assertion)
+        self.assertIsNotNone(mapped_properties)
+        for group in mapped_properties['group_names']:
+            self.assertIn('domain', group)
+            self.assertEqual(
+                {'id': mapping_fixtures.DEVELOPER_GROUP_DOMAIN_ID},
+                group['domain'],
+            )
+
+    def test_apply_mapping_filter_defaults_group_domain_to_idp(self):
+        """Test that apply_mapping_filter injects IdP domain for groups.
+
+        When a mapping produces groups without a domain, the
+        apply_mapping_filter function should set their domain to the
+        IdP's domain_id, mirroring user domain defaulting behavior.
+
+        """
+        mapping = mapping_fixtures.MAPPING_GROUPS_WHITELIST_MISSING_DOMAIN_WITH_USER
+        assertion = mapping_fixtures.EMPLOYEE_ASSERTION_MULTIPLE_GROUPS
+        idp_domain_id = uuid.uuid4().hex
+
+        # Mock the federation_api
+        federation_api = mock.MagicMock()
+        federation_api.get_idp.return_value = {'domain_id': idp_domain_id}
+        mapping_obj = {'id': FAKE_MAPPING_ID, 'rules': mapping['rules']}
+        federation_api.get_mapping_from_idp_and_protocol.return_value = (
+            mapping_obj
+        )
+
+        # The evaluate method needs to run the real RuleProcessor
+        def mock_evaluate(idp_id, protocol_id, assertion_data):
+            rp = mapping_utils.RuleProcessor(
+                mapping_obj['id'], mapping_obj['rules']
+            )
+            return rp.process(assertion_data), mapping_obj['id']
+
+        federation_api.evaluate.side_effect = mock_evaluate
+
+        identity_api = mock.MagicMock()
+        resource_api = mock.MagicMock()
+
+        # validate_mapped_group_ids should accept empty list
+        # transform_to_group_ids will be called with groups that now have domain
+        with mock.patch(
+            'keystone.federation.utils.validate_mapped_group_ids'
+        ), mock.patch(
+            'keystone.federation.utils.validate_idp'
+        ), mock.patch(
+            'keystone.federation.utils.transform_to_group_ids',
+            return_value=[],
+        ) as mock_transform:
+            mapped_properties, _ = mapped.apply_mapping_filter(
+                'test_idp',
+                'saml2',
+                assertion,
+                resource_api,
+                federation_api,
+                identity_api,
+            )
+            # Verify transform_to_group_ids was called with groups
+            # that have the IdP domain injected
+            call_args = mock_transform.call_args
+            group_names_arg = call_args[0][0]
+            for group in group_names_arg:
+                self.assertIn('domain', group)
+                self.assertEqual({'id': idp_domain_id}, group['domain'])
+
+    def test_apply_mapping_filter_preserves_explicit_group_domain(self):
+        """Test that explicit group domains are NOT overridden by IdP domain.
+
+        When a mapping specifies a domain for groups, that domain must
+        be preserved -- the IdP domain fallback should only apply to
+        groups that lack a domain.
+
+        """
+        mapping = mapping_fixtures.MAPPING_GROUPS_WHITELIST
+        assertion = mapping_fixtures.EMPLOYEE_ASSERTION_MULTIPLE_GROUPS
+        idp_domain_id = uuid.uuid4().hex
+
+        federation_api = mock.MagicMock()
+        federation_api.get_idp.return_value = {'domain_id': idp_domain_id}
+        mapping_obj = {'id': FAKE_MAPPING_ID, 'rules': mapping['rules']}
+        federation_api.get_mapping_from_idp_and_protocol.return_value = (
+            mapping_obj
+        )
+
+        def mock_evaluate(idp_id, protocol_id, assertion_data):
+            rp = mapping_utils.RuleProcessor(
+                mapping_obj['id'], mapping_obj['rules']
+            )
+            return rp.process(assertion_data), mapping_obj['id']
+
+        federation_api.evaluate.side_effect = mock_evaluate
+
+        identity_api = mock.MagicMock()
+        resource_api = mock.MagicMock()
+
+        with mock.patch(
+            'keystone.federation.utils.validate_mapped_group_ids'
+        ), mock.patch(
+            'keystone.federation.utils.validate_idp'
+        ), mock.patch(
+            'keystone.federation.utils.transform_to_group_ids',
+            return_value=[],
+        ) as mock_transform:
+            mapped_properties, _ = mapped.apply_mapping_filter(
+                'test_idp',
+                'saml2',
+                assertion,
+                resource_api,
+                federation_api,
+                identity_api,
+            )
+            # Groups should retain the original explicit domain,
+            # NOT the IdP domain
+            call_args = mock_transform.call_args
+            group_names_arg = call_args[0][0]
+            for group in group_names_arg:
+                self.assertIn('domain', group)
+                self.assertEqual(
+                    {'id': mapping_fixtures.DEVELOPER_GROUP_DOMAIN_ID},
+                    group['domain'],
+                )
+                self.assertNotEqual(
+                    {'id': idp_domain_id}, group['domain']
+                )
 
 
 class TestUnicodeAssertionData(unit.BaseTestCase):
