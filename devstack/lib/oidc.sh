@@ -97,7 +97,6 @@ function configure_federation {
         s|%OIDC_METADATA_URL%|$OIDC_METADATA_URL|g;
         s|%OIDC_INTROSPECTION_URL%|$OIDC_INTROSPECTION_URL|g;
         s|%HOST_IP%|$HOST_IP|g;
-        s|%IDP_ID%|$IDP_ID|g;
     " $keystone_apache_conf
 
     restart_apache_server
