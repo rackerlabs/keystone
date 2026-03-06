@@ -16,6 +16,24 @@
       "message": "I have several problems with this change.\n\n1. There is no bugreport. The problem should be described there in details, including steps to reproduce.\n2. I don\u0027t understand what exactly fails with your custom identity backend. Why do you think that your behavior is correct, and the existing in keystone is incorrect? From the code i see that there is expectation to have `password_expires_at` and `options` - why can\u0027t the custom backend provide those?\n3. The commit message writes about KeyError due to non-existing shadow user, but i don\u0027t see anything related to shadow users in the code. Is the commit message up to date?",
       "revId": "f731f215ce34f596029cb22188643ff5dd98f5d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42297624_3be659b5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16137
+      },
+      "writtenOn": "2026-03-06T07:51:15Z",
+      "side": 1,
+      "message": "I will mark this as WIP and get back with more details or abandon this.\n\nThere was no documentation in the code that the ``options`` key was to be returned as user ref by a identity driver so this is probably solved by fixing the identity driver, and I have a patch for the documentation here: https://review.opendev.org/c/openstack/keystone/+/977427",
+      "parentUuid": "8d9a718b_0c91e537",
+      "revId": "f731f215ce34f596029cb22188643ff5dd98f5d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
