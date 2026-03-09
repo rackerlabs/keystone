@@ -264,18 +264,24 @@ class TokenModel:
 
     def _get_system_roles(self):
         roles = []
-        groups = PROVIDERS.identity_api.list_groups_for_user(self.user_id)
+        if self.is_federated:
+            group_ids = [g['id'] for g in self.federated_groups]
+        else:
+            group_ids = [
+                g['id']
+                for g in PROVIDERS.identity_api.list_groups_for_user(
+                    self.user_id
+                )
+            ]
         all_group_roles = []
         assignments = []
-        for group in groups:
+        for group_id in group_ids:
             group_roles = (
-                PROVIDERS.assignment_api.list_system_grants_for_group(
-                    group['id']
-                )
+                PROVIDERS.assignment_api.list_system_grants_for_group(group_id)
             )
             for role in group_roles:
                 all_group_roles.append(role)
-                assignment = {'group_id': group['id'], 'role_id': role['id']}
+                assignment = {'group_id': group_id, 'role_id': role['id']}
                 assignments.append(assignment)
         user_roles = PROVIDERS.assignment_api.list_system_grants_for_user(
             self.user_id
