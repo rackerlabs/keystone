@@ -131,6 +131,10 @@ class FederatedSetupMixin:
         self.assertEqual(domain_id, token['domain']['id'])
         self._check_scoped_token_attributes(token)
 
+    def _check_system_scoped_token_attributes(self, token):
+        self.assertTrue(token['system']['all'])
+        self._check_scoped_token_attributes(token)
+
     def assertValidMappedUser(self, token):
         """Check if user object meets all the criteria."""
         user = token['user']
@@ -358,6 +362,7 @@ class FederatedSetupMixin:
             group_id=self.group_admins['id'],
             domain_id=self.domainC['id'],
         )
+
         self.rules = {
             'rules': [
                 {
@@ -2422,6 +2427,52 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         self.v3_create_token(
             self.TOKEN_SCOPE_DOMAIN_D_FROM_CUSTOMER,
             expected_status=http.client.UNAUTHORIZED,
+        )
+
+    def test_scope_to_system(self):
+        PROVIDERS.assignment_api.create_system_grant_for_group(
+            self.group_employees['id'], self.role_employee['id']
+        )
+        scope_request = {
+            'auth': {
+                'identity': {
+                    'methods': ['token'],
+                    'token': {'id': self.tokens['EMPLOYEE_ASSERTION']},
+                },
+                'scope': {'system': {'all': True}},
+            }
+        }
+        r = self.v3_create_token(scope_request)
+        token_resp = r.result['token']
+        self._check_system_scoped_token_attributes(token_resp)
+        roles_ref = {self.role_employee['id']}
+        token_roles = {role['id'] for role in token_resp['roles']}
+        self.assertEqual(roles_ref, token_roles)
+        self.assertValidMappedUser(token_resp)
+
+        # Validate the token via GET to exercise the full
+        # serialize-deserialize round-trip.
+        token_id = r.headers.get('X-Subject-Token')
+        headers = {'X-Subject-Token': token_id}
+        validate_resp = self.get(
+            '/auth/tokens/', token=token_id, headers=headers
+        )
+        validated = validate_resp.result['token']
+        self._check_system_scoped_token_attributes(validated)
+
+    def test_scope_to_system_fails_without_system_role(self):
+        """Try to scope to system without a system role assignment."""
+        scope_request = {
+            'auth': {
+                'identity': {
+                    'methods': ['token'],
+                    'token': {'id': self.tokens['CUSTOMER_ASSERTION']},
+                },
+                'scope': {'system': {'all': True}},
+            }
+        }
+        self.v3_create_token(
+            scope_request, expected_status=http.client.UNAUTHORIZED
         )
 
     def test_list_projects(self):

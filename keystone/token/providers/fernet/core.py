@@ -57,6 +57,8 @@ class Provider(base.Provider):
                 return tf.FederatedProjectScopedPayload
             elif token.domain_scoped:
                 return tf.FederatedDomainScopedPayload
+            elif token.system_scoped:
+                return tf.FederatedSystemScopedPayload
             elif token.unscoped:
                 return tf.FederatedUnscopedPayload
         elif token.application_credential_id:
