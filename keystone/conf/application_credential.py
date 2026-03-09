@@ -61,9 +61,26 @@ keystone database or open keystone to a DoS attack.
     ),
 )
 
+track_last_active_at = cfg.BoolOpt(
+    'track_last_active_at',
+    default=True,
+    help=utils.fmt(
+        """
+If set to true, authenticating with an application credential will update the
+user's `last_active_at` timestamp. This prevents users who exclusively use
+application credentials from being incorrectly disabled by the
+`[security_compliance] disable_user_account_days_inactive` policy. Set this to
+false if you want application credential usage to NOT count as user activity,
+for example when operators want credentials to expire or be flagged for
+rotation based on the user's interactive login activity rather than automated
+script usage.
+"""
+    ),
+)
+
 
 GROUP_NAME = __name__.split('.')[-1]
-ALL_OPTS = [driver, caching, cache_time, user_limit]
+ALL_OPTS = [driver, caching, cache_time, user_limit, track_last_active_at]
 
 
 def register_opts(conf):

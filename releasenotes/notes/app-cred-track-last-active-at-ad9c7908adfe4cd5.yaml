@@ -1,0 +1,20 @@
+---
+features:
+  - |
+    A new ``[application_credential] track_last_active_at`` option (default
+    ``True``) controls whether authenticating with an application credential
+    updates the user's ``last_active_at`` timestamp. When enabled, users who
+    exclusively use application credentials are no longer incorrectly disabled
+    by the ``[security_compliance] disable_user_account_days_inactive`` policy.
+    Set this to ``False`` if application credential usage should not count as
+    user activity, for example when operators want credentials to expire or be
+    flagged for rotation based on interactive login activity rather than
+    automated script usage.
+fixes:
+  - |
+    Fixed Bug #2117217: Authenticating with an application credential now
+    updates the user's ``last_active_at`` timestamp by default. Previously,
+    only password and federated authentication updated this field, causing
+    users who exclusively used application credentials to be incorrectly
+    disabled when ``[security_compliance] disable_user_account_days_inactive``
+    was configured.
