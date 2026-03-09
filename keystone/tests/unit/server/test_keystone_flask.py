@@ -12,6 +12,7 @@
 
 import functools
 import typing as ty
+from unittest import mock
 import uuid
 
 import fixtures
@@ -26,6 +27,7 @@ from keystone.common import json_home
 from keystone.common import rbac_enforcer
 import keystone.conf
 from keystone import exception
+from keystone.server.flask import application as flask_application
 from keystone.server.flask import common as flask_common
 from keystone.server.flask.request_processing import json_body
 from keystone.tests.unit import rest
@@ -803,3 +805,62 @@ class TestKeystoneFlaskUnrouted404(rest.RestfulTestCase):
             self.assertIn('text/html', resp.headers['Content-Type'])
             # Ensure the more generic flask/werkzeug 404 response is emitted
             self.assertTrue(b'404 Not Found' in resp.data)
+
+
+class TestExceptionLogging(rest.RestfulTestCase):
+    """Tests for _handle_keystone_exception logging behavior.
+
+    Client errors (4xx) should be logged at DEBUG level, not ERROR,
+    since they represent expected operational conditions rather than
+    server-side failures.
+    """
+
+    @mock.patch.object(flask_application.LOG, 'debug')
+    @mock.patch.object(flask_application.LOG, 'exception')
+    def test_client_error_logged_at_debug_not_exception(
+        self, mock_log_exc, mock_log_debug
+    ):
+        """Test that 4xx errors like Forbidden are logged at DEBUG."""
+        error = exception.Forbidden()
+        with self.test_client() as c:
+            # Use the test app's context so flask.request is available
+            with self.public_app.app.test_request_context('/'):
+                flask_application._handle_keystone_exception(error)
+        mock_log_debug.assert_called()
+        mock_log_exc.assert_not_called()
+
+    @mock.patch.object(flask_application.LOG, 'debug')
+    @mock.patch.object(flask_application.LOG, 'exception')
+    def test_server_error_logged_at_exception(
+        self, mock_log_exc, mock_log_debug
+    ):
+        """Test that 5xx errors like UnexpectedError use LOG.exception."""
+        error = exception.UnexpectedError(Exception('test error'))
+        with self.test_client() as c:
+            with self.public_app.app.test_request_context('/'):
+                flask_application._handle_keystone_exception(error)
+        mock_log_exc.assert_called()
+
+    @mock.patch.object(flask_application.LOG, 'debug')
+    @mock.patch.object(flask_application.LOG, 'exception')
+    def test_not_found_logged_at_debug(self, mock_log_exc, mock_log_debug):
+        """Test that NotFound exceptions are logged at DEBUG."""
+        error = exception.RoleNotFound(role_id='nonexistent')
+        with self.test_client() as c:
+            with self.public_app.app.test_request_context('/'):
+                flask_application._handle_keystone_exception(error)
+        mock_log_debug.assert_called()
+        mock_log_exc.assert_not_called()
+
+    @mock.patch.object(flask_application.LOG, 'debug')
+    @mock.patch.object(flask_application.LOG, 'exception')
+    def test_validation_error_logged_at_debug(
+        self, mock_log_exc, mock_log_debug
+    ):
+        """Test that ValidationError (400) is logged at DEBUG."""
+        error = exception.ValidationError(attribute='name', target='resource')
+        with self.test_client() as c:
+            with self.public_app.app.test_request_context('/'):
+                flask_application._handle_keystone_exception(error)
+        mock_log_debug.assert_called()
+        mock_log_exc.assert_not_called()

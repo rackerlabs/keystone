@@ -139,10 +139,11 @@ def _handle_keystone_exception(error):
             "Authorization failed. %(exception)s from %(remote_addr)s",
             {'exception': error, 'remote_addr': flask.request.remote_addr},
         )
-    # NOTE(frickler): NotFound exceptions happen regularly during
+    # NOTE(frickler): Client errors (4xx) happen regularly during
     # normal operations, e.g. when doing "openstack role show member",
-    # so don't make a fuss about them
-    elif isinstance(error, exception.NotFound):
+    # so don't make a fuss about them. Only server errors (5xx) warrant
+    # ERROR-level logging with a full traceback.
+    elif error.code is not None and error.code < 500:
         LOG.debug(str(error))
     else:
         LOG.exception(str(error))
