@@ -36,11 +36,13 @@ from keystone.auth.plugins import totp
 from keystone.common import authorization
 from keystone.common import provider_api
 from keystone.common.rbac_enforcer import policy
+from keystone.common import sql
 from keystone.common import utils
 import keystone.conf
 from keystone.credential.providers import fernet as credential_fernet
 from keystone import exception
 from keystone.identity.backends import resource_options as ro
+from keystone.identity.backends import sql_model as model
 from keystone.tests.common import auth as common_auth
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
@@ -6536,3 +6538,71 @@ class ApplicationCredentialAuth(test_v3.RestfulTestCase):
         )
         token = resp.headers.get('X-Subject-Token')
         self._validate_token(token, expected_status=http.client.NOT_FOUND)
+
+    def test_application_credential_updates_last_active_at(self):
+        # Ensure that authenticating with an application credential updates
+        # the user's last_active_at so that the user is not incorrectly
+        # disabled due to inactivity.
+        with freezegun.freeze_time('2025-12-01'):
+            self.config_fixture.config(
+                group='security_compliance',
+                disable_user_account_days_inactive=90,
+            )
+            # Set last_active_at to 89 days ago (just under the threshold)
+            now = datetime.date(2025, 12, 1)
+            stale_date = now - datetime.timedelta(days=89)
+            with sql.session_for_write() as session:
+                user_ref = session.get(model.User, self.user['id'])
+                user_ref.last_active_at = stale_date
+            # Verify the stale date was persisted
+            with sql.session_for_read() as session:
+                user_ref = session.get(model.User, self.user['id'])
+                self.assertEqual(stale_date, user_ref.last_active_at)
+            # Authenticate with an application credential
+            app_cred = self._make_app_cred()
+            app_cred_ref = self.app_cred_api.create_application_credential(
+                app_cred
+            )
+            auth_data = self.build_authentication_request(
+                app_cred_id=app_cred_ref['id'], secret=app_cred_ref['secret']
+            )
+            self.v3_create_token(
+                auth_data, expected_status=http.client.CREATED
+            )
+            # Verify that last_active_at was updated to today
+            with sql.session_for_read() as session:
+                user_ref = session.get(model.User, self.user['id'])
+                self.assertEqual(now, user_ref.last_active_at)
+
+    def test_app_cred_auth_no_last_active_at_when_disabled(self):
+        # When track_last_active_at is False, authenticating with an
+        # application credential should NOT update the user's
+        # last_active_at timestamp.
+        with freezegun.freeze_time('2025-12-01'):
+            self.config_fixture.config(
+                group='application_credential', track_last_active_at=False
+            )
+            self.config_fixture.config(
+                group='security_compliance',
+                disable_user_account_days_inactive=90,
+            )
+            now = datetime.date(2025, 12, 1)
+            stale_date = now - datetime.timedelta(days=89)
+            with sql.session_for_write() as session:
+                user_ref = session.get(model.User, self.user['id'])
+                user_ref.last_active_at = stale_date
+            # Authenticate with an application credential
+            app_cred = self._make_app_cred()
+            app_cred_ref = self.app_cred_api.create_application_credential(
+                app_cred
+            )
+            auth_data = self.build_authentication_request(
+                app_cred_id=app_cred_ref['id'], secret=app_cred_ref['secret']
+            )
+            self.v3_create_token(
+                auth_data, expected_status=http.client.CREATED
+            )
+            # Verify that last_active_at was NOT updated
+            with sql.session_for_read() as session:
+                user_ref = session.get(model.User, self.user['id'])
+                self.assertEqual(stale_date, user_ref.last_active_at)

@@ -15,8 +15,10 @@
 from keystone.auth import plugins as auth_plugins
 from keystone.auth.plugins import base
 from keystone.common import provider_api
+import keystone.conf
 from keystone import exception
 
+CONF = keystone.conf.CONF
 PROVIDERS = provider_api.ProviderAPIs
 METHOD_NAME = 'application_credential'
 
@@ -36,6 +38,10 @@ class ApplicationCredential(base.AuthMethodHandler):
             )
         except AssertionError as e:
             raise exception.Unauthorized(e)
+        if CONF.application_credential.track_last_active_at:
+            PROVIDERS.shadow_users_api.set_last_active_at(
+                app_cred_info.user_id
+            )
         response_data['user_id'] = app_cred_info.user_id
 
         return base.AuthHandlerResponse(
