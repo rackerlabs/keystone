@@ -36,6 +36,7 @@ class ApplicationCredential(base.AuthMethodHandler):
             )
         except AssertionError as e:
             raise exception.Unauthorized(e)
+        PROVIDERS.shadow_users_api.set_last_active_at(app_cred_info.user_id)
         response_data['user_id'] = app_cred_info.user_id
 
         return base.AuthHandlerResponse(
