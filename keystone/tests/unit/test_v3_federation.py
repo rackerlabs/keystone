@@ -131,6 +131,10 @@ class FederatedSetupMixin:
         self.assertEqual(domain_id, token['domain']['id'])
         self._check_scoped_token_attributes(token)
 
+    def _check_system_scoped_token_attributes(self, token):
+        self.assertTrue(token['system']['all'])
+        self._check_scoped_token_attributes(token)
+
     def assertValidMappedUser(self, token):
         """Check if user object meets all the criteria."""
         user = token['user']
@@ -357,6 +361,12 @@ class FederatedSetupMixin:
             self.role_admin['id'],
             group_id=self.group_admins['id'],
             domain_id=self.domainC['id'],
+        )
+
+        # Employees can access:
+        # * system (via system grant)
+        PROVIDERS.assignment_api.create_system_grant_for_group(
+            self.group_employees['id'], self.role_employee['id']
         )
         self.rules = {
             'rules': [
@@ -648,6 +658,26 @@ class FederatedSetupMixin:
             self.TOKEN_SCOPE_DOMAIN_C_FROM_ADMIN = self._scope_request(
                 self.tokens['ADMIN_ASSERTION'], 'domain', self.domainC['id']
             )
+
+            self.TOKEN_SCOPE_SYSTEM_FROM_EMPLOYEE = {
+                'auth': {
+                    'identity': {
+                        'methods': ['token'],
+                        'token': {'id': self.tokens['EMPLOYEE_ASSERTION']},
+                    },
+                    'scope': {'system': {'all': True}},
+                }
+            }
+
+            self.TOKEN_SCOPE_SYSTEM_FROM_CUSTOMER = {
+                'auth': {
+                    'identity': {
+                        'methods': ['token'],
+                        'token': {'id': self.tokens['CUSTOMER_ASSERTION']},
+                    },
+                    'scope': {'system': {'all': True}},
+                }
+            }
 
 
 class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
@@ -2421,6 +2451,32 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         """Try to scope to a domain that has no direct roles."""
         self.v3_create_token(
             self.TOKEN_SCOPE_DOMAIN_D_FROM_CUSTOMER,
+            expected_status=http.client.UNAUTHORIZED,
+        )
+
+    def test_scope_to_system(self):
+        r = self.v3_create_token(self.TOKEN_SCOPE_SYSTEM_FROM_EMPLOYEE)
+        token_resp = r.result['token']
+        self._check_system_scoped_token_attributes(token_resp)
+        roles_ref = {self.role_employee['id']}
+        token_roles = {role['id'] for role in token_resp['roles']}
+        self.assertEqual(roles_ref, token_roles)
+        self.assertValidMappedUser(token_resp)
+
+        # Validate the token via GET to exercise the full
+        # serialize-deserialize round-trip.
+        token_id = r.headers.get('X-Subject-Token')
+        headers = {'X-Subject-Token': token_id}
+        validate_resp = self.get(
+            '/auth/tokens/', token=token_id, headers=headers
+        )
+        validated = validate_resp.result['token']
+        self._check_system_scoped_token_attributes(validated)
+
+    def test_scope_to_system_fails_without_system_role(self):
+        """Try to scope to system without a system role assignment."""
+        self.v3_create_token(
+            self.TOKEN_SCOPE_SYSTEM_FROM_CUSTOMER,
             expected_status=http.client.UNAUTHORIZED,
         )
 
