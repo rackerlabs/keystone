@@ -1,10 +1,11 @@
-{
+i
     "identity_providers": [
         {
             "domain_id": "1789d1",
             "description": "Stores ACME identities",
             "remote_ids": ["acme_id_1", "acme_id_2"],
             "enabled": true,
+	    "authorization_ttl": null,
             "id": "ACME",
             "links": {
                 "protocols": "http://example.com/identity/v3/OS-FEDERATION/identity_providers/ACME/protocols",
@@ -17,6 +18,7 @@
             "remote_ids": ["sore_id_1", "store_id_2"],
             "enabled": false,
             "id": "ACME-contractors",
+	    "authorization_ttl": 3600,
             "links": {
                 "protocols": "http://example.com/identity/v3/OS-FEDERATION/identity_providers/ACME-contractors/protocols",
                 "self": "http://example.com/identity/v3/OS-FEDERATION/identity_providers/ACME-contractors"
