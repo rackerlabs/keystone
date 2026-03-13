@@ -18,6 +18,23 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fafbc206_ddb9956f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2026-03-13T15:25:34Z",
+      "side": 1,
+      "message": "This is a start, but we need documentation, release notes, and clear examples of how the mapping will look on various LDAP backends.",
+      "revId": "8c37ff85780805d07e48d41201399dddf01aff94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1e39319b_9a895c74",
