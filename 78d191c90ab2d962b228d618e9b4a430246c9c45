@@ -37,6 +37,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "4c9b6608_f6293ff6",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/samples/list-response.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 22540
+      },
+      "writtenOn": "2026-03-14T15:39:11Z",
+      "side": 1,
+      "message": "oups 😊",
+      "parentUuid": "bd7e9e1e_f0ac371e",
+      "revId": "78d191c90ab2d962b228d618e9b4a430246c9c45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "0e1c9038_e030d6e6",
         "filename": "api-ref/source/v3-ext/federation/identity-provider/samples/list-response.json",
         "patchSetId": 1
@@ -54,6 +72,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "21d8f730_9d74a007",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/samples/list-response.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 22540
+      },
+      "writtenOn": "2026-03-14T15:39:11Z",
+      "side": 1,
+      "message": "Resolved",
+      "parentUuid": "0e1c9038_e030d6e6",
+      "revId": "78d191c90ab2d962b228d618e9b4a430246c9c45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "f66bf086_09bf8938",
         "filename": "api-ref/source/v3-ext/federation/identity-provider/samples/list-response.json",
         "patchSetId": 1
@@ -65,6 +101,24 @@
       "writtenOn": "2026-03-14T14:47:31Z",
       "side": 1,
       "message": "Nit: Same tab-vs-spaces issue as line 8.",
+      "revId": "78d191c90ab2d962b228d618e9b4a430246c9c45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06e6b1bd_8ab43587",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/samples/list-response.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 22540
+      },
+      "writtenOn": "2026-03-14T15:39:11Z",
+      "side": 1,
+      "message": "Resolved",
+      "parentUuid": "f66bf086_09bf8938",
       "revId": "78d191c90ab2d962b228d618e9b4a430246c9c45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
