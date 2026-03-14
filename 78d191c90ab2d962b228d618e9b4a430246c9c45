@@ -16,6 +16,57 @@
       "message": "LGTM.",
       "revId": "78d191c90ab2d962b228d618e9b4a430246c9c45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd7e9e1e_f0ac371e",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/samples/list-response.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-03-14T14:47:31Z",
+      "side": 1,
+      "message": "Bug: The opening \u0027{\u0027 of the JSON object was replaced with \u0027i\u0027, making this file invalid JSON. This looks like an accidental keystroke during editing.",
+      "revId": "78d191c90ab2d962b228d618e9b4a430246c9c45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e1c9038_e030d6e6",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/samples/list-response.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-03-14T14:47:31Z",
+      "side": 1,
+      "message": "Nit: This line uses a tab character followed by spaces for indentation. The rest of the file uses 4-space indentation. This should be 12 spaces (3 levels x 4 spaces) to be consistent.",
+      "revId": "78d191c90ab2d962b228d618e9b4a430246c9c45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f66bf086_09bf8938",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/samples/list-response.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-03-14T14:47:31Z",
+      "side": 1,
+      "message": "Nit: Same tab-vs-spaces issue as line 8.",
+      "revId": "78d191c90ab2d962b228d618e9b4a430246c9c45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
