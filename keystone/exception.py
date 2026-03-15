@@ -544,10 +544,6 @@ class CredentialNotFound(NotFound):
     message_format = _("Could not find credential: %(credential_id)s.")
 
 
-class VersionNotFound(NotFound):
-    message_format = _("Could not find version: %(version)s.")
-
-
 class EndpointGroupNotFound(NotFound):
     message_format = _("Could not find Endpoint Group: %(endpoint_group_id)s.")
 
