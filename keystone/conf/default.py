@@ -56,19 +56,6 @@ adversely impact performance.
     ),
 )
 
-max_param_size = cfg.IntOpt(
-    'max_param_size',
-    default=64,
-    deprecated_for_removal=True,
-    deprecated_reason=utils.fmt('This option has had no effect.'),
-    deprecated_since='2025.1',
-    help=utils.fmt(
-        """
-Limit the sizes of user & project ID/names.
-"""
-    ),
-)
-
 # NOTE(breton): 255 is the size of the database columns used for ID fields.
 # This size is picked so that the tokens can be indexed in-place as opposed to
 # being entries in a string table. Thus, this is a performance decision.
@@ -77,8 +64,8 @@ max_token_size = cfg.IntOpt(
     default=255,
     help=utils.fmt(
         """
-Similar to `[DEFAULT] max_param_size`, but provides an exception for token
-values. With Fernet tokens, this can be set as low as 255.
+Maximum allowable token size. With Fernet tokens, this can be set as low as
+255.
 """
     ),
 )
@@ -188,7 +175,6 @@ ALL_OPTS = [
     admin_token,
     public_endpoint,
     max_project_tree_depth,
-    max_param_size,
     max_token_size,
     list_limit,
     max_db_limit,
