@@ -59,7 +59,6 @@ verify_length_and_trunc_password = (
     password_hashing.verify_length_and_trunc_password
 )  # noqa
 hash_password = password_hashing.hash_password
-hash_user_password = password_hashing.hash_user_password
 check_password = password_hashing.check_password
 
 

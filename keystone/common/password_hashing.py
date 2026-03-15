@@ -134,15 +134,6 @@ def check_password(password: str, hashed: str) -> bool:
     return hasher.verify(password_utf8, hashed)
 
 
-def hash_user_password(user):
-    """Hash a user dict's password without modifying the passed-in dict."""
-    password = user.get('password')
-    if password is None:
-        return user
-
-    return dict(user, password=hash_password(password))
-
-
 def hash_password(password: str) -> str:
     """Hash a password. Harder."""
     params = {}
