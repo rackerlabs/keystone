@@ -14,8 +14,6 @@
 
 from typing import Any
 
-empty: dict[str, Any] = {"type": "null"}
-
 name: dict[str, Any] = {
     "type": "string",
     "minLength": 1,

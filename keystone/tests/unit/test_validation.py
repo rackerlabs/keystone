@@ -55,8 +55,15 @@ _entity_properties = {
     'name': parameter_types.name,
     'description': validation.nullable(parameter_types.description),
     'enabled': parameter_types.boolean,
-    'url': validation.nullable(parameter_types.url),
-    'email': validation.nullable(parameter_types.email),
+    'url': validation.nullable(
+        {
+            'type': 'string',
+            'minLength': 0,
+            'maxLength': 225,
+            'pattern': '^[a-zA-Z0-9+.-]+:.+',
+        }
+    ),
+    'email': validation.nullable({'type': 'string', 'format': 'email'}),
     'id_string': validation.nullable(parameter_types.id_string),
 }
 
