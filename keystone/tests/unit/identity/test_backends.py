@@ -81,8 +81,10 @@ class IdentityTests:
         role_member = unit.new_role_ref()
         PROVIDERS.role_api.create_role(role_member['id'], role_member)
 
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            new_user['id'], self.project_baz['id'], role_member['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_member['id'],
+            user_id=new_user['id'],
+            project_id=self.project_baz['id'],
         )
         with self.make_request():
             user_ref = PROVIDERS.identity_api.authenticate(

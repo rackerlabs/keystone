@@ -817,8 +817,8 @@ class TokenAPITests:
         )
 
         # assign a role to user for the new project
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.user['id'], project['id'], self.role_id
+        PROVIDERS.assignment_api.create_grant(
+            self.role_id, user_id=self.user['id'], project_id=project['id']
         )
 
         # attempt to authenticate without requesting a project
@@ -838,8 +838,8 @@ class TokenAPITests:
         )
 
         # assign a role to user for the new project
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.user['id'], project['id'], self.role_id
+        PROVIDERS.assignment_api.create_grant(
+            self.role_id, user_id=self.user['id'], project_id=project['id']
         )
 
         # now disable the project domain
@@ -1588,8 +1588,10 @@ class TokenAPITests:
         PROVIDERS.resource_api.create_project(project['id'], project)
         role_member = unit.new_role_ref()
         PROVIDERS.role_api.create_role(role_member['id'], role_member)
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.user['id'], project['id'], role_member['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_member['id'],
+            user_id=self.user['id'],
+            project_id=project['id'],
         )
 
         auth_data = self.build_authentication_request(
@@ -1676,8 +1678,10 @@ class TokenAPITests:
         PROVIDERS.resource_api.create_project(project['id'], project)
         role_member = unit.new_role_ref()
         PROVIDERS.role_api.create_role(role_member['id'], role_member)
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.user['id'], project['id'], role_member['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_member['id'],
+            user_id=self.user['id'],
+            project_id=project['id'],
         )
 
         auth_data = self.build_authentication_request(
@@ -1720,8 +1724,8 @@ class TokenAPITests:
         PROVIDERS.resource_api.create_project(project['id'], project)
 
         # assign some role to self.user for the project in the domain
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.user['id'], project['id'], self.role_id
+        PROVIDERS.assignment_api.create_grant(
+            self.role_id, user_id=self.user['id'], project_id=project['id']
         )
 
         # Disable the domain
@@ -6474,8 +6478,8 @@ class ApplicationCredentialAuth(test_v3.RestfulTestCase):
         new_project = PROVIDERS.resource_api.create_project(
             new_project_ref['id'], new_project_ref
         )
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.user['id'], new_project['id'], self.role_id
+        PROVIDERS.assignment_api.create_grant(
+            self.role_id, user_id=self.user['id'], project_id=new_project['id']
         )
         # Check that a password auth would work
         password_auth = self.build_authentication_request(

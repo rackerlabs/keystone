@@ -263,31 +263,20 @@ class Bootstrapper:
         self.admin_user_id = user['id']
 
     def _bootstrap_project_role_assignment(self):
-        try:
-            PROVIDERS.assignment_api.add_role_to_user_and_project(
-                user_id=self.admin_user_id,
-                project_id=self.project_id,
-                role_id=self.admin_role_id,
-            )
-            LOG.info(
-                'Granted role %(role)s on project %(project)s to '
-                'user %(username)s.',
-                {
-                    'role': self.admin_role_name,
-                    'project': self.project_name,
-                    'username': self.admin_username,
-                },
-            )
-        except exception.Conflict:
-            LOG.info(
-                'User %(username)s already has role %(role)s on '
-                'project %(project)s.',
-                {
-                    'username': self.admin_username,
-                    'role': self.admin_role_name,
-                    'project': self.project_name,
-                },
-            )
+        PROVIDERS.assignment_api.create_grant(
+            role_id=self.admin_role_id,
+            user_id=self.admin_user_id,
+            project_id=self.project_id,
+        )
+        LOG.info(
+            'Granted role %(role)s on project %(project)s to '
+            'user %(username)s.',
+            {
+                'role': self.admin_role_name,
+                'project': self.project_name,
+                'username': self.admin_username,
+            },
+        )
 
     def _bootstrap_system_role_assignment(self):
         # NOTE(lbragstad): We need to make sure a user has at least one role on

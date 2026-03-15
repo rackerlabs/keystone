@@ -194,31 +194,6 @@ class Manager(manager.Manager):
         role_ids = list({x['role_id'] for x in assignment_list})
         return PROVIDERS.role_api.list_roles_from_ids(role_ids)
 
-    @notifications.role_assignment('created')
-    def _add_role_to_user_and_project_adapter(
-        self,
-        role_id,
-        user_id=None,
-        group_id=None,
-        domain_id=None,
-        project_id=None,
-        inherited_to_projects=False,
-        context=None,
-    ):
-        # The parameters for this method must match the parameters for
-        # create_grant so that the notifications.role_assignment decorator
-        # will work.
-
-        PROVIDERS.resource_api.get_project(project_id)
-        PROVIDERS.role_api.get_role(role_id)
-        self.driver.add_role_to_user_and_project(user_id, project_id, role_id)
-
-    def add_role_to_user_and_project(self, user_id, project_id, role_id):
-        self._add_role_to_user_and_project_adapter(
-            role_id, user_id=user_id, project_id=project_id
-        )
-        COMPUTED_ASSIGNMENTS_REGION.invalidate()
-
     # TODO(henry-nash): We might want to consider list limiting this at some
     # point in the future.
     @MEMOIZE_COMPUTED_ASSIGNMENTS

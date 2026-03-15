@@ -237,8 +237,8 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
     def test_create_application_credential_with_trust(self):
         second_role = unit.new_role_ref(name='reader')
         PROVIDERS.role_api.create_role(second_role['id'], second_role)
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.user_id, self.project_id, second_role['id']
+        PROVIDERS.assignment_api.create_grant(
+            second_role['id'], user_id=self.user_id, project_id=self.project_id
         )
         with self.test_client() as c:
             pw_token = self.get_scoped_token()
@@ -474,8 +474,8 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
     def test_list_application_credentials_with_deleted_role(self):
         second_role = unit.new_role_ref(name='test_new_role')
         PROVIDERS.role_api.create_role(second_role['id'], second_role)
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.user_id, self.project_id, second_role['id']
+        PROVIDERS.assignment_api.create_grant(
+            second_role['id'], user_id=self.user_id, project_id=self.project_id
         )
         with self.test_client() as c:
             token = self.get_scoped_token()

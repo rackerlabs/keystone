@@ -1071,8 +1071,10 @@ class TestCase(BaseTestCase):
 
                 # fixtures.ROLES[2] is the _member_ role.
                 for project_id in projects:
-                    PROVIDERS.assignment_api.add_role_to_user_and_project(
-                        user_copy['id'], project_id, fixtures.ROLES[2]['id']
+                    PROVIDERS.assignment_api.create_grant(
+                        fixtures.ROLES[2]['id'],
+                        user_id=user_copy['id'],
+                        project_id=project_id,
                     )
 
                 # Use the ID from the fixture as the attribute name, so
@@ -1087,8 +1089,8 @@ class TestCase(BaseTestCase):
                 user = role_assignment['user']
                 project_id = role_assignment['project_id']
                 user_id = getattr(self, f'user_{user}')['id']
-                PROVIDERS.assignment_api.add_role_to_user_and_project(
-                    user_id, project_id, role_id
+                PROVIDERS.assignment_api.create_grant(
+                    role_id, user_id=user_id, project_id=project_id
                 )
 
             self.addCleanup(self.cleanup_instance(*fixtures_to_cleanup))

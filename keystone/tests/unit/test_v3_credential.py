@@ -315,8 +315,8 @@ class CredentialTestCase(CredentialBaseTestCase):
         alt_role = unit.new_role_ref(name='reader')
         alt_role_id = alt_role['id']
         PROVIDERS.role_api.create_role(alt_role_id, alt_role)
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            alt_user_id, alt_project_id, alt_role_id
+        PROVIDERS.assignment_api.create_grant(
+            alt_role_id, user_id=alt_user_id, project_id=alt_project_id
         )
         auth = self.build_authentication_request(
             user_id=alt_user_id,
@@ -679,8 +679,8 @@ class TestCredentialTrustScoped(CredentialBaseTestCase):
         role = unit.new_role_ref(name='reader')
         role_id = role['id']
         PROVIDERS.role_api.create_role(role_id, role)
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.user_id, self.project_id, role_id
+        PROVIDERS.assignment_api.create_grant(
+            role_id, user_id=self.user_id, project_id=self.project_id
         )
 
         ret_blob = json.loads(r.result['credential']['blob'])
@@ -760,8 +760,8 @@ class TestCredentialAppCreds(CredentialBaseTestCase):
         role = unit.new_role_ref(name='reader')
         role_id = role['id']
         PROVIDERS.role_api.create_role(role_id, role)
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.user_id, self.project_id, role_id
+        PROVIDERS.assignment_api.create_grant(
+            role_id, user_id=self.user_id, project_id=self.project_id
         )
 
         ret_blob = json.loads(r.result['credential']['blob'])
@@ -932,8 +932,8 @@ class TestCredentialAccessToken(CredentialBaseTestCase):
         role = unit.new_role_ref(name='reader')
         role_id = role['id']
         PROVIDERS.role_api.create_role(role_id, role)
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.user_id, self.project_id, role_id
+        PROVIDERS.assignment_api.create_grant(
+            role_id, user_id=self.user_id, project_id=self.project_id
         )
 
         ret_blob = json.loads(r.result['credential']['blob'])

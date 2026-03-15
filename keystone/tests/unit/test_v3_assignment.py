@@ -1931,15 +1931,15 @@ class AssignmentInheritanceTestCase(
         project2 = unit.new_project_ref(domain_id=domain['id'])
         PROVIDERS.resource_api.create_project(project2['id'], project2)
         # Add some roles to the project
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user1['id'], project1['id'], role_list[0]['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_list[0]['id'], user_id=user1['id'], project_id=project1['id']
         )
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user1['id'], project1['id'], role_list[1]['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_list[1]['id'], user_id=user1['id'], project_id=project1['id']
         )
         # ..and one on a different project as a spoiler
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user1['id'], project2['id'], role_list[2]['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_list[2]['id'], user_id=user1['id'], project_id=project2['id']
         )
 
         # Now create our inherited role on the domain
@@ -2275,15 +2275,15 @@ class AssignmentInheritanceTestCase(
         project2 = unit.new_project_ref(domain_id=domain['id'])
         PROVIDERS.resource_api.create_project(project2['id'], project2)
         # Add some roles to the project
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user1['id'], project1['id'], role_list[0]['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_list[0]['id'], user_id=user1['id'], project_id=project1['id']
         )
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user1['id'], project1['id'], role_list[1]['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_list[1]['id'], user_id=user1['id'], project_id=project1['id']
         )
         # ..and one on a different project as a spoiler
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user1['id'], project2['id'], role_list[2]['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_list[2]['id'], user_id=user1['id'], project_id=project2['id']
         )
 
         # Now create our inherited role on the domain
@@ -2373,15 +2373,15 @@ class AssignmentInheritanceTestCase(
         project2 = unit.new_project_ref(domain_id=domain['id'])
         PROVIDERS.resource_api.create_project(project2['id'], project2)
         # Add some roles to the project
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user1['id'], project1['id'], role_list[0]['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_list[0]['id'], user_id=user1['id'], project_id=project1['id']
         )
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user1['id'], project1['id'], role_list[1]['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_list[1]['id'], user_id=user1['id'], project_id=project1['id']
         )
         # ..and one on a different project as a spoiler
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user1['id'], project2['id'], role_list[2]['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_list[2]['id'], user_id=user1['id'], project_id=project2['id']
         )
 
         # Now create our inherited role on the domain
@@ -2479,11 +2479,11 @@ class AssignmentInheritanceTestCase(
         project2 = unit.new_project_ref(domain_id=domain['id'])
         PROVIDERS.resource_api.create_project(project2['id'], project2)
         # Add some spoiler roles to the projects
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user1['id'], project1['id'], role_list[0]['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_list[0]['id'], user_id=user1['id'], project_id=project1['id']
         )
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user1['id'], project2['id'], role_list[1]['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_list[1]['id'], user_id=user1['id'], project_id=project2['id']
         )
         # Create a non-inherited role as a spoiler
         PROVIDERS.assignment_api.create_grant(
@@ -3240,8 +3240,10 @@ class ImpliedRolesTests(
         return domain, user, project
 
     def _assign_top_role_to_user_on_project(self, user, project):
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user['id'], project['id'], self.role_list[0]['id']
+        PROVIDERS.assignment_api.create_grant(
+            self.role_list[0]['id'],
+            user_id=user['id'],
+            project_id=project['id'],
         )
 
     def _build_effective_role_assignments_url(self, user):

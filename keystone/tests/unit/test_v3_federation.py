@@ -3197,8 +3197,8 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         )
 
         # assign project role to federated user
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user_id, project_ref['id'], role_ref['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_ref['id'], user_id=user_id, project_id=project_ref['id']
         )
 
         # exchange an unscoped token for a scoped token
@@ -3277,8 +3277,8 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         user_id, unscoped_token = self._authenticate_via_saml()
 
         # assign project role to federated user
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user_id, project_ref['id'], role_ref['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_ref['id'], user_id=user_id, project_id=project_ref['id']
         )
 
         # get auth projects
@@ -3452,8 +3452,10 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
 
         # assign group project and role to user, this should create a
         # duplicate project
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user_id, project_from_group['id'], role_ref['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_ref['id'],
+            user_id=user_id,
+            project_id=project_from_group['id'],
         )
 
         # get user projects via /OS-FEDERATION/projects and test for duplicates

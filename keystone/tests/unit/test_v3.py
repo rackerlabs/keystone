@@ -250,16 +250,18 @@ class RestfulTestCase(
         self.role = unit.new_role_ref(name='admin')
         self.role_id = self.role['id']
         PROVIDERS.role_api.create_role(self.role_id, self.role)
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.user_id, self.project_id, self.role_id
+        PROVIDERS.assignment_api.create_grant(
+            self.role_id, user_id=self.user_id, project_id=self.project_id
         )
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.default_domain_user_id,
-            self.default_domain_project_id,
+        PROVIDERS.assignment_api.create_grant(
             self.role_id,
+            user_id=self.default_domain_user_id,
+            project_id=self.default_domain_project_id,
         )
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.default_domain_user_id, self.project_id, self.role_id
+        PROVIDERS.assignment_api.create_grant(
+            self.role_id,
+            user_id=self.default_domain_user_id,
+            project_id=self.project_id,
         )
 
         # Create "req_admin" user for simulating a real user instead of the
@@ -267,10 +269,10 @@ class RestfulTestCase(
         self.user_reqadmin = unit.create_user(
             PROVIDERS.identity_api, DEFAULT_DOMAIN_ID
         )
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.user_reqadmin['id'],
-            self.default_domain_project_id,
+        PROVIDERS.assignment_api.create_grant(
             self.role_id,
+            user_id=self.user_reqadmin['id'],
+            project_id=self.default_domain_project_id,
         )
 
         if create_region_and_endpoints:

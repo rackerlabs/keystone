@@ -813,8 +813,10 @@ class BaseLDAPIdentity(
         user = PROVIDERS.identity_api.create_user(user)
         role_member = unit.new_role_ref()
         PROVIDERS.role_api.create_role(role_member['id'], role_member)
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user['id'], self.project_baz['id'], role_member['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_member['id'],
+            user_id=user['id'],
+            project_id=self.project_baz['id'],
         )
         driver = PROVIDERS.identity_api._select_identity_driver(
             user['domain_id']
@@ -1825,15 +1827,11 @@ class LDAPIdentity(BaseLDAPIdentity):
         )
         PROVIDERS.resource_api.create_project(project1['id'], project1)
 
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user_id=user1['id'],
-            project_id=project1['id'],
-            role_id=role_list[0]['id'],
+        PROVIDERS.assignment_api.create_grant(
+            role_list[0]['id'], user_id=user1['id'], project_id=project1['id']
         )
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user_id=user1['id'],
-            project_id=project1['id'],
-            role_id=role_list[1]['id'],
+        PROVIDERS.assignment_api.create_grant(
+            role_list[1]['id'], user_id=user1['id'], project_id=project1['id']
         )
 
         # Although list_grants are not yet supported, we can test the

@@ -72,8 +72,8 @@ class _SystemDomainAndProjectUserDomainConfigTests:
         PROVIDERS.role_api.create_role(role['id'], role)
 
         # Give the new user a non-admin role on the project
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user['id'], project['id'], role['id']
+        PROVIDERS.assignment_api.create_grant(
+            role['id'], user_id=user['id'], project_id=project['id']
         )
         password_regex = uuid.uuid4().hex
         password_regex_description = uuid.uuid4().hex

@@ -302,8 +302,8 @@ class ResourceTestCase(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin):
         role_member = unit.new_role_ref()
         PROVIDERS.role_api.create_role(role_member['id'], role_member)
 
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user2['id'], project2['id'], role_member['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_member['id'], user_id=user2['id'], project_id=project2['id']
         )
 
         # First check a user in that domain can authenticate..

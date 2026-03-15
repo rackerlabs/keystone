@@ -614,14 +614,18 @@ class SecurityRequirementsTestCase(test_v3.RestfulTestCase):
         )
 
         # Give the non-admin user a role on the project
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.non_admin_user['id'], self.project['id'], self.role['id']
+        PROVIDERS.assignment_api.create_grant(
+            self.role['id'],
+            user_id=self.non_admin_user['id'],
+            project_id=self.project['id'],
         )
 
         # Give the user the admin role on the project, which is technically
         # `self.role` because RestfulTestCase sets that up for us.
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.admin_user['id'], self.project['id'], self.role_id
+        PROVIDERS.assignment_api.create_grant(
+            self.role_id,
+            user_id=self.admin_user['id'],
+            project_id=self.project['id'],
         )
 
     def _get_non_admin_token(self):
@@ -911,8 +915,10 @@ class SecurityRequirementsTestCase(test_v3.RestfulTestCase):
         PROVIDERS.resource_api.create_project(project['id'], project)
 
         # Give the new user a non-admin role on the project
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user['id'], project['id'], self.non_admin_role['id']
+        PROVIDERS.assignment_api.create_grant(
+            self.non_admin_role['id'],
+            user_id=user['id'],
+            project_id=project['id'],
         )
 
         # Set our security compliance config values, we do this after we've

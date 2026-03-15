@@ -323,10 +323,10 @@ class OAuthFlowTests(OAuth1Tests):
         # add a new role assignment to ensure it is ignored in the access token
         new_role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         PROVIDERS.role_api.create_role(new_role['id'], new_role)
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
+        PROVIDERS.assignment_api.create_grant(
+            role_id=new_role['id'],
             user_id=self.user_id,
             project_id=self.project_id,
-            role_id=new_role['id'],
         )
         content = self.post(url, headers=headers, body=body)
         token = content.result['token']
@@ -960,10 +960,10 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         # of oauth1.
         new_role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         PROVIDERS.role_api.create_role(new_role['id'], new_role)
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
+        PROVIDERS.assignment_api.create_grant(
+            role_id=new_role['id'],
             user_id=self.user_id,
             project_id=self.project_id,
-            role_id=new_role['id'],
         )
 
         url, headers = self._create_request_token(consumer, self.project_id)

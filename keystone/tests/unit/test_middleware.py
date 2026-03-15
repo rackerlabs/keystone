@@ -166,10 +166,10 @@ class AuthContextMiddlewareTest(
         self.group = PROVIDERS.identity_api.create_group(self.group)
 
         # Assign a role to the user on a project
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
+        PROVIDERS.assignment_api.create_grant(
+            role_id=self.role_id,
             user_id=self.user['id'],
             project_id=self.project_id,
-            role_id=self.role_id,
         )
 
         # Assign a role to the group on a project

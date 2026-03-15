@@ -167,22 +167,6 @@ class Assignment(base.AssignmentDriverBase):
                     role_id=role_id, actor_id=actor_id, target_id=target_id
                 )
 
-    def add_role_to_user_and_project(self, user_id, project_id, role_id):
-        try:
-            with sql.session_for_write() as session:
-                session.add(
-                    RoleAssignment(
-                        type=AssignmentType.USER_PROJECT,
-                        actor_id=user_id,
-                        target_id=project_id,
-                        role_id=role_id,
-                        inherited=False,
-                    )
-                )
-        except sql.DBDuplicateEntry:
-            msg = f'User {user_id} already has role {role_id} in tenant {project_id}'
-            raise exception.Conflict(type='role grant', details=msg)
-
     def _get_user_assignment_types(self):
         return [AssignmentType.USER_PROJECT, AssignmentType.USER_DOMAIN]
 

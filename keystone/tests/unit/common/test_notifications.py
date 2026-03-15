@@ -1726,8 +1726,8 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
             url, self.role_id, domain=self.domain_id, group=group['id']
         )
 
-    def test_add_role_to_user_and_project(self):
-        # A notification is sent when add_role_to_user_and_project is called on
+    def test_create_grant_for_user_and_project(self):
+        # A notification is sent when create_grant is called on
         # the assignment manager.
 
         project_ref = unit.new_project_ref(self.domain_id)
@@ -1736,8 +1736,8 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
         )
         project_id = project['id']
 
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.user_id, project_id, self.role_id
+        PROVIDERS.assignment_api.create_grant(
+            self.role_id, user_id=self.user_id, project_id=project_id
         )
 
         self.assertTrue(self._notifications)

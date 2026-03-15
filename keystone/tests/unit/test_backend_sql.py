@@ -403,8 +403,10 @@ class SqlIdentity(
         user = PROVIDERS.identity_api.create_user(user)
         role_member = unit.new_role_ref()
         PROVIDERS.role_api.create_role(role_member['id'], role_member)
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user['id'], self.project_bar['id'], role_member['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_member['id'],
+            user_id=user['id'],
+            project_id=self.project_bar['id'],
         )
         PROVIDERS.identity_api.delete_user(user['id'])
         self.assertRaises(
@@ -448,8 +450,10 @@ class SqlIdentity(
         user = PROVIDERS.identity_api.create_user(user)
         role_member = unit.new_role_ref()
         PROVIDERS.role_api.create_role(role_member['id'], role_member)
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user['id'], self.project_bar['id'], role_member['id']
+        PROVIDERS.assignment_api.create_grant(
+            role_member['id'],
+            user_id=user['id'],
+            project_id=self.project_bar['id'],
         )
         PROVIDERS.resource_api.delete_project(self.project_bar['id'])
         projects = PROVIDERS.assignment_api.list_projects_for_user(user['id'])
