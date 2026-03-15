@@ -1876,7 +1876,7 @@ class CADFNotificationsDataTestCase(test_v3.RestfulTestCase):
             PROVIDERS.catalog_api.create_service(ref['id'], ref.copy())
 
         action = CREATED_OPERATION + '.' + resource_type
-        initiator = notifications._get_request_audit_info(self.user_id)
+        initiator = cadfresource.Resource(typeURI=cadftaxonomy.ACCOUNT_USER)
         target = cadfresource.Resource(typeURI=cadftaxonomy.ACCOUNT_USER)
         outcome = 'success'
         event_type = 'identity.authenticate.created'
