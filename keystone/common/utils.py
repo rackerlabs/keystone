@@ -17,7 +17,7 @@
 #    under the License.
 import base64
 import collections.abc
-import contextlib
+
 import grp
 import hashlib
 import itertools
@@ -546,9 +546,3 @@ def create_directory(directory, keystone_user_id=None, keystone_group_id=None):
                 'provided: %s',
                 directory,
             )
-
-
-@contextlib.contextmanager
-def nested_contexts(*contexts):
-    with contextlib.ExitStack() as stack:
-        yield [stack.enter_context(c) for c in contexts]
