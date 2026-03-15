@@ -1468,9 +1468,6 @@ class RoleManager(manager.Manager):
     def list_roles(self, hints=None):
         return self.driver.list_roles(hints or driver_hints.Hints())
 
-    def _is_immutable(self, role):
-        return role['options'].get(ro_opt.IMMUTABLE_OPT.option_name, False)
-
     def update_role(self, role_id, role, initiator=None):
         original_role = self.driver.get_role(role_id)
         # Prevent the update of immutable set roles unless the update is

@@ -322,11 +322,6 @@ class Manager(manager.Manager):
                     % project_id
                 )
 
-    def _is_immutable(self, project_ref):
-        return project_ref['options'].get(
-            ro_opt.IMMUTABLE_OPT.option_name, False
-        )
-
     def _check_whole_subtree_is_disabled(self, project_id, subtree_list=None):
         if not subtree_list:
             subtree_list = self.list_projects_in_subtree(project_id)
