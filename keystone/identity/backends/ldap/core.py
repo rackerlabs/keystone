@@ -347,15 +347,6 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
     def filter_attributes(self, user):
         return base.filter_user(common_ldap.filter_entity(user))
 
-    def is_user(self, dn):
-        """Return True if the entry is a user."""
-        # NOTE(blk-u): It's easy to check if the DN is under the User tree,
-        # but may not be accurate. A more accurate test would be to fetch the
-        # entry to see if it's got the user objectclass, but this could be
-        # really expensive considering how this is used.
-
-        return common_ldap.dn_startswith(dn, self.tree_dn)
-
     def update(self, user_id, values, old_obj=None):
         if old_obj is None:
             old_obj = self.get(user_id)
@@ -415,15 +406,6 @@ class GroupApi(common_ldap.BaseLdap):
                 _('User %(user_id)s is already a member of group %(group_id)s')
                 % {'user_id': user_id, 'group_id': group_id}
             )
-
-    def list_user_groups(self, user_dn):
-        """Return a list of groups for which the user is a member."""
-        user_dn_esc = ldap.filter.escape_filter_chars(user_dn)
-        if self.group_ad_nesting:
-            query = f'({self.member_attribute}:{LDAP_MATCHING_RULE_IN_CHAIN}:={user_dn_esc})'
-        else:
-            query = f'({self.member_attribute}={user_dn_esc})'
-        return self.get_all(query)
 
     def list_user_groups_filtered(self, user_dn, hints):
         """Return a filtered list of groups for which the user is a member."""
