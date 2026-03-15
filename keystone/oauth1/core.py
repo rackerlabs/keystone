@@ -36,16 +36,6 @@ RequestTokenEndpoint = oauth1.RequestTokenEndpoint
 oRequest = oauthlib.common.Request
 
 
-class Token:
-    def __init__(self, key, secret):
-        self.key = key
-        self.secret = secret
-        self.verifier = None
-
-    def set_verifier(self, verifier):
-        self.verifier = verifier
-
-
 CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
 

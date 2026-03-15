@@ -16,6 +16,7 @@ import copy
 import datetime
 import http.client
 import random
+import types
 from unittest import mock
 import urllib
 from urllib import parse as urlparse
@@ -287,7 +288,9 @@ class OAuthFlowTests(OAuth1Tests):
         credentials = _urllib_parse_qs_text_keys(content.result)
         request_key = credentials['oauth_token'][0]
         request_secret = credentials['oauth_token_secret'][0]
-        self.request_token = oauth1.Token(request_key, request_secret)
+        self.request_token = types.SimpleNamespace(
+            key=request_key, secret=request_secret, verifier=None
+        )
         self.assertIsNotNone(self.request_token.key)
 
         url = self._authorize_request_token(request_key)
@@ -297,7 +300,7 @@ class OAuthFlowTests(OAuth1Tests):
         self.assertTrue(all(i in base.VERIFIER_CHARS for i in self.verifier))
         self.assertEqual(8, len(self.verifier))
 
-        self.request_token.set_verifier(self.verifier)
+        self.request_token.verifier = self.verifier
         url, headers = self._create_access_token(
             self.consumer, self.request_token
         )
@@ -309,7 +312,9 @@ class OAuthFlowTests(OAuth1Tests):
         credentials = _urllib_parse_qs_text_keys(content.result)
         access_key = credentials['oauth_token'][0]
         access_secret = credentials['oauth_token_secret'][0]
-        self.access_token = oauth1.Token(access_key, access_secret)
+        self.access_token = types.SimpleNamespace(
+            key=access_key, secret=access_secret, verifier=None
+        )
         self.assertIsNotNone(self.access_token.key)
 
         url, headers, body = self._get_oauth_token(
@@ -618,7 +623,9 @@ class AuthTokenTests:
         credentials = _urllib_parse_qs_text_keys(content.result)
         request_key = credentials['oauth_token'][0]
         request_secret = credentials['oauth_token_secret'][0]
-        self.request_token = oauth1.Token(request_key, request_secret)
+        self.request_token = types.SimpleNamespace(
+            key=request_key, secret=request_secret, verifier=None
+        )
         self.assertIsNotNone(self.request_token.key)
 
         url = self._authorize_request_token(request_key)
@@ -824,7 +831,9 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         credentials = _urllib_parse_qs_text_keys(content.result)
         request_key = credentials['oauth_token'][0]
         request_secret = credentials['oauth_token_secret'][0]
-        request_token = oauth1.Token(request_key, request_secret)
+        request_token = types.SimpleNamespace(
+            key=request_key, secret=request_secret, verifier=None
+        )
 
         url = self._authorize_request_token(request_key)
         body = {'roles': [{'id': self.role_id}]}
@@ -832,7 +841,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         verifier = resp.result['token']['oauth_verifier']
         self.assertIsNotNone(verifier)
 
-        request_token.set_verifier(uuid.uuid4().hex)
+        request_token.verifier = uuid.uuid4().hex
         url, headers = self._create_access_token(consumer, request_token)
         resp = self.post(
             url, headers=headers, expected_status=http.client.BAD_REQUEST
@@ -859,13 +868,15 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         credentials = _urllib_parse_qs_text_keys(content.result)
         request_key = credentials['oauth_token'][0]
         request_secret = credentials['oauth_token_secret'][0]
-        request_token = oauth1.Token(request_key, request_secret)
+        request_token = types.SimpleNamespace(
+            key=request_key, secret=request_secret, verifier=None
+        )
 
         url = self._authorize_request_token(request_key)
         body = {'roles': [{'id': self.role_id}]}
         resp = self.put(url, body=body, expected_status=http.client.OK)
         verifier = resp.result['token']['oauth_verifier']
-        request_token.set_verifier(verifier)
+        request_token.verifier = verifier
 
         # 1. Invalid base url.
         # Update the base url, so it will fail to validate the signature.
@@ -915,7 +926,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         verifier = ''.join(
             random.SystemRandom().sample(base.VERIFIER_CHARS, 8)
         )
-        request_token.set_verifier(verifier)
+        request_token.verifier = verifier
         url, headers = self._create_access_token(consumer, request_token)
         resp = self.post(
             url, headers=headers, expected_status=http.client.UNAUTHORIZED
@@ -1020,13 +1031,15 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         credentials = _urllib_parse_qs_text_keys(content.result)
         request_key = credentials['oauth_token'][0]
         request_secret = credentials['oauth_token_secret'][0]
-        request_token = oauth1.Token(request_key, request_secret)
+        request_token = types.SimpleNamespace(
+            key=request_key, secret=request_secret, verifier=None
+        )
 
         url = self._authorize_request_token(request_key)
         body = {'roles': [{'id': self.role_id}]}
         resp = self.put(url, body=body, expected_status=http.client.OK)
         verifier = resp.result['token']['oauth_verifier']
-        request_token.set_verifier(verifier)
+        request_token.verifier = verifier
         request_token_created = PROVIDERS.oauth_api.get_request_token(
             request_key.decode('utf-8')
         )
@@ -1091,7 +1104,9 @@ class MaliciousOAuth1Tests(OAuth1Tests):
             credentials = _urllib_parse_qs_text_keys(content.result)
             request_key = credentials['oauth_token'][0]
             request_secret = credentials['oauth_token_secret'][0]
-            self.request_token = oauth1.Token(request_key, request_secret)
+            self.request_token = types.SimpleNamespace(
+                key=request_key, secret=request_secret, verifier=None
+            )
             self.assertIsNotNone(self.request_token.key)
 
             url = self._authorize_request_token(request_key)
@@ -1124,7 +1139,9 @@ class MaliciousOAuth1Tests(OAuth1Tests):
             credentials = _urllib_parse_qs_text_keys(content.result)
             request_key = credentials['oauth_token'][0]
             request_secret = credentials['oauth_token_secret'][0]
-            self.request_token = oauth1.Token(request_key, request_secret)
+            self.request_token = types.SimpleNamespace(
+                key=request_key, secret=request_secret, verifier=None
+            )
             self.assertIsNotNone(self.request_token.key)
 
             url = self._authorize_request_token(request_key)
@@ -1132,7 +1149,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
             resp = self.put(url, body=body, expected_status=http.client.OK)
             self.verifier = resp.result['token']['oauth_verifier']
 
-            self.request_token.set_verifier(self.verifier)
+            self.request_token.verifier = self.verifier
             url, headers = self._create_access_token(
                 self.consumer, self.request_token
             )
@@ -1144,7 +1161,9 @@ class MaliciousOAuth1Tests(OAuth1Tests):
             credentials = _urllib_parse_qs_text_keys(content.result)
             access_key = credentials['oauth_token'][0]
             access_secret = credentials['oauth_token_secret'][0]
-            self.access_token = oauth1.Token(access_key, access_secret)
+            self.access_token = types.SimpleNamespace(
+                key=access_key, secret=access_secret, verifier=None
+            )
             self.assertIsNotNone(self.access_token.key)
 
             url, headers, body = self._get_oauth_token(
@@ -1258,7 +1277,9 @@ class OAuthNotificationTests(
         credentials = _urllib_parse_qs_text_keys(content.result)
         request_key = credentials['oauth_token'][0]
         request_secret = credentials['oauth_token_secret'][0]
-        self.request_token = oauth1.Token(request_key, request_secret)
+        self.request_token = types.SimpleNamespace(
+            key=request_key, secret=request_secret, verifier=None
+        )
         self.assertIsNotNone(self.request_token.key)
 
         request_key_string = request_key.decode()
@@ -1282,7 +1303,7 @@ class OAuthNotificationTests(
         self.assertTrue(all(i in base.VERIFIER_CHARS for i in self.verifier))
         self.assertEqual(8, len(self.verifier))
 
-        self.request_token.set_verifier(self.verifier)
+        self.request_token.verifier = self.verifier
         url, headers = self._create_access_token(
             self.consumer, self.request_token
         )
@@ -1294,7 +1315,9 @@ class OAuthNotificationTests(
         credentials = _urllib_parse_qs_text_keys(content.result)
         access_key = credentials['oauth_token'][0]
         access_secret = credentials['oauth_token_secret'][0]
-        self.access_token = oauth1.Token(access_key, access_secret)
+        self.access_token = types.SimpleNamespace(
+            key=access_key, secret=access_secret, verifier=None
+        )
         self.assertIsNotNone(self.access_token.key)
 
         access_key_string = access_key.decode()

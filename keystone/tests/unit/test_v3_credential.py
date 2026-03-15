@@ -15,6 +15,7 @@
 import hashlib
 import http.client
 import json
+import types
 from unittest import mock
 import urllib
 import uuid
@@ -877,14 +878,16 @@ class TestCredentialAccessToken(CredentialBaseTestCase):
         credentials = self._urllib_parse_qs_text_keys(content.result)
         request_key = credentials['oauth_token'][0]
         request_secret = credentials['oauth_token_secret'][0]
-        request_token = oauth1.Token(request_key, request_secret)
+        request_token = types.SimpleNamespace(
+            key=request_key, secret=request_secret, verifier=None
+        )
 
         url = self._authorize_request_token(request_key)
         body = {'roles': [{'id': self.role_id}]}
         resp = self.put(url, body=body, expected_status=http.client.OK)
         verifier = resp.result['token']['oauth_verifier']
 
-        request_token.set_verifier(verifier)
+        request_token.verifier = verifier
         url, headers = self._create_access_token(consumer, request_token)
         content = self.post(
             url,
@@ -894,7 +897,9 @@ class TestCredentialAccessToken(CredentialBaseTestCase):
         credentials = self._urllib_parse_qs_text_keys(content.result)
         access_key = credentials['oauth_token'][0]
         access_secret = credentials['oauth_token_secret'][0]
-        access_token = oauth1.Token(access_key, access_secret)
+        access_token = types.SimpleNamespace(
+            key=access_key, secret=access_secret, verifier=None
+        )
 
         url, headers, body = self._get_oauth_token(consumer, access_token)
         content = self.post(url, headers=headers, body=body)
