@@ -63,11 +63,6 @@ os_oauth2_resource_rel_func = functools.partial(
     extension_name='OS-OAUTH2',
     extension_version='1.0',
 )
-os_oauth2_parameter_rel_func = functools.partial(
-    json_home.build_v3_extension_parameter_relation,
-    extension_name='OS-OAUTH2',
-    extension_version='1.0',
-)
 
 # OS-REVOKE "extension"
 os_revoke_resource_rel_func = functools.partial(
