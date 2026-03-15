@@ -704,12 +704,6 @@ class Gone(Error):
     title = http.client.responses[http.client.GONE]
 
 
-class ConfigFileNotFound(UnexpectedError):
-    debug_message_format = _(
-        "The Keystone configuration file %(config_file)s could not be found."
-    )
-
-
 class KeysNotFound(UnexpectedError):
     debug_message_format = _(
         'No encryption keys found; run keystone-manage '
