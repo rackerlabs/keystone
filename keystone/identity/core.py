@@ -426,19 +426,6 @@ class DomainConfigs(provider_api.ProviderAPIMixin, dict):
         else:
             return CONF
 
-    def reload_domain_driver(self, domain_id):
-        # Only used to support unit tests that want to set
-        # new config values.  This should only be called once
-        # the domains have been configured, since it relies on
-        # the fact that the configuration files/database have already been
-        # read.
-        if self.configured:
-            if domain_id in self:
-                self[domain_id]['driver'] = self._load_driver(self[domain_id])
-            else:
-                # The standard driver
-                self.driver = self.driver()
-
     def check_config_and_reload_domain_driver_if_required(self, domain_id):
         """Check for, and load, any new domain specific config for this domain.
 
