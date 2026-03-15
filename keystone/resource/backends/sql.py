@@ -124,19 +124,6 @@ class Resource(base.ResourceDriverBase):
                     if not self._is_hidden_ref(project_ref)
                 ]
 
-    def list_project_ids_from_domain_ids(self, domain_ids):
-        if not domain_ids:
-            return []
-        else:
-            with sql.session_for_read() as session:
-                query = session.query(sql_model.Project.id)
-                query = query.filter(
-                    sql_model.Project.domain_id.in_(domain_ids)
-                )
-                return [
-                    x.id for x in query.all() if not self._is_hidden_ref(x)
-                ]
-
     def list_projects_in_domain(self, domain_id):
         with sql.session_for_read() as session:
             try:

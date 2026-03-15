@@ -958,11 +958,6 @@ class SqlIdentity(
             projects = driver.list_projects_from_ids([ref_id])
             self.assertThat(projects, matchers.HasLength(0))
 
-            project_ids = list(
-                driver.list_project_ids_from_domain_ids([ref_id])
-            )
-            self.assertNotIn(ref_id, project_ids)
-
             self.assertRaises(
                 exception.DomainNotFound,
                 driver.list_projects_in_domain,
