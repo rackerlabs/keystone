@@ -444,9 +444,6 @@ class TokenModel:
 
         return roles
 
-    def _get_oauth2_credential_roles(self):
-        return self._get_project_roles()
-
     @property
     def roles(self):
         if self.system_scoped:
