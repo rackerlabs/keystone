@@ -37,7 +37,6 @@ from sqlalchemy.orm.attributes import InstrumentedAttribute
 from sqlalchemy.orm import declarative_base
 from sqlalchemy import types as sql_types
 
-from keystone.common import driver_hints
 from keystone.common import utils
 import keystone.conf
 from keystone import exception
@@ -333,10 +332,6 @@ def _wrap_session(sess):
     if CONF.profiler.enabled and CONF.profiler.trace_sqlalchemy:
         sess = osprofiler.sqlalchemy.wrap_session(sql, sess)
     return sess
-
-
-def truncated(f):
-    return driver_hints.truncated(f)
 
 
 class _WontMatch(Exception):
