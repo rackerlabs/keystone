@@ -15,12 +15,6 @@ from oslo_context import context as oslo_context
 REQUEST_CONTEXT_ENV = 'keystone.oslo_request_context'
 
 
-def _prop(name):
-    return property(
-        lambda x: getattr(x, name), lambda x, y: setattr(x, name, y)
-    )
-
-
 class RequestContext(oslo_context.RequestContext):
     def __init__(self, **kwargs):
         self.username = kwargs.pop('username', None)
