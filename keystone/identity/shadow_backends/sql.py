@@ -223,14 +223,6 @@ class ShadowUsers(base.ShadowUsersDriverBase):
             raise exception.UserNotFound(user_id=user_id)
         return user_ref
 
-    def list_federated_users_info(self, hints=None):
-        with sql.session_for_read() as session:
-            query = session.query(model.FederatedUser)
-            fed_user_refs = sql.filter_limit_query(
-                model.FederatedUser, query, hints
-            )
-            return [x.to_dict() for x in fed_user_refs]
-
     def add_user_to_group_expires(self, user_id, group_id):
         def get_federated_user():
             with sql.session_for_read() as session:
