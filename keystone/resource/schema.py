@@ -24,21 +24,6 @@ domain_id: dict[str, Any] = {
     "description": "The ID of the domain.",
 }
 
-domain_name: dict[str, Any] = {
-    "type": "string",
-    "description": "The name of the domain.",
-}
-
-project_id: dict[str, Any] = {
-    "type": "string",
-    "description": "The ID of the project.",
-}
-
-default_project_id: dict[str, Any] = {
-    "type": ["string", "null"],
-    "description": "The ID of the project.",
-}
-
 _name_properties = {
     'type': 'string',
     'description': 'The resource name.',
@@ -83,24 +68,6 @@ project_tag_create = _project_tag_name_properties
 
 # This is for updaing a project with a list of tags
 project_tags_update = _project_tags_list_properties
-
-project_create = {
-    'type': 'object',
-    'properties': _project_properties,
-    # NOTE(lbragstad): A project name is the only parameter required for
-    # project creation according to the Identity V3 API. We should think
-    # about using the maxProperties validator here, and in update.
-    'required': ['name'],
-    'additionalProperties': True,
-}
-
-project_update = {
-    'type': 'object',
-    'properties': _project_properties,
-    # NOTE(lbragstad): Make sure at least one property is being updated
-    'minProperties': 1,
-    'additionalProperties': True,
-}
 
 project_index_request_query = {
     'type': 'object',

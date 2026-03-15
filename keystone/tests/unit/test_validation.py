@@ -428,8 +428,18 @@ class ProjectValidationTestCase(unit.BaseTestCase):
 
         self.project_name = 'My Project'
 
-        create = resource_schema.project_create
-        update = resource_schema.project_update
+        create = {
+            'type': 'object',
+            'properties': resource_schema._project_properties,
+            'required': ['name'],
+            'additionalProperties': True,
+        }
+        update = {
+            'type': 'object',
+            'properties': resource_schema._project_properties,
+            'minProperties': 1,
+            'additionalProperties': True,
+        }
         self.create_project_validator = validators.SchemaValidator(create)
         self.update_project_validator = validators.SchemaValidator(update)
 
