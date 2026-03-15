@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import copy
+
 from typing import Any
 
 from keystone.api.validation import parameter_types
@@ -258,9 +258,6 @@ user_create_request: dict[str, Any] = {
     "additionalProperties": False,
 }
 
-user_create_response_body: dict[str, Any] = user_get_response_body
-
-user_update_properties = copy.deepcopy(_user_properties)
 # It is not allowed anymore to update domain of the existing user
 user_update_request: dict[str, Any] = {
     "type": "object",
@@ -275,8 +272,6 @@ user_update_request: dict[str, Any] = {
     "required": ["user"],
     "additionalProperties": False,
 }
-
-user_update_response_body: dict[str, Any] = user_get_response_body
 
 group_index_request_query: dict[str, Any] = {
     "type": "object",
