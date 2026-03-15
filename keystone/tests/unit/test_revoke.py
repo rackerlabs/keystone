@@ -42,7 +42,10 @@ def _future_time():
 def _sample_blank_token():
     issued_delta = datetime.timedelta(minutes=-2)
     issued_at = timeutils.utcnow() + issued_delta
-    token_data = revoke_model.blank_token_data(issued_at)
+    token_data = dict.fromkeys(revoke_model._NAMES)
+    for name in revoke_model._TOKEN_KEYS:
+        token_data[name] = None
+    token_data['issued_at'] = issued_at
     return token_data
 
 
