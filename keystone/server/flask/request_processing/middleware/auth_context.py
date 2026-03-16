@@ -235,8 +235,6 @@ class AuthContextMiddleware(
 ):
     """Build the authentication context from the request auth token."""
 
-    kwargs_to_fetch_token = True
-
     def __init__(self, app):
         super().__init__(app, log=LOG, service_type='identity')
         self.token = None
