@@ -29,7 +29,10 @@ def configure(
     keystone.conf.set_config_defaults()
 
     CONF(
-        project='keystone', version=version, default_config_files=config_files
+        project='keystone',
+        prog='keystone-api',
+        version=version,
+        default_config_files=config_files,
     )
 
     pre_setup_logging_fn()
