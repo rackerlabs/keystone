@@ -179,15 +179,6 @@ class AssignmentDriverBase(metaclass=abc.ABCMeta):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def list_system_grants_by_role(self, role_id):
-        """Return a list of system assignments associated to a role.
-
-        :param role_id: the unique ID of the role to grant to the user
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
     def check_system_grant(self, role_id, actor_id, target_id, inherited):
         """Check if a user or group has a specific role on the system.
 

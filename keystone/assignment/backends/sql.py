@@ -365,12 +365,6 @@ class Assignment(base.AssignmentDriverBase):
 
         return [role.to_dict() for role in results]
 
-    def list_system_grants_by_role(self, role_id):
-        with sql.session_for_read() as session:
-            query = session.query(SystemRoleAssignment)
-            query = query.filter_by(role_id=role_id)
-            return query.all()
-
     def check_system_grant(self, role_id, actor_id, target_id, inherited):
         with sql.session_for_read() as session:
             try:
