@@ -144,39 +144,6 @@ class Hints:
         )
         return int(limit) if limit else CONF.max_db_limit
 
-    def get_limit_with_default(
-        self, default_limit: ty.Optional[int] = None
-    ) -> int:
-        """Return page limit for the query.
-
-        1. `limit` was set in the query parameters:
-            `min(limit, MAX_LIMIT)`
-
-        2. `limit` is not set and `default_limit` is set:
-            `min(default_limit, MAX_LIMIT)`
-
-        2. `limit` is null, `default_limit` is null, `CONF.list_limit` is set:
-            `min(CONF.list_limit, MAX_LIMIT)`
-
-        3. `limit` is null, `default_limit` is null, `CONF.list_limit` is null:
-            `CONF.max_db_limit`
-
-        """
-
-        _user_limit: ty.Optional[int] = (
-            self.limit.get("limit") if self.limit else None
-        )
-        _absolute_limit: int = CONF.max_db_limit
-        # when default (as resource specific) is not set try to get the global
-        # default
-        _default_limit: ty.Optional[int] = default_limit or CONF.list_limit
-        if _user_limit:
-            return min(_user_limit, _absolute_limit)
-        elif _default_limit:
-            return min(_default_limit, _absolute_limit)
-        else:
-            return CONF.max_db_limit
-
     def set_marker(self, marker: str):
         """Set a marker pointing to the last entry of the page."""
         self.marker = marker

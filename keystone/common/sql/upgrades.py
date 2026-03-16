@@ -159,12 +159,6 @@ def get_head_revisions():
     return heads_map
 
 
-def _is_database_under_alembic_control(engine):
-    with engine.connect() as conn:
-        context = alembic_migration.MigrationContext.configure(conn)
-        return bool(context.get_current_heads())
-
-
 def _upgrade_alembic(engine, config, branch):
     revision = 'heads'
     if branch:

@@ -115,12 +115,6 @@ class ResourceOptionRegistry:
         return {opt.option_name for opt in self.options}
 
     @property
-    def options_by_name(self):
-        return {
-            opt.option_name: opt for opt in self._registered_options.values()
-        }
-
-    @property
     def options(self):
         return self._registered_options.values()
 
