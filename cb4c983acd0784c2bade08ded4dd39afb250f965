@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d325130f_f0d253d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-03-16T09:30:20Z",
+      "side": 1,
+      "message": "recheck - the virtual machine that was started by nova had a kernel panic. I doubt that it is caused by this change.",
+      "revId": "cb4c983acd0784c2bade08ded4dd39afb250f965",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
