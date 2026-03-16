@@ -66,7 +66,6 @@ class TokenModel:
         self.__trustor = None
         self.__trustee = None
         self.__trust_project = None
-        self.__trust_project_domain = None
 
         self.is_federated = False
         self.identity_provider_id = None
@@ -79,7 +78,6 @@ class TokenModel:
         self.application_credential_id = None
         self.__application_credential = None
 
-        self.oauth2_credential_id = None
         self.oauth2_thumbprint = None
 
     def __repr__(self):
@@ -250,17 +248,6 @@ class TokenModel:
                     self.trust['project_id']
                 )
         return self.__trust_project
-
-    @property
-    def trust_project_domain(self):
-        if not self.__trust_project_domain:
-            if self.trust:
-                self.__trust_project_domain = (
-                    PROVIDERS.resource_api.get_domain(
-                        self.trust_project['domain_id']
-                    )
-                )
-        return self.__trust_project_domain
 
     def _get_system_roles(self):
         roles = []
