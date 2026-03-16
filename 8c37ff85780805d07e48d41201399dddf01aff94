@@ -35,6 +35,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "94ac3da0_528a3a4c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2026-03-16T10:08:25Z",
+      "side": 1,
+      "message": "Thanks, I will update the patch with necessary documentation, tests etc...",
+      "parentUuid": "fafbc206_ddb9956f",
+      "revId": "8c37ff85780805d07e48d41201399dddf01aff94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1e39319b_9a895c74",
