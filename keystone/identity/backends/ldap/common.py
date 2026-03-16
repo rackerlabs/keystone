@@ -1247,7 +1247,7 @@ class KeystoneLDAPHandler(LDAPHandler):
             if pctrls:
                 # LDAP server supports pagination
                 if use_old_paging_api:
-                    est, cookie = pctrls[0].controlValue
+                    _, cookie = pctrls[0].controlValue
                     lc.controlValue = (self.page_size, cookie)
                 else:
                     cookie = lc.cookie = pctrls[0].cookie
