@@ -10,6 +10,5 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-FEDERATION = 'OS-FEDERATION'
 IDENTITY_PROVIDER = 'OS-FEDERATION:identity_provider'
 PROTOCOL = 'OS-FEDERATION:protocol'

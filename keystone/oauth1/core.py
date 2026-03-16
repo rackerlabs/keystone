@@ -33,7 +33,6 @@ ResourceEndpoint = oauth1.ResourceEndpoint
 AuthorizationEndpoint = oauth1.AuthorizationEndpoint
 SIG_HMAC = oauth1.SIGNATURE_HMAC
 RequestTokenEndpoint = oauth1.RequestTokenEndpoint
-oRequest = oauthlib.common.Request
 
 
 CONF = keystone.conf.CONF

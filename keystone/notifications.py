@@ -23,7 +23,6 @@ import flask
 from oslo_log import log
 import oslo_messaging
 from oslo_utils import reflection
-import pycadf
 from pycadf import attachment
 from pycadf import cadftaxonomy as taxonomy
 from pycadf import cadftype

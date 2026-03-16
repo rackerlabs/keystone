@@ -18,7 +18,6 @@ REQUEST_CONTEXT_ENV = 'keystone.oslo_request_context'
 class RequestContext(oslo_context.RequestContext):
     def __init__(self, **kwargs):
         self.username = kwargs.pop('username', None)
-        self.project_tag_name = kwargs.pop('project_tag_name', None)
 
         self.is_delegated_auth = kwargs.pop('is_delegated_auth', False)
 
