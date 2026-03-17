@@ -16,6 +16,24 @@
       "message": "Why was \"keystone-api\" chosen?\n\nMy understanding is that it will affect the directory where the configs will be looked at. The historical default for keystone has been /etc/keystone/keystone.conf.d:\nhttps://opendev.org/x/microstack/src/branch/master/snap-overlay/snap-openstack.yaml\nhttps://docs.openstack.org/keystone/rocky/install/keystone-install-obs.html\n\nhttps://github.com/openstack/openstack-helm/blob/master/keystone/values.yaml#L282\n\nI would say it should be just \"keystone\".",
       "revId": "19d87f570e97efd8d8eb116c147cdb6639c29cb0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5cf04fe8_759e6f35",
+        "filename": "keystone/server/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2026-03-17T15:35:10Z",
+      "side": 1,
+      "message": "oslo.config provides two level conf.d. The first one is `/etc/\u003cproject\u003e/\u003cproject\u003e.conf.d` (which is currently loaded without this change) and the other is `/etc/\u003cproject\u003e/\u003cprog\u003e.conf.d` (which is fixed by this chane).\n\nThis might be redundant for keystone but the general assumption in oslo.config is that project name and program name are different so I followed that pattern.",
+      "parentUuid": "0b23d9d8_94b47d24",
+      "revId": "19d87f570e97efd8d8eb116c147cdb6639c29cb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
