@@ -34,6 +34,24 @@
       "parentUuid": "0b23d9d8_94b47d24",
       "revId": "19d87f570e97efd8d8eb116c147cdb6639c29cb0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83efe39b_2bdf28cc",
+        "filename": "keystone/server/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 9816
+      },
+      "writtenOn": "2026-03-17T15:38:29Z",
+      "side": 1,
+      "message": "\u003e This might be redundant for keystone but the general assumption in oslo.config is that project name and program name are different so I followed that pattern.\n\nIgnore this. I noticed that using keystone-api has still a (thin) benefit because you can create\n /etc/keystone/keystone-api.conf.d for api service\nand\n /etc/keystone/keystone-manage.conf.d for management tool\n\nwhile /etc/keystone/keystone.conf.d is always loaded by both.",
+      "parentUuid": "5cf04fe8_759e6f35",
+      "revId": "19d87f570e97efd8d8eb116c147cdb6639c29cb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
