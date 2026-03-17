@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b23d9d8_94b47d24",
+        "filename": "keystone/server/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-03-17T15:30:06Z",
+      "side": 1,
+      "message": "Why was \"keystone-api\" chosen?\n\nMy understanding is that it will affect the directory where the configs will be looked at. The historical default for keystone has been /etc/keystone/keystone.conf.d:\nhttps://opendev.org/x/microstack/src/branch/master/snap-overlay/snap-openstack.yaml\nhttps://docs.openstack.org/keystone/rocky/install/keystone-install-obs.html\n\nhttps://github.com/openstack/openstack-helm/blob/master/keystone/values.yaml#L282\n\nI would say it should be just \"keystone\".",
+      "revId": "19d87f570e97efd8d8eb116c147cdb6639c29cb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
