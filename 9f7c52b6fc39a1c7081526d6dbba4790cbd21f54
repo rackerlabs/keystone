@@ -50,6 +50,23 @@
       "message": "recheck",
       "revId": "9f7c52b6fc39a1c7081526d6dbba4790cbd21f54",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "933be02c_e30d4011",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 38651
+      },
+      "writtenOn": "2026-03-18T16:29:02Z",
+      "side": 1,
+      "message": "Maybe needs rebase from master for some reason ? interesting issue though not finding openapi spec.",
+      "revId": "9f7c52b6fc39a1c7081526d6dbba4790cbd21f54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
