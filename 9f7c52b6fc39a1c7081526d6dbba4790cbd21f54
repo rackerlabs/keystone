@@ -67,6 +67,24 @@
       "message": "Maybe needs rebase from master for some reason ? interesting issue though not finding openapi spec.",
       "revId": "9f7c52b6fc39a1c7081526d6dbba4790cbd21f54",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69b789c6_47485b84",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 22540
+      },
+      "writtenOn": "2026-03-18T22:44:41Z",
+      "side": 1,
+      "message": "No :( .It looks like it fails https://opendev.org/openstack/codegenerator/src/branch/master/codegenerator/common/__init__.py#L20 because the whole class has been reworked in the openapi_core package. If I pin it to 0.22.0 the test passes. \n0.23.0 was published a few days ago. I might need to open a new bug for this.",
+      "parentUuid": "933be02c_e30d4011",
+      "revId": "9f7c52b6fc39a1c7081526d6dbba4790cbd21f54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
