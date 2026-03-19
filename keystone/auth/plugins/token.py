@@ -65,8 +65,9 @@ def token_authenticate(token: TokenModel) -> dict[str, ty.Any]:
         # privilege attacks
 
         json_body = flask.request.get_json(silent=True, force=True) or {}
-        project_scoped = 'project' in json_body['auth'].get('scope', {})
-        domain_scoped = 'domain' in json_body['auth'].get('scope', {})
+        requested_scope = json_body['auth'].get('scope', {})
+        project_scoped = 'project' in requested_scope
+        domain_scoped = 'domain' in requested_scope
 
         if token.oauth_scoped:
             raise exception.ForbiddenAction(
@@ -92,12 +93,17 @@ def token_authenticate(token: TokenModel) -> dict[str, ty.Any]:
         elif token.application_credential:
             # NOTE(gtema): when getting token from token (initially issued by
             # application credential) it is necessary to ensure scope is not
-            # requested.
-            if project_scoped or domain_scoped:
+            # requested. Application credentials are bound to a specific
+            # project and set of roles. Allowing rescoping to any other
+            # scope would defeat that constraint and could lead to privilege
+            # escalation. Checking requested_scope rather than enumerating
+            # individual scope types ensures any future scope type is also
+            # blocked.
+            if requested_scope:
                 raise exception.ForbiddenAction(
                     action=_(
                         "Using an application credential token to create a "
-                        "project-scoped or domain-scoped token is not allowed."
+                        "scoped token is not allowed."
                     )
                 )
             response_data["application_credential_id"] = (
