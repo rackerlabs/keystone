@@ -16,6 +16,23 @@
       "message": "this is a very controversial proposal. We need to go through a careful evaluation with a spec and eventually a dedicated PTG discussion. I am strongly concerned about granting any admin capabilities through the federated login. I know for the project it is already there and I can\u0027t do anything about it, but I am not in favor of granting system scope over federation.",
       "revId": "b901951ee9bbf2cca12a068c8874d670d79b4142",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "46107cad_18c8edf4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-03-19T16:38:12Z",
+      "side": 1,
+      "message": "One can already get a system-scoped token as a federated user: https://review.opendev.org/c/openstack/keystone/+/981321/1/keystone/tests/unit/test_v3_federation.py",
+      "revId": "b901951ee9bbf2cca12a068c8874d670d79b4142",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
