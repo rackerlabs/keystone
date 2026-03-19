@@ -3042,6 +3042,59 @@ class FernetFederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         token_resp = resp.result['token']
         self._check_project_scoped_token_attributes(token_resp, project['id'])
 
+    def test_local_federated_user_can_scope_to_system(self):
+        """Test local-type federated user can get a system-scoped token.
+
+        The mapping rule for LOCAL_USER_ASSERTION maps the federated
+        identity to an existing local user (self.user) with type 'local'.
+        Because the resulting token has is_federated=False, the Fernet
+        provider dispatches to SystemScopedPayload (version 8) rather
+        than hitting the missing FederatedSystemScopedPayload case.
+        This proves that federated users can already obtain system scope
+        today without any changes to the token provider.
+        """
+        # Grant a system role to the local user that the federated
+        # identity maps to.
+        PROVIDERS.assignment_api.create_system_grant_for_user(
+            self.user['id'], self.role_customer['id']
+        )
+
+        # Authenticate via federation using LOCAL_USER_ASSERTION.
+        # The mapping rule matches UserType=random and resolves to
+        # user.type="local", which means the token is NOT marked as
+        # federated.
+        unscoped = self._issue_unscoped_token(assertion='LOCAL_USER_ASSERTION')
+        self.assertFalse(unscoped.is_federated)
+        self.assertEqual(self.user['id'], unscoped.user_id)
+
+        # Rescope the unscoped token to system scope.
+        scope_request = {
+            'auth': {
+                'identity': {
+                    'methods': ['token'],
+                    'token': {'id': unscoped.id},
+                },
+                'scope': {'system': {'all': True}},
+            }
+        }
+        r = self.v3_create_token(scope_request)
+        token_resp = r.result['token']
+
+        # Verify the token is system-scoped and carries the expected role.
+        self.assertTrue(token_resp['system']['all'])
+        role_ids = {role['id'] for role in token_resp['roles']}
+        self.assertIn(self.role_customer['id'], role_ids)
+
+        # Validate the token via GET to exercise the full
+        # Fernet serialize-deserialize round-trip.
+        token_id = r.headers.get('X-Subject-Token')
+        headers = {'X-Subject-Token': token_id}
+        validate_resp = self.get(
+            '/auth/tokens/', token=token_id, headers=headers
+        )
+        validated = validate_resp.result['token']
+        self.assertTrue(validated['system']['all'])
+
 
 class JWSFederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
     AUTH_METHOD = 'token'
