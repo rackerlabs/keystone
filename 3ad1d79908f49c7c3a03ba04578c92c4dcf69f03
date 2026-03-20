@@ -16,6 +16,24 @@
       "message": "Thanks for putting this together. I agree that updating ⁠last_active_at on AppCred authentication is a solid improvement and aligns better with operator expectations for active credential tracking.\nHowever, we should make this behavior configurable (e.g., via a new ⁠[application_credential] config option, perhaps defaulting to ⁠True for this new behavior). There are deployment scenarios where operators explicitly do not want an automated script or background service using an AppCred to keep the credential alive ad infinitum—they may want the credential to expire or be flagged for rotation based on the user’s actual interactive login activity rather than the script’s polling.\nAdding a toggle gives us the best of both worlds without breaking strict rotation policies.",
       "revId": "3ad1d79908f49c7c3a03ba04578c92c4dcf69f03",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9a0c244_5baff488",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-03-20T16:33:57Z",
+      "side": 1,
+      "message": "Sounds good. The flag will by default maintain the current behavior. Please yell if you disagree.",
+      "parentUuid": "0f200e55_120a3009",
+      "revId": "3ad1d79908f49c7c3a03ba04578c92c4dcf69f03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
