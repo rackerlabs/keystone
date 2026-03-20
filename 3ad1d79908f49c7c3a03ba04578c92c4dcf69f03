@@ -34,6 +34,24 @@
       "parentUuid": "0f200e55_120a3009",
       "revId": "3ad1d79908f49c7c3a03ba04578c92c4dcf69f03",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04a59596_509cab26",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-03-20T18:39:47Z",
+      "side": 1,
+      "message": "sorry, i misread it the first time. I will add the option to disable updating last_active_at",
+      "parentUuid": "b9a0c244_5baff488",
+      "revId": "3ad1d79908f49c7c3a03ba04578c92c4dcf69f03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
