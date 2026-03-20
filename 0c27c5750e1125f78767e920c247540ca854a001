@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4735f6e2_0624ea2f",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-03-20T15:50:01Z",
+      "side": 1,
+      "message": "Right now this exception is the only way to figure out what exactly is wrong in the request or whether the schema itself is wrong. I remember I had some cases where only the whole exception was able to give me insight into what exactly was wrong. I generally agree for everything \u003c500 we should not log exceptions, but exceptions are the only way to get stacktraces to be able to catch the issue. I am worrying we loose some insides with this change",
+      "revId": "0c27c5750e1125f78767e920c247540ca854a001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
