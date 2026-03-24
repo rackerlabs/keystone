@@ -72,6 +72,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e9178d37_02a14d19",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2026-03-24T10:29:27Z",
+      "side": 1,
+      "message": "I tried to cover the functionality of these methods",
+      "parentUuid": "1e39319b_9a895c74",
+      "revId": "8c37ff85780805d07e48d41201399dddf01aff94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1ad9f574_7e467bba",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 2
@@ -83,6 +101,30 @@
       "writtenOn": "2026-03-10T17:58:40Z",
       "side": 1,
       "message": "please explain in a comment why it was chosen",
+      "range": {
+        "startLine": 52,
+        "startChar": 38,
+        "endLine": 52,
+        "endChar": 57
+      },
+      "revId": "8c37ff85780805d07e48d41201399dddf01aff94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1143278e_b0ed969b",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2026-03-24T10:29:27Z",
+      "side": 1,
+      "message": "Done, perhaps these numbers like max int64 can be easier to consume (for me at least ) as hex, I hope that also makes this part easier to follow",
+      "parentUuid": "1ad9f574_7e467bba",
       "range": {
         "startLine": 52,
         "startChar": 38,
@@ -112,6 +154,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e21435f3_a8c8b90c",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2026-03-24T10:29:27Z",
+      "side": 1,
+      "message": "As I read the available LDAP documentations and have feedback from our support teams these are used as backends. I hope if somebody find another exotic backend with some different expiry format based on these docstrings it is easier to extend Keystone with that as well.",
+      "parentUuid": "e7d87475_c67213d1",
+      "revId": "8c37ff85780805d07e48d41201399dddf01aff94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9a0a2abd_38ef4e23",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 2
@@ -129,6 +189,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5c0cf627_4b41a32e",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2026-03-24T10:29:27Z",
+      "side": 1,
+      "message": "I added comment for this also to make it visible for future readers of the code. some LDaP backends dont force pw expiration during bind, like shadowexpire for openldap, and 389ds for example) so this why the pwExpired is raised if the returned expiration time is over.",
+      "parentUuid": "9a0a2abd_38ef4e23",
+      "revId": "8c37ff85780805d07e48d41201399dddf01aff94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c32d4170_0b2707d0",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 2
@@ -140,6 +218,24 @@
       "writtenOn": "2026-03-10T17:58:40Z",
       "side": 1,
       "message": "Why do you need this line? The values that are not in `self.pw_expiry_mapping` all go now to `obj`, but they were not there before this change.",
+      "revId": "8c37ff85780805d07e48d41201399dddf01aff94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91ca1619_f154cb34",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2026-03-24T10:29:27Z",
+      "side": 1,
+      "message": "thanks it is really not necessary",
+      "parentUuid": "c32d4170_0b2707d0",
       "revId": "8c37ff85780805d07e48d41201399dddf01aff94",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
