@@ -16,6 +16,23 @@
       "message": "recheck infra should be fixed",
       "revId": "1e13c5f205bed9b7a2ebe5a437c1cc80b7072ab0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a05b8097_e4aea058",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-03-24T16:22:25Z",
+      "side": 1,
+      "message": "self-approve a tiny change to unblock fix of codegenerator",
+      "revId": "1e13c5f205bed9b7a2ebe5a437c1cc80b7072ab0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
