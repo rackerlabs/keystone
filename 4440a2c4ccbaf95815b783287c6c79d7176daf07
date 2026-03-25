@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c32ff03_1d045168",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-03-25T22:32:32Z",
+      "side": 1,
+      "message": "this should be some public bugreport, ideally on launchpad",
+      "revId": "4440a2c4ccbaf95815b783287c6c79d7176daf07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "fa7c56d7_26f3bca1",
@@ -31,6 +48,52 @@
       "writtenOn": "2026-03-25T22:06:54Z",
       "side": 1,
       "message": "What is OSPRH-27721? I tried googling it and there are 0 results.",
+      "revId": "4440a2c4ccbaf95815b783287c6c79d7176daf07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfa4884b_af2b7c5b",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-03-25T22:32:32Z",
+      "side": 1,
+      "message": "\"tox -e cover\" shows that this part is untested",
+      "range": {
+        "startLine": 461,
+        "startChar": 0,
+        "endLine": 465,
+        "endChar": 42
+      },
+      "revId": "4440a2c4ccbaf95815b783287c6c79d7176daf07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db79cc05_64d2c803",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1069,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-03-25T22:32:32Z",
+      "side": 1,
+      "message": "this doesn\u0027t seem to be used",
+      "range": {
+        "startLine": 1069,
+        "startChar": 0,
+        "endLine": 1069,
+        "endChar": 27
+      },
       "revId": "4440a2c4ccbaf95815b783287c6c79d7176daf07",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
