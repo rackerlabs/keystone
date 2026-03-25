@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53d992c0_df71a4d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-03-25T00:32:43Z",
+      "side": 1,
+      "message": "@dwilde@redhat.com tbh after your comment i am not sure any more that the flag should switch to the new functionality by default. This has been like this forever, and the bugreport was the fist ever since years.\n\nI think now that there are more users relying on the old behavior than users who want the new one. What do you think about setting the flag to \"False\" by default?",
+      "revId": "3d46e9d4603a5a04164d985935d1ef75113dbd95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
