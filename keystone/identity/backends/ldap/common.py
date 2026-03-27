@@ -35,7 +35,6 @@ from keystone.identity.backends.ldap import models
 
 LOG = log.getLogger(__name__)
 
-LDAP_VALUES = {'TRUE': True, 'FALSE': False}
 LDAP_SCOPES = {'one': ldap.SCOPE_ONELEVEL, 'sub': ldap.SCOPE_SUBTREE}
 LDAP_DEREF = {
     'always': ldap.DEREF_ALWAYS,
@@ -131,14 +130,8 @@ def py2ldap(val):
 def enabled2py(val):
     """Similar to ldap2py, only useful for the enabled attribute."""
     try:
-        return LDAP_VALUES[val]
-    except KeyError:  # nosec
-        # It wasn't a boolean value, will try as an int instead.
-        pass
-    try:
         return int(val)
     except ValueError:  # nosec
-        # It wasn't an int either, will try as utf8 instead.
         pass
     return utf8_decode(val)
 
@@ -2087,6 +2080,9 @@ class EnabledEmuMixIn(BaseLdap):
     Creates a group holding all enabled objects of this class, all missing
     objects are considered disabled.
 
+    When enabled_invert is set, the group semantics are reversed: members
+    of the group are considered disabled and missing objects are enabled.
+
     Options:
 
     * $name_enabled_emulation - boolean, on/off
@@ -2193,7 +2189,9 @@ class EnabledEmuMixIn(BaseLdap):
             enabled_value = values.pop('enabled', True)
             ref = super().create(values)
             if 'enabled' not in self.attribute_ignore:
-                if enabled_value:
+                invert = getattr(self, 'enabled_invert', False)
+                add_to_group = not enabled_value if invert else enabled_value
+                if add_to_group:
                     self._add_enabled(ref['id'])
                 ref['enabled'] = enabled_value
             return ref
@@ -2207,7 +2205,10 @@ class EnabledEmuMixIn(BaseLdap):
                 'enabled' not in self.attribute_ignore
                 and self.enabled_emulation
             ):
-                ref['enabled'] = self._is_id_enabled(object_id, conn)
+                enabled = self._is_id_enabled(object_id, conn)
+                if getattr(self, 'enabled_invert', False):
+                    enabled = not enabled
+                ref['enabled'] = enabled
             return ref
 
     def get_all(self, ldap_filter=None, hints=None):
@@ -2220,10 +2221,12 @@ class EnabledEmuMixIn(BaseLdap):
                 if x[0] != self.enabled_emulation_dn
             ]
             with self.get_connection() as conn:
+                invert = getattr(self, 'enabled_invert', False)
                 for obj_ref in obj_list:
-                    obj_ref['enabled'] = self._is_id_enabled(
-                        obj_ref['id'], conn
-                    )
+                    enabled = self._is_id_enabled(obj_ref['id'], conn)
+                    if invert:
+                        enabled = not enabled
+                    obj_ref['enabled'] = enabled
             return obj_list
         else:
             return super().get_all(ldap_filter, hints)
@@ -2234,7 +2237,11 @@ class EnabledEmuMixIn(BaseLdap):
             enabled_value = data.pop('enabled', None)
             ref = super().update(object_id, data, old_obj)
             if enabled_value is not None:
-                if enabled_value:
+                invert = getattr(self, 'enabled_invert', False)
+                add_to_group = (
+                    not enabled_value if invert else enabled_value
+                )
+                if add_to_group:
                     self._add_enabled(object_id)
                 else:
                     self._remove_enabled(object_id)
