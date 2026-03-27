@@ -16,6 +16,23 @@
       "message": "thanks for backport",
       "revId": "d69d8088a48c11523e921690c42d0d74d789b3e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36a74c87_e3cbd8bc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2026-03-27T21:11:24Z",
+      "side": 1,
+      "message": "We\u0027ll need to get https://review.opendev.org/c/openstack/keystone/+/982459 merged to fix the pep8 gate.",
+      "revId": "d69d8088a48c11523e921690c42d0d74d789b3e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
