@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28e9eb15_e27ef7c6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-03-27T21:49:04Z",
+      "side": 1,
+      "message": "why is it pinned to \u003c78, when it could be pinned to \u003c82?",
+      "range": {
+        "startLine": 10,
+        "startChar": 11,
+        "endLine": 10,
+        "endChar": 44
+      },
+      "revId": "8c8a5f1d010b9cb7390b2b01cc2552916bb9a020",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
