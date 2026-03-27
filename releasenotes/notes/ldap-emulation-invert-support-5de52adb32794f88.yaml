@@ -1,0 +1,16 @@
+---
+features:
+  - |
+    The ``[ldap] user_enabled_invert`` option now works with
+    ``[ldap] user_enabled_emulation``. When both are enabled, the
+    emulation group semantics are reversed: members of the group are
+    considered disabled and users not in the group are considered
+    enabled. This allows using a "disabled users" group instead of an
+    "enabled users" group. Previously, setting both options would
+    silently ignore the invert option.
+fixes:
+  - |
+    Removed the redundant ``LDAP_VALUES`` dictionary from the LDAP
+    identity backend. The boolean conversion it provided was already
+    handled by the ``_ldap_res_to_model`` method in the ``UserApi``
+    class.
