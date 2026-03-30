@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd1c0e14_6ed42849",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2026-03-30T19:14:47Z",
+      "side": 1,
+      "message": "@dwilde@redhat.com Hello, I little update your MR and add small fix for doc in tox.ini, wait new results ;)",
+      "revId": "f67ea1233d63abe2de1dc765180052ab0fa67473",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
