@@ -1,0 +1,10 @@
+Workflow+1: Grzegorz Grasza <xek@redhat.com>
+Verified+2: Zuul
+Code-Review+2: David Wilde <dwilde@redhat.com>
+Code-Review+1: Benedikt Trefzer <benedikt.trefzer@cirrax.com>
+Submitted-by: Zuul
+Submitted-at: Mon, 30 Mar 2026 15:37:17 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/982407
+Comments-Total: 2
+Project: openstack/keystone
+Branch: refs/heads/stable/2025.2
