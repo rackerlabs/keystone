@@ -19,9 +19,10 @@ import fixtures
 import ldap.dn
 from oslo_config import fixture as config_fixture
 
+import keystone.conf
+
 from keystone.common import driver_hints
 from keystone.common import provider_api
-import keystone.conf
 from keystone import exception as ks_exception
 from keystone.identity.backends.ldap import common as common_ldap
 from keystone.tests import unit
@@ -459,6 +460,71 @@ class LDAPPagedResultsTest(unit.TestCase):
         self.assertEqual(('dc=example,dc=test', 2, 'objectclass=*'), args[0:3])
         attrlist = sorted([attr for attr in args[3] if attr])
         self.assertEqual(['mail', 'userPassword'], attrlist)
+
+    @mock.patch.object(fakeldap.FakeLdap, 'search_ext')
+    @mock.patch.object(fakeldap.FakeLdap, 'result3')
+    def test_paged_results_handles_none_serverctrls(
+        self, mock_result3, mock_search_ext
+    ):
+        """Test that pagination handles None serverctrls gracefully.
+
+        This tests the fix for the bug where serverctrls could be None
+        (e.g., in fake LDAP implementations), which would cause a TypeError
+        when trying to iterate over it.
+        """
+        # Simulate serverctrls being None (as can happen with fake LDAP)
+        mock_result3.return_value = ('', [], 1, None)
+        mock_search_ext.return_value = 1
+
+        self.config_fixture.config(group='ldap', page_size=1)
+
+        conn = PROVIDERS.identity_api.user.get_connection()
+        # This should not raise a TypeError
+        result = conn._paged_search_s(
+            'dc=example,dc=test', ldap.SCOPE_SUBTREE, 'objectclass=*', ['mail']
+        )
+        # Should return empty list when no results
+        self.assertEqual([], result)
+
+    def test_paged_results_with_sizelimit(self):
+        """Test that _ldap_get_all returns more than page_size results when hints.limit is set.
+
+        This tests the fix for the pagination bug where _ldap_get_all would
+        only return page_size results even when hints.limit was larger.
+        The fix ensures that pagination continues until sizelimit entries
+        are collected.
+        """
+        # Set page_size to 10 (simulating AD's MaxPageSize)
+        self.config_fixture.config(group='ldap', page_size=10)
+
+        # Create 25 fake users in LDAP
+        num_users = 25
+        for i in range(num_users):
+            user_id = f'user{i:03d}'
+            PROVIDERS.identity_api.create_user(
+                {
+                    'id': user_id,
+                    'name': f'User {i}',
+                    'enabled': True,
+                    'domain_id': 'default',
+                }
+            )
+
+        # Create hints with limit of 20 (larger than page_size of 10)
+        hints = driver_hints.Hints()
+        hints.limit = {'limit': 20}
+
+        # Get all users with the limit
+        users = PROVIDERS.identity_api.user.get_all(hints=hints)
+
+        # Should return 20 users (the limit), not 10 (page_size)
+        # This verifies that pagination continues beyond the first page
+        self.assertEqual(20, len(users))
+
+        # Verify that we got the first 20 users
+        user_names = [u['name'] for u in users]
+        expected_names = [f'User {i}' for i in range(20)]
+        self.assertEqual(sorted(expected_names), sorted(user_names))
 
 
 class CommonLdapTestCase(unit.BaseTestCase):
