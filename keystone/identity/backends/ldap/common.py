@@ -22,16 +22,16 @@ import typing as ty
 import uuid
 import weakref
 
-import ldap.controls
-import ldap.filter
 import ldappool
+from keystone import exception
+from keystone.common import driver_hints
+from keystone.i18n import _
+from keystone.identity.backends.ldap import models
 from oslo_log import log
 from oslo_utils import reflection
 
-from keystone.common import driver_hints
-from keystone import exception
-from keystone.i18n import _
-from keystone.identity.backends.ldap import models
+import ldap.controls
+import ldap.filter
 
 LOG = log.getLogger(__name__)
 
@@ -1243,7 +1243,12 @@ class KeystoneLDAPHandler(LDAPHandler):
             rtype, rdata, rmsgid, serverctrls = self.conn.result3(message)
             # Receive the data
             res.extend(rdata)
-            pctrls = [c for c in serverctrls if c.controlType == page_ctrl_oid]
+            # Handle case where serverctrls is None (e.g., in fake LDAP)
+            pctrls = [
+                c
+                for c in (serverctrls or [])
+                if c.controlType == page_ctrl_oid
+            ]
             if pctrls:
                 # LDAP server supports pagination
                 if use_old_paging_api:
@@ -1826,7 +1831,6 @@ class BaseLdap:
             self.object_class,
             self.id_attr,
         )
-        sizelimit = 0
         attrs = list(
             set(
                 [self.id_attr]
@@ -1834,19 +1838,13 @@ class BaseLdap:
                 + list(self.extra_attr_mapping.keys())
             )
         )
-        if hints.limit:
-            sizelimit = hints.limit['limit']
-            res = self._ldap_get_limited(
-                self.tree_dn, self.LDAP_SCOPE, query, attrs, sizelimit
-            )
-        else:
-            with self.get_connection() as conn:
-                try:
-                    res = conn.search_s(
-                        self.tree_dn, self.LDAP_SCOPE, query, attrs
-                    )
-                except ldap.NO_SUCH_OBJECT:
-                    return []
+        with self.get_connection() as conn:
+            try:
+                res = conn.search_s(
+                    self.tree_dn, self.LDAP_SCOPE, query, attrs
+                )
+            except ldap.NO_SUCH_OBJECT:
+                return []
         # TODO(prashkre): add functional testing for missing name attribute
         # on ldap entities.
         # NOTE(prashkre): Filter ldap search result to keep keystone away from
