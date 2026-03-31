@@ -16,12 +16,11 @@ from unittest import mock
 import uuid
 
 import fixtures
+import keystone.conf
 import ldap.dn
-from oslo_config import fixture as config_fixture
 
 from keystone.common import driver_hints
 from keystone.common import provider_api
-import keystone.conf
 from keystone import exception as ks_exception
 from keystone.identity.backends.ldap import common as common_ldap
 from keystone.tests import unit
@@ -29,6 +28,7 @@ from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import fakeldap
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit.ksfixtures import ldapdb
+from oslo_config import fixture as config_fixture
 
 CONF = keystone.conf.CONF
 PROVIDERS = provider_api.ProviderAPIs
@@ -459,6 +459,31 @@ class LDAPPagedResultsTest(unit.TestCase):
         self.assertEqual(('dc=example,dc=test', 2, 'objectclass=*'), args[0:3])
         attrlist = sorted([attr for attr in args[3] if attr])
         self.assertEqual(['mail', 'userPassword'], attrlist)
+
+    @mock.patch.object(fakeldap.FakeLdap, 'search_ext')
+    @mock.patch.object(fakeldap.FakeLdap, 'result3')
+    def test_paged_results_handles_none_serverctrls(
+        self, mock_result3, mock_search_ext
+    ):
+        """Test that pagination handles None serverctrls gracefully.
+
+        This tests the fix for the bug where serverctrls could be None
+        (e.g., in fake LDAP implementations), which would cause a TypeError
+        when trying to iterate over it.
+        """
+        # Simulate serverctrls being None (as can happen with fake LDAP)
+        mock_result3.return_value = ('', [], 1, None)
+        mock_search_ext.return_value = 1
+
+        self.config_fixture.config(group='ldap', page_size=1)
+
+        conn = PROVIDERS.identity_api.user.get_connection()
+        # This should not raise a TypeError
+        result = conn._paged_search_s(
+            'dc=example,dc=test', ldap.SCOPE_SUBTREE, 'objectclass=*', ['mail']
+        )
+        # Should return empty list when no results
+        self.assertEqual([], result)
 
 
 class CommonLdapTestCase(unit.BaseTestCase):
