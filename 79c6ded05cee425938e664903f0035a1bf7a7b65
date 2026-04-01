@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "137eba76_82cd5b09",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-01T18:30:27Z",
+      "side": 1,
+      "message": "This import reordering moves keystone.* imports before oslo_* and ldap.*, which violates OpenStack\u0027s import ordering convention (stdlib, then third-party, then local). It is also unrelated to the bug fix -- consider reverting or splitting into a separate change.",
+      "revId": "79c6ded05cee425938e664903f0035a1bf7a7b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b9cbcc6_3c99acc9",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1814,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-01T18:30:27Z",
+      "side": 1,
+      "message": "_ldap_get_limited is now unused -- this change removed its only caller in _ldap_get_all. It should be deleted.",
+      "revId": "79c6ded05cee425938e664903f0035a1bf7a7b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbed9c0a_264e5507",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1839,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-01T18:30:27Z",
+      "side": 1,
+      "message": "This now fetches all entries from LDAP unconditionally and relies on the @truncated decorator to slice the result in Python. For a directory with 100k+ entries and a list_limit of 1500, Keystone will pull all 100k entries over the wire only to discard most of them. The limit should still be pushed down to the LDAP layer -- conn.search_s() (or _paged_search_s) should accept a limit parameter and stop paginating once enough results have been collected.",
+      "revId": "79c6ded05cee425938e664903f0035a1bf7a7b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1b0d1e9_c24bbd5f",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-01T18:30:27Z",
+      "side": 1,
+      "message": "Same unrelated import reordering as in common.py.",
+      "revId": "79c6ded05cee425938e664903f0035a1bf7a7b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "871f3259_5fccd188",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-01T18:30:27Z",
+      "side": 1,
+      "message": "This test covers the secondary serverctrls-is-None fix, but there is no test for the primary pagination bug: that _ldap_get_all returns more than page_size results when hints.limit is set and hints.filters is empty. A test should set up a fake LDAP with entries exceeding page_size, set hints.limit, and verify all entries are returned.",
+      "revId": "79c6ded05cee425938e664903f0035a1bf7a7b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
