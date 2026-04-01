@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4bc05d0_da9b7c40",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34275
+      },
+      "writtenOn": "2026-04-01T14:43:48Z",
+      "side": 1,
+      "message": "setuptools should be pinned also for tox-docs",
+      "revId": "795aac3ba3b1868237809a7c2dbf1f2f169a535c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
