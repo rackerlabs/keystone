@@ -11,15 +11,16 @@
 # Andi Chandler <andi@gowling.com>, 2022. #zanata
 # Andi Chandler <andi@gowling.com>, 2023. #zanata
 # Andi Chandler <andi@gowling.com>, 2024. #zanata
+# Andi Chandler <andi@gowling.com>, 2026. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: keystone VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2025-02-06 14:03+0000\n"
+"POT-Creation-Date: 2026-03-31 09:53+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2024-10-01 01:15+0000\n"
+"PO-Revision-Date: 2026-02-21 04:49+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -913,7 +914,7 @@ msgid ""
 msgstr ""
 "Length of transformable resource id > 64, which is max allowed characters"
 
-#, python-format
+#, python-format, python-brace-format
 msgid ""
 "Local section in mapping %(mapping_id)s refers to a remote match that "
 "doesn't exist (e.g. {0} in a local section)."
@@ -924,6 +925,10 @@ msgstr ""
 #, python-format
 msgid "Malformed endpoint URL (%(endpoint)s), see ERROR log for details."
 msgstr "Malformed endpoint URL (%(endpoint)s), see ERROR log for details."
+
+#, python-format
+msgid "Marker %(marker)s could not be found."
+msgstr "Marker %(marker)s could not be found."
 
 #, python-format
 msgid "Max hierarchy depth reached for %s branch."
@@ -1040,6 +1045,10 @@ msgstr "Option %(option_name)s already defined in %(registry)s"
 #, python-format
 msgid "Password Hash Algorithm %s not found"
 msgstr "Password Hash Algorithm %s not found"
+
+#, python-format
+msgid "Password Hash Algorithm %s not implemented"
+msgstr "Password Hash Algorithm %s not implemented"
 
 msgid "Password must be a string type"
 msgstr "Password must be a string type"
@@ -1167,6 +1176,9 @@ msgstr "Scoping to both project and system is not allowed"
 
 msgid "Scoping to both project and trust is not allowed"
 msgstr "Scoping to both project and trust is not allowed"
+
+msgid "Secret Key value has to be provided"
+msgstr "Secret Key value has to be provided"
 
 #, python-format
 msgid "Service Provider %(sp)s is disabled"
@@ -1630,6 +1642,13 @@ msgid ""
 msgstr ""
 "Using a system-scoped token to create a project-scoped or domain-scoped "
 "token is not allowed."
+
+msgid ""
+"Using an application credential token to create a project-scoped or domain-"
+"scoped token is not allowed."
+msgstr ""
+"Using an application credential token to create a project-scoped or domain-"
+"scoped token is not allowed."
 
 msgid ""
 "Using method 'application_credential' is not allowed for managing additional "
