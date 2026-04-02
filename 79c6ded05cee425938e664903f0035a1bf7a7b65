@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "96c9337a_f31a4bb0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2026-04-02T09:23:52Z",
+      "side": 1,
+      "message": "Thanks for the feedback, Artem. I think there\u0027s a misunderstanding about what this patch does.\n\n**The Bug:**\nWhen `hints.limit\u003d20` and `page_size\u003d10`, the code returns only 10 users instead of 20. This is because `_paged_search_s()` had no way to know it should fetch multiple pages.\n\n**The Fix:**\nAdd a `sizelimit` parameter to `_paged_search_s()` that:\n1. Fetches pages using LDAP\u0027s native pagination (10 at a time)\n2. Stops when `sizelimit` entries are collected\n3. Returns exactly the requested number of entries\n\nhttps://review.opendev.org/c/openstack/keystone/+/982913/3..4/keystone/identity/backends/ldap/common.py#1839\n\nhttps://review.opendev.org/c/openstack/keystone/+/982913/3..4/keystone/identity/backends/ldap/common.py#1249\n\n**Example:**\n- Request 20 users, `page_size\u003d10`\n- Fetch page 1: 10 users (total: 10)\n- Check: 10 \u003c 20, continue\n- Fetch page 2: 10 users (total: 20)\n- Check: 20 \u003e\u003d 20, **stop**\n- Return 20 users\n\n**Not wasteful:** We stop fetching as soon as we have enough entries. We don\u0027t fetch 10,000 and discard 9,980.\n\nThis fixes the LDAP backend layer. The OpenStack API\u0027s marker-based pagination is a separate layer above this.",
+      "parentUuid": "33dcb157_1e87eb91",
+      "revId": "79c6ded05cee425938e664903f0035a1bf7a7b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "137eba76_82cd5b09",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 3
