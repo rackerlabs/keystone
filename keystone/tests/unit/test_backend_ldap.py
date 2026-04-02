@@ -15,13 +15,13 @@
 
 import copy
 import http.client
+from importlib.metadata import entry_points
 from unittest import mock
 import uuid
 
 import fixtures
 import ldap
 from oslo_log import versionutils
-import pkg_resources  # type: ignore
 from testtools import matchers
 
 from keystone.common import cache
@@ -57,8 +57,15 @@ def _assert_backends(testcase, **kwargs):
         return observed_backend.__class__
 
     def _get_entrypoint_cls(subsystem, name):
-        entrypoint = entrypoint_map['keystone.' + subsystem][name]
-        return entrypoint.resolve()
+        group = 'keystone.' + subsystem
+        try:
+            # Python 3.10+: entry_points() accepts group kwarg
+            all_eps = entry_points(group=group)
+        except TypeError:
+            # Python 3.9: entry_points() returns a dict
+            all_eps = entry_points().get(group, [])
+        eps = [ep for ep in all_eps if ep.name == name]
+        return eps[0].load()
 
     def _load_domain_specific_configs(manager):
         if (
@@ -81,10 +88,6 @@ def _assert_backends(testcase, **kwargs):
             'observed_cls': observed_cls,
             'subsystem': subsystem,
         }
-
-    env = pkg_resources.Environment()
-    keystone_dist = env['keystone'][0]
-    entrypoint_map = pkg_resources.get_entry_map(keystone_dist)
 
     for subsystem, entrypoint_name in kwargs.items():
         if isinstance(entrypoint_name, str):
