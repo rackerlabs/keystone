@@ -3,6 +3,23 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "33dcb157_1e87eb91",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-04-02T08:06:25Z",
+      "side": 1,
+      "message": "After me spending quite a long time in the OpenStack pagination area you attempt to do something what I left out because I do not see any reasonable way to paginate over the ldap from the keystone api pov. Not limiting the number of results is a question, but how to fetch the next page over the api is something I never had a solution for. The default limit ensures that you will not get over _configured_ number of entries. That means there is no sense to fetch more data from ldap. Then once the API client decides to fetch next page passing the \"marker\" as the last uuid on the previous page - what is this in the ldap? Fetching all 10000 entries to keystone, sorting them to keep the requested order and discard 95% is a waste. Sadly the LDAP does not support this type of pagination and only support a special cookie that need to be passed with the next request. This cookie cannot be converted to the OpenStack API style pagination parameters making this whole area tricky",
+      "revId": "79c6ded05cee425938e664903f0035a1bf7a7b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "137eba76_82cd5b09",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 3
