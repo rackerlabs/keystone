@@ -16,6 +16,23 @@
       "message": "setuptools should be pinned also for tox-docs",
       "revId": "795aac3ba3b1868237809a7c2dbf1f2f169a535c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56defb78_f35cec64",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2026-04-03T15:19:11Z",
+      "side": 1,
+      "message": "recheck - tox-docs fix merged",
+      "revId": "795aac3ba3b1868237809a7c2dbf1f2f169a535c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
