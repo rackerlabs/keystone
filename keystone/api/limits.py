@@ -73,40 +73,47 @@ class LimitsResource(ks_flask.ResourceBase):
             'domain_id',
         ]
 
-        ENFORCER.enforce_call(action='identity:list_limits', filters=filters)
+    ENFORCER.enforce_call(action='identity:list_limits', filters=filters)
 
-        hints = self.build_driver_hints(filters)
+    hints = self.build_driver_hints(filters)
 
-        filtered_refs = []
+    filtered_refs = []
 
-        superuser = (
-            self.oslo_context.system_scope
-            or ('admin' in self.oslo_context.roles)
-            or ('service' in self.oslo_context.roles)
+    superuser = (
+        self.oslo_context.system_scope
+        or ('admin' in self.oslo_context.roles)
+        or ('service' in self.oslo_context.roles)
+    )
+
+    if superuser:
+        refs = PROVIDERS.unified_limit_api.list_limits(hints)
+        filtered_refs = refs
+    elif self.oslo_context.domain_id:
+        refs = PROVIDERS.unified_limit_api.list_limits(hints)
+        projects = PROVIDERS.resource_api.list_projects_in_domain(
+            self.oslo_context.domain_id
+        )
+        project_ids = [project['id'] for project in projects]
+        for limit in refs:
+            if limit.get('project_id'):
+                if limit['project_id'] in project_ids:
+                    filtered_refs.append(limit)
+            elif limit.get('domain_id'):
+                if limit['domain_id'] == self.oslo_context.domain_id:
+                    filtered_refs.append(limit)
+    elif self.oslo_context.project_id:
+        # Check if user already provided project_id filter
+        project_filter_exists = any(
+            f['name'] == 'project_id' for f in hints.filters
         )
 
-        if superuser:
-            refs = PROVIDERS.unified_limit_api.list_limits(hints)
-            filtered_refs = refs
-        elif self.oslo_context.domain_id:
-            refs = PROVIDERS.unified_limit_api.list_limits(hints)
-            projects = PROVIDERS.resource_api.list_projects_in_domain(
-                self.oslo_context.domain_id
-            )
-            project_ids = [project['id'] for project in projects]
-            for limit in refs:
-                if limit.get('project_id'):
-                    if limit['project_id'] in project_ids:
-                        filtered_refs.append(limit)
-                elif limit.get('domain_id'):
-                    if limit['domain_id'] == self.oslo_context.domain_id:
-                        filtered_refs.append(limit)
-        elif self.oslo_context.project_id:
+        if not project_filter_exists:
             hints.add_filter('project_id', self.oslo_context.project_id)
-            refs = PROVIDERS.unified_limit_api.list_limits(hints)
-            filtered_refs = refs
 
-        return self.wrap_collection(filtered_refs, hints=hints)
+        refs = PROVIDERS.unified_limit_api.list_limits(hints)
+        filtered_refs = refs
+
+    return self.wrap_collection(filtered_refs, hints=hints)
 
     @validation.request_body_schema(schema.limits_create_request_body)
     @validation.response_body_schema(schema.limits_create_response_body)
