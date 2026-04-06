@@ -139,25 +139,61 @@ class ResourceTestCase(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin):
         self.assertValidDomainResponse(r)
         self.assertIsNotNone(r.result['domain'])
 
-    def test_create_domain_valid_explicit_id(self):
-        """Call ``POST /domains`` with a valid `explicit_domain_id` set."""
+    def test_create_domain_valid_id(self):
+        """Call ``POST /domains`` with a dashless 'id' field."""
         ref = unit.new_domain_ref()
-        explicit_domain_id = '9aea63518f0040c6b4518d8d2242911c'
+        domain_id = '9aea63518f0040c6b4518d8d2242911c'
 
-        ref['explicit_domain_id'] = explicit_domain_id
+        ref['id'] = domain_id
         r = self.post('/domains', body={'domain': ref})
         self.assertValidDomainResponse(r, ref)
+        self.assertEqual(domain_id, r.result['domain']['id'])
+        self.assertNotIn(
+            'id',
+            r.result['domain'].get('id', {})
+            if isinstance(r.result['domain'].get('id'), dict)
+            else {},
+        )
 
-        r = self.get(f'/domains/{explicit_domain_id}')
+        r = self.get(f'/domains/{domain_id}')
         self.assertValidDomainResponse(r)
         self.assertIsNotNone(r.result['domain'])
 
-    def test_create_second_domain_valid_explicit_id_fails(self):
-        """Call ``POST /domains`` with a valid `explicit_domain_id` set."""
+    def test_create_domain_valid_explicit_domain_id(self):
+        """Call ``POST /domains`` with explicit_domain_id (deprecated)."""
         ref = unit.new_domain_ref()
-        explicit_domain_id = '9aea63518f0040c6b4518d8d2242911c'
+        domain_id = 'aabbccddee11223344556677aabbccdd'
 
-        ref['explicit_domain_id'] = explicit_domain_id
+        ref['explicit_domain_id'] = domain_id
+        r = self.post('/domains', body={'domain': ref})
+        self.assertValidDomainResponse(r, ref)
+        self.assertEqual(domain_id, r.result['domain']['id'])
+        self.assertNotIn('explicit_domain_id', r.result['domain'])
+
+        r = self.get(f'/domains/{domain_id}')
+        self.assertValidDomainResponse(r)
+        self.assertIsNotNone(r.result['domain'])
+
+    def test_create_domain_with_both_id_and_explicit_domain_id_fails(self):
+        """Providing both id and explicit_domain_id should return 400."""
+        ref = unit.new_domain_ref()
+        id_field = '9aea63518f0040c6b4518d8d2242911c'
+        explicit_id = 'ffeeddccbbaa99887766554433221100'
+
+        ref['id'] = id_field
+        ref['explicit_domain_id'] = explicit_id
+        self.post(
+            '/domains',
+            body={'domain': ref},
+            expected_status=http.client.BAD_REQUEST,
+        )
+
+    def test_create_second_domain_valid_id_fails(self):
+        """Call ``POST /domains`` with a duplicate 'id' field."""
+        ref = unit.new_domain_ref()
+        domain_id = '9aea63518f0040c6b4518d8d2242911c'
+
+        ref['id'] = domain_id
         r = self.post('/domains', body={'domain': ref})
         self.assertValidDomainResponse(r, ref)
 
@@ -168,23 +204,24 @@ class ResourceTestCase(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin):
             expected_status=http.client.CONFLICT,
         )
 
-    def test_create_domain_invalid_explicit_ids(self):
-        """Call ``POST /domains`` with various invalid explicit_domain_ids."""
+    def test_create_domain_invalid_ids(self):
+        """Call ``POST /domains`` with various invalid 'id' values."""
         ref = unit.new_domain_ref()
 
         bad_ids = [
-            'bad!',
-            '',
-            '9aea63518f0040c',
-            '1234567890123456789012345678901234567890',
-            '9aea63518f0040c6b4518d8d2242911c9aea63518f0040c6b45',
+            'bad!',  # non-hex character
+            '',  # empty
+            'not-a-uuid-at-all',  # non-hex chars
+            '9aea63518f0040c',  # too short
+            '9aea6351-8f00-40c6-b451-8d8d2242911c',  # dashed UUID (not allowed)
+            'ABC123DEF456ABC123DEF456ABC123DE',  # uppercase (not allowed)
         ]
 
-        for explicit_domain_id in bad_ids:
-            ref['explicit_domain_id'] = explicit_domain_id
+        for bad_id in bad_ids:
+            ref['id'] = bad_id
             self.post(
                 '/domains',
-                body={'domain': {}},
+                body={'domain': ref},
                 expected_status=http.client.BAD_REQUEST,
             )
 
@@ -725,6 +762,69 @@ class ResourceTestCase(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin):
             body={'project': ref},
             expected_status=http.client.BAD_REQUEST,
         )
+
+    def test_create_project_valid_id(self):
+        """Dashless UUID 'id' field is accepted."""
+        project_id = 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4'
+        ref = unit.new_project_ref(domain_id=self.domain_id)
+        ref['id'] = project_id
+        r = self.post('/projects', body={'project': ref})
+        self.assertValidProjectResponse(r, ref)
+        self.assertEqual(project_id, r.result['project']['id'])
+
+        # Fetch it back and confirm the id stuck
+        r2 = self.get(f'/projects/{project_id}')
+        self.assertValidProjectResponse(r2)
+        self.assertIsNotNone(r2.result['project'])
+
+    def test_create_project_dashed_id_rejected(self):
+        """Dashed UUID 'id' field is rejected (must be dashless)."""
+        dashed_id = 'a1b2c3d4-e5f6-a1b2-c3d4-e5f6a1b2c3d4'
+        ref = unit.new_project_ref(domain_id=self.domain_id)
+        ref['id'] = dashed_id
+        # Should be rejected by schema validation
+        self.post(
+            '/projects',
+            body={'project': ref},
+            expected_status=http.client.BAD_REQUEST,
+        )
+
+    def test_create_second_project_valid_id_fails(self):
+        """Call ``POST /projects`` with a duplicate 'id' field."""
+        project_id = 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4'
+        ref = unit.new_project_ref(domain_id=self.domain_id)
+        ref['id'] = project_id
+        self.post('/projects', body={'project': ref})
+
+        # Second attempt with the same id should conflict
+        ref2 = unit.new_project_ref(domain_id=self.domain_id)
+        ref2['id'] = project_id
+        self.post(
+            '/projects',
+            body={'project': ref2},
+            expected_status=http.client.CONFLICT,
+        )
+
+    def test_create_project_invalid_ids(self):
+        """Call ``POST /projects`` with various invalid 'id' values."""
+        ref = unit.new_project_ref(domain_id=self.domain_id)
+
+        bad_ids = [
+            'bad!',  # non-hex character
+            '',  # empty
+            'not-a-uuid',  # non-hex chars
+            'a1b2c3d4e5f6a1b2',  # too short
+            'a1b2c3d4-e5f6-a1b2-c3d4-e5f6a1b2c3d4',  # dashed (not allowed)
+            'ABC123DEF456ABC123DEF456ABC123DE',  # uppercase (not allowed)
+        ]
+
+        for bad_id in bad_ids:
+            ref['id'] = bad_id
+            self.post(
+                '/projects',
+                body={'project': ref},
+                expected_status=http.client.BAD_REQUEST,
+            )
 
     def test_create_project_unsafe(self):
         """Call ``POST /projects with unsafe names``."""

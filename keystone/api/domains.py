@@ -14,6 +14,7 @@
 
 import functools
 import http.client
+import uuid
 
 import flask
 import flask_restful
@@ -165,19 +166,26 @@ class DomainsResource(ks_flask.ResourceBase):
         ENFORCER.enforce_call(action='identity:create_domain')
         domain = self.request_body_json.get('domain', {})
 
-        # Pop explicit_domain_id if passed not to return it back
-        domain_id = domain.pop('explicit_domain_id', None)
+        # Support both 'id' (preferred) and 'explicit_domain_id' (deprecated).
+        # Schema ensures dashless UUID format (32 lowercase hex characters).
+        # Check for conflicting fields - reject if both are provided.
+        domain_id = domain.pop('id', None)
+        explicit_domain_id = domain.pop('explicit_domain_id', None)
+
+        if domain_id is not None and explicit_domain_id is not None:
+            raise exception.ValidationError(
+                "Cannot specify both 'id' and 'explicit_domain_id' in the same request"
+            )
+
+        # Use whichever was provided
+        domain_id = domain_id or explicit_domain_id
+
         if domain_id is None:
             domain = self._assign_unique_id(domain)
         else:
-            # Domain ID validation provided by PyCADF
-            try:
-                self._validate_id_format(domain_id)
-            except ValueError:
-                raise exception.DomainIdInvalid
+            # ID is already validated by schema to be dashless UUID
             domain['id'] = domain_id
         domain = self._normalize_dict(domain)
-        domain.pop("explicit_domain_id", None)
         ref = PROVIDERS.resource_api.create_domain(
             domain['id'], domain, initiator=self.audit_initiator
         )

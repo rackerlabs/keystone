@@ -1169,8 +1169,11 @@ class Manager(manager.Manager):
         user = self._clear_domain_id_if_domain_unaware(driver, user)
         # Generate a local ID - in the future this might become a function of
         # the underlying driver so that it could conform to rules set down by
-        # that particular driver type.
-        user['id'] = uuid.uuid4().hex
+        # that particular driver type. If an explicit ID was supplied via the
+        # API (explicit_user_id), it will already be set here and must be
+        # preserved rather than overwritten.
+        if 'id' not in user:
+            user['id'] = uuid.uuid4().hex
         ref = self._create_user_with_federated_objects(user, driver)
         notifications.Audit.created(self._USER, user['id'], initiator)
         return self._set_domain_id_and_mapping(
