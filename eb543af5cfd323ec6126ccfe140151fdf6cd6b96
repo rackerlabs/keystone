@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4cb28a01_37446818",
+        "filename": "test-requirements.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 16643
+      },
+      "writtenOn": "2026-04-06T21:21:49Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be added to the requirements file. It\u0027s okay to do inside the tox.ini",
+      "revId": "eb543af5cfd323ec6126ccfe140151fdf6cd6b96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
