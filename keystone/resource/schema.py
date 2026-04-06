@@ -156,7 +156,20 @@ project_create_request_body: dict[str, Any] = {
     "properties": {
         "project": {
             "type": "object",
-            "properties": _project_properties,
+            "properties": {
+                "explicit_project_id": {
+                    "description": (
+                        "An optional caller-supplied ID to assign to the "
+                        "project at creation time. If omitted the server "
+                        "generates a UUID automatically. Accepts a UUID in "
+                        "dashed or dashless form; the server normalises to "
+                        "dashless hex. If the ID is already in use the "
+                        "server returns 409 Conflict."
+                    ),
+                    **parameter_types.project_id,
+                },
+                **_project_properties,
+            },
             "required": ["name"],
         }
     },

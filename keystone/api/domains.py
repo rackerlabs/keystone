@@ -14,6 +14,7 @@
 
 import functools
 import http.client
+import uuid
 
 import flask
 import flask_restful
@@ -165,17 +166,16 @@ class DomainsResource(ks_flask.ResourceBase):
         ENFORCER.enforce_call(action='identity:create_domain')
         domain = self.request_body_json.get('domain', {})
 
-        # Pop explicit_domain_id if passed not to return it back
+        # Pop explicit_domain_id if passed not to return it back.
+        # Accept dashed or dashless UUID and normalise to dashless hex.
         domain_id = domain.pop('explicit_domain_id', None)
         if domain_id is None:
             domain = self._assign_unique_id(domain)
         else:
-            # Domain ID validation provided by PyCADF
             try:
-                self._validate_id_format(domain_id)
+                domain['id'] = uuid.UUID(domain_id).hex
             except ValueError:
                 raise exception.DomainIdInvalid
-            domain['id'] = domain_id
         domain = self._normalize_dict(domain)
         domain.pop("explicit_domain_id", None)
         ref = PROVIDERS.resource_api.create_domain(

@@ -294,6 +294,14 @@ class UsersResource(ks_flask.ResourceBase):
         ENFORCER.enforce_call(
             action='identity:create_user', target_attr=target
         )
+        # Pop explicit_user_id so it is not returned in the response body.
+        # Accept any non-empty string up to 64 characters; no UUID format
+        # is required since user IDs may come from LDAP, AD, or other sources.
+        explicit_user_id = user_data.pop('explicit_user_id', None)
+        if explicit_user_id is not None:
+            if not explicit_user_id or len(explicit_user_id) > 64:
+                raise ks_exception.UserIdInvalid
+            user_data['id'] = explicit_user_id
         user_data = self._normalize_dict(user_data)
         user_data = self._normalize_domain_id(user_data)
         ref = PROVIDERS.identity_api.create_user(

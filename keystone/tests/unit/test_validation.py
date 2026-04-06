@@ -670,6 +670,64 @@ class ProjectValidationTestCase(unit.BaseTestCase):
             )
 
 
+    def test_validate_project_create_with_explicit_project_id(self):
+        """Validate that explicit_project_id is accepted in create requests."""
+        # Use project_create_request_body (the full envelope schema used by
+        # the API) since explicit_project_id is declared there, not in the
+        # legacy project_create schema used by the rest of this test class.
+        validator = validators.SchemaValidator(
+            resource_schema.project_create_request_body
+        )
+        for valid_id in [
+            'abc123def456abc123def456abc123de',  # dashless UUID
+            'abc123de-f456-abc1-23de-f456abc123de',  # dashed UUID
+            'abc',  # short but valid per project_id type (minLength 1)
+        ]:
+            request_to_validate = {
+                'project': {
+                    'name': 'my_project',
+                    'explicit_project_id': valid_id,
+                }
+            }
+            validator.validate(request_to_validate)
+
+    def test_validate_project_create_with_empty_explicit_project_id_fails(
+        self,
+    ):
+        """Exception raised when explicit_project_id is an empty string."""
+        validator = validators.SchemaValidator(
+            resource_schema.project_create_request_body
+        )
+        request_to_validate = {
+            'project': {'name': 'my_project', 'explicit_project_id': ''}
+        }
+        self.assertRaises(
+            exception.SchemaValidationError,
+            validator.validate,
+            request_to_validate,
+        )
+
+    def test_validate_project_create_with_invalid_explicit_project_id_fails(
+        self,
+    ):
+        """Exception raised for explicit_project_id values with bad chars."""
+        validator = validators.SchemaValidator(
+            resource_schema.project_create_request_body
+        )
+        for invalid_id in ['has space', 'has!bang', 'has@at']:
+            request_to_validate = {
+                'project': {
+                    'name': 'my_project',
+                    'explicit_project_id': invalid_id,
+                }
+            }
+            self.assertRaises(
+                exception.SchemaValidationError,
+                validator.validate,
+                request_to_validate,
+            )
+
+
 class DomainValidationTestCase(unit.BaseTestCase):
     """Test for V3 Domain API validation."""
 
@@ -873,6 +931,49 @@ class DomainValidationTestCase(unit.BaseTestCase):
             self.update_domain_validator.validate,
             request_to_validate,
         )
+
+
+    def test_validate_domain_create_with_explicit_domain_id(self):
+        """Validate that explicit_domain_id is accepted in create requests."""
+        for valid_id in [
+            'abc123def456abc123def456abc123de',  # dashless UUID
+            'abc123de-f456-abc1-23de-f456abc123de',  # dashed UUID
+        ]:
+            request_to_validate = {
+                "domain": {
+                    "name": self.domain_name,
+                    "explicit_domain_id": valid_id,
+                }
+            }
+            self.create_domain_validator.validate(request_to_validate)
+
+    def test_validate_domain_create_with_empty_explicit_domain_id_fails(self):
+        """Exception raised when explicit_domain_id is an empty string."""
+        request_to_validate = {
+            "domain": {"name": self.domain_name, "explicit_domain_id": ""}
+        }
+        self.assertRaises(
+            exception.SchemaValidationError,
+            self.create_domain_validator.validate,
+            request_to_validate,
+        )
+
+    def test_validate_domain_create_with_invalid_explicit_domain_id_fails(
+        self,
+    ):
+        """Exception raised for explicit_domain_id values with bad chars."""
+        for invalid_id in ['has space', 'has!bang', 'has@at']:
+            request_to_validate = {
+                "domain": {
+                    "name": self.domain_name,
+                    "explicit_domain_id": invalid_id,
+                }
+            }
+            self.assertRaises(
+                exception.SchemaValidationError,
+                self.create_domain_validator.validate,
+                request_to_validate,
+            )
 
 
 class RoleValidationTestCase(unit.BaseTestCase):
@@ -2691,6 +2792,46 @@ class UserValidationTestCase(unit.BaseTestCase):
                 ro._mfa_rules_validator_list_of_lists_of_strings_no_duplicates,
                 ruleset,
             )
+
+
+    def test_validate_user_create_with_explicit_user_id(self):
+        """Validate that explicit_user_id is accepted in create requests."""
+        for valid_id in [
+            'abc123def456abc123def456abc123de',  # dashless UUID
+            'abc123de-f456-abc1-23de-f456abc123de',  # dashed UUID
+            'jsmith',  # arbitrary LDAP-style string
+            'CN=John Smith,DC=example,DC=com',  # DN-style
+            'a' * 64,  # maximum length
+        ]:
+            request_to_validate = {
+                'user': {'name': self.user_name, 'explicit_user_id': valid_id}
+            }
+            self.create_user_validator.validate(request_to_validate)
+
+    def test_validate_user_create_with_empty_explicit_user_id_fails(self):
+        """Exception raised when explicit_user_id is an empty string."""
+        request_to_validate = {
+            'user': {'name': self.user_name, 'explicit_user_id': ''}
+        }
+        self.assertRaises(
+            exception.SchemaValidationError,
+            self.create_user_validator.validate,
+            request_to_validate,
+        )
+
+    def test_validate_user_create_with_too_long_explicit_user_id_fails(self):
+        """Exception raised when explicit_user_id exceeds 64 characters."""
+        request_to_validate = {
+            'user': {
+                'name': self.user_name,
+                'explicit_user_id': 'a' * 65,
+            }
+        }
+        self.assertRaises(
+            exception.SchemaValidationError,
+            self.create_user_validator.validate,
+            request_to_validate,
+        )
 
 
 class GroupValidationTestCase(unit.BaseTestCase):

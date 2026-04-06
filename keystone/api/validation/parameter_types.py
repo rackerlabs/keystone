@@ -67,6 +67,7 @@ user_id: dict[str, Any] = {
     "description": "The ID of the user.",
 }
 
+
 domain_id: dict[str, Any] = {
     "type": "string",
     "minLength": 1,

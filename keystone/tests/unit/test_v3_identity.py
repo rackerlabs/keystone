@@ -218,6 +218,75 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             expected_status=http.client.NOT_FOUND,
         )
 
+    def test_create_user_valid_explicit_id_uuid(self):
+        """UUID explicit_user_id is accepted and stored as supplied."""
+        explicit_user_id = 'b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5'
+        ref = unit.new_user_ref(domain_id=self.domain_id)
+        ref['explicit_user_id'] = explicit_user_id
+        r = self.post('/users', body={'user': ref})
+        self.assertValidUserResponse(r, ref)
+        self.assertEqual(explicit_user_id, r.result['user']['id'])
+        # Verify that explicit_user_id is not returned in the response
+        self.assertNotIn('explicit_user_id', r.result['user'])
+
+        # Fetch the user back and confirm the id persisted
+        r2 = self.get(f'/users/{explicit_user_id}')
+        self.assertValidUserResponse(r2)
+        self.assertIsNotNone(r2.result['user'])
+
+    def test_create_user_valid_explicit_id_arbitrary_string(self):
+        """Arbitrary string explicit_user_id is accepted (e.g. sAMAccountName)."""
+        explicit_user_id = 'jsmith'
+        ref = unit.new_user_ref(domain_id=self.domain_id)
+        ref['explicit_user_id'] = explicit_user_id
+        r = self.post('/users', body={'user': ref})
+        self.assertValidUserResponse(r, ref)
+        self.assertEqual(explicit_user_id, r.result['user']['id'])
+        self.assertNotIn('explicit_user_id', r.result['user'])
+
+    def test_create_user_valid_explicit_id_dashed_uuid(self):
+        """Dashed UUID is accepted as explicit_user_id (stored as-is)."""
+        explicit_user_id = 'b2c3d4e5-f6a1-b2c3-d4e5-f6a1b2c3d4e5'
+        ref = unit.new_user_ref(domain_id=self.domain_id)
+        ref['explicit_user_id'] = explicit_user_id
+        r = self.post('/users', body={'user': ref})
+        self.assertValidUserResponse(r, ref)
+        self.assertEqual(explicit_user_id, r.result['user']['id'])
+        self.assertNotIn('explicit_user_id', r.result['user'])
+
+    def test_create_second_user_valid_explicit_id_fails(self):
+        """Call ``POST /users`` with a duplicate explicit_user_id."""
+        explicit_user_id = 'b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5'
+        ref = unit.new_user_ref(domain_id=self.domain_id)
+        ref['explicit_user_id'] = explicit_user_id
+        self.post('/users', body={'user': ref})
+
+        # Second attempt with the same id should conflict
+        ref2 = unit.new_user_ref(domain_id=self.domain_id)
+        ref2['explicit_user_id'] = explicit_user_id
+        self.post(
+            '/users',
+            body={'user': ref2},
+            expected_status=http.client.CONFLICT,
+        )
+
+    def test_create_user_invalid_explicit_ids(self):
+        """explicit_user_id rejects empty strings and values over 64 chars."""
+        ref = unit.new_user_ref(domain_id=self.domain_id)
+
+        bad_ids = [
+            '',
+            'x' * 65,
+        ]
+
+        for bad_id in bad_ids:
+            ref['explicit_user_id'] = bad_id
+            self.post(
+                '/users',
+                body={'user': ref},
+                expected_status=http.client.BAD_REQUEST,
+            )
+
     def test_list_head_users(self):
         """Call ``GET & HEAD /users``."""
         resource_url = '/users'

@@ -1,0 +1,30 @@
+---
+features:
+  - |
+    Added support for caller-supplied IDs when creating projects, users, and
+    domains via the Identity API v3 (requires Keystone API v3.15).
+
+    **Projects** (``POST /v3/projects``): Pass an optional
+    ``explicit_project_id`` field in the request body.  The value must be a
+    valid UUID in either dashed (``xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx``) or
+    dashless (32-character hex) form.  The server normalises the value to
+    dashless hex before storing it, so the two forms are interchangeable.
+
+    **Users** (``POST /v3/users``): Pass an optional ``explicit_user_id``
+    field in the request body.  Any non-empty string of up to 64 characters
+    is accepted — a UUID, an LDAP ``uid``, an Active Directory
+    ``sAMAccountName``, or any other opaque identifier from an external
+    Identity Provider are all valid.
+
+    **Domains** (``POST /v3/domains``): The existing ``explicit_domain_id``
+    field now additionally accepts a dashed UUID; the server normalises it to
+    dashless hex.  Previously only dashless hex was accepted at the API level.
+
+    The feature is gated by the ``identity:create_project``,
+    ``identity:create_user``, and ``identity:create_domain`` policies
+    respectively, so existing RBAC rules continue to apply.
+
+    This feature enables federation scenarios where external identity
+    providers (Active Directory, Entra ID, LDAP) use their own object
+    identifiers and administrators need Keystone's IDs to match those
+    identifiers exactly, without resorting to direct database manipulation.

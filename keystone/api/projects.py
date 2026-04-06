@@ -14,6 +14,7 @@
 
 import functools
 import http.client
+import uuid
 
 import flask
 
@@ -210,7 +211,16 @@ class ProjectsResource(ks_flask.ResourceBase):
         ENFORCER.enforce_call(
             action='identity:create_project', target_attr=target
         )
-        project = self._assign_unique_id(project)
+        # Pop explicit_project_id so it is not returned in the response body.
+        # Accept dashed or dashless UUID and normalise to dashless hex.
+        project_id = project.pop('explicit_project_id', None)
+        if project_id is None:
+            project = self._assign_unique_id(project)
+        else:
+            try:
+                project['id'] = uuid.UUID(project_id).hex
+            except ValueError:
+                raise exception.ProjectIdInvalid
         if not project.get('is_domain'):
             project = self._normalize_domain_id(project)
             # Our API requires that you specify the location in the hierarchy

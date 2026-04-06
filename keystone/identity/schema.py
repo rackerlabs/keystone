@@ -248,6 +248,20 @@ user_create_request: dict[str, Any] = {
             "type": "object",
             "properties": {
                 "domain_id": parameter_types.domain_id,
+                "explicit_user_id": {
+                    "description": (
+                        "An optional caller-supplied ID to assign to the "
+                        "user at creation time. If omitted the server "
+                        "generates a UUID automatically. Accepts any "
+                        "non-empty string up to 64 characters — UUID, "
+                        "LDAP uid, sAMAccountName, etc. are all valid. "
+                        "If the ID is already in use the server returns "
+                        "409 Conflict."
+                    ),
+                    **parameter_types.user_id,
+                    "minLength": 1,
+                    "maxLength": 64,
+                },
                 **_user_properties,
             },
             "required": ["name"],

@@ -1765,10 +1765,35 @@ request_domain_options_body_not_required:
   type: object
 request_explicit_domain_id_body_not_required:
   description: |
-    The ID of the domain. A domain created this way will not use an
-    auto-generated ID, but will use the ID passed in instead. Identifiers passed
-    in this way must conform to the existing ID generation scheme: UUID4 without
-    dashes.
+    The ID to assign to the domain at creation time. When present, this value
+    is used instead of a server-generated UUID. The value must be a valid UUID
+    in either dashed form (``xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx``) or
+    dashless form (``xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx``); it is normalised to
+    dashless lowercase hex before being stored. If the ID is already in use the
+    request will fail with a ``409 Conflict`` response.
+  in: body
+  required: false
+  type: string
+request_explicit_project_id_body_not_required:
+  description: |
+    The ID to assign to the project at creation time. When present, this value
+    is used instead of a server-generated UUID. The value must be a valid UUID
+    in either dashed form (``xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx``) or
+    dashless form (``xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx``); it is normalised to
+    dashless lowercase hex before being stored. If the ID is already in use the
+    request will fail with a ``409 Conflict`` response.
+  in: body
+  required: false
+  type: string
+request_explicit_user_id_body_not_required:
+  description: |
+    The ID to assign to the user at creation time. When present, this value is
+    used instead of a server-generated UUID. Any non-empty string of at most 64
+    characters is accepted; no UUID format is required since user IDs may
+    originate from external directories (for example an Active Directory
+    ``objectGUID``, an LDAP ``uid``, or a ``sAMAccountName``). The value is
+    stored verbatim. If the ID is already in use the request will fail with a
+    ``409 Conflict`` response.
   in: body
   required: false
   type: string
