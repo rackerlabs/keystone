@@ -102,6 +102,7 @@ Parameters
 .. rest_parameters:: parameters.yaml
 
    - user: user_object
+   - id: request_user_id_create_body_not_required
    - default_project_id: default_project_id_request_body
    - domain_id: user_domain_id_request_body
    - federated: federated_in_request_body

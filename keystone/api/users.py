@@ -294,6 +294,13 @@ class UsersResource(ks_flask.ResourceBase):
         ENFORCER.enforce_call(
             action='identity:create_user', target_attr=target
         )
+        # If an ID is provided, use it directly (already validated by schema).
+        # Accept any non-empty string up to 64 characters; no UUID format
+        # is required since user IDs may come from LDAP, AD, or other sources.
+        user_id = user_data.pop('id', None)
+        if user_id is not None:
+            # Schema already validates minLength: 1, maxLength: 64
+            user_data['id'] = user_id
         user_data = self._normalize_dict(user_data)
         user_data = self._normalize_domain_id(user_data)
         ref = PROVIDERS.identity_api.create_user(

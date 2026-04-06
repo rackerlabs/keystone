@@ -426,6 +426,7 @@ class SqlIdentity(
         ref = PROVIDERS.identity_api.create_user(ref)
 
         # assign a new ID with the same name, but this time in uppercase
+        ref['id'] = uuid.uuid4().hex
         ref['name'] = ref['name'].upper()
         PROVIDERS.identity_api.create_user(ref)
 

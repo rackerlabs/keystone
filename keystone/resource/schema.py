@@ -156,7 +156,21 @@ project_create_request_body: dict[str, Any] = {
     "properties": {
         "project": {
             "type": "object",
-            "properties": _project_properties,
+            "properties": {
+                "id": {
+                    "description": (
+                        "An optional caller-supplied ID to assign to the "
+                        "project at creation time. If omitted the server "
+                        "generates a UUID automatically. Must be a UUID in "
+                        "dashless form (32 lowercase hex characters). "
+                        "If the ID is already in use the server returns "
+                        "409 Conflict."
+                    ),
+                    "type": "string",
+                    "pattern": r"^[a-f0-9]{32}$",
+                },
+                **_project_properties,
+            },
             "required": ["name"],
         }
     },
@@ -272,9 +286,29 @@ domain_create_request_body: dict[str, Any] = {
         "domain": {
             "type": "object",
             "properties": {
+                "id": {
+                    "description": (
+                        "An optional caller-supplied ID to assign to the "
+                        "domain at creation time. If omitted the server "
+                        "generates a UUID automatically. Must be a UUID in "
+                        "dashless form (32 lowercase hex characters). "
+                        "If the ID is already in use the server returns "
+                        "409 Conflict. This is the preferred field; "
+                        "explicit_domain_id is also supported for "
+                        "backward compatibility."
+                    ),
+                    "type": "string",
+                    "pattern": r"^[a-f0-9]{32}$",
+                },
                 "explicit_domain_id": {
-                    "description": "The ID of the domain. A domain created this way will not use an auto-generated ID, but will use the ID passed in instead. Identifiers passed in this way must conform to the existing ID generation scheme: UUID4 without dashes.",
-                    **parameter_types.domain_id,
+                    "description": (
+                        "Deprecated: use 'id' instead. An optional "
+                        "caller-supplied ID to assign to the domain at "
+                        "creation time. Must be a UUID in dashless form "
+                        "(32 lowercase hex characters)."
+                    ),
+                    "type": "string",
+                    "pattern": r"^[a-f0-9]{32}$",
                 },
                 **_domain_properties,
             },

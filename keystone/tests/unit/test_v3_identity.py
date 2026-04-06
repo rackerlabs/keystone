@@ -218,6 +218,102 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             expected_status=http.client.NOT_FOUND,
         )
 
+    def test_create_user_valid_id_uuid(self):
+        """UUID 'id' field is accepted and stored as supplied."""
+        user_id = 'b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5'
+        ref = unit.new_user_ref(domain_id=self.domain_id)
+        ref['id'] = user_id
+        r = self.post('/users', body={'user': ref})
+        self.assertValidUserResponse(r, ref)
+        self.assertEqual(user_id, r.result['user']['id'])
+
+        # Fetch the user back and confirm the id persisted
+        r2 = self.get(f'/users/{user_id}')
+        self.assertValidUserResponse(r2)
+        self.assertIsNotNone(r2.result['user'])
+
+    def test_create_user_valid_id_arbitrary_string(self):
+        """Arbitrary string 'id' field is accepted (e.g. sAMAccountName)."""
+        user_id = 'jsmith'
+        ref = unit.new_user_ref(domain_id=self.domain_id)
+        ref['id'] = user_id
+        r = self.post('/users', body={'user': ref})
+        self.assertValidUserResponse(r, ref)
+        self.assertEqual(user_id, r.result['user']['id'])
+
+    def test_create_user_valid_id_dashed_uuid(self):
+        """Dashed UUID is accepted as 'id' field (stored as-is)."""
+        user_id = 'b2c3d4e5-f6a1-b2c3-d4e5-f6a1b2c3d4e5'
+        ref = unit.new_user_ref(domain_id=self.domain_id)
+        ref['id'] = user_id
+        r = self.post('/users', body={'user': ref})
+        self.assertValidUserResponse(r, ref)
+        self.assertEqual(user_id, r.result['user']['id'])
+
+    def test_create_second_user_valid_id_fails(self):
+        """Call ``POST /users`` with a duplicate 'id' field."""
+        user_id = 'b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5'
+        ref = unit.new_user_ref(domain_id=self.domain_id)
+        ref['id'] = user_id
+        self.post('/users', body={'user': ref})
+
+        # Second attempt with the same id should conflict
+        ref2 = unit.new_user_ref(domain_id=self.domain_id)
+        ref2['id'] = user_id
+        self.post(
+            '/users', body={'user': ref2}, expected_status=http.client.CONFLICT
+        )
+
+    def test_create_user_invalid_ids(self):
+        """'id' field rejects empty strings and values over 64 chars."""
+        ref = unit.new_user_ref(domain_id=self.domain_id)
+
+        bad_ids = ['', 'x' * 65]
+
+        for bad_id in bad_ids:
+            ref['id'] = bad_id
+            self.post(
+                '/users',
+                body={'user': ref},
+                expected_status=http.client.BAD_REQUEST,
+            )
+
+    def test_create_user_with_invalid_chars_in_id_fails(self):
+        """User IDs with URL-unsafe or control characters should be rejected."""
+        ref = unit.new_user_ref(domain_id=self.domain_id)
+
+        # Test URL-unsafe characters: /, ?, #, %
+        invalid_chars = ['/', '?', '#', '%']
+        for invalid_char in invalid_chars:
+            ref['id'] = f'user{invalid_char}id'
+            self.post(
+                '/users',
+                body={'user': ref},
+                expected_status=http.client.BAD_REQUEST,
+            )
+
+        # Test control characters (NULL and DEL)
+        ref['id'] = 'user\x00id'  # NULL character
+        self.post(
+            '/users',
+            body={'user': ref},
+            expected_status=http.client.BAD_REQUEST,
+        )
+
+        ref['id'] = 'user\x1fid'  # Control character (Unit Separator)
+        self.post(
+            '/users',
+            body={'user': ref},
+            expected_status=http.client.BAD_REQUEST,
+        )
+
+        ref['id'] = 'user\x7fid'  # DEL character
+        self.post(
+            '/users',
+            body={'user': ref},
+            expected_status=http.client.BAD_REQUEST,
+        )
+
     def test_list_head_users(self):
         """Call ``GET & HEAD /users``."""
         resource_url = '/users'

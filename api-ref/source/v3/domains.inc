@@ -101,6 +101,7 @@ Parameters
 .. rest_parameters:: parameters.yaml
 
    - domain: domain
+   - id: request_domain_id_create_body_not_required
    - explicit_domain_id: request_explicit_domain_id_body_not_required
    - enabled: domain_enabled_request_body
    - description: domain_description_request_body

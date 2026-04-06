@@ -1763,12 +1763,24 @@ request_domain_options_body_not_required:
   in: body
   required: false
   type: object
+request_domain_id_create_body_not_required:
+  description: |
+    The ID to assign to the domain at creation time. When present, this value
+    is used instead of a server-generated UUID. The value must be a UUID in
+    dashless form (``xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx``, 32 lowercase
+    hexadecimal characters). If the ID is already in use the request will fail
+    with a ``409 Conflict`` response.
+  in: body
+  required: false
+  type: string
 request_explicit_domain_id_body_not_required:
   description: |
-    The ID of the domain. A domain created this way will not use an
-    auto-generated ID, but will use the ID passed in instead. Identifiers passed
-    in this way must conform to the existing ID generation scheme: UUID4 without
-    dashes.
+    **Deprecated:** Use ``id`` instead. The ID to assign to the domain at
+    creation time. The value must be a UUID in dashless form
+    (``xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx``, 32 lowercase hexadecimal characters).
+    If the ID is already in use the request will fail with a ``409 Conflict``
+    response. This field is supported for backward compatibility; the ``id``
+    field is preferred and takes precedence if both are provided.
   in: body
   required: false
   type: string
@@ -1781,6 +1793,28 @@ request_limit_domain_id_not_required:
 request_limit_project_id_not_required:
   description: |
     The ID of the project. Either this or the domain ID must be supplied.
+  in: body
+  required: false
+  type: string
+request_project_id_create_body_not_required:
+  description: |
+    The ID to assign to the project at creation time. When present, this value
+    is used instead of a server-generated UUID. The value must be a UUID in
+    dashless form (``xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx``, 32 lowercase
+    hexadecimal characters). If the ID is already in use the request will fail
+    with a ``409 Conflict`` response.
+  in: body
+  required: false
+  type: string
+request_user_id_create_body_not_required:
+  description: |
+    The ID to assign to the user at creation time. When present, this value is
+    used instead of a server-generated UUID. Any non-empty string of at most 64
+    characters is accepted; no UUID format is required since user IDs may
+    originate from external directories (for example an Active Directory
+    ``objectGUID``, an LDAP ``uid``, or a ``sAMAccountName``). The value is
+    stored verbatim. If the ID is already in use the request will fail with a
+    ``409 Conflict`` response.
   in: body
   required: false
   type: string

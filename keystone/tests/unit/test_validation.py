@@ -669,6 +669,58 @@ class ProjectValidationTestCase(unit.BaseTestCase):
                 request_to_validate,
             )
 
+    def test_validate_project_create_with_id(self):
+        """Validate that 'id' field is accepted in create requests."""
+        # Use project_create_request_body (the full envelope schema used by
+        # the API) since 'id' is declared there, not in the
+        # legacy project_create schema used by the rest of this test class.
+        validator = validators.SchemaValidator(
+            resource_schema.project_create_request_body
+        )
+        for valid_id in [
+            'abc123def456abc123def456abc123de',  # dashless UUID (lowercase)
+            'abcdef0123456789abcdef0123456789',  # another dashless UUID
+        ]:
+            request_to_validate = {
+                'project': {'name': 'my_project', 'id': valid_id}
+            }
+            validator.validate(request_to_validate)
+
+    def test_validate_project_create_with_empty_id_fails(self):
+        """Exception raised when 'id' is an empty string."""
+        validator = validators.SchemaValidator(
+            resource_schema.project_create_request_body
+        )
+        request_to_validate = {'project': {'name': 'my_project', 'id': ''}}
+        self.assertRaises(
+            exception.SchemaValidationError,
+            validator.validate,
+            request_to_validate,
+        )
+
+    def test_validate_project_create_with_invalid_id_fails(self):
+        """Exception raised for 'id' values that aren't dashless UUIDs."""
+        validator = validators.SchemaValidator(
+            resource_schema.project_create_request_body
+        )
+        # Test dashed UUID, uppercase, non-hex chars, wrong length
+        for invalid_id in [
+            'abc123de-f456-abc1-23de-f456abc123de',  # dashed UUID
+            'ABC123DEF456ABC123DEF456ABC123DE',  # uppercase
+            'has space here1234567890abcdef12',  # contains space
+            'has!bang123456789012345678901234',  # contains non-hex
+            'tooshort',  # too short
+            'abc123def456abc123def456abc123def456',  # too long (>32)
+        ]:
+            request_to_validate = {
+                'project': {'name': 'my_project', 'id': invalid_id}
+            }
+            self.assertRaises(
+                exception.SchemaValidationError,
+                validator.validate,
+                request_to_validate,
+            )
+
 
 class DomainValidationTestCase(unit.BaseTestCase):
     """Test for V3 Domain API validation."""
@@ -873,6 +925,58 @@ class DomainValidationTestCase(unit.BaseTestCase):
             self.update_domain_validator.validate,
             request_to_validate,
         )
+
+    def test_validate_domain_create_with_id(self):
+        """Validate that 'id' field is accepted in create requests."""
+        for valid_id in [
+            'abc123def456abc123def456abc123de',  # dashless UUID (lowercase)
+            'abcdef0123456789abcdef0123456789',  # another dashless UUID
+        ]:
+            request_to_validate = {
+                "domain": {"name": self.domain_name, "id": valid_id}
+            }
+            self.create_domain_validator.validate(request_to_validate)
+
+    def test_validate_domain_create_with_explicit_domain_id(self):
+        """Validate that explicit_domain_id (deprecated) is still accepted."""
+        for valid_id in [
+            'abc123def456abc123def456abc123de'  # dashless UUID
+        ]:
+            request_to_validate = {
+                "domain": {
+                    "name": self.domain_name,
+                    "explicit_domain_id": valid_id,
+                }
+            }
+            self.create_domain_validator.validate(request_to_validate)
+
+    def test_validate_domain_create_with_empty_id_fails(self):
+        """Exception raised when 'id' is an empty string."""
+        request_to_validate = {"domain": {"name": self.domain_name, "id": ""}}
+        self.assertRaises(
+            exception.SchemaValidationError,
+            self.create_domain_validator.validate,
+            request_to_validate,
+        )
+
+    def test_validate_domain_create_with_invalid_id_fails(self):
+        """Exception raised for 'id' values that aren't dashless UUIDs."""
+        # Test dashed UUID, uppercase, non-hex chars, wrong length
+        for invalid_id in [
+            'abc123de-f456-abc1-23de-f456abc123de',  # dashed UUID
+            'ABC123DEF456ABC123DEF456ABC123DE',  # uppercase
+            'has space',  # contains space
+            'has!bang',  # contains non-hex
+            'tooshort',  # too short
+        ]:
+            request_to_validate = {
+                "domain": {"name": self.domain_name, "id": invalid_id}
+            }
+            self.assertRaises(
+                exception.SchemaValidationError,
+                self.create_domain_validator.validate,
+                request_to_validate,
+            )
 
 
 class RoleValidationTestCase(unit.BaseTestCase):
@@ -2691,6 +2795,40 @@ class UserValidationTestCase(unit.BaseTestCase):
                 ro._mfa_rules_validator_list_of_lists_of_strings_no_duplicates,
                 ruleset,
             )
+
+    def test_validate_user_create_with_id(self):
+        """Validate that 'id' field is accepted in create requests."""
+        for valid_id in [
+            'abc123def456abc123def456abc123de',  # dashless UUID
+            'abc123de-f456-abc1-23de-f456abc123de',  # dashed UUID
+            'jsmith',  # arbitrary LDAP-style string
+            'CN=John Smith,DC=example,DC=com',  # DN-style
+            'a' * 64,  # maximum length
+        ]:
+            request_to_validate = {
+                'user': {'name': self.user_name, 'id': valid_id}
+            }
+            self.create_user_validator.validate(request_to_validate)
+
+    def test_validate_user_create_with_empty_id_fails(self):
+        """Exception raised when 'id' is an empty string."""
+        request_to_validate = {'user': {'name': self.user_name, 'id': ''}}
+        self.assertRaises(
+            exception.SchemaValidationError,
+            self.create_user_validator.validate,
+            request_to_validate,
+        )
+
+    def test_validate_user_create_with_too_long_id_fails(self):
+        """Exception raised when 'id' exceeds 64 characters."""
+        request_to_validate = {
+            'user': {'name': self.user_name, 'id': 'a' * 65}
+        }
+        self.assertRaises(
+            exception.SchemaValidationError,
+            self.create_user_validator.validate,
+            request_to_validate,
+        )
 
 
 class GroupValidationTestCase(unit.BaseTestCase):

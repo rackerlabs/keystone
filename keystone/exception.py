@@ -484,10 +484,6 @@ class DomainSpecificRoleNotWithinIdPDomain(Forbidden):
     )
 
 
-class DomainIdInvalid(ValidationError):
-    message_format = _("Domain ID does not conform to required UUID format.")
-
-
 class RoleAssignmentNotFound(NotFound):
     message_format = _(
         "Could not find role assignment with role: "
