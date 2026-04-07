@@ -921,7 +921,26 @@ class Manager(manager.Manager):
                         inherited_to_projects=True,
                     )
 
-            return non_inherited_refs + inherited_refs
+            refs = non_inherited_refs + inherited_refs
+
+# Add system assignments when effective=True
+        if user_id:
+             for assignment in self.list_system_grants_for_user(user_id):
+                  refs.append({
+            'system': {'all': True},
+            'user_id': user_id,
+            'role_id': assignment['id'],
+        })
+        elif group_ids:
+             for group_id in group_ids:
+                for assignment in self.list_system_grants_for_group(group_id):
+                   refs.append({
+                'system': {'all': True},
+                'group_id': group_id,
+                'role_id': assignment['id'],
+            })
+
+             return refs
 
         # If filtering by group or inherited domain assignment the list is
         # guaranteed to be empty
