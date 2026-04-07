@@ -33,6 +33,23 @@
       "message": "recheck - tox-docs fix merged",
       "revId": "795aac3ba3b1868237809a7c2dbf1f2f169a535c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99fc1bd6_a59819ce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1131
+      },
+      "writtenOn": "2026-04-07T19:08:14Z",
+      "side": 1,
+      "message": "I think you need a change in tox.ini like in the 2025.1 change:\n\nhttps://review.opendev.org/c/openstack/keystone/+/982656/7/tox.ini",
+      "revId": "795aac3ba3b1868237809a7c2dbf1f2f169a535c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
