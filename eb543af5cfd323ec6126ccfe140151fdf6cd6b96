@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a07ea9e1_02d2b4f8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2026-04-07T20:38:16Z",
+      "side": 1,
+      "message": "I think more right applied this fix in keystone:\nhttps://review.opendev.org/c/openstack/requirements/+/982232",
+      "revId": "eb543af5cfd323ec6126ccfe140151fdf6cd6b96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4cb28a01_37446818",
