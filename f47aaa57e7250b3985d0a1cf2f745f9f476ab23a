@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef1dc148_f23afd2a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-08T15:32:26Z",
+      "side": 1,
+      "message": "i check here for POST. But what about PATCH? and DELETE?",
+      "revId": "f47aaa57e7250b3985d0a1cf2f745f9f476ab23a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
