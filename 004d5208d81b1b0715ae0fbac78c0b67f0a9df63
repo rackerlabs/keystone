@@ -84,6 +84,23 @@
       "message": "recheck - logs were deleted",
       "revId": "004d5208d81b1b0715ae0fbac78c0b67f0a9df63",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3d415b0_b11fd127",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2026-04-08T21:37:40Z",
+      "side": 1,
+      "message": "recheck (CI now good)",
+      "revId": "004d5208d81b1b0715ae0fbac78c0b67f0a9df63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
