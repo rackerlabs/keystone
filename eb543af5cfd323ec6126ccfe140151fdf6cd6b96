@@ -33,6 +33,24 @@
       "message": "this shouldn\u0027t be added to the requirements file. It\u0027s okay to do inside the tox.ini",
       "revId": "eb543af5cfd323ec6126ccfe140151fdf6cd6b96",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49d6d50c_017fc4a2",
+        "filename": "test-requirements.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2026-04-08T06:58:41Z",
+      "side": 1,
+      "message": "@gouthampravi@gmail.com Hello, I applied fix for this, thank you.",
+      "parentUuid": "4cb28a01_37446818",
+      "revId": "eb543af5cfd323ec6126ccfe140151fdf6cd6b96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
