@@ -1,0 +1,9 @@
+Verified+2: Zuul
+Code-Review+2: David Wilde <dwilde@redhat.com>
+Workflow+1: David Wilde <dwilde@redhat.com>
+Code-Review+2: Artem Goncharov <artem.goncharov@gmail.com>
+Submitted-by: Zuul
+Submitted-at: Wed, 08 Apr 2026 19:04:12 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/983591
+Project: openstack/keystone
+Branch: refs/heads/stable/2024.2
