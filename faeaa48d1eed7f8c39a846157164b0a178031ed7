@@ -16,6 +16,40 @@
       "message": "recheck unrelated",
       "revId": "faeaa48d1eed7f8c39a846157164b0a178031ed7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d23528df_9809f1a7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-09T13:04:09Z",
+      "side": 1,
+      "message": "There must be a unit test demonstrating how this works. I think it does not work now because of the problem with variable name mentioned in the review.\nIf this is changing a behavior visible to a API user, there must be a bugreport reference.",
+      "revId": "faeaa48d1eed7f8c39a846157164b0a178031ed7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24500ee7_23443269",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-09T13:04:09Z",
+      "side": 1,
+      "message": "I am confused. Here additional_properties is used with an underscore. Below on line 286 and on line 210 additionalProperties with camelCase are used. Why the difference? How does it work?",
+      "revId": "faeaa48d1eed7f8c39a846157164b0a178031ed7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
