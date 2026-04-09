@@ -1,0 +1,11 @@
+Code-Review+1: Benedikt Trefzer <benedikt.trefzer@cirrax.com>
+Verified+2: Zuul
+Workflow+1: Grzegorz Grasza <xek@redhat.com>
+Code-Review+1: Ivan Anfimov <lazekteam@gmail.com>
+Code-Review+2: David Wilde <dwilde@redhat.com>
+Submitted-by: Zuul
+Submitted-at: Thu, 09 Apr 2026 20:00:14 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/982408
+Comments-Total: 2
+Project: openstack/keystone
+Branch: refs/heads/stable/2025.1
