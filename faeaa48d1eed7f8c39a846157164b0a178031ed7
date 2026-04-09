@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3db544ed_7ae8209c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-09T14:15:50Z",
+      "side": 1,
+      "message": "How do i make sure that this works? The previous wrong key with underscore was not noticed by 4 reviewers (including one core reviewer) and by you, the patch author. Things like this should be caught by CI.",
+      "parentUuid": "722d813f_3da33ecb",
+      "revId": "faeaa48d1eed7f8c39a846157164b0a178031ed7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "24500ee7_23443269",
         "filename": "keystone/resource/schema.py",
         "patchSetId": 1
