@@ -35,6 +35,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "722d813f_3da33ecb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-04-09T13:38:36Z",
+      "side": 1,
+      "message": "this has nothing to do with changing the API behavior, but rather fixing a bug introduced with the schemas (due to the not sufficient coverage with existing tests that do not try to set additional attributes on the projects/domains). This is a followup fix to other places with similar behavior, I am not able to find the bug report for this, maybe someone just pinged in the IRC with it.",
+      "parentUuid": "d23528df_9809f1a7",
+      "revId": "faeaa48d1eed7f8c39a846157164b0a178031ed7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "24500ee7_23443269",
