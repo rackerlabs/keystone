@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba412012_490a2153",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15197
+      },
+      "writtenOn": "2026-04-09T07:15:46Z",
+      "side": 1,
+      "message": "CI fix required to merge CVE fix",
+      "revId": "846998f683988562705b810add81a39448b03505",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
