@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb3ca7d8_4a870c1d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15197
+      },
+      "writtenOn": "2026-04-09T07:15:55Z",
+      "side": 1,
+      "message": "Rebased on top of CI fix",
+      "revId": "12f87238435ccf31c09c2063ca5c13dd8b27bad8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
