@@ -3,6 +3,29 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "c3965c5b_1fbc6e8c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2026-04-09T08:10:43Z",
+      "side": 1,
+      "message": "nit: this is actually not true anymore as it was only added in PS1",
+      "range": {
+        "startLine": 13,
+        "startChar": 22,
+        "endLine": 14,
+        "endChar": 26
+      },
+      "revId": "846998f683988562705b810add81a39448b03505",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "ba412012_490a2153",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 2
@@ -14,6 +37,40 @@
       "writtenOn": "2026-04-09T07:15:46Z",
       "side": 1,
       "message": "CI fix required to merge CVE fix",
+      "revId": "846998f683988562705b810add81a39448b03505",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80be05d6_39d8f812",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2026-04-09T08:10:43Z",
+      "side": 1,
+      "message": "backport of a minimal change to unblock the gate. LGTM. Unmaintained branch, gate fix, so i\u0027m fast approving it.",
+      "revId": "846998f683988562705b810add81a39448b03505",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1df581c2_b673175f",
+        "filename": "keystone/oauth1/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2026-04-09T08:10:43Z",
+      "side": 1,
+      "message": "this was not part of the original patch, but this is just a formatting change.",
       "revId": "846998f683988562705b810add81a39448b03505",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
