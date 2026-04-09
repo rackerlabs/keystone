@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85b8d92e_c088d5da",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2026-04-09T16:16:28Z",
+      "side": 1,
+      "message": "nit:\n\n    Conflicts:\n      keystone/api/users.py\n      keystone/common/policies/base.py",
+      "revId": "adedc84594907824fcce34fe0617b8b03fbd576f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf1b2cbf_e0e33796",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2026-04-09T16:16:28Z",
+      "side": 1,
+      "message": "backport looks good, conflict resolution looks good to me. cherry picked from stable/2024.2, where the patch has merged. given this is unmaintained branch, and this is a CVE fix, I\u0027m fast approving this now. (i\u0027ve only rebased this to latest PS of the gate fix patch)",
+      "revId": "adedc84594907824fcce34fe0617b8b03fbd576f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
