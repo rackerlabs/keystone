@@ -16,6 +16,23 @@
       "message": "I came here from the SDK/OSC changes. Does keystone not do specs? This really feels like something that warrants a spec since it\u0027s quite a large change. In particular, I\u0027d like to think through how we expose this to the client since I\u0027m nervous that IDs might get silently ignored on older keystones.",
       "revId": "7554d0f0b88269e0ff6bbed4bbb2d8cbab74326e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e620d7e0_46ea4133",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-04-09T13:54:59Z",
+      "side": 1,
+      "message": "I have placed -2 on the spec. I do not think we can implement anything like this before doing fundamental changes in keystone",
+      "revId": "7554d0f0b88269e0ff6bbed4bbb2d8cbab74326e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
