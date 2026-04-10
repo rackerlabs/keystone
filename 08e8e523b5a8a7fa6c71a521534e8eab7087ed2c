@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "417f7900_75c6500d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2026-04-10T16:01:55Z",
+      "side": 1,
+      "message": "David, Douglas, thanks for reviewing o/\nGiven that David and Douglas are core team members / stable cores of keystone, i\u0027m fast-approving this gate fix, given it is on unmaintained branch.",
+      "revId": "08e8e523b5a8a7fa6c71a521534e8eab7087ed2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
