@@ -12,9 +12,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import contextlib
 import uuid
 
-import contextlib
 from testtools import matchers
 from unittest import mock
 
