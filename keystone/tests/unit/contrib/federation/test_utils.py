@@ -917,6 +917,51 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         ]
         self.assertEqual(expected_projects, values['projects'])
 
+    def test_rule_engine_multiple_rules_with_projects(self):
+        """Test that projects accumulate across multiple matching rules."""
+        mapping = mapping_fixtures.MAPPING_PROJECTS_MULTI_RULE
+        assertion = mapping_fixtures.EMPLOYEE_ASSERTION
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping["rules"])
+        values = rp.process(assertion)
+
+        self.assertValidMappedUserObject(values)
+        expected_username = mapping_fixtures.EMPLOYEE_ASSERTION["UserName"]
+        self.assertEqual(expected_username, values["user"]["name"])
+
+        # Should have both projects from both rules
+        self.assertEqual(2, len(values["projects"]))
+        project_names = {p["name"] for p in values["projects"]}
+        self.assertEqual({"Project-A", "Project-B"}, project_names)
+
+        # Verify roles are correct
+        project_a = [
+            p for p in values["projects"] if p["name"] == "Project-A"
+        ][0]
+        project_b = [
+            p for p in values["projects"] if p["name"] == "Project-B"
+        ][0]
+        self.assertEqual([{"name": "member"}], project_a["roles"])
+        self.assertEqual([{"name": "admin"}], project_b["roles"])
+
+    def test_rule_engine_multiple_rules_duplicate_projects_merge_roles(self):
+        """Test duplicate projects are deduplicated with roles merged."""
+        mapping = mapping_fixtures.MAPPING_PROJECTS_MULTI_RULE_DUPLICATE
+        assertion = mapping_fixtures.EMPLOYEE_ASSERTION
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping["rules"])
+        values = rp.process(assertion)
+
+        self.assertValidMappedUserObject(values)
+
+        # Should have only one project (deduplicated)
+        self.assertEqual(1, len(values["projects"]))
+        project = values["projects"][0]
+        self.assertEqual("SharedProject", project["name"])
+
+        # Should have both roles merged
+        self.assertEqual(2, len(project["roles"]))
+        role_names = {r["name"] for r in project["roles"]}
+        self.assertEqual({"member", "reader"}, role_names)
+
     def test_rule_engine_for_groups_and_domain(self):
         """Should return user's groups and group domain.
 
