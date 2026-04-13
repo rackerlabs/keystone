@@ -724,8 +724,9 @@ class RuleProcessor:
                 'projects' in identity_value
                 or 'projects_json' in identity_value
             ):
-                projects = self.extract_projects(identity_value)
+                projects.extend(self.extract_projects(identity_value))
 
+        projects = self._deduplicate_projects(projects)
         self.normalize_user(user, identity_value.get('domain'))
 
         return {
@@ -742,6 +743,47 @@ class RuleProcessor:
 
     def extract_projects(self, identity_value):
         return identity_value.get('projects', [])
+
+    def _deduplicate_projects(self, projects):
+        """Deduplicate projects while preserving all roles.
+
+        Projects are deduplicated by (name, domain) tuple.
+        If the same project appears multiple times with different roles,
+        all roles are merged into a single project entry.
+
+        :param projects: list of project dictionaries
+        :returns: deduplicated list of projects with merged roles
+        """
+        if not projects:
+            return []
+
+        projects_by_key = {}
+
+        for project in projects:
+            domain = project.get("domain", {})
+            domain_key = domain.get("id") or domain.get("name") or None
+            project_key = (project["name"], domain_key)
+
+            if project_key not in projects_by_key:
+                new_project = project.copy()
+                if "roles" in new_project:
+                    new_project["roles"] = list(new_project["roles"])
+                projects_by_key[project_key] = new_project
+            else:
+                existing_project = projects_by_key[project_key]
+                existing_roles = existing_project.get("roles", [])
+                new_roles = project.get("roles", [])
+
+                merged_roles = list(existing_roles)
+                role_names = {r["name"] for r in merged_roles}
+                for role in new_roles:
+                    if role["name"] not in role_names:
+                        merged_roles.append(role)
+                        role_names.add(role["name"])
+
+                existing_project["roles"] = merged_roles
+
+        return list(projects_by_key.values())
 
     def _update_local_mapping(self, local, direct_maps):
         """Replace any {0}, {1} ... values with data from the assertion.

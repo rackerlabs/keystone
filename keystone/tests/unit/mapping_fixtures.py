@@ -1180,3 +1180,77 @@ MAPPING_PROJECTS_WITHOUT_NAME = {
         }
     ]
 }
+
+MAPPING_PROJECTS_MULTI_RULE = {
+    "rules": [
+        {
+            "local": [
+                {"user": {"name": "{0}"}},
+                {
+                    "projects": [
+                        {
+                            "name": "Project-A",
+                            "roles": [{"name": "member"}],
+                        }
+                    ]
+                },
+            ],
+            "remote": [
+                {"type": "UserName"},
+                {"type": "orgPersonType", "any_one_of": ["Employee"]},
+            ],
+        },
+        {
+            "local": [
+                {
+                    "projects": [
+                        {
+                            "name": "Project-B",
+                            "roles": [{"name": "admin"}],
+                        }
+                    ]
+                }
+            ],
+            "remote": [
+                {"type": "orgPersonType", "any_one_of": ["Employee"]},
+            ],
+        },
+    ]
+}
+
+MAPPING_PROJECTS_MULTI_RULE_DUPLICATE = {
+    "rules": [
+        {
+            "local": [
+                {"user": {"name": "{0}"}},
+                {
+                    "projects": [
+                        {
+                            "name": "SharedProject",
+                            "roles": [{"name": "member"}],
+                        }
+                    ]
+                },
+            ],
+            "remote": [
+                {"type": "UserName"},
+                {"type": "orgPersonType", "any_one_of": ["Employee"]},
+            ],
+        },
+        {
+            "local": [
+                {
+                    "projects": [
+                        {
+                            "name": "SharedProject",
+                            "roles": [{"name": "reader"}],
+                        }
+                    ]
+                }
+            ],
+            "remote": [
+                {"type": "orgPersonType", "any_one_of": ["Employee"]},
+            ],
+        },
+    ]
+}
