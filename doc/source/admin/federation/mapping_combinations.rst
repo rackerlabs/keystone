@@ -183,8 +183,11 @@ How Mappings Are Processed
 --------------------------
 
 A mapping is selected by IdP and protocol. Then keystone takes the mapping and
-processes each rule sequentially stopping after the first matched rule. A rule
-is matched when all of its conditions are met.
+processes each rule sequentially. Rules are additive — all matching rules
+contribute group and project assignments. However, only the first matched rule
+that specifies a user identification will be used; subsequent user
+identifications from later rules are ignored. A rule is matched when all of its
+conditions are met.
 
 First keystone evaluates each condition from the rule's remote property to see
 if the rule is a match. If it is a match, keystone saves the data captured by

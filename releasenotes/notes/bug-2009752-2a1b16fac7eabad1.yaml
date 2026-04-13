@@ -1,0 +1,8 @@
+fixes:
+  - |
+    [`bug 2009752 <https://bugs.launchpad.net/keystone/+bug/2009752>`_]
+    Fixed federation mapping rule processing to correctly accumulate projects
+    across multiple matching rules. Previously, when multiple rules matched
+    and each specified projects, only the last rule's projects were kept.
+    Projects are now properly accumulated and deduplicated across all matching
+    rules, with roles merged for duplicate projects.
