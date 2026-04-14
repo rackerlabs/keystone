@@ -22,6 +22,7 @@ import keystone.conf
 import keystone.server
 from keystone.server.flask import application
 from keystone.server.flask.request_processing.middleware import auth_context
+from keystone.server.flask.request_processing.middleware import k8s_token
 from keystone.server.flask.request_processing.middleware import url_normalize
 
 # NOTE(morgan): Middleware Named Tuple with the following values:
@@ -113,6 +114,19 @@ def setup_app_middleware(app):
     # are below all externally loaded middleware in request processing.
     for mw in reversed(IMW):
         app.wsgi_app = mw(app.wsgi_app)
+
+    if CONF.k8s_auth.enabled:
+        app.wsgi_app = k8s_token.K8sTokenAuthMiddleware(
+            app.wsgi_app,
+            k8s_api_url=CONF.k8s_auth.k8s_api_url,
+            ca_path=CONF.k8s_auth.ca_path,
+            verify_ssl=CONF.k8s_auth.verify_ssl,
+            claim_prefix=CONF.k8s_auth.claim_prefix,
+            oauth_client_id=CONF.k8s_auth.oauth_client_id,
+            oauth_client_secret=CONF.k8s_auth.oauth_client_secret,
+            oauth_authorize_url=CONF.k8s_auth.oauth_authorize_url,
+            oauth_token_url=CONF.k8s_auth.oauth_token_url,
+        )
 
     # Apply the middleware to the application.
     for mw in reversed(MW):

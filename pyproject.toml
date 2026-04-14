@@ -69,6 +69,9 @@ default = "keystone.auth.plugins.mapped:Mapped"
 [project.entry-points."keystone.auth.mapped"]
 default = "keystone.auth.plugins.mapped:Mapped"
 
+[project.entry-points."keystone.auth.k8s_token"]
+default = "keystone.auth.plugins.mapped:Mapped"
+
 [project.entry-points."keystone.catalog"]
 sql = "keystone.catalog.backends.sql:Catalog"
 

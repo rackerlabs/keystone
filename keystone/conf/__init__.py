@@ -35,6 +35,7 @@ from keystone.conf import fernet_tokens
 from keystone.conf import identity
 from keystone.conf import identity_mapping
 from keystone.conf import jwt_tokens
+from keystone.conf import k8s_auth
 from keystone.conf import ldap
 from keystone.conf import oauth1
 from keystone.conf import oauth2
@@ -72,6 +73,7 @@ conf_modules = [
     identity,
     identity_mapping,
     jwt_tokens,
+    k8s_auth,
     ldap,
     oauth1,
     oauth2,
