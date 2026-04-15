@@ -16,6 +16,23 @@
       "message": "recheck - openstack-tox-cover job failed with test case \u0027test_with_passcode_in_previous_windows_default\u0027 with error:\n\n    webtest.app.AppError: Bad response: 401 UNAUTHORIZED (not HTTPStatus.CREATED)\n    b\u0027{\"error\":{\"code\":401,\"message\":\"The request you have made requires authentication.\",\"title\":\"Unauthorized\"}}\\n\u0027",
       "revId": "dc8c24af85b36242f77791c8ac07ff69944ffd2c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3adc0f14_fb1455d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2026-04-15T11:41:04Z",
+      "side": 1,
+      "message": "thanks, looks ok",
+      "revId": "dc8c24af85b36242f77791c8ac07ff69944ffd2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
