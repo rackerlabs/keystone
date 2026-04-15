@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a95d1b1c_6a6ed09e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2026-04-15T13:41:10Z",
+      "side": 1,
+      "message": "Note, that I did not cherry pick gate fix [1] from unmaintained/2024.1 branch, as I think we need far less change here in this branch.\n\n[1] https://review.opendev.org/c/openstack/keystone/+/965908",
+      "revId": "160ba5b4094b590826e34f9d7725be2334379e37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
