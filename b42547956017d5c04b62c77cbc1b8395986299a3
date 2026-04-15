@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "030b7df7_58b94268",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-04-15T06:58:12Z",
+      "side": 1,
+      "message": "Sorry Greg, but I am conceptually against of that.\nI am strongly opposed to adding new feature in a way that is architecturally only capable covering some small percentage of the related functionality. If we would merge this we would immediately get requests: I want to add token introspection, I want to use multiple k8 clusters, I want to have self service, I want to enable protection mechanisms who can use it or which users are mapped, I want a mechanism for the keys rotation, for revocation check, ...\nPersonally I am not going to accept any further functionality that relies on the mod_auth_oidc or other proxies. Such things are not improving the situation, but only making the patchwork worse. K8s is a great addition (and as you should know already implemented in the keystone-ng in a way that enables full functionality), but this is not the way how we should do this.",
+      "revId": "b42547956017d5c04b62c77cbc1b8395986299a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
