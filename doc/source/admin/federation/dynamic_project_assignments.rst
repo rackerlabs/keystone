@@ -232,6 +232,44 @@ Moreover, we are presenting a complete mapper, where we also received from the I
 
 The ``OIDC`` string is appended in the attribute names that come from the IdP by the ``ModOIDC``, which is executed in the Apache HTTPD that sits in front of Keystone and handles the identity federation integration.
 
+-----------------------
+Security considerations
+-----------------------
+
+This section is especially important for public cloud providers where
+customers may operate their own identity providers.
+
+When schema version 3.0 with ``projects_json`` is used, the identity
+provider controls project names, domain targets, and role assignments
+through the content of its assertions. Keystone accepts all of these
+values without restriction. This is all fine if Keystone and the IdP are
+fully in the same trust domain. If they are not, the following
+implications must be understood before enabling this feature.
+
+The IdP can specify any existing domain in the cloud, not just the domain
+the IdP is registered with. The IdP's ``domain_id`` is used only as a
+fallback default when the assertion omits the domain field. It is not
+enforced as a constraint.
+
+If the assertion references a project that already exists by name and
+domain, Keystone will find that existing project and grant roles on it to
+the federated user. It will not create a new project in this case. This
+means the IdP can target pre-existing projects belonging to other tenants.
+
+The assertion can request any pre-existing global role, including
+``admin``. There is no allowlist mechanism to restrict which roles the IdP
+may assert.
+
+Role grants created through this path are made by calling the manager API
+directly, bypassing ``oslo.policy`` enforcement. Policy rules that restrict
+role grants through the normal API do not apply to the federation
+auto-provisioning path.
+
+There is no configuration option in the mapping to restrict which domains,
+roles, or project names the IdP may assert.
+
+For more details, see `bug 2148599 <https://bugs.launchpad.net/keystone/+bug/2148599>`_.
+
 [1] https://bugs.launchpad.net/keystone/+bug/1887515
 
 [2] https://bugs.launchpad.net/keystone/+bug/1888412
