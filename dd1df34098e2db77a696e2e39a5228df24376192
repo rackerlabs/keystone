@@ -16,6 +16,24 @@
       "message": "Before the patch, conn.result3 was being called. One of the things that result3 does is convert_ldap_result, which converts binary output from ldap to python strings. After we removed this call, the results that we get are not byte-like. But we also completely bypass other useful things that convert_ldap_result offered us.",
       "revId": "dd1df34098e2db77a696e2e39a5228df24376192",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4648c17c_9ef840f0",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1817,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-17T15:37:45Z",
+      "side": 0,
+      "message": "Typo:\n... the results that we get are NOW byte-like ...",
+      "parentUuid": "98f7bbcf_dca9766e",
+      "revId": "dd1df34098e2db77a696e2e39a5228df24376192",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
