@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7de51e1d_e8eeef32",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1840,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-17T15:35:53Z",
+      "side": 1,
+      "message": "the construction in the original code was already difficult to read, and now it is even more monstrous. Why does it need to be changed? Can you make it simpler?",
+      "range": {
+        "startLine": 1832,
+        "startChar": 0,
+        "endLine": 1840,
+        "endChar": 13
+      },
+      "revId": "9c4943e3625bc7a6f25f23fe531e490bfe7b2225",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bea0c420_4d1cb7f5",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-17T15:35:53Z",
+      "side": 1,
+      "message": "I have doubts about this. The test does not demonstrate that your call actually goes through _paged_search_s that you change. It might be that the call goes through the search_s, without calling the pagination.\n\nPlease change the test so that it demonstrated that _paged_search_s is actually called.",
+      "range": {
+        "startLine": 479,
+        "startChar": 0,
+        "endLine": 481,
+        "endChar": 51
+      },
+      "revId": "9c4943e3625bc7a6f25f23fe531e490bfe7b2225",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
