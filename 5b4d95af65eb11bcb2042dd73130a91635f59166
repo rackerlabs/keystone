@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3da6b776_8e81a462",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2026-04-17T13:49:57Z",
+      "side": 1,
+      "message": "CI-only / gate fix, given this is on unmaintained branch, I\u0027m fast-approving this.",
+      "revId": "5b4d95af65eb11bcb2042dd73130a91635f59166",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
