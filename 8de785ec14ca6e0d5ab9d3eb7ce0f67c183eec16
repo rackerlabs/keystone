@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad9cc4b7_431fbfcf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2026-04-18T13:21:25Z",
+      "side": 1,
+      "message": "recheck - gate is fixed",
+      "revId": "8de785ec14ca6e0d5ab9d3eb7ce0f67c183eec16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
