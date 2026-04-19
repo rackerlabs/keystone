@@ -16,6 +16,23 @@
       "message": "recheck - gate is fixed",
       "revId": "c5388e481546d39cac6c868e5701d5f1fd20bc2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30014e32_b494eedf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2026-04-19T20:12:14Z",
+      "side": 1,
+      "message": "recheck - all jobs went to POST_FAILURE :S",
+      "revId": "c5388e481546d39cac6c868e5701d5f1fd20bc2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
