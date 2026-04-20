@@ -129,6 +129,9 @@ sql = "keystone.federation.backends.sql:Federation"
 [project.entry-points."keystone.oauth1"]
 sql = "keystone.oauth1.backends.sql:OAuth1"
 
+[project.entry-points."keystone.ip_allowlist"]
+sql = "keystone.ip_allowlist.backends.sql:IPAllowlist"
+
 [project.entry-points."keystone.revoke"]
 sql = "keystone.revoke.backends.sql:Revoke"
 

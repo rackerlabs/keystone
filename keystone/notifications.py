@@ -899,6 +899,36 @@ class CadfRoleAssignmentNotificationWrapper:
         return wrapper
 
 
+def send_authenticate_failure_notification(user_id, reason_message, code):
+    """Send a CADF notification for an authentication failure with a reason.
+
+    Used for authN-adjacent denials that happen outside the password-check
+    path (e.g. IP allowlist rejection) where the authenticate decorator
+    does not run.
+
+    :param user_id: The user ID being denied, or ``None`` if unknown.
+    :param reason_message: Human-readable reason for the denial.
+    :param code: HTTP-style numeric code for the denial (e.g. 401, 403).
+    """
+    initiator = build_audit_initiator()
+    if user_id:
+        initiator.user_id = user_id
+        initiator.id = utils.resource_uuid(user_id)
+    initiator = _add_username_to_initiator(initiator)
+    target = resource.Resource(typeURI=taxonomy.ACCOUNT_USER)
+    action = 'authenticate'
+    event_type = f'{SERVICE}.{action}'
+    audit_reason = reason.Reason(str(reason_message), str(code))
+    _send_audit_notification(
+        action,
+        initiator,
+        taxonomy.OUTCOME_FAILURE,
+        target,
+        event_type,
+        reason=audit_reason,
+    )
+
+
 def send_saml_audit_notification(
     action, user_id, group_ids, identity_provider, protocol, token_id, outcome
 ):

@@ -544,6 +544,24 @@ class CredentialNotFound(NotFound):
     message_format = _("Could not find credential: %(credential_id)s.")
 
 
+class IPAllowlistEntryNotFound(NotFound):
+    message_format = _(
+        "Could not find IP allowlist entry: %(entry_id)s."
+    )
+
+
+class IPAddressNotAllowed(Unauthorized):
+    message_format = _(
+        "Source IP address is not permitted for this user."
+    )
+
+
+class IPAddressNotAllowedForScope(Forbidden):
+    message_format = _(
+        "Source IP address is not permitted for the requested scope."
+    )
+
+
 class VersionNotFound(NotFound):
     message_format = _("Could not find version: %(version)s.")
 
