@@ -16,6 +16,24 @@
       "message": "Sorry Greg, but I am conceptually against of that.\nI am strongly opposed to adding new feature in a way that is architecturally only capable covering some small percentage of the related functionality. If we would merge this we would immediately get requests: I want to add token introspection, I want to use multiple k8 clusters, I want to have self service, I want to enable protection mechanisms who can use it or which users are mapped, I want a mechanism for the keys rotation, for revocation check, ...\nPersonally I am not going to accept any further functionality that relies on the mod_auth_oidc or other proxies. Such things are not improving the situation, but only making the patchwork worse. K8s is a great addition (and as you should know already implemented in the keystone-ng in a way that enables full functionality), but this is not the way how we should do this.",
       "revId": "b42547956017d5c04b62c77cbc1b8395986299a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d115398f_8129079b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2026-04-20T11:13:30Z",
+      "side": 1,
+      "message": "Hi Artem, thanks for the detailed feedback. I think there may be a misunderstanding about what this change does.\n\nThis middleware replaces mod_auth_openidc, it doesn\u0027t add to it. The whole point is that mod_auth_openidc cannot handle OCP\u0027s opaque user tokens (sha256~...) - it requires JWTs, a userinfo endpoint, or token introspection, and OCP\u0027s OAuth server provides none of those for human users. The WSGI middleware in pure Python eliminates the Apache module dependency entirely for K8s/OCP deployments.\n\nOn the specific concerns:\n * Token introspection: OCP doesn\u0027t expose RFC 7662 introspection. The equivalent is the Kubernetes TokenReview API, which this middleware uses. Opaque tokens are validated live via TokenReview (inherently revocable), JWTs are validated via JWKS (standard OIDC behavior).\n * Multiple K8s clusters: Already possible with the existing federation model - each cluster is a separate identity provider with its own JWKS/TokenReview endpoint. No middleware changes needed, just configuration.\n * Self service / who can use it / user mapping: This uses Keystone\u0027s existing federation mapping rules. All the expressiveness of any_one_of, not_any_of, regex matching on groups, namespace, etc. is available. That\u0027s the whole point of building on the mapped plugin rather than inventing something new.\n * Key rotation: For opaque tokens there are no keys to rotate - they are validated live via API.\n * Revocation: Opaque tokens are validated via TokenReview on every request - if the token is revoked in K8s, it immediately fails validation.\n\nOn keystone-ng I\u0027m aware of the project and agree it\u0027s the future direction for Keystone\u0027s identity architecture. The workload authorization and native OIDC/JWT support there are the right long-term answer. But keystone-ng\u0027s K8s integration would itself need to build on the same primitives this middleware uses - JWKS validation for SA tokens, TokenReview for opaque tokens, and the OAuth2 authorization code flow for websso. These are K8s/OCP platform APIs, not implementation choices we can avoid. This middleware is ~450 lines that works with the Keystone codebase that\u0027s shipping today, and the patterns it establishes (TokenReview, JWKS, mapped federation) would carry over into keystone-ng when that\u0027s ready. They\u0027re complementary, not competing.\n    \nI\u0027m genuinely interested in your thoughts on what\u0027s architecturally wrong with the approach itself (WSGI middleware + federation mapped plugin + TokenReview), as opposed to the concern that it doesn\u0027t cover everything. The federation framework is designed to be extensible - this adds one more identity provider type using existing infrastructure.\n\nHappy to discuss on the PTG.",
+      "parentUuid": "030b7df7_58b94268",
+      "revId": "b42547956017d5c04b62c77cbc1b8395986299a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
