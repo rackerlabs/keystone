@@ -18,6 +18,23 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad2b5cf3_281210fc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2026-04-20T14:25:52Z",
+      "side": 1,
+      "message": "Another thought, but that is probably to the spec - how is intended to resolve chicken-egg situation?\n\nAs once you deploy the keystone with plugin enabled - you are prohibited right away.\n\nI think, we should have a default rule allowing all users to enter from 0.0.0.0/0. And then likely we don\u0027t need a config option to enable/disable the plugin.",
+      "revId": "1ec7dd390038faafcb850a48779da2735c09cb9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ba24e333_4c189e24",
