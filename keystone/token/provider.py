@@ -18,6 +18,7 @@ import base64
 import datetime
 import uuid
 
+import flask
 from oslo_log import log
 from oslo_utils import timeutils
 
@@ -347,6 +348,15 @@ class Manager(manager.Manager):
                     ' credential expiration: %s',
                     token.expires_at,
                 )
+
+        # NOTE(ip_allowlist): If the IP allowlist driver is enabled,
+        # verify the source IP is permitted before issuing the token.
+        # validate_token().
+        if CONF.ip_allowlist.enabled:
+            PROVIDERS.ip_allowlist_api.check_ip_allowed(
+                token.user_id,
+                flask.request.remote_addr,
+            )
 
         token_id, issued_at = self.driver.generate_id_and_issued_at(token)
         token.mint(token_id, issued_at)
