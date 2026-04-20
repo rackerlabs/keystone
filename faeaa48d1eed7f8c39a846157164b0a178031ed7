@@ -73,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "945833c0_b8c34f53",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-04-20T10:35:50Z",
+      "side": 1,
+      "message": "take a chance and start writing unittests able to test every single aspect of the jsonschema validation. I haven\u0027t managed this in 2 years (with jsonschema validator, openapi validator, custom parsing validator), but maybe you have more luck.",
+      "parentUuid": "3db544ed_7ae8209c",
+      "revId": "faeaa48d1eed7f8c39a846157164b0a178031ed7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "24500ee7_23443269",
         "filename": "keystone/resource/schema.py",
         "patchSetId": 1

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bcd36b37_13ec19b4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-04-20T10:35:50Z",
+      "side": 1,
+      "message": "recheck flaky CI",
+      "revId": "9dd1b2e304f9eeafae6096ac8f9c98c50e7db91a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
