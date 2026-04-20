@@ -18,6 +18,7 @@ import base64
 import datetime
 import uuid
 
+import flask
 from oslo_log import log
 from oslo_utils import timeutils
 
@@ -64,6 +65,30 @@ def default_expire_time():
     expire_delta = datetime.timedelta(seconds=CONF.token.expiration)
     expires_at = timeutils.utcnow() + expire_delta
     return expires_at.replace(microsecond=0)
+
+
+def _resolve_client_ip():
+    """Return the client IP to use for IP allowlist checks.
+
+    If ``[ip_allowlist] client_ip_header`` is set, read the leftmost
+    comma-separated value from that header. Fall back to ``remote_addr``
+    (with a warning) if the header is missing or empty.
+    """
+    header_name = CONF.ip_allowlist.client_ip_header
+    remote_addr = flask.request.remote_addr
+    if not header_name:
+        return remote_addr
+    raw = flask.request.headers.get(header_name)
+    if raw:
+        candidate = raw.split(',', 1)[0].strip()
+        if candidate:
+            return candidate
+    LOG.warning(
+        'IP allowlist header %(header)s is missing or empty; '
+        'falling back to REMOTE_ADDR %(addr)s',
+        {'header': header_name, 'addr': remote_addr},
+    )
+    return remote_addr
 
 
 def random_urlsafe_str():
@@ -347,6 +372,34 @@ class Manager(manager.Manager):
                     ' credential expiration: %s',
                     token.expires_at,
                 )
+
+        # NOTE(ip_allowlist): If the IP allowlist driver is enabled,
+        # verify the source IP is permitted before issuing the token.
+        # Authentication-level checks (user, user's home domain) raise 401;
+        # scope-level checks (scoped domain/project) raise 403. Emit a
+        # CADF failure notification on either, so operators can audit
+        # denials alongside normal authN failures.
+        if CONF.ip_allowlist.enabled:
+            client_ip = _resolve_client_ip()
+            try:
+                PROVIDERS.ip_allowlist_api.enforce_authentication(
+                    token.user_id,
+                    token.user_domain_id,
+                    client_ip,
+                )
+                PROVIDERS.ip_allowlist_api.enforce_authorization(
+                    client_ip,
+                    project_id=token.project_id,
+                    domain_id=token.domain_id,
+                )
+            except (
+                exception.IPAddressNotAllowed,
+                exception.IPAddressNotAllowedForScope,
+            ) as ex:
+                notifications.send_authenticate_failure_notification(
+                    token.user_id, str(ex), ex.code
+                )
+                raise
 
         token_id, issued_at = self.driver.generate_id_and_issued_at(token)
         token.mint(token_id, issued_at)

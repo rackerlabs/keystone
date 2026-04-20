@@ -30,6 +30,7 @@ from keystone.api import limits
 from keystone.api import os_ep_filter
 from keystone.api import os_federation
 from keystone.api import os_inherit
+from keystone.api import os_ip_allowlist
 from keystone.api import os_oauth1
 from keystone.api import os_oauth2
 from keystone.api import os_revoke
@@ -67,6 +68,7 @@ __apis__ = (
     os_ep_filter,
     os_federation,
     os_inherit,
+    os_ip_allowlist,
     os_oauth1,
     os_oauth2,
     os_revoke,

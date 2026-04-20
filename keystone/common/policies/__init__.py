@@ -29,6 +29,7 @@ from keystone.common.policies import grant
 from keystone.common.policies import group
 from keystone.common.policies import identity_provider
 from keystone.common.policies import implied_role
+from keystone.common.policies import ip_allowlist
 from keystone.common.policies import limit
 from keystone.common.policies import mapping
 from keystone.common.policies import policy
@@ -68,6 +69,7 @@ def list_rules():
         group.list_rules(),
         identity_provider.list_rules(),
         implied_role.list_rules(),
+        ip_allowlist.list_rules(),
         limit.list_rules(),
         mapping.list_rules(),
         policy.list_rules(),
