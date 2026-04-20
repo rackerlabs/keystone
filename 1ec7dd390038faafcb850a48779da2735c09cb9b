@@ -277,6 +277,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d5ac516_97dfad33",
+        "filename": "keystone/common/sql/migrations/versions/2026.1/expand/a1b2c3d4e5f6_add_ip_allowlist_entry_table.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2026-04-20T16:04:46Z",
+      "side": 1,
+      "message": "Ok, no, it should not be in migrations. It should be in a bootstrap script:\n\nhttps://opendev.org/openstack/keystone/src/branch/master/keystone/cmd/bootstrap.py",
+      "parentUuid": "bbb81adc_a261f49c",
+      "revId": "1ec7dd390038faafcb850a48779da2735c09cb9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "858f02b9_9747af0a",
