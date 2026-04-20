@@ -33,6 +33,24 @@
       "message": "What issues was it causing?",
       "revId": "5817fe467b2893b19781becdbd918a0afa6d7ec8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "577b6f29_cf9067bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-04-20T10:27:01Z",
+      "side": 1,
+      "message": "invalid json schema cause variety of issues. This particular typo is making the schema less restrictive. And since jsonschemas are by default permissive allowing arbitrary data to be present it is very hard catching them (unittest is not possible for every possible line of the json schema). We already have 3 layers of schema validations and still those slip through",
+      "parentUuid": "5d16b1b7_6b3d58c7",
+      "revId": "5817fe467b2893b19781becdbd918a0afa6d7ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
