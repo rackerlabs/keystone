@@ -167,6 +167,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b9d6523c_0cc4df55",
+        "filename": "keystone/common/policies/ip_allowlist.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2026-04-20T15:58:46Z",
+      "side": 1,
+      "message": "Ok, I got the reasoning. But then I\u0027d still vote for Admin + Domain Manager tbh...",
+      "parentUuid": "f8a6a294_6038a2e3",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 42
+      },
+      "revId": "1ec7dd390038faafcb850a48779da2735c09cb9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "61a5f278_2a4dd6a0",
         "filename": "keystone/common/policies/ip_allowlist.py",
         "patchSetId": 1
@@ -202,6 +226,30 @@
       "side": 1,
       "message": "See comment https://review.opendev.org/c/openstack/keystone/+/985406/1/keystone/common/policies/ip_allowlist.py#44",
       "parentUuid": "61a5f278_2a4dd6a0",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 43
+      },
+      "revId": "1ec7dd390038faafcb850a48779da2735c09cb9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31422f96_de9323ea",
+        "filename": "keystone/common/policies/ip_allowlist.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2026-04-20T15:58:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36b1f12a_a5af1936",
       "range": {
         "startLine": 56,
         "startChar": 0,
@@ -307,6 +355,24 @@
       "side": 1,
       "message": "In such cases I\u0027d say it\u0027s up to the load balancer to make sure the client IP is exposed to the service.\nYes, it could be configurable (to check for custom headers, etc.), but then we should have the same thing for logging, etc. as well.\nThe cleanest solution IMO would be to leave it up to the load balancer to what IP it exposes to the underlying service.",
       "parentUuid": "ab744990_d3b6c96f",
+      "revId": "1ec7dd390038faafcb850a48779da2735c09cb9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98115162_0fa57dd9",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2026-04-20T15:58:46Z",
+      "side": 1,
+      "message": "I don\u0027t think you can do that on load balancer.\n\nYou can do that on web server running the WSGI application. But then this mandates on how to run WSGI and makes it from hard to impossible to use.\n\nSo this feature would mandate how to run WSGI, which is not great at all.\n\nAnd logging format for queries is actually part of wsgi server usually, so it is not in Keystone code.",
+      "parentUuid": "46704be1_2d1e5adc",
       "revId": "1ec7dd390038faafcb850a48779da2735c09cb9b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
