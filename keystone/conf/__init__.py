@@ -34,6 +34,7 @@ from keystone.conf import fernet_receipts
 from keystone.conf import fernet_tokens
 from keystone.conf import identity
 from keystone.conf import identity_mapping
+from keystone.conf import ip_allowlist
 from keystone.conf import jwt_tokens
 from keystone.conf import ldap
 from keystone.conf import oauth1
@@ -71,6 +72,7 @@ conf_modules = [
     fernet_tokens,
     identity,
     identity_mapping,
+    ip_allowlist,
     jwt_tokens,
     ldap,
     oauth1,

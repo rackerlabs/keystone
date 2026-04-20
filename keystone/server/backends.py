@@ -24,6 +24,7 @@ from keystone import endpoint_policy
 from keystone import exception
 from keystone import federation
 from keystone import identity
+from keystone import ip_allowlist
 from keystone import limit
 from keystone import oauth1
 from keystone import policy
@@ -60,6 +61,7 @@ def load_backends():
         identity.MappingManager,
         identity.Manager,
         identity.ShadowUsersManager,
+        ip_allowlist.Manager,
         limit.Manager,
         oauth1.Manager,
         policy.Manager,
