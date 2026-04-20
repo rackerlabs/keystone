@@ -34,6 +34,24 @@
       "parentUuid": "030b7df7_58b94268",
       "revId": "b42547956017d5c04b62c77cbc1b8395986299a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7227e1e4_6258c48e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2026-04-20T11:15:26Z",
+      "side": 1,
+      "message": "There is also a spec I proposed, so that it could be discussed there: https://review.opendev.org/c/openstack/keystone-specs/+/984642",
+      "parentUuid": "d115398f_8129079b",
+      "revId": "b42547956017d5c04b62c77cbc1b8395986299a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
