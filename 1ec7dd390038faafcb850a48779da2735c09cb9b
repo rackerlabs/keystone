@@ -483,6 +483,24 @@
       "parentUuid": "98115162_0fa57dd9",
       "revId": "1ec7dd390038faafcb850a48779da2735c09cb9b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01df15af_fc371b49",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 26892
+      },
+      "writtenOn": "2026-04-21T06:06:41Z",
+      "side": 1,
+      "message": "Updated spec to reflect possibility of overriding which header to use for client IP tracking. I will update code to reflect it as soon as I have time, probably today/tonight.",
+      "parentUuid": "cb7792b9_206efc21",
+      "revId": "1ec7dd390038faafcb850a48779da2735c09cb9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
