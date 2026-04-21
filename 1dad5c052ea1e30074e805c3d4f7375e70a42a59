@@ -16,6 +16,23 @@
       "message": "i\u0027ve only updated the commit message, as there wasn\u0027t any conflict when backporting this patch.",
       "revId": "1dad5c052ea1e30074e805c3d4f7375e70a42a59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e8f7105_2e36bfe8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2026-04-21T18:00:38Z",
+      "side": 1,
+      "message": "Looks ok",
+      "revId": "1dad5c052ea1e30074e805c3d4f7375e70a42a59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
