@@ -34,6 +34,41 @@
       "parentUuid": "4eb244a4_7e1674ad",
       "revId": "bc437e7227e0ab4680aa8bcee600cf2a24bb82f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a84379f_56738d17",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2026-04-21T12:56:50Z",
+      "side": 1,
+      "message": "I looked through the related code, and indeed I don\u0027t think there is a need to keep add_role_to_user_and_project which is not domain-aware, despite accepting domain_id as argument",
+      "revId": "bc437e7227e0ab4680aa8bcee600cf2a24bb82f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f44ad577_2ad16c24",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2026-04-21T12:56:50Z",
+      "side": 1,
+      "message": "ok, right, correct.\nI have just confused myself with trusts vs grants vs assignments",
+      "parentUuid": "b6021c51_efd93882",
+      "revId": "bc437e7227e0ab4680aa8bcee600cf2a24bb82f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
