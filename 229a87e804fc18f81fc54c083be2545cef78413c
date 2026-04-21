@@ -16,6 +16,23 @@
       "message": "recheck unrelated bug",
       "revId": "229a87e804fc18f81fc54c083be2545cef78413c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8efa0473_20170d46",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2026-04-21T11:16:22Z",
+      "side": 1,
+      "message": "looks also as a backport candidate...",
+      "revId": "229a87e804fc18f81fc54c083be2545cef78413c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
