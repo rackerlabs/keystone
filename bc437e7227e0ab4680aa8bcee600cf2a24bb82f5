@@ -16,6 +16,24 @@
       "message": "Sorry, trying to understand this change. I\u0027ve looked through the assignment file briefly, and it looks like all assignments today are just trusts?\nAm I right in my assessment or just missing something?\n\nAs I see that in backend create_grant is actually creating the assignment, but mix of terminology here is a bit confusing",
       "revId": "bc437e7227e0ab4680aa8bcee600cf2a24bb82f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6021c51_efd93882",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-21T11:43:46Z",
+      "side": 1,
+      "message": "\u003e all assignments today are just trusts?\n\nNo, assignments are still assignments, and trusts are still trusts.\n\n\"To grant a role\" is just a synonym for \"To assign a role\".",
+      "parentUuid": "4eb244a4_7e1674ad",
+      "revId": "bc437e7227e0ab4680aa8bcee600cf2a24bb82f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
