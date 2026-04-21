@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6dca7801_61eeb607",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2026-04-21T11:40:00Z",
+      "side": 1,
+      "message": "it\u0027s indeed not used anywhere according to codesearch and grep",
+      "revId": "cc5077dc20ee3213d550908822606c68b78bd1f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
