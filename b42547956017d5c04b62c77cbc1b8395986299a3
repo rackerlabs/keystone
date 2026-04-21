@@ -70,6 +70,23 @@
       "parentUuid": "7227e1e4_6258c48e",
       "revId": "b42547956017d5c04b62c77cbc1b8395986299a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9558cf1a_83d1a81d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-04-21T19:20:50Z",
+      "side": 1,
+      "message": "I remove -2 due to the agreed discussion in the spec area. But I am still against k8_auth based on the mod_auth_oidx",
+      "revId": "b42547956017d5c04b62c77cbc1b8395986299a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
