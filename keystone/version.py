@@ -11,5 +11,6 @@
 # under the License.
 
 
+# do-not-merge
 def release_string():
     return 'v3.14'
