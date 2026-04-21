@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f9ae56d_af37a85b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2026-04-21T11:21:56Z",
+      "side": 1,
+      "message": "it\u0027s great to have this documented.\n\nWould be actually nice to follow-up and add restrictions in place later on though. As this is indeed not perfect for public deployments.",
+      "revId": "1466f8afb0a5a26f600cb426e0929d86f2c8c149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
