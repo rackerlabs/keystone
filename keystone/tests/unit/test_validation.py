@@ -11,7 +11,10 @@
 # under the License.
 
 import copy
+import os
 import uuid
+
+import jsonschema
 
 from keystone.application_credential import schema as app_cred_schema
 from keystone.assignment import schema as assignment_schema
@@ -3755,4 +3758,182 @@ class ApplicationCredentialValidatorTestCase(unit.TestCase):
                 exception.SchemaValidationError,
                 self.create_app_cred_validator.validate,
                 request_to_validate,
+            )
+
+
+class SchemaKeywordValidityTestCase(unit.BaseTestCase):
+    """Ensure all schema dicts use only valid JSON Schema keywords.
+
+    JSON Schema silently ignores unknown keywords, treating them as
+    annotations with no validation effect. A misspelled keyword like
+    "additonalProperties" compiles without error but has no validation
+    semantics - silently defeating the intended constraint.
+
+    This test walks every request/response body schema in keystone and
+    verifies that all keys are recognized JSON Schema Draft 2020-12
+    keywords, catching typos that would otherwise go unnoticed.
+    """
+
+    # Keywords with active validation logic - extracted from the
+    # jsonschema library so they stay in sync with upgrades.
+    KNOWN_KEYWORDS = set(jsonschema.Draft202012Validator.VALIDATORS.keys())
+
+    # Draft 2020-12 annotation/applicator keywords that have no
+    # validation logic (jsonschema doesn't register validators for
+    # them, so they don't appear in VALIDATORS). Limited to keywords
+    # actually used in keystone schemas.
+    _ANNOTATION_KEYWORDS = {
+        'description',  # annotation - used across nearly all schemas
+        'readOnly',  # annotation - used in response schemas
+        'title',  # annotation - used in credential/schema.py
+        'then',  # applicator - used in credential/schema.py
+        # (the 'if' validator handles 'then' internally)
+    }
+
+    KNOWN_KEYWORDS = KNOWN_KEYWORDS | _ANNOTATION_KEYWORDS
+
+    # All schema modules imported at the top of this file.
+    _SCHEMA_MODULES = [
+        ('app_cred_schema', app_cred_schema),
+        ('assignment_schema', assignment_schema),
+        ('catalog_schema', catalog_schema),
+        ('credential_schema', credential_schema),
+        ('federation_schema', federation_schema),
+        ('identity_schema', identity_schema),
+        ('limit_schema', limit_schema),
+        ('oauth1_schema', oauth1_schema),
+        ('policy_schema', policy_schema),
+        ('resource_schema', resource_schema),
+        ('trust_schema', trust_schema),
+    ]
+
+    def _collect_schemas(self):
+        """Yield (qualified_name, schema_dict) for all body schemas."""
+        for module_name, module in self._SCHEMA_MODULES:
+            for attr in dir(module):
+                if attr.endswith('_body'):
+                    obj = getattr(module, attr)
+                    if isinstance(obj, dict):
+                        yield f"{module_name}.{attr}", obj
+
+    def _walk_schema(self, schema, path, errors):
+        """Recursively check that all keys are valid JSON Schema keywords."""
+        if not isinstance(schema, dict):
+            return
+
+        for key, value in schema.items():
+            # Vendor extensions (x-openstack, etc.) are always valid.
+            if key.startswith('x-'):
+                continue
+
+            if key not in self.KNOWN_KEYWORDS:
+                errors.append(f"Unknown JSON Schema keyword '{key}' at {path}")
+
+            # Recurse into sub-schemas based on the keyword type.
+            if key == 'properties' and isinstance(value, dict):
+                # Values under 'properties' are sub-schemas;
+                # keys are property names (not schema keywords).
+                for prop_name, prop_schema in value.items():
+                    self._walk_schema(
+                        prop_schema, f"{path}.properties.{prop_name}", errors
+                    )
+            elif key in (
+                'items',
+                'not',
+                'if',
+                'then',
+                'else',
+                'additionalProperties',
+                'propertyNames',
+                'unevaluatedItems',
+                'unevaluatedProperties',
+                'contains',
+            ):
+                if isinstance(value, dict):
+                    self._walk_schema(value, f"{path}.{key}", errors)
+            elif key in ('allOf', 'anyOf', 'oneOf', 'prefixItems'):
+                if isinstance(value, list):
+                    for i, sub in enumerate(value):
+                        self._walk_schema(sub, f"{path}.{key}[{i}]", errors)
+            elif key == 'dependentSchemas' and isinstance(value, dict):
+                for dep_name, dep_schema in value.items():
+                    self._walk_schema(
+                        dep_schema,
+                        f"{path}.dependentSchemas.{dep_name}",
+                        errors,
+                    )
+
+    def test_all_schemas_use_only_valid_keywords(self):
+        """Verify no schema dict contains misspelled JSON Schema keywords."""
+        errors = []
+        for name, schema in self._collect_schemas():
+            self._walk_schema(schema, name, errors)
+
+        if errors:
+            msg = (
+                "Found unknown JSON Schema keywords (possible typos):\n"
+                + "\n".join(f"  - {e}" for e in errors)
+            )
+            self.fail(msg)
+
+    def test_all_schema_modules_are_covered(self):
+        """Verify that every schema module with body schemas is tested.
+
+        If a new ``keystone/<domain>/schema.py`` is added that defines
+        ``*_body`` schema dicts, this test will fail until the module is
+        added to ``_SCHEMA_MODULES`` above. This ensures the keyword
+        validity check covers all API schemas, not just the ones that
+        existed when the test was written.
+        """
+        import importlib
+        import pathlib
+
+        import keystone
+
+        covered_files = {
+            os.path.normpath(mod.__file__)
+            for _, mod in self._SCHEMA_MODULES
+            if mod.__file__ is not None
+        }
+
+        keystone_dir = pathlib.Path(keystone.__file__).parent
+        missing = []
+
+        for schema_file in sorted(keystone_dir.glob('**/schema.py')):
+            # Skip test directories - we only care about production schemas.
+            if 'tests' in schema_file.parts:
+                continue
+
+            # Derive the module name from the file path.
+            # e.g. .../keystone/catalog/schema.py -> keystone.catalog.schema
+            rel = schema_file.relative_to(keystone_dir.parent)
+            module_name = '.'.join(rel.with_suffix('').parts)
+
+            try:
+                module = importlib.import_module(module_name)
+            except Exception:
+                continue
+
+            # Check if this module has any *_body schema dicts.
+            has_body_schemas = any(
+                attr.endswith('_body')
+                and isinstance(getattr(module, attr), dict)
+                for attr in dir(module)
+            )
+            if not has_body_schemas:
+                continue
+
+            if module.__file__ is None:
+                continue
+            norm_path = os.path.normpath(module.__file__)
+            if norm_path not in covered_files:
+                missing.append(module_name)
+
+        if missing:
+            self.fail(
+                "The following schema modules define *_body schemas but "
+                "are not listed in SchemaKeywordValidityTestCase"
+                "._SCHEMA_MODULES. Please add them so the keyword "
+                "validity check covers all API schemas:\n"
+                + "\n".join(f"  - {m}" for m in missing)
             )
