@@ -1,0 +1,164 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ad8a9fe_d0ddb953",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-21T20:08:51Z",
+      "side": 1,
+      "message": "I am still not convinced that this works.\nCould you please confirm that you ran this against an actual live cloud?",
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "112c0d11_b8cbe228",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1173,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-21T20:08:51Z",
+      "side": 1,
+      "message": "convert_ldap_result is not idempotent and things will break here.",
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "121c3930_77e47c48",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1221,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-21T20:08:51Z",
+      "side": 1,
+      "message": "why is this change needed? It doesn\u0027t seem to be related to the issue this patch fixes.",
+      "range": {
+        "startLine": 1220,
+        "startChar": 0,
+        "endLine": 1221,
+        "endChar": 70
+      },
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a47bf83_db1a30c2",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1250,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-21T20:08:51Z",
+      "side": 1,
+      "message": "we definitely should not do this. If fake LDAP does not represent an existing LDAP server well enough, it needs to be fixed as a prerequisite to this patch.",
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e077c9e_6914db34",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1259,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-21T20:08:51Z",
+      "side": 1,
+      "message": "this is not covered by unit tests. Please run tox -e cover to see what is covered and what is not.",
+      "range": {
+        "startLine": 1258,
+        "startChar": 0,
+        "endLine": 1259,
+        "endChar": 37
+      },
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0984538b_e1e7086a",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1835,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-21T20:08:51Z",
+      "side": 1,
+      "message": "i still don\u0027t understand this. Why was this changed? Why do we need now to filter out by \"not None\", and did not have to do it before?",
+      "range": {
+        "startLine": 1830,
+        "startChar": 0,
+        "endLine": 1835,
+        "endChar": 62
+      },
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3c839b2_7f595094",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1848,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-21T20:08:51Z",
+      "side": 1,
+      "message": "this is not covered by unit tests. Please run tox -e cover to see what is covered and what is not.",
+      "range": {
+        "startLine": 1842,
+        "startChar": 0,
+        "endLine": 1848,
+        "endChar": 21
+      },
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bec34f52_1b1b5e5a",
+        "filename": "keystone/tests/unit/fakeldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-21T20:08:51Z",
+      "side": 1,
+      "message": "keystone depends on python-ldap\u003e\u003d3.0.0, this is not needed.",
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
