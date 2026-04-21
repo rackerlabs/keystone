@@ -52,6 +52,24 @@
       "parentUuid": "d115398f_8129079b",
       "revId": "b42547956017d5c04b62c77cbc1b8395986299a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "666e415c_b274829d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2026-04-21T10:39:40Z",
+      "side": 1,
+      "message": "\u003e Personally I am not going to accept any further functionality that relies on the mod_auth_oidc or other proxies.\n\nUm, so the plan is to leave the the federation in a half-broken state as it is today?\n\nIs it really in a greater community interest, or to serve the purpose of pushing through own project by blocking keystone development?\n\nAs while I am not sure about mod_auth_oidc specifically (as it\u0027s kinda deprecated), but doing further development of mod_oauth2 should happen from my perspective.",
+      "parentUuid": "7227e1e4_6258c48e",
+      "revId": "b42547956017d5c04b62c77cbc1b8395986299a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
