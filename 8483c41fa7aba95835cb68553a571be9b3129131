@@ -16,6 +16,23 @@
       "message": "I do not have an answer right now, but just to remind myself - we should actually not test the policy out of the unittests. We have (should have) protection tests exactly for that, or maybe even the tempest should validate this. As said - no answer, but I think it is the wrong place for the tests",
       "revId": "8483c41fa7aba95835cb68553a571be9b3129131",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dede545f_a6a05a4d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2026-04-21T11:08:35Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "8483c41fa7aba95835cb68553a571be9b3129131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
