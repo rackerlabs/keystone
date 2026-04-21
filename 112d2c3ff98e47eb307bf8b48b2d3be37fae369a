@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b92dd4d_919aa4a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2026-04-21T11:58:02Z",
+      "side": 1,
+      "message": "Tests do not include domain mappings, which is potentially a problematic place in the patch logic.",
+      "revId": "112d2c3ff98e47eb307bf8b48b2d3be37fae369a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74de387b_712f7f15",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2026-04-21T11:58:02Z",
+      "side": 1,
+      "message": "is this right? As this kinda adds possibility to have same project/domain, just in one case it would be domain name, in other domain id?\n\nAnd also can we have None for the project domain? I think all projects should be part of the domain and if domain is not suplied, it\u0027s gonna be IdP default domain?\n\nIt feels like we should attempt to resolve to domain ID as a key here unless it\u0027s not possible for some reason.",
+      "range": {
+        "startLine": 764,
+        "startChar": 25,
+        "endLine": 764,
+        "endChar": 71
+      },
+      "revId": "112d2c3ff98e47eb307bf8b48b2d3be37fae369a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
