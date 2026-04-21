@@ -33,6 +33,23 @@
       "message": "recheck - all jobs went to POST_FAILURE :S",
       "revId": "7841e9286641497fdf682ceaca86bf98f426803a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47cf50f1_008049ec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28619
+      },
+      "writtenOn": "2026-04-21T11:19:07Z",
+      "side": 1,
+      "message": "looks quite reasonable and test are covering the intended change",
+      "revId": "7841e9286641497fdf682ceaca86bf98f426803a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
