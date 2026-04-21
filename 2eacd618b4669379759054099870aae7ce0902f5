@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b2b49935_fae0cbce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2026-04-21T21:43:10Z",
+      "side": 1,
+      "message": "Tested. Not just unit tests — actual end-to-end.\n\nUnit tests: 51/51 in test_ldap_common. Pass.\n\nBackend tests: test_backend_ldap — 1437 passed, 555 skipped, 0 failed.\n\nReal OpenLDAP:\n\nsizelimit\u003d250 → exactly 250. Not 100. 250.\nno sizelimit → all 500 across 5 pages.\nno corrupted bool values. Double-conversion is not an issue here.\nFull-stack — Keystone + MySQL + OpenLDAP, page_size\u003d100, 500 users in LDAP:\n\nGET /v3/users?domain_id\u003d... → 500 users, 5 pages fetched.\nGET /v3/users?domain_id\u003d...\u0026limit\u003d250 → 250 users, 3 pages, stopped at sizelimit.\nIt works. The code quality points are valid and a follow-up patch is coming. But the fix itself is correct.\n\nIf you\u0027re not convinced, I\u0027d strongly suggest testing it yourself — locally or in a cloud env — before pushing back further. Otherwise we can bring in a third reviewer to take a look and settle this.",
+      "parentUuid": "1ad8a9fe_d0ddb953",
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "112c0d11_b8cbe228",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 11
@@ -37,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5ebb4b27_f4f4d1b9",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1173,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2026-04-21T21:43:10Z",
+      "side": 1,
+      "message": "no break for things, it works, but for code quality i will change it. similar to the other points.",
+      "parentUuid": "112c0d11_b8cbe228",
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "121c3930_77e47c48",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 11
@@ -48,6 +84,30 @@
       "writtenOn": "2026-04-21T20:08:51Z",
       "side": 1,
       "message": "why is this change needed? It doesn\u0027t seem to be related to the issue this patch fixes.",
+      "range": {
+        "startLine": 1220,
+        "startChar": 0,
+        "endLine": 1221,
+        "endChar": 70
+      },
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20457ecb_29316d71",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1221,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2026-04-21T21:43:10Z",
+      "side": 1,
+      "message": "This guard was added because _ldap_get_all was calling _paged_search_s directly, and the attrlist it passed could contain None values from attribute_mapping. Without it, python-ldap would throw on a None attribute name.",
+      "parentUuid": "121c3930_77e47c48",
       "range": {
         "startLine": 1220,
         "startChar": 0,
@@ -111,6 +171,30 @@
       "writtenOn": "2026-04-21T20:08:51Z",
       "side": 1,
       "message": "i still don\u0027t understand this. Why was this changed? Why do we need now to filter out by \"not None\", and did not have to do it before?",
+      "range": {
+        "startLine": 1830,
+        "startChar": 0,
+        "endLine": 1835,
+        "endChar": 62
+      },
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c78a0c93_2fedecf4",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1835,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2026-04-21T21:43:10Z",
+      "side": 1,
+      "message": "This was added as a workaround, fair point. It wasn\u0027t needed before and it isn\u0027t needed now.",
+      "parentUuid": "0984538b_e1e7086a",
       "range": {
         "startLine": 1830,
         "startChar": 0,
