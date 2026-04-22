@@ -499,6 +499,15 @@ class LDAPPagedResultsTest(unit.TestCase):
         returned_ids = {u['id'] for u in users}
         self.assertTrue(extra_ids.issubset(returned_ids))
 
+        user = unit.new_user_ref(
+            enabled=False, domain_id=CONF.identity.default_domain_id
+        )
+        user_ref = PROVIDERS.identity_api.create_user(user)
+        self.assertIs(False, user_ref['enabled'])
+        user_ref = PROVIDERS.identity_api.get_user(user_ref['id'])
+        self.assertIs(False, user_ref['enabled'])
+
+
 
 class CommonLdapTestCase(unit.BaseTestCase):
     """These test cases call functions in keystone.common.ldap."""
