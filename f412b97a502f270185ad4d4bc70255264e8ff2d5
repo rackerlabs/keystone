@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16c0c8ae_8e1a145d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2026-04-22T08:29:48Z",
+      "side": 1,
+      "message": "CI-only gate fix on an unmaintained branch. fast-approving to unblock the gate.",
+      "revId": "f412b97a502f270185ad4d4bc70255264e8ff2d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
