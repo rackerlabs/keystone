@@ -50,6 +50,23 @@
       "message": "thanks, looks ok",
       "revId": "8483c41fa7aba95835cb68553a571be9b3129131",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a712538_ff71fb7b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-04-22T17:24:43Z",
+      "side": 1,
+      "message": "ok, since the fix is not based on the policy it should land in the unittest",
+      "revId": "8483c41fa7aba95835cb68553a571be9b3129131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
