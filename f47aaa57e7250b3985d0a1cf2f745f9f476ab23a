@@ -33,6 +33,23 @@
       "message": "oh, great catch. I think we should land and backport that sooner then later.",
       "revId": "f47aaa57e7250b3985d0a1cf2f745f9f476ab23a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "054f49f5_e3d9420d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-04-22T17:22:31Z",
+      "side": 1,
+      "message": "I was just willing to comment that we probably should also address credential update and deletion in the same way as Boris suggested. Can be done in a followup",
+      "revId": "f47aaa57e7250b3985d0a1cf2f745f9f476ab23a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
