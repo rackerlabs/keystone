@@ -36,6 +36,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "43eba446_606b25d6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-22T08:33:45Z",
+      "side": 1,
+      "message": "\u003e I\u0027d strongly suggest testing it yourself — locally or in a cloud env — before pushing back further.\n\nI have done that in a unit test - https://review.opendev.org/c/openstack/keystone/+/985773. It fails in Patchset 11 (the one i commented on) and succeeds in Patchset 12.",
+      "parentUuid": "b2b49935_fae0cbce",
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "112c0d11_b8cbe228",
