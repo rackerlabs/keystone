@@ -1,6 +1,52 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac21f366_0cd47977",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2026-04-23T19:10:35Z",
+      "side": 1,
+      "message": "Why exactly do we need two sets of what seems like identical tests?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 2
+      },
+      "revId": "7b1ce51f9e9f04b7f5761b012477e0d71c20963f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f8da223_a4cd24df",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2026-04-23T19:10:35Z",
+      "side": 1,
+      "message": "Why exactly do we need this?  It does not make sense to me to have essentially two identical test suites.\n\nThe test being run by `tox` in `keystone.tests.protection.v3.*` cover the same use cases as the test run by tempest in `keystone_tempest_plugin.tests.rbac.v3.*`.\n\nIIRC, the reason the tox job was removed is because the tempest tests are comprehensive and supersede the tests being updated here.\n\nIf we were to re-enable the tox job we would be committing to maintaining duplicate test suites for no apparent benefit.  The tempest job is run in both `keystone` and `keystone-tempest-plugin` gates so I see no point in also running this suite in tox.\n\nIMO, testing the default policy is a functional test, not a unit test, and tempest is the right place to execute policy testing.\n\nTo me, the correct path forward is to fix the tempest protection gate job and make it voting because it is currently non-voting.  The tempest job should be the source-of-truth for test validation of policies and we should deprecate and remove the tests in the `keystone` repository.\n\nI am a hard -2 on re-enabling tox unless someone can make a strong case on why we should duplicate test efforts for SRBAC and commit to maintaining the duplicates across two repositories.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 61
+      },
+      "revId": "7b1ce51f9e9f04b7f5761b012477e0d71c20963f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "31afa62e_4bc7ecfb",
