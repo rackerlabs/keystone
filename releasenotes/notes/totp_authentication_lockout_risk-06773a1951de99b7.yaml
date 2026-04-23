@@ -1,0 +1,14 @@
+---
+fixes:
+  - |
+    Prevents user lockout when TOTP authentication is enabled in Keystone.
+
+    Previously, enabling TOTP as a mandatory authentication method without an
+    existing TOTP credential could result in users being unable to authenticate.
+    Additionally, deleting a TOTP credential while TOTP is enforced could lead
+    to immediate lockout, as users would no longer be able to satisfy the
+    authentication requirements or re-enroll a new credential.
+
+    This fix prevents enabling TOTP enforcement when no active TOTP credential
+    exists for the user. It also prevents deletion of a TOTP credential when
+    TOTP authentication is required, avoiding accidental lockout scenarios.

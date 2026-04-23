@@ -1358,6 +1358,24 @@ class Manager(manager.Manager):
         self._assert_default_project_id_is_not_domain(
             user_ref.get('default_project_id')
         )
+        if 'options' in user:
+            mfa_rules = user.get('options', {}).get(
+                'multi_factor_auth_rules', []
+            )
+            if mfa_rules and any('totp' in rule for rule in mfa_rules):
+                totp_creds = (
+                    PROVIDERS.credential_api.list_credentials_for_user(
+                        user_id, type='totp'
+                    )
+                )
+                if not totp_creds:
+                    raise exception.ValidationError(
+                        message=_(
+                            'Cannot enable MFA rules with TOTP: '
+                            'no TOTP credentials configured for user. '
+                            'Please configure TOTP credentials first.'
+                        )
+                    )
 
         domain_id, driver, entity_id = self._get_domain_driver_and_entity_id(
             user_id

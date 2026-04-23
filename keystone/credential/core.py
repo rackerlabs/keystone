@@ -189,6 +189,21 @@ class Manager(manager.Manager):
     def delete_credential(self, credential_id, initiator=None):
         """Delete a credential."""
         cred = self.get_credential(credential_id)
+        if cred['type'] == 'totp':
+            user = PROVIDERS.identity_api.get_user(cred['user_id'])
+            user_options = user.get('options', {})
+            mfa_rules = user_options.get('multi_factor_auth_rules', [])
+            mfa_enabled = user_options.get('multi_factor_auth_enabled', True)
+            totp_in_rules = any(
+                'totp' in rule for rule in mfa_rules if isinstance(rule, list)
+            )
+            if totp_in_rules and mfa_enabled:
+                raise exception.Forbidden(
+                    message=_(
+                        'Cannot delete TOTP credential while '
+                        'MFA rules require TOTP. Disable MFA rules first.'
+                    )
+                )
         self.driver.delete_credential(credential_id)
         self._get_credential.invalidate(self, credential_id)
         self._list_credentials_for_user.invalidate(
