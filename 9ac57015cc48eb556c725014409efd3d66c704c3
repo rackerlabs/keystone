@@ -16,6 +16,24 @@
       "message": "what stops you from changing permissions for the secret in kubernetes?",
       "revId": "9ac57015cc48eb556c725014409efd3d66c704c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "835ac923_b82c9ca4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 39086
+      },
+      "writtenOn": "2026-04-23T12:26:49Z",
+      "side": 1,
+      "message": "Changing the permissions of the directory of the secret in Kubernetes was the first approach but unfortunately this is not possible: https://github.com/kubernetes/kubernetes/issues/129043\n\nIn real world it looks like this:\n\n```\nroot@keystone-api-864cb74689-fmpfx:/# ls -la /etc/keystone/fernet-keys\ntotal 0\ndrwxrwsrwt 3 root keystone 140 Apr 23 00:00 .\ndrwxr-xr-x 1 root root      88 Apr 22 16:21 ..\ndrwxr-sr-x 2 root keystone 100 Apr 23 00:00 ..2026_04_23_00_00_37.2401865055\nlrwxrwxrwx 1 root keystone  32 Apr 23 00:00 ..data -\u003e ..2026_04_23_00_00_37.2401865055\nlrwxrwxrwx 1 root keystone   8 Apr 22 16:19 0 -\u003e ..data/0\nlrwxrwxrwx 1 root keystone   9 Apr 22 16:19 30 -\u003e ..data/30\nlrwxrwxrwx 1 root keystone   9 Apr 23 00:00 31 -\u003e ..data/31\n\nroot@keystone-api-864cb74689-fmpfx:/# mount | grep fernet\ntmpfs on /etc/keystone/fernet-keys type tmpfs (ro,relatime,size\u003d16271720k,inode64,noswap)\n```\n\nUnfortunately it is not possible to influence the mount options with a umask or similar options.\n\nThe only possible way to avoid these warnings without this patch would be to copy the fernet keys during startup to the directory in the container, so without mounting the secret. But this would bring other drawbacks to the deployment.",
+      "parentUuid": "4356458a_54c2edf1",
+      "revId": "9ac57015cc48eb556c725014409efd3d66c704c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
