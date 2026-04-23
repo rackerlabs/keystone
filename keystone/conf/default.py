@@ -182,6 +182,19 @@ notification_opt_out=identity.authenticate.success
     ),
 )
 
+ignore_insecure_key_repository = cfg.BoolOpt(
+    'ignore_insecure_key_repository',
+    default=False,
+    help=utils.fmt(
+        """
+If set to true, the key repository, in which fernet keys are located,
+will not be checked to be not-world-readable. In case of the key repository is
+a Kubernetes volume mount, this check leads to a useless warning for every
+authentication request.
+"""
+    ),
+)
+
 
 GROUP_NAME = 'DEFAULT'
 ALL_OPTS = [
@@ -197,6 +210,7 @@ ALL_OPTS = [
     default_publisher_id,
     notification_format,
     notification_opt_out,
+    ignore_insecure_key_repository,
 ]
 
 

@@ -61,7 +61,7 @@ class FernetUtils:
                     'config_group': self.config_group,
                 },
             )
-        else:
+        elif not CONF.ignore_insecure_key_repository:
             # ensure the key repository isn't world-readable
             stat_info = os.stat(self.key_repository)
             if (
