@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4356458a_54c2edf1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-04-23T09:45:56Z",
+      "side": 1,
+      "message": "what stops you from changing permissions for the secret in kubernetes?",
+      "revId": "9ac57015cc48eb556c725014409efd3d66c704c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
