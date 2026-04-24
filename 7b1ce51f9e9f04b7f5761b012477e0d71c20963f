@@ -95,6 +95,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "d2a16486_f6fd1ad4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2026-04-24T17:25:50Z",
+      "side": 1,
+      "message": "Its been a very long time and i almost lost the context on this. \n\nI have not compared the exact test coverage between keystone_tempest_plugin/tests/rbac/v3 and keystone/tests/protection/v3, but if you are saying those are duplicates, then I agree with you. In that case, /keystone/tests/protection/v3 tests are dead code as we are not running them anywhere, so we should remove them in favour of keystone_tempest_plugin/tests/rbac/v3.\n\nanyways leaving the decision of removing the non-running/duplicate tests to you guys. I am good to abandon it after the response.",
+      "parentUuid": "8bb3fb3f_c7cee788",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 61
+      },
+      "revId": "7b1ce51f9e9f04b7f5761b012477e0d71c20963f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "31afa62e_4bc7ecfb",
