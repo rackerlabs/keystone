@@ -49,6 +49,54 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "91f9b72d_2085e5f6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2026-04-24T06:05:03Z",
+      "side": 1,
+      "message": "I\u0027m not sure why this draft of my comment posted along with my full comment. ¯\\_(ツ)_/¯",
+      "parentUuid": "ac21f366_0cd47977",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 2
+      },
+      "revId": "7b1ce51f9e9f04b7f5761b012477e0d71c20963f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8bb3fb3f_c7cee788",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7973
+      },
+      "writtenOn": "2026-04-24T06:05:03Z",
+      "side": 1,
+      "message": "This is the job we should fix instead of adding a tox job: https://review.opendev.org/c/openstack/keystone-tempest-plugin/+/986031",
+      "parentUuid": "4f8da223_a4cd24df",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 61
+      },
+      "revId": "7b1ce51f9e9f04b7f5761b012477e0d71c20963f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "31afa62e_4bc7ecfb",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 8
