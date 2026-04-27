@@ -134,6 +134,23 @@
       "message": "uff, a long one ;-)",
       "revId": "7b1ce51f9e9f04b7f5761b012477e0d71c20963f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f6de919_95bbf28f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-04-27T10:37:19Z",
+      "side": 1,
+      "message": "My \"idea\" was that having local tests it is possible to comparably easy run the tests locally without relying on the CI. We have a bunch of changes pending that try to verify we are actually closing vulnerabilities with the unittests. I strongly disagree it is a right approach and wanted that we move them to protection tests so that we can do this easily. When you move things like that to the remote project you increase the brain context (AI may be ok with it, human barely). There is a big chance we start forgetting where the things should be tested.\nWhat do you think, @dmendiza@redhat.com",
+      "revId": "7b1ce51f9e9f04b7f5761b012477e0d71c20963f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
