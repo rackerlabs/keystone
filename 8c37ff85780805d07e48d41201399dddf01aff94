@@ -88,6 +88,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf180739_61fdd0bc",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2026-04-29T14:39:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9178d37_02a14d19",
+      "revId": "8c37ff85780805d07e48d41201399dddf01aff94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1ad9f574_7e467bba",
@@ -170,6 +188,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f36d3c30_161c8312",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2026-04-29T14:39:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e21435f3_a8c8b90c",
+      "revId": "8c37ff85780805d07e48d41201399dddf01aff94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9a0a2abd_38ef4e23",
@@ -205,6 +241,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3975d31_ef7f41ac",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2026-04-29T14:39:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c0cf627_4b41a32e",
+      "revId": "8c37ff85780805d07e48d41201399dddf01aff94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c32d4170_0b2707d0",
@@ -236,6 +290,24 @@
       "side": 1,
       "message": "thanks it is really not necessary",
       "parentUuid": "c32d4170_0b2707d0",
+      "revId": "8c37ff85780805d07e48d41201399dddf01aff94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b58488a4_6f550b81",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2026-04-29T14:39:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91ca1619_f154cb34",
       "revId": "8c37ff85780805d07e48d41201399dddf01aff94",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
