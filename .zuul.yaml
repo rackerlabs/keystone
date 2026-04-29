@@ -20,8 +20,8 @@
     vars:
       tox_envlist: all
       tempest_test_regex: "keystone_tempest_plugin"
-      devstack_localrc:
-        TEMPEST_PLUGINS: "/opt/stack/keystone-tempest-plugin"
+      tempest_plugins:
+        - keystone-tempest-plugin
 
 - job:
     name: keystone-tempest-fips
@@ -37,8 +37,9 @@
     name: keystone-tempest-oidc-federation
     parent: keystone-tempest
     vars:
+      tempest_plugins:
+        - keystone-tempest-plugin
       devstack_localrc:
-        TEMPEST_PLUGINS: "/opt/stack/keystone-tempest-plugin"
         OS_CACERT: "/opt/stack/data/ca_bundle.pem"
       devstack_services:
         tls-proxy: true
@@ -50,8 +51,8 @@
     name: keystone-tempest-federation
     parent: keystone-tempest
     vars:
-      devstack_localrc:
-        TEMPEST_PLUGINS: "/opt/stack/keystone-tempest-plugin"
+      tempest_plugins:
+        - keystone-tempest-plugin
       devstack_services:
         keystone-saml2-federation: true
         tls-proxy: false
