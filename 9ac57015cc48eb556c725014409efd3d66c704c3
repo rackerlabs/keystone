@@ -51,6 +51,24 @@
       "message": "i am wondering whether keystone should check it at all, and not just rely on `keystone-manage doctor` for things like this.",
       "revId": "9ac57015cc48eb556c725014409efd3d66c704c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48e66f8c_04631f09",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 39086
+      },
+      "writtenOn": "2026-05-01T08:42:58Z",
+      "side": 1,
+      "message": "I would also be fine to remove the check for every auth request. With my proposal I wanted to stay as much backward compatible as possible 🙂",
+      "parentUuid": "0c855dff_752c762d",
+      "revId": "9ac57015cc48eb556c725014409efd3d66c704c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
