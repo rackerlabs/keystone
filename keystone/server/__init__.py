@@ -11,6 +11,7 @@
 #    under the License.
 
 
+from oslo_config import cfg
 from oslo_log import log
 
 from keystone.common import sql
@@ -19,6 +20,31 @@ from keystone.server import backends
 
 CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
+
+
+def _validate_application_credential_config():
+    """Refuse to start with an unsafe application credential configuration.
+
+    ``federated_enabled = True`` combined with
+    ``federated_max_duration_days = 0`` means federated users can create
+    application credentials that never expire, surviving IdP account
+    revocation indefinitely.  This combination is not allowed.
+
+    Operators must either:
+      * set ``federated_enabled = False`` to disable federated app creds, or
+      * set ``federated_max_duration_days`` to a positive integer.
+    """
+    ac = CONF.application_credential
+    if ac.federated_enabled and ac.federated_max_duration_days == 0:
+        raise cfg.ConfigFileValueError(
+            '[application_credential] federated_enabled = True requires '
+            'federated_max_duration_days to be set to a positive integer. '
+            'Set federated_max_duration_days > 0 to cap the lifetime of '
+            'application credentials created by federated users, or set '
+            'federated_enabled = False to disable them entirely. '
+            'Leaving federated_max_duration_days = 0 allows federated users '
+            'to create credentials that outlive their IdP session.'
+        )
 
 
 def configure(
@@ -34,6 +60,8 @@ def configure(
 
     pre_setup_logging_fn()
     keystone.conf.setup_logging()
+
+    _validate_application_credential_config()
 
     if CONF.insecure_debug:
         LOG.warning(
