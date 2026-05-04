@@ -62,8 +62,106 @@ keystone database or open keystone to a DoS attack.
 )
 
 
+enabled = cfg.BoolOpt(
+    'enabled',
+    default=True,
+    help=utils.fmt(
+        """
+Allow local and LDAP users to create application credentials. Set to
+``False`` to prevent all non-federated users from creating application
+credentials entirely.
+"""
+    ),
+)
+
+max_duration_days = cfg.IntOpt(
+    'max_duration_days',
+    default=0,
+    min=0,
+    help=utils.fmt(
+        """
+Maximum lifetime in days for application credentials created by local and
+LDAP users. A value of ``0`` means unlimited (the default). If
+``expires_at`` is not provided at creation time and this option is greater
+than zero, it is automatically set to ``now + max_duration_days``. If a
+requested ``expires_at`` exceeds this maximum it is rejected with HTTP 400.
+"""
+    ),
+)
+
+allow_unrestricted = cfg.BoolOpt(
+    'allow_unrestricted',
+    default=True,
+    help=utils.fmt(
+        """
+Allow local and LDAP users to create unrestricted application credentials.
+Unrestricted application credentials can themselves manage application
+credentials and trusts. Defaults to ``True`` to preserve the historical
+behaviour; set to ``False`` to prevent it.
+"""
+    ),
+)
+
+
+federated_enabled = cfg.BoolOpt(
+    'federated_enabled',
+    default=False,
+    help=utils.fmt(
+        """
+Allow federated users to create application credentials. Defaults to
+``False`` because application credentials created by federated users may
+outlive the upstream IdP session lifetime (see LP #2129010). Set to
+``True`` to allow federated users to create application credentials;
+``federated_max_duration_days`` must also be set to a positive integer
+or Keystone will refuse to start.
+"""
+    ),
+)
+
+federated_max_duration_days = cfg.IntOpt(
+    'federated_max_duration_days',
+    default=0,
+    min=0,
+    help=utils.fmt(
+        """
+Maximum lifetime in days for application credentials created by federated
+users. Must be set to a positive integer when ``federated_enabled = True``;
+Keystone will refuse to start if this is ``0`` while ``federated_enabled``
+is ``True``. If ``expires_at`` is not provided at creation time, it is
+automatically set to ``now + federated_max_duration_days``. If a requested
+``expires_at`` exceeds this maximum it is rejected with HTTP 400.
+"""
+    ),
+)
+
+federated_allow_unrestricted = cfg.BoolOpt(
+    'federated_allow_unrestricted',
+    default=False,
+    help=utils.fmt(
+        """
+Allow federated users to create unrestricted application credentials.
+Unrestricted application credentials can themselves manage application
+credentials and trusts, representing a significant privilege escalation
+risk for credentials that may outlive the upstream IdP session. This
+defaults to ``False`` to prevent federated users from creating
+unrestricted application credentials.
+"""
+    ),
+)
+
 GROUP_NAME = __name__.split('.')[-1]
-ALL_OPTS = [driver, caching, cache_time, user_limit]
+ALL_OPTS = [
+    driver,
+    caching,
+    cache_time,
+    user_limit,
+    enabled,
+    max_duration_days,
+    allow_unrestricted,
+    federated_enabled,
+    federated_max_duration_days,
+    federated_allow_unrestricted,
+]
 
 
 def register_opts(conf):

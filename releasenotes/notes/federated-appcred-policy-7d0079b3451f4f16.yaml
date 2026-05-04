@@ -1,0 +1,54 @@
+---
+upgrade:
+  - |
+    Six new configuration options have been added under the
+    ``[application_credential]`` section.  Three control **local and LDAP
+    users**; three control **federated users** (OIDC, SAML).
+
+    **Local / LDAP users** (defaults preserve the historical behaviour):
+
+    * ``enabled`` (boolean, default ``True``) — Set to ``False`` to prevent
+      local and LDAP users from creating application credentials entirely.
+    * ``max_duration_days`` (integer, default ``0`` = unlimited) — Maximum
+      lifetime in days.  When set to a positive value, ``expires_at`` is
+      automatically injected when absent, and requests that exceed the limit
+      are rejected with HTTP 400.
+    * ``allow_unrestricted`` (boolean, default ``True``) — Allow creation of
+      unrestricted application credentials.  Set to ``False`` to block them.
+
+    **Federated users** (disabled by default — opt-in required):
+
+    * ``federated_enabled`` (boolean, default ``False``) — Federated users
+      can no longer create application credentials by default.  This is a
+      deliberate security default: application credentials created by federated
+      users may outlive the upstream IdP session lifetime because Keystone has
+      no push notification from the IdP when an account is disabled or deleted
+      (see `LP #2129010 <https://bugs.launchpad.net/keystone/+bug/2129010>`_).
+      Set to ``True`` to re-enable federated application credentials; you must
+      also set ``federated_max_duration_days`` to a positive integer.
+    * ``federated_max_duration_days`` (integer, default ``0``) — Maximum
+      lifetime in days for application credentials created by federated users.
+      Must be set to a positive integer when ``federated_enabled = True``;
+      Keystone will refuse to start if this is ``0`` while
+      ``federated_enabled`` is ``True``.  When a federated user omits
+      ``expires_at``, it is automatically set to
+      ``now + federated_max_duration_days``.  Requests that specify an
+      ``expires_at`` beyond this maximum are rejected with HTTP 400.
+    * ``federated_allow_unrestricted`` (boolean, default ``False``) — Allow
+      federated users to create unrestricted application credentials.  Defaults
+      to ``False`` because unrestricted credentials can manage other application
+      credentials and trusts, representing a privilege escalation risk for
+      credentials that may outlive the upstream IdP session.
+
+    **Action required (federated only):** If your deployment uses federation
+    and you want to allow federated users to create application credentials,
+    add the following to ``keystone.conf`` before upgrading::
+
+        [application_credential]
+        federated_enabled = True
+        federated_max_duration_days = 30
+
+    Deployments that do not use federation, or that do not need federated
+    users to create application credentials, require no configuration change.
+    Keystone will refuse to start if ``federated_enabled = True`` and
+    ``federated_max_duration_days = 0``.
