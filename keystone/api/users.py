@@ -13,12 +13,14 @@
 # This file handles all flask-restful resources for /v3/users
 
 import base64
+import datetime
 import http.client
 import secrets
 import uuid
 
 import flask
 from oslo_serialization import jsonutils
+from oslo_utils import timeutils
 from werkzeug import exceptions
 
 from keystone.api._shared import json_home_relations
@@ -92,6 +94,78 @@ def _check_unrestricted_application_credential(token):
                 "credentials."
             )
             raise ks_exception.ForbiddenAction(action=action)
+
+
+def _enforce_app_cred_policy(token, app_cred_data):
+    """Apply per-user-type application credential policy restrictions.
+
+    Dispatches to the federated or local/LDAP policy branch based on
+    ``token.is_federated``.  Enforces the ``[application_credential]``
+    ``federated_*`` options for federation tokens and the unprefixed options
+    (``enabled``, ``max_duration_days``, ``allow_unrestricted``) for local SQL
+    and LDAP tokens.
+
+    :param token: the requesting TokenModel
+    :param app_cred_data: mutable dict of application credential fields;
+        ``expires_at`` may be set as a side-effect when the configured
+        ``max_duration_days`` / ``federated_max_duration_days`` provides a
+        default.
+    :raises ks_exception.ForbiddenAction: if app creds are disabled for the
+        user type or ``unrestricted`` is requested but not allowed.
+    :raises ks_exception.ValidationError: if the requested ``expires_at``
+        exceeds the configured maximum duration.
+    """
+    if token.is_federated:
+        _cfg = CONF.application_credential
+        enabled = _cfg.federated_enabled
+        allow_unrestricted = _cfg.federated_allow_unrestricted
+        max_days = _cfg.federated_max_duration_days
+        user_type = 'federated'
+    else:
+        _cfg = CONF.application_credential
+        enabled = _cfg.enabled
+        allow_unrestricted = _cfg.allow_unrestricted
+        max_days = _cfg.max_duration_days
+        user_type = 'local'
+
+    if not enabled:
+        raise ks_exception.ForbiddenAction(
+            action=_(
+                f'Application credentials are disabled for {user_type} users.'
+            )
+        )
+
+    if app_cred_data.get('unrestricted') and not allow_unrestricted:
+        raise ks_exception.ForbiddenAction(
+            action=_(
+                f'Unrestricted application credentials are not allowed '
+                f'for {user_type} users.'
+            )
+        )
+
+    if max_days <= 0:
+        return
+
+    max_delta = datetime.timedelta(days=max_days)
+    max_expires = timeutils.utcnow() + max_delta
+
+    if not app_cred_data.get('expires_at'):
+        app_cred_data['expires_at'] = max_expires.strftime(
+            '%Y-%m-%dT%H:%M:%S.%f'
+        )
+        return
+
+    requested = timeutils.normalize_time(
+        timeutils.parse_isotime(app_cred_data['expires_at'])
+    )
+    if requested > max_expires:
+        raise ks_exception.ValidationError(
+            attribute='expires_at',
+            target=(
+                f'application credential for {user_type} user '
+                f'(max {max_days} days)'
+            ),
+        )
 
 
 def _build_user_target_enforcement():
@@ -716,6 +790,7 @@ class UserAppCredListCreateResource(ks_flask.ResourceBase):
         )
         token = self.auth_context['token']
         _check_unrestricted_application_credential(token)
+        _enforce_app_cred_policy(token, app_cred_data)
         if self.oslo_context.user_id != user_id:
             action = _(
                 'Cannot create an application credential for another user.'
