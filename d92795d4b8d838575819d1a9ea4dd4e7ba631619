@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0451a329_be332565",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14250
+      },
+      "writtenOn": "2026-05-04T22:23:29Z",
+      "side": 1,
+      "message": "Hey, this is my proposal for dealing with the issue of application credentials being persisted over upstream IdP changes. This changes the default behavior only for federated users. I\u0027d also like to backport this. I would prefer to backport it as is, but if not, we could backport only the part that let\u0027s you configure these parameters, not the breaking default behavior change.\n\nWhen implementing this, I also looked into having these settings configurable per IdP, but to do it the right way, we would need to extend the database table with the new configuration options, and then maybe we would like to have the same for LDAP... so it\u0027s an overkill.\n\nIn line with our previous discussions, we could further limit the defaults to be more secure, limiting the application credential use also for the local/LDAP users.",
+      "revId": "d92795d4b8d838575819d1a9ea4dd4e7ba631619",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
