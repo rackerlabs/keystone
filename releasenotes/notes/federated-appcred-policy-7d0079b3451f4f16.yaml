@@ -1,0 +1,32 @@
+---
+upgrade:
+  - |
+    Three new configuration options have been added under the
+    ``[application_credential]`` section to control how application credentials
+    are created by federated users (OIDC, SAML):
+
+    * ``federated_enabled`` (boolean, default ``True``) — Set to ``False`` to
+      prevent federated users from creating application credentials entirely.
+    * ``federated_max_duration_days`` (integer, default ``30``) — Maximum
+      lifetime in days for application credentials created by federated users.
+      When a federated user omits ``expires_at``, it is automatically set to
+      ``now + federated_max_duration_days``.  A value of ``0`` disables the
+      limit.  Requests that specify an ``expires_at`` beyond this maximum are
+      rejected with HTTP 400.
+    * ``federated_allow_unrestricted`` (boolean, default ``False``) — Allow
+      federated users to create unrestricted application credentials.  Defaults
+      to ``False`` because unrestricted credentials can manage other application
+      credentials and trusts, representing a privilege escalation risk for
+      credentials that may outlive the upstream IdP session.
+
+    **Action required:** If your deployment uses federation and you rely on
+    federated users creating long-lived or unrestricted application credentials,
+    review the new defaults before upgrading.  To restore the previous
+    (unrestricted) behaviour set::
+
+      [application_credential]
+      federated_max_duration_days = 0
+      federated_allow_unrestricted = true
+
+    See `LP #2129010 <https://bugs.launchpad.net/keystone/+bug/2129010>`_ for
+    the security motivation behind these defaults.
