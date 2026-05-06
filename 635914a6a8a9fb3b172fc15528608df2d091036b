@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af925275_151e7d0a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2026-05-06T14:45:47Z",
+      "side": 1,
+      "message": "@artem.goncharov@gmail.com Hello, please add +W again, conflict sorted.",
+      "revId": "635914a6a8a9fb3b172fc15528608df2d091036b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
