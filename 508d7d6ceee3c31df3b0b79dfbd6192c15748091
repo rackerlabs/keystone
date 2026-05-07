@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7c82490_e698bdbc",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-05-07T07:21:01Z",
+      "side": 1,
+      "message": "what is the group_password for? I do not understand the purpose of it and it doesn\u0027t look to be actually used in the code (only in tests)",
+      "revId": "508d7d6ceee3c31df3b0b79dfbd6192c15748091",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
