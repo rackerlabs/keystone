@@ -22,6 +22,30 @@
       },
       "revId": "0aa6bfa705502aaa6e7dc314528b40d32320ad56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74a54f1a_5d392b2d",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 8313
+      },
+      "writtenOn": "2026-05-08T14:23:44Z",
+      "side": 1,
+      "message": "I moved to UserApi, so no need for the group_password_expiry_format_mapping cfg option",
+      "parentUuid": "d09f5869_47d0d945",
+      "range": {
+        "startLine": 368,
+        "startChar": 0,
+        "endLine": 376,
+        "endChar": 1
+      },
+      "revId": "0aa6bfa705502aaa6e7dc314528b40d32320ad56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
