@@ -153,7 +153,7 @@ class IdentityProviderResource(_ResourceBase):
 
     @validation.request_query_schema(schema.identity_provider_request_query)
     @validation.response_body_schema(
-        schema.identity_provider_index_response_body
+        schema.identity_provider_response_body
     )
     def get(self, idp_id=None):
         """Get an IDP resource.

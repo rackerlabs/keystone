@@ -230,7 +230,7 @@ identity_provider_index_response_body: dict[str, Any] = {
         },
         "links": response_types.links,
     },
-    "additionalProperties": True,
+    "additionalProperties": False,
 }
 
 identity_provider_request_query: dict[str, Any] = {
