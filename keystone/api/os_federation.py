@@ -152,9 +152,7 @@ class IdentityProviderResource(_ResourceBase):
     _id_path_param_name_override = 'idp_id'
 
     @validation.request_query_schema(schema.identity_provider_request_query)
-    @validation.response_body_schema(
-        schema.identity_provider_index_response_body
-    )
+    @validation.response_body_schema(schema.identity_provider_response_body)
     def get(self, idp_id=None):
         """Get an IDP resource.
 
