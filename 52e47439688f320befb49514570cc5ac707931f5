@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92105cfa_186e85d6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2026-05-11T18:19:47Z",
+      "side": 1,
+      "message": "@artem.goncharov@gmail.com Hello, please merge this MR for start merging another fix in 2025.1 (in master, 2026.1 and 2025.2 already sorted).",
+      "revId": "52e47439688f320befb49514570cc5ac707931f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
