@@ -107,6 +107,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "063b96dc_d7b8aea6",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1173,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2026-05-11T17:34:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ebb4b27_f4f4d1b9",
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "121c3930_77e47c48",
@@ -154,6 +172,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a50849c_e07cd01b",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1221,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2026-05-11T17:34:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "20457ecb_29316d71",
+      "range": {
+        "startLine": 1220,
+        "startChar": 0,
+        "endLine": 1221,
+        "endChar": 70
+      },
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4a47bf83_db1a30c2",
@@ -171,6 +213,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "48ce812a_02816a8f",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1250,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2026-05-11T17:34:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4a47bf83_db1a30c2",
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2e077c9e_6914db34",
@@ -184,6 +244,30 @@
       "writtenOn": "2026-04-21T20:08:51Z",
       "side": 1,
       "message": "this is not covered by unit tests. Please run tox -e cover to see what is covered and what is not.",
+      "range": {
+        "startLine": 1258,
+        "startChar": 0,
+        "endLine": 1259,
+        "endChar": 37
+      },
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "978e362f_d50ec640",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1259,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2026-05-11T17:34:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e077c9e_6914db34",
       "range": {
         "startLine": 1258,
         "startChar": 0,
@@ -241,6 +325,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c6e863f_f79971c3",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1835,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2026-05-11T17:34:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c78a0c93_2fedecf4",
+      "range": {
+        "startLine": 1830,
+        "startChar": 0,
+        "endLine": 1835,
+        "endChar": 62
+      },
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e3c839b2_7f595094",
@@ -264,6 +372,30 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bf7de5b_d885270d",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1848,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2026-05-11T17:34:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e3c839b2_7f595094",
+      "range": {
+        "startLine": 1842,
+        "startChar": 0,
+        "endLine": 1848,
+        "endChar": 21
+      },
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bec34f52_1b1b5e5a",
@@ -277,6 +409,24 @@
       "writtenOn": "2026-04-21T20:08:51Z",
       "side": 1,
       "message": "keystone depends on python-ldap\u003e\u003d3.0.0, this is not needed.",
+      "revId": "2eacd618b4669379759054099870aae7ce0902f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c34f4cea_4084719e",
+        "filename": "keystone/tests/unit/fakeldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2026-05-11T17:34:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bec34f52_1b1b5e5a",
       "revId": "2eacd618b4669379759054099870aae7ce0902f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
