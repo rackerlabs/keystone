@@ -755,7 +755,6 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
         )
         return self.v3_create_token(trust_auth).headers['X-Subject-Token']
 
-
     def test_delegation_guard_trust_list_app_creds(self):
         """Trust-scoped token cannot list application credentials (LP#2150089).
 
