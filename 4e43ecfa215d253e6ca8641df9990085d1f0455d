@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "930af0d1_02d3b4b1",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1168,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2026-05-15T12:23:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "507507d6_b0e31e83",
+      "revId": "4e43ecfa215d253e6ca8641df9990085d1f0455d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d189b1fd_79ecf95c",
@@ -31,6 +49,24 @@
       "writtenOn": "2026-05-15T10:05:51Z",
       "side": 1,
       "message": "I see this handling of None and wondering, could None be returned by the real server in result3 function? Sadly pyldap docs are incredibly unspecific about that (https://www.python-ldap.org/en/python-ldap-3.4.6/reference/ldap.html#ldap.LDAPObject.result3). It is not even described what is the concrete type of the \"encoded server controls\". Current logic will throw an exception in this case, so maybe it would be good to extend the processing of result ensuring it is at least not None as well?",
+      "revId": "4e43ecfa215d253e6ca8641df9990085d1f0455d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "25cca6ba_9319a6f9",
+        "filename": "keystone/tests/unit/fakeldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 630,
+      "author": {
+        "id": 38589
+      },
+      "writtenOn": "2026-05-15T12:23:38Z",
+      "side": 1,
+      "message": "The docs are really vague there, so I went ahead and guarded both`rdata` and `serverctrls` with or `[]` in `_paged_search_s` in `common.py` where `result3` is actually called.",
+      "parentUuid": "d189b1fd_79ecf95c",
       "revId": "4e43ecfa215d253e6ca8641df9990085d1f0455d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
