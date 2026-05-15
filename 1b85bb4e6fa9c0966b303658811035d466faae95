@@ -33,6 +33,24 @@
       "message": "We should not backport this feature so far back. It should not be required.",
       "revId": "1b85bb4e6fa9c0966b303658811035d466faae95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a56cf2d4_0b687600",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2026-05-15T11:51:35Z",
+      "side": 1,
+      "message": "I agree the impact in the code might be considerable. I would not even propose it for backporting.",
+      "parentUuid": "44543679_21527f08",
+      "revId": "1b85bb4e6fa9c0966b303658811035d466faae95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
