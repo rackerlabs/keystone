@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ddaf4b7_90a381c1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 37598
+      },
+      "writtenOn": "2026-05-19T20:12:03Z",
+      "side": 1,
+      "message": "Hmm.. Interesting, this help for releasenote or not...",
+      "revId": "02b1057050d3168025c4e83a62e2bea8384d2362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
