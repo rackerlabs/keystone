@@ -155,6 +155,9 @@
             irrelevant-files: *irrelevant-files
         - keystone-dsvm-py3-functional-federation-ubuntu-jammy-k2k:
             irrelevant-files: *irrelevant-files
+            vars:
+              devstack_localrc:
+                TEMPEST_VENV_UPPER_CONSTRAINTS: "$DEST/requirements/upper-constraints.txt"
         - keystoneclient-devstack-functional:
             voting: false
             irrelevant-files: *irrelevant-files
@@ -171,12 +174,24 @@
               - ^setup.cfg$
         - tempest-full-py3:
             irrelevant-files: *tempest-irrelevant-files
+            vars:
+              devstack_localrc:
+                TEMPEST_VENV_UPPER_CONSTRAINTS: "$DEST/requirements/upper-constraints.txt"
         - grenade:
             irrelevant-files: *tempest-irrelevant-files
+            vars:
+              grenade_devstack_localrc:
+                TEMPEST_VENV_UPPER_CONSTRAINTS: "$DEST/requirements/upper-constraints.txt"
         - grenade-skip-level:
             irrelevant-files: *tempest-irrelevant-files
+            vars:
+              grenade_devstack_localrc:
+                TEMPEST_VENV_UPPER_CONSTRAINTS: "$DEST/requirements/upper-constraints.txt"
         - tempest-ipv6-only:
             irrelevant-files: *tempest-irrelevant-files
+            vars:
+              devstack_localrc:
+                TEMPEST_VENV_UPPER_CONSTRAINTS: "$DEST/requirements/upper-constraints.txt"
         - keystone-protection-functional
         - codegenerator-openapi-identity-tips-with-api-ref:
             voting: false
@@ -188,14 +203,29 @@
             irrelevant-files: *irrelevant-files
         - keystone-dsvm-py3-functional-federation-ubuntu-jammy-k2k:
             irrelevant-files: *irrelevant-files
+            vars:
+              devstack_localrc:
+                TEMPEST_VENV_UPPER_CONSTRAINTS: "$DEST/requirements/upper-constraints.txt"
         - tempest-full-py3:
             irrelevant-files: *tempest-irrelevant-files
+            vars:
+              devstack_localrc:
+                TEMPEST_VENV_UPPER_CONSTRAINTS: "$DEST/requirements/upper-constraints.txt"
         - grenade:
             irrelevant-files: *tempest-irrelevant-files
+            vars:
+              grenade_devstack_localrc:
+                TEMPEST_VENV_UPPER_CONSTRAINTS: "$DEST/requirements/upper-constraints.txt"
         - grenade-skip-level:
             irrelevant-files: *tempest-irrelevant-files
+            vars:
+              grenade_devstack_localrc:
+                TEMPEST_VENV_UPPER_CONSTRAINTS: "$DEST/requirements/upper-constraints.txt"
         - tempest-ipv6-only:
             irrelevant-files: *tempest-irrelevant-files
+            vars:
+              devstack_localrc:
+                TEMPEST_VENV_UPPER_CONSTRAINTS: "$DEST/requirements/upper-constraints.txt"
         - keystone-protection-functional
     experimental:
       jobs:
