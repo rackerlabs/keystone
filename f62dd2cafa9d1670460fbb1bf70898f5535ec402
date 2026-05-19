@@ -16,6 +16,23 @@
       "message": "need to wait before merging",
       "revId": "f62dd2cafa9d1670460fbb1bf70898f5535ec402",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5876ca81_faf8d695",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-05-19T18:39:06Z",
+      "side": 1,
+      "message": "recheck was never able to understand this failure",
+      "revId": "f62dd2cafa9d1670460fbb1bf70898f5535ec402",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
