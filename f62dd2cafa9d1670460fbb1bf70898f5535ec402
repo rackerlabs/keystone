@@ -33,6 +33,23 @@
       "message": "recheck was never able to understand this failure",
       "revId": "f62dd2cafa9d1670460fbb1bf70898f5535ec402",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f6a45cb_7e4e9e5f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2026-05-20T03:16:51Z",
+      "side": 1,
+      "message": "recheck - https://review.opendev.org/c/openstack/keystone/+/989203 should fix the gate issues",
+      "revId": "f62dd2cafa9d1670460fbb1bf70898f5535ec402",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
