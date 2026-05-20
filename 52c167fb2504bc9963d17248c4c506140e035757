@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71f540f9_bd9d02d8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7414
+      },
+      "writtenOn": "2026-05-20T01:24:10Z",
+      "side": 1,
+      "message": "I\u0027m going to emergency merge this so that we can unblock the 2025.1 gates, this can be reverted later if/when the upper-requirements are fixed.\n/Dave",
+      "revId": "52c167fb2504bc9963d17248c4c506140e035757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
