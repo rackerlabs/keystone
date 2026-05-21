@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ccd7a951_e9efd59c",
+        "filename": "keystone/api/users.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 36393
+      },
+      "writtenOn": "2026-05-21T05:54:26Z",
+      "side": 1,
+      "message": "Hi there, apologies for the drive-by comment.\n\nWe just discovered this security issue and were evaluating the bug and this changeset (and why it hasn\u0027t been merged yet), and I just wanted to point out that this is also somewhat insecure because it\u0027ll return a different result to when a project is not found (and thus confirming that project exists when a user tries to create an EC2 credential for it).\n\nThis should be changed to return the same output as if a project is not found.\n\n```\n$ curl -X POST https://api.example.com:5000/v3/users/e5d4c3b2a1e5d4c3b2a1e5d4c3b2a1e5/credentials/OS-EC2 -H \"Accept: application/json\" -H \"Content-Type: application/json\" -H \"X-Auth-Token: ${OS_AUTH_TOKEN}\" -d \u0027{\"tenant_id\": \"1a2b3c4d5e1a2b3c4d5e1a2b3c4d5e1a\"}\u0027\n{\"error\":{\"code\":404,\"message\":\"Could not find project: 1a2b3c4d5e1a2b3c4d5e1a2b3c4d5e1a.\",\"title\":\"Not Found\"}}\n```",
+      "range": {
+        "startLine": 434,
+        "startChar": 0,
+        "endLine": 440,
+        "endChar": 13
+      },
+      "revId": "737db6b420fb376c7f60f54ff7a61cc7dcddf6e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
