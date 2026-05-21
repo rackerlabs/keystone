@@ -6446,9 +6446,10 @@ class ApplicationCredentialAuth(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             app_cred_id=app_cred_ref['id'], secret=app_cred_ref['secret']
         )
-        self.v3_create_token(
-            auth_data, expected_status=http.client.UNAUTHORIZED
-        )
+        # Revoking the only role from the user on the project leaves the
+        # application credential with no remaining roles, so it is
+        # deleted as part of the assignment removal flow.
+        self.v3_create_token(auth_data, expected_status=http.client.NOT_FOUND)
 
     def test_application_credential_through_group_membership(self):
         user1 = unit.create_user(

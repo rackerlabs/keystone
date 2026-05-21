@@ -1,0 +1,12 @@
+---
+fixes:
+  - |
+    [`bug 2144446 <https://bugs.launchpad.net/keystone/+bug/2144446>`_]
+    Fixed an issue where deleting a role caused all of a user's
+    application credentials on each affected project to be deleted,
+    even when those application credentials did not reference the
+    deleted role. The deleted role is now only stripped from the
+    application credentials that referenced it, and an application
+    credential is removed only when it has no remaining roles. The
+    same scoped cleanup is applied when an individual role assignment
+    is revoked from a user on a project.

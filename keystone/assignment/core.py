@@ -94,7 +94,12 @@ class Manager(manager.Manager):
         ]
 
     def _send_app_cred_notification_for_role_removal(self, role_id):
-        """Delete all application credential for a specific role.
+        """Notify the app credential subsystem that a role was removed.
+
+        Emits an internal notification for every (user_id, project_id)
+        pair that had a direct assignment of the given role. The
+        application credential manager listens for this notification and
+        strips the role from any matching application credentials.
 
         :param role_id: role identifier
         :type role_id: string
@@ -105,10 +110,54 @@ class Manager(manager.Manager):
                 payload = {
                     'user_id': assignment['user_id'],
                     'project_id': assignment['project_id'],
+                    'role_id': role_id,
                 }
                 notifications.Audit.internal(
                     notifications.REMOVE_APP_CREDS_FOR_USER, payload
                 )
+
+    def _send_app_cred_notification_for_grant_removal(
+        self, role_id, user_id, project_id
+    ):
+        """Notify the app credential subsystem that a grant was removed.
+
+        Emits an internal notification for the affected (user, project,
+        role) so that the role is stripped from any application
+        credential that referenced it. This is only emitted when the
+        user no longer has the role effective on the project (i.e.
+        through other groups or inheritance).
+        """
+        if not user_id or not project_id or not role_id:
+            return
+        try:
+            effective_roles = self.list_role_assignments(
+                user_id=user_id,
+                project_id=project_id,
+                effective=True,
+                strip_domain_roles=False,
+            )
+        except (
+            exception.UserNotFound,
+            exception.ProjectNotFound,
+            exception.DomainNotFound,
+        ):
+            # The actor or target was deleted out from under us. The
+            # user-deletion callback already cleans up any application
+            # credentials in that case, so there is nothing to do.
+            return
+        if any(a.get('role_id') == role_id for a in effective_roles):
+            # The user still effectively has this role on this project
+            # via groups or inheritance, so the existing application
+            # credentials remain valid.
+            return
+        payload = {
+            'user_id': user_id,
+            'project_id': project_id,
+            'role_id': role_id,
+        }
+        notifications.Audit.internal(
+            notifications.REMOVE_APP_CREDS_FOR_USER, payload
+        )
 
     @MEMOIZE_COMPUTED_ASSIGNMENTS
     def get_roles_for_user_and_project(self, user_id, project_id):
@@ -433,6 +482,28 @@ class Manager(manager.Manager):
             inherited_to_projects=inherited_to_projects,
         )
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
+        # Application credentials are project-scoped: revoking a role
+        # from a (user, project) pair must strip that role from any
+        # application credentials that referenced it. Group grants need
+        # to be expanded to the affected users; domain or inherited
+        # grants are not considered here because the project they would
+        # invalidate is ambiguous.
+        if project_id and not inherited_to_projects:
+            if user_id:
+                self._send_app_cred_notification_for_grant_removal(
+                    role_id, user_id, project_id
+                )
+            elif group_id:
+                try:
+                    users_in_group = (
+                        PROVIDERS.identity_api.list_users_in_group(group_id)
+                    )
+                except exception.GroupNotFound:
+                    users_in_group = []
+                for member in users_in_group:
+                    self._send_app_cred_notification_for_grant_removal(
+                        role_id, member['id'], project_id
+                    )
 
     # The methods _expand_indirect_assignment, _list_direct_role_assignments
     # and _list_effective_role_assignments below are only used on
