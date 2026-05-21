@@ -72,10 +72,20 @@ class Manager(manager.Manager):
     def _delete_app_creds_on_assignment_removal(
         self, service, resource_type, operation, payload
     ):
-        user_id = payload['resource_info']['user_id']
-        project_id = payload['resource_info']['project_id']
-        self._delete_application_credentials_for_user_on_project(
-            user_id, project_id
+        resource_info = payload['resource_info']
+        user_id = resource_info['user_id']
+        project_id = resource_info['project_id']
+        role_id = resource_info.get('role_id')
+        if role_id is None:
+            # Defensive: if a producer omits the role, fall back to the
+            # legacy behavior of removing every application credential
+            # for the user on the project.
+            self._delete_application_credentials_for_user_on_project(
+                user_id, project_id
+            )
+            return
+        self._remove_role_from_user_application_credentials_on_project(
+            user_id, project_id, role_id
         )
 
     def _get_user_roles(self, user_id, project_id):
@@ -257,6 +267,49 @@ class Manager(manager.Manager):
         )
         for app_cred in app_creds:
             self.get_application_credential.invalidate(self, app_cred['id'])
+
+    def _remove_role_from_user_application_credentials_on_project(
+        self, user_id, project_id, role_id
+    ):
+        """Strip a role from a user's app credentials on a project.
+
+        Application credentials that referenced the role lose only that
+        role. Application credentials that end up with no remaining
+        roles are deleted via :meth:`delete_application_credential`,
+        which also fires the standard CADF ``deleted`` notification.
+        Application credentials that did not reference the role are
+        left untouched.
+        """
+        hints = driver_hints.Hints()
+        hints.add_filter('project_id', project_id)
+        app_creds = self.driver.list_application_credentials_for_user(
+            user_id, hints
+        )
+
+        emptied_ids = self.driver.remove_role_from_application_credentials(
+            user_id, project_id, role_id
+        )
+
+        # Invalidate any cached entries for credentials that may have
+        # had their role list changed.
+        for app_cred in app_creds:
+            if app_cred['id'] in emptied_ids:
+                continue
+            roles = [r['id'] for r in app_cred.get('roles', [])]
+            if role_id in roles:
+                self.get_application_credential.invalidate(
+                    self, app_cred['id']
+                )
+
+        # Delete credentials that are now without any roles. Going
+        # through delete_application_credential ensures the CADF
+        # notification is emitted and the cache is invalidated.
+        for app_cred_id in emptied_ids:
+            try:
+                self.delete_application_credential(app_cred_id)
+            except exception.ApplicationCredentialNotFound:
+                # Already gone (concurrent delete); nothing to do.
+                pass
 
     def delete_access_rule(self, access_rule_id, initiator=None):
         """Delete an access rule.

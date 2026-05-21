@@ -94,6 +94,28 @@ class ApplicationCredentialDriverBase(metaclass=abc.ABCMeta):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
+    def remove_role_from_application_credentials(
+        self, user_id, project_id, role_id
+    ):
+        """Strip a role from a user's application credentials on a project.
+
+        :param str user_id: ID of the user owning the application
+            credentials.
+        :param str project_id: ID of the project the application
+            credentials are scoped to.
+        :param str role_id: ID of the role to remove from the matching
+            application credentials.
+
+        :returns: list of application credential public ``id`` values
+            that have no remaining roles after the role was stripped.
+            The caller is responsible for deleting these so that the
+            standard deletion notifications fire.
+        :rtype: list[str]
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
     def get_access_rule(self, access_rule_id):
         """Get an access rule by its ID.
 

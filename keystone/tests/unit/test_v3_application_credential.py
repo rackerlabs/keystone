@@ -505,6 +505,153 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
                 headers={'X-Auth-Token': token},
             )
 
+    def test_role_deletion_only_removes_role_from_app_creds(self):
+        """Deleting a role only strips that role from app credentials.
+
+        When a role is deleted, application credentials that reference
+        the deleted role must lose only that role; application
+        credentials that do not reference it must remain unchanged.
+        Application credentials left with no remaining roles must be
+        deleted.
+        """
+        role_a = unit.new_role_ref(name='role_a')
+        PROVIDERS.role_api.create_role(role_a['id'], role_a)
+        PROVIDERS.assignment_api.add_role_to_user_and_project(
+            self.user_id, self.project_id, role_a['id']
+        )
+        role_b = unit.new_role_ref(name='role_b')
+        PROVIDERS.role_api.create_role(role_b['id'], role_b)
+        PROVIDERS.assignment_api.add_role_to_user_and_project(
+            self.user_id, self.project_id, role_b['id']
+        )
+        role_c = unit.new_role_ref(name='role_c')
+        PROVIDERS.role_api.create_role(role_c['id'], role_c)
+        PROVIDERS.assignment_api.add_role_to_user_and_project(
+            self.user_id, self.project_id, role_c['id']
+        )
+
+        with self.test_client() as c:
+            token = self.get_scoped_token()
+            # AppCred1 references role_a and role_b
+            ac1_body = self._app_cred_body(
+                roles=[{'id': role_a['id']}, {'id': role_b['id']}], name='ac1'
+            )
+            ac1_resp = c.post(
+                f'/v3/users/{self.user_id}/application_credentials',
+                json=ac1_body,
+                expected_status_code=http.client.CREATED,
+                headers={'X-Auth-Token': token},
+            )
+            ac1_id = ac1_resp.json['application_credential']['id']
+
+            # AppCred2 references role_b and role_c (no role_a)
+            ac2_body = self._app_cred_body(
+                roles=[{'id': role_b['id']}, {'id': role_c['id']}], name='ac2'
+            )
+            ac2_resp = c.post(
+                f'/v3/users/{self.user_id}/application_credentials',
+                json=ac2_body,
+                expected_status_code=http.client.CREATED,
+                headers={'X-Auth-Token': token},
+            )
+            ac2_id = ac2_resp.json['application_credential']['id']
+
+            # AppCred3 references only role_a (will be left empty)
+            ac3_body = self._app_cred_body(
+                roles=[{'id': role_a['id']}], name='ac3'
+            )
+            ac3_resp = c.post(
+                f'/v3/users/{self.user_id}/application_credentials',
+                json=ac3_body,
+                expected_status_code=http.client.CREATED,
+                headers={'X-Auth-Token': token},
+            )
+            ac3_id = ac3_resp.json['application_credential']['id']
+
+            # Delete role_a
+            PROVIDERS.role_api.delete_role(role_a['id'])
+
+            # AppCred1 must still exist with roles=[role_b]
+            ac1_get = c.get(
+                f'/v3/users/{self.user_id}/application_credentials/{ac1_id}',
+                expected_status_code=http.client.OK,
+                headers={'X-Auth-Token': token},
+            )
+            ac1_role_ids = [
+                r['id']
+                for r in ac1_get.json['application_credential']['roles']
+            ]
+            self.assertEqual([role_b['id']], ac1_role_ids)
+
+            # AppCred2 must be unchanged
+            ac2_get = c.get(
+                f'/v3/users/{self.user_id}/application_credentials/{ac2_id}',
+                expected_status_code=http.client.OK,
+                headers={'X-Auth-Token': token},
+            )
+            ac2_role_ids = sorted(
+                r['id']
+                for r in ac2_get.json['application_credential']['roles']
+            )
+            self.assertEqual(
+                sorted([role_b['id'], role_c['id']]), ac2_role_ids
+            )
+
+            # AppCred3 had only the deleted role and must be gone
+            c.get(
+                f'/v3/users/{self.user_id}/application_credentials/{ac3_id}',
+                expected_status_code=http.client.NOT_FOUND,
+                headers={'X-Auth-Token': token},
+            )
+
+    def test_grant_revocation_only_removes_role_from_app_creds(self):
+        """Revoking a single role assignment only strips that role.
+
+        When a single user/project role assignment is revoked via
+        ``delete_grant``, application credentials referencing that role
+        must lose only the revoked role rather than being deleted in
+        full.
+        """
+        role_a = unit.new_role_ref(name='grant_role_a')
+        PROVIDERS.role_api.create_role(role_a['id'], role_a)
+        PROVIDERS.assignment_api.add_role_to_user_and_project(
+            self.user_id, self.project_id, role_a['id']
+        )
+        role_b = unit.new_role_ref(name='grant_role_b')
+        PROVIDERS.role_api.create_role(role_b['id'], role_b)
+        PROVIDERS.assignment_api.add_role_to_user_and_project(
+            self.user_id, self.project_id, role_b['id']
+        )
+
+        with self.test_client() as c:
+            token = self.get_scoped_token()
+            ac_body = self._app_cred_body(
+                roles=[{'id': role_a['id']}, {'id': role_b['id']}],
+                name='ac_grant',
+            )
+            ac_resp = c.post(
+                f'/v3/users/{self.user_id}/application_credentials',
+                json=ac_body,
+                expected_status_code=http.client.CREATED,
+                headers={'X-Auth-Token': token},
+            )
+            ac_id = ac_resp.json['application_credential']['id']
+
+            # Revoke role_a from this user on this project
+            PROVIDERS.assignment_api.delete_grant(
+                role_a['id'], user_id=self.user_id, project_id=self.project_id
+            )
+
+            ac_get = c.get(
+                f'/v3/users/{self.user_id}/application_credentials/{ac_id}',
+                expected_status_code=http.client.OK,
+                headers={'X-Auth-Token': token},
+            )
+            ac_role_ids = [
+                r['id'] for r in ac_get.json['application_credential']['roles']
+            ]
+            self.assertEqual([role_b['id']], ac_role_ids)
+
     def test_list_application_credentials_by_name(self):
         with self.test_client() as c:
             roles = [{'id': self.role_id}]

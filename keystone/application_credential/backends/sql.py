@@ -270,6 +270,40 @@ class ApplicationCredential(base.ApplicationCredentialDriverBase):
             query = query.filter_by(project_id=project_id)
             query.delete()
 
+    def remove_role_from_application_credentials(
+        self, user_id, project_id, role_id
+    ):
+        emptied_app_cred_ids = []
+        with sql.session_for_write() as session:
+            app_creds = (
+                session.query(ApplicationCredentialModel)
+                .filter_by(user_id=user_id)
+                .filter_by(project_id=project_id)
+                .all()
+            )
+            for app_cred in app_creds:
+                role_ids = [r.role_id for r in app_cred.roles]
+                if role_id not in role_ids:
+                    continue
+                role_row = (
+                    session.query(ApplicationCredentialRoleModel)
+                    .filter_by(
+                        application_credential_id=app_cred.internal_id,
+                        role_id=role_id,
+                    )
+                    .first()
+                )
+                if role_row is not None:
+                    session.delete(role_row)
+                # Determine whether the credential has any roles left
+                # after stripping. If not, surface its id so the caller
+                # can delete it via the standard delete path (which also
+                # fires CADF notifications).
+                remaining = [r for r in role_ids if r != role_id]
+                if not remaining:
+                    emptied_app_cred_ids.append(app_cred.id)
+        return emptied_app_cred_ids
+
     def get_access_rule(self, access_rule_id):
         with sql.session_for_read() as session:
             query = session.query(AccessRuleModel).filter_by(
