@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5cfa854_aa84bd69",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2026-05-22T13:04:41Z",
+      "side": 1,
+      "message": "rebase on top of https://review.opendev.org/c/openstack/keystone/+/989615 will help with the ci",
+      "revId": "a122dad3478b945ddd5caa79357f8b8672ee61bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
