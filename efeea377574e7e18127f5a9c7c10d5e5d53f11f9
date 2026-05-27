@@ -16,6 +16,24 @@
       "message": "Is this planned to be backported to 2024.1?",
       "revId": "efeea377574e7e18127f5a9c7c10d5e5d53f11f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "761597e2_0bafa5f2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16643
+      },
+      "writtenOn": "2026-05-27T15:00:26Z",
+      "side": 1,
+      "message": "This \"unmaintained\" branch is outside the purview of the OpenStack Keystone team; and is loosely cared for by an \"unmaintained-core\" group: https://review.opendev.org/admin/groups/4d728691952c04b8b2ec828eabc96b98dc124d69,members\n\nhttps://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases",
+      "parentUuid": "ea654f0e_fe715e66",
+      "revId": "efeea377574e7e18127f5a9c7c10d5e5d53f11f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
