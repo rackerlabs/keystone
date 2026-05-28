@@ -16,6 +16,23 @@
       "message": "recheck race?",
       "revId": "ffd6c00de20fc811add2654e9bc627ab52a22717",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2d315ee_3ecdfa85",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-05-28T14:41:30Z",
+      "side": 1,
+      "message": "recheck verify the gate",
+      "revId": "ffd6c00de20fc811add2654e9bc627ab52a22717",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
