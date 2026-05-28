@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73cc97e8_08b07866",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2026-05-28T14:48:26Z",
+      "side": 1,
+      "message": "you may also want to drop this, cf. https://opendev.org/openstack/openstack-zuul-jobs/src/commit/aebda82f8822e38db5bbd25ab31ea110792e8c2b/zuul.d/project-templates.yaml#L2929",
+      "revId": "57605dc20fe4b7c43090769bb6b7eede48beb331",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9a1110c_49e1f0e5",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2026-05-28T14:48:26Z",
+      "side": 1,
+      "message": "making it non-voting for the gate will be needed here, too. or remove the job references here and above completely (including the template)",
+      "revId": "57605dc20fe4b7c43090769bb6b7eede48beb331",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
