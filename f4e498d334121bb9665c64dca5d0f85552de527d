@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73004b87_eb9ce12b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2026-05-28T15:25:20Z",
+      "side": 1,
+      "message": "or we can remove this job also as 2024.2 (base branch for greande jobs) is EOL",
+      "revId": "f4e498d334121bb9665c64dca5d0f85552de527d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
