@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9984f403_e6f9138a",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-05-28T15:03:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "73cc97e8_08b07866",
+      "revId": "57605dc20fe4b7c43090769bb6b7eede48beb331",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b9a1110c_49e1f0e5",
@@ -31,6 +49,24 @@
       "writtenOn": "2026-05-28T14:48:26Z",
       "side": 1,
       "message": "making it non-voting for the gate will be needed here, too. or remove the job references here and above completely (including the template)",
+      "revId": "57605dc20fe4b7c43090769bb6b7eede48beb331",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61410134_e7f40488",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 27900
+      },
+      "writtenOn": "2026-05-28T15:03:17Z",
+      "side": 1,
+      "message": "yeah, thanks",
+      "parentUuid": "b9a1110c_49e1f0e5",
       "revId": "57605dc20fe4b7c43090769bb6b7eede48beb331",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
