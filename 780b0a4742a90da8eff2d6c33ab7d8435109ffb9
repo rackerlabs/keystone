@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "afe60506_37468078",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2026-05-28T15:59:44Z",
+      "side": 1,
+      "message": "stray empty line causing pep8 failure",
+      "revId": "780b0a4742a90da8eff2d6c33ab7d8435109ffb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
