@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "7a5ad06823ae0d4d05ea3de9fdbfeb3022660c4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9816231e_ed110380",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35657
+      },
+      "writtenOn": "2026-05-28T16:28:29Z",
+      "side": 1,
+      "message": "Thanks! @dwilde@redhat.com @artem.goncharov@gmail.com Could you please take a look at this change when you have a moment?",
+      "revId": "7a5ad06823ae0d4d05ea3de9fdbfeb3022660c4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
