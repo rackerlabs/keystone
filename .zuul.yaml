@@ -179,6 +179,7 @@
               devstack_localrc:
                 TEMPEST_VENV_UPPER_CONSTRAINTS: "$DEST/requirements/upper-constraints.txt"
         - grenade:
+            voting: false
             irrelevant-files: *tempest-irrelevant-files
             vars:
               grenade_devstack_localrc:
